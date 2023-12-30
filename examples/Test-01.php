@@ -312,14 +312,14 @@ $pdf->SetFont('times', '', 9.7);
 $html ='<div><b>3.a. &nbsp;&nbsp;&nbsp;</b>Street Number  &nbsp; <br>  &nbsp;  &nbsp; &nbsp;  &nbsp; and Name </div>';
 $pdf->writeHTMLCell(40, 12, 12, 189.9, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part2_10b_street_number', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 192);
+$pdf->TextField('part1_3a_street_number', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 192);
 
 // ...........
 $pdf->SetFont('times', '', 9.7); // set font
-$html= '<div><b>3.b. </b>&nbsp; &nbsp; <input type="checkbox" name="2Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="2Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="2Flr" value="Flr" checked="" /> Flr.</div>';
+$html= '<div><b>3.b. </b>&nbsp; &nbsp; <input type="checkbox" name="Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="Flr" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell(61, 0, 12, 202, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part2_10c_apt_ste', 40, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),63.5, 200.7);
+$pdf->TextField('part1_3b_apt_ste', 40, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),63.5, 200.7);
 
 
 //......
@@ -328,7 +328,7 @@ $pdf->SetFont('times', '', 9.7); // set font
 $html= '<div><b>3.c.</b> &nbsp; City or Town </div>';
 $pdf->writeHTMLCell(50, 5, 12, 210, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part2_10d_city_town', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45.5, 209.5);
+$pdf->TextField('part1_3c_city_town', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45.5, 209.5);
 //............
 
 $pdf->SetFont('times', '', 10); // set font
@@ -337,15 +337,15 @@ $pdf->writeHTMLCell(60, 0, 12, 219, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 
-$html = '<select name="state" size="0.25">';
+$html = '<select name="part1_3d_state" size="0.25">';
 
 	$html .= '<option > </option>';
 
 $html .= '</select>';
-$pdf->writeHTMLCell(25, 0, 30, 220, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(25, 0, 30, 218, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part2_14_zip_code', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),70, 220);
+$pdf->TextField('part1_3e_zip_code', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),70, 218.3);
 
 //..........
 
@@ -1689,6 +1689,11 @@ var fields = {
 'part1_2a_lastname':' ',
 'part1_2b_firstname':' ',
 'part1_2c_middlename':' ',
+'part1_3a_street_number': ' ',
+'part1_3b_apt_ste':' ',
+'part1_3c_city_town':' ',
+'part1_3d_state' : ' ',
+'part1_3e_zip_code' : ' ',
 
 // ?Exixting
     'requestor_info_last_name':' ',
