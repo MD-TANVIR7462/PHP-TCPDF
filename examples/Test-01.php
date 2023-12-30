@@ -33,7 +33,7 @@ class MyPDF extends TCPDF {
     // Page footer
     public function Footer() {
         // Position at 15 mm from bottom
-        $this->SetY(-20);
+        $this->SetY(-18);
 		
 		$header_top_border = array(
 		   'B' => array('width' => 0.5, 'color' => array(0,0,0), 'dash' => 0, 'cap' => 'butt'),
@@ -43,7 +43,7 @@ class MyPDF extends TCPDF {
         // Set font
         $this->SetFont('times', '', 9);
 		
-		$this->Cell(40, 6, "Form I-918  Edition 12/06/21", 0, 0, 'L');
+		$this->Cell(40, 6.4, "Form I-918  Edition 12/06/21", 0, 0, 'L');
 		
 		
 		// if ($this->page == 1){
@@ -54,7 +54,7 @@ class MyPDF extends TCPDF {
         // $this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 'T', 'R', 1, 0);
 		
 		
-		$this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 0, 'R', 0, 1, 159, 264.5, true);
+		$this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 0, 'R', 0, 1, 159, 266, true);
 		
       
         
@@ -328,48 +328,53 @@ $pdf->SetFont('times', '', 9.7); // set font
 $html= '<div><b>3.c.</b> &nbsp; City or Town </div>';
 $pdf->writeHTMLCell(50, 5, 12, 210, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part1_3c_city_town', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45.5, 209.5);
+$pdf->TextField('part1_3c_city_town', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 209.5);
 //............
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>3.d.</b> &nbsp;&nbsp;State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>3.e.</b>&nbsp;&nbsp;ZIP Code';
+$html = '<b>3.d.</b> &nbsp;&nbsp;State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>3.e.</b>&nbsp;&nbsp;ZIP Code';
 $pdf->writeHTMLCell(60, 0, 12, 219, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 
 $html = '<select name="part1_3d_state" size="0.25">';
 
-	$html .= '<option > </option>';
+	$html .= '<option > As</option>'; //Dummy Option Value
+	$html .= '<option > Ts</option>'; //Dummy Option Value
+	$html .= '<option > Ts</option>'; //Dummy Option Value
+	$html .= '<option > Ts</option>'; //Dummy Option Value
+	$html .= '<option > Ts</option>'; //Dummy Option Value
+	$html .= '<option > Ts</option>'; //Dummy Option Value
 
 $html .= '</select>';
-$pdf->writeHTMLCell(25, 0, 30, 218, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(25, 5, 30, 218.7, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part1_3e_zip_code', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),70, 218.3);
+$pdf->TextField('part1_3e_zip_code', 33.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),70, 218.3);
 
 //..........
 
 
-// $pdf->SetFont('times', '', 10); // set font
-// $html= '<div><b>10.g.</b> &nbsp; Province </div>';
-// $pdf->writeHTMLCell(30, 0, 12, 188, $html, '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('part2_10g_province', 55, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 48, 188.5);
-// //...............
+$pdf->SetFont('times', '', 9.7); // set font
+$html= '<div><b>3.f.</b> &nbsp; Province </div>';
+$pdf->writeHTMLCell(30, 0, 12, 227.6, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_3f_province', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 226.8);
+//...............
 
-// $pdf->SetFont('times', '', 10); // set font
-// $html= '<div><b>10.h.</b> &nbsp; Postal Code </div>';
-// $pdf->writeHTMLCell(30, 0, 12, 197, $html, '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('part2_10h_postal_code', 55, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 48, 197);
-// //........
+$pdf->SetFont('times', '', 9.7); // set font
+$html= '<div><b>3.g.</b> &nbsp; Postal Code </div>';
+$pdf->writeHTMLCell(30, 0, 12, 236.5, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_3g_Postal Code', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 235.7);
+//........
 
 
-// $pdf->SetFont('times', '', 10); // set font
-// $html= '<div><b>10.i.</b> &nbsp; Country </div>';
-// $pdf->writeHTMLCell(30, 0, 12, 205, $html, '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('part2_10i_country', 82, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 22, 211);
+$pdf->SetFont('times', '', 9.7); // set font
+$html= '<div><b>3.h.</b> &nbsp; Country </div>';
+$pdf->writeHTMLCell(30, 0, 12, 243.5, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_3h_Country', 82.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21.5, 248.7);
 // //.....
 
 
@@ -378,7 +383,7 @@ $pdf->TextField('part1_3e_zip_code', 33, 7, array('strokeColor' => array(64, 64,
 
 
 
-//..............<<< Page 2 >>>-----------------//
+//!..............<<< Page 2 >>>-----------------//
 $pdf->AddPage('P', 'LETTER');  // page number 2
 //.........
 
@@ -1694,6 +1699,9 @@ var fields = {
 'part1_3c_city_town':' ',
 'part1_3d_state' : ' ',
 'part1_3e_zip_code' : ' ',
+'part1_3f_province':' ',
+'part1_3g_Postal Code' :' ',
+'part1_3h_Country':' ',
 
 // ?Exixting
     'requestor_info_last_name':' ',
