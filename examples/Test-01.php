@@ -296,6 +296,7 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part1_2c_middlename', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 175);
 //.............
 
+//?Home address section -Part-1------------------
 $pdf->SetFillColor(220,220,220);
 $pdf->SetFont('times', 'I', 10); // set font
 $pdf->setCellHeightRatio(1.3);
@@ -377,8 +378,154 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part1_3h_Country', 82.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21.5, 248.7);
 // //.....
 
+//? ... <<<Part 1 & page 1 first column Done >>..........<< second column started >>.... 
+
+$pdf->SetFillColor(220,220,220);
+$pdf->SetFont('times', 'I', 10); // set font
+$pdf->setCellHeightRatio(1.3);
+$pdf->setCellPaddings(1, 0.5, 1, 0.5); // set cell padding
+$pdf->SetFontSize(11.6); // set font
+$html ='<div><b>Safe Mailing Address</b> &nbsp; <I>(if other than Home Address)</I></div>';
+$pdf->writeHTMLCell(91, 7, 112, 108, $html, 0, 1, true, false, 'J', true);
+
+//...........
 
 
+$pdf->SetFont('times', '', 9.7); // set font
+$html= '<div><b>4.a.</b> &nbsp; In Care Of Name </div>';
+$pdf->writeHTMLCell(70, 0, 112, 116, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_4a_Care Of Name', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 121);
+
+//.....
+$pdf->SetFont('times', '', 9.5);
+$html ='<div><b>4.b. &nbsp;</b>Street Number  &nbsp; <br>  &nbsp;  &nbsp; &nbsp;   and Name </div>';
+$pdf->writeHTMLCell(40, 12, 112, 128, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_4b_street_number', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 130);
+
+// // ...........
+$pdf->SetFont('times', '', 9.7); // set font
+$html= '<div><b>4.c. </b> <input type="checkbox" name="Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="Flr" value="Flr" checked="" /> Flr.</div>';
+$pdf->writeHTMLCell(61, 0, 112, 139.5, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_4c_apt_ste', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),160, 138.9);
+
+
+// //......
+
+$pdf->SetFont('times', '', 9.7); // set font
+$html= '<div><b>4.d.</b> &nbsp; City or Town </div>';
+$pdf->writeHTMLCell(50, 5, 112, 147.4, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_4d_city_town', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 142.6,147.9 );
+// //............
+
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>4.e.</b> &nbsp;&nbsp;State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>4.f.</b>&nbsp;&nbsp;ZIP Code';
+$pdf->writeHTMLCell(60, 0, 112, 157.3, $html, '', 0, 0, true, 'L');
+
+$pdf->SetFont('courier', 'B', 10); // set font
+
+$html = '<select name="part1_4e_state" size="0.25">';
+
+	$html .= '<option > As</option>'; //Dummy Option Value
+	$html .= '<option > Ts</option>'; //Dummy Option Value
+	$html .= '<option > Ts</option>'; //Dummy Option Value
+	$html .= '<option > Ts</option>'; //Dummy Option Value
+	$html .= '<option > Ts</option>'; //Dummy Option Value
+	$html .= '<option > Ts</option>'; //Dummy Option Value
+
+$html .= '</select>';
+$pdf->writeHTMLCell(25, 5, 129.5, 157, $html, '', 0, 0, true, 'L');
+
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('part1_4f_zip_code', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),168, 157);
+
+// //..........
+
+
+$pdf->SetFont('times', '', 9.7); // set font
+$html= '<div><b>4.g.</b> &nbsp; Province </div>';
+$pdf->writeHTMLCell(30, 0, 112, 165.7, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_4g_province', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 166);
+// //...............
+
+$pdf->SetFont('times', '', 9.7); // set font
+$html= '<div><b>4.h.</b> &nbsp; Postal Code </div>';
+$pdf->writeHTMLCell(30, 0, 112, 175, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_4h_Postal Code', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 174.9);
+//........
+
+
+$pdf->SetFont('times', '', 9.7); // set font
+$html= '<div><b>4.i.</b> &nbsp; Country </div>';
+$pdf->writeHTMLCell(30, 0, 112, 182, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_3h_Country', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 187.5);
+// // //.....
+
+
+//?.............<<< Other information part -1 >>>.........Column 2
+$pdf->SetFillColor(220,220,220);
+$pdf->SetFont('times', '', 10); // set font
+$pdf->setCellHeightRatio(1.3);
+$pdf->setCellPaddings(1, 0.5, 1, 0.5); // set cell padding
+$pdf->SetFontSize(11.6); // set font
+
+$html ='<div><b> <i> Other Information </i> </b>  </div>';
+$pdf->writeHTMLCell(90.6, 6, 112.6, 197, $html, '', 1, true, false, 'J', true);
+//....
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>5. </b>  &nbsp; &nbsp; Alien Registration Number (A-Number) (if any) </div>';
+$pdf->writeHTMLCell(80, 5, 112, 203.4, $html, 0, 1, false, false, 'J', true);
+// .......
+$pdf->StartTransform();
+$pdf->SetFillColor(0,0,0);
+$pdf->Rotate(-30);
+$pdf->SetFont('zapfdingbats', 'B', 10);
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 126.4, 143, false); // angle
+$pdf->StopTransform();
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>A- </b></div>';
+$pdf->writeHTMLCell(30, 7, 147, 209, $html, 0, 1, false, false, 'J', true);
+// //...........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_5_registration_Number', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 153.5, 209);
+// //............
+
+$pdf->StartTransform();
+$pdf->SetFillColor(0,0,0);
+$pdf->Rotate(-30);
+$pdf->SetFont('zapfdingbats', 'B', 10);
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 136.4, 143, false); // angle
+$pdf->StopTransform();
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>6. </b>   &nbsp; &nbsp;  U.S. Social Security Number (if any)</div>';
+$pdf->writeHTMLCell(80, 7, 112, 216, $html, 0, 1, false, false, 'J', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part1_6_social_security', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 153.5, 223);
+
+
+
+
+//.............
+// $pdf->SetFont('times', '', 10);
+// $html ='<div><b>2. </b>   &nbsp; &nbsp;  USCIS Online Account Number (if any)</div>';
+// $pdf->writeHTMLCell(80, 7, 112, 176, $html, 0, 1, false, false, 'J', true);
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('part2_online_account', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 182);
+// $pdf->StartTransform();
+// $pdf->SetFillColor(0,0,0);
+// $pdf->Rotate(-30);
+// $pdf->SetFont('zapfdingbats', 'B', 10);
+// $pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 130, 148, false); // angle
+// $pdf->StopTransform();
+
+// //...........
 
 
 
@@ -1702,6 +1849,39 @@ var fields = {
 'part1_3f_province':' ',
 'part1_3g_Postal Code' :' ',
 'part1_3h_Country':' ',
+'part1_4a_Care Of Name':' ',
+'part1_4b_street_number': ' ',
+'part1_4c_apt_ste' :' ',
+'part1_4d_city_town':' ',
+'part1_4e_state': ' ',
+'part1_4f_zip_code':' ',
+'part1_4g_province':' ',
+'part1_4h_Postal Code':' ',
+'part1_5_registration_Number':' ',
+'part1_6_social_security':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+' ':' ',
+
 
 // ?Exixting
     'requestor_info_last_name':' ',
