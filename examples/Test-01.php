@@ -2479,6 +2479,11 @@ $html = '<div><input type="checkbox"  name="part3_29c_y_currently_active" value=
 $pdf->writeHTMLCell( 60, 0, 175.5, 212, $html, '', 0, 0, true, 'L' );
 
 //*!7th page starts ..................
+
+
+
+
+
 $pdf->AddPage( 'P', 'LETTER' );
 $pdf->setFillColor( 220, 220, 220 );
 
@@ -2843,8 +2848,267 @@ member for whom you are petitioning.
  </div>";
 $pdf->writeHTMLCell( 90, 0, 121, 200, $html, '', 0, 0, true, 'L' );
 //!7th page end and 8th page start...........................................................>>>>>
-// $pdf->AddPage( 'P', 'LETTER' );//*8th page
+$pdf->AddPage( 'P', 'LETTER' ); //*8th page.........................>>>
+$pdf->setFillColor( 220, 220, 220 );
+$pdf->setFont( 'times', '', 12 );
+$pdf->setCellPaddings( 1, 0.5, 1, 0.5 );
+//* set cell padding
+$pdf->SetFontSize( 11.6 );
+$html = "<div><b>Part 5. Petitioner's Statement, Contact
+Information, Declaration, and Signature</b></div>";
+$pdf->writeHTMLCell( 92, 2, 13, 18, $html, 1, 1, true, 'L' );
+//*.................
+$pdf->SetFont( 'times', '', 10.2 );
+$html = "<div><b>NOTE:</b> Read the <b>Penalties</b>section of the Form I-918 <br>
+Instructions before completing this part</b>
+ </div>";
+$pdf->writeHTMLCell( 90, 0, 12, 29, $html, '', 0, 0, true, 'L' );
+//*..............
+$pdf->SetFontSize( 11.6 );
+$html = "<div><b><i>Petitioner's Statement</i></b></div>";
+$pdf->writeHTMLCell( 92, 7, 13, 42, $html, '', 1, true, false, 'L', true );
+//*..................
+$pdf->setFont('Times','',10);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setFontSpacing(0.05); // reset font spacing
+$html= '<div><b>1.a.  </b> &nbsp; <input type="checkbox" name="part_5_1a" value="1" checked=" " /></div>';
+$pdf->writeHTMLCell(93, 12, 12, 53, $html, 0, 1, 0, true, 'L', false, false);
+$html = '<div>I can read and understand English, and I have read <br>
+and understand every question and instruction on <br>
+this petition and my answer to every question.</div>';
+$pdf->writeHTMLCell(90, 12, 26, 53, $html, 0, 1, 0, true, 'L', false, false);
+
+//*..................
+$pdf->setFont('Times','',10);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setFontSpacing(0.05); // reset font spacing
+$html= '<div><b>1.b.  </b> &nbsp; <input type="checkbox" name="part_5_1b" value="1" checked=" " /></div>';
+$pdf->writeHTMLCell(93, 5, 12, 70, $html, 0, 1, 0, true, 'L', false, false);
+$html = '<div>The interpreter named in <b>Part 6.</b> read to me every <br>
+question and instruction on this petition and my answer  <br>
+to every question in</div>';
+$pdf->writeHTMLCell(90,5, 26, 70, $html, 0, 1, 0, true, 'L', false, false);
+$pdf->writeHTMLCell(78,5,101.5, 86.6, ',', 0, 1, 0, true, 'L', false, false);//for comma ','
+$pdf->writeHTMLCell(76, 7, 26, 83, '', 1, 0, false, 'L');//  this is the empty  cell
+$html = '<div>a language in which I am fluent, and I understood
+everything.</div>';
+$pdf->writeHTMLCell(76, 5, 26, 88.6, $html, 0, 0, false, 'L');
+
+//*..................
+$pdf->setFont('Times','',10);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setFontSpacing(0.05); // reset font spacing
+$html= '<div><b>2.  </b> &nbsp; <input type="checkbox" name="part_5_2" value="1" checked=" " /></div>';
+$pdf->writeHTMLCell(93, 5, 12,100, $html, 0, 1, 0, true, 'L', false, false);
+$html = '<div>At my request, the preparer named in <b>Part 7.</b>,</div>';
+$pdf->writeHTMLCell(90,5, 26,100, $html, 0, 1, 0, true, 'L', false, false);
+$pdf->writeHTMLCell(78,5,101.5, 107.6, ',', 0, 1, 0, true, 'L', false, false);//for comma ','
+$pdf->writeHTMLCell(76, 7, 26, 104.5, '', 1, 0, false, 'L');//  this is the empty  cell
+$html = '<div>prepared this petition for me based only upon
+information I provided or authorized.</div>';
+$pdf->writeHTMLCell(76, 5, 26, 111, $html, 0, 0, false, 'L');
+
+//*..................
+
+$pdf->SetFontSize( 11.6 );
+$html = "<div><b><i>Petitioner's Contact Information</i></b></div>";
+$pdf->writeHTMLCell( 91.5, 7, 12.5, 125, $html, '', 1, true, false, 'L', true );
+
+//*..................
+//*............ */
+$pdf->SetFont( 'times', '', 9.9 );
+$html = '<div><b>3.</b></div>';
+$pdf->writeHTMLCell( 35, 0, 12, 133, $html, 0, 1, false, false, 'J', true );
+$html = "<div>Petitioner's Daytime Telephone Number</div>";
+$pdf->writeHTMLCell( 90, 3, 20, 133, $html, 0, 1, false, false, 'J', true );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part5_3_Telephone', 83, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 21, 139 );
+//*............ */
+$pdf->SetFont( 'times', '', 9.9 );
+$html = '<div><b>4.</b></div>';
+$pdf->writeHTMLCell( 35, 0, 12, 146.5, $html, 0, 1, false, false, 'J', true );
+$html = "<div>Petitioner's Mobile Telephone Number (if any)</div>";
+$pdf->writeHTMLCell( 90, 3, 20, 146.5, $html, 0, 1, false, false, 'J', true );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part5_4_Mobile', 83, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 21, 153 );
+//*............ */
+$pdf->SetFont( 'times', '', 9.9 );
+$html = '<div><b>5.</b></div>';
+$pdf->writeHTMLCell( 35, 0, 12, 160, $html, 0, 1, false, false, 'J', true );
+$html = "<div>Petitioner's Email Address (if any)</div>";
+$pdf->writeHTMLCell( 90, 3, 20, 160, $html, 0, 1, false, false, 'J', true );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part5_5_Email', 83, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 21, 167 );
+//*..................
+$pdf->SetFont( 'times', '', 9.9 );
+$pdf->SetFontSize( 11.6 );
+$html = "<div><b><i>Petitioner's Declaration and Certification</i></b></div>";
+$pdf->writeHTMLCell( 91.5, 7, 12.5, 178, $html, '', 1, true, false, 'L', true );
+//*.............
+
+$pdf->SetFont( 'times', '', 9.9 );
+$html= '<div>Copies of any documents I have submitted are exact
+photocopies of unaltered, original documents, and I understand
+that USCIS may require that I submit original documents to
+USCIS at a later date. Furthermore, I authorize the release of
+any information from any of my records that USCIS may need
+to determine my eligibility for the immigration benefit I seek.
+<br><br>
+I further authorize release of information contained in this
+petition, in supporting documents, and in my USCIS records to
+other entities and persons where necessary for the
+administration and enforcement of U.S. immigration laws.
+</div>';
+$pdf->writeHTMLCell(95, 10,12.5 , 186, $html, 0, 1, 0, true, 'L', false, false);
+
+//*.............
+
+$pdf->SetFont( 'times', '', 9.9 );
+$html= '<div>I understand that USCIS may require me to appear for an
+appointment to take my biometrics (fingerprints, photograph,
+and/or signature) and, at that time, if I am required to provide
+biometrics, I will be required to sign an oath reaffirming that:
+</div>';
+$pdf->writeHTMLCell(95, 10,112.5 , 17, $html, 0, 1, 0, true, 'L', false, false);
+//*.............
+
+$pdf->SetFont( 'times', '', 9.9 );
+$html= '<div> <b>1)</b>&nbsp;&nbsp; I provided or authorized all of the information<br>
+ contained in, and submitted with, my petition; 
+</div>';
+$pdf->writeHTMLCell(85, 10,120 ,38, $html, 0, 1, 0, true, 'L', false, false);
+//*.............
+
+$pdf->SetFont( 'times', '', 9.9 );
+$html= '<div> <b>2)</b>&nbsp;&nbsp; I reviewed and understood all of the information in,<br>
+ and submitted with, my petition; and
+</div>';
+$pdf->writeHTMLCell(85, 10,120 ,46.5, $html, 0, 1, 0, true, 'L', false, false);
+//*.............
+
+$pdf->SetFont( 'times', '', 9.9 );
+$html= '<div> <b>3)</b>&nbsp;&nbsp; All of this information was complete, true, and<br>
+ correct at the time of filing.
+</div>';
+$pdf->writeHTMLCell(85, 10,120 ,54.5, $html, 0, 1, 0, true, 'L', false, false);
+
+//*.............
+
+$pdf->SetFont( 'times', '', 9.9 );
+$html= '<div>I certify, under penalty of perjury, that all of the information in
+my petition and any document submitted with it were provided
+or authorized by me, that I reviewed and understand all of the
+information contained in, and submitted with, my petition, and
+that all of this information is complete, true, and correct.
+</div>';
+$pdf->writeHTMLCell(95, 10,112.5 , 66, $html, 0, 1, 0, true, 'L', false, false);
+
+//*..................
+
+$pdf->SetFontSize( 11.6 );
+$html = "<div><b><i>Petitioner's Signature</i></b></div>";
+$pdf->writeHTMLCell( 91.5, 7, 112.5, 92, $html, '', 1, true, false, 'L', true );
+
+//*......
+$pdf->setFont('Times', '', 10);
+$html= "<div><b>6.a. </b> &nbsp; Petitioner's Signature</div>";
+$pdf->writeHTMLCell(92, 7, 112.5, 101, $html, 0, 1, false, 'L');
+//*.......
+$pdf->writeHTMLCell(82, 7, 122.5,106 , '', 1, 0, false, 'L');
+//.........
+$pdf->SetFont('zapfdingbats', '', 22);  // symbol font
+$pdf->writeHTMLCell(82, 7, 112.5, 105, TCPDF_FONTS::unichr(225), 0, 0, false, 'L');
+//*........
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>6.b. </b>&nbsp;  Date of Signature (mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell(92, 7, 112.5, 116, $html, 0, 1, false, 'L');
+$pdf->setFont('courier', 'B', 10);
+$pdf->TextField('part5_6b_signature', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 174, 116);
+//*.........
+
+
+$pdf->SetFont( 'times', '', 9.9 );
+$html= '<div><b>NOTE TO ALL PETITIONERS:</b> If you do not completely
+fill out this petition or fail to submit required documents listed
+in the Instructions, USCIS may deny your petition.
+<br><br>
+<b>NOTE:</b> A parent or legal guardian may sign for a person who
+is less than 14 years of age. A legal guardian may sign for a
+mentally incompetent person.
+</div>';
+$pdf->writeHTMLCell(95, 10,112.5 , 125, $html, 0, 1, 0, true, 'L', false, false);
+//*.............
+
+$pdf->setFillColor( 220, 220, 220 );
+$pdf->setFont( 'times', '', 12 );
+$pdf->setCellPaddings( 1, 0.5, 1, 0.5 );
+//* set cell padding
+$pdf->SetFontSize( 11.6 );
+$html = "<div><b>Part 6. Interpreter's Contact Information,
+Certification, and Signature</b></div>";
+$pdf->writeHTMLCell( 92, 2, 112.5, 162, $html, 1, 1, true, 'L' );
+
+//*.........
+
+
+$pdf->SetFont( 'times', '', 9.9 );
+$html= '<div>Provide the following information about the interpreter.
+</div>';
+$pdf->writeHTMLCell(95, 10,112.5 , 175, $html, 0, 1, 0, true, 'L', false, false);
+//*..................
+
+$pdf->SetFontSize( 11.6 );
+$html = "<div><b><i>Interpreter's Full Name</i></b></div>";
+$pdf->writeHTMLCell( 91.5, 7, 112.5, 182, $html, '', 1, true, false, 'L', true );
+
+//*............ */
+$pdf->SetFont( 'times', '', 9.9 );
+$html = '<div><b>1.a.</b></div>';
+$pdf->writeHTMLCell( 35, 0, 112.5, 192, $html, 0, 1, false, false, 'J', true );
+$html = "<div>Interpreter's Family Name (Last Name)</div>";
+$pdf->writeHTMLCell( 90, 3, 120.5, 192, $html, 0, 1, false, false, 'J', true );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part6_1a_LastName', 83, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 121, 198 );
+//*............ */
+$pdf->SetFont( 'times', '', 9.9 );
+$html = '<div><b>1.b.</b></div>';
+$pdf->writeHTMLCell( 35, 0, 112.5, 205, $html, 0, 1, false, false, 'J', true );
+$html = "<div>Interpreter's Given Name (First Name)</div>";
+$pdf->writeHTMLCell( 90, 3, 120.5, 205, $html, 0, 1, false, false, 'J', true );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part6_1b_FirstName', 83, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 121, 211 );
+//*............ */
+$pdf->SetFont( 'times', '', 9.9 );
+$html = '<div><b>2.</b></div>';
+$pdf->writeHTMLCell( 35, 0, 112.5, 218, $html, 0, 1, false, false, 'J', true );
+$html = "<div>Interpreter's Business or Organization Name (if any)</div>";
+$pdf->writeHTMLCell( 90, 3, 120.5, 218, $html, 0, 1, false, false, 'J', true );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part6_2_BusinessName', 83, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 121, 224 );
+//*............ */
+
+
+
+
+
+
+
+
+
+
+
 // $pdf->AddPage( 'P', 'LETTER' );//*9th page
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3481,11 +3745,24 @@ var fields = {
 'part4_26_y_currently_active':' ',
 'part4_26_n_currently_active':' ',
 
-//*page 9
+
+//*page 8
+'part_5_1a':' ',
+'part_5_1b':' ',
+'part_5_2':' ',
+'part5_3_Telephone':' ',
+'part5_4_Mobile':' ',
+'part5_5_Email':' ',
+'part5_6b_signature':' ',
+'part6_1a_LastName':' ',
+'part6_1b_FirstName':' ',
+'part6_2_BusinessName':' ',
+
+//*page 10
 'part7_8b_signature':' ',
 
 
-//*page 10
+//*page 11
 
 'additional_information_3a':' ',
 'additional_information_3b':' ',
