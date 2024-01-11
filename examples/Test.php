@@ -819,9 +819,9 @@ $pdf->TextField( 'part1_15_Travel_Document_Number', 46, 7, array( 'strokeColor' 
 
 $pdf->SetFont( 'times', '', 9.7 );
 $html = '<div><b>16.   </b>Country of Issuance for Passport or Travel Document</div>';
-$pdf->writeHTMLCell( 100, 0, 12, 246.5, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 100, 0, 12, 247.7, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'courier', 'B', 10 );
-$pdf->TextField( 'part1_16_Country_of_Issuance', 84, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 19, 106 );
+$pdf->TextField( 'part1_16_Country_of_Issuance', 84, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 19, 252.4 );
 // //*..............
 // $pdf->SetFont( 'times', '', 9.7 );
 // //* set font
