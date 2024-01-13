@@ -474,7 +474,7 @@ $html = '<div><b>Residence or Intended Residence in the United
 States</b></div>';
 $pdf->writeHTMLCell( 91, 5, 112.5, 210, $html, 0, 1, true, false, 'J', true );
 $pdf->SetFont( 'times', 'IB', 9 );
-$html = '<div><a href="https://*tools.usps.com/go/ZipLookupAction_input"><I>(Uses ZIP Code Lookup)</I></a></div>';
+$html = '<div><a href="https://tools.usps.com/go/ZipLookupAction_input"><I>(Uses ZIP Code Lookup)</I></a></div>';
 $pdf->writeHTMLCell( 90, 1, 112.5, 216, $html, 0, 1, true, false, 'R', true );
 // //*.....
 $pdf->SetFont( 'times', '', 9.7 );
