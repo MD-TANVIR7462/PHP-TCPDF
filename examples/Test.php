@@ -1587,42 +1587,6 @@ $pdf->SetFont( 'courier', 'B', 10 );
 $pdf->TextField( 'part5_3f', 84, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119, 214 );
 
 $pdf->writeHTMLCell( 91, 5, 112.4, 120, '', 'B', 1, false, true, 'L', true );
-// //*............................
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //*!.......... << 4th page done >>...............
 
@@ -1637,7 +1601,7 @@ $pdf->SetFont( 'times', '', 12 );
 $pdf->SetFillColor( 220, 220, 220 );
 $pdf->setCellPaddings( 1, 1, 0, 1 );
 
-$html = '<div><b>Part 3. Processing Information </b> (continued) </div>';
+$html = '<div><b>Part 5. Processing Information </b> (continued) </div>';
 $pdf->writeHTMLCell( 90, 7, 13, 19, $html, 1, 1, true, false, 'L', true );
 //*.........
 
