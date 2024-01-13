@@ -266,13 +266,9 @@ $pdf->writeHTMLCell( 194, 5, 12, 107.7, $html, '', 0, 0, true, 'L' );
 //*...........
 $pdf->SetFillColor( 220, 220, 220 );
 $pdf->SetFont( 'times', '', 10 );
-//* set font
 $pdf->setCellHeightRatio( 1.3 );
-$pdf->setCellPaddings( 1, 0.5, 1, 0.5 );
-//* set cell padding
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
 $pdf->SetFontSize( 11.6 );
-//* set font
-
 $html = "<div><b>Part 1. Family Member's Relationship To You</b> (Principal)</div>";
 $pdf->writeHTMLCell( 90, 5, 13, 119, $html, 1, 1, true, false, 'J', true );
 
@@ -542,7 +538,7 @@ $pdf->AddPage( 'P', 'LETTER' );//?page 2........................................
 $pdf->SetFillColor( 220, 220, 220 );
 $pdf->SetFont( 'times', '', 10 );
 $pdf->setCellHeightRatio( 1.3 );
-$pdf->setCellPaddings( 1, 0.5, 1, 0.5 );
+$pdf->setCellPaddings( 0.5, 0.5, 1, 0.5 );
 $pdf->SetFontSize( 11.6 );
 $html = '<div><b>Part 3. Information About Your Qualifying
 Family Member (The Derivative)</b> &nbsp; (continued)</div>';
@@ -823,24 +819,211 @@ $pdf->writeHTMLCell( 100, 0, 12, 247.7, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'courier', 'B', 10 );
 $pdf->TextField( 'part1_16_Country_of_Issuance', 84, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 19, 252.4 );
 // //*..............
-// $pdf->SetFont( 'times', '', 9.7 );
+
+$pdf->SetFont( 'times', '', 9.7 );
+$html = '<div><b>17.   </b>Date of Issuance for Passport or Travel Document </div>';
+$pdf->writeHTMLCell( 90, 0, 112, 18.5, $html, '', 0, 0, true, 'L' );
+$html = '<div>(mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell( 90, 0, 118, 22.5, $html, '', 0, 0, true, 'L' );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part1_17_Date_of_Issuance', 38, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 165, 23 );
+//*..............
+$pdf->SetFont( 'times', '', 9.7 );
 // //* set font
-// $html = '<div><b>17.   </b>Date of Issuance for Passport or Travel Document </div>';
-// $pdf->writeHTMLCell( 90, 0, 12, 113.5, $html, '', 0, 0, true, 'L' );
-// $html = '<div>(mm/dd/yyyy)</div>';
-// $pdf->writeHTMLCell( 90, 0, 18, 118.2, $html, '', 0, 0, true, 'L' );
-// $pdf->SetFont( 'courier', 'B', 10 );
-// $pdf->TextField( 'part1_17_Date_of_Issuance', 38, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 65, 120 );
-// //*..............
-// $pdf->SetFont( 'times', '', 9.7 );
-// //* set font
-// $html = '<div><b>18.   </b>Expiration Date for Passport or Travel Document</div>';
-// $pdf->writeHTMLCell( 90, 0, 12, 126.5, $html, '', 0, 0, true, 'L' );
-// $html = '<div>(mm/dd/yyyy)</div>';
-// $pdf->writeHTMLCell( 90, 0, 18, 130.7, $html, '', 0, 0, true, 'L' );
-// $pdf->SetFont( 'courier', 'B', 10 );
-// $pdf->TextField( 'part1_18_Expiration_Date', 38, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 65, 132 );
-// //*..............
+$html = '<div><b>18.   </b>Expiration Date for Passport or Travel Document</div>';
+$pdf->writeHTMLCell( 90, 0, 112, 29, $html, '', 0, 0, true, 'L' );
+$html = '<div>(mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell( 90, 0, 118, 33, $html, '', 0, 0, true, 'L' );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part1_18_Expiration_Date', 38, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 165, 34 );
+// //*..............1
+
+
+
+
+
+
+
+
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0.5, 1);
+$pdf->SetFontSize( 11.6 );
+$html = '<div><b>Part 4. Additional Information About Your Qualifying Family Member</b></div>';
+$pdf->writeHTMLCell( 90, 5, 113, 43, $html, 1, 1, true, false, 'J', true );
+//*..................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = '<div><b>Provide the date of last entry, place of last entry, and current
+immigration status for your family member if he or she is
+currently in the United States</b></div>';
+$pdf->writeHTMLCell( 90, 5, 112, 56, $html, 0, 0, false, false, 'L', true );
+// //*......
+
+//*..............
+$pdf->SetFont( 'times', '', 9.7 );
+//* set font
+$html = '<div><b>1.a.   </b>Date of Last Entry into the United States (mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell( 90, 0, 112,72, $html, '', 0, 0, true, 'L' );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part1_20_Date_of_LastEntry', 38, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 165, 77 );
+//*.................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = '<div>Place of Last Entry into the United States</div>';
+$pdf->writeHTMLCell( 90, 5, 112, 84, $html, 0, 0, false, false, 'L', true );
+
+
+$pdf->SetFont( 'times', '', 9.7 );
+//* set font
+$html = '<div><b>1.b.</b> &nbsp; City or Town </div>';
+$pdf->writeHTMLCell( 50, 5, 112, 91, $html, '', 0, 0, true, 'L' );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part1_19a_city_or_town', 60.5, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 143, 90 );
+//*............
+
+$pdf->SetFont( 'times', '', 10 );
+//* set font
+$html = '<b>1.c.</b> &nbsp;&nbsp;State';
+$pdf->writeHTMLCell( 60, 0, 112, 98, $html, '', 0, 0, true, 'L' );
+
+$pdf->SetFont( 'courier', 'B', 10 );
+//* set font
+
+$html = '<select name="part1_19b_state" size="0.25">';
+
+$html .= '<option > As</option>';
+//*Dummy Option Value
+$html .= '<option > Ts</option>';
+//*Dummy Option Value
+$html .= '<option > Ts</option>';
+//*Dummy Option Value
+$html .= '<option > Ts</option>';
+//*Dummy Option Value
+$html .= '<option > Ts</option>';
+//*Dummy Option Value
+$html .= '<option > Ts</option>';
+//*Dummy Option Value
+
+$html .= '</select>';
+$pdf->writeHTMLCell( 25, 5, 130, 98, $html, '', 0, 0, true, 'L' );
+// //*..........
+
+$pdf->SetFont( 'times', '', 9.7 );
+$html = '<div><b>1.d.   </b>Current Immigration Status</div>';
+$pdf->writeHTMLCell( 90, 0, 112, 106, $html, '', 0, 0, true, 'L' );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part1_21_Current', 84, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119, 112 );
+
+//*/......................................
+
+
+//*..................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>Provide the date of entry, place of entry, and status at entry
+for your family member's last entry if he or she has
+previously traveled to the United States but is not currently
+in the United States.</b></div>";
+$pdf->writeHTMLCell( 90, 5, 112, 121, $html, 0, 0, false, false, 'L', true );
+// //*......
+
+//*..............
+$pdf->SetFont( 'times', '', 9.7 );
+//* set font
+$html = '<div><b>2.a.   </b>Date of Last Entry into the United States (mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell( 90, 0, 112,140, $html, '', 0, 0, true, 'L' );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part1_20_Date_of_LastEntry', 38, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 165, 145 );
+// //*.................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = '<div>Place of Last Entry into the United States</div>';
+$pdf->writeHTMLCell( 90, 5, 112, 153, $html, 0, 0, false, false, 'L', true );
+
+
+$pdf->SetFont( 'times', '', 9.7 );
+$html = '<div><b>2.b.</b> &nbsp; City or Town </div>';
+$pdf->writeHTMLCell( 50, 5, 112, 160, $html, '', 0, 0, true, 'L' );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part1_19a_city_or_town', 60.5, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 143, 160 );
+//*............
+
+$pdf->SetFont( 'times', '', 10 );
+//* set font
+$html = '<b>2.c.</b> &nbsp;&nbsp;State';
+$pdf->writeHTMLCell( 60, 0, 112, 168, $html, '', 0, 0, true, 'L' );
+
+$pdf->SetFont( 'courier', 'B', 10 );
+//* set font
+
+$html = '<select name="part1_19b_state" size="0.25">';
+
+$html .= '<option > As</option>';
+//*Dummy Option Value
+$html .= '<option > Ts</option>';
+//*Dummy Option Value
+$html .= '<option > Ts</option>';
+//*Dummy Option Value
+$html .= '<option > Ts</option>';
+//*Dummy Option Value
+$html .= '<option > Ts</option>';
+//*Dummy Option Value
+$html .= '<option > Ts</option>';
+//*Dummy Option Value
+
+$html .= '</select>';
+$pdf->writeHTMLCell( 25, 5, 130, 168, $html, '', 0, 0, true, 'L' );
+// //*.......................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = '<div><b>2.a.   </b>Date Authorized Stay Expired (mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell( 90, 0, 112,176, $html, '', 0, 0, true, 'L' );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part1_20_Date_of_LastEntry', 38, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 165, 182 );
+//..................
+
+$pdf->SetFont( 'times', '', 9.7 );
+$html = '<div><b>2.d.   </b>Status at the Time of Entry (for example, F-1 student,
+B-2 tourist, entered without inspection)</div>';
+$pdf->writeHTMLCell( 90, 0, 112, 189, $html, '', 0, 0, true, 'L' );
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part1_21_Current', 84, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119, 199 );
+
+
+//! 2nd page done.................<END>..................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1834,7 +2017,7 @@ $pdf->setCellPaddings( 1, 0.5, 1, 0.5 );
 //* set cell padding
 $pdf->SetFontSize( 11.6 );
 //* set font
-$html = '<div><b>Part 3. Processing Information</b></div>';
+$html = '<div><b>Part3.Processing Information</b></div>';
 $pdf->writeHTMLCell( 90, 7, 114, 95, $html, 1, 1, true, false, 'L', true );
 //*.............
 $pdf->SetFont( 'times', '', 9.7 );
