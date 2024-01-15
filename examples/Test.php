@@ -2209,29 +2209,29 @@ $pdf->writeHTMLCell( 60, 0, 173, 206, $html, '', 0, 0, true, 'L' );
 //*........................
 
 $pdf->SetFont( 'times', '', 9.7 );
-$html = "<div><b>15.c.   &nbsp; </b></div>";
+$html = "<div><b>16.   &nbsp; </b></div>";
 $pdf->writeHTMLCell( 90, 0, 112, 212, $html, '', 0, 0, true, 'L' );
 $html = "<div>Is your family member <b>NOW</b> in removal, exclusion,<br>
 rescission, or deportation proceedings?
 </div>";
 $pdf->writeHTMLCell( 90, 0, 121, 212, $html, '', 0, 0, true, 'L' );
-$html = '<div><input type="checkbox" name="part5_15c_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
-              <input type="checkbox" name="part5_15c_n_currently_active" value="N" checked=" " />   No 
+$html = '<div><input type="checkbox" name="part5_16_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_16_n_currently_active" value="N" checked=" " />   No 
 </div>';
 $pdf->writeHTMLCell( 60, 0, 173, 220, $html, '', 0, 0, true, 'L' );
 
 //*........................
 
 $pdf->SetFont( 'times', '', 9.7 );
-$html = "<div><b>15.d.   &nbsp; </b></div>";
+$html = "<div><b>17.   &nbsp; </b></div>";
 $pdf->writeHTMLCell( 90, 0, 112, 226, $html, '', 0, 0, true, 'L' );
 $html = "<div>Has your family member<b> EVER</b> had removal, exclusion,<br>
 rescission, or deportation proceedings initiated against<br>
 him or her?
 </div>";
 $pdf->writeHTMLCell( 90, 0, 121, 226, $html, '', 0, 0, true, 'L' );
-$html = '<div><input type="checkbox" name="part5_15d_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
-              <input type="checkbox" name="part5_15d_n_currently_active" value="N" checked=" " />   No 
+$html = '<div><input type="checkbox" name="part5_17_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_17_n_currently_active" value="N" checked=" " />   No 
 </div>';
 $pdf->writeHTMLCell( 60, 0, 173, 240, $html, '', 0, 0, true, 'L' );
 
@@ -2239,6 +2239,192 @@ $pdf->writeHTMLCell( 60, 0, 173, 240, $html, '', 0, 0, true, 'L' );
 //! 6th page done.......................>>>>
 
 
+$pdf->AddPage( 'P', 'LETTER' );//!7th page start..............
+$pdf->SetFont( 'times', '', 12 );
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->setCellPaddings( 1, 1, 0, 1 );
+$html = '<div><b>Part 5. Processing Information </b> (continued) </div>';
+$pdf->writeHTMLCell( 90, 7, 13, 19, $html, 1, 1, true, false, 'L', true );
+
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>18.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 26, $html, '', 0, 0, true, 'L' );
+$html = "<div>Has your family member<b> EVER</b> been removed, excluded, <br>
+or deported from the United States?
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 26, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 31, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>19.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 37, $html, '', 0, 0, true, 'L' );
+$html = "<div>Has your family member<b> EVER</b> been ordered to be <br>
+removed, excluded, or deported from the United States?
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 37, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 45, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>20.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 49.5, $html, '', 0, 0, true, 'L' );
+$html = "<div>Has your family member<b> EVER</b>been denied a visa or  <br>
+denied admission to the United States?
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 49.5, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 57, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>21.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 62, $html, '', 0, 0, true, 'L' );
+$html = "<div>Has your family member<b> EVER</b>been granted voluntary<br>
+departure by an immigration officer or an immigration<br>
+judge and failed to depart within the allotted time?
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 62, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 75, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>22.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 81, $html, '', 0, 0, true, 'L' );
+$html = "<div>Is your family member<b> NOW</b> under a final order or civil<br>
+penalty for violating section 274C of the INA (producing<br>
+and/or using false documentation to unlawfully satisfy a<br>
+requirement of the INA)?
+
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 81, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 95, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>23.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 101.5, $html, '', 0, 0, true, 'L' );
+$html = "<div>Has your family member<b> EVER</b>, by fraud or willful<br>
+misrepresentation of a material fact, sought to procure or<br>
+procured a visa or other documentation, for entry into the<br>
+United States or any immigration benefit?
+
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 101.5, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 119, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>24.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 125, $html, '', 0, 0, true, 'L' );
+$html = "<div>Has your family member <b>EVER </b>left the United States to<br>
+avoid being drafted into the U.S. Armed Forces or U.S.<br>
+Coast Guard?
+
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 125, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 135, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>25.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 141, $html, '', 0, 0, true, 'L' );
+$html = "<div>Has your family member <b>EVER</b> been a J nonimmigrant<br>
+exchange visitor who was subject to the 2-year foreign<br>
+residence requirement and not yet complied with that<br>
+requirement or obtained a waiver of such?
+
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 141, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 160, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>26.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 166, $html, '', 0, 0, true, 'L' );
+$html = "<div>Has your family member <b>EVER</b> detained, retained, or<br>
+withheld the custody of a child, having a lawful claim to<br>
+United States citizenship, outside the United States from a<br>
+United States citizen granted custody?
+
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 166, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 184, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>27.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 188, $html, '', 0, 0, true, 'L' );
+$html = "<div>Does your family member plan to practice polygamy in
+the United States?
+
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 188, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 193, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>28.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 198.5, $html, '', 0, 0, true, 'L' );
+$html = "<div>Has your family member <b>EVER </b>entered the United States<br>
+as a stowaway?
+
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 198.5, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 205, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>29.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 210, $html, '', 0, 0, true, 'L' );
+$html = "<div>Does your family member <b>NOW</b> have a communicable<br>
+disease of public health significance?
+
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 210, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 216, $html, '', 0, 0, true, 'L' );
+//*.....................
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>29.   &nbsp; </b></div>";
+$pdf->writeHTMLCell( 90, 0, 12, 223, $html, '', 0, 0, true, 'L' );
+$html = "<div>Does your family member <b>NOW </b>have or has your family<br>
+member <b>EVER</b> had a physical or mental disorder and<br>
+behavior (or a history of behavior that is likely to recur)<br>
+associated with the disorder which has posed or may pose<br>
+a threat to the property, safety, or welfare of yourself or<br>
+others? 
+
+</div>";
+$pdf->writeHTMLCell( 90, 0, 21, 223, $html, '', 0, 0, true, 'L' );
+$html = '<div><input type="checkbox" name="part5_18_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp; 
+              <input type="checkbox" name="part5_18_n_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 73, 247, $html, '', 0, 0, true, 'L' );
 
 
 
@@ -2256,7 +2442,27 @@ $pdf->writeHTMLCell( 60, 0, 173, 240, $html, '', 0, 0, true, 'L' );
 
 
 
-$pdf->AddPage( 'P', 'LETTER' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //! 8th page start...........................................................>>>>>
 $pdf->AddPage( 'P', 'LETTER' );
@@ -3123,10 +3329,10 @@ var fields = {
 'part5_15a_n_currently_active': ' ',
 'part5_15b_y_currently_active': ' ',
 'part5_15b_n_currently_active': ' ',
-'part5_15c_y_currently_active': ' ',
-'part5_15c_n_currently_active': ' ',
-'part5_15d_y_currently_active': ' ',
-'part5_15d_n_currently_active': ' ',
+'part5_16_y_currently_active': ' ',
+'part5_16_n_currently_active': ' ',
+'part5_17_y_currently_active': ' ',
+'part5_17_n_currently_active': ' ',
 
 
 
