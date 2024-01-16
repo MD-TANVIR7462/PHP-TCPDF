@@ -1898,7 +1898,7 @@ $pdf->writeHTMLCell( 90, 7, 13, 19, $html, 1, 1, true, false, 'L', true );
 $html = '<div><b>9.</b></div>';
 $pdf->writeHTMLCell( 90, 0, 12, 27, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'times', '', 9.7 );
-$html = '<div>Has your family member <b>EVER:</b>during the period of
+$html = '<div>Has your family member <b>EVER,</b> during the period of
 March 23, 1933 to May 8, 1945, in association with either
 the Nazi Government of Germany or any organization or
 government associated or allied with the Nazi Government
@@ -2274,7 +2274,7 @@ $pdf->writeHTMLCell( 60, 0, 73, 45, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'times', '', 9.7 );
 $html = "<div><b>20.   &nbsp; </b></div>";
 $pdf->writeHTMLCell( 90, 0, 12, 49.5, $html, '', 0, 0, true, 'L' );
-$html = "<div>Has your family member<b> EVER</b>been denied a visa or  <br>
+$html = "<div>Has your family member<b> EVER</b> been denied a visa or  <br>
 denied admission to the United States?
 </div>";
 $pdf->writeHTMLCell( 90, 0, 21, 49.5, $html, '', 0, 0, true, 'L' );
@@ -2286,7 +2286,7 @@ $pdf->writeHTMLCell( 60, 0, 73, 57, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'times', '', 9.7 );
 $html = "<div><b>21.   &nbsp; </b></div>";
 $pdf->writeHTMLCell( 90, 0, 12, 62, $html, '', 0, 0, true, 'L' );
-$html = "<div>Has your family member<b> EVER</b>been granted voluntary<br>
+$html = "<div>Has your family member<b> EVER</b> been granted voluntary<br>
 departure by an immigration officer or an immigration<br>
 judge and failed to depart within the allotted time?
 </div>";
@@ -2969,25 +2969,6 @@ $pdf->writeHTMLCell(95, 7, 12, 192, $html, '', 0, 0, true, 'L');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //?right column................
 $pdf->SetFont('times', 'I', 12);
 $html ="<div><b>Qualifying Family Member's Signature</b></div>";
@@ -3150,51 +3131,6 @@ $html = "<div><b>6. </b>  Interpreter's Email Address (if any)</div>";
 $pdf->writeHTMLCell(90, 0, 112, 246, $html, '', 0, 0, true, 'L'); 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part9_6', 86, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 118, 253);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 $pdf->AddPage('P', 'LETTER'); //!page number 10.......................
@@ -3431,31 +3367,6 @@ $pdf->writeHTMLCell(83, 7, 124, 192, $html, 0, 0, false, 'L');
 
 
 //........page number 10 end ----------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //!11th page...............................................................*/
