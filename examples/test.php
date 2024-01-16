@@ -168,18 +168,21 @@ $html = '<div> For USCIS Use Only</div>';
 $pdf->writeHTMLCell( 14, 30, 13, 41, $html, 0, 1, false, true, 'C', true );
 $pdf->SetFont( 'times', '', 8 );
 $pdf->writeHTMLCell( 175.8, 7, 27.2,10, '',  "B",  0, false, false, '', true );
-
-$pdf->SetFont( 'times', '', 9.9 );
+$pdf->SetFont( 'times', '', 10 );
 $html = '<div><b>Application Receipted At </b>(Select <b>only one</b> box)</div>';
 $pdf->writeHTMLCell( 175, 5, 28, 35, $html, 0, 1, false, true, 'C', true );
-
-//*............
 $pdf->SetFont( 'times', '', 8 );
-//* ! CheckBOx $pdf->writeHTMLCell( 3, 1, 30, 52, '',  1,  1, false, true, 'L', false );
-//*! Underline $pdf->writeHTMLCell( 31, 5, 35, 58, '', 'B', 1, false, true, 'L', true );
-//*........
 $pdf->writeHTMLCell( 1.5, 24,113.5, 42, '', 'R', 1, false, true, 'L', true );
-// $pdf->writeHTMLCell( 112.5, 10, 28.5, 63, '', 'T', 1, false, true, 'L', true );
+$pdf->setCellHeightRatio( 0 );
+$pdf->writeHTMLCell(3, 3, 52.5, 43.3, "", 1, 0, false, 'L');//!Custom sell
+$pdf->setCellHeightRatio( 1.2 );
+$pdf->SetFont( 'times', 'B', 10 );
+$pdf->writeHTMLCell( 88, 10, 27, 42, 'USCIS Field Office ', '', 1, false, true, 'C', true );
+//*....................
+$pdf->writeHTMLCell(3, 3, 52.5, 43.3, "", 1, 0, false, 'L');//!Custom sell
+$pdf->setCellHeightRatio( 1.2 );
+$pdf->SetFont( 'times', 'B', 10 );
+$pdf->writeHTMLCell( 88, 10, 27, 42, 'Fee Waiver Approved ', '', 1, false, true, 'C', true );
 // $pdf->writeHTMLCell( 1, 47, 140, 35, '', 'R', 1, false, true, 'L', true );
 // $pdf->SetFont( 'times', 'B', 9 );
 // $pdf->writeHTMLCell( 20, 5, 100, 35, 'Receipt', 0, 1, false, true, 'L', true );
