@@ -4038,8 +4038,6 @@ var fields = {
 'preparer_contact_email': ' ',
 'part10_7a': ' ',
 'part10_7b': ' ',
-'part10_7c': ' ',
-'part10_7d': ' ',
 'Apt10': ' ',
 'Ste10': ' ',
 'Flr10': ' ',
