@@ -179,72 +179,291 @@ $pdf->setCellHeightRatio( 1.2 );
 $pdf->SetFont( 'times', 'B', 10 );
 $pdf->writeHTMLCell( 88, 10, 27, 42, 'USCIS Field Office ', '', 1, false, true, 'C', true );
 //*....................
-$pdf->writeHTMLCell(3, 3, 52.5, 43.3, "", 1, 0, false, 'L');//!Custom sell
+$pdf->setCellHeightRatio( 0 );
+$pdf->writeHTMLCell(3, 3, 29.5, 49.3, "", 1, 0, false, 'L');//!Custom sell
+$pdf->SetFont( 'times', '', 10 );
+$pdf->writeHTMLCell(  40, 10,33, 50, 'Fee Waiver Approved ', '', 1, false, true, 'L', true );
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$pdf->writeHTMLCell(  40, 10,33, 59, 'Date:   _____________ ', '', 1, false, true, 'L', true );
+//*....................
+$pdf->setCellHeightRatio( 0 );
+$pdf->writeHTMLCell(3, 3, 72.5, 49.3, "", 1, 0, false, 'L');//!Custom sell
+$pdf->SetFont( 'times', '', 10 );
+$pdf->writeHTMLCell(  40, 10,77, 50, 'Fee Waiver Approved ', '', 1, false, true, 'L', true );
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$pdf->writeHTMLCell(  40, 10,77, 59, 'Date:   _____________ ', '', 1, false, true, 'L', true );
+//?....................>>
+$pdf->writeHTMLCell(3, 3, 140.5, 43.3, "", 1, 0, false, 'L');//!Custom sell
 $pdf->setCellHeightRatio( 1.2 );
 $pdf->SetFont( 'times', 'B', 10 );
-$pdf->writeHTMLCell( 88, 10, 27, 42, 'Fee Waiver Approved ', '', 1, false, true, 'C', true );
-// $pdf->writeHTMLCell( 1, 47, 140, 35, '', 'R', 1, false, true, 'L', true );
-// $pdf->SetFont( 'times', 'B', 9 );
-// $pdf->writeHTMLCell( 20, 5, 100, 35, 'Receipt', 0, 1, false, true, 'L', true );
-// $pdf->writeHTMLCell( 20, 5, 163, 35, 'Action Block', 0, 1, false, true, 'L', true );
-// $pdf->writeHTMLCell( 21, 19, 26, 66, ' U.S. &nbsp; <br> Embassy &nbsp; <br>Consulate', '', 1, false, true, 'C', true );
-// $pdf->SetFont( 'times', '', 9 );
-// $pdf->writeHTMLCell( 43, 5, 46, 62.5, '<b> Validity Dates </b> (mm/dd/yyyy)', 'B', 1, false, true, 'L', true );
-// $html = '<div><b> From : </b>  &nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp; / &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  /     </div>';
-// $pdf->writeHTMLCell( 28, 1, 58, 68, '', 'B', 1, false, true, 'L', true );
-// $pdf->writeHTMLCell( 43, 6, 46, 69, $html, 'B', 1, false, true, 'L', true );
-// $html = '<div><b> To : </b>  &nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp; / &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  /     </div>';
-// $pdf->writeHTMLCell( 30, 1, 54, 74.5, '', 'B', 1, false, true, 'L', true );
-// $pdf->writeHTMLCell( 43, 5, 46, 75.5, $html, '', 1, false, true, 'L', true );
+$pdf->writeHTMLCell( 88, 10, 117, 42, 'USCIS Service Center ', '', 1, false, true, 'C', true );
+// //*....................
+$pdf->setCellHeightRatio( 0 );
+$pdf->writeHTMLCell(3, 3, 117.5, 49.3, "", 1, 0, false, 'L');//!Custom sell
+$pdf->SetFont( 'times', '', 10 );
+$pdf->writeHTMLCell(  40, 10,121, 50, 'Fee Waiver Approved ', '', 1, false, true, 'L', true );
+// //*....................
+$pdf->SetFont( 'times', '', 10 );
+$pdf->writeHTMLCell(  40, 10,121, 59, 'Date:   _____________ ', '', 1, false, true, 'L', true );
+// //*....................
+$pdf->setCellHeightRatio( 0 );
+$pdf->writeHTMLCell(3, 3, 162.5, 49.3, "", 1, 0, false, 'L');//!Custom sell
+$pdf->SetFont( 'times', '', 10 );
+$pdf->writeHTMLCell(  40, 10,167, 50, 'Fee Waiver Approved ', '', 1, false, true, 'L', true );
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$pdf->writeHTMLCell(  40, 10,167, 59, 'Date:   _____________ ', '', 1, false, true, 'L', true );
+//!First page 1st Table Done/*....................
+$pdf->SetFont( 'times', 'B', 10 );
+$pdf->MultiCell( 100, 6, 'START HERE - Type or print in black ink.', '', 'L', 0, 1, 19.5, 70, true );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->StartTransform();
+$pdf->SetFillColor( 0, 0, 0 );
+$pdf->Rotate( -30 );
+$pdf->SetFont( 'zapfdingbats', 'B', 10 );
+$pdf->MultiCell( 10, 10, 't', '', 'L', 0, 1, 11, 66.7, false );
+$pdf->StopTransform();
+//*..........................-
+$pdf->SetFont( 'times', '', 11 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->setCellHeightRatio( 1.3 );
+$html = '<div><b>If you need extra space to complete any section of this request or if you would like to provide additional<br>
+information about your circumstances, use the space provided in Part 11. Additional Information.<br>
+Complete and submit as many copies of Part 11., as necessary, with your request. </b></div>';
+$pdf->writeHTMLCell ( 190, 18, 13, 75,$html, 1, 1, false, false, 'C', true );
+//*.........................
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Part 1. Basis for Your Request</b> (Each basis is further explained in the <b>Specific Instructions</b> section of the
+Form I-912 Instructions)</div>";
+$pdf->writeHTMLCell(  190, 12, 13, 97, $html, 1, 1, true, false, 'L', true );
+//*......................
+$pdf->SetFontSize( 10 );
 
-// $pdf->writeHTMLCell( 43, 19, 46, 63, '', 'LR', 1, false, true, 'L', true );
-// $pdf->writeHTMLCell( 47, 5, 88.5, 62.5, '<b> Wait Listed', '', 1, false, true, 'L', true );
-// $pdf->SetFont( 'times', '', 8 );
-// $pdf->writeHTMLCell( 23, 3, 89, 77, 'Stamp Number', 'T', 1, false, true, 'L', true );
-// $pdf->writeHTMLCell( 25.5, 3, 115.5, 77, 'Date (mm/dd/yyyy)', 'T', 1, false, true, 'L', true );
-//*?..Table End......
+$html = "<div>Select at least one basis or more for which you may qualify and provide supporting documentation for any basis you select. You only<br>
+need to qualify and provide documentation for one basis for U.S. Citizenship and Immigration Services (USCIS) to grant your fee<br>
+waiver. If you choose, you may select more than one basis; you must provide supporting documentation for each basis you want<br>
+considered.</div>";
+$pdf->writeHTMLCell(  190, 10, 12, 109.4, $html, "", "", false, true, 'L', true );
+//*....................
 
-// //*?second Table Start ....
+$pdf->SetFont( 'times', '', 10 );
+$html = '<div><b>1.</b> </div>';
+$pdf->writeHTMLCell( 10, 5, 12, 130, $html, 0, 1, false, false, 'J', true );
+$html = '<div><input type="checkbox" name="part-1_1" value="part-1_1" checked="" /> </div>';
+$pdf->writeHTMLCell( 10, 5, 17.5, 130.5, $html, 0, 1, false, false, 'J', true );
+$html = '<div>I am, my spouse is, or the head of household living in my household is currently receiving a means-tested benefit.
+(Complete <b>Parts 2. - 4.</b> and <b>Parts 7. - 10.</b>) </div>';
+$pdf->writeHTMLCell( 170, 25, 24, 130, $html, 0, 1, false, true, 'L', true );
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html = '<div><b>2.</b> </div>';
+$pdf->writeHTMLCell( 10, 5, 12, 140, $html, 0, 1, false, false, 'J', true );
+$html = '<div><input type="checkbox" name="part-1_2" value="part-1_2" checked="" /> </div>';
+$pdf->writeHTMLCell( 10, 5, 17.5, 140.5, $html, 0, 1, false, false, 'J', true );
+$html = '<div>My household income is at or below 150 percent of the Federal Poverty Guidelines. (Complete <b>Parts 2. - 3., Part<br>
+5.</b>, and <b>7. - 10.</b>) </div>';
+$pdf->writeHTMLCell( 170, 25, 24, 140, $html, 0, 1, false, true, 'L', true );
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html = '<div><b>3.</b> </div>';
+$pdf->writeHTMLCell( 10, 5, 12, 150, $html, 0, 1, false, false, 'J', true );
+$html = '<div><input type="checkbox" name="part-1_3" value="part-1_3" checked="" /> </div>';
+$pdf->writeHTMLCell( 10, 5, 17.5, 150.5, $html, 0, 1, false, false, 'J', true );
+$html = '<div>I have a financial hardship. (Complete <b>Parts 2. -3.</b> and <b>Parts 6. - 10</b>.)</div>';
+$pdf->writeHTMLCell( 170, 25, 24, 150, $html, 0, 1, false, true, 'L', true );
 
-// $pdf->writeHTMLCell ( 190, 18, 13, 83.5, '', 1, 1, false, true, 'C', true );
+//*.........................
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Part 2. Information About You (Requestor)</b></div>";
+$pdf->writeHTMLCell(  190, 6, 13, 159, $html, 1, 0, true, false, 'L', true );
 
-// $pdf->writeHTMLCell( 40, 17.7, 13.1, 83.6, '', 'R', 1, true, true, 'C', true );
+//*....................
+$pdf->SetFontSize( 10 );
+$html = "<div>Provide information about yourself if you are the person requesting a fee waiver for a petition or application you are filing. If you are
+the parent or legal guardian filing on behalf of a child or person with a physical disability or developmental or mental impairment,
+provide information about the child or person for whom you are filing this form.</div>";
+$pdf->writeHTMLCell(  190, 10, 12, 166.4, $html, "", "", false, true, 'L', true );
+//*....................
 
-// $pdf->SetFont( 'times', '', 10 );
-// $html = '<div><b>To be completed by an attorney or accredited representative</b> (if any).  </div>';
-// $pdf->writeHTMLCell( 40, 7, 15, 85, $html,  0,  1, false, true, 'L', false );
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>1.</b> &nbsp;&nbsp;&nbsp; Full Name';
+$pdf->writeHTMLCell(180, 7, 12, 182, $html, 0, 0, false, false, 'L', true);
 
-// $pdf->SetFont( 'times', '', 12 );
-// $html = '<div><b>  </b>   <input type="checkbox" name="table_2_CheckBox" value="Y" checked=" " /> </div>';
-// $pdf->writeHTMLCell( 40, 15, 20, 83.5, $html, 0, 1, false, true, 'R', true );
+$pdf->Ln(1);
+$pdf->SetFillColor(255,255,255);
+$html = 'Family Name (Last Name)';
+$pdf->writeHTMLCell(40, 7, 19, 186, $html, 0, 0, false, false, 'L', true);
+$html = 'Given Name (First Name)';
+$pdf->writeHTMLCell(50, 7, 98, 186, $html, 0, 0, false, false, 'L', true);
+$html = 'Middle Name';
+$pdf->writeHTMLCell(50, 7, 156, 186, $html, 0, 0, false, false, 'L', true);
 
-// $pdf->SetFont( 'times', '', 10 );
-// $html = '<div><b>Select this box if <br>Form G-28 is <br>attached.</b></div>';
-// $pdf->writeHTMLCell( 40, 15, 61, 84.4, $html, 0, 1, false, true, 'L', true );
 
-// $pdf->writeHTMLCell( 48, 18, 94, 83.5, '',  'L',  1, false, true, 'L', true );
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('part2-1_last_name', 74, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 19.4, 193);
+$pdf->TextField('part2-1_first_name', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 97, 193.3);
+$pdf->TextField('part2-1_middle_name', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 155.5, 193.5);
 
-// $pdf->writeHTMLCell( 48, 18, 143.7, 83.5, '',  'L',  1, false, true, 'L', true );
+//*....................
 
-// $pdf->SetFont( 'times', '', 10 );
-// $html = '<div><b>Attorney State Bar Number</b><br>(if applicable)</div>';
-// $pdf->writeHTMLCell( 50, 15, 94.9, 83.6, $html, 0, 1, false, true, 'L', true );
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>2.</b> &nbsp;&nbsp;&nbsp; Other Names Used (if any) ';
+$pdf->writeHTMLCell(180, 7, 12, 200, $html, 0, 0, false, false, 'L', true);
+$html = 'List all other names you have used, including nicknames, aliases, and maiden name.
+';
+$pdf->writeHTMLCell(130, 5, 19, 204, $html, 0, 0, false, false, 'L', true);
+$pdf->Ln(1);
+$pdf->SetFillColor(255,255,255);
+$html = 'Family Name (Last Name)';
+$pdf->writeHTMLCell(40, 7, 19, 210, $html, 0, 0, false, false, 'L', true);
+$html = 'Given Name (First Name)';
+$pdf->writeHTMLCell(50, 7, 98, 210, $html, 0, 0, false, false, 'L', true);
+$html = 'Middle Name';
+$pdf->writeHTMLCell(50, 7, 156, 210, $html, 0, 0, false, false, 'L', true);
 
-// $pdf->SetFont( 'courier', 'B', 10 );
-// $pdf->TextField( 'attorney_state_bar_number', 46, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 96, 93.4 );
 
-// $pdf->SetFont( 'times', '', 9.7 );
-// $html = '<div><b>Attorney or According Representative USCIS Online Account Number</b> (if any)</div>';
-// $pdf->writeHTMLCell( 60, 15, 143.7, 83.5, $html, 0, 1, false, true, 'L', true );
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('part2-2_last_name', 74, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 19, 218);
+$pdf->TextField('part2-2_first_name', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 97, 218.3);
+$pdf->TextField('part2-2_middle_name', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 155.5, 218.5);
+$pdf->TextField('part2-2_last_name2', 74, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 19, 225);
+$pdf->TextField('part2-2_first_name2', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 97, 225.3);
+$pdf->TextField('part2-2_middle_name2', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 155.5, 225.5);
+// //...........
 
-// $pdf->SetFont( 'courier', 'B', 10 );
-// $pdf->TextField( 'Attorney_or_According_Representative', 57, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 145, 93.4 );
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>3. </b>&nbsp;&nbsp;&nbsp; Alien Registration Number (A-Number) (if any)';
+$pdf->writeHTMLCell(80, 7, 12, 233, $html, 0, 0, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('part2-3', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 31, 238.5);
 
-// //*? <<< second Table End >>>.....
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>4. </b> USCIS Online Account Number (if any)';
+$pdf->writeHTMLCell(80, 7, 96, 233, $html, 0, 0, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('part2-4', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 107, 238.5);
+//.................
+
+$pdf->StartTransform();
+$pdf->SetFillColor(0,0,0);
+$pdf->Rotate(90);
+$pdf->SetFont('zapfdingbats', 'B', 10);
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1,222, 18, false); // angle 1
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1,222, 99, false); // angle 2
+$pdf->StopTransform();
+//.......................
+$pdf->SetFont('times', '', 11); // set font
+$html = '<b> A-</b>';
+$pdf->writeHTMLCell(80, 7, 23, 238.5, $html, 0, 0, false, false, 'L', true);
+
+//*/................
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>5. </b>&nbsp;&nbsp;&nbsp; Date of Birth (mm/dd/yyyy)';
+$pdf->writeHTMLCell(80, 7, 12, 246.6, $html, 0, 0, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('part2-5', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 19, 252.5);
+
+//*....................
+
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>6. </b>&nbsp;&nbsp;&nbsp; U.S. Social Security Number (if any)';
+$pdf->writeHTMLCell(80, 7, 76, 246.6, $html, 0, 0, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('part2-6', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 90, 252.5);
+$pdf->StartTransform();
+$pdf->SetFillColor(0,0,0);
+$pdf->Rotate(90);
+$pdf->SetFont('zapfdingbats', 'B', 10);
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1,202, 117, false); 
+$pdf->StopTransform();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 $js = "
 var fields = {
+
+'part2-1_middle_name':' ',
+'part2-1_first_name':' ',
+'part2-1_last_name':' ',
+'part2-2_middle_name':' ',
+'part2-2_first_name':' ',
+'part2-2_last_name':' ',
+'part2-2_middle_name2':' ',
+'part2-2_first_name2':' ',
+'part2-2_last_name2':' ',
+'part2-3':' ',
+'part2-4':' ',
+'part2-5':' ',
+'part2-6':' ',
+'part-1_1':' ',
+'part-1_2':' ',
+'part-1_3':' ',
+//*page 1 complete
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
+'':' ',
 '':' ',
 
 
