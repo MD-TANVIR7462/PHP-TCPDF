@@ -1016,7 +1016,7 @@ $pdf->TextField( 'part4_3d_Country', 83, 7, array( 'strokeColor' => array( 64, 6
 //* //* //*.....
 
 $pdf->SetFont( 'times', '', 9.7 );
-$html = '<div><b>Safe Foreign Address Where You Want Notification Sent</b>(if other than U.S. Consulate, Pre-Flight Inspection, or
+$html = '<div><b>Safe Foreign Address Where You Want Notification Sent</b><br>(if other than U.S. Consulate, Pre-Flight Inspection,or<br>
 Port-of-Entry) </div>';
 $pdf->writeHTMLCell( 90, 4, 12, 102, $html, 0, 1, false, false, 'L', true );
 
