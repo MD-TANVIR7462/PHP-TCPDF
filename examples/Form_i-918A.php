@@ -2622,7 +2622,7 @@ $html = '<div><b>1.a.  </b> &nbsp; <input type="checkbox" name="part_7_1a" value
 $pdf->writeHTMLCell( 93, 12, 12, 56, $html, 0, 1, 0, true, 'L', false, false );
 $html = '<div>I can read and understand English, and I have read <br>
 and understand every question and instruction on <br>
-this petition and my answer to every question.</div>';
+this supplement and my answer to every question.</div>';
 $pdf->writeHTMLCell( 90, 12, 26, 56, $html, 0, 1, 0, true, 'L', false, false );
 
 //*..................
@@ -2708,7 +2708,7 @@ any information<br>from any of my records that USCIS may need
 to determine my<br>eligibility for the immigration benefit I seek.
 <br><br>
 I further authorize release of information contained in this<br>
-petition, in supporting documents, and in my USCIS records <br>to
+supplement, in supporting documents, and in my USCIS records <br>to
 other entities and persons where necessary for the<br>
 administration and enforcement of U.S. immigration laws.
 </div>';
@@ -3335,6 +3335,7 @@ $pdf->TextField('preparer_contact_email', 85, 7, array('strokeColor' => array(64
 
 //..........
 $pdf->SetFont('times', 'I', 12);
+$pdf->setCellHeightRatio( 1.2 );
 $html ='<div><b>Preparer\'s Statement</b></div>';
 $pdf->writeHTMLCell(90, 7, 113, 145, $html, 0, 0, true, false, 'L', false);
 //..........
@@ -3352,7 +3353,7 @@ $pdf->writeHTMLCell(20, 7, 112, 172, $html, 0, 0, false, 'L');
 $html = '<div> I am an attorney or accredited representative and
 my representation of the petitioner and qualifying family
 member in this case 
-<input type="checkbox" name="part10_7c" value="Y" checked=" " /> extends <input type="checkbox" name="part10_7d" value="Y" checked=" " /> does not extend beyond the
+&nbsp;&nbsp;&nbsp;extends &nbsp;&nbsp;&nbsp;does not extend beyond the
 preparation of this supplement.
 </div>';
 $pdf->writeHTMLCell(80, 7, 124, 172, $html, 0, 0, false, 'L');
@@ -3364,7 +3365,8 @@ submit a completed Form G-28, Notice of Entry of
 Appearance as Attorney or Accredited Representative,
 with this supplement.</div>';
 $pdf->writeHTMLCell(83, 7, 124, 192, $html, 0, 0, false, 'L');
-
+$pdf->setCellHeightRatio( 0 );
+$pdf->writeHTMLCell(2.5, 1.5, 124, 220, "", 1, 0, false, 'L');
 
 //........page number 10 end ----------------------------------------------------------------------------------
 
