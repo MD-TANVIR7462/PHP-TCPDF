@@ -50,7 +50,7 @@ class MyPDF extends TCPDF {
         //* Set font
         $this->SetFont( 'times', '', 9 );
 
-        $this->Cell( 40, 6.4, 'Form I-918  Edition 12/06/21', 0, 0, 'L' );
+        $this->Cell( 40, 6.4, 'Form I-918 Supplement A Edition 12/06/21 ', 0, 0, 'L' );
 
         //* if ( $this->page == 1 ) {
         $barcode_image = "images/G-639-footer-pdf417-$this->page.png";
@@ -70,7 +70,7 @@ $pdf = new MyPDF( PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8'
 //* set document information
 $pdf->SetCreator( PDF_CREATOR );
 $pdf->SetAuthor( '' );
-$pdf->SetTitle( 'Form I-918' );
+$pdf->SetTitle( 'Form I-918,Supplement A' );
 
 //* set default header data
 $pdf->SetHeaderData( PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING );
