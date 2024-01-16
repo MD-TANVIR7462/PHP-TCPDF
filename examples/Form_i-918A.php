@@ -3353,7 +3353,7 @@ $pdf->writeHTMLCell(20, 7, 112, 172, $html, 0, 0, false, 'L');
 $html = '<div> I am an attorney or accredited representative and
 my representation of the petitioner and qualifying family
 member in this case 
-&nbsp;&nbsp;&nbsp;extends &nbsp;&nbsp;&nbsp;does not extend beyond the
+&nbsp;&nbsp;&nbsp;&nbsp;extends &nbsp;&nbsp;&nbsp;&nbsp;does not extend beyond the
 preparation of this supplement.
 </div>';
 $pdf->writeHTMLCell(80, 7, 124, 172, $html, 0, 0, false, 'L');
@@ -3366,7 +3366,8 @@ Appearance as Attorney or Accredited Representative,
 with this supplement.</div>';
 $pdf->writeHTMLCell(83, 7, 124, 192, $html, 0, 0, false, 'L');
 $pdf->setCellHeightRatio( 0 );
-$pdf->writeHTMLCell(2.5, 1.5, 124, 220, "", 1, 0, false, 'L');
+$pdf->writeHTMLCell(2.5, 2.5, 155, 182.5, "", 1, 0, false, 'L');
+$pdf->writeHTMLCell(2.5, 2.5, 171, 182.5, "", 1, 0, false, 'L');
 
 //........page number 10 end ----------------------------------------------------------------------------------
 
