@@ -455,7 +455,6 @@ $pdf->writeHTMLCell( 185, 8, 18, 55, '',  "B",  0, false, false, 'C', true );//5
 $pdf->setCellHeightRatio( 0 );
 //,...............
 $pdf->writeHTMLCell( "32", "34", 18.2,69.2, '',  "R",  0, false, true, 'L', true );//1st  vertical line
-// $html = "<div><b>A- <br>A- <br>A- <br>A-</b></div>";
 $pdf->writeHTMLCell( "32", "27", 24.2,76, "",  "R",  0, false, true, 'C', true );//2nd  vertical line
 $pdf->writeHTMLCell( "1", "34", 105,69.2, '',  "R",  0, false, true, 'L', true );//3rd  vertical line
 $pdf->writeHTMLCell( "1", "34", 135,69.2, '',  "R",  0, false, true, 'L', true );//4th  vertical line
@@ -469,6 +468,168 @@ $pdf->writeHTMLCell(  5, 6, 51, 91.8, $html, "", 0, false, false, 'C', true );//
 $pdf->writeHTMLCell(  5, 6, 51, 98, $html, "", 0, false, false, 'C', true );//A-
 
 //.,............
+$pdf->SetFont( 'times', 'B', 10 );
+$pdf->writeHTMLCell(  32, 6, 20, 69, "Full Name", "", 0, false, false, 'C', true );
+//.,............
+$pdf->SetFont( 'times', 'B', 10 );
+$html = "<div><b>A-Number </b>(if any)</div>";
+$pdf->writeHTMLCell(  55, 6, 50, 72,$html, "", 0, false, false, 'C', true );
+//.,............
+$pdf->SetFont( 'times', 'B', 10 );
+$html = "<div><b>Date of Birth </b></div>";
+$pdf->writeHTMLCell(  55, 6, 93, 72,$html, "", 0, false, false, 'C', true );
+//.,............
+$pdf->SetFont( 'times', 'B', 10 );
+$html = "<div><b>Relationship to You</b></div>";
+$pdf->writeHTMLCell(  55, 6, 126, 72,$html, "", 0, false, false, 'C', true );
+//.,............
+$pdf->SetFont( 'times', 'B', 10 );
+$html = "<div><b>Forms Being Filed</b></div>";
+$pdf->writeHTMLCell(  55, 6, 159, 72,$html, "", 0, false, false, 'C', true );
+//.,............
+$pdf->SetFont( 'times', '', 10 );
+$html = "<div><b>Total Number of Forms</b>(including self)</div>";
+$pdf->writeHTMLCell(  75, 6, 93,105.5,$html, "", 0, false, false, 'R', true );
+
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-1', 32, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 82.5 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-2', 32, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 89.1 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-3', 32, 6.9, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 96.1 );
+//................
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-4', 50, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 56.2, 76 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-5', 50, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 56.2, 82.5 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-6', 50, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 56.2, 89.1 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-7', 50, 6.9, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 56.2, 96.1 );
+
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-8', 30, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 106.2, 82.5 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-9', 30, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 106.2, 89.1 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+
+$pdf->TextField( 'part3_input-10', 30, 6.9, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 106.2, 96.1);
+
+//................
+$pdf->SetFont( 'courier', 'B', 1 );
+$pdf->writeHTMLCell(  34.5, 6.5,  136.2, 76,"Self", "", 0, false, false, 'C', true );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-11', 34.5, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 136.2, 82.5 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-12', 34.5, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 136.2, 89.1  );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-13', 34.5, 6.9, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 136.2,  96.1 );
+
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+
+$pdf->TextField( 'part3_input-14', 31.7, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(),171.1, 76 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-15', 31.7, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(),171.1, 82.5 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-16', 31.7, 6.5, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(),171.1, 89.1  );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-17', 31.7, 6.9, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(),171.1,  96.1 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-18', 31.7, 6.6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(),171.1,  103.1 );
+
+
+//...............
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Part 4. Means-Tested Benefits </b></div>";
+$pdf->writeHTMLCell(  190, 6, 13, 116, $html, 1, 0, true, false, 'L', true );
+
+//*....................
+$pdf->setFont('Times', '', 10);
+$html= '<div>If you selected <b>Item Number 1.</b> in <b>Part 1.</b>, complete this section.</div>';
+$pdf->writeHTMLCell(180, 7, 12, 124, $html, 0, 1, false, 'L');
+//*....................
+$pdf->setFont('Times', 'B', 10);
+$html= '<div>1.</div>';
+$pdf->writeHTMLCell(180, 7, 12, 130, $html, 0, 1, false, 'L');
+$pdf->setFont('Times', '', 10);
+$html= '<div>If you, your spouse, or the head of household (including parent if the child is under 21 years of age) living with you is receiving<br>
+any means-tested benefits, list the information in the table below and attach supporting documentation. If you are the parent or<br>
+legal guardian filing on behalf of a child or person with a physical disability or developmental or mental impairment, provide<br>
+information about the child or person for whom you are filing this form if he or she is receiving a means-tested benefit</div>';
+$pdf->writeHTMLCell(190, 7, 17, 130, $html, 0, 1, false, 'L');
+
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Means-Tested Benefit Recipients</b></div>";
+$pdf->writeHTMLCell(  185, 6, 18, 150.5, $html, 1, 0, true, false, 'C', true );
+//................
+$pdf->writeHTMLCell( 185, 40.7, 18, 157.5, '',  1,  0, false, false, 'C', true );//main cell 
+$pdf->writeHTMLCell( 185, 8, 18, 125.7, '',  "B",  0, false, false, 'C', true );//1st line 
+$pdf->writeHTMLCell( 185, 8, 18, 131.7, '',  "B",  0, false, false, 'C', true );//second line
+$pdf->writeHTMLCell( 185, 8, 18, 137.7, '',  "B",  0, false, false, 'C', true );//third line
+$pdf->writeHTMLCell( 185, 8, 18, 143.7, '',  "B",  0, false, false, 'C', true );//4th line
+//.....................................
+$pdf->writeHTMLCell( "1", "40.6", 54,157.5, '',  "R",  0, false, true, 'L', true );//1st  vertical line
+$pdf->writeHTMLCell( "1", "40.6", 78,157.5, '',  "R",  0, false, true, 'L', true );//1st  vertical line
+$pdf->writeHTMLCell( "1", "40.6", 118,157.5, '',  "R",  0, false, true, 'L', true );//1st  vertical line
+$pdf->writeHTMLCell( "1", "40.6", 145,157.5, '',  "R",  0, false, true, 'L', true );//1st  vertical line
+$pdf->writeHTMLCell( "1", "40.6", 170,157.5, '',  "R",  0, false, true, 'L', true );//1st  vertical line
+
+//.,............
+$pdf->SetFont( 'times', 'B', 10 );
+$html = "<div><b>Full Name of Person<br>
+Receiving the Benefit</b></div>";
+$pdf->writeHTMLCell(  42, 6, 16, 157.5, $html, "", 0, false, false, 'C', true );
+//.,............
+$pdf->SetFont( 'times', 'B', 10 );
+$html = "<div><b>Relationship<br>
+to You</b></div>";
+$pdf->writeHTMLCell(  42, 6, 46, 157.5, $html, "", 0, false, false, 'C', true );
+//.,............
+$pdf->SetFont( 'times', 'B', 10 );
+$html = "<div><b>Name of Agency<br>
+Awarding Benefit</b></div>";
+$pdf->writeHTMLCell(  42, 6, 76, 157.5, $html, "", 0, false, false, 'C', true );
+//.,............
+$pdf->SetFont( 'times', 'B', 10 );
+$html = "<div><b>Type of<br>
+Benefit</b></div>";
+$pdf->writeHTMLCell(  42, 6, 112, 157.5, $html, "", 0, false, false, 'C', true );
+//.,............
+$pdf->SetFont( 'times', 'B', 10 );
+$html = "<div><b>Date Benefit<br>
+was Awarded</b></div>";
+$pdf->writeHTMLCell(  42, 6, 137, 157.5, $html, "", 0, false, false, 'C', true );
+//.,............
+$pdf->SetFont( 'times', '', 9.7 );
+$html = "<div><b>Date Benefit Expires
+</b><br>(or must be renewed)</div>";
+$pdf->writeHTMLCell(  42, 6, 166, 157.5, $html, "", 0, false, false, 'C', true );
 
 
 
@@ -481,15 +642,15 @@ $pdf->writeHTMLCell(  5, 6, 51, 98, $html, "", 0, false, false, 'C', true );//A-
 
 
 
-
-
-
-
-
-
-
-
-
+//...............
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Part 5. Income at or Below 150 Percent of the Federal Poverty Guidelines
+</b></div>";
+$pdf->writeHTMLCell(  190, 6, 13, 204, $html, 1, 0, true, false, 'L', true );
 
 
 $js = "
@@ -518,8 +679,8 @@ var fields = {
 'part2-7divorced':' ',
 'part2-7divorced':' ',
 'part2-7married':' ',
-'part2-7single':' ',
-'':' ',
+'part2-7single':'',
+'part3_input-1':'',
 '':' ',
 '':' ',
 '':' ',
