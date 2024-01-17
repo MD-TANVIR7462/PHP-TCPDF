@@ -630,6 +630,37 @@ $pdf->SetFont( 'times', '', 9.7 );
 $html = "<div><b>Date Benefit Expires
 </b><br>(or must be renewed)</div>";
 $pdf->writeHTMLCell(  42, 6, 166, 157.5, $html, "", 0, false, false, 'C', true );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part3_input-1', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 167.9 );
+$pdf->TextField( 'part3_input-1', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 175.5 );
+$pdf->TextField( 'part3_input-1', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 183 );
+$pdf->TextField( 'part3_input-1', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 190.6 );
+//................
+$pdf->TextField( 'part3_input-1', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 167.9 );
+$pdf->TextField( 'part3_input-1', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 175.5 );
+$pdf->TextField( 'part3_input-1', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 183 );
+$pdf->TextField( 'part3_input-1', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 190.6 );
+//................
+$pdf->TextField( 'part3_input-1', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 167.9 );
+$pdf->TextField( 'part3_input-1', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 175.5 );
+$pdf->TextField( 'part3_input-1', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 183 );
+$pdf->TextField( 'part3_input-1', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 190.6 );
+//................
+$pdf->TextField( 'part3_input-1', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 167.9 );
+$pdf->TextField( 'part3_input-1', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 175.5 );
+$pdf->TextField( 'part3_input-1', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 183 );
+$pdf->TextField( 'part3_input-1', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 190.6 );
+//................
+$pdf->TextField( 'part3_input-1', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 167.9 );
+$pdf->TextField( 'part3_input-1', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 175.5 );
+$pdf->TextField( 'part3_input-1', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 183 );
+$pdf->TextField( 'part3_input-1', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 190.6 );
+//................
+$pdf->TextField( 'part3_input-1', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 167.9 );
+$pdf->TextField( 'part3_input-1', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 175.5 );
+$pdf->TextField( 'part3_input-1', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 183 );
+$pdf->TextField( 'part3_input-1', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 190.6 );
 
 
 
