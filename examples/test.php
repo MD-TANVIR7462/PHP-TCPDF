@@ -255,7 +255,7 @@ $pdf->writeHTMLCell(  190, 10, 12, 109.4, $html, "", "", false, true, 'L', true 
 $pdf->SetFont( 'times', '', 10 );
 $html = '<div><b>1.</b> </div>';
 $pdf->writeHTMLCell( 10, 5, 12, 130, $html, 0, 1, false, false, 'J', true );
-$html = '<div><input type="checkbox" name="part-1_1" value="part-1_1" checked="" /> </div>';
+$html = '<div><input type="checkbox" name="part-1_1" value="YES" checked="" /> </div>';
 $pdf->writeHTMLCell( 10, 5, 17.5, 130.5, $html, 0, 1, false, false, 'J', true );
 $html = '<div>I am, my spouse is, or the head of household living in my household is currently receiving a means-tested benefit.
 (Complete <b>Parts 2. - 4.</b> and <b>Parts 7. - 10.</b>) </div>';
@@ -264,7 +264,7 @@ $pdf->writeHTMLCell( 170, 25, 24, 130, $html, 0, 1, false, true, 'L', true );
 $pdf->SetFont( 'times', '', 10 );
 $html = '<div><b>2.</b> </div>';
 $pdf->writeHTMLCell( 10, 5, 12, 140, $html, 0, 1, false, false, 'J', true );
-$html = '<div><input type="checkbox" name="part-1_2" value="part-1_2" checked="" /> </div>';
+$html = '<div><input type="checkbox" name="part-1_2" value="YES" checked="" /> </div>';
 $pdf->writeHTMLCell( 10, 5, 17.5, 140.5, $html, 0, 1, false, false, 'J', true );
 $html = '<div>My household income is at or below 150 percent of the Federal Poverty Guidelines. (Complete <b>Parts 2. - 3., Part<br>
 5.</b>, and <b>7. - 10.</b>) </div>';
@@ -273,7 +273,7 @@ $pdf->writeHTMLCell( 170, 25, 24, 140, $html, 0, 1, false, true, 'L', true );
 $pdf->SetFont( 'times', '', 10 );
 $html = '<div><b>3.</b> </div>';
 $pdf->writeHTMLCell( 10, 5, 12, 150, $html, 0, 1, false, false, 'J', true );
-$html = '<div><input type="checkbox" name="part-1_3" value="part-1_3" checked="" /> </div>';
+$html = '<div><input type="checkbox" name="part-1_3" value="YES" checked="" /> </div>';
 $pdf->writeHTMLCell( 10, 5, 17.5, 150.5, $html, 0, 1, false, false, 'J', true );
 $html = '<div>I have a financial hardship. (Complete <b>Parts 2. -3.</b> and <b>Parts 6. - 10</b>.)</div>';
 $pdf->writeHTMLCell( 170, 25, 24, 150, $html, 0, 1, false, true, 'L', true );
@@ -388,6 +388,94 @@ $pdf->MultiCell(10, 10, "t", '', 'L', 0, 1,202, 117, false);
 $pdf->StopTransform();
 
 
+//! first page done....................
+
+
+$pdf->AddPage( 'P', 'LETTER' );//Page 2 
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Part 2. Information About You (Requestor)</b> (continued)</div>";
+$pdf->writeHTMLCell(  190, 6, 13, 18, $html, 1, 0, true, false, 'L', true );
+
+//*....................
+
+
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>7. </b> Marital Status</div>';
+$pdf->writeHTMLCell(110, 7, 12, 26, $html, 0, 1, false, 'L');
+
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part2-7single" value="single" checked="" /> Single,Never Married
+   
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7married" value="married" checked="" /> Married
+
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7divorced" value="divorced" checked="" /> Divorced
+
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7widowed" value="widowed" checked="" /> Widowed
+
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7Annulled" value="Annulled" checked="" /> Marriage Annulled
+
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7Separated" value="Separated" checked="" /> Separated';
+
+      
+
+$pdf->writeHTMLCell(190, 7, 15, 31, $html, 0, 1, false, true, 'J');
+$html ='<div>&nbsp;<input type="checkbox" name="other" value="Y" checked=" " />  Other (Explain)</div>';
+$pdf->writeHTMLCell(180, 7, 17.5, 37, $html, 0, 1, false, true, 'J');
+$pdf->writeHTMLCell(137, 7, 52, 37, "", 1, 1, false, true, 'J', true);
+
+//*....................
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Part 3. Applications and Petitions for Which You Are Requesting a Fee Waiver </b></div>";
+$pdf->writeHTMLCell(  190, 6, 13, 48, $html, 1, 0, true, false, 'L', true );
+//*....................
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>1. </b> In the table below, add the form numbers of the applications and petitions for which you are requesting a fee waiver.</div>';
+$pdf->writeHTMLCell(180, 7, 12, 56, $html, 0, 1, false, 'L');
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Applications or Petitions for You and Your Family Members</b></div>";
+$pdf->writeHTMLCell(  185, 6, 18, 62, $html, 1, 0, true, false, 'C', true );
+//*....................
+$pdf->writeHTMLCell( 185, 40.7, 18, 69, '',  1,  0, false, false, 'C', true );//main cell 
+$pdf->writeHTMLCell( 185, 8, 18, 33.7, '',  "B",  0, false, false, 'C', true );//1st line 
+$pdf->writeHTMLCell( 185, 8, 18, 38.7, '',  "B",  0, false, false, 'C', true );//second line
+$pdf->writeHTMLCell( 185, 8, 18, 43.7, '',  "B",  0, false, false, 'C', true );//third line
+$pdf->writeHTMLCell( 185, 8, 18, 49, '',  "B",  0, false, false, 'C', true );//4th line
+$pdf->writeHTMLCell( 185, 8, 18, 55, '',  "B",  0, false, false, 'C', true );//5th line
+$pdf->setCellHeightRatio( 0 );
+//,...............
+$pdf->writeHTMLCell( "32", "34", 18.2,69.2, '',  "R",  0, false, true, 'L', true );//1st  vertical line
+// $html = "<div><b>A- <br>A- <br>A- <br>A-</b></div>";
+$pdf->writeHTMLCell( "32", "27", 24.2,76, "",  "R",  0, false, true, 'C', true );//2nd  vertical line
+$pdf->writeHTMLCell( "1", "34", 105,69.2, '',  "R",  0, false, true, 'L', true );//3rd  vertical line
+$pdf->writeHTMLCell( "1", "34", 135,69.2, '',  "R",  0, false, true, 'L', true );//4th  vertical line
+$pdf->writeHTMLCell( "1", "40.6", 170,69.2, '',  "R",  0, false, true, 'L', true );//4th  vertical line
+//...................
+$pdf->SetFontSize( 11 );
+$html = "<div><b>A- </b></div>";
+$pdf->writeHTMLCell(  5, 6, 51, 78.4, $html, "", 0, false, false, 'C', true );//A-
+$pdf->writeHTMLCell(  5, 6, 51, 85, $html, "", 0, false, false, 'C', true );//A-
+$pdf->writeHTMLCell(  5, 6, 51, 91.8, $html, "", 0, false, false, 'C', true );//A-
+$pdf->writeHTMLCell(  5, 6, 51, 98, $html, "", 0, false, false, 'C', true );//A-
+
+//.,............
+
+
+
+
+
+
+
 
 
 
@@ -424,13 +512,13 @@ var fields = {
 'part-1_2':' ',
 'part-1_3':' ',
 //*page 1 complete
-'':' ',
-'':' ',
-'':' ',
-'':' ',
-'':' ',
-'':' ',
-'':' ',
+'part2-7Separated':' ',
+'part2-7Annulled':' ',
+'part2-7widowed':' ',
+'part2-7divorced':' ',
+'part2-7divorced':' ',
+'part2-7married':' ',
+'part2-7single':' ',
 '':' ',
 '':' ',
 '':' ',
