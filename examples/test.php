@@ -632,46 +632,35 @@ $html = "<div><b>Date Benefit Expires
 $pdf->writeHTMLCell(  42, 6, 166, 157.5, $html, "", 0, false, false, 'C', true );
 //................
 $pdf->SetFont( 'courier', 'B', 10 );
-$pdf->TextField( 'part3_input-1', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 167.9 );
-$pdf->TextField( 'part3_input-1', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 175.5 );
-$pdf->TextField( 'part3_input-1', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 183 );
-$pdf->TextField( 'part3_input-1', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 190.6 );
+$pdf->TextField( 'part4_input-1', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 167.9 );
+$pdf->TextField( 'part4_input-2', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 175.5 );
+$pdf->TextField( 'part4_input-3', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 183 );
+$pdf->TextField( 'part4_input-4', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18.2, 190.6 );
 //................
-$pdf->TextField( 'part3_input-1', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 167.9 );
-$pdf->TextField( 'part3_input-1', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 175.5 );
-$pdf->TextField( 'part3_input-1', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 183 );
-$pdf->TextField( 'part3_input-1', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 190.6 );
+$pdf->TextField( 'part4_input-5', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 167.9 );
+$pdf->TextField( 'part4_input-6', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 175.5 );
+$pdf->TextField( 'part4_input-7', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 183 );
+$pdf->TextField( 'part4_input-8', 23.5, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55.3, 190.6 );
 //................
-$pdf->TextField( 'part3_input-1', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 167.9 );
-$pdf->TextField( 'part3_input-1', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 175.5 );
-$pdf->TextField( 'part3_input-1', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 183 );
-$pdf->TextField( 'part3_input-1', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 190.6 );
+$pdf->TextField( 'part4_input-9', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 167.9 );
+$pdf->TextField( 'part4_input-10', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 175.5 );
+$pdf->TextField( 'part4_input-11', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 183 );
+$pdf->TextField( 'part4_input-12', 39.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 190.6 );
 //................
-$pdf->TextField( 'part3_input-1', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 167.9 );
-$pdf->TextField( 'part3_input-1', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 175.5 );
-$pdf->TextField( 'part3_input-1', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 183 );
-$pdf->TextField( 'part3_input-1', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 190.6 );
+$pdf->TextField( 'part4_input-13', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 167.9 );
+$pdf->TextField( 'part4_input-14', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 175.5 );
+$pdf->TextField( 'part4_input-15', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 183 );
+$pdf->TextField( 'part4_input-16', 27, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 119.1, 190.6 );
 //................
-$pdf->TextField( 'part3_input-1', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 167.9 );
-$pdf->TextField( 'part3_input-1', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 175.5 );
-$pdf->TextField( 'part3_input-1', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 183 );
-$pdf->TextField( 'part3_input-1', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 190.6 );
+$pdf->TextField( 'part4_input-17', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 167.9 );
+$pdf->TextField( 'part4_input-18', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 175.5 );
+$pdf->TextField( 'part4_input-19', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 183 );
+$pdf->TextField( 'part4_input-20', 25, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 146.1, 190.6 );
 //................
-$pdf->TextField( 'part3_input-1', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 167.9 );
-$pdf->TextField( 'part3_input-1', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 175.5 );
-$pdf->TextField( 'part3_input-1', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 183 );
-$pdf->TextField( 'part3_input-1', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 190.6 );
-
-
-
-
-
-
-
-
-
-
-
+$pdf->TextField( 'part4_input-21', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 167.9 );
+$pdf->TextField( 'part4_input-22', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 175.5 );
+$pdf->TextField( 'part4_input-23', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 183 );
+$pdf->TextField( 'part4_input-24', 31.8, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 171.1, 190.6 );
 
 //...............
 $pdf->SetFillColor( 220, 220, 220 );
@@ -682,6 +671,264 @@ $pdf->SetFontSize( 12 );
 $html = "<div><b>Part 5. Income at or Below 150 Percent of the Federal Poverty Guidelines
 </b></div>";
 $pdf->writeHTMLCell(  190, 6, 13, 204, $html, 1, 0, true, false, 'L', true );
+//...............
+
+$pdf->SetFont( 'times', '', 9.7 );
+$html = '<div>If you selected <b>Item Number 2</b> in <b>Part 1.</b>, complete this section</div>';
+$pdf->writeHTMLCell( 190, 10, 13, 212, $html, '', 1, false, true, 'L', true );
+//...............
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 9.7 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 1, 0.5, 1, 0.5 );
+$pdf->SetFontSize( 11.6 );
+$html = '<div><b><i>Your Employment Status </i> </b>  </div>';
+$pdf->writeHTMLCell( 190, 5, 13, 220, $html, '', 1, true, false, 'L', true );
+//...................
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>1. </b> Employment Status</div>';
+$pdf->writeHTMLCell(110, 7, 12, 228, $html, 0, 1, false, 'L');
+
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-1Employed" value="Employed" checked="" /> Employed (full-time, part-time,
+   
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part5-1Unemploye" value="Unemploye" checked="" />Unemployed or 
+
+   &nbsp;   &nbsp;  &nbsp; <input type="checkbox"      name="part5-1Retired" value="Retired" checked="" /> Retired
+
+   &nbsp;   &nbsp;  &nbsp; <input type="checkbox"      name="part5-1Other" value="Other" checked="" /> Other (Explain)';
+
+$pdf->writeHTMLCell(190, 7, 15, 234, $html, 0, 1, false, true, 'J');
+$html ='<div>seasonal, self-employed) </div>';
+$pdf->writeHTMLCell(180, 7, 23.5, 238, $html, 0, 1, false, true, 'J');
+$html ='<div>Not Employed</div>';
+$pdf->writeHTMLCell(180, 7, 77.5, 238, $html, 0, 1, false, true, 'J');
+$pdf->writeHTMLCell(70, 7, 132, 240, "", 1, 1, false, true, 'J', true);
+//!page 2 done......................
+
+$pdf->AddPage( 'P', 'LETTER' );//Page 2 
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Part 5. Income at or Below 150 Percent of the Federal Poverty Guidelines </b> (continued)</div>";
+$pdf->writeHTMLCell(  190, 6, 13, 18, $html, 1, 0, true, false, 'L', true );
+//*....................
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>2. </b>   If you are currently unemployed, are you currently receiving unemployment benefits?</div>';
+$pdf->writeHTMLCell(160, 7, 12, 26, $html, 0, 1, false, 'L');
+//...............
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-2" value="Y" checked="" />Yes
+   
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part5-2" value="N" checked="" />No ';
+
+$pdf->writeHTMLCell(190, 17, 175, 27, $html, 0, 1, false, true, 'J'); 
+
+//..................
+$pdf->setFont('Times', 'B', 10);
+$html ='A.';
+$pdf->writeHTMLCell(190, 5, 16, 32, $html, 0, 1, false, true, 'J'); 
+//..................
+$pdf->setFont('Times', '', 10);
+$html ='Date you became unemployed <br>(mm/dd/yyyy)';
+$pdf->writeHTMLCell(190, 5, 22, 32, $html, 0, 1, false, true, 'J'); 
+//.................
+$pdf->TextField( 'part5_input-2a', 47, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 22, 42 );
+//...............
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 9.7 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 1, 0.5, 1, 0.5 );
+$pdf->SetFontSize( 11.6 );
+$html = '<div><b><i>Information About Your Spouse</i> </b>  </div>';
+$pdf->writeHTMLCell( 190, 5, 13, 53, $html, '', 1, true, false, 'L', true );
+///................
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>3. </b>   If you are married or separated, does your spouse live in your household?</div>';
+$pdf->writeHTMLCell(160, 7, 12, 61, $html, 0, 1, false, 'L');
+//...............
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-3" value="Y" checked="" />Yes
+   
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part5-3" value="N" checked="" />No ';
+
+$pdf->writeHTMLCell(190, 17, 175, 61, $html, 0, 1, false, true, 'J'); 
+//..................
+$pdf->setFont('Times', 'B', 10);
+$html ='A.';
+$pdf->writeHTMLCell(190, 5, 16, 68, $html, 0, 1, false, true, 'J'); 
+//..................
+$pdf->setFont('Times', '', 10); 
+$html ='If you answered “No” to Item Number 3., does your spouse provide any financial support to your<br>
+household?';
+$pdf->writeHTMLCell(190, 5, 22, 68, $html, 0, 1, false, true, 'J'); 
+//*....................
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-3A" value="Y" checked="" />Yes
+   
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part5-3A" value="N" checked="" />No ';
+
+$pdf->writeHTMLCell(190, 17, 175, 69, $html, 0, 1, false, true, 'J'); 
+//......................
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 9.7 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 1, 0.5, 1, 0.5 );
+$pdf->SetFontSize( 11.6 );
+$html = '<div><b><i>Your Household Size</i> </b>  </div>';
+$pdf->writeHTMLCell( 190, 5, 13, 80, $html, '', 1, true, false, 'L', true );
+
+///................
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>4. </b>   Are you the person providing the primary financial support for your household? </div>';
+$pdf->writeHTMLCell(160, 7, 12,87, $html, 0, 1, false, 'L');
+//...............
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-3" value="Y" checked="" />Yes
+   
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part5-3" value="N" checked="" />No ';
+
+$pdf->writeHTMLCell(190, 17, 175,87, $html, 0, 1, false, true, 'J');
+//...............
+$html ="If you answered “Yes” to <b>Item Number 4.</b>, type or print your name on the line marked “self” in the table below. If you answered<br>
+“No” to <b>Item Number 4.</b>, type or print your name on the line marked “self” in the table below and add the head of household's<br>
+name on the line below yours. ";
+
+$pdf->writeHTMLCell(190, 17, 16,94, $html, 0, 1, false, true, 'J');
+
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Household Size</b></div>";
+$pdf->writeHTMLCell(  187, 6, 18, 110, $html, 1, 0, true, false, 'C', true );
+//................
+$pdf->writeHTMLCell( 187, 50.7, 18, 117, '',  1,  0, false, false, 'C', true );//main cell 
+$pdf->writeHTMLCell( 187, 8, 18, 79, '',  "B",  0, false, false, 'C', true );//1st line 
+$pdf->writeHTMLCell( 187, 8, 18, 85, '',  "B",  0, false, false, 'C', true );//second line
+$pdf->writeHTMLCell( 187, 8, 18, 91, '',  "B",  0, false, false, 'C', true );//third line
+$pdf->writeHTMLCell( 187, 8, 18, 97, '',  "B",  0, false, false, 'C', true );//4th line
+$pdf->writeHTMLCell( 187, 8, 18, 103, '',  "B",  0, false, false, 'C', true );//5th line
+//.....................................
+$pdf->writeHTMLCell( "1", "44.1", 54,117, '',  "R",  0, false, true, 'L', true );//1st  vertical line
+$pdf->writeHTMLCell( "1", "44.1", 78,117, '',  "R",  0, false, true, 'L', true );/// vertical line
+$pdf->writeHTMLCell( "1", "44.1", 104,117, '',  "R",  0, false, true, 'L', true );//  vertical line
+$pdf->writeHTMLCell( "1", "44.1", 133,117, '',  "R",  0, false, true, 'L', true );//  vertical line
+$pdf->writeHTMLCell( "1", "50.6", 162,117, '',  "R",  0, false, true, 'L', true );//  vertical line
+
+//..............
+$pdf->SetFont( 'times', '', 10 );
+$html = "<div><b>Total Household Size
+</b>e (including self)</div>";
+$pdf->writeHTMLCell(  62, 6, 99, 161.4, $html, "", 0, false, false, 'R', true );
+$html = "<div><b>Full
+Name</div>";
+$pdf->writeHTMLCell(  10, 6, 29, 118.4, $html, "", 0, false, false, 'C', true );
+$html = "<div><b>Date of
+Birth</div>";
+$pdf->writeHTMLCell(  15, 6, 58.5, 118.4, $html, "", 0, false, false, 'C', true );
+$html = "<div><b>Relationship
+to You</div>";
+$pdf->writeHTMLCell(  20, 6, 82, 118.4, $html, "", 0, false, false, 'C', true );//i will be needed for.......
+$html = "<div><b>Married</div>";
+$pdf->writeHTMLCell(  15, 6, 111, 121, $html, "", 0, false, false, 'C', true );
+$html = "<div><b>Full-Time
+Student</div>";
+$pdf->writeHTMLCell(  20, 6, 138, 118.4, $html, "", 0, false, false, 'C', true );
+$pdf->SetFont( 'times', '', 9.5 );
+$html = "<div><b>Is any income earned by this
+person counted towards the
+household income?</div>";
+$pdf->writeHTMLCell(  50, 6, 158.5, 116.4, $html, "", 0, false, false, 'C', true );
+//.........................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part5_input-1', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18, 131.2 );
+$pdf->TextField( 'part5_input-2', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18, 138.6 );
+$pdf->TextField( 'part5_input-3', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18, 146.1 );
+$pdf->TextField( 'part5_input-4', 37, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 18, 153.6 );
+//................
+$pdf->SetFont( 'courier', 'B', 10 );
+$pdf->TextField( 'part5_input-5', 24, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55, 131.2 );
+$pdf->TextField( 'part5_input-6', 24, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55, 138.6 );
+$pdf->TextField( 'part5_input-7', 24, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55, 146.1 );
+$pdf->TextField( 'part5_input-8', 24, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 55, 153.6 );
+//...............
+$pdf->SetFont( 'courier', 'B', 10 );
+$html = "<div>Self</div>";
+$pdf->writeHTMLCell(   20, 6, 82, 125, $html, "", 0, false, false, 'C', true );
+$pdf->TextField( 'part5_input-9', 26, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 138.6 );
+$pdf->TextField( 'part5_input-10', 26, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 146.1 );
+$pdf->TextField( 'part5_input-11', 26, 7.4, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 79, 153.6 );
+//..............
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-M1" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-M1" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 104, 132.5, $html, 0, 1, false, true, 'J'); 
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-M2" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-M2" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 104, 139.5, $html, 0, 1, false, true, 'J'); 
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-M3" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-M3" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 104, 146.5, $html, 0, 1, false, true, 'J'); 
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-M4" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-M4" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 104, 154.5, $html, 0, 1, false, true, 'J'); 
+//...........
+//...............
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-S1" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-S1" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 133, 132.5, $html, 0, 1, false, true, 'J'); 
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-S2" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-S2" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 133, 139.5, $html, 0, 1, false, true, 'J'); 
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-S3" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-S3" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 133, 146.5, $html, 0, 1, false, true, 'J'); 
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-S4" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-S4" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 133, 154.5, $html, 0, 1, false, true, 'J'); 
+//...........
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-isAnyIncome_1" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-isAnyIncome_1" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 168, 132.5, $html, 0, 1, false, true, 'J'); 
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-isAnyIncome_2" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-isAnyIncome_2" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 168, 139.5, $html, 0, 1, false, true, 'J'); 
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-isAnyIncome_3" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-isAnyIncome_3" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 168, 146.5, $html, 0, 1, false, true, 'J'); 
+//*....................
+$pdf->SetFont( 'times', '', 10 );
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-isAnyIncome_4" value="Y" checked="" />Yes
+&nbsp;   &nbsp;   <input type="checkbox"      name="part5-isAnyIncome_4" value="N" checked="" />No ';
+$pdf->writeHTMLCell(30, 6, 168, 154.5, $html, 0, 1, false, true, 'J'); 
+//...........
+
+$pdf->TextField( 'part5_input-12', 42, 6.7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 163, 161.1 );
+
+
+
+
+
 
 
 $js = "
@@ -703,7 +950,7 @@ var fields = {
 'part-1_1':' ',
 'part-1_2':' ',
 'part-1_3':' ',
-//*page 1 complete
+//*page 1 complete..........
 'part2-7Separated':' ',
 'part2-7Annulled':' ',
 'part2-7widowed':' ',
@@ -711,15 +958,69 @@ var fields = {
 'part2-7divorced':' ',
 'part2-7married':' ',
 'part2-7single':'',
+//*part 2 complete,.........
 'part3_input-1':'',
-'':' ',
-'':' ',
-'':' ',
-'':' ',
-'':' ',
-'':' ',
-'':' ',
-'':' ',
+'part3_input-2':'',
+'part3_input-3':'',
+'part3_input-4':'',
+'part3_input-5':'',
+'part3_input-6':'',
+'part3_input-7':'',
+'part3_input-8':'',
+'part3_input-9':'',
+'part3_input-10':'',
+'part3_input-11':'',
+'part3_input-12':'',
+'part3_input-13':'',
+'part3_input-14':'',
+'part3_input-15':'',
+'part3_input-16':'',
+'part3_input-17':'',
+'part3_input-18':'',
+//*part 3 complete.................
+'part4_input-1':'',
+'part4_input-2':'',
+'part4_input-3':'',
+'part4_input-4':'',
+'part4_input-5':'',
+'part4_input-6':'',
+'part4_input-7':'',
+'part4_input-8':'',
+'part4_input-9':'',
+'part4_input-10':'',
+'part4_input-11':'',
+'part4_input-12':'',
+'part4_input-13':'',
+'part4_input-14':'',
+'part4_input-15':'',
+'part4_input-16':'',
+'part4_input-17':'',
+'part4_input-18':'',
+'part4_input-19':'',
+'part4_input-20':'',
+'part4_input-21':'',
+'part4_input-22':'',
+'part4_input-23':'',
+'part4_input-24':'',
+//*part 4 complete.................
+'part5-1Other':' ',
+'part5-1Retired':' ',
+'part5-1Unemploye':' ',
+'part5-1Employed':' ',
+'part5_input-2a':' ',
+
+'part5_input-1':'',
+'part5_input-2':'',
+'part5_input-3':'',
+'part5_input-4':'',
+'part5_input-5':'',
+'part5_input-6':'',
+'part5_input-7':'',
+'part5_input-8':'',
+'part5_input-9':'',
+'part5_input-10':'',
+'part5_input-11':'',
+'part5_input-12':'',
 '':' ',
 '':' ',
 '':' ',
