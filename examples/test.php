@@ -40,7 +40,7 @@ class MyPDF extends TCPDF {
 
     public function Footer() {
         //* Position at 15 mm from bottom
-        $this->SetY( -13 );
+        $this->SetY( -16 );
 
         $header_top_border = array(
             'B' => array( 'width' => 0.5, 'color' => array( 0, 0, 0 ), 'dash' => 0, 'cap' => 'butt' ),
@@ -60,7 +60,7 @@ class MyPDF extends TCPDF {
 
         //* $this->MultiCell( 61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 'T', 'R', 1, 0 );
 
-        $this->MultiCell( 61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 0, 'R', 0, 1, 157.5, 271, true );
+        $this->MultiCell( 61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 0, 'R', 0, 1, 157.5, 268, true );
 
     }
 }
@@ -705,7 +705,27 @@ $pdf->writeHTMLCell(180, 7, 77.5, 238, $html, 0, 1, false, true, 'J');
 $pdf->writeHTMLCell(70, 7, 132, 240, "", 1, 1, false, true, 'J', true);
 //!page 2 done......................
 
-$pdf->AddPage( 'P', 'LETTER' );//Page 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$pdf->AddPage( 'P', 'LETTER' );//Page 3 
 $pdf->SetFillColor( 220, 220, 220 );
 $pdf->SetFont( 'times', '', 10 );
 $pdf->setCellHeightRatio( 1.3 );
@@ -801,7 +821,7 @@ $pdf->SetFontSize( 12 );
 $html = "<div><b>Household Size</b></div>";
 $pdf->writeHTMLCell(  187, 6, 18, 110, $html, 1, 0, true, false, 'C', true );
 //................
-$pdf->writeHTMLCell( 187, 50.7, 18, 117, '',  1,  0, false, false, 'C', true );//main cell 
+$pdf->writeHTMLCell( 187, 50.7, 18, 117, '',  1,  0, false, false, 'C', true );//!main cell .....................................>>>
 $pdf->writeHTMLCell( 187, 1, 18, 79, '',  "B",  0, false, false, 'C', true );//1st line 
 $pdf->writeHTMLCell( 187, 1, 18, 85, '',  "B",  0, false, false, 'C', true );//second line
 $pdf->writeHTMLCell( 187, 1, 18, 91, '',  "B",  0, false, false, 'C', true );//third line
@@ -827,7 +847,7 @@ Birth</div>";
 $pdf->writeHTMLCell(  15, 4, 58.5, 118.4, $html, "", 0, false, false, 'C', true );
 $html = "<div><b>Relationship
 to You</div>";
-$pdf->writeHTMLCell(  20, 4, 82, 118.4, $html, "", 0, false, false, 'C', true );//i will be needed for.......
+$pdf->writeHTMLCell(  20, 4, 82, 118.4, $html, "", 0, false, false, 'C', true );
 $html = "<div><b>Married</div>";
 $pdf->writeHTMLCell(  15, 4, 111, 121, $html, "", 0, false, false, 'C', true );
 $html = "<div><b>Full-Time
@@ -1069,6 +1089,137 @@ $pdf->writeHTMLCell(50, 3.5,150.4 , 250.5, "", 1, 1, false, true, 'L');
 
 //!add the 4th page 3rd page variable name set left multiple input feilds have the same name .............
 
+$pdf->AddPage('P', 'LETTER'); //page number 4
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Part 5. Income at or Below 150 Percent of the Federal Poverty Guidelines </b> (continued)</div>";
+$pdf->writeHTMLCell(  190, 6, 13, 18, $html, 1, 0, true, false, 'L', true );
+
+//*....................
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>8. </b>   ITotal Household Income (add the amounts from <b>Item Numbers 5., 6.</b>, and<b> 7.</b>)</div>';
+$pdf->writeHTMLCell(160, 7, 12, 26, $html, 0, 1, false, 'L');
+//...............
+$html ='$';
+$pdf->writeHTMLCell(190, 4, 170, 27, $html, 0, 1, false, true, 'J'); 
+$pdf->writeHTMLCell(30, 4, 173, 27,"" , 1, 1, false, true, 'J'); 
+
+//..............
+//*....................
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>9. </b>   Has anything changed since the date you filed your Federal tax returns? (For example, your marital status,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;income, or number of dependents.)</div>';
+$pdf->writeHTMLCell(160, 7, 12, 36, $html, 0, 1, false, 'L');
+//...............
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-9" value="Y" checked="" />Yes
+   
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part5-9" value="N" checked="" />No ';
+
+$pdf->writeHTMLCell(190, 4, 175, 37, $html, 0, 1, false, true, 'J'); 
+//...............
+$html ='If you answered "Yes" to Item Number 9., provide an explanation below. Provide documentation if available. You may 
+also <br>use this space to provide any additional information about your circumstances that you would like USCIS to consider.';
+
+$pdf->writeHTMLCell(190, 4, 16, 47, $html, 0, 1, false, true, 'L'); 
+
+//.................
+$pdf->writeHTMLCell( 187, 1, 16, 51, '',  "B",  0, false, false, 'C', true );
+$pdf->writeHTMLCell( 187, 1, 16, 56, '',  "B",  0, false, false, 'C', true );
+$pdf->writeHTMLCell( 187, 1, 16, 61, '',  "B",  0, false, false, 'C', true );
+$pdf->writeHTMLCell( 187, 1, 16, 66, '',  "B",  0, false, false, 'C', true );
+$pdf->writeHTMLCell( 187, 1, 16, 71, '',  "B",  0, false, false, 'C', true );
+$pdf->writeHTMLCell( 187, 1, 16, 76, '',  "B",  0, false, false, 'C', true );
+$pdf->writeHTMLCell( 187, 1, 16, 81, '',  "B",  0, false, false, 'C', true );
+//...........
+$pdf->SetFillColor( 220, 220, 220 );
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Part 6. Financial Hardship </b></div>";
+$pdf->writeHTMLCell(  190, 6, 13, 109, $html, 1, 0, true, false, 'L', true );
+//................
+
+$pdf->setFont('Times', '', 10);
+$html ='If you selected <b>Item Number 3</b>. in <b>Part 1</b>., complete this section.';
+$pdf->writeHTMLCell(190, 4, 12, 117, $html, 0, 1, false, true, 'L'); 
+
+
+//*....................
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>1. </b>   If you or any family members have a situation that has caused you to incur expenses, debts, or loss of income, describe the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;situation in the box below. Specify the amounts of the expenses, debts, and income losses in as much detail as possible.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Examples may include medical expenses, job loss, eviction, and homelessness.</div>';
+$pdf->writeHTMLCell(190, 7, 12, 124, $html, 0, 1, false, 'L');
+//..............
+$pdf->setFont('courier', 'B', 10);
+$html = <<<EOD
+<textarea cols="44" rows="12" name="additional_information_6d" multiline="true">
+</textarea>
+EOD;
+$pdf->writeHTMLCell(10, 40,16, 140, $html, 0, 0, false, 'L');
+//*....................
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>2. </b>   If you have cash or assets that you can quickly convert to cash, list those in the table below. For example, bank accounts, stocks, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or bonds. (Do not include retirement accounts.)</div>';
+$pdf->writeHTMLCell(190, 7, 12, 197, $html, 0, 1, false, 'L');
+//.........
+$pdf->SetFont( 'times', '', 10 );
+$pdf->setCellHeightRatio( 1.3 );
+$pdf->setCellPaddings( 0.5, 0.5, 0, 1 );
+$pdf->SetFontSize( 12 );
+$html = "<div><b>Assets</b></div>";
+$pdf->writeHTMLCell(  90, 6, 18, 209, $html, 1, 0, true, false, 'C', true );
+//................
+$pdf->writeHTMLCell( 90, 35.7, 18, 216, '',  1,  0, false, false, 'C', true );//!main cell .....................................>>>
+$pdf->writeHTMLCell( 90, 1, 18, 186, '',  "B",  0, false, false, 'C', true );//1st line 
+$pdf->writeHTMLCell( 90, 1, 18, 191, '',  "B",  0, false, false, 'C', true );//1st line 
+$pdf->writeHTMLCell( 90, 1, 18, 196, '',  "B",  0, false, false, 'C', true );//1st line 
+$pdf->writeHTMLCell( 90, 1, 18, 201, '',  "B",  0, false, false, 'C', true );//1st line 
+$pdf->writeHTMLCell( 1, 40, 60, 216, '',  1,  0, false, false, 'C', true );//1st line 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1078,7 +1229,7 @@ $pdf->writeHTMLCell(50, 3.5,150.4 , 250.5, "", 1, 1, false, true, 'L');
 //............page number 11 end ------------------------------------------------------------------------
 
 
-$pdf->AddPage('P', 'LETTER'); //page number 12
+$pdf->AddPage('P', 'LETTER'); //page number 11
 $pdf->SetFillColor(220,220,220);
 $pdf->setCellPaddings(1, 0.5, 1, 1); // set cell padding
 $pdf->SetFont('times', '', 12); // set font
@@ -1315,7 +1466,8 @@ $html = <<<EOD
 EOD;
 $pdf->writeHTMLCell(90, 40, 25, 205, $html, 0, 0, false, 'L');
 
-//....page number 13 end---------------------------------------------------------------------------------
+//....page number 13 end--------------------------------------------------------------------------------->>>
+
 
 
 

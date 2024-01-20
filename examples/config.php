@@ -36,4 +36,27 @@ function indexByQuerySingleData($sql){
 	
 	return $singleData;
 }
+
+
+$allDataCountry = indexByQueryAllData("SELECT * FROM countries");
+	$singleData = indexByQuerySingleData("SELECT * FROM client_profile WHERE client_id=10107");
+	$jsonData = json_decode($singleData->profile_description);
+	
+	 function showData($name) {
+		global $jsonData;
+
+		if (isset($jsonData->{$name})) {
+			$value = $jsonData->{$name};
+
+			if(date("Y-m-d", strtotime($value)) == date($value)) {
+				return date("m/d/Y", strtotime($value));
+			} else {
+				return $value;
+			}
+		} else {
+			return '';
+		}
+	}
+
+
 ?>
