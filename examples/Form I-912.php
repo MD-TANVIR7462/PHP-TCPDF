@@ -70,7 +70,7 @@ $pdf = new MyPDF( PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8'
 //* set document information
 $pdf->SetCreator( PDF_CREATOR );
 $pdf->SetAuthor( '' );
-$pdf->SetTitle( 'Form I-912' );
+$pdf->SetTitle( 'Form I-912, Request for Fee Waiver' );
 
 //* set default header data
 $pdf->SetHeaderData( PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING );
@@ -488,7 +488,7 @@ $html = "<div><b>Forms Being Filed</b></div>";
 $pdf->writeHTMLCell(  55, 6, 159, 72,$html, "", 0, false, false, 'C', true );
 //.,............
 $pdf->SetFont( 'times', '', 10 );
-$html = "<div><b>Total Number of Forms</b>(including self)</div>";
+$html = "<div><b>Total Number of Forms </b>(including self)</div>";
 $pdf->writeHTMLCell(  75, 6, 93,105.5,$html, "", 0, false, false, 'R', true );
 
 //................
@@ -802,9 +802,9 @@ $pdf->setFont('Times', '', 10);
 $html= '<div><b>4. </b>   Are you the person providing the primary financial support for your household? </div>';
 $pdf->writeHTMLCell(160, 7, 12,87, $html, 0, 1, false, 'L');
 //...............
-$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-3" value="Y" checked="" />Yes
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part5-4" value="Y" checked="" />Yes
    
-   &nbsp;   &nbsp;   <input type="checkbox"      name="part5-3" value="N" checked="" />No ';
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part5-4" value="N" checked="" />No ';
 
 $pdf->writeHTMLCell(190, 5, 175,87, $html, 0, 1, false, true, 'J');
 //...............
@@ -838,7 +838,7 @@ $pdf->writeHTMLCell( "1", "50.6", 162,117, '',  "R",  0, false, true, 'L', true 
 //..............
 $pdf->SetFont( 'times', '', 10 );
 $html = "<div><b>Total Household Size
-</b>e (including self)</div>";
+</b> (including self)</div>";
 $pdf->writeHTMLCell(  62, 4, 99, 161.4, $html, "", 0, false, false, 'R', true );
 $html = "<div><b>Full
 Name</div>";
@@ -997,7 +997,7 @@ $pdf->TextField( 'part5_7input', 42, 6, array( 'strokeColor' => array( 64, 64, 6
 //............
 $pdf->setFont('Times', '', 9.9);
 $html= '<div>Provide the total annual amount you receive in additional income or financial support from a source outside of your household.<br>
-(Do not include the amount provided in <b>Item Numbers 5.</b> or <b>6</b>) You must add all of the additional income and financial support<br>
+(Do not include the amount provided in <b>Item Numbers 5.</b> or <b>6.</b>) You must add all of the additional income and financial support<br>
 amounts and put the total amount in the space provided. Type or print "0" in the total box if there are none. Select the type of<br>
 additional income or financial support that you receive and provide documentation.</div>';
 $pdf->writeHTMLCell(190, 7, 17,213, $html, 0, 1, false, 'L');
@@ -1473,7 +1473,7 @@ Instructions, USCIS may deny your request.
 $pdf->writeHTMLCell(190, 7, 12, 64.5,  $html, 0, 1, false, 'L');
 //..............................
 $pdf->setFont('Times', 'I', 12); 
-$html= '<div><b>Family Member\'s Signature </b></div>';
+$html= '<div><b>Family Member\'s Signatures </b></div>';
 $pdf->writeHTMLCell(190, 7, 12, 76,  $html, 0, 1, true, 'L');
 
 
@@ -1714,7 +1714,7 @@ $pdf->TextField('part8_6_signature', 58, 7, array('strokeColor' => array(64, 64,
 //.............
 $pdf->setFont('Times', '', 10);
 $html= '<div><b>NOTE TO ALL FAMILY MEMBERS</b>: If you do not completely fill out this request or fail to submit required documents listed in
-the Instructions, USCIS may deny your request
+the Instructions, USCIS may deny your request.
 </div>';
 $pdf->writeHTMLCell(190, 7, 12, 215.5,  $html, 0, 1, false, 'L');
 
@@ -1924,7 +1924,7 @@ $pdf->writeHTMLCell(191, 7, 13, 153, $html, 0, 1, true, 'L');
 // //...............
 
 $pdf->setFont('Times', '', 10.5);
-$html= '<div><b>4.  </b> Interpreter\'s Daytime Telephone Number</div>';
+$html= '<div><b>6.  </b> Interpreter\'s Daytime Telephone Number</div>';
 $pdf->writeHTMLCell(80, 7, 12, 161.5, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part9_Interpreter_contact_daytime_telephone', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 18, 167.5);
@@ -1932,14 +1932,14 @@ $pdf->TextField('part9_Interpreter_contact_daytime_telephone', 85, 7, array('str
 // //............
 
 $pdf->setFont('Times', '', 10.5);
-$html= '<div><b>5.  </b> Interpreter\'s Mobile Telephone Number (if any)</div>';
+$html= '<div><b>7.  </b> Interpreter\'s Mobile Telephone Number (if any)</div>';
 $pdf->writeHTMLCell(80, 7, 112, 161.5, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part9_Interpreter_contact_mobile_telephone', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 118, 167.5);
 // //.................. 
 
 $pdf->setFont('Times', '', 10.5);
-$html= '<div><b>6.  </b> Interpreter\'s  Email Address (if any)</div>';
+$html= '<div><b>8.  </b> Interpreter\'s  Email Address (if any)</div>';
 $pdf->writeHTMLCell(80, 7, 12, 175, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part9_Interpreter_contact_Email', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 18, 180.5);
@@ -2029,18 +2029,18 @@ $pdf->setFont('Times', '', 10);
 $html= "<div><b>1.      </b>    Did any person prepare this request on your behalf? </div>";
 $pdf->writeHTMLCell(100, 7, 12, 30, $html, 0, 1, false, 'L');
 $html ='&nbsp;  &nbsp;    <input type="checkbox" name="part10 -1" value="Y" checked="" />Yes, (complete this section)
-&nbsp;   &nbsp;   <input type="checkbox"      name="part10 -1" value="N" checked="" />No (skip to <b>Part 10</b>.) ';
+&nbsp;   &nbsp;   <input type="checkbox"      name="part10 -1" value="N" checked="" />No, skip';
 $pdf->writeHTMLCell(190, 4, 115, 30, $html, 0, 1, false, true, 'J'); 
 //............
 $pdf->setFont('Times', '', 10);
-$html= "<div><b>2.      </b>    Was the same interpreparerpreter used for all individuals requesting a fee waiver (as listed in <b>Part 3</b>.)?</div>";
+$html= "<div><b>2.      </b>    Was the same preparer used for all individuals requesting a fee waiver (as listed in <b>Part 3</b>.)?</div>";
 $pdf->writeHTMLCell(170, 7, 12, 36.5, $html, 0, 1, false, 'L');
 $html ='&nbsp;  &nbsp;    <input type="checkbox" name="part10 -2" value="Y" checked="" />Yes
 &nbsp;   &nbsp;   <input type="checkbox"      name="part10 -2" value="N" checked="" />No ';
 $pdf->writeHTMLCell(190, 4, 175, 36.5, $html, 0, 1, false, true, 'J'); 
 ///..............
 $pdf->setFont('Times', '', 10);
-$html= "<div><b>NOTE for Family Members:</b> If you used a different preparer than the one used by the requestor, provide the following information,
+$html= "<div><b>NOTE for Family Members:</b> If you used a different preparer than the one used by the requestor, provide the following information,<br>
 and include the pages with your completed Form I-912.
 </div>";
 $pdf->writeHTMLCell(195, 7, 12, 43, $html, 0, 1, false, 'L');
@@ -2181,7 +2181,7 @@ $pdf->writeHTMLCell(191, 7, 13, 153, $html, 0, 1, true, 'L');
 // //...............
 
 $pdf->setFont('Times', '', 10.5);
-$html= '<div><b>4.  </b> Preparer\'s Daytime Telephone Number</div>';
+$html= '<div><b>6.  </b> Preparer\'s Daytime Telephone Number</div>';
 $pdf->writeHTMLCell(80, 7, 12, 161.5, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part10_Preparer_contact_daytime_telephone', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 18, 167.5);
@@ -2189,14 +2189,14 @@ $pdf->TextField('part10_Preparer_contact_daytime_telephone', 85, 7, array('strok
 // //............
 
 $pdf->setFont('Times', '', 10.5);
-$html= '<div><b>5.  </b> Preparer\'s Mobile Telephone Number (if any)</div>';
+$html= '<div><b>7.  </b> Preparer\'s Mobile Telephone Number (if any)</div>';
 $pdf->writeHTMLCell(80, 7, 112, 161.5, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part10_Preparer_contact_mobile_telephone', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 118, 167.5);
 // //.................. 
 
 $pdf->setFont('Times', '', 10.5);
-$html= '<div><b>6.  </b> Preparer\'s  Email Address (if any)</div>';
+$html= '<div><b>8.  </b> Preparer\'s  Email Address (if any)</div>';
 $pdf->writeHTMLCell(80, 7, 12, 175, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part10_Preparer_contact_Email', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 18, 180.5);
@@ -2323,10 +2323,9 @@ $html = 'Middle Name';
 $pdf->writeHTMLCell(50, 7, 156, 46, $html, 0, 0, false, true, 'L', true);
 
 $pdf->SetFillColor(220,220,220);
-$pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('additional_information_last_name', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 52);
-$pdf->TextField('additional_information_first_name', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 97, 52);
-$pdf->TextField('additional_information_middle_name', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 155.5, 52);
+$pdf->writeHTMLCell(70, 7, 20, 52, "", 1, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(56, 7, 97, 52, "", 1, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(48, 7, 155.5, 52, "", 1, 0, false, true, 'L', true);
 //...........
 
 
@@ -2749,4 +2748,4 @@ $pdf->IncludeJS( $js );
 
 //* $pdf->lastPage();
 //*Close and output PDF document
-$pdf->Output( 'I-912.pdf', 'I' );
+$pdf->Output( 'Form I-912, Request for Fee Waiver', 'I' );
