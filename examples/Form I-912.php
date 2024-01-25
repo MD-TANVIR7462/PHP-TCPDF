@@ -403,28 +403,90 @@ $pdf->writeHTMLCell(  190, 6, 13, 18, $html, 1, 0, true, false, 'L', true );
 //*....................
 
 
+// $pdf->setFont('Times', '', 10);
+// $html= '<div><b>7. </b> Marital Status</div>';
+// $pdf->writeHTMLCell(110, 7, 12, 26, $html, 0, 1, false, 'L');
+
+// $html ='&nbsp;  &nbsp;    <input type="checkbox" name="part2-7meritial-Status" value="single"  /> Single,Never Married
+   
+//    &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7meritial-Status" value="married" checked="" /> Married
+
+//    &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7meritial-Status" value="divorced" checked="" /> Divorced
+
+//    &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7meritial-Status" value="widowed" checked="" /> Widowed
+
+//    &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7meritial-Status" value="marriage_annulled" checked="" /> Marriage Annulled
+
+//    &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7meritial-Status" value="separated" checked="" /> Separated';
+
+// $pdf->writeHTMLCell(190, 7, 15, 31, $html, 0, 1, false, true, 'J');
+// $html ='<div>&nbsp;<input type="checkbox" name="part2-7meritial-Status" value="other" checked=" " />  Other (Explain)</div>';
+// $pdf->writeHTMLCell(180, 7, 17.5, 37, $html, 0, 1, false, true, 'J');
+// $pdf->writeHTMLCell(137, 7, 52, 37, "", 1, 1, false, true, 'J', true);
+
+
+
+
+
+
+
+
+
+
+
+
+
 $pdf->setFont('Times', '', 10);
-$html= '<div><b>7. </b> Marital Status</div>';
+
+$html = '<div><b>7. </b> Marital Status</div>';
 $pdf->writeHTMLCell(110, 7, 12, 26, $html, 0, 1, false, 'L');
 
-$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part2-7single" value="single" checked="" /> Single,Never Married
-   
-   &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7married" value="married" checked="" /> Married
+// Retrieve marital status from the database
+if(showData('marital_status')=='single') $single_check='checked'; else $single_check='';
+if(showData('marital_status')=='divorced') $divorce_check='checked'; else $divorce_check='';
 
-   &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7divorced" value="divorced" checked="" /> Divorced
+$html = '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="single" checked="'.$single_check.'"/> Single, Never Married';
+$html .= '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="married" /> Married';
+$html .= '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="divorced" checked="'.$divorce_check.'"/> Divorced';
+$html .= '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="widowed" /> Widowed';
+$html .= '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="Marriage Annulled" /> Marriage Annulled';
+$html .= '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="Separated" /> Separated';
 
-   &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7widowed" value="widowed" checked="" /> Widowed
-
-   &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7Annulled" value="Annulled" checked="" /> Marriage Annulled
-
-   &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7Separated" value="Separated" checked="" /> Separated';
-
-      
+$html .= '<div>&nbsp; <input type="checkbox" name="part2-7meritial-Status" value="other"/> Other (Explain)</div>';
 
 $pdf->writeHTMLCell(190, 7, 15, 31, $html, 0, 1, false, true, 'J');
-$html ='<div>&nbsp;<input type="checkbox" name="other" value="Y" checked=" " />  Other (Explain)</div>';
-$pdf->writeHTMLCell(180, 7, 17.5, 37, $html, 0, 1, false, true, 'J');
+$pdf->writeHTMLCell(180, 7, 17.5, 37, "", 0, 1, false, true, 'J');
 $pdf->writeHTMLCell(137, 7, 52, 37, "", 1, 1, false, true, 'J', true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //*....................
 $pdf->SetFillColor( 220, 220, 220 );
@@ -2492,31 +2554,25 @@ $js = "
 var fields = {
 
 'part2-1_middle_name':' ',
-'part2-1_first_name':' ',
-'part2-1_last_name':' ',
+'part2-1_first_name':' ".showData('first_name')." ',
+'part2-1_last_name':' ".showData('last_name')." ',
 'part2-2_middle_name':' ',
-'part2-2_first_name':' ',
-'part2-2_last_name':' ',
+'part2-2_first_name':' ".showData('first_name')." ',
+'part2-2_last_name':' ".showData('last_name')." ',
 'part2-2_middle_name2':' ',
 'part2-2_first_name2':' ',
 'part2-2_last_name2':' ',
-'part2-3':' ',
-'part2-4':' ',
-'part2-5':' ',
-'part2-6':' ',
+'part2-3':' ".showData('a_number')." ',
+'part2-4':' ".showData('uscis_online_account_number')." ',
+'part2-5':' ".showData('dob')." ',
+'part2-6':' ".showData('social_security_number')." ',
 'part-1_1':' ',
 'part-1_2':' ',
 'part-1_3':' ',
 //*page 1 complete..........
-'part2-7Separated':' ',
-'part2-7Annulled':' ',
-'part2-7widowed':' ',
-'part2-7divorced':' ',
-'part2-7divorced':' ',
-'part2-7married':' ',
-'part2-7single':'',
+'part2-7meritial-Status':' ".showData('marital_status')." ',
 //*part 2 complete,.........
-'part3_input-1':'',
+'part3_input-1':'".showData('marital_status')."',
 'part3_input-2':'',
 'part3_input-3':'',
 'part3_input-4':'',
@@ -2725,13 +2781,6 @@ var fields = {
 'additional_information_middle_name':' ',
 'additional_information_first_name':' ',
 'additional_information_last_name':' ',
-
-
-
-
-
-
-
 
 };
 for (var fieldName in fields) {
