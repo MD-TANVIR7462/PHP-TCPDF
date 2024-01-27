@@ -328,7 +328,7 @@ $pdf->SetFontSize( 11.6 );
 $html = '<div><b>Home Address</b></div>';
 $pdf->writeHTMLCell( 91, 7, 12.5, 183.5, $html, 0, 1, true, false, 'J', true );
 $pdf->SetFont( 'times', 'IB', 9 );
-$html = '<div><a href="https://*tools.usps.com/go/ZipLookupAction_input"><I>(Uses ZIP Code Lookup)</I></a></div>';
+$html = '<div><a href="https://tools.usps.com/go/ZipLookupAction_input"><I>(Uses ZIP Code Lookup)</I></a></div>';
 $pdf->writeHTMLCell( 90, 1, 13, 184, $html, 0, 1, true, false, 'R', true );
 
 //*.....

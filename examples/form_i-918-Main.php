@@ -4084,7 +4084,8 @@ var fields = {
 
 //*page 10
 'part7_8b_signature':' ',
-
+'p7_7a_agree':' ',
+'p7_7b_agree':' ',
 
 //*page 11
 
@@ -4178,8 +4179,7 @@ var fields = {
 'part7_1b_FirstName':' ',
 
 'part7_2_BusinessName':' ',
-'p7_7a_agree':' ',
-'p7_7b_agree':' ',
+
 
 
 
