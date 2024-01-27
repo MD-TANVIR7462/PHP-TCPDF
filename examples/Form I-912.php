@@ -427,7 +427,7 @@ $html ='&nbsp;  &nbsp;    <input type="checkbox" name="part2_7meritial_Single" v
    &nbsp;   &nbsp;   <input type="checkbox"      name="part2_7meritial_separeted" value="separated" checked="'.$separated_check.'" /> Separated';
 
 $pdf->writeHTMLCell(190, 7, 15, 31, $html, 0, 1, false, true, 'J');
-$html ='<div>&nbsp;<input type="checkbox" name="part2-7meritial-Status" value="other" checked="'.$other_check.'" />  Other (Explain)</div>';
+$html ='<div>&nbsp;<input type="checkbox" name="part2_7meritial_other" value="other" checked="'.$other_check.'" />  Other (Explain)</div>';
 $pdf->writeHTMLCell(180, 7, 17.5, 37, $html, 0, 1, false, true, 'J');
 $pdf->writeHTMLCell(137, 7, 52, 37, "", 1, 1, false, true, 'J', true);
 
@@ -1878,18 +1878,9 @@ $pdf->TextField('part9_Interpreter_mailing_address_city_town', 130, 7, array('st
 
 $html = '<select name="part9_5_state" size="0.25">';
 
-$html .= '<option > As</option>';
-//*Dummy Option Value
-$html .= '<option > Ts</option>';
-//*Dummy Option Value
-$html .= '<option > Ts</option>';
-//*Dummy Option Value
-$html .= '<option > Ts</option>';
-//*Dummy Option Value
-$html .= '<option > Ts</option>';
-//*Dummy Option Value
-$html .= '<option > Ts</option>';
-//*Dummy Option Value
+foreach($allDataCountry as $record){
+	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+}
 
 $html .= '</select>';
 $pdf->writeHTMLCell( 25, 5, 155, 130, $html, '', 0, 0, true, 'L' );
@@ -2135,18 +2126,9 @@ $pdf->TextField('part10_Preparer_mailing_address_city_town', 130, 7, array('stro
 
 $html = '<select name="part10_5_state" size="0.25">';
 
-$html .= '<option > As</option>';
-//*Dummy Option Value
-$html .= '<option > Ts</option>';
-//*Dummy Option Value
-$html .= '<option > Ts</option>';
-//*Dummy Option Value
-$html .= '<option > Ts</option>';
-//*Dummy Option Value
-$html .= '<option > Ts</option>';
-//*Dummy Option Value
-$html .= '<option > Ts</option>';
-//*Dummy Option Value
+foreach($allDataCountry as $record){
+	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+}
 
 $html .= '</select>';
 $pdf->writeHTMLCell( 25, 5, 155, 130, $html, '', 0, 0, true, 'L' );
@@ -2520,7 +2502,7 @@ var fields = {
 'part2_7meritial_divorced':' ',
 'part2_7meritial_Married':' ',
 'part2_7meritial_Single':' ',
-'part2_7meritial_Single':' ',
+'part2_7meritial_other':' ',
 //*part 2 complete,.........
 'part3_input-1':'',
 'part3_input-2':'',
