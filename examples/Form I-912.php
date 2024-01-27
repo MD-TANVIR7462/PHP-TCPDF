@@ -403,89 +403,33 @@ $pdf->writeHTMLCell(  190, 6, 13, 18, $html, 1, 0, true, false, 'L', true );
 //*....................
 
 
-// $pdf->setFont('Times', '', 10);
-// $html= '<div><b>7. </b> Marital Status</div>';
-// $pdf->writeHTMLCell(110, 7, 12, 26, $html, 0, 1, false, 'L');
-
-// $html ='&nbsp;  &nbsp;    <input type="checkbox" name="part2-7meritial-Status" value="single"  /> Single,Never Married
-   
-//    &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7meritial-Status" value="married" checked="" /> Married
-
-//    &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7meritial-Status" value="divorced" checked="" /> Divorced
-
-//    &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7meritial-Status" value="widowed" checked="" /> Widowed
-
-//    &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7meritial-Status" value="marriage_annulled" checked="" /> Marriage Annulled
-
-//    &nbsp;   &nbsp;   <input type="checkbox"      name="part2-7meritial-Status" value="separated" checked="" /> Separated';
-
-// $pdf->writeHTMLCell(190, 7, 15, 31, $html, 0, 1, false, true, 'J');
-// $html ='<div>&nbsp;<input type="checkbox" name="part2-7meritial-Status" value="other" checked=" " />  Other (Explain)</div>';
-// $pdf->writeHTMLCell(180, 7, 17.5, 37, $html, 0, 1, false, true, 'J');
-// $pdf->writeHTMLCell(137, 7, 52, 37, "", 1, 1, false, true, 'J', true);
-
-
-
-
-
-
-
-
-
-
-
-
-
 $pdf->setFont('Times', '', 10);
-
-$html = '<div><b>7. </b> Marital Status</div>';
+$html= '<div><b>7. </b> Marital Status</div>';
 $pdf->writeHTMLCell(110, 7, 12, 26, $html, 0, 1, false, 'L');
-
-// Retrieve marital status from the database
-if(showData('marital_status')=='single') $single_check='checked'; else $single_check='';
+if(showData('marital_status')=='single')   $single_check='checked'; else $single_check='';
 if(showData('marital_status')=='divorced') $divorce_check='checked'; else $divorce_check='';
+if(showData('marital_status')=='married')  $married_check='checked'; else $married_check='';
+if(showData('marital_status')=='widowed') $widowed_check='checked'; else $widowed_check='';
+if(showData('marital_status')=='marriage_annulled') $marriage_annulled_check='checked'; else $marriage_annulled_check='';
+if(showData('marital_status')=='separated') $separated_check='checked'; else $separated_check='';
+if(showData('marital_status')=='other') $other_check='checked'; else $other_check='';
 
-$html = '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="single" checked="'.$single_check.'"/> Single, Never Married';
-$html .= '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="married" /> Married';
-$html .= '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="divorced" checked="'.$divorce_check.'"/> Divorced';
-$html .= '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="widowed" /> Widowed';
-$html .= '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="Marriage Annulled" /> Marriage Annulled';
-$html .= '&nbsp; &nbsp; <input type="checkbox" name="part2-7meritial-Status" value="Separated" /> Separated';
+$html ='&nbsp;  &nbsp;    <input type="checkbox" name="part2_7meritial_Single" value="single" checked="'.$single_check.'" /> Single,Never Married
+   
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part2_7meritial_Married" value="married" checked="'.$married_check.'" /> Married
 
-$html .= '<div>&nbsp; <input type="checkbox" name="part2-7meritial-Status" value="other"/> Other (Explain)</div>';
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part2_7meritial_divorced" value="divorced" checked="'.$divorce_check.'" /> Divorced
+
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part2_7meritial_widow" value="widowed" checked="'.$widowed_check.'" /> Widowed
+
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part2_7meritial_merriage" value="marriage_annulled" checked="'.$marriage_annulled_check.'" /> Marriage Annulled
+
+   &nbsp;   &nbsp;   <input type="checkbox"      name="part2_7meritial_separeted" value="separated" checked="'.$separated_check.'" /> Separated';
 
 $pdf->writeHTMLCell(190, 7, 15, 31, $html, 0, 1, false, true, 'J');
-$pdf->writeHTMLCell(180, 7, 17.5, 37, "", 0, 1, false, true, 'J');
+$html ='<div>&nbsp;<input type="checkbox" name="part2-7meritial-Status" value="other" checked="'.$other_check.'" />  Other (Explain)</div>';
+$pdf->writeHTMLCell(180, 7, 17.5, 37, $html, 0, 1, false, true, 'J');
 $pdf->writeHTMLCell(137, 7, 52, 37, "", 1, 1, false, true, 'J', true);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //*....................
@@ -2570,9 +2514,15 @@ var fields = {
 'part-1_2':' ',
 'part-1_3':' ',
 //*page 1 complete..........
-'part2-7meritial-Status':' ".showData('marital_status')." ',
+'part2_7meritial_separeted':' ',
+'part2_7meritial_merriage':' ',
+'part2_7meritial_widow':' ',
+'part2_7meritial_divorced':' ',
+'part2_7meritial_Married':' ',
+'part2_7meritial_Single':' ',
+'part2_7meritial_Single':' ',
 //*part 2 complete,.........
-'part3_input-1':'".showData('marital_status')."',
+'part3_input-1':'',
 'part3_input-2':'',
 'part3_input-3':'',
 'part3_input-4':'',
