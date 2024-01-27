@@ -208,67 +208,67 @@ $pdf->writeHTMLCell( 82, 1, 121,102, '', 'T', 1, false, true, 'L', true );
 
 //*............
 $pdf->setCellHeightRatio( 0);
-$pdf->writeHTMLCell( 2.7, 2.7, 15,82, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 9 );
-$pdf->writeHTMLCell( 27, 7, 15,83, 'INA 212(a)(1)', "", 1, false, true, 'C', true );
+$pdf->writeHTMLCell( 2.7, 2.7, 15,82.5, '', 1, 1, false, true, 'L', true );
+$pdf->SetFont( 'times', '', 8.4 );
+$pdf->writeHTMLCell( 27, 7, 15,83.5, 'INA 212(a)(1)', "", 1, false, true, 'C', true );
 $pdf->writeHTMLCell( 35, 1, 19,88.5, '', 'T', 1, false, true, 'L', true );
 //*............
 $pdf->setCellHeightRatio( 0);
 $pdf->writeHTMLCell( 2.7, 2.7, 15,90, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 9 );
+$pdf->SetFont( 'times', '', 8.4 );
 $pdf->writeHTMLCell( 27, 7, 15,91, 'INA 212(a)(2)', "", 1, false, true, 'C', true );
-$pdf->writeHTMLCell( 35, 1, 19,97, '', 'T', 1, false, true, 'L', true );
+$pdf->writeHTMLCell( 35, 1, 19,96.5, '', 'T', 1, false, true, 'L', true );
 //*.............
 $pdf->setCellHeightRatio( 0);
-$pdf->writeHTMLCell( 2.7, 2.7, 15,99, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 9 );
-$pdf->writeHTMLCell( 27, 7, 15,100, 'INA 212(a)(3)', "", 1, false, true, 'C', true );
-$pdf->writeHTMLCell( 35, 1, 19,106, '', 'T', 1, false, true, 'L', true );
+$pdf->writeHTMLCell( 2.7, 2.7, 15,98.5, '', 1, 1, false, true, 'L', true );
+$pdf->SetFont( 'times', '', 8.4 );
+$pdf->writeHTMLCell( 27, 7, 15,99.5, 'INA 212(a)(3)', "", 1, false, true, 'C', true );
+$pdf->writeHTMLCell( 35, 1, 19,105.3, '', 'T', 1, false, true, 'L', true );
 //*.............
 $pdf->setCellHeightRatio( 0);
-$pdf->writeHTMLCell( 2.7, 2.7, 15,108, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 9 );
-$pdf->writeHTMLCell( 27, 7, 15,109, 'INA 212(a)(4)', "", 1, false, true, 'C', true );
-$pdf->writeHTMLCell( 35, 1, 19,115, '', 'T', 1, false, true, 'L', true );
+$pdf->writeHTMLCell( 2.7, 2.7, 15,107.5, '', 1, 1, false, true, 'L', true );
+$pdf->SetFont( 'times', '', 8.4 );
+$pdf->writeHTMLCell( 27, 7, 15,108.5, 'INA 212(a)(4)', "", 1, false, true, 'C', true );
+$pdf->writeHTMLCell( 35, 1, 19,114.1, '', 'T', 1, false, true, 'L', true );
 //*.............
-$pdf->writeHTMLCell( 2.7, 2.7, 15,117, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 9 );
-$pdf->writeHTMLCell( 27, 7, 15,118, 'INA 212(a)(6)', "", 1, false, true, 'C', true );
-$pdf->writeHTMLCell( 35, 1, 19,124, '', 'T', 1, false, true, 'L', true );
+$pdf->writeHTMLCell( 2.7, 2.7, 15,116.5, '', 1, 1, false, true, 'L', true );
+$pdf->SetFont( 'times', '', 8.4 );
+$pdf->writeHTMLCell( 27, 7, 15,117.5, 'INA 212(a)(6)', "", 1, false, true, 'C', true );
+$pdf->writeHTMLCell( 35, 1, 19,123.1, '', 'T', 1, false, true, 'L', true );
 //*.............
-$pdf->writeHTMLCell( 2.7, 2.7, 15,126, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 9 );
-$pdf->writeHTMLCell( 27, 7, 15,127, 'INA 212(a)(7)', "", 1, false, true, 'C', true );
-$pdf->writeHTMLCell( 35, 1, 19,133, '', 'T', 1, false, true, 'L', true );
+$pdf->writeHTMLCell( 2.7, 2.7, 15,125, '', 1, 1, false, true, 'L', true );
+$pdf->SetFont( 'times', '', 8.4 );
+$pdf->writeHTMLCell( 27, 7, 15,126, 'INA 212(a)(7)', "", 1, false, true, 'C', true );
+$pdf->writeHTMLCell( 35, 1, 19,131, '', 'T', 1, false, true, 'L', true );
 //*.............
-$pdf->writeHTMLCell( 2.7, 2.7, 15,134.5, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 9 );
-$pdf->writeHTMLCell( 27, 7, 15,135.5, 'INA 212(a)(8)', "", 1, false, true, 'C', true );
-$pdf->writeHTMLCell( 35, 1, 19,142, '', 'T', 1, false, true, 'L', true );
+$pdf->writeHTMLCell( 2.7, 2.7, 15,133, '', 1, 1, false, true, 'L', true );
+$pdf->SetFont( 'times', '', 8.4 );
+$pdf->writeHTMLCell( 27, 7, 15,134, 'INA 212(a)(8)', "", 1, false, true, 'C', true );
+$pdf->writeHTMLCell( 35, 1, 19,139, '', 'T', 1, false, true, 'L', true );
 //*.............
 $pdf->setCellHeightRatio( 0);
-$pdf->writeHTMLCell( 2.7, 2.7, 68,82, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 9 );
-$pdf->writeHTMLCell( 27, 7, 68,83, 'INA 212(a)(9)', "", 1, false, true, 'C', true );
+$pdf->writeHTMLCell( 2.7, 2.7, 65,82, '', 1, 1, false, true, 'L', true );
+$pdf->SetFont( 'times', '', 8.4 );
+$pdf->writeHTMLCell( 27, 7, 65,83, 'INA 212(a)(9)', "", 1, false, true, 'C', true );
 $pdf->writeHTMLCell( 35, 1, 72,88.5, '', 'T', 1, false, true, 'L', true );
 //*............
 $pdf->setCellHeightRatio( 0);
-$pdf->writeHTMLCell( 2.7, 2.7, 68,90, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 9 );
-$pdf->writeHTMLCell( 27, 7, 68,91, 'INA 212(a)(10)', "", 1, false, true, 'C', true );
+$pdf->writeHTMLCell( 2.7, 2.7, 65,90, '', 1, 1, false, true, 'L', true );
+$pdf->SetFont( 'times', '', 8.4 );
+$pdf->writeHTMLCell( 27, 7, 65,91, 'INA 212(a)(10)', "", 1, false, true, 'C', true );
 $pdf->writeHTMLCell( 35, 1, 72,97, '', 'T', 1, false, true, 'L', true );
 //*.............
 
 $pdf->setCellHeightRatio( 0);
-$pdf->writeHTMLCell( 2.7, 2.7, 68,99, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 9 );
-$pdf->writeHTMLCell( 27, 7, 72,100, 'Other:', "", 1, false, true, 'L', true );
-$pdf->writeHTMLCell( 35, 1, 81,102, '', 'T', 1, false, true, 'L', true );
+$pdf->writeHTMLCell( 2.7, 2.7, 65,99, '', 1, 1, false, true, 'L', true );
+$pdf->SetFont( 'times', '', 8.2 );
+$pdf->writeHTMLCell( 27, 7, 69,100, 'Other:', "", 1, false, true, 'L', true );
+$pdf->writeHTMLCell( 35, 1, 78,102, '', 'T', 1, false, true, 'L', true );
 //*.............
 $pdf->setCellHeightRatio( 0);
-$pdf->writeHTMLCell( 2.7, 2.7, 68,107, '', 1, 1, false, true, 'L', true );
-$pdf->SetFont( 'times', '', 8 );
-$pdf->writeHTMLCell( 50, 17, 72,106.7, 'Granted, subject to revocation at any time,
+$pdf->writeHTMLCell( 2.7, 2.7, 65,107, '', 1, 1, false, true, 'L', true );
+$pdf->SetFont( 'times', '', 8.2 );
+$pdf->writeHTMLCell( 50, 17, 69,106.7, 'Granted, subject to revocation at any time,
 upon the following terms and conditions', "", 1, false, false, 'L', true );
 
 //?.............
@@ -312,7 +312,7 @@ $pdf->writeHTMLCell( 77, 17, 125.6,134.7, 'U Nonimmigrant/Advance Permission und
 //..............
 
 $pdf->setCellHeightRatio( 0);
-$pdf->writeHTMLCell( 2.7, 2.7, 68,99, '', 1, 1, false, true, 'L', true );
+
 $pdf->SetFont( 'times', '', 8);
 $html = '<div><b>Date of Action</b> (mm/dd/yyyy)_______________________</div>';
 $pdf->writeHTMLCell( 95, 7, 14,149, $html,0, 1, false, true, 'L', true );
@@ -327,21 +327,21 @@ $pdf->writeHTMLCell( 95, 7, 146,149, $html,0, 1, false, true, 'L', true );
 $pdf->SetFillColor(220,220,220);
 $pdf->SetFont('times', '', 9.6); 
 $pdf->setCellHeightRatio(1);
-$pdf->setCellPaddings(0, 1, 0, 0); 
+$pdf->setCellPaddings(0, 1.2, 0, 0); 
 $html ='<div><b>To be completed by an attorney or accredited representative</b> (if any).</div>';
 $pdf->writeHTMLCell(190, 7, 13, 156.5, $html, 1, 1, true, true, 'C', true);
 //..........
 $pdf->SetFont('times', 'B', 9.6);
 $pdf->writeHTMLCell(37, 20, 13, 163.5, "", 'LRB', 0, false, true, 'L', true);
 $html ='<div> <input type="checkbox" name="agree" value="1" checked=" " />&nbsp; Select this box if<br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Form G-28 or<br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Form G-28I is<br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attached.</div>';
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Form G-28 or<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Form G-28I is<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; attached.</div>';
 $pdf->writeHTMLCell(37, 5, 15, 164.5,$html, '', 0, false, true, 'L', true);
 // //........
 $pdf->SetFont('times', '', 9.6);
 $pdf->setCellHeightRatio(1.2);
-$html ='<div><b> Volag Number </b> <br>  (if any)</div>';
+$html ='<div><b>&nbsp; Volag Number </b> <br>  (if any)</div>';
 $pdf->writeHTMLCell(37, 20, 50, 163.5, $html, 'RB', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 9.6);
 $pdf->TextField('volga_number', 33, 7,array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),52, 173.4);
@@ -376,7 +376,7 @@ $pdf->StopTransform();
 $pdf->SetFont('times', '', 11.6);
 $pdf->setCellHeightRatio(1.2);
 $pdf->SetFillColor(220, 220, 220);
-$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->setCellPaddings(1, 1, 1, 0); 
 $html ='<div><b>Part 1. Application Type</b></div>';
 $pdf->writeHTMLCell(86, 7, 13, 190, $html, 1, 1, true, false, 'L', false);
 
