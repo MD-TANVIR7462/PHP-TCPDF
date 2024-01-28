@@ -896,7 +896,7 @@ $pdf->TextField( 'part2_12a_street_number', 61, 7, array( 'strokeColor' => array
 //* //* ...........
 $pdf->SetFont( 'times', '', 9.7 );
 //* set font
-$html = '<div><b>12.b. </b> <input type="checkbox" name="P2_12b_Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="P2_12b_Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="P2_12b_Flr" value="Flr" checked="" /> Flr.</div>';
+$html = '<div><b>12.b. </b> <input type="checkbox" name="P2_12b_Apt" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="P2_12b_Ste" value="Ste" checked="" /> Ste. <input type="checkbox" name="P2_12b_Flr" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell( 61, 0, 12, 68, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'courier', 'B', 10 );
 $pdf->TextField( 'part2_12b_apt_ste', 44, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 60, 68 );
@@ -1002,7 +1002,7 @@ $pdf->TextField( 'part2_14a_street_number', 61, 7, array( 'strokeColor' => array
 //* //* ...........
 $pdf->SetFont( 'times', '', 9.7 );
 //* set font
-$html = '<div><b>14.b. </b> <input type="checkbox" name="P2_14b_Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="P2_14b_Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="P2_14b_Flr" value="Flr" checked="" /> Flr.</div>';
+$html = '<div><b>14.b. </b> <input type="checkbox" name="P2_14b_Apt" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="P2_14b_Ste" value="Ste" checked="" /> Ste. <input type="checkbox" name="P2_14b_Flr" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell( 61, 0, 12, 171, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'courier', 'B', 10 );
 $pdf->TextField( 'part2_14b_apt_ste', 44, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 60, 171 );
@@ -1112,7 +1112,7 @@ $pdf->TextField( 'part2_11c_street_number', 61, 7, array( 'strokeColor' => array
 //* //* ...........
 $pdf->SetFont( 'times', '', 9.7 );
 //* set font
-$html = '<div><b>11.d. </b> <input type="checkbox" name="P2_11d_Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="P2_11d_Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="P2_11d_Flr" value="Flr" checked="" /> Flr.</div>';
+$html = '<div><b>11.d. </b> <input type="checkbox" name="P2_11d_Apt" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="P2_11d_Ste" value="Ste" checked="" /> Ste. <input type="checkbox" name="P2_11d_Flr" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell( 61, 0, 112, 34, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'courier', 'B', 10 );
 $pdf->TextField( 'part2_11d_apt_ste', 44, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 160, 34 );
@@ -1218,7 +1218,7 @@ $pdf->TextField( 'part2_11c_street_number', 61, 7, array( 'strokeColor' => array
  //* ...........
 $pdf->SetFont( 'times', '', 9.7 );
 //* set font
-$html = '<div><b>11.d. </b> <input type="checkbox" name="P2_11d_Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="P2_11d_Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="P2_11d_Flr" value="Flr" checked="" /> Flr.</div>';
+$html = '<div><b>11.d. </b> <input type="checkbox" name="P2_11d_Apt" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="P2_11d_Ste" value="Ste" checked="" /> Ste. <input type="checkbox" name="P2_11d_Flr" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell( 61, 0, 112, 134, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'courier', 'B', 10 );
 $pdf->TextField( 'part2_11d_apt_ste', 44, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 160, 134 );
@@ -1648,7 +1648,7 @@ $pdf->TextField( 'part6_3a_street_number', 61, 7, array( 'strokeColor' => array(
 //* //* ...........
 $pdf->SetFont( 'times', '', 9.7 );
 //* set font
-$html = '<div><b>3.b. </b> <input type="checkbox" name="P6_3b_Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="p6_3b_Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="p6_3b_Flr" value="Flr" checked="" /> Flr.</div>';
+$html = '<div><b>3.b. </b> <input type="checkbox" name="P6_3b_Apt" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="p6_3b_Ste" value="Ste" checked="" /> Ste. <input type="checkbox" name="p6_3b_Flr" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell( 61, 0, 12, 51, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'courier', 'B', 10 );
 $pdf->TextField( 'part6_3b_apt_ste', 44, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 60, 50 );
@@ -1859,7 +1859,7 @@ $pdf->TextField( 'part7_3a_street_number', 61, 7, array( 'strokeColor' => array(
 // //* //* ...........
 $pdf->SetFont( 'times', '', 9.7 );
 //* set font
-$html = '<div><b>3.b. </b> <input type="checkbox" name="P7_3b_Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="p7_3b_Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="p7_3b_Flr" value="Flr" checked="" /> Flr.</div>';
+$html = '<div><b>3.b. </b> <input type="checkbox" name="P7_3b_Apt" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="p7_3b_Ste" value="Ste" checked="" /> Ste. <input type="checkbox" name="p7_3b_Flr" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell( 61, 0, 112, 113, $html, '', 0, 0, true, 'L' );
 $pdf->SetFont( 'courier', 'B', 10 );
 $pdf->TextField( 'part7_3b_apt_ste', 44, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 160, 112.5 );
