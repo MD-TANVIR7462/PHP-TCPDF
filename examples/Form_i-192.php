@@ -1690,7 +1690,7 @@ $html= '<div>
  </div>';
 $pdf->writeHTMLCell(90, 7,18.5, 156, $html, '', 0, 0, true, 'L');
 //..............
-
+ 
 $pdf->SetFont('times', '', 10);
 $html= '<div><b>3.   </b>  Height </div>';
 $pdf->writeHTMLCell(30, 7, 12, 163, $html, 0, 0, false, true, 'J', true);
@@ -1733,14 +1733,97 @@ $pdf->TextField('part3_4_pound3', 5, 7, array('strokeColor' => array(64, 64, 64)
 //...........
 $html= '<div><b>5.    </b>  Eye Color (Select <b>only one</b> box )  </div>';
 $pdf->writeHTMLCell(90, 7, 12, 180, $html, 0, 0, false, true, 'J', true);
-$pdf->SetFont('times', '', 11);
+//.............
+$html= '<div>
+<input type="checkbox" name="eyecolore1" value="eyecolore" checked="" />&nbsp;&nbsp; Black
+ </div>';
+$pdf->writeHTMLCell(90, 7,18.5, 186, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore2" value="eyecolore" checked="" />&nbsp;&nbsp; Maroon
+ </div>';
+$pdf->writeHTMLCell(90, 7,18.5, 192, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore3" value="eyecolore" checked="" />&nbsp;&nbsp; Maroon
 
-$pdf->writeHTMLCell(90, 7, 114, 235, $html, 0, 0, false, true, 'J', true);
+ </div>';
+$pdf->writeHTMLCell(90, 7,18.5, 198, $html, '', 0, 0, true, 'L');
 
+///..................
+$html= '<div>
+<input type="checkbox" name="eyecolore4" value="eyecolore" checked="" />&nbsp;&nbsp; Blue
+ </div>';
+$pdf->writeHTMLCell(90, 7,46, 186, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore5" value="eyecolore" checked="" />&nbsp;&nbsp; Green
+ </div>';
+$pdf->writeHTMLCell(90, 7,46, 192, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore6" value="eyecolore" checked="" />&nbsp;&nbsp; Pink
 
+ </div>';
+$pdf->writeHTMLCell(90, 7,46, 198, $html, '', 0, 0, true, 'L');
+//.................
 
+$html= '<div>
+<input type="checkbox" name="eyecolore7" value="eyecolore" checked="" />&nbsp;&nbsp; Brown
+ </div>';
+$pdf->writeHTMLCell(90, 7,72, 186, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore8" value="eyecolore" checked="" />&nbsp;&nbsp; Hazel
+ </div>';
+$pdf->writeHTMLCell(90, 7,72, 192, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore9" value="eyecolore" checked="" />&nbsp;&nbsp; Unknown/Other
 
+ </div>';
+$pdf->writeHTMLCell(90, 7,72, 198, $html, '', 0, 0, true, 'L');
+//..........................
 
+$html= '<div><b>5.    </b>  Hair Color (Select <b>only one</b> box )  </div>';
+$pdf->writeHTMLCell(90, 7, 12, 205, $html, 0, 0, false, true, 'J', true);
+//!...............420-75
+$html= '<div>
+<input type="checkbox" name="eyecolore10" value="eyecolore" checked="" />&nbsp;&nbsp; Bald (No hair) 
+ </div>';
+$pdf->writeHTMLCell(90, 7,18.5, 211, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore12" value="eyecolore" checked="" />&nbsp;&nbsp; Brown
+ </div>';
+$pdf->writeHTMLCell(90, 7,18.5, 217, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore13" value="eyecolore" checked="" />&nbsp;&nbsp; Sandy
+
+ </div>';
+$pdf->writeHTMLCell(90, 7,18.5, 223, $html, '', 0, 0, true, 'L');
+//................
+$html= '<div>
+<input type="checkbox" name="eyecolore14" value="eyecolore" checked="" />&nbsp;&nbsp; Black
+ </div>';
+$pdf->writeHTMLCell(90, 7,51, 211, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore15" value="eyecolore" checked="" />&nbsp;&nbsp; Gray
+ </div>';
+$pdf->writeHTMLCell(90, 7,51, 217, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore16" value="eyecolore" checked="" />&nbsp;&nbsp; White
+
+ </div>';
+$pdf->writeHTMLCell(90, 7,51, 223, $html, '', 0, 0, true, 'L');
+
+//..............
+$html= '<div>
+<input type="checkbox" name="eyecolore17" value="eyecolore" checked="" />&nbsp;&nbsp; Blond
+ </div>';
+$pdf->writeHTMLCell(90, 7,77, 211, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore18" value="eyecolore" checked="" />&nbsp;&nbsp; Red
+ </div>';
+$pdf->writeHTMLCell(90, 7,77, 217, $html, '', 0, 0, true, 'L');
+$html= '<div>
+<input type="checkbox" name="eyecolore19" value="eyecolore" checked="" />&nbsp;&nbsp; Unknown/Other
+
+ </div>';
+$pdf->writeHTMLCell(90, 7,77, 223, $html, '', 0, 0, true, 'L');
 
 
 
@@ -3046,4 +3129,4 @@ $pdf->IncludeJS( $js );
 //* $pdf->lastPage();
 //*Close and output PDF document
 $pdf->Output( 'I-539.pdf', 'I' );
-//9.56-43!--
+//!...............420-75
