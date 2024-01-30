@@ -1949,7 +1949,7 @@ $pdf->SetFont('Times', '', 10); // set font
 $html = '<b>9.g.</b> &nbsp;&nbsp;Postal Code';
 $pdf->writeHTMLCell(50, 0, 12, 109.5, $html, '', 0, 0, true, 'L'); 
 
-$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->SetFont('courier', 'B', 10); // set fontAddPage
 $pdf->TextField('aditional_info_address3_postal_code', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 109.5);
 
 
