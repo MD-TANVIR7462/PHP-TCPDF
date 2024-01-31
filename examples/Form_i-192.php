@@ -279,7 +279,7 @@ $pdf->SetFont( 'times', '', 8.4 );
 $pdf->writeHTMLCell( 77, 17, 126,106.7, 'Nonimmigrant other than T or U nonimmigrant/Advance Permission
 under INA 212(d)(3)(A) and 8 CFR 212.4', "", 1, false, false, 'L', true );
 
-//..............
+//.............. 
 
 $pdf->setCellHeightRatio( 0);
 $pdf->writeHTMLCell( 2.7, 2.7, 122,115, '', 1, 1, false, true, 'L', true );
