@@ -3722,16 +3722,16 @@ $pdf->writeHTMLCell( 90, 7, 119, 198, $html, 0, 0, false, 'L' );
 
 $js = "
 var fields = {
-'Attorney_or_According_Representative':' ',
-'attorney_state_bar_number' : ' ',
+'Attorney_or_According_Representative':' ".showData('attorney_uscis_online_account_number')." ',
+'attorney_state_bar_number' : ' ".showData('attorney_state_bar_number')." ',
 'part1-spouse': ' ',
 'part1-Parent': ' ',
 'part1-Child': ' ',
 'part1-Unmarried sibling under 18 years of age': ' ',
 //*part-1 finished
-'part2_1a_lastname':' ',
-'part2_1b_firstname':' ',
-'part2_1c_middlename':' ',
+'part2_1a_lastname':' ".showData('information_about_you_family_last_name')." ',
+'part2_1b_firstname':' ".showData('information_about_you_given_first_name')." ',
+'part2_1c_middlename':' ".showData('information_about_you_middle_name')." ',
 'part2_2_date_of_birth': ' ',
 'part2_3_registration_Number': ' ',
 'part2_4_online_account': ' ',
