@@ -18,6 +18,16 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 			return '';
 		}
 	}
+
+    $allDataCountry = array(
+        array("state_code" => "AA"),
+        array("state_code" => "AE"),
+        array("state_code" => "AK"),
+        array("state_code" => "AL"),
+        array("state_code" => "AP"),
+    );
+
+
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -467,24 +477,18 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-5">3.d. State </label>
-                                <div class="col-md-7">
-                                    <select class="form-control ">
-                                        <option disabled selected>Select State</option>
-                                        <option value="AA">AA</option>
-                                        <option value="AA">AE</option>
-                                        <option value="AA">AK</option>
-                                        <option value="AA">AL</option>
-                                        <option value="AA">AP</option>
-                                        <option value="AA">AR</option>
-                                        <option value="AA">AS</option>
-                                        <option value="AA">AZ</option>
-                                        <option value="AA">CA</option>
-                                        <option value="AA">AA</option>
-                                        <option value="AA">AA</option>
-                                        <option value="AA">AA</option>
+                                                                    <div class="col-md-7">
+                                        <select class="form-control" name="information_about_you_home_state">
+                                            <option style="" value=''>Select</option>
+                                            <?php
+                                         
+                                            foreach ($allDataCountry as $record) {
+                                                echo "<option value='" . $record["state_code"] . "'>" . $record["state_code"] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
 
-                                    </select>
-                                </div>
                             </div>
 
                             <div class="form-group">
@@ -577,22 +581,15 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">4.e. State </label>
                             <div class="col-md-7">
-                                <select class="form-control ">
-                                    <option disabled selected>Select State</option>
-
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-
-                                </select>
+                            <select class="form-control" name="information_about_you_home_state">
+                                            <option style="" value=''>Select</option>
+                                            <?php
+                                         
+                                            foreach ($allDataCountry as $record) {
+                                                echo "<option value='" . $record["state_code"] . "'>" . $record["state_code"] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -850,22 +847,15 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">1.c. State </label>
                             <div class="col-md-7">
-                                <select class="form-control ">
-                                    <option disabled selected>Select State</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-
-                                </select>
+                            <select class="form-control" name="information_about_you_home_state">
+                                            <option style="" value=''>Select</option>
+                                            <?php
+                                         
+                                            foreach ($allDataCountry as $record) {
+                                                echo "<option value='" . $record["state_code"] . "'>" . $record["state_code"] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
                             </div>
                         </div>
 
@@ -911,24 +901,15 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">2.c. State </label>
                             <div class="col-md-7">
-                                <select class="form-control ">
-                                    <option disabled selected>Select State</option>
-
-
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-
-                                </select>
+                            <select class="form-control" name="information_about_you_home_state">
+                                            <option style="" value=''>Select</option>
+                                            <?php
+                                         
+                                            foreach ($allDataCountry as $record) {
+                                                echo "<option value='" . $record["state_code"] . "'>" . $record["state_code"] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
                             </div>
                         </div>
 
@@ -1021,24 +1002,15 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">3.c. State </label>
                             <div class="col-md-7">
-                                <select class="form-control ">
-                                    <option disabled selected>Select State</option>
-
-
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-
-                                </select>
+                            <select class="form-control" name="information_about_you_home_state">
+                                            <option style="" value=''>Select</option>
+                                            <?php
+                                         
+                                            foreach ($allDataCountry as $record) {
+                                                echo "<option value='" . $record["state_code"] . "'>" . $record["state_code"] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
                             </div>
                         </div>
 
@@ -1522,22 +1494,15 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-4">2.d. State </label>
                             <div class="col-md-8">
-                                <select class="form-control ">
-                                    <option disabled selected>Select State</option>
-
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-
-                                </select>
+                            <select class="form-control" name="information_about_you_home_state">
+                                            <option style="" value=''>Select</option>
+                                            <?php
+                                         
+                                            foreach ($allDataCountry as $record) {
+                                                echo "<option value='" . $record["state_code"] . "'>" . $record["state_code"] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -1599,22 +1564,15 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-4">3.d. State </label>
                             <div class="col-md-8">
-                                <select class="form-control ">
-                                    <option disabled selected>Select State</option>
-
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-                                    <option value="AA">AA</option>
-
-                                </select>
+                            <select class="form-control" name="information_about_you_home_state">
+                                            <option style="" value=''>Select</option>
+                                            <?php
+                                         
+                                            foreach ($allDataCountry as $record) {
+                                                echo "<option value='" . $record["state_code"] . "'>" . $record["state_code"] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -3306,9 +3264,15 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">3.d. State </label>
                             <div class="col-md-7">
-                                <select name="" id="" class="form-control">
-                                    <option value="" class="form-control"></option>
-                                </select>
+                            <select class="form-control" name="information_about_you_home_state">
+                                            <option style="" value=''>Select</option>
+                                            <?php
+                                         
+                                            foreach ($allDataCountry as $record) {
+                                                echo "<option value='" . $record["state_code"] . "'>" . $record["state_code"] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -3494,14 +3458,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
 
-                                <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="apt">
-                                Apt. &nbsp;
-
-                                <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="ste"
-                                    checked=""> Ste. &nbsp;
-
-                                <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="flr">
-                                Flr.:
+                             
 
 
 
@@ -3530,9 +3487,15 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">3.d. State </label>
                             <div class="col-md-7">
-                                <select name="" id="" class="form-control">
-                                    <option value="" class="form-control"></option>
-                                </select>
+                            <select class="form-control" name="information_about_you_home_state">
+                                            <option style="" value=''>Select</option>
+                                            <?php
+                                         
+                                            foreach ($allDataCountry as $record) {
+                                                echo "<option value='" . $record["state_code"] . "'>" . $record["state_code"] . "</option>";
+                                            }
+                                            ?>
+                                        </select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -3736,22 +3699,22 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">1.a. Family Name(Last Name) :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"  name="additional_information_family_last_name"
-                                    value="<?php echo showData('additional_information_family_last_name')?>" />
+                                <input type="text" class="form-control"  name="918A_additional_information_family_last_name"
+                                    value="<?php echo showData('918A_additional_information_family_last_name')?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">1.b. Given Name(First Name) :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control" name="additional_information_given_first_name"
-                                    value="<?php echo showData('additional_information_given_first_name')?>" />
+                                <input type="text" class="form-control" name="918A_additional_information_given_first_name"
+                                    value="<?php echo showData('918A_additional_information_given_first_name')?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">1.c. Middle Name :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control" name="additional_information_middle_name"
-                                    value="<?php echo showData('additional_information_middle_name')?>" />
+                                <input type="text" class="form-control" name="918A_additional_information_middle_name"
+                                    value="<?php echo showData('918A_additional_information_middle_name')?>" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -3762,8 +3725,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                         style="left: calc(var(--scale-factor)*36.00px); top: calc(var(--scale-factor)*531.66px); font-size: calc(var(--scale-factor)*10.00px); font-family: serif; gap:1rem;"
                                         role="presentation" dir="ltr">►</span><b>A-</b><input type="text"
                                         class="form-control"
-                                        name="additional_information_A_number"
-                                    value="<?php echo showData('additional_information_A_number')?>">
+                                        name="918A_additional_information_A_number"
+                                    value="<?php echo showData('918A_additional_information_A_number')?>">
                                 </div>
                             </div>
                         </div>
@@ -3771,60 +3734,60 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="form-group">
                                 <label class="control-label col-md-12">3.a. Page Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_page_number1"
-                                    value="<?php echo showData('additional_information_page_number1')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_page_number1"
+                                    value="<?php echo showData('918A_additional_information_page_number1')?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">3.b. Part Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_part_number1"
-                                    value="<?php echo showData('additional_information_part_number1')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_part_number1"
+                                    value="<?php echo showData('918A_additional_information_part_number1')?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">3.c. Item Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_item_number1"
-                                    value="<?php echo showData('additional_information_item_number1')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_item_number1"
+                                    value="<?php echo showData('918A_additional_information_item_number1')?>">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <span><b>3.d.</b></span>
-                                <textarea name="additional_information_textarea1"
-                                    value="<?php echo showData('additional_information_textarea1')?>" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <textarea name="918A_additional_information_textarea1"
+                                    value="<?php echo showData('918A_additional_information_textarea1')?>" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="d-flexible">
                             <div class="form-group">
                                 <label class="control-label col-md-12">4.a. Page Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_page_number2"
-                                    value="<?php echo showData('additional_information_page_number2')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_page_number2"
+                                    value="<?php echo showData('918A_additional_information_page_number2')?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">4.b. Part Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_part_number2"
-                                    value="<?php echo showData('additional_information_part_number2')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_part_number2"
+                                    value="<?php echo showData('918A_additional_information_part_number2')?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">4.c. Item Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_item_number2"
-                                    value="<?php echo showData('additional_information_item_number2')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_item_number2"
+                                    value="<?php echo showData('918A_additional_information_item_number2')?>">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <span><b>4.d.</b></span>
-                                <textarea name="additional_information_textarea2"
-                                    value="<?php echo showData('additional_information_textarea2')?>" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <textarea name="918A_additional_information_textarea2"
+                                    value="<?php echo showData('918A_additional_information_textarea2')?>" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 
@@ -3839,30 +3802,30 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="form-group">
                                 <label class="control-label col-md-12">5.a. Page Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_page_number3"
-                                    value="<?php echo showData('additional_information_page_number3')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_page_number3"
+                                    value="<?php echo showData('918A_additional_information_page_number3')?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">5.b. Part Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_part_number3"
-                                    value="<?php echo showData('additional_information_part_number3')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_part_number3"
+                                    value="<?php echo showData('918A_additional_information_part_number3')?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">5.c. Item Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_item_number3"
-                                    value="<?php echo showData('additional_information_item_number3')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_item_number3"
+                                    value="<?php echo showData('918A_additional_information_item_number3')?>">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <span><b>5.d.</b></span>
-                                <textarea name="additional_information_textarea3"
-                                    value="<?php echo showData('additional_information_textarea3')?>" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <textarea name="918A_additional_information_textarea3"
+                                    value="<?php echo showData('918A_additional_information_textarea3')?>" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 
@@ -3870,30 +3833,30 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="form-group">
                                 <label class="control-label col-md-12">6.a. Page Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_page_number4"
-                                    value="<?php echo showData('additional_information_page_number4')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_page_number4"
+                                    value="<?php echo showData('918A_additional_information_page_number4')?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">6.b. Part Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_part_number4"
-                                    value="<?php echo showData('additional_information_part_number4')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_part_number4"
+                                    value="<?php echo showData('918A_additional_information_part_number4')?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">6.c. Item Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_item_number4"
-                                    value="<?php echo showData('additional_information_item_number4')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_item_number4"
+                                    value="<?php echo showData('918A_additional_information_item_number4')?>">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <span><b>6.d.</b></span>
-                                <textarea name="additional_information_textarea4"
-                                    value="<?php echo showData('additional_information_textarea4')?>" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <textarea name="918A_additional_information_textarea4"
+                                    value="<?php echo showData('918A_additional_information_textarea4')?>" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 
@@ -3901,30 +3864,30 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="form-group">
                                 <label class="control-label col-md-12">7.a. Page Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_page_number5"
-                                    value="<?php echo showData('additional_information_page_number5')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_page_number5"
+                                    value="<?php echo showData('918A_additional_information_page_number5')?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">7.b. Part Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_part_number5"
-                                    value="<?php echo showData('additional_information_part_number5')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_part_number5"
+                                    value="<?php echo showData('918A_additional_information_part_number5')?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">7.c. Item Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_item_number5"
-                                    value="<?php echo showData('additional_information_item_number5')?>">
+                                    <input type="text" class="form-control" name="918A_additional_information_item_number5"
+                                    value="<?php echo showData('918A_additional_information_item_number5')?>">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <span><b>7.d.</b></span>
-                                <textarea class="form-control" name="additional_information_textarea5"
-                                    value="<?php echo showData('additional_information_textarea5')?>" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="918A_additional_information_textarea5"
+                                    value="<?php echo showData('918A_additional_information_textarea5')?>" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                     </div><!-- right side column end -->
