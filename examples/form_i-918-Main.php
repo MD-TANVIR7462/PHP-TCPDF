@@ -3619,17 +3619,78 @@ $pdf->writeHTMLCell( 30, 7, 75, 102, $html, 0, 0, false, 'L' );
 $pdf->setFont( 'courier', 'B', 10 );
 $pdf->TextField( 'additional_information_3c', 22, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 83, 107.5 );
 //............
-$pdf->setFont( 'Times', '', 10 );
+// $pdf->setFont( 'Times', '', 10 );
+// $html = '<div><b>3.d. </b> </div>';
+// $pdf->writeHTMLCell( 10, 7, 12, 116, $html, 0, 0, false, 'L' );
+// $pdf->setFont( 'courier', 'B', 10 );
+
+// $html = <<<EOD
+// <textarea cols = "20" rows = "15" name="additional_information_3d">
+
+// </textarea>
+// EOD;
+// $pdf->writeHTMLCell( 90, 50, 20, 116, $html, 0, 0, false, 'L' );
+// $pdf->writeHTMLCell(84.5, 5, 21, 135.5, '', 'B', 1, false, true, 'L', true);
+
+
+
+
+
+
+
+// $pdf->setFont('Times', '', 10);
+
+// $html = '<div><b>3.d. </b> </div>';
+// $pdf->writeHTMLCell(10, 7, 12, 116, $html, 0, 0, false, 'L');
+
+// $pdf->setFont('courier', 'B', 10);
+
+// $html = <<<EOD
+// <textarea cols="20" rows="15" name="additional_information_3d">
+// </textarea>
+// EOD;
+// $pdf->writeHTMLCell(90, 50, 20, 116, $html, 0, 0, false, 'L');
+// $pdf->writeHTMLCell( 84.4, 6, 21.1, 117, '', 'B', 1, true, true, 'L', false );
+// $pdf->writeHTMLCell( 84.4, 6, 21.1, 123, '', 'B', 1, true, true, 'L', false );
+// $pdf->writeHTMLCell( 84.4, 6, 21.1, 129.5, '', 'B', 1, true, true, 'L', false );
+// $pdf->writeHTMLCell( 84.4, 6, 21.1, 135.5, '', 'B', 1, true, true, 'L', false );
+
+
+
+
+$pdf->setFont('Times', '', 10);
+$pdf->setCellHeightRatio( 1.2 );
+// Write the HTML text
 $html = '<div><b>3.d. </b> </div>';
-$pdf->writeHTMLCell( 10, 7, 12, 116, $html, 0, 0, false, 'L' );
-$pdf->setFont( 'courier', 'B', 10 );
+$pdf->writeHTMLCell(10, 7, 12, 116, $html, 0, 0, false, 'L');
 
-$html = <<<EOD
-<textarea cols = "20" rows = "15" name="additional_information_3d">
+$pdf->setFont('courier', 'B', 10);
 
-</textarea>
-EOD;
-$pdf->writeHTMLCell( 90, 50, 20, 116, $html, 0, 0, false, 'L' );
+// Write the textarea
+$pdf->TextField('i_765_additional_info_5d', 83, 45, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1.6, 'borderStyle'=>'solid'), array(), 20.5, 131.5);
+
+// Draw the lines initially
+$pdf->writeHTMLCell(84.4, 6, 21.1, 117, '', 'B', 1, false, true, 'L', false);
+$pdf->writeHTMLCell(84.4, 6, 21.1, 123, '', 'B', 1, false, true, 'L', false);
+$pdf->writeHTMLCell(84.4, 6, 21.1, 129.5, '', 'B', 1, false, true, 'L', false);
+$pdf->writeHTMLCell(84.4, 6, 21.1, 135.5, '', 'B', 1, false, true, 'L', false);
+
+// JavaScript function to toggle the visibility of the bottom lines
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
 
 //....
 
@@ -3655,17 +3716,36 @@ $pdf->setFont( 'courier', 'B', 10 );
 $pdf->TextField( 'additional_information_4c', 22, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 83, 188 );
 //.........
 
-$pdf->setFont( 'Times', '', 10 );
-$html = '<div><b>4.d. </b> </div>';
-$pdf->writeHTMLCell( 10, 7, 12, 197, $html, 0, 0, false, 'L' );
-$pdf->setFont( 'courier', 'B', 10 );
-
+$pdf->setFont('Times', '', 10);
+$html = '<div><b>4.d. </b></div>';
+$pdf->writeHTMLCell(10, 7, 12, 197, $html, 0, 0, false, 'L');
+$pdf->setFont('courier', 'B', 10);
 $html = <<<EOD
-<textarea cols = "20" rows = "15" name = "additional_information_4d">
-
-</textarea>
+<textarea style="line-height: 100px;" cols="20" rows="15" name="additional_information_4d"></textarea>
 EOD;
-$pdf->writeHTMLCell( 90, 50, 20, 197, $html, 0, 0, false, 'L' );
+$pdf->writeHTMLCell(90, 50, 20, 197, $html, 0, 0, false, 'L');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $pdf->setFont('courier', 'B', 10);
+
+// $html = <<<EOD
+// <textarea cols="20" rows="15" name="additional_information_4d"></textarea>
+// EOD;
+// $pdf->writeHTMLCell(90, 50, 20, 197, $html, 0, 0, false, 'L');
 
 //........end left
 // ....... start right side
@@ -3693,16 +3773,44 @@ $pdf->TextField( 'additional_information_5c', 22, 7, array( 'strokeColor' => arr
 //.........
 
 $pdf->setFont( 'Times', '', 10 );
-$html = '<div><b>5.d. </b> </div>';
-$pdf->writeHTMLCell( 10, 7, 112, 33, $html, 0, 0, false, 'L' );
-$pdf->setFont( 'courier', 'B', 10 );
 
-$html = <<<EOD
-<textarea cols = "20" rows = "15" name = "additional_information_5d">
 
-</textarea>
-EOD;
-$pdf->writeHTMLCell( 90, 50, 119, 32, $html, 0, 0, false, 'L' );
+
+
+
+
+
+
+
+
+
+// $pdf->writeHTMLCell(10, 7, 112, 33, '<div><b>5.d. </b> </div>', 0, 0, false, 'L');
+// $pdf->setFont('courier', 'B', 10);
+// $pdf->TextField('additional_information_5d',83, 55, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120.5, 31.5);
+
+
+
+// $pdf->writeHTMLCell( 83, 5, 120.5, 35.5, '', 'B', 1, false, true, 'L', true );
+
+
+
+
+
+
+$pdf->writeHTMLCell(10, 7, 112, 20, '<div><b>5.d. </b> </div>', 0, 0, false, 'L');
+$pdf->setFont('courier', 'B', 10);
+
+// Write the HTML content for the line above the text field
+$pdf->writeHTMLCell(83, 5, 120.5, 35.5, '', 'B', 1, false, true, 'L', true);
+
+// Write the text field
+$pdf->TextField('additional_information_5d',83, 55, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120.5, 31.5);
+
+
+
+
+
+
 
 //.....
 
@@ -3734,9 +3842,7 @@ $pdf->writeHTMLCell( 10, 7, 112, 114, $html, 0, 0, false, 'L' );
 $pdf->setFont( 'courier', 'B', 10 );
 
 $html = <<<EOD
-<textarea cols = "20" rows = "15" name = "additional_information_6d">
-
-</textarea>
+<textarea cols = "20" rows = "15" name = "additional_information_6d"></textarea>
 EOD;
 $pdf->writeHTMLCell( 90, 50, 119, 114, $html, 0, 0, false, 'L' );
 
@@ -3770,9 +3876,7 @@ $pdf->writeHTMLCell( 10, 7, 112, 198, $html, 0, 0, false, 'L' );
 $pdf->setFont( 'courier', 'B', 10 );
 
 $html = <<<EOD
-<textarea cols = "20" rows = "15" name = "additional_information_7d">
-
-</textarea>
+<textarea cols = "20" rows = "15" name = "additional_information_7d"></textarea>
 EOD;
 $pdf->writeHTMLCell( 90, 7, 119, 198, $html, 0, 0, false, 'L' );
 

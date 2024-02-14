@@ -206,7 +206,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="row">
                             <div class="col-lg-3 ">
                                 <div class="d-flexible ">
-                                    <input type="checkbox" name="" id="">
+                                    <input type="checkbox" name="g28_is_attached"
+                                        value="<?php echo (showData('g28_is_attached') == 'Y') ? 'Y' : 'N'; ?>" id="">
                                     <p><b>Select this box if Form G-28 or Form G-28I is attached.</b></p>
                                 </div>
                             </div>
@@ -243,7 +244,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         </div>
 
                         <div class="bg-info">
-                            <span class="heading-md">Part 1. Family Member's Relationship To You(Principal)
+                            <span class="heading-md">Part 1. Information About You (Person filing this
+                                &nbsp;petition as a victim)
                             </span>
 
                         </div>
@@ -307,10 +309,16 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="bg-info ">
                                 <h4><b>Other Information</b> </h4>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label class="control-label col-md-5">2. Date of Birth (mm/dd/yyyy):</label>
                                 <div class="col-md-7 ">
-                                    <?php
+                                    <input type="date" class="form-control" name="other_information_about_you_date_of_birth"  value="<?php echo showData('other_information_about_you_date_of_birth')?>" />
+                                </div>
+                            </div> -->
+                            <div class="form-group">
+    <label class="control-label col-md-5">2. Date of Birth (mm/dd/yyyy):</label>
+    <div class="col-md-7 ">
+        <?php
             $dobValue = showData('other_information_about_you_date_of_birth');
 
             // Convert the date format if it's not empty
@@ -321,8 +329,10 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                 echo '<input type="date" class="form-control" name="other_information_about_you_date_of_birth" />';
             }
         ?>
-                                </div>
-                            </div>
+    </div>
+</div>
+
+
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">3. Alien Registration Number (A-Number) (if any) :
@@ -331,10 +341,9 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 <div class="d-flexible">
                                     <span
                                         style="left: calc(var(--scale-factor)*36.00px); top: calc(var(--scale-factor)*531.66px); font-size: calc(var(--scale-factor)*10.00px); font-family: serif; gap:1rem;"
-                                        role="presentation" dir="ltr">►</span><b>A-</b><input type="text"
-                                        class="form-control"
-                                        name="other_information_about_you_alien_registration_number"
-                                        value="<?php echo showData('other_information_about_you_alien_registration_number')?>">
+                                        role="presentation" dir="ltr">►</span><b>A-</b>
+                                        <input type="text"
+                                        class="form-control" name="other_information_about_you_alien_registration_number"  value="<?php echo showData('other_information_about_you_alien_registration_number')?>">
                                 </div>
                             </div>
                         </div>
@@ -345,10 +354,9 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                     <span
                                         style="left: calc(var(--scale-factor)*36.00px); top: calc(var(--scale-factor)*531.66px); font-size: calc(var(--scale-factor)*10.00px); font-family: serif; gap:1rem;"
                                         role="presentation" dir="ltr">►</span><input type="text" class="form-control"
-                                        name="other_information_about_you_uscis_online_account_number"
-                                        value="<?php echo showData('other_information_about_you_uscis_online_account_number')?>">
+                                        name="other_information_about_you_uscis_online_account_number" value="<?php echo showData('other_information_about_you_uscis_online_account_number')?>" >
                                 </div>
-                            </div>
+                            </div> 
                         </div>
 
 
@@ -357,7 +365,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <label class="col-md-12 ">5. Status of your Form I-918 </label>
                             <div class="col-md-12 " style='margin-left:10px; margin-top:0px;'>
                                 <label class="control-label">
-                                    <input type="radio" name="#" value="pending"> Pending
+                                    <input type="radio" name="#" value="pending" > Pending
                                 </label>
                                 &nbsp;
                                 <label class="control-label">
@@ -372,8 +380,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                     <div class="col-md-6 mt-5 ">
                         <div class="bg-info">
                             <h4><b>Part 3. Information About Your Qualifying
-                                    Family Member (Derivative)
-                                </b> </h4>
+                                    Family Member</b> (Derivative)</h4>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">1.a. Family Name(Last Name):</label>
@@ -387,82 +394,70 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <label class="control-label col-md-5">1.b. Given Name(First Name):</label>
                             <div class="col-md-7">
                                 <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_given_first_name"
-                                    value="<?php echo showData('information_about_your_qualifying_family_member_given_first_name')?>" />
+                                    name="information_about_you_other_given_first_name"
+                                    value="<?php echo showData('information_about_you_other_given_first_name')?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">1.c. Middle Name:</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_middle_name"
-                                    value="<?php echo showData('information_about_your_qualifying_family_member_middle_name')?>" />
+                                <input type="text" class="form-control" name="information_about_you_other_middle_name"
+                                    value="<?php echo showData('')?>" />
                             </div>
                         </div>
-                        <h5><b>Other Names Used (Include maiden name, nicknames, and aliases, if applicable) </b></h5>
+                        <hr>
                         <div class="form-group">
                             <label class="control-label col-md-5">2.a. Family Name(Last Name):</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_other_family_last_name"
-                                    value="<?php echo showData('information_about_your_qualifying_family_member_other_family_last_name')?>" />
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">2.b. Given Name(First Name):</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_other_given_first_name"
-                                    value="<?php echo showData('information_about_your_qualifying_family_member_other_given_first_name')?>" />
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">2.c. Middle Name:</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_other_middle_name"
-                                    value="<?php echo showData('information_about_your_qualifying_family_member_other_middle_name')?>" />
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
 
-                        <h5><b>NOTE: If you need extra space to complete this section, use the space provided in Part
-                                11. Additional Information. </b></h5>
 
                         <div class="bg-info">
                             <span class="heading-md "><i> Residence or Intended Residence in the United &nbsp;States</i>
+
+
                             </span>
+
                         </div>
 
                         <div>
                             <div class="form-group">
                                 <label class="control-label col-md-5">11.a. Street Number and Name:</label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control"
-                                        name="information_about_your_qualifying_family_member_residence_street_number"
-                                        value="<?php echo showData('information_about_your_qualifying_family_member_residence_street_number')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="control-label col-md-6"><b>11.b. </b> &nbsp;
 
-                                    <input type="radio"
-                                        name="information_about_your_qualifying_family_member_residence_apt_ste_flr"
+                                    <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr"
                                         value="apt">
                                     Apt. &nbsp;
 
-                                    <input type="radio"
-                                        name="information_about_your_qualifying_family_member_residence_apt_ste_flr"
-                                        value="ste"> Ste. &nbsp;
+                                    <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr"
+                                        value="ste" checked=""> Ste. &nbsp;
 
-                                    <input type="radio"
-                                        name="information_about_your_qualifying_family_member_residence_apt_ste_flr"
+                                    <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr"
                                         value="flr">
-                                    Flr.
+                                    Flr.:
                                 </div>
                                 <div class="col-md-6">
                                     <input type="text" class="form-control"
-                                        name="information_about_your_qualifying_family_member_residence_apt_ste_flr_number"
-                                        value="<?php echo showData('information_about_your_qualifying_family_member_residence_apt_ste_flr_number')?>">
+                                        name="information_about_you_safe_mailing_number" value="Street">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -497,9 +492,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="form-group">
                                 <label class="control-label col-md-5">11.e. ZIP Code </label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control"
-                                        name="information_about_your_qualifying_family_member_zip_code"
-                                        value="<?php echo showData('information_about_your_qualifying_family_member_zip_code')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                         </div>
@@ -539,58 +532,50 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
                         </div>
                         <div class="bg-info">
-                            <h4><b>Safe Mailing Address</b> (if other than Residence)</h4>
+                            <h4><b>Mailing Address</b> (if other than Residence)</h4>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-12">4.a. In Care Of Name (if any) </label>
+                            <label class="control-label col-md-12">11.a. In Care Of Name (if any) </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_care_of_name"
-                                    value="<?= showData('information_about_your_qualifying_family_member_safe_mailing_address_care_of_name')?>">
+                                    name="information_about_you_safe_mailing_care_of_name"
+                                    value="<?= showData('information_about_you_safe_mailing_care_of_name')?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-5">4.b. Street Number and Name:</label>
+                            <label class="control-label col-md-5">11.b. Street Number and Name:</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_street_number_and_name"
-                                    value="<?= showData('information_about_your_qualifying_family_member_safe_mailing_address_street_number_and_name')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="control-label col-md-6"><b>4.c. </b> &nbsp;
+                            <div class="control-label col-md-6"><b>11.d. </b> &nbsp;
 
-                                <input type="radio"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_apt_ste_flr"
-                                    value="apt">
+                                <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="apt">
                                 Apt. &nbsp;
 
-                                <input type="radio"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_apt_ste_flr"
-                                    value="ste" checked=""> Ste. &nbsp;
+                                <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="ste"
+                                    checked=""> Ste. &nbsp;
 
-                                <input type="radio"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_apt_ste_flr"
-                                    value="flr">
+                                <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="flr">
                                 Flr.:
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_number"
-                                    value="<?= showData('information_about_your_qualifying_family_member_safe_mailing_address_number')?>">
+                                <input type="text" class="form-control" name="information_about_you_safe_mailing_number"
+                                    value="Street">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-5">4.d. City or Town </label>
+                            <label class="control-label col-md-5">11.e. City or Town </label>
                             <div class="col-md-7">
                                 <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_city_or_town"
-                                    value="<?= showData('information_about_your_qualifying_family_member_safe_mailing_address_city_or_town')?>">
+                                    name="information_about_you_safe_mailing_city_town"
+                                    value="<?= showData('information_about_you_safe_mailing_city_town')?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-5">4.e. State </label>
+                            <label class="control-label col-md-5">11.f. State </label>
                             <div class="col-md-7">
                                 <select class="form-control ">
                                     <option disabled selected>Select State</option>
@@ -611,35 +596,33 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-5">4.f. ZIP Code </label>
+                            <label class="control-label col-md-5">11.g. ZIP Code </label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_zip_code"
-                                    value="<?= showData('information_about_your_qualifying_family_member_safe_mailing_address_zip_code')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-5">4.g. Province </label>
+                            <label class="control-label col-md-5">11.h. Province </label>
                             <div class="col-md-7">
                                 <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_province"
-                                    value="<?= showData('information_about_your_qualifying_family_member_safe_mailing_address_province')?>">
+                                    name="information_about_you_safe_mailing_province"
+                                    value="<?= showData('information_about_you_safe_mailing_province')?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-5">4.h. Postal Code </label>
+                            <label class="control-label col-md-5">11.i. Postal Code </label>
                             <div class="col-md-7">
                                 <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_postal_code"
-                                    value="<?= showData('information_about_your_qualifying_family_member_safe_mailing_address_postal_code')?>">
+                                    name="information_about_you_safe_mailing_postal_code"
+                                    value="<?= showData('information_about_you_safe_mailing_postal_code')?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-12">4.i. Country </label>
+                            <label class="control-label col-md-12">11.j. Country </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_safe_mailing_address_country"
-                                    value="<?php echo showData('information_about_your_qualifying_family_member_safe_mailing_address_country')?>">
+                                    name="information_about_you_safe_mailing_country"
+                                    value="<?= showData('information_about_you_safe_mailing_country')?>">
                             </div>
                         </div>
                         <div class="bg-info">
@@ -650,98 +633,84 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-12">5. A-Number (if any)
+                            <label class="control-label col-md-12">3. A-Number (if any)
                             </label>
                             <div class="col-md-8 col-md-offset-4">
-                                <div class="d-flexible ">
+                                <div class="d-flexible">
                                     <span
                                         style="left: calc(var(--scale-factor)*36.00px); top: calc(var(--scale-factor)*531.66px); font-size: calc(var(--scale-factor)*10.00px); font-family: serif; gap:1rem;"
                                         role="presentation" dir="ltr">►</span><b>A-</b><input type="text"
-                                        class="form-control"
-                                        name="information_about_your_qualifying_family_member_other_a_number"
-                                        value="<?php echo showData('information_about_your_qualifying_family_member_other_a_number')?>">
+                                        class="form-control" name="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-12">6. U.S Social Security Number (if any) :
+                            <label class="control-label col-md-12">4. Alien Registration Number (A-Number) (if any) :
                             </label>
                             <div class="col-md-8 col-md-offset-4">
                                 <div class="d-flexible">
                                     <span
                                         style="left: calc(var(--scale-factor)*36.00px); top: calc(var(--scale-factor)*531.66px); font-size: calc(var(--scale-factor)*10.00px); font-family: serif; gap:1rem;"
                                         role="presentation" dir="ltr">►</span><input type="text" class="form-control"
-                                        name="information_about_your_qualifying_family_member_other_social_security_number"
-                                        value="<?php echo showData('information_about_your_qualifying_family_member_other_social_security_number')?>">
+                                        name="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-12">7. USCIS Online Account Number (if any) : </label>
+                            <label class="control-label col-md-12">4. USCIS Online Account Number (if any) : </label>
                             <div class="col-md-8 col-md-offset-4">
                                 <div class="d-flexible">
                                     <span
                                         style="left: calc(var(--scale-factor)*36.00px); top: calc(var(--scale-factor)*531.66px); font-size: calc(var(--scale-factor)*10.00px); font-family: serif; gap:1rem;"
                                         role="presentation" dir="ltr">►</span><input type="text" class="form-control"
-                                        name="information_about_your_qualifying_family_member_other_uscis_online_account_number"
-                                        value="<?php echo showData('information_about_your_qualifying_family_member_other_uscis_online_account_number')?>">
+                                        name="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-5">8. Date of Birth (mm/dd/yyyy)</label>
+                            <label class="control-label col-md-5">2. Date of Birth (mm/dd/yyyy)</label>
                             <div class="col-md-7 ">
-                                <input type="date" class="form-control"
-                                    name="information_about_your_qualifying_family_member_other_date_of_birth"
-                                    value="<?php echo showData('information_about_your_qualifying_family_member_other_date_of_birth')?>" />
+                                <input type="date" class="form-control" name="#" value="" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-12">9. Country of Birth </label>
+                            <label class="control-label col-md-12">11.j. Country of Birth </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_other_country_of_birth"
-                                    value="<?= showData('information_about_your_qualifying_family_member_other_country_of_birth')?>">
+                                    name="information_about_you_safe_mailing_country"
+                                    value="<?= showData('information_about_you_safe_mailing_country')?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-12">10. Country of Citizenship or Nationality </label>
+                            <label class="control-label col-md-12">11.j. Country of Citizenship or Nationality </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_other_country_of_citizen"
-                                    value="<?= showData('information_about_your_qualifying_family_member_other_country_of_citizen')?>">
+                                    name="information_about_you_safe_mailing_country"
+                                    value="<?= showData('information_about_you_safe_mailing_country')?>">
                             </div>
                         </div>
                         <div class="control-label  "><b>11. Marital Status </b> &nbsp;
 
-                            <input type="radio"
-                                name="information_about_your_qualifying_family_member_other_marital_status"
-                                value="single">
+                            <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="single">
                             Single &nbsp;
 
-                            <input type="radio"
-                                name="information_about_your_qualifying_family_member_other_marital_status"
-                                value="married"> Married &nbsp;
+                            <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="married"
+                                checked=""> Married &nbsp;
 
-                            <input type="radio"
-                                name="information_about_your_qualifying_family_member_other_marital_status"
-                                value="divorced">
+                            <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="divorced">
                             Divorced &nbsp;
-                            <input type="radio"
-                                name="information_about_your_qualifying_family_member_other_marital_status"
-                                value="widowed">
+                            <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="widowed">
                             Wodowed
                         </div>
 
 
-                        <div class="control-label  "><b>12. Gender </b> &nbsp;
+                        <div class="control-label  "><b>11. Gender </b> &nbsp;
 
-                            <input type="radio" name="information_about_your_qualifying_family_member_other_gender"
-                                value="male">
+                            <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="single">
                             Male &nbsp;
 
-                            <input type="radio" name="information_about_your_qualifying_family_member_other_gender"
-                                value="female"> Female &nbsp;
+                            <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="married"
+                                checked=""> Female &nbsp;
                         </div>
 
                         <div class="form-group">
@@ -752,25 +721,20 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                     <span
                                         style="left: calc(var(--scale-factor)*36.00px); top: calc(var(--scale-factor)*531.66px); font-size: calc(var(--scale-factor)*10.00px); font-family: serif; gap:1rem;"
                                         role="presentation" dir="ltr">►</span><input type="text" class="form-control"
-                                        name="information_about_your_qualifying_family_member_other_a_number"
-                                        value="<?php echo showData('information_about_your_qualifying_family_member_other_a_number')?>">
+                                        name="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">14. Passport Number </label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_other_passport_number"
-                                    value="<?= showData('information_about_your_qualifying_family_member_other_passport_number')?>">
+                                <input type="text" class="form-control" name="" value="<?= showData('')?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">15. Travel Document Number </label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_other_travel_document_number"
-                                    value="<?= showData('information_about_your_qualifying_family_member_other_travel_document_number')?>">
+                                <input type="text" class="form-control" name="" value="<?= showData('')?>">
                             </div>
                         </div>
 
@@ -779,9 +743,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <label class="control-label col-md-12">16. Country of Issuance for Passport or Travel
                                 Document</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="information_about_your_qualifying_family_member_other_country_of_issuance"
-                                    value="<?= showData('information_about_your_qualifying_family_member_other_country_of_issuance')?>">
+                                <input type="text" class="form-control" name="" value="<?= showData('')?>">
                             </div>
                         </div>
                     </div>
@@ -799,9 +761,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             </label>
                             <div class="ms-10">
                                 <div class="ms-auto col-md-7">
-                                    <input type="date" class="form-control"
-                                        name="information_about_your_qualifying_family_member_other_date_of_issuance_for_passport_travel"
-                                        value="<?= showData('information_about_your_qualifying_family_member_other_date_of_issuance_for_passport_travel')?>">
+                                    <input type="text" class="form-control" name="" value="<?= showData('')?>">
                                 </div>
                             </div>
                         </div>
@@ -812,9 +772,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             </label>
                             <div class="ms-10">
                                 <div class="ms-auto col-md-7">
-                                    <input type="date" class="form-control"
-                                        name="information_about_your_qualifying_family_member_other_expiration_date_passport_travel"
-                                        value="<?= showData('information_about_your_qualifying_family_member_other_expiration_date_passport_travel')?>">
+                                    <input type="text" class="form-control" name="" value="<?= showData('')?>">
                                 </div>
                             </div>
                         </div>
@@ -823,31 +781,27 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="bg-info">
                             <span class="heading-md">Part 4. Additional Information About Your
                                 Qualifying Family &nbsp;Member
+
+
                             </span>
+
                         </div>
-                        <h5><b>Provide the date of last entry, place of last entry, and
-                                current immigration status for your family member if he or
-                                she is currently in the United States
-                            </b></h5>
+
                         <div class="form-group">
                             <label class="control-label col-md-12">1.a. Date of Last Entry into the United States
                                 (mm/dd/yyyy)
                             </label>
                             <div class="ms-10">
                                 <div class="ms-auto col-md-7">
-                                    <input type="date" class="form-control"
-                                        name="additional_information_about_your_qualifying_family_member_date_of_last_entry"
-                                        value="<?= showData('additional_information_about_your_qualifying_family_member_date_of_last_entry')?>">
+                                    <input type="text" class="form-control" name="" value="<?= showData('')?>">
                                 </div>
                             </div>
                         </div>
-                        <h5><b>Place of Last Entry into the United States</b></h5>
+
                         <div class="form-group">
                             <label class="control-label col-md-5">1.b. City or Town </label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_city_or_town"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_city_or_town')?>">
+                                <input type="text" class="form-control" name="" value="<?= showData('')?>">
                             </div>
                         </div>
 
@@ -857,6 +811,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="col-md-7">
                                 <select class="form-control ">
                                     <option disabled selected>Select State</option>
+
+
                                     <option value="AA">AA</option>
                                     <option value="AA">AA</option>
                                     <option value="AA">AA</option>
@@ -879,16 +835,11 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             </label>
                             <div class="">
                                 <div class="ms-auto col-md-7">
-                                    <input type="text" class="form-control"
-                                        name="additional_information_about_your_qualifying_family_member_current_immigration_status"
-                                        value="<?= showData('additional_information_about_your_qualifying_family_member_current_immigration_status')?>">
+                                    <input type="text" class="form-control" name="" value="<?= showData('')?>">
                                 </div>
                             </div>
                         </div>
-                        <h5><b>Provide the date of entry, place of entry, and status at entry
-                                for your family member's last entry if he or she has
-                                previously traveled to the United States but is not currently
-                                in the United States. </b></h5>
+
 
                         <div class="form-group">
                             <label class="control-label col-md-12">2.a. Date of Last Entry into the United States
@@ -896,9 +847,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             </label>
                             <div class="ms-10">
                                 <div class="ms-auto col-md-7">
-                                    <input type="date" class="form-control"
-                                        name="additional_information_about_your_qualifying_family_member_not_in_united_states_date_of_last_entry"
-                                        value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_date_of_last_entry')?>">
+                                    <input type="text" class="form-control" name="" value="<?= showData('')?>">
                                 </div>
                             </div>
                         </div>
@@ -906,9 +855,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">2.b. City or Town </label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_city_or_town"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_city_or_town')?>">
+                                <input type="text" class="form-control" name="" value="<?= showData('')?>">
                             </div>
                         </div>
 
@@ -942,20 +889,17 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             </label>
                             <div class="">
                                 <div class="ms-auto col-md-7">
-                                    <input type="date" class="form-control"
-                                        name="additional_information_about_your_qualifying_family_member_not_in_united_states_date_authorized_stay_expired"
-                                        value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_date_authorized_stay_expired')?>">
+                                    <input type="text" class="form-control" name="" value="<?= showData('')?>">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">2.e. Status at the Time of Entry (for example, F-1
-                                student, B-2 tourist, entered without inspection)
+                                student,
+                                B-2 tourist, entered without inspection)
                             </label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_status_at_the_time_of_entry"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_status_at_the_time_of_entry')?>">
+                                <input type="text" class="form-control" name="" value="<?= showData('')?>">
                             </div>
                         </div>
                     </div>
@@ -992,23 +936,17 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
                         <div class="col-md-4">
 
-                            <input type="radio"
-                                name="additional_information_about_your_qualifying_family_member_type_of_office"
-                                value="us_consulate">
+                            <input type="radio" name="d" value="hispanic or latino">
                             U.S. Consulate &nbsp;
                         </div>
                         <div class="col-md-6">
 
-                            <input type="radio"
-                                name="additional_information_about_your_qualifying_family_member_type_of_office"
-                                value="pre_flight_inspection">
+                            <input type="radio" name="d" value="not hispanic or latino">
                             Pre-Flight Inspection
                         </div>
                         <div class="col-md-12">
 
-                            <input type="radio"
-                                name="additional_information_about_your_qualifying_family_member_type_of_office"
-                                value="port_of_entry">
+                            <input type="radio" name="d" value="not hispanic or latino">
                             Port-of-Entry
                         </div>
 
@@ -1017,9 +955,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">3.b. City or Town </label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_city_or_town2"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_city_or_town2')?>">
+                                <input type="text" class="form-control" name="" value="<?= showData('')?>">
                             </div>
                         </div>
 
@@ -1050,53 +986,57 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">3.d. Country </label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_country"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_country')?>">
+                                <input type="text" class="form-control" name="" value="<?= showData('')?>">
                             </div>
                         </div>
+
+
+
+
+
+
+
+
                         <h6><b>Safe Foreign Address Where You Want Notification Sent
                                 (if other than U.S. Consulate, Pre-Flight Inspection,or
                                 Port-of-Entry) </b>
                         </h6>
+
+
+
+
+
+
+
+
+
                         <div class="form-group">
-                            <label class="control-label col-md-5">4.a. Street Number and Name:</label>
+                            <label class="control-label col-md-5">4.b. Street Number and Name:</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_street_number_and_name"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_street_number_and_name')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="control-label col-md-6"><b>4.b. </b> &nbsp;
 
-                                <input type="radio"
-                                    name="additional_information_about_your_qualifying_family_member_apt_ste_flr"
-                                    value="apt">
+                                <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="apt">
                                 Apt. &nbsp;
 
-                                <input type="radio"
-                                    name="additional_information_about_your_qualifying_family_member_apt_ste_flr"
-                                    value="ste" checked=""> Ste. &nbsp;
+                                <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="ste"
+                                    checked=""> Ste. &nbsp;
 
-                                <input type="radio"
-                                    name="additional_information_about_your_qualifying_family_member_apt_ste_flr"
-                                    value="flr">
+                                <input type="radio" name="information_about_you_safe_mailing_apt_ste_flr" value="flr">
                                 Flr.:
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_street_number"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_street_number')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
 
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">4.c. City or Town </label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_city_or_town3"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_city_or_town3')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -1104,25 +1044,19 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">4.d. Province </label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_province"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_province')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">4.e. Postal Code </label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_postal_code"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_postal_code')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">4.f. Country </label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_country"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_country')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -1137,25 +1071,19 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">5.a. Family Name(Last Name) :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_family_last_name"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_family_last_name')?>">
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">5.b. Given Name(First Name) :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_given_first_name"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_given_first_name')?>">
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">5.c. Middle Name :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_middle_name"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_middle_name')?>">
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
 
@@ -1163,8 +1091,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <label class="control-label col-md-12">5.d. Date Marriage Ended (mm/dd/yyyy)</label>
                             <div class="col-md-7 col-md-offset-5">
                                 <input type="date" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_date_marriage_ended"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_date_marriage_ended')?>">
+                                    name="information_about_your_mother_date_of_birth"
+                                    value="<?php echo showData('information_about_your_mother_date_of_birth')?>" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -1172,43 +1100,53 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="col-md-7 col-md-offset-5">
 
 
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_where_did_marriage_end"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_where_did_marriage_end')?>">
+                                <input type="text" class="form-control" name="" value="<?php echo showData('')?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">5.f. How did the marriage end?</label>
                             <div class="col-md-7 col-md-offset-5">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_how_did_the_marriage_end"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_how_did_the_marriage_end')?>">
+                                <input type="text" class="form-control" name="" value="<?php echo showData('')?>" />
                             </div>
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <section class="col-md-6 ">
                         <div class="form-group">
                             <label class="control-label col-md-5">6.a. Family Name(Last Name) :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_family_last_name2"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_family_last_name2')?>" />
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">6.b. Given Name(First Name) :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_given_first_name2"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_given_first_name2')?>" />
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">6.c. Middle Name :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_middle_name2"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_middle_name2')?>" />
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
 
@@ -1225,17 +1163,13 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="col-md-7 col-md-offset-5">
 
 
-                                <input type="text" class="form-control" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_where_did_marriage_end2"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_where_did_marriage_end2')?>" />
+                                <input type="text" class="form-control" name="" value="<?php echo showData('')?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">6.f. How did the marriage end?</label>
                             <div class="col-md-7 col-md-offset-5">
-                                <input type="text" class="form-control"
-                                    name="additional_information_about_your_qualifying_family_member_not_in_united_states_how_did_the_marriage_end2"
-                                    value="<?= showData('additional_information_about_your_qualifying_family_member_not_in_united_states_how_did_the_marriage_end2')?>" />
+                                <input type="text" class="form-control" name="" value="<?php echo showData('')?>" />
                             </div>
                         </div>
 
@@ -1274,7 +1208,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
                         <div class="col-md-12">
 
-                            <h5><b>8. Your family member would like an Employment
+                            <h5><b>8.a. Your family member would like an Employment
                                     Authorization Document. </b></h5>
 
                             <div class="col-md-3">
@@ -1300,6 +1234,12 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         </h6>
 
                     </section>
+
+
+
+
+
+
                 </div>
 
 
@@ -1434,6 +1374,22 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
                         <article>
                             <div class="form-group">
+                                <label class="control-label col-md-12">1.e. Been placed in an alternative sentencing or
+                                    a rehabilitative
+                                    program (for example, diversion, deferred prosecution,
+                                    withheld adjudication, deferred adjudication)?</label>
+                                <div class="col-md-7 col-md-offset-8">
+                                    <input type="radio" name="" value="yes">
+                                    Yes &nbsp;
+
+                                    <input type="radio" name="" value="no"> No
+
+                                </div>
+                            </div>
+                        </article>
+
+                        <article>
+                            <div class="form-group">
                                 <label class="control-label col-md-12">1.f. Received a suspended sentence, been placed
                                     on probation,
                                     or been paroled? </label>
@@ -1477,7 +1433,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
                         <article>
                             <div class="form-group">
-                                <label class="control-label col-md-12">1.i. Exercised diplomatic immunity to avoid
+                                <label class="control-label col-md-12">1.h. Exercised diplomatic immunity to avoid
                                     prosecution for a
                                     criminal offense in the United States?</label>
                                 <div class="col-md-7 col-md-offset-8">
@@ -1489,7 +1445,13 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 </div>
                             </div>
                         </article>
+
+
                     </div>
+
+
+
+
                     <section class="col-md-6">
 
                         <p><b>Information About Arrests, Citations, Detentions, or Charges
@@ -1499,9 +1461,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 detained, or
                                 charged?</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="processing_information_why_was_your_family_member_arested"
-                                    value="<?= showData('processing_information_why_was_your_family_member_arested')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -1509,9 +1469,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <label class="control-label col-md-12">2.b. Date of arrest, citation, detention, or charge
                                 (mm/dd/yyyy)</label>
                             <div class="col-md-7 ">
-                                <input type="date" class="form-control"
-                                    name="processing_information_family_member_date_of_arrest"
-                                    value="<?= showData('processing_information_family_member_date_of_arrest')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <p><b>Where was your family member arrested, cited, detained, or
@@ -1521,9 +1479,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-4">2.c. City or Town</label>
                             <div class="col-md-8 ">
-                                <input type="text" class="form-control"
-                                    name="processing_information_family_member_arrest_city_town"
-                                    value="<?= showData('processing_information_family_member_arrest_city_town')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -1551,9 +1507,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-12">2.e. Country</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="processing_information__family_member_arrest_country"
-                                    value="<?= showData('processing_information__family_member_arrest_country')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -1561,24 +1515,20 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 filed,
                                 charges dismissed, jail, probation)</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="processing_information_family_member_arrest_outcome_disposition"
-                                    value="<?= showData('processing_information_family_member_arrest_outcome_disposition')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <hr>
 
 
-                        <hr>
+
 
                         <div class="form-group">
                             <label class="control-label col-md-12">3.a. Why was your family member arrested, cited,
                                 detained, or
                                 charged?</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="processing_information_why_was_your_family_member_arested2"
-                                    value="<?= showData('processing_information_why_was_your_family_member_arested2')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -1586,9 +1536,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <label class="control-label col-md-12">3.b. Date of arrest, citation, detention, or charge
                                 (mm/dd/yyyy)</label>
                             <div class="col-md-7 ">
-                                <input type="text" class="form-control"
-                                    name="processing_information_family_member_date_of_arrest2"
-                                    value="<?= showData('processing_information_family_member_date_of_arrest2')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <p><b>Where was your family member arrested, cited, detained, or
@@ -1598,9 +1546,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-4">3.c. City or Town</label>
                             <div class="col-md-8 ">
-                                <input type="text" class="form-control"
-                                    name="processing_information_family_member_arrest_city_town2"
-                                    value="<?= showData('processing_information_family_member_arrest_city_town2')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -1628,9 +1574,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-12">3.e. Country</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="processing_information__family_member_arrest_country2"
-                                    value="<?= showData('processing_information__family_member_arrest_country2')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -1638,9 +1582,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 filed,
                                 charges dismissed, jail, probation)</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="processing_information_family_member_arrest_outcome_disposition2"
-                                    value="<?= showData('processing_information_family_member_arrest_outcome_disposition2')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -2193,7 +2135,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <br>
                         <article>
                             <div class="form-group">
-                                <label class="control-label col-md-12">11. &nbsp;&nbsp;Has your family member EVER
+                                <label class="control-label col-md-12">5.a. &nbsp;&nbsp;Has your family member EVER
                                     advocated that
                                     another
                                     person commit any of the acts described in Item
@@ -2213,7 +2155,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
                         <article>
                             <div class="form-group">
-                                <label class="control-label col-md-12">12.a. &nbsp;&nbsp;Intentionally killed, tortured,
+                                <label class="control-label col-md-12">5.b. &nbsp;&nbsp;Intentionally killed, tortured,
                                     beaten, or
                                     injured?</label>
                                 <div class="col-md-7 col-md-offset-8">
@@ -2228,7 +2170,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
                         <article>
                             <div class="form-group">
-                                <label class="control-label col-md-12">12.b. &nbsp;&nbsp;Displaced or moved from his or
+                                <label class="control-label col-md-12">5.c. &nbsp;&nbsp;Displaced or moved from his or
                                     her residence
                                     by force,
                                     compulsion, or duress?</label>
@@ -2244,7 +2186,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
                         <article>
                             <div class="form-group">
-                                <label class="control-label col-md-12">12.c. &nbsp;&nbsp;In any way compelled or forced
+                                <label class="control-label col-md-12">5.d. &nbsp;&nbsp;In any way compelled or forced
                                     to engage in
                                     any kind of
                                     sexual contact or relations?</label>
@@ -2729,48 +2671,40 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 <label class="control-label col-md-5">1.a. Family Name(Last Name) :</label>
                                 <div class="col-md-7">
                                     <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_family_last_name"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_family_last_name')?>" />
+                                        name="information_about_spouse_children_family_last_name"
+                                        value="<?php echo showData('information_about_spouse_children_family_last_name')?>" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-5">1.b. Given Name(First Name) :</label>
                                 <div class="col-md-7">
                                     <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_given_first_name"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_given_first_name')?>" />
+                                        name="information_about_spouse_children_given_first_name"
+                                        value="<?php echo showData('information_about_spouse_children_given_first_name')?>" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-5">1.c. Middle Name :</label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_middle_name"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_middle_name')?>" />
+                                    <input type="text" class="form-control" name="" value="" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">2. Date of Birth (mm/dd/yyyy) </label>
                                 <div class="col-md-7 col-md-offset-5">
-                                    <input type="date" class="form-control"
-                                        name="information_about_family_member_spouse_children_date_of_birth"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_date_of_birth')?>">
+                                    <input type="date" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">3. Country of Birth </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_country_of_birth"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_country_of_birth')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">4. Relationship </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_relationship"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_relationship')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <hr>
@@ -2782,48 +2716,40 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 <label class="control-label col-md-5">5.a. Family Name(Last Name) :</label>
                                 <div class="col-md-7">
                                     <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_family_last_name2"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_family_last_name2')?>" />
+                                        name="information_about_spouse_children_family_last_name"
+                                        value="<?php echo showData('information_about_spouse_children_family_last_name')?>" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-5">5.b. Given Name(First Name) :</label>
                                 <div class="col-md-7">
                                     <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_given_first_name2"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_given_first_name2')?>" />
+                                        name="information_about_spouse_children_given_first_name"
+                                        value="<?php echo showData('information_about_spouse_children_given_first_name')?>" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-5">5.c. Middle Name :</label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_middle_name2"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_middle_name2')?>" />
+                                    <input type="text" class="form-control" name="" value="" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">6. Date of Birth (mm/dd/yyyy) </label>
                                 <div class="col-md-7 col-md-offset-5">
-                                    <input type="date" class="form-control"
-                                        name="information_about_family_member_spouse_children_date_of_birth2"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_date_of_birth2')?>">
+                                    <input type="date" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">7. Country of Birth </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_country_of_birth2"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_country_of_birth2')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">8. Relationship </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_relationship2"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_relationship2')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <hr>
@@ -2835,51 +2761,46 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 <label class="control-label col-md-5">9.a. Family Name(Last Name) :</label>
                                 <div class="col-md-7">
                                     <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_family_last_name3"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_family_last_name3')?>" />
+                                        name="information_about_spouse_children_family_last_name"
+                                        value="<?php echo showData('information_about_spouse_children_family_last_name')?>" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-5">9.b. Given Name(First Name) :</label>
                                 <div class="col-md-7">
                                     <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_given_first_name3"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_given_first_name3')?>" />
+                                        name="information_about_spouse_children_given_first_name"
+                                        value="<?php echo showData('information_about_spouse_children_given_first_name')?>" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-5">9.c. Middle Name :</label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_middle_name3"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_middle_name3')?>" />
+                                    <input type="text" class="form-control" name="" value="" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">10. Date of Birth (mm/dd/yyyy) </label>
                                 <div class="col-md-7 col-md-offset-5">
-                                    <input type="date" class="form-control"
-                                        name="information_about_family_member_spouse_children_date_of_birth3"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_date_of_birth3')?>">
+                                    <input type="date" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">11. Country of Birth </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_country_of_birth3"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_country_of_birth3')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">12. Relationship </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control"
-                                        name="information_about_family_member_spouse_children_relationship3"
-                                        value="<?php echo showData('information_about_family_member_spouse_children_relationship3')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                         </article>
+
+
+
 
                     </section>
 
@@ -2893,7 +2814,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                     id="submit_data" />
 
             </fieldset>
-            <!-- --------------------------------------------------------------------------- PAGE NUMBER 08 ------------------------------------------------------------------------------------------- -->
+            <!-- ---------------------------------------------------------------------------PAGE NUMBER 08------------------------------------------------------------------------------------------- -->
 
             <fieldset>
                 <div class="row">
@@ -2908,7 +2829,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             </h4>
                         </div>
                         <p><b>NOTE:</b> Read the <b>Penalties</b> section of the Form I-198
-                            Instructions before completing this part.</p>
+                            Instructions before completing this section.</p>
 
                         <div class="bg-info">
                             <h4><b>Petitioner's Statement</b> </h4>
@@ -2928,8 +2849,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 answer to every question in</p>
                         </div>
                         <input type="text" class="form-control"
-                            name="petitioners_statement_contact_information_declaration_and_signature_petitioner_statement_language_name"
-                            value="<?php echo showData('petitioners_statement_contact_information_declaration_and_signature_petitioner_statement_language_name')?>" />
+                            name="petitioners_statement_contact_information_declaration_and_signature_1_b"
+                            value="<?php echo showData('petitioners_statement_contact_information_declaration_and_signature_1_b')?>" />
                         <p>a language in which I am fluent, and I understood
                             everything.</p>
                         <div class="d-flexible">
@@ -2937,8 +2858,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <p>At my request, the preparer named in <b>Part 10.</b></p>
                         </div>
                         <input type="text" class="form-control"
-                            name="petitioners_statement_contact_information_declaration_and_signature_petitioner_statement_preparer_named"
-                            value="<?php echo showData('petitioners_statement_contact_information_declaration_and_signature_petitioner_statement_preparer_named')?>" />
+                            name="petitioners_statement_contact_information_declaration_and_signature_2"
+                            value="<?php echo showData('petitioners_statement_contact_information_declaration_and_signature_2')?>" />
                         <p>prepared this application for me based only upon
                             information I provided or authorized.</p>
 
@@ -2950,8 +2871,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <label class="control-label col-md-12">3. Petitioner's Daytime Telephone Number </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="petitioners_statement_contact_information_declaration_and_signature_petitioner_contact_information_petitioners_daytime_tel_number"
-                                    value="<?php echo showData('petitioners_statement_contact_information_declaration_and_signature_petitioner_contact_information_petitioners_daytime_tel_number')?>" />
+                                    name="petitioners_statement_contact_information_contact_information_3"
+                                    value="<?php echo showData('petitioners_statement_contact_information_contact_information_3')?>" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -2959,16 +2880,16 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="petitioners_statement_contact_information_declaration_and_signature_petitioner_contact_information_petitioners_mobile_tel_number"
-                                    value="<?php echo showData('petitioners_statement_contact_information_declaration_and_signature_petitioner_contact_information_petitioners_mobile_tel_number')?>" />
+                                    name="petitioners_statement_contact_information_contact_information_4"
+                                    value="<?php echo showData('petitioners_statement_contact_information_contact_information_4')?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">5. Petitioner's Email Address (if any) </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="petitioners_statement_contact_information_declaration_and_signature_petitioner_contact_information_petitioners_email_address"
-                                    value="<?php echo showData('petitioners_statement_contact_information_declaration_and_signature_petitioner_contact_information_petitioners_email_address')?>" />
+                                    name="petitioners_statement_contact_information_contact_information_4"
+                                    value="<?php echo showData('petitioners_statement_contact_information_contact_information_4')?>" />
                             </div>
                         </div>
                         <div class="bg-info">
@@ -2989,22 +2910,20 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
 
                     <div class="col-md-5 col-md-offset-1">
-                        <p>I understand that USCIS may require me to appear for an
+                        <p>I understand that DHS may require me to appear for an
                             appointment to take my biometrics (fingerprints, photograph,
                             and/or signature) and, at that time, if I am required to provide
-                            biometrics, I will be required to sign an oath reaffirming that: </p>
-                        <p>&nbsp;&nbsp;<b>1)</b> I provided or authorized all of the information
-                            contained in, and submitted with, my supplement;</p>
-                        <p>&nbsp;&nbsp;<b>2)</b>I reviewed and understood all of the information in,
-                            and submitted with, my supplement; and</p>
-                        <p>&nbsp;&nbsp;<b>3)</b>All of this information was complete, true, and
-                            correct at the time of filing. </p>
+                            biometrics, I will be required to sign an oath reaffirming that:</p>
+                        <p>&nbsp;&nbsp;<b>1)</b> I reviewed and understood all of the information
+                            contained in, and submitted with, my application; and</p>
+                        <p>&nbsp;&nbsp;<b>2)</b> All of this information was complete, true, and correct
+                            at the time of filing</p>
                         <p>I certify, under penalty of perjury, that all of the information in
-                            my supplement and any document submitted with it were
+                            my application and any document submitted with it were
                             provided or authorized by me, that I reviewed and understand
                             all of the information contained in, and submitted with, my
-                            supplement, and that all of this information is complete, true,
-                            and correct </p>
+                            application and that all of this information is complete, true,
+                            and correct</p>
                         <div class="bg-info">
                             <h4><b>Petitioner's Signature</b> </h4>
                         </div>
@@ -3012,21 +2931,21 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <label class="control-label col-md-12">6.a. Petitioner's Signature (sign in ink) </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="petitioners_statement_contact_information_declaration_and_signature_petitioner_signature_sign_in_link"
-                                    value="<?php echo showData('petitioners_statement_contact_information_declaration_and_signature_petitioner_signature_sign_in_link')?>" />
+                                    name="petitioners_statement_contact_information_contact_information_signature_6_a"
+                                    value="<?php echo showData('petitioners_statement_contact_information_contact_information_signature_6_a')?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">6.b. Date of Signature (mm/dd/yyyy)</label>
                             <div class="col-md-7 col-md-offset-5">
                                 <input type="date" class="form-control"
-                                    name="petitioners_statement_contact_information_declaration_and_signature_petitioner_signature_date_of_signature"
-                                    value="<?php echo showData('petitioners_statement_contact_information_declaration_and_signature_petitioner_signature_date_of_signature')?>" />
+                                    name="petitioners_statement_contact_information_contact_information_signature_6_b"
+                                    value="<?php echo showData('petitioners_statement_contact_information_contact_information_signature_6_b')?>" />
                             </div>
                         </div>
-                        <p><b>NOTE TO ALL PETITIONERS:</b>If you do not completely fill
-                            out this supplement or fail to submit required documents listed
-                            in the Instructions, USCIS may deny your supplement. </p>
+                        <p><b>NOTE TO ALL PETITIONERS:</b> If you do not completely fill
+                            out this application or fail to submit required documents listed
+                            in the Instructions, USCIS may deny your application.</p>
                         <div class="bg-info">
                             <h4><b>Part 8. Qualifying Family Member's Statement, Contact Information, Declaration, and
                                     Signature </b> </h4>
@@ -3070,8 +2989,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 answer to every question in </label>
 
                             <input type="text" class="form-control"
-                                name="qualifying_family_member_statement_language_name"
-                                value="<?php echo showData('qualifying_family_member_statement_language_name')?>" />
+                                name="qualifying_family_member_statement_contact_information_declaration_1_b"
+                                value="<?php echo showData('qualifying_family_member_statement_contact_information_declaration_1_b')?>" />
                             <p>a language in which I am fluent, and I understood
                                 everything.</p>
                         </div>
@@ -3090,8 +3009,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 At my request, the preparer named in Part 10.,</label>
 
                             <input type="text" class="form-control"
-                                name="qualifying_family_member_statement_preparer_named"
-                                value="<?php echo showData('qualifying_family_member_statement_preparer_named')?>" />
+                                name="qualifying_family_member_statement_contact_information_declaration_1_b"
+                                value="<?php echo showData('qualifying_family_member_statement_contact_information_declaration_1_b')?>" />
                             <p>prepared this supplement for me based only upon information I provided or authorized.
                             </p>
                         </div>
@@ -3099,7 +3018,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
 
 
 
-                    </div>
+                    </div><!-- right side column end -->
 
                 </div>
 
@@ -3139,8 +3058,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 Number </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="qualifying_family_member_statement_contact_information_daytime_tel_number"
-                                    value="<?php echo showData('qualifying_family_member_statement_contact_information_daytime_tel_number')?>" />
+                                    name="qualifying_family_member_statement_contact_information_declaration_contact_information_3"
+                                    value="<?php echo showData('qualifying_family_member_statement_contact_information_declaration_contact_information_3')?>" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -3148,8 +3067,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 (if any) </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="qualifying_family_member_statement_contact_information_mobile_tel_number"
-                                    value="<?php echo showData('qualifying_family_member_statement_contact_information_mobile_tel_number')?>" />
+                                    name="qualifying_family_member_statement_contact_information_declaration_contact_information_4"
+                                    value="<?php echo showData('qualifying_family_member_statement_contact_information_declaration_contact_information_4')?>" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -3157,8 +3076,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="qualifying_family_member_statement_contact_information_email_address"
-                                    value="<?php echo showData('qualifying_family_member_statement_contact_information_email_address')?>" />
+                                    name="qualifying_family_member_statement_contact_information_declaration_contact_information_5"
+                                    value="<?php echo showData('qualifying_family_member_statement_contact_information_declaration_contact_information_5')?>" />
                             </div>
                         </div>
 
@@ -3217,23 +3136,21 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 ink) </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="qualifying_family_member_statement_signature_sign_in_link"
-                                    value="<?php echo showData('qualifying_family_member_statement_signature_sign_in_link')?>" />
+                                    name="petitioners_statement_contact_information_contact_information_signature_6_a"
+                                    value="<?php echo showData('petitioners_statement_contact_information_contact_information_signature_6_a')?>" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">6.b. Date of Signature (mm/dd/yyyy)</label>
                             <div class="col-md-7 col-md-offset-5">
                                 <input type="date" class="form-control"
-                                    name="qualifying_family_member_statement_signature_date_of_signature"
-                                    value="<?php echo showData('qualifying_family_member_statement_signature_date_of_signature')?>" />
+                                    name="petitioners_statement_contact_information_contact_information_signature_6_b"
+                                    value="<?php echo showData('petitioners_statement_contact_information_contact_information_signature_6_b')?>" />
                             </div>
                         </div>
-                        <p><b>NOTE TO ALL QUALIFYING FAMILY MEMBERS:</b> If
-                            you do not completely fill out this supplement or fail to submit
-                            required documents listed in the Instructions, USCIS may deny
-                            your supplement.
-                        </p>
+                        <p><b>NOTE TO ALL QUALIFYING FAMILY MEMBERS:</b> If you do not completely fill
+                            out this application or fail to submit required documents listed
+                            in the Instructions, USCIS may deny your application.</p>
 
                         <div class="bg-info">
                             <h4><b>Part 9. Interpreter's Contact Information,
@@ -3247,16 +3164,16 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <label class="control-label col-md-12">1.a. Interpreter's Family Name (Last Name) </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_full_name_family_last_name"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_full_name_family_last_name')?>" />
+                                    name="part_9_interpreter_contact_information_certification_signature_last_name"
+                                    value="<?php echo showData('part_9_interpreter_contact_information_certification_signature_last_name')?>" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-12">1.b. Interpreter's Given Name (First Name) </label>
+                            <label class="control-label col-md-12">1.b. Interpreter's Family Name (First Name) </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_full_name_given_first_name"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_full_name_given_first_name')?>" />
+                                    name="part_9_interpreter_contact_information_certification_signature_first_name"
+                                    value="<?php echo showData('part_9_interpreter_contact_information_certification_signature_first_name')?>" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -3264,8 +3181,8 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 any) </label>
                             <div class="col-md-12">
                                 <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_full_name_business_organization_name"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_full_name_business_organization_name')?>" />
+                                    name="part_9_interpreter_contact_information_certification_signature_organization_name"
+                                    value="<?php echo showData('part_9_interpreter_contact_information_certification_signature_organization_name')?>" />
                             </div>
                         </div>
                         <div class="bg-info">
@@ -3274,9 +3191,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">3.a. Street Number and Name</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_mailing_address_street_number_and_name"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_mailing_address_street_number_and_name')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -3292,17 +3207,14 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 Flr.:
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_mailing_address_apt_ste_flr_feild_value"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_mailing_address_apt_ste_flr_feild_value')?>">
+                                <input type="text" class="form-control" name="information_about_you_safe_mailing_number"
+                                    value="Street">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">3.c. City or Town</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_mailing_address_city_or_town"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_mailing_address_city_or_town')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -3316,33 +3228,25 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">3.e. ZIP Code</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_mailing_address_zip_code"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_mailing_address_zip_code')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">3.f. Province</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_mailing_address_province"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_mailing_address_province')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">3.g. Postal Code</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_mailing_address_postal_code"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_mailing_address_postal_code')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">3.h. Country </label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_mailing_address_country"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_mailing_address_country')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="bg-info">
@@ -3351,26 +3255,20 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-12">4. Interpreter's Daytime Telephone Number</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_contact_information_daytime_tel_number"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_contact_information_daytime_tel_number')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">5. Interpreter's Mobile Telephone Number (if
                                 any)</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_contact_information_mobile_number"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_contact_information_mobile_number')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">6. Interpreter's Email Address (if any)</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_contact_information_email_address"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_contact_information_email_address')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -3410,46 +3308,34 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <p class="control-label col-md-5">I am fluent in English and</p>
                             <div class="col-md-5">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_certification_language_name"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_certification_language_name')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
-                        <h5><b>which is the same language specified in Part 7., Item Number
-                                1.b., and Part 8. Item Number 1.b., and I have read to this
-                                petitioner and qualifying family member in the identified
-                                language(s) every question and instruction on this supplement
-                                and the petitioner's and qualifying family member's answer to
-                                every question. The petitioner and qualifying family member
-                                informed me that they understand every instruction, question,
-                                and answer on the supplement, including the Petitioner's
-                                Declaration and Certification and the Qualifying Family
-                                Member's Declaration and Certification, and have verified
-                                the accuracy of every answer</b></h5>
+                        <h5><b>which is the same language specified in Part 5., Item Number 1.b., and I have read to
+                                this applicant in the identified language every question and instruction on this
+                                application and his or her answer to every question. The applicant informed me that he
+                                or she understands every instruction, question, and answer on the application, including
+                                the Applicant's Declaration and Certification, and has verified the accuracy of every
+                                answer.</b></h5>
                         <div class="bg-info">
                             <h4><b>Interpreter's Signature</b> </h4>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">7.a. Interpreter's Signature</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_signature"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_signature')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">7.b. Date of Signature (mm/dd/yyyy)</label>
                             <div class="col-md-7 col-md-offset-5">
-                                <input type="date" class="form-control"
-                                    name="interpreter_contact_information_certification_and_signature_interpreter_signature_date_of_signature"
-                                    value="<?php echo showData('interpreter_contact_information_certification_and_signature_interpreter_signature_date_of_signature')?>">
+                                <input type="date" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="bg-info">
-                            <h4><b>Part 10. Contact Information, Declaration, and
-                                    Signature of the Person Preparing this Petition, if
-                                    Other Than the Petitioner or Qualifying Family
-                                    Member</b> </h4>
+                            <h4><b>Part 7. Contact Information, Declaration, and
+                                    Signature of the Person Preparing this
+                                    Application, if Other Than the Applicant</b> </h4>
                         </div>
                         <p>Provide the following information about the preparer.</p>
                         <div class="bg-info">
@@ -3458,24 +3344,20 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-12">1.a. Preparer's Family Name (Last Name)</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"
-                                    name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_full_name_family_last_name"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_full_name_family_last_name')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">1.b. Preparer's Given Name (First Name)</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_full_name_given_first_name"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_full_name_given_first_name')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">2. Preparer's Business or Organization Name (if
                                 any)</label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_full_name_business_organization_name"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_full_name_business_organization_name')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -3489,8 +3371,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">3.a. Street Number and Name</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control" name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_strrt_number_and_name"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_strrt_number_and_name')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -3506,15 +3387,14 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                 Flr.:
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" n name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_apt_ste_flr_feild_value"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_apt_ste_flr_feild_value')?>">
+                                <input type="text" class="form-control" name="information_about_you_safe_mailing_number"
+                                    value="Street">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">3.c. City or Town</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"  name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_city_or_town"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_city_or_town')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -3528,29 +3408,25 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-5">3.e. ZIP Code</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"  name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_zip_code"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_zip_code')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">3.f. Province</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"  name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_province"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_province')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">3.g. Postal Code</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"  name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_postal_code"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_postal_code')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">3.h. Country </label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"  name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_country"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_mailing_address_country')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="bg-info">
@@ -3559,23 +3435,20 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="form-group">
                             <label class="control-label col-md-12">4. Preparer's Daytime Telephone Number </label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control"  name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_contact_information_daytime_tel_number"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_contact_information_daytime_tel_number')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">5. Preparer's Mobile Telephone Number (if any)
                             </label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_contact_information_mobile_tel_number"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_contact_information_mobile_tel_number')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">6. Preparer's Email Address (if any) </label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_contact_information_email_address"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_contact_information_email_address')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -3587,26 +3460,25 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="d-flexible">
                             <b>7.a.</b> <input type="checkbox" name="" id="">
                             <p>I am not an attorney or accredited representative but
-                                have prepared this supplement on behalf of the
-                                petitioner and qualifying family member and with the
-                                petitioner's and qualifying family member's consent.</p>
+                                have prepared this application on behalf of the
+                                applicant and with the applicant's consent.</p>
                         </div>
                         <div class="d-flexible">
                             <b>7.b.</b> <input type="checkbox" name="" id="">
                             <p>I am an attorney or accredited representative and my
-                                representation of the petitioner and qualifying family
-                                member in this case
+                                representation of the applicant in this case
                                 <input type="checkbox" name="" id=""> extends <input type="checkbox" name="" id=""> does
                                 not extend beyond the
                                 preparation of this supplement.
                             </p>
                         </div>
                         <p><b>NOTE:</b> If you are an attorney or accredited
-                            representative whose representation extends beyond
-                            preparation of this supplement, you may be obliged to
-                            submit a completed Form G-28, Notice of Entry of
-                            Appearance as Attorney or Accredited Representative,
-                            with this supplement.</p>
+                            representative, you may need to submit a completed
+                            Form G-28, Notice of Entry of Appearance as
+                            Attorney or Accredited Representative, or Form
+                            G-28, Notice of Entry of Appearance as Attorney In
+                            Matters Outside the Geographical Confines of the
+                            United States, with this supplement.</p>
 
 
                     </div><!-- right side column end -->
@@ -3633,42 +3505,44 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                     <div class="col-md-5">
                         <div class="bg-info">
                             <h4><b>Part 10. Contact Information, Declaration, and
-                                    Signature of the Person Preparing this Petition, if
-                                    Other Than the Petitioner or Qualifying Family
-                                    Member (continued)</b> </h4>
+                                    Signature of the Person Preparing this
+                                    Application, if Other Than the Applicant
+                                    (continued)</b> </h4>
                         </div>
                         <div class="bg-info">
                             <h4><b>Preparer's Certification</b> </h4>
                         </div>
                         <p>By my signature, I certify, under penalty of perjury, that I
-                            prepared this supplement at the request of the petitioner and
-                            qualifying family member. The petitioner and qualifying family
-                            member then reviewed this completed supplement and informed
-                            me that they understand all of the information contained in, and
-                            submitted with, this supplement, including the Petitioner's
-                            Declaration and Certification, and the Qualifying Family
-                            Member's Declaration and Certification, and that all of this
-                            information is complete, true, and correct. I completed this
-                            supplement based only on information that the petitioner and
-                            qualifying family member provided to me or authorized me to
-                            obtain or use.
-                        </p>
+                            prepared this application at the request of the applicant. The
+                            applicant then reviewed this completed application and
+                            informed me that he or she understands all of the information
+                            contained in, and submitted with, his or her application,
+                            including the <b>Applicant's Declaration and Certification</b>, and
+                            that all of this information is complete, true, and correct. I
+                            completed this application based only on information that the
+                            applicant provided to me or authorized me to obtain or use.</p>
                         <div class="bg-info">
                             <h4><b>Preparer's Signature</b> </h4>
                         </div>
-
+                        <p>By my signature, I certify, under penalty of perjury, that I
+                            prepared this application at the request of the applicant. The
+                            applicant then reviewed this completed application and
+                            informed me that he or she understands all of the information
+                            contained in, and submitted with, his or her application,
+                            including the <b>Applicant's Declaration and Certification</b>, and
+                            that all of this information is complete, true, and correct. I
+                            completed this application based only on information that the
+                            applicant provided to me or authorized me to obtain or use.</p>
                         <div class="form-group">
                             <label class="control-label col-md-12">8.a. Preparer's Signature </label>
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_signature"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_signature')?>">
+                                <input type="text" class="form-control" name="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-12">8.b. Date of Signature (mm/dd/yyyy)</label>
                             <div class="col-md-7 col-md-offset-5">
-                                <input type="date" class="form-control" name="contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_signature_date_of_signature"
-                                    value="<?php echo showData('contact_information_declaration_and_signature_of_the_person_preparing_this_petition_prepare_signature_date_of_signature')?>">
+                                <input type="date" class="form-control" name="" value="">
                             </div>
                         </div>
 
@@ -3712,36 +3586,30 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                         <div class="bg-info">
                             <h4><b>Part 11. Additional Information</b> </h4>
                         </div>
-                        <p>If you need extra space to provide any additional information,
-                            within this supplement, use the space below. If you need more
+                        <p>If you need extra space to provide any additional information
+                            within this application, use the space below. If you need more
                             space than what is provided, you may make copies of this page
-                            to complete and file with this supplement or attach a separate
-                            sheet of paper. Include your name and A-Number ( if any ) at the
-                            top of each sheet; indicate the Page Number, Part Number,
-                            and Item Number to which your answer refers; and sign and
-                            date each sheet.</p>
-                        <div class="bg-info">
-                            <h4><b>Your Full Name (Principal)</b> </h4>
-                        </div>
+                            to complete and file with this application or attach a separate
+                            sheet of paper. Type or print your name and A-Number (if any)
+                            at the top of each sheet; indicate the <b>Page Number, Part
+                                Number</b>, and <b>Item Number</b> to which your answer refers; and
+                            sign and date each sheet</p>
                         <div class="form-group">
                             <label class="control-label col-md-5">1.a. Family Name(Last Name) :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control"  name="additional_information_family_last_name"
-                                    value="<?php echo showData('additional_information_family_last_name')?>" />
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">1.b. Given Name(First Name) :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control" name="additional_information_given_first_name"
-                                    value="<?php echo showData('additional_information_given_first_name')?>" />
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-5">1.c. Middle Name :</label>
                             <div class="col-md-7">
-                                <input type="text" class="form-control" name="additional_information_middle_name"
-                                    value="<?php echo showData('additional_information_middle_name')?>" />
+                                <input type="text" class="form-control" name="" value="" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -3752,8 +3620,7 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                                         style="left: calc(var(--scale-factor)*36.00px); top: calc(var(--scale-factor)*531.66px); font-size: calc(var(--scale-factor)*10.00px); font-family: serif; gap:1rem;"
                                         role="presentation" dir="ltr">►</span><b>A-</b><input type="text"
                                         class="form-control"
-                                        name="additional_information_A_number"
-                                    value="<?php echo showData('additional_information_A_number')?>">
+                                        name="other_information_about_you_alien_registration_number" value="225984">
                                 </div>
                             </div>
                         </div>
@@ -3761,60 +3628,52 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="form-group">
                                 <label class="control-label col-md-12">3.a. Page Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_page_number1"
-                                    value="<?php echo showData('additional_information_page_number1')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">3.b. Part Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_part_number1"
-                                    value="<?php echo showData('additional_information_part_number1')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">3.c. Item Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_item_number1"
-                                    value="<?php echo showData('additional_information_item_number1')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <span><b>3.d.</b></span>
-                                <textarea name="additional_information_textarea1"
-                                    value="<?php echo showData('additional_information_textarea1')?>" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="d-flexible">
                             <div class="form-group">
                                 <label class="control-label col-md-12">4.a. Page Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_page_number2"
-                                    value="<?php echo showData('additional_information_page_number2')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">4.b. Part Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_part_number2"
-                                    value="<?php echo showData('additional_information_part_number2')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">4.c. Item Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_item_number2"
-                                    value="<?php echo showData('additional_information_item_number2')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <span><b>4.d.</b></span>
-                                <textarea name="additional_information_textarea2"
-                                    value="<?php echo showData('additional_information_textarea2')?>" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 
@@ -3829,30 +3688,26 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="form-group">
                                 <label class="control-label col-md-12">5.a. Page Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_page_number3"
-                                    value="<?php echo showData('additional_information_page_number3')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">5.b. Part Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_part_number3"
-                                    value="<?php echo showData('additional_information_part_number3')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">5.c. Item Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_item_number3"
-                                    value="<?php echo showData('additional_information_item_number3')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <span><b>5.d.</b></span>
-                                <textarea name="additional_information_textarea3"
-                                    value="<?php echo showData('additional_information_textarea3')?>" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 
@@ -3860,30 +3715,26 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="form-group">
                                 <label class="control-label col-md-12">6.a. Page Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_page_number4"
-                                    value="<?php echo showData('additional_information_page_number4')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">6.b. Part Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_part_number4"
-                                    value="<?php echo showData('additional_information_part_number4')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">6.c. Item Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_item_number4"
-                                    value="<?php echo showData('additional_information_item_number4')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <span><b>6.d.</b></span>
-                                <textarea name="additional_information_textarea4"
-                                    value="<?php echo showData('additional_information_textarea4')?>" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
 
@@ -3891,30 +3742,26 @@ $jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/wo
                             <div class="form-group">
                                 <label class="control-label col-md-12">7.a. Page Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_page_number5"
-                                    value="<?php echo showData('additional_information_page_number5')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">7.b. Part Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_part_number5"
-                                    value="<?php echo showData('additional_information_part_number5')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-12">7.c. Item Number </label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="additional_information_item_number5"
-                                    value="<?php echo showData('additional_information_item_number5')?>">
+                                    <input type="text" class="form-control" name="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <span><b>7.d.</b></span>
-                                <textarea class="form-control" name="additional_information_textarea5"
-                                    value="<?php echo showData('additional_information_textarea5')?>" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                     </div><!-- right side column end -->
