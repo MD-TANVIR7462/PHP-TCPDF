@@ -1,8 +1,27 @@
 <?php
-// require_once('form_header.php');
-require_once( 'config.php' );
+require_once("config.php");
+//if(!isset($_SESSION)) session_start();
+//$objQuery = new \App\dataTableQuery\dataTableQuery();
+$first_name = $last_name = " ";
+if(isset($_GET['clientId'])){
+	$clientId = $_GET['clientId'];
+	$singleData = indexByQuerySingleData("
+	SELECT c.*,s.name AS class_name,t.name AS type_name FROM client_info c
+	LEFT JOIN tbl_class s ON s.id=c.class_id
+	LEFT JOIN tbl_type t ON t.id=c.type_id
+	WHERE sha1(MD5(c.id))='$clientId'");
+	if($singleData){
+		$first_name = $singleData->first_name;
+		$last_name = $singleData->last_name;
+	} else {
+		$first_name = $last_name = " ";
+	}
+}
+$allDataCountry = indexByQueryAllData("SELECT * FROM countries");
+
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
+
 // Extend the TCPDF class to create custom Header and Footer
 class MyPDF extends TCPDF {
 	
@@ -55,12 +74,12 @@ class MyPDF extends TCPDF {
         // Set font
         $this->SetFont('times', '', 9);
 		
-		$this->Cell(40, 6, "Form N-400 Edition 09/17/19  E", 0, 0, 'L');
+		$this->Cell(40, 6, "Form N-400 Edition 09/17/19", 0, 0, 'L');
 		
 		
-		//if ($this->page == 1){
-			$barcode_image = "images/n-400-footer-pdf417-$this->page.jpg";
-		//)
+		// if ($this->page == 1){
+			$barcode_image = 'barcode_1.jpg';
+		// )
         $this->Image($barcode_image, 65, 265, 95, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
 		
         // $this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 'T', 'R', 1, 0);
@@ -144,7 +163,7 @@ $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('');
-$pdf->SetTitle('Form n_400');
+$pdf->SetTitle('Application for Naturalization');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING);
@@ -230,7 +249,7 @@ $pdf->MultiCell(80, 15, "U.S. Citizenship and Immigration Services", 0, 'C', 0, 
 
 $pdf->SetFont('times', '', 9);	// set font
 $pdf->setCellPaddings(2, 1, 6, 0); // set cell padding
-$pdf->MultiCell(40, 5, "OMB No. 1615-0052\nExpires 11/30/2025", 0, 'C', 0, 1, 169, 18.5, true);
+$pdf->MultiCell(40, 5, "OMB No. 1615-0052\nExpires 09/30/2022", 0, 'C', 0, 1, 169, 18.5, true);
 
 $pdf->Ln(1.3);
 
@@ -294,15 +313,14 @@ $pdf->SetFillColor(220,220,220);
 $pdf->SetFont('times', 'B', 10); // set font
 $pdf->MultiCell(80, 15, "Enter Your 9 Digit A-Number:", 0, 'C', 0, 1, 130, 117.6, true);
 $pdf->MultiCell(80, 15, "A-", 0, 'C', 0, 1, 113.7, 122.2, true);
-// $pdf->TextField('a_number', 39.5, 5.5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 156, 122);
+// $pdf->TextField('9_digit_number', 39.5, 5.5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 156, 122);
 
 $pdf->SetLineStyle(array('width' => 0.1, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
 // $pdf->SetTextColor(245,245,245);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->SetDrawColor(0,0,0); // set color for cell border
 $pdf->SetFillColor(255,255,255);
-//$a_number = "666";
-$html ='<input type="text" name="a_number" value=" " size="10" style="width:100px;height:100px;padding:50px;letter-spacing:9px;border:5px solid #00000" maxlength="9" placeholder="123-45-678" />';
+$html ='<input type="text" name="9_digit_number" value="" size="10" style="width:100px;height:100px;padding:50px;letter-spacing:20px;border:5px solid #00000" maxlength="9" placeholder="123-45-678" />';
 $pdf->writeHTMLCell(42.5, 3, 157, 122.8, $html, 1, 1, false, true, 'J', 0);
 
 
@@ -587,28 +605,25 @@ $pdf->writeHTMLCell(5, 5, 189, 66.8, $html, 0, 1, false, false, 'L', false);
 
 
 
-
 $pdf->SetLineStyle(array('width' => 0.1, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
 // $pdf->SetTextColor(245,245,245);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->SetDrawColor(0,0,0); // set color for cell border
 $pdf->SetFillColor(255,255,255);
-$html ='<input type="text" name="us_social_security_number" value="'.showData('social_security_number').'" size="10" style="width:100px;height:100px;padding:50px;letter-spacing:9px;border:5px solid #00000" maxlength="9" />';
+$html ='<input type="text" name="us_social_security_number" value="" size="10" style="width:100px;height:100px;padding:50px;letter-spacing:20px;border:5px solid #00000" maxlength="9" />';
 $pdf->writeHTMLCell(42.5, 3, 25, 100.2, $html, 1, 1, false, true, 'J', 0);
 	
 
-$html ='<input type="text" name="uscis_online_account_number" value=" '.showData('uscis_online_account_number').'" size="14" style="width:100px;height:100px;padding:50px;letter-spacing:10px;border:5px solid #00000" maxlength="13" />';
+$html ='<input type="text" name="us_social_security_number" value="" size="14" style="width:100px;height:100px;padding:50px;letter-spacing:20px;border:5px solid #00000" maxlength="13" />';
 $pdf->writeHTMLCell(59, 3, 97, 100.2, $html, 1, 1, false, true, 'J', 0);
 
 
 $pdf->SetFont('times', '', 10.5);
 $pdf->setCellHeightRatio(1.2);
-if(showData('gender')=='male') $male_check='checked'; else $male_check='';
-if(showData('gender')=='female') $female_check='checked'; else $female_check='';
 $html ='<b>7.  </b>   Gender  <br>
-   &nbsp;  &nbsp;    <input type="checkbox" name="gender" value="male" checked="'.$male_check.'" /> Male
+   &nbsp;  &nbsp;    <input type="checkbox" name="gender" value="male" checked="" /> Male
    
-   &nbsp;   &nbsp;   <input type="checkbox" name="gender" value="female" checked="'.$female_check.'" /> Female
+   &nbsp;   &nbsp;   <input type="checkbox" name="gender" value="female" checked="" /> Female
    ';
 
 $pdf->writeHTMLCell(50, 7, 12, 107, $html, 0, 1, false, true, 'J', 0);
@@ -865,21 +880,19 @@ $pdf->writeHTMLCell(95, 7, 23, 127, $html, 0, 1, false, 'L');
 
 $html= '<div> Apt. &nbsp;  &nbsp;   Ste. &nbsp;  &nbsp;   Flr.  &nbsp;  &nbsp;   Number </div>';
 $pdf->writeHTMLCell(95, 7, 155, 127, $html, 0, 1, false, 'L');
-
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_information_to_contact_you_street_number', 130, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 132);
 $pdf->setFont('Times', '', 10.5);
-
-
-$html= '<div>  <input type="checkbox" name="apt" value="apt5_1a" checked=" " />  </div>';
+$html= '<div>  <input type="checkbox" name="apt" value="apt" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 155, 132, $html, 0, 1, false, 'L');
 
-$html= '<div>  <input type="checkbox" name="ste" value="ste5_1a" checked=" " />  </div>';
+$html= '<div>  <input type="checkbox" name="ste" value="ste" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 165, 132, $html, 0, 1, false, 'L');
 
-$html= '<div>  <input type="checkbox" name="flr" value="flr5_1a" checked=" " />  </div>';
+
+$html= '<div>  <input type="checkbox" name="flr" value="flr" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 175, 132, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(15, 7, 188, 132,'', 1, 1, false, 'L');
+$pdf->writeHTMLCell(15, 7, 188, 132, '', 1, 1, false, 'L');
 //.................
 
 
@@ -896,7 +909,7 @@ $pdf->writeHTMLCell(60, 7, 140, 140, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code + 4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 140, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 168, 140, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 145, $html, 0, 1, false, 'L');
@@ -907,7 +920,7 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_information_to_contact_you_country', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 145);
 
 $pdf->setFont('Times', '', 10.5);
-$html = '<select name="current_physical_address_state" size="0.25">';
+$html = '<select name="state" size="0.25">';
 foreach($allDataCountry as $record){
 	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
@@ -984,17 +997,18 @@ $pdf->writeHTMLCell(95, 7, 155, 205, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 
 // $pdf->TextField('part5_b_information_to_contact_you_street_number', 130, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 132);
+
 $pdf->setFont('Times', '', 10.5);
-$html= '<div>  <input type="checkbox" name="apt1" value="apt" checked=" " />  </div>';
+$html= '<div>  <input type="checkbox" name="apt1" value="apt" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 155, 211, $html, 0, 1, false, 'L');
 
-$html= '<div>  <input type="checkbox" name="ste1" value="ste" checked=" " />  </div>';
+$html= '<div>  <input type="checkbox" name="ste1" value="ste" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 165, 211, $html, 0, 1, false, 'L');
 
 
-$html= '<div>  <input type="checkbox" name="flr1" value="flr" checked=" "/>  </div>';
+$html= '<div>  <input type="checkbox" name="flr1" value="flr" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 175, 211, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(15, 7, 188, 210,'', 1, 1, false, 'L');
+$pdf->writeHTMLCell(15, 7, 188, 210, '', 1, 1, false, 'L');
 //.................
 
 
@@ -1011,7 +1025,7 @@ $pdf->writeHTMLCell(60, 7, 140, 217, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code + 4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 217, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 168, 217, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 222, $html, 0, 1, false, 'L');
@@ -1023,7 +1037,7 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_b_information_to_contact_you_country', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 222);
 
 $pdf->setFont('Times', '', 10.5);
-$html = '<select name="mailing_address_state" size="0.25">';
+$html = '<select name="state" size="0.25">';
 foreach($allDataCountry as $record){
 	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
@@ -1128,7 +1142,7 @@ $pdf->writeHTMLCell(60, 7, 140, 44, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code + 4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 44, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 168, 44, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 49, $html, 0, 1, false, 'L');
@@ -1140,7 +1154,7 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_c_information_to_contact_you_country', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 49);
 
 $pdf->setFont('Times', '', 10.5);
-$html = '<select name="part5_c_information_to_contact_you_state" size="0.25">';
+$html = '<select name="state" size="0.25">';
 foreach($allDataCountry as $record){
 	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
@@ -1245,7 +1259,7 @@ $pdf->writeHTMLCell(60, 7, 140, 109, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code + 4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 109, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 168, 109, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 114, $html, 0, 1, false, 'L');
@@ -1360,7 +1374,7 @@ $pdf->writeHTMLCell(60, 7, 140, 173, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code + 4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 173, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 168, 173, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 178, $html, 0, 1, false, 'L');
@@ -1505,7 +1519,7 @@ $pdf->writeHTMLCell(100, 7, 18, 26, $html, 0, 1, false, 'L');
 $pdf->setFont('Times', '', 10.5);
 $html= '<div>Family Name (Last Name)</div>';
 $pdf->writeHTMLCell(80, 7, 24, 31, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(60, 7, 25, 36.5, showData('mother_last_name'), 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 25, 36.5, '', 1, 1, false, 'L');
 
 //...............
 
@@ -1513,7 +1527,7 @@ $pdf->writeHTMLCell(60, 7, 25, 36.5, showData('mother_last_name'), 1, 1, false, 
 $pdf->setFont('Times', '', 10.5);
 $html= '<div>Given Name (First Name)</div>';
 $pdf->writeHTMLCell(90, 7, 87, 31, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(60, 7, 87, 36.5,showData('mother_first_name'), 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 87, 36.5, '', 1, 1, false, 'L');
 
 
 //.....................
@@ -1521,22 +1535,22 @@ $pdf->writeHTMLCell(60, 7, 87, 36.5,showData('mother_first_name'), 1, 1, false, 
 $pdf->setFont('Times', '', 10.5);
 $html= '<div>Middle Name (if applicable)</div>';
 $pdf->writeHTMLCell(90, 7, 150, 31, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(54, 7, 150, 36.5,showData('mother_middle_name'), 1, 1, false, 'L');
+$pdf->writeHTMLCell(54, 7, 150, 36.5, '', 1, 1, false, 'L');
 
 //..............
 
 $pdf->setFont('Times', '', 10.5);
 $html= '<div><b>B.  </b>   Mother\'s Country of Birth</div>';
 $pdf->writeHTMLCell(100, 7, 18, 44, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(78, 7, 25, 49.5,'' , 1, 1, false, 'L');
+$pdf->writeHTMLCell(78, 7, 25, 49.5, '', 1, 1, false, 'L');
 
 
 //............
-$mother_date_of_birth = date("m/d/Y",strtotime(showData('mother_date_of_birth')));
+
 $pdf->setFont('Times', '', 10.5);
 $html= '<div><b>C.  </b>   Mother\'s Date of Birth (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(100, 7, 110, 44, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(60, 7, 117, 49.5,  $mother_date_of_birth, 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 117, 49.5, '', 1, 1, false, 'L');
 
 //.............
 
@@ -1671,7 +1685,6 @@ $pdf->SetFillColor(0,0,0);
 $pdf->Rotate(-30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
 $pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 82, 97, false); // angle
-
 $pdf->StopTransform();
 
 
@@ -1820,7 +1833,7 @@ $pdf->writeHTMLCell(190, 7, 13, 212, $html, 0, 1, false, true, 'J', 0);
 
 
 $pdf->setFont('Times', '', 10.5);
-$html= '<div><b>5.    </b>     Hair color (Select <b>only one</b> box)</div>';
+$html= '<div><b>6.    </b>     Hair color (Select <b>only one</b> box)</div>';
 $pdf->writeHTMLCell(95, 7, 12, 220,  $html, 0, 1, false, 'L');
 
 $html ='
@@ -1910,19 +1923,18 @@ $pdf->writeHTMLCell(95, 7, 155, 63, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part8_information_employeer_street_number', 130, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 68);
 $pdf->setFont('Times', '', 10.5);
-
-
-$html= '<div>  <input type="checkbox" name="apt4" value="apt" checked=" " />  </div>';
+$html= '<div>  <input type="checkbox" name="apt4" value="apt" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 155, 68, $html, 0, 1, false, 'L');
 
-$html= '<div>  <input type="checkbox" name="ste4" value="ste" checked=" " />  </div>';
+$html= '<div>  <input type="checkbox" name="ste4" value="ste" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 165, 68, $html, 0, 1, false, 'L');
 
 
-$html= '<div>  <input type="checkbox" name="flr4" value="flr" checked=" " />  </div>';
+$html= '<div>  <input type="checkbox" name="flr4" value="flr" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 175, 68, $html, 0, 1, false, 'L');
 $pdf->writeHTMLCell(15, 7, 188, 68, '', 1, 1, false, 'L');
 //.................
+
 
 
 $html= '<div>City or Town</div>';
@@ -1934,7 +1946,7 @@ $pdf->writeHTMLCell(60, 7, 140, 76, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code   +   4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 76, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 168, 76, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 81, $html, 0, 1, false, 'L');
@@ -1945,7 +1957,7 @@ $pdf->TextField('part8_information_employment_city_town', 115, 7, array('strokeC
 
 
 $pdf->setFont('Times', '', 10.5);
-$html = '<select name="part8_information_employment_state" size="0.25">';
+$html = '<select name="state" size="0.25">';
 foreach($allDataCountry as $record){
 	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
@@ -2069,16 +2081,15 @@ $pdf->writeHTMLCell(95, 7, 155, 135, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part8_information_employeer_street_number2', 130, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 140);
 $pdf->setFont('Times', '', 10.5);
-
-$html= '<div>  <input type="checkbox" name="apt8" value="apt" checked=" " />  </div>';
+$html= '<div>  <input type="checkbox" name="apt8" value="apt" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 155, 140, $html, 0, 1, false, 'L');
 
 $pdf->setFont('Times', '', 10.5);
-$html= '<div>  <input type="checkbox" name="ste8" value="ste" checked=" " />  </div>';
+$html= '<div>  <input type="checkbox" name="ste8" value="ste" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 165, 140, $html, 0, 1, false, 'L');
 
 $pdf->setFont('Times', '', 10.5);
-$html= '<div>  <input type="checkbox" name="flr8" value="flr" checked=" " />  </div>';
+$html= '<div>  <input type="checkbox" name="flr8" value="flr" checked="" />  </div>';
 $pdf->writeHTMLCell(20, 7, 175, 140, $html, 0, 1, false, 'L');
 $pdf->writeHTMLCell(15, 7, 188, 140, '', 1, 1, false, 'L');
 
@@ -2096,7 +2107,7 @@ $pdf->writeHTMLCell(60, 7, 140, 148, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code   +   4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 148, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 168, 148, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 153, $html, 0, 1, false, 'L');
@@ -2107,7 +2118,7 @@ $pdf->TextField('part8_information_employment_city_town2', 115, 7, array('stroke
 
 
 $pdf->setFont('Times', '', 10.5);
-$html = '<select name="part8_2_information_employment_state" size="0.25">';
+$html = '<select name="state" size="0.25">';
 foreach($allDataCountry as $record){
 	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
@@ -2218,7 +2229,7 @@ $pdf->TextField('part8_information_employeer_school3', 183, 7, array('strokeColo
 
 //...................
 
-$pdf->setFont('Times', '', 10.5);
+
 $html= '<div>Street Number and Name</div>';
 $pdf->writeHTMLCell(95, 7, 19, 205, $html, 0, 1, false, 'L');
 
@@ -2258,7 +2269,7 @@ $pdf->writeHTMLCell(60, 7, 140, 218, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code   +   4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 218, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 168, 218, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 223, $html, 0, 1, false, 'L');
@@ -2549,32 +2560,24 @@ $pdf->SetFont('times', '', 10); // set font
 $html= '<div><b>1.     </b>   &nbsp;   What is your current marital status?</div>';
 $pdf->writeHTMLCell(80, 7, 12, 121, $html, '', 0, 0, true, 'L');
 
-
-
-// if($marital_status=="Single") $single_checked = "checked"; else $single_checked = "";
-// if($marital_status=="Married") $married_checked = "checked"; else $married_checked = "";
-// if($marital_status=="Divorced") $divorced_checked = "checked"; else $divorced_checked = "";
-// if($marital_status=="Widowed") $widowed_checked = "checked"; else $widowed_checked = "";
-// if($marital_status=="Separeted") $separeted_checked = "checked"; else $separeted_checked = "";
-// if($marital_status=="Annulled") $annulled_checked = "checked"; else $annulled_checked = "";
-// $html ='
-//    &nbsp;  &nbsp;    <input type="checkbox" name="single" value="single" checked="'.$single_checked.'" /> Single,Never Married
+$html ='
+   &nbsp;  &nbsp;    <input type="checkbox" name="single" value="single" checked="" /> Single,Never Married
    
-//    &nbsp;   &nbsp;   <input type="checkbox" name="married" value="married" checked="'.$married_checked .'" /> Married
+   &nbsp;   &nbsp;   <input type="checkbox" name="married" value="married" checked="" /> Married
 
-//    &nbsp;   &nbsp;   <input type="checkbox" name="divorced" value="divorced" checked="'.$married_checked.'" /> Divorced
+   &nbsp;   &nbsp;   <input type="checkbox" name="divorced" value="divorced" checked="" /> Divorced
 
-//    &nbsp;   &nbsp;   <input type="checkbox" name="widowed" value="widowed" checked="'.$divorced_checked.'" /> Widowed
+   &nbsp;   &nbsp;   <input type="checkbox" name="widowed" value="widowed" checked="" /> Widowed
 
-//    &nbsp;   &nbsp;   <input type="checkbox" name="separated" value="separated" checked="'.$widowed_checked.'" /> Separated
+   &nbsp;   &nbsp;   <input type="checkbox" name="separated" value="separated" checked="" /> Separated
 
-//    &nbsp;   &nbsp;   <input type="checkbox" name="marriage" value="marriage" checked="'.$separeted_checked.'" /> Marriage
+   &nbsp;   &nbsp;   <input type="checkbox" name="marriage" value="marriage" checked="" /> Marriage
 
-//    &nbsp;   &nbsp;   <input type="checkbox" name="annulled" value="annulled" checked="'.$annulled_checked.'" /> Annulled
+   &nbsp;   &nbsp;   <input type="checkbox" name="annulled" value="annulled" checked="" /> Annulled
 
-//    ';       
+   ';       
 
-// $pdf->writeHTMLCell(190, 7, 15, 127, $html, 0, 1, false, true, 'J', 0);
+$pdf->writeHTMLCell(190, 7, 15, 127, $html, 0, 1, false, true, 'J', 0);
 
 
 
@@ -2788,7 +2791,7 @@ $html= '<div>State</div>';
 $pdf->writeHTMLCell(60, 7, 144, 42, $html, 0, 1, false, 'L');
 
 
-$html= '<div>ZIP Code + 4</div>';
+$html= '<div>ZIP Code   +   4</div>';
 $pdf->writeHTMLCell(60, 7, 172, 42, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
@@ -2803,7 +2806,7 @@ $pdf->TextField('part10_f_information_spouse_country', 55, 7, array('strokeColor
 
 
 $pdf->setFont('Times', '', 10.5);
-$html = '<select name="current_spouse_state" size="0.25">';
+$html = '<select name="state" size="0.25">';
 foreach($allDataCountry as $record){
 	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
@@ -3051,7 +3054,7 @@ $html= '<div><b>F.   </b>     My Current Spouse\'s Date of Marriage<br> &nbsp; &
 &nbsp;with Prior Spouse (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(80, 7, 17, 25,  $html, 0, 1, false, 'L');
 $pdf->setFont('courier', 'B', 10);
-$pdf->TextField('part10_8_d_current_spouse_prior_date_marriage', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 24, 35);
+$pdf->TextField('part10_8_d_current_spouse_prior', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 24, 35);
 
 
 $pdf->setFont('Times', '', 10.5); 
@@ -4925,13 +4928,13 @@ $pdf->writeHTMLCell(50, 7, 170, 95, $html, 0, 1, false, true, 'J');
 
 $html= '<div><b>25.   </b>   Have you <b>EVER</b> been convicted of a crime or offense?</div>';
 $pdf->writeHTMLCell(170, 7, 12, 105,  $html, 0, 1, false, 'L');
-
 $html ='
-&nbsp;  &nbsp;    <input type="checkbox" name="convicted_of_a_crime" value="Yes" checked=" " /> Yes
+&nbsp;  &nbsp;    <input type="checkbox" name="part12_25" value="Y" checked="" /> Yes
 
-&nbsp;   &nbsp;   <input type="checkbox" name="convicted_of_a_crime" value="No" checked=" " /> No
+&nbsp;   &nbsp;   <input type="checkbox" name="part12_25" value="N" checked="" /> No
  ';
 $pdf->writeHTMLCell(50, 7, 170, 105, $html, 0, 1, false, true, 'J');
+
 
 
 $html= '<div><b>26.   </b>    Have you <b>EVER</b>Have you EVER been placed in an alternative sentencing or a rehabilitative program (for <br>  &nbsp;  &nbsp; &nbsp; example,  diversion, deferred prosecution, withheld adjudication, deferred adjudication)?</div>';
@@ -5778,7 +5781,7 @@ $pdf->writeHTMLCell(60, 7, 140, 218, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code   +   4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 218, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 168, 218, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 224, $html, 0, 1, false, 'L');
@@ -6010,7 +6013,7 @@ $pdf->writeHTMLCell(60, 7, 140, 218, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code   +   4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 218, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 168, 218, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 224, $html, 0, 1, false, 'L');
@@ -6328,10 +6331,39 @@ $pdf->writeHTMLCell(62, 7, 140, 222, '', 1, 1, false, 'L');
 
 
 
-// $date_of_birth = date("m/d/Y",strtotime(showData('dob')));
-// $date_law_full_resident = date("m/d/Y",strtotime(showData('residence_date')));
-// $part5_information_to_contact_you_date_from =  date("m/d/Y",strtotime(showData('address_dates')[0]));
-// $part5_c_information_to_contact_you_date_from = date("m/d/Y",strtotime(showData('address_dates')[1]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6340,72 +6372,67 @@ $js = "
 var fields = {
 	'naturalization_interview':' ',
 	'other_explain':' ',
-	'legal_last_name':' ".showData('last_name')."',
-	'legal_first_name':' ".showData('first_name')."',
-	'legal_middle_name':' ".showData('middle_name')."',
-	'exact_last_name':' ".showData('last_name')."',
-	'exact_first_name':' ".showData('first_name')."',
-	'exact_middle_name':' ".showData('middle_name')."',
-	'since_birth_last_name1':' ',
-	'since_birth_first_name1':' ',
+	'legal_last_name':'$last_name',
+	'legal_first_name':'$first_name',
+	'legal_middle_name':' ',
+	'exact_last_name':'$last_name',
+	'exact_first_name':'$first_name',
+	'exact_middle_name':' ',
+	'since_birth_last_name1':'$last_name',
+	'since_birth_first_name1':'$first_name',
 	'since_birth_middle_name1':' ',
-	'since_birth_last_name2':' ',
-	'since_birth_first_name2':' ',
+	'since_birth_last_name2':'$last_name',
+	'since_birth_first_name2':'$first_name',
 	'since_birth_middle_name2':' ',
 	'testname':' ',
 
 
-	// 'date_of_birth':' $date_of_birth',
-	// 'date_law_full_resident':'$date_law_full_resident',
-	'information_about_you_country_of_birth':' ".showData('country_of_birth')."',
-	'information_about_you_cityzenship':' ".showData('nationality')."',
+	'date_of_birth':' ',
+	'date_law_full_resident':' ',
+	'information_about_you_country_of_birth':' ',
+	'information_about_you_cityzenship':' ',
 	'part3_accomodation_1a':' ',
 	'part3_accomodation_1b':' ',
 	'part3_accomodation_1c':' ',
-	'part4_information_to_contact_you_daytime_telephone':' ".showData('telephone')."',
-	'part4_information_to_contact_you_work_telephone':' ".showData('business_phone')."',
+	'part4_information_to_contact_you_daytime_telephone':' ',
+	'part4_information_to_contact_you_work_telephone':' ',
 	'part4_information_to_contact_you_evening_telephone':' ',
 	'part4_information_to_contact_you_mobile_telephone':' ',
-	'part4_information_to_contact_you_email':' ".showData('email')."',
+	'part4_information_to_contact_you_email':' ',
 
-	'part5_information_to_contact_you_street_number':' ".showData('address_street')[0]."',
+	'part5_information_to_contact_you_street_number':' ',
 	'state':' ',
-	'part5_information_to_contact_you_city_town':' ".showData('address_city')[0]."',
-	'current_physical_address_state':' ".showData('address_state')[0]."',
+	'part5_information_to_contact_you_city_town':' ',
 	'part5_information_to_contact_you_country':' ',
-	'part5_information_to_contact_you_zipcode':' ".showData('address_zip')[0]."',
-	'mailing_address_state':' ',
+	'part5_information_to_contact_you_zipcode':' ',
 	'part5_information_to_contact_you_zipcode1':' ',
 	'part5_information_to_contact_you_foreign_region':' ',
 	'part5_information_to_contact_you_foreign_postalcode':' ',
 	'part5_information_to_contact_you_foreign_country':' ',
 	'part5_information_to_contact_you_in_care_of':' ',
-	// 'part5_information_to_contact_you_date_from':' $part5_information_to_contact_you_date_from',
-	'part5_information_to_contact_you_date_to':' ',
-
 	'part5_b_information_to_contact_you_street_number':' ',
 	'part5_b_information_to_contact_you_city_town':' ',
 	'part5_b_information_to_contact_you_country':' ',
 	'part5_b_information_to_contact_you_zipcode':' ',
 	'part5_b_information_to_contact_you_zipcode1':' ',
-	
+	'part5_information_to_contact_you_date_from':' ',
+	'part5_information_to_contact_you_date_to':' ',
 	'part5_b_information_to_contact_you_foreign_region':' ',
 	'part5_b_information_to_contact_you_foreign_postalcode':' ',
 	'part5_b_information_to_contact_you_foreign_country':' ',
 
-	'part5_c_information_to_contact_you_street_number':' ".showData('address_street')[1]."',
-	'part5_c_information_to_contact_you_city_town':' ".showData('address_city')[1]."',
+	'part5_c_information_to_contact_you_street_number':' ',
+	'part5_c_information_to_contact_you_city_town':' ',
 	'part5_c_information_to_contact_you_country':' ',
-	'part5_c_information_to_contact_you_state':' ".showData('address_state')[1]."',
-	'part5_c_information_to_contact_you_zipcode':' ".showData('address_zip')[1]."',
+	'part5_c_information_to_contact_you_zipcode':' ',
 	'part5_c_information_to_contact_you_zipcode1':' ',
 	'part5_c_information_to_contact_you_foreign_region':' ',
 	'part5_c_information_to_contact_you_foreign_postalcode':' ',
 	'part5_c_information_to_contact_you_foreign_country':' ',
-	// 'part5_c_information_to_contact_you_date_from':' $part5_c_information_to_contact_you_date_from',
+	'part5_c_information_to_contact_you_date_from':' ',
 	'part5_c_information_to_contact_you_date_to':' ',
 
-	'part5_d_information_to_contact_you_street_number':' ', 
+	'part5_d_information_to_contact_you_street_number':' ',
 	'part5_d_information_to_contact_you_city_town':' ',
 	'part5_d_information_to_contact_you_country':' ',
 	'part5_d_information_to_contact_you_zipcode':' ',
@@ -6432,25 +6459,21 @@ var fields = {
 	'pound1':' ',
 	'pound2':' ',
 	'pound3':' ',
-	'part8_information_employeer_school':'  ',
+	'part8_information_employeer_school':' ',
 	'part8_information_employeer_street_number':' ',
 	'part8_information_employment_city_town':' ',
 	'part8_information_employment_zipcode1':' ',
 	'part8_information_employment_zipcode2':' ',
-	'part8_information_employment_state':' ',
 	'part8_information_employment_foreign_region':' ',
 	'part8_information_employment_foreign_postalcode':' ',
 	'part8_information_employment_foreign_country':' ',
 	'part8_information_employment_date_from':' ',
 	'part8_information_employment_date_to':' ',
 	'part8_information_employment_occupation':' ',
-
 	'part8_information_employeer_school2':' ',
 	'part8_information_employment_city_town2':' ',
 	'part8_2_information_employment_zipcode1':' ',
 	'part8_2_information_employment_zipcode2':' ',
-	'part8_2_information_employment_state':' ',
-
 	'part8_information_employment_foreign_region2':' ',
 	'part8_information_employment_foreign_postalcode2':' ',
 	'part8_information_employment_foreign_country2':' ',
@@ -6458,7 +6481,6 @@ var fields = {
 	'part8_information_employment_date_to2':' ',
 	'part8_information_employment_occupation2':' ',
 	'part8_information_employeer_street_number2':' ',
-
 	'part8_information_employeer_school3':' ',
 	'part8_information_employeer_street_number3':' ',
 	'part8_information_employment_city_town3':' ',
@@ -6534,8 +6556,6 @@ var fields = {
 	'part10_g_information_spouse_current_company':' ',
 	'part10_6b_date_spouse_citizen':' ',
 	'part10_7a_current_spouse_citizen':' ',
-	'current_spouse_state':' ',
-
 	'part10_7b_current_spouse_a_number':' ',
 	'part10_7c_explain':' ',
 	'part10_8a_last_name':' ',
@@ -6545,7 +6565,7 @@ var fields = {
 	'part10_8c_spouse_date_of_birth':' ',
 	'part10_8d_spouse_prior_spouse':' ',
 	'part10_8e_spouse_prior_spouse_country':' ',
-	'part10_8_d_current_spouse_prior_date_marriage':' ',
+	'part10_8_d_current_spouse_prior':' ',
 	'part10_8_e_current_spouse_ended':' ',
 	'part10_8_h_explain':' ',
 	'part10_9a_last_name':' ',
@@ -6576,12 +6596,13 @@ var fields = {
 	'part11_2a_child_city_town':' ',
 
 	'part11_2b_last_name':' ',
+	'part11_2b_last_name':' ',
 	'part11_2b_first_name':' ',
 	'part11_2b_middle_name':' ',
 	'part11_2b_a_number':' ',
-	'part11_2b_date_of_birth':'  ',
+	'part11_2b_date_of_birth':' ',
 	'part11_2b_country_of_birth':' ',
-	'part11_2b_child_street_number':'  ',
+	'part11_2b_child_street_number':' ',
 	'part11_2b_child_city_town':' ',
 	'part11_2b_child_country':' ',
 	'part11_2b_child_zipcode1':' ',
@@ -6706,8 +6727,9 @@ var fields = {
 	'preparer_contact_work_telephone':' ',
 	'preparer_contact_evening_telephone':' ',
 	'preparer_date_of_signature':' ',
-	'':' '
-	
+	'':' ',
+	'':' ',
+	'':' ',
 	
 	
 	
@@ -6734,4 +6756,4 @@ $pdf->IncludeJS($js);
 // reset pointer to the last page
 $pdf->lastPage();
 //Close and output PDF document
-$pdf->Output('Form n_400.pdf', 'I');
+$pdf->Output('example_006.pdf', 'I');
