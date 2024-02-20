@@ -209,7 +209,7 @@ Parte 1. Información sobre usted</b> (Persona que presenta esta petición como 
                             <label class="control-label col-md-5">3.a. Número y nombre de la calle:</label>
                             <div class="col-md-7">
                                 <input type="text" class="form-control" name="information_about_you_home_street_number"
-                                    value="<?php echo showData('information_about_you_home_street_number')?>" maxlength="25"/>
+                                    value="<?php echo showData('information_about_you_home_street_number')?>" maxlength="25"    />
                             </div>
                         </div>
                         <div class="form-group">

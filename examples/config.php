@@ -43,7 +43,7 @@ $allDataCountry = indexByQueryAllData("SELECT * FROM countries");
 	//$jsonData = json_decode($singleData->profile_description);
 	$jsonData = json_decode(file_get_contents('http://demolms.siscotech.com/views/work_file/apiData.php'));
 	
-	 function showData($name) {
+	/*  function showData($name) {
 		global $jsonData;
 
 		if (isset($jsonData->{$name})) {
@@ -54,6 +54,18 @@ $allDataCountry = indexByQueryAllData("SELECT * FROM countries");
 			} else {
 				return $value;
 			}
+		} else {
+			return '';
+		}
+	} */
+
+	function showData($name) {
+		global $jsonData;
+
+		if (isset($jsonData->{$name})) {
+			$value = $jsonData->{$name};
+			return $value;
+			
 		} else {
 			return '';
 		}

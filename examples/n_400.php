@@ -1,6 +1,6 @@
 <?php
-// require_once('form_header.php');
-require_once( 'config.php' );
+require_once('config.php');
+
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
 // Extend the TCPDF class to create custom Header and Footer
@@ -292,8 +292,8 @@ $pdf->writeHTML($html, true, false, true, false, '');
 
 $pdf->SetFillColor(220,220,220);
 $pdf->SetFont('times', 'B', 10); // set font
-$pdf->MultiCell(80, 15, "Enter Your 9 Digit A-Number:", 0, 'C', 0, 1, 130, 117.6, true);
-$pdf->MultiCell(80, 15, "A-", 0, 'C', 0, 1, 113.7, 122.2, true);
+$pdf->MultiCell(80, 15, "Enter Your 9 Digit A-Number:", 0, 'C', 0, 1, 132, 117.6, true);
+$pdf->MultiCell(80, 15, "A-", 0, 'C', 0, 1, 115.7, 122.2, true);
 // $pdf->TextField('a_number', 39.5, 5.5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 156, 122);
 
 $pdf->SetLineStyle(array('width' => 0.1, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
@@ -301,18 +301,16 @@ $pdf->SetLineStyle(array('width' => 0.1, 'cap' => 'butt', 'join' => 'miter', 'da
 $pdf->SetFont('courier', 'B', 10);
 $pdf->SetDrawColor(0,0,0); // set color for cell border
 $pdf->SetFillColor(255,255,255);
-//$a_number = "666";
-$html ='<input type="text" name="a_number" value=" " size="10" style="width:100px;height:100px;padding:50px;letter-spacing:9px;border:5px solid #00000" maxlength="9" placeholder="123-45-678" />';
-$pdf->writeHTMLCell(42.5, 3, 157, 122.8, $html, 1, 1, false, true, 'J', 0);
 
+$pdf->TextField('a_number', 42.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 160, 122);
 
 $pdf->StartTransform();
 $pdf->SetFillColor(0,0,0);
 $pdf->Rotate(-30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(10, 10, "t", '', 'C', 0, 1, 124.5, 55.4, false); // angle
+$pdf->MultiCell(10, 10, "t", '', 'C', 0, 1, 126.5, 72, false); // angle
 $pdf->Rotate(-240);
-$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 13.5, 31.5, false); // angle
+$pdf->MultiCell(10, 10, "t", '', 'C', 0, 1, -5.5, 25.5, false); // angle
 $pdf->StopTransform();
 
 
@@ -593,19 +591,19 @@ $pdf->SetLineStyle(array('width' => 0.1, 'cap' => 'butt', 'join' => 'miter', 'da
 $pdf->SetFont('courier', 'B', 10);
 $pdf->SetDrawColor(0,0,0); // set color for cell border
 $pdf->SetFillColor(255,255,255);
-$html ='<input type="text" name="us_social_security_number" value="'.showData('social_security_number').'" size="10" style="width:100px;height:100px;padding:50px;letter-spacing:9px;border:5px solid #00000" maxlength="9" />';
-$pdf->writeHTMLCell(42.5, 3, 25, 100.2, $html, 1, 1, false, true, 'J', 0);
+
+$pdf->TextField('us_social_security_number', 45, 6.7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 25, 99);
+$pdf->TextField('uscis_online_account_number', 61, 6.7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 97, 99);
 	
 
-$html ='<input type="text" name="uscis_online_account_number" value=" '.showData('uscis_online_account_number').'" size="14" style="width:100px;height:100px;padding:50px;letter-spacing:10px;border:5px solid #00000" maxlength="13" />';
-$pdf->writeHTMLCell(59, 3, 97, 100.2, $html, 1, 1, false, true, 'J', 0);
+
 
 
 $pdf->SetFont('times', '', 10.5);
 $pdf->setCellHeightRatio(1.2);
 if(showData('gender')=='male') $male_check='checked'; else $male_check='';
 if(showData('gender')=='female') $female_check='checked'; else $female_check='';
-$html ='<b>7.  </b>   Gender  <br>
+$html ='<b>7.  </b>   Gender  <br> <br>
    &nbsp;  &nbsp;    <input type="checkbox" name="gender" value="male" checked="'.$male_check.'" /> Male
    
    &nbsp;   &nbsp;   <input type="checkbox" name="gender" value="female" checked="'.$female_check.'" /> Female
@@ -618,7 +616,7 @@ $html ='<b>8.  </b>  Date of Birth <br>
   &nbsp;   &nbsp; (mm/dd/yyyy)';
 $pdf->writeHTMLCell(59, 7, 60, 107, $html, 0, 1, false, true, 'J', 0);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('date_of_birth', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 60, 117);
+$pdf->TextField('date_of_birth', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 65.5, 117);
 
 
 $pdf->SetFont('times', '', 10.5);
@@ -644,17 +642,19 @@ $pdf->TextField('information_about_you_cityzenship', 70, 7, array('strokeColor' 
 
 //..............
 
-$pdf->SetFont('times', '', 10.5);
+$pdf->SetFont('times', '', 9.7);
 $html ='<b>12.    </b>     Do you have a physical or developmental disability or mental impairment that prevents you from <br>
   &nbsp;   &nbsp;  &nbsp;   demonstrating your knowledge and understanding of the English language and/or civics requirements <br>
   &nbsp;   &nbsp; &nbsp;  for naturalization? 
- <br>
- 
+';
+$pdf->writeHTMLCell(200, 7, 12, 139, $html, 0, 1, false, true, 'J', 0);
 
- &nbsp;  &nbsp;  &nbsp; If you answered "Yes," submit a completed Form N-648, Medical Certification for Disability Exceptions, when you file your <br>
+$pdf->SetFont('times', '', 9.7);
+$html =' &nbsp;  &nbsp;  &nbsp;  &nbsp; If you answered "Yes," submit a completed Form N-648, Medical Certification for Disability Exceptions, when you file your <br>
  
- &nbsp;  &nbsp; &nbsp; Form N-400.';
-$pdf->writeHTMLCell(200, 7, 12, 138, $html, 0, 1, false, true, 'J', 0);
+&nbsp;  &nbsp; &nbsp; Form N-400.
+';
+$pdf->writeHTMLCell(200, 7, 12, 153, $html, 0, 1, false, true, 'J', 0);
 
 //.............
 
@@ -888,39 +888,44 @@ $html= '<div>City or Town</div>';
 $pdf->writeHTMLCell(90, 7, 23, 140, $html, 0, 1, false, 'L');
 
 $html= '<div>Country</div>';
-$pdf->writeHTMLCell(80, 7, 85, 140, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(80, 7, 89.5, 140, $html, 0, 1, false, 'L');
 
 
 $html= '<div>State</div>';
-$pdf->writeHTMLCell(60, 7, 140, 140, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 149, 140, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code + 4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 140, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 173, 140, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 145, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_information_to_contact_you_city_town', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 145);
+$pdf->TextField('part5_information_to_contact_you_city_town', 64, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 145);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_information_to_contact_you_country', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 145);
+$pdf->TextField('part5_information_to_contact_you_country', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 90, 145);
 
-$pdf->setFont('Times', '', 10.5);
-$html = '<select name="current_physical_address_state" size="0.25">';
+
+//..............
+$pdf->setFont('Times', '', 11);
+$html = '<select name="current_physical_address_state" size="0.50" disabled>'; // Adding disabled attribute here
+$html .= '<option disabled style="display:none;">  Select </option>'; // Empty option for spacing
 foreach($allDataCountry as $record){
-	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
 $html .= '</select>';
 
-$pdf->writeHTMLCell(25, 0, 140, 145, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_information_to_contact_you_zipcode', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 167, 145);
+$pdf->writeHTMLCell(25, 0, 148.5, 144.6, $html, '', 0, 0, true, 'L');
 
-$pdf->TextField('part5_information_to_contact_you_zipcode1', 10, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 193, 145);
-$pdf->setFont('Times', 'I', 8);
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part5_information_to_contact_you_zipcode', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 174, 145);
+
+$pdf->TextField('part5_information_to_contact_you_zipcode1', 10, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 192, 145);
+$pdf->setFont('Times', 'I', 7.2);
 $html= '<div><a href="https://tools.usps.com/go/ZipLookupAction_input"><i>(USPS ZIP Code Lookup)</i></a></div>';
-$pdf->writeHTMLCell(80, 7, 165, 152, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(80, 7, 174, 153, $html, 0, 1, false, 'L');
 //......................
 $pdf->setFont('Times', '', 10.5);
 $html= '<div>Province or Region<br>(foreign address only)</div>';
@@ -957,8 +962,7 @@ $pdf->setFont('Times', '', 10.5);
 $html= '<div>To (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(50, 7, 85, 170, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_information_to_contact_you_date_to', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 176);
-
+$pdf->writeHTMLCell(38, 6.7, 85, 176, "Present", 1, 1, false, 'C');
 //...........
 $pdf->writeHTMLCell(190, 7, 13, 186, '', 'T', 1, false, 'L');  
 //.......................
@@ -1003,38 +1007,54 @@ $html= '<div>City or Town</div>';
 $pdf->writeHTMLCell(90, 7, 23, 217, $html, 0, 1, false, 'L');
 
 $html= '<div>Country</div>';
-$pdf->writeHTMLCell(80, 7, 85, 217, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(80, 7, 89.5, 217, $html, 0, 1, false, 'L');
 
 
 $html= '<div>State</div>';
-$pdf->writeHTMLCell(60, 7, 140, 217, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 149, 217, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code + 4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 217, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 173, 217, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 222, $html, 0, 1, false, 'L');
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_b_information_to_contact_you_city_town', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 222);
+$pdf->TextField('part5_b_information_to_contact_you_city_town', 64, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 222);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_b_information_to_contact_you_country', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 222);
+$pdf->TextField('part5_b_information_to_contact_you_country', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 90, 222);
 
-$pdf->setFont('Times', '', 10.5);
-$html = '<select name="mailing_address_state" size="0.25">';
+
+
+
+
+
+$pdf->setFont('Times', '', 11);
+$html = '<select name="mailing_address_state" size="0.50" disabled>'; // Adding disabled attribute here
+$html .= '<option disabled style="display:none;">  Select </option>'; // Empty option for spacing
 foreach($allDataCountry as $record){
-	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
 $html .= '</select>';
 
-$pdf->writeHTMLCell(25, 0, 140, 222, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(25, 0, 148.5, 222, $html, '', 0, 0, true, 'L');
+
+
+
+
+
+
+
+
+
+
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_b_information_to_contact_you_zipcode', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 167, 222);
+$pdf->TextField('part5_b_information_to_contact_you_zipcode', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 174, 222);
 
-$pdf->TextField('part5_b_information_to_contact_you_zipcode1', 10, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 193, 222);
+$pdf->TextField('part5_b_information_to_contact_you_zipcode1', 10, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 192, 222);
 $pdf->setFont('Times', '', 9);
 
 //......................
@@ -1120,37 +1140,50 @@ $html= '<div>City or Town</div>';
 $pdf->writeHTMLCell(90, 7, 23, 44, $html, 0, 1, false, 'L');
 
 $html= '<div>Country</div>';
-$pdf->writeHTMLCell(80, 7, 85, 44, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(80, 7, 89.5, 44, $html, 0, 1, false, 'L');
 
 
 $html= '<div>State</div>';
-$pdf->writeHTMLCell(60, 7, 140, 44, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 149, 44, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code + 4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 44, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 173, 44, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 49, $html, 0, 1, false, 'L');
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_c_information_to_contact_you_city_town', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 49);
+$pdf->TextField('part5_c_information_to_contact_you_city_town', 64, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 49);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_c_information_to_contact_you_country', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 49);
+$pdf->TextField('part5_c_information_to_contact_you_country', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 90, 49);
 
-$pdf->setFont('Times', '', 10.5);
-$html = '<select name="part5_c_information_to_contact_you_state" size="0.25">';
+
+
+
+
+
+$pdf->setFont('Times', '', 11);
+$html = '<select name="part5_c_information_to_contact_you_state" size="0.50" disabled>'; // Adding disabled attribute here
+$html .= '<option disabled style="display:none;">  Select </option>'; // Empty option for spacing
 foreach($allDataCountry as $record){
-	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
 $html .= '</select>';
 
-$pdf->writeHTMLCell(25, 0, 140, 49, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_c_information_to_contact_you_zipcode', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 167, 49);
+$pdf->writeHTMLCell(25, 0, 148.5, 49, $html, '', 0, 0, true, 'L');
 
-$pdf->TextField('part5_c_information_to_contact_you_zipcode1', 10, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 193, 49);
+
+
+
+
+
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part5_c_information_to_contact_you_zipcode', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 174, 49);
+
+$pdf->TextField('part5_c_information_to_contact_you_zipcode1', 10, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 192, 49);
 
 //......................
 $pdf->setFont('Times', '', 10.5);
@@ -1237,37 +1270,52 @@ $html= '<div>City or Town</div>';
 $pdf->writeHTMLCell(90, 7, 23, 109, $html, 0, 1, false, 'L');
 
 $html= '<div>Country</div>';
-$pdf->writeHTMLCell(80, 7, 85, 109, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(80, 7, 89.5, 109, $html, 0, 1, false, 'L');
 
 
 $html= '<div>State</div>';
-$pdf->writeHTMLCell(60, 7, 140, 109, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 149, 109, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code + 4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 109, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 173, 109, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 114, $html, 0, 1, false, 'L');
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_d_information_to_contact_you_city_town', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 114);
+$pdf->TextField('part5_d_information_to_contact_you_city_town', 64, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 114);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_d_information_to_contact_you_country', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 114);
+$pdf->TextField('part5_d_information_to_contact_you_country', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 90, 114);
 
-$pdf->setFont('Times', '', 10.5);
-$html = '<select name="state" size="0.25">';
+
+
+
+
+
+
+
+
+$pdf->setFont('Times', '', 11);
+$html = '<select name="part5_d_information_to_contact_you_state" size="0.50" disabled>'; // Adding disabled attribute here
+$html .= '<option disabled style="display:none;">  Select </option>'; // Empty option for spacing
 foreach($allDataCountry as $record){
-	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
 $html .= '</select>';
 
-$pdf->writeHTMLCell(25, 0, 140, 114, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_d_information_to_contact_you_zipcode', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 167, 114);
+$pdf->writeHTMLCell(25, 0, 148.5, 114, $html, '', 0, 0, true, 'L');
 
-$pdf->TextField('part5_d_information_to_contact_you_zipcode1', 10, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 193, 114);
+
+
+
+
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part5_d_information_to_contact_you_zipcode', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 174, 114);
+
+$pdf->TextField('part5_d_information_to_contact_you_zipcode1', 10, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 192, 114);
 
 //......................
 $pdf->setFont('Times', '', 10.5);
@@ -1352,37 +1400,42 @@ $html= '<div>City or Town</div>';
 $pdf->writeHTMLCell(90, 7, 23, 173, $html, 0, 1, false, 'L');
 
 $html= '<div>Country</div>';
-$pdf->writeHTMLCell(80, 7, 85, 173, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(80, 7, 89.5, 173, $html, 0, 1, false, 'L');
 
 
 $html= '<div>State</div>';
-$pdf->writeHTMLCell(60, 7, 140, 173, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 149, 173, $html, 0, 1, false, 'L');
 
 
 $html= '<div>ZIP Code + 4</div>';
-$pdf->writeHTMLCell(60, 7, 166, 173, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 173, 173, $html, 0, 1, false, 'L');
 
 $html= '<div><b> - </b></div>';
 $pdf->writeHTMLCell(60, 7, 188, 178, $html, 0, 1, false, 'L');
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_e_information_to_contact_you_city_town', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 178);
+$pdf->TextField('part5_e_information_to_contact_you_city_town', 64, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 23, 178);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_e_information_to_contact_you_country', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 178);
+$pdf->TextField('part5_e_information_to_contact_you_country', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 90, 178);
 
-$pdf->setFont('Times', '', 10.5);
-$html = '<select name="state" size="0.25">';
+
+$pdf->setFont('Times', '', 11);
+$html = '<select name="part5_e_information_to_contact_you_state" size="0.50" disabled>'; // Adding disabled attribute here
+$html .= '<option disabled style="display:none;">  Select </option>'; // Empty option for spacing
 foreach($allDataCountry as $record){
-	$html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
 }
 $html .= '</select>';
 
-$pdf->writeHTMLCell(25, 0, 140, 178, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_e_information_to_contact_you_zipcode', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 167, 178);
+$pdf->writeHTMLCell(25, 0, 148.5,178, $html, '', 0, 0, true, 'L');
 
-$pdf->TextField('part5_e_information_to_contact_you_zipcode1', 10, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 193, 178);
+
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part5_e_information_to_contact_you_zipcode', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 174, 178);
+
+$pdf->TextField('part5_e_information_to_contact_you_zipcode1', 10, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 192, 178);
 
 //......................
 $pdf->setFont('Times', '', 10.5);
@@ -1434,19 +1487,19 @@ $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1); // set cell padding
 $pdf->SetFontSize(11.6); // set font
-$html= '<div><b>Part 6.  Information About Your Parents</b></div>';
-$pdf->writeHTMLCell(190, 7, 13, 218, $html, 1, 1, true, 'L');
+$html= '<div><b>Part 6. Information About Your Parents</b></div>';
+$pdf->writeHTMLCell(190, 6, 13, 218, $html, 1, 1, true, 'L');
 
 //....................
 
-$pdf->setFont('Times', 'B', 10.5);
+$pdf->setFont('Times', 'B', 9.5);
 $html= '<div>If neither one of your parents is a United States citizen, then skip this part and go to Part 7.</div>';
 $pdf->writeHTMLCell(180, 7, 12, 225, $html, 0, 1, false, 'L');
 
 
-$pdf->setFont('Times', '', 10.5);
+$pdf->setFont('Times', '', 10);
 $html= '<div><b>1.    </b>   Were your parents married before your 18th birthday?</div>';
-$pdf->writeHTMLCell(100, 7, 12, 230, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(100, 5, 12, 231, $html, 0, 1, false, 'L');
 
 $html ='
    &nbsp;  &nbsp;    <input type="checkbox" name="were_married1" value="Yes" checked="" /> Yes
@@ -1454,20 +1507,22 @@ $html ='
    &nbsp;   &nbsp;   <input type="checkbox" name="were_married2" value="No" checked="" /> No
    ';
 
-$pdf->writeHTMLCell(50, 7, 170, 232, $html, 0, 1, false, true, 'J', 0);
+$pdf->writeHTMLCell(50, 5, 170, 231, $html, 0, 1, false, true, 'J', 0);
 
 
 $pdf->setFont('Times', 'BI', 12);
 $html= '<div>Information About Your Mother</div>';
-$pdf->writeHTMLCell(190, 7, 12, 237, $html, 0, 1, true, 'L');
+$pdf->writeHTMLCell(190, 6, 12, 237, $html, 0, 1, true, 'L');
 
 
-$pdf->setFont('Times', '', 10.5);
+$pdf->setFont('Times', '', 10);
 $pdf->setCellHeightRatio(1.3);
-$html= '<div><b>2.    </b>  Is your mother a U.S. citizen? <br>
+$html= '<div><b>2.    </b>  Is your mother a U.S. citizen?</div>';
+$pdf->writeHTMLCell(190, 5, 12, 245, $html, 0, 1, false, 'L');
+$html= '<div> <br>
 
-    &nbsp;    &nbsp;   If you answered " Yes," complete the following information. If you answered "No," go to <b>Item Number 3</b>.</div>';
-$pdf->writeHTMLCell(190, 7, 12, 244, $html, 0, 1, false, 'L');
+&nbsp;    &nbsp; &nbsp; If you answered " Yes," complete the following information. If you answered "No," go to <b>Item Number 3</b>.</div>';
+$pdf->writeHTMLCell(190, 5, 12, 244.5, $html, 0, 1, false, 'L');
 
 $html ='
    &nbsp;  &nbsp;    <input type="checkbox" name="us_citizen1" value="Yes" checked="" /> Yes
@@ -1475,7 +1530,7 @@ $html ='
    &nbsp;   &nbsp;   <input type="checkbox" name="us_citizen2" value="No" checked="" /> No
    ';
 
-$pdf->writeHTMLCell(50, 7, 170, 245, $html, 0, 1, false, true, 'J', 0);
+$pdf->writeHTMLCell(50, 5, 170, 245, $html, 0, 1, false, true, 'J', 0);
 
 
 
@@ -2551,30 +2606,30 @@ $pdf->writeHTMLCell(80, 7, 12, 121, $html, '', 0, 0, true, 'L');
 
 
 
-// if($marital_status=="Single") $single_checked = "checked"; else $single_checked = "";
-// if($marital_status=="Married") $married_checked = "checked"; else $married_checked = "";
-// if($marital_status=="Divorced") $divorced_checked = "checked"; else $divorced_checked = "";
-// if($marital_status=="Widowed") $widowed_checked = "checked"; else $widowed_checked = "";
-// if($marital_status=="Separeted") $separeted_checked = "checked"; else $separeted_checked = "";
-// if($marital_status=="Annulled") $annulled_checked = "checked"; else $annulled_checked = "";
-// $html ='
-//    &nbsp;  &nbsp;    <input type="checkbox" name="single" value="single" checked="'.$single_checked.'" /> Single,Never Married
+/* if($marital_status=="Single") $single_checked = "checked"; else $single_checked = "";
+if($marital_status=="Married") $married_checked = "checked"; else $married_checked = "";
+if($marital_status=="Divorced") $divorced_checked = "checked"; else $divorced_checked = "";
+if($marital_status=="Widowed") $widowed_checked = "checked"; else $widowed_checked = "";
+if($marital_status=="Separeted") $separeted_checked = "checked"; else $separeted_checked = "";
+if($marital_status=="Annulled") $annulled_checked = "checked"; else $annulled_checked = ""; */
+$html ='
+   &nbsp;  &nbsp;    <input type="checkbox" name="single" value="single" checked="" /> Single,Never Married
    
-//    &nbsp;   &nbsp;   <input type="checkbox" name="married" value="married" checked="'.$married_checked .'" /> Married
+   &nbsp;   &nbsp;   <input type="checkbox" name="married" value="married" checked="" /> Married
 
-//    &nbsp;   &nbsp;   <input type="checkbox" name="divorced" value="divorced" checked="'.$married_checked.'" /> Divorced
+   &nbsp;   &nbsp;   <input type="checkbox" name="divorced" value="divorced" checked="" /> Divorced
 
-//    &nbsp;   &nbsp;   <input type="checkbox" name="widowed" value="widowed" checked="'.$divorced_checked.'" /> Widowed
+   &nbsp;   &nbsp;   <input type="checkbox" name="widowed" value="widowed" checked="" /> Widowed
 
-//    &nbsp;   &nbsp;   <input type="checkbox" name="separated" value="separated" checked="'.$widowed_checked.'" /> Separated
+   &nbsp;   &nbsp;   <input type="checkbox" name="separated" value="separated" checked="" /> Separated
 
-//    &nbsp;   &nbsp;   <input type="checkbox" name="marriage" value="marriage" checked="'.$separeted_checked.'" /> Marriage
+   &nbsp;   &nbsp;   <input type="checkbox" name="marriage" value="marriage" checked="" /> Marriage
 
-//    &nbsp;   &nbsp;   <input type="checkbox" name="annulled" value="annulled" checked="'.$annulled_checked.'" /> Annulled
+   &nbsp;   &nbsp;   <input type="checkbox" name="annulled" value="annulled" checked="" /> Annulled
 
-//    ';       
+   ';       
 
-// $pdf->writeHTMLCell(190, 7, 15, 127, $html, 0, 1, false, true, 'J', 0);
+$pdf->writeHTMLCell(190, 7, 15, 127, $html, 0, 1, false, true, 'J', 0);
 
 
 
@@ -6328,16 +6383,17 @@ $pdf->writeHTMLCell(62, 7, 140, 222, '', 1, 1, false, 'L');
 
 
 
-// $date_of_birth = date("m/d/Y",strtotime(showData('dob')));
-// $date_law_full_resident = date("m/d/Y",strtotime(showData('residence_date')));
-// $part5_information_to_contact_you_date_from =  date("m/d/Y",strtotime(showData('address_dates')[0]));
-// $part5_c_information_to_contact_you_date_from = date("m/d/Y",strtotime(showData('address_dates')[1]));
+/* $date_of_birth = date("m/d/Y",strtotime(showData('dob')));
+$date_law_full_resident = date("m/d/Y",strtotime(showData('residence_date')));
+$part5_information_to_contact_you_date_from =  date("m/d/Y",strtotime(showData('address_dates')[0]));
+$part5_c_information_to_contact_you_date_from = date("m/d/Y",strtotime(showData('address_dates')[1])); */
 
 
 
 
 $js = "
 var fields = {
+	'a_number':' ',
 	'naturalization_interview':' ',
 	'other_explain':' ',
 	'legal_last_name':' ".showData('last_name')."',
@@ -6346,6 +6402,8 @@ var fields = {
 	'exact_last_name':' ".showData('last_name')."',
 	'exact_first_name':' ".showData('first_name')."',
 	'exact_middle_name':' ".showData('middle_name')."',
+	'us_social_security_number':' ".showData('social_security_number')."',
+	'uscis_online_account_number':' ".showData('uscis_online_account_number')."',
 	'since_birth_last_name1':' ',
 	'since_birth_first_name1':' ',
 	'since_birth_middle_name1':' ',
@@ -6355,8 +6413,8 @@ var fields = {
 	'testname':' ',
 
 
-	// 'date_of_birth':' $date_of_birth',
-	// 'date_law_full_resident':'$date_law_full_resident',
+	'date_of_birth':'',
+	'date_law_full_resident':'',
 	'information_about_you_country_of_birth':' ".showData('country_of_birth')."',
 	'information_about_you_cityzenship':' ".showData('nationality')."',
 	'part3_accomodation_1a':' ',
@@ -6380,7 +6438,7 @@ var fields = {
 	'part5_information_to_contact_you_foreign_postalcode':' ',
 	'part5_information_to_contact_you_foreign_country':' ',
 	'part5_information_to_contact_you_in_care_of':' ',
-	// 'part5_information_to_contact_you_date_from':' $part5_information_to_contact_you_date_from',
+	'part5_information_to_contact_you_date_from':' ',
 	'part5_information_to_contact_you_date_to':' ',
 
 	'part5_b_information_to_contact_you_street_number':' ',
@@ -6397,15 +6455,20 @@ var fields = {
 	'part5_c_information_to_contact_you_city_town':' ".showData('address_city')[1]."',
 	'part5_c_information_to_contact_you_country':' ',
 	'part5_c_information_to_contact_you_state':' ".showData('address_state')[1]."',
+
+
 	'part5_c_information_to_contact_you_zipcode':' ".showData('address_zip')[1]."',
 	'part5_c_information_to_contact_you_zipcode1':' ',
 	'part5_c_information_to_contact_you_foreign_region':' ',
 	'part5_c_information_to_contact_you_foreign_postalcode':' ',
 	'part5_c_information_to_contact_you_foreign_country':' ',
-	// 'part5_c_information_to_contact_you_date_from':' $part5_c_information_to_contact_you_date_from',
+	'part5_c_information_to_contact_you_date_from':' ',
 	'part5_c_information_to_contact_you_date_to':' ',
+	'date_of_birth':' ',
+	'date_law_full_resident':' ',
 
 	'part5_d_information_to_contact_you_street_number':' ', 
+	'part5_d_information_to_contact_you_state':' ',
 	'part5_d_information_to_contact_you_city_town':' ',
 	'part5_d_information_to_contact_you_country':' ',
 	'part5_d_information_to_contact_you_zipcode':' ',
@@ -6417,6 +6480,7 @@ var fields = {
 	'part5_d_information_to_contact_you_date_to':' ',
 	
 	'part5_e_information_to_contact_you_street_number':' ',
+	'part5_e_information_to_contact_you_state':' ',
 	'part5_e_information_to_contact_you_city_town':' ',
 	'part5_e_information_to_contact_you_country':' ',
 	'part5_e_information_to_contact_you_zipcode':' ',
