@@ -1557,10 +1557,14 @@ $html= '<div><b>A.  </b>   Current Legal Name of U.S. Citizen Mother</div>';
 $pdf->writeHTMLCell(100, 7, 18, 26, $html, 0, 1, false, 'L');
 
 
+// $pdf->setFont('Times', '', 10.5);
+// $html= '<div>Family Name (Last Name)</div>';
+// $pdf->writeHTMLCell(80, 7, 24, 31, $html, 0, 1, false, 'L');
+// $pdf->writeHTMLCell(60, 7, 25, 36.5, showData('mother_last_name'), 1, 1, false, 'L');
 $pdf->setFont('Times', '', 10.5);
 $html= '<div>Family Name (Last Name)</div>';
 $pdf->writeHTMLCell(80, 7, 24, 31, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(60, 7, 25, 36.5, showData('mother_last_name'), 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 25, 36.5,'', 1, 1, false, 'L');
 
 //...............
 
@@ -1568,7 +1572,11 @@ $pdf->writeHTMLCell(60, 7, 25, 36.5, showData('mother_last_name'), 1, 1, false, 
 $pdf->setFont('Times', '', 10.5);
 $html= '<div>Given Name (First Name)</div>';
 $pdf->writeHTMLCell(90, 7, 87, 31, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(60, 7, 87, 36.5,showData('mother_first_name'), 1, 1, false, 'L');
+$pdf->writeHTMLCell(61, 7, 87, 36.5,'', 1, 1, false, 'L');
+// $pdf->setFont('Times', '', 10.5);
+// $html= '<div>Given Name (First Name)</div>';
+// $pdf->writeHTMLCell(90, 7, 87, 31, $html, 0, 1, false, 'L');
+// $pdf->writeHTMLCell(60, 7, 87, 36.5,showData('mother_first_name'), 1, 1, false, 'L');
 
 
 //.....................
@@ -1576,7 +1584,12 @@ $pdf->writeHTMLCell(60, 7, 87, 36.5,showData('mother_first_name'), 1, 1, false, 
 $pdf->setFont('Times', '', 10.5);
 $html= '<div>Middle Name (if applicable)</div>';
 $pdf->writeHTMLCell(90, 7, 150, 31, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(54, 7, 150, 36.5,showData('mother_middle_name'), 1, 1, false, 'L');
+$pdf->writeHTMLCell(54, 7, 150, 36.5,'', 1, 1, false, 'L');
+
+// $pdf->setFont('Times', '', 10.5);
+// $html= '<div>Middle Name (if applicable)</div>';
+// $pdf->writeHTMLCell(90, 7, 150, 31, $html, 0, 1, false, 'L');
+// $pdf->writeHTMLCell(54, 7, 150, 36.5,showData('mother_middle_name'), 1, 1, false, 'L');
 
 //..............
 
@@ -1590,8 +1603,15 @@ $pdf->writeHTMLCell(78, 7, 25, 49.5,'' , 1, 1, false, 'L');
 $mother_date_of_birth = date("m/d/Y",strtotime(showData('mother_date_of_birth')));
 $pdf->setFont('Times', '', 10.5);
 $html= '<div><b>C.  </b>   Mother\'s Date of Birth (mm/dd/yyyy)</div>';
-$pdf->writeHTMLCell(100, 7, 110, 44, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(60, 7, 117, 49.5,  $mother_date_of_birth, 1, 1, false, 'L');
+$pdf->writeHTMLCell(100, 6.5, 110, 44, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(50, 6.5, 117, 49.5,  '', 1, 1, false, 'L');
+
+
+// $mother_date_of_birth = date("m/d/Y",strtotime(showData('mother_date_of_birth')));
+// $pdf->setFont('Times', '', 10.5);
+// $html= '<div><b>C.  </b>   Mother\'s Date of Birth (mm/dd/yyyy)</div>';
+// $pdf->writeHTMLCell(100, 7, 110, 44, $html, 0, 1, false, 'L');
+// $pdf->writeHTMLCell(60, 7, 117, 49.5,  $mother_date_of_birth, 1, 1, false, 'L');
 
 //.............
 
@@ -1600,19 +1620,19 @@ $html= '<div><b>D.  </b>   Date Mother Became a U.S. Citizen <br>
  &nbsp;  &nbsp;  &nbsp;  (if known) (mm/dd/yyyy)</div>';
 
 $pdf->writeHTMLCell(100, 7, 18, 57, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(60, 7, 25, 67, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 6.5, 25, 67, '', 1, 1, false, 'L');
 
 
 //..............
 
 $pdf->setFont('Times', '', 10.5);
 $html= '<div><b>E.  </b>    Mother\'s A-Number<br>
-	 &nbsp;  &nbsp;  &nbsp;	(if any)</div>';
+	 &nbsp;  &nbsp;  &nbsp; (if any)</div>';
 
 $pdf->writeHTMLCell(100, 7, 88, 57, $html, 0, 1, false, 'L');
 $pdf->writeHTMLCell(50, 7, 106, 67, '', 1, 1, false, 'L');
 $html= '<div><b>A-</b></div>';
-$pdf->writeHTMLCell(50, 7, 100, 68,  $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(50, 7, 99, 68,  $html, 0, 1, false, 'L');
 
 //..............
 
@@ -1620,7 +1640,7 @@ $pdf->StartTransform();
 $pdf->SetFillColor(0,0,0);
 $pdf->Rotate(-30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 82, 25, false); // angle
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 81.5, 26, false); // angle
 
 $pdf->StopTransform();
 
@@ -1634,7 +1654,7 @@ $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1); // set cell padding
 $pdf->SetFontSize(11.6); // set font
 $html= '<div><b>Information About Your Father</b></div>';
-$pdf->writeHTMLCell(190, 7, 13, 77, $html, 0, 1, true, 'L');
+$pdf->writeHTMLCell(190, 6, 13, 77, $html, 0, 1, true, 'L');
 
 //..............
 $pdf->setFont('Times', '', 10.5);
@@ -1665,7 +1685,7 @@ $pdf->writeHTMLCell(100, 7, 18, 97, $html, 0, 1, false, 'L');
 $pdf->setFont('Times', '', 10.5);
 $html= '<div>Family Name (Last Name)</div>';
 $pdf->writeHTMLCell(80, 7, 24, 102, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(60, 7, 25, 108, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 6.5, 25, 108, '', 1, 1, false, 'L');
 
 //...............
 
@@ -1673,7 +1693,7 @@ $pdf->writeHTMLCell(60, 7, 25, 108, '', 1, 1, false, 'L');
 $pdf->setFont('Times', '', 10.5);
 $html= '<div>Given Name (First Name)</div>';
 $pdf->writeHTMLCell(90, 7, 87, 102, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(60, 7, 87, 108, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 6.5, 87, 108, '', 1, 1, false, 'L');
 
 
 //.....................
@@ -1681,14 +1701,14 @@ $pdf->writeHTMLCell(60, 7, 87, 108, '', 1, 1, false, 'L');
 $pdf->setFont('Times', '', 10.5);
 $html= '<div>Middle Name (if applicable)</div>';
 $pdf->writeHTMLCell(90, 7, 150, 102, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(54, 7, 150, 108, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(54, 6.5, 150, 108, '', 1, 1, false, 'L');
 
 //..............
 
 $pdf->setFont('Times', '', 10.5);
 $html= '<div><b>B.  </b>   Father\'s Country of Birth</div>';
 $pdf->writeHTMLCell(100, 7, 18, 116, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(78, 7, 25, 121.5, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(78, 6.5, 25, 121.5, '', 1, 1, false, 'L');
 
 
 //............
@@ -1696,7 +1716,7 @@ $pdf->writeHTMLCell(78, 7, 25, 121.5, '', 1, 1, false, 'L');
 $pdf->setFont('Times', '', 10.5);
 $html= '<div><b>C.  </b>   Father\'s Date of Birth (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(100, 7, 110, 116, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(60, 7, 117, 121.5, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 6.5, 117, 121.5, '', 1, 1, false, 'L');
 
 //.............
 
@@ -1712,12 +1732,12 @@ $pdf->writeHTMLCell(60, 7, 25, 139, '', 1, 1, false, 'L');
 
 $pdf->setFont('Times', '', 10.5);
 $html= '<div><b>E.  </b>    Father\'s A-Number<br>
-	 &nbsp;  &nbsp;  &nbsp;	(if any)</div>';
+	 &nbsp;  &nbsp;  &nbsp; (if any)</div>';
 
 $pdf->writeHTMLCell(100, 7, 88, 129, $html, 0, 1, false, 'L');
 $pdf->writeHTMLCell(50, 7, 106, 139, '', 1, 1, false, 'L');
 $html= '<div><b>A-</b></div>';
-$pdf->writeHTMLCell(50, 7, 100, 140,  $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(50, 7, 99, 139,  $html, 0, 1, false, 'L');
 
 //..............
 
@@ -1725,7 +1745,7 @@ $pdf->StartTransform();
 $pdf->SetFillColor(0,0,0);
 $pdf->Rotate(-30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 82, 97, false); // angle
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 81, 97, false); // angle
 
 $pdf->StopTransform();
 
@@ -1790,29 +1810,48 @@ $pdf->writeHTMLCell(120, 7, 59, 189,  $html, 0, 1, false, 'L');
 //............
 
 $pdf->setFont('Times', '', 10.5);
-$html= '<div><b>3.    </b>     Height </div>';
+$html= '<div><b>3.    </b>     Height &nbsp;&nbsp;&nbsp; Feet:</div>';
 $pdf->writeHTMLCell(95, 7, 12, 197,  $html, 0, 1, false, 'L');
 
+// $html= '<div><label for="selection">Feet:</label>
 
-$html= '<div><label for="selection">Feet:</label>
-<select name="feet" size="0">
-    <option value=" ">select</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-</select></div>';
-$pdf->writeHTMLCell(30, 7, 33, 197, $html, 0, 0, false, true, 'J', true);
 
+
+// <select name="part_7_feet" size="0.25">
+    
+//     <option value="2">2</option>
+//     <option value="3">3</option>
+//     <option value="4">4</option>
+//     <option value="5">5</option>
+//     <option value="6">6</option>
+//     <option value="7">7</option>
+//     <option value="8">8</option>
+// </select></div>';
+// $pdf->writeHTMLCell(30, 7, 33, 197, $html, 0, 0, false, true, 'J', true);
+$pdf->SetFont( 'times', '', 10 );
+
+$html = '<b>3.d.</b> &nbsp;&nbsp;State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<b>3.e.</b>&nbsp;&nbsp;ZIP Code';
+$pdf->writeHTMLCell( 60, 0, 112, 132, $html, '', 0, 0, true, 'L' );
+
+
+$pdf->SetFont( 'courier', 'B', 10 );
+
+$html = '<select name="part7_3d_state" size="0.25">';
+$html .= '<option > As</option>';
+$html .= '<option > Ts</option>';
+$html .= '<option > Ts</option>';
+$html .= '<option > Ts</option>';
+$html .= '<option > Ts</option>';
+$html .= '<option > Ts</option>';
+$html .= '</select>';
+
+$pdf->writeHTMLCell( 25, 5, 129.5, 131, $html, '', 0, 0, true, 'L' );
 
 
 
 $html1= '<div><label for="selection">Inches:</label>
-<select name="inches" size="0">
-    <option value=" ">select</option>
+<select name="part_7_inches" size="0.50">
+<option value=" " disable>Inc</option>
     <option value="2">0</option>
     <option value="2">1</option>
     <option value="2">2</option>
@@ -1825,6 +1864,7 @@ $html1= '<div><label for="selection">Inches:</label>
     <option value="9">9</option>
     <option value="10">10</option>
     <option value="11">11</option>
+	
 </select></div>';
 $pdf->writeHTMLCell(30, 7, 63, 197, $html1, 0, 0, false, true, 'J', true);
 
@@ -6491,8 +6531,8 @@ var fields = {
 	'part5_e_information_to_contact_you_date_from':' ',
 	'part5_e_information_to_contact_you_date_to':' ',
 
-	'feet':' ',
-	'inches':' ',
+	'part_7_feet':' ',
+	'part_7_inches':' ',
 	'pound1':' ',
 	'pound2':' ',
 	'pound3':' ',
