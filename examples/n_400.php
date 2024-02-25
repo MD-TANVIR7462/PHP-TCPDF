@@ -3514,7 +3514,7 @@ $pdf->TextField('part11_2a_child_country', 57.5, 7, array('strokeColor' => array
 
 
 $pdf->setFont('courier', 'B', 9.7);
-$html = '<select name="current_spouse_state" size="0.75" disabled>'; 
+$html = '<select name="info_about_child_state1" size="0.75" disabled>'; 
 $html .= '<option disabled style="display:none;">Select</option>'; 
 foreach($allDataCountry as $record){
     $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
@@ -3691,7 +3691,7 @@ $pdf->TextField('part11_2b_child_city_town', 59.5, 7, array('strokeColor' => arr
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part11_2b_child_country', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 145);
 $pdf->setFont('courier', 'B', 9.7);
-$html = '<select name="current_spouse_state" size="0.75" disabled>'; 
+$html = '<select name="info_about_child_state2" size="0.75" disabled>'; 
 $html .= '<option disabled style="display:none;">Select</option>'; 
 foreach($allDataCountry as $record){
     $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
@@ -3900,7 +3900,7 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part11_2c_child_country', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 85, 47);
 
 $pdf->setFont('courier', 'B', 9.7);
-$html = '<select name="current_spouse_state" size="0.75" disabled>'; 
+$html = '<select name="info_about_child_state3" size="0.75" disabled>'; 
 $html .= '<option disabled style="display:none;">Select</option>'; 
 foreach($allDataCountry as $record){
     $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
@@ -4098,7 +4098,7 @@ $pdf->TextField('part11_2d_child_country', 58, 7, array('strokeColor' => array(6
 
 
 $pdf->setFont('courier', 'B', 9.7);
-$html = '<select name="current_spouse_state" size="0.75" disabled>'; 
+$html = '<select name="info_about_child_state4" size="0.75" disabled>'; 
 $html .= '<option disabled style="display:none;">Select</option>'; 
 foreach($allDataCountry as $record){
     $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
@@ -5936,7 +5936,7 @@ $pdf->TextField('interpreter_mailing_address_city_town', 119, 7, array('strokeCo
 
 
 $pdf->setFont('courier', 'B', 9.7);
-$html = '<select name="current_spouse_state" size="0.75" disabled>'; 
+$html = '<select name="interpreters_contact_info_mailling_address_state" size="0.75" disabled>'; 
 $html .= '<option disabled style="display:none;">Select</option>'; 
 foreach($allDataCountry as $record){
     $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
@@ -6148,7 +6148,7 @@ $pdf->writeHTMLCell(20, 7, 166, 210, $html, 0, 1, false, 'L');
 $pdf->writeHTMLCell(29, 7, 175, 210, '', 1, 1, false, 'L');
 
 
-//.................
+//.................  
 
 
 $pdf->setFont('Times', '', 10.5);
@@ -6174,7 +6174,7 @@ $pdf->TextField('preparer_mailing_address_city_town', 121, 7, array('strokeColor
 
 
 $pdf->setFont('courier', 'B', 9.7);
-$html = '<select name="current_spouse_state" size="0.75" disabled>'; 
+$html = '<select name="preparers_contact_info_mailling_address_state" size="0.75" disabled>'; 
 $html .= '<option disabled style="display:none;">Select</option>'; 
 foreach($allDataCountry as $record){
     $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
@@ -6408,22 +6408,22 @@ $pdf->writeHTMLCell(190, 7, 100, 50, $html, 0, 1, false, 'L');
 
 $html= '<div>Applicant\'s Printed Name </div>';
 $pdf->writeHTMLCell(70, 7, 12, 57, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(90, 7, 12, 63, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(93, 7, 12, 63, '', 1, 1, false, 'L');
 
 $html= '<div>Applicant\'s Signature</div>';
 $pdf->writeHTMLCell(70, 7, 112, 57, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(90, 7, 112, 63, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(93, 7, 109, 63, '', 1, 1, false, 'L');
 
 
 
 
 $html= '<div>USCIS Officer\'s Printed Name </div>';
 $pdf->writeHTMLCell(70, 7, 12, 72, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(90, 7, 12, 77, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(93, 7, 12, 77, '', 1, 1, false, 'L');
 
 $html= '<div>USCIS Officer\'s Signature</div>';
 $pdf->writeHTMLCell(70, 7, 112, 72, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(90, 7, 112, 77, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(93, 7, 109, 77, '', 1, 1, false, 'L');
 
 $html= '<div>Date of Signature (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(70, 7, 12, 86, $html, 0, 1, false, 'L');
@@ -6456,30 +6456,30 @@ $pdf->setFont('Times', '', 10);
 $pdf->setCellHeightRatio(1.2);
 $html= '<div>Family Name (Last Name)</div>';
 $pdf->writeHTMLCell(65, 7, 12, 194, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(65, 7, 12, 200, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(73, 7, 12, 200, '', 1, 1, false, 'L');
 
 
 $html= '<div>Given Name (First Name)</div>';
-$pdf->writeHTMLCell(55, 7, 80, 194, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(55, 7, 80, 200, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(55, 7, 87, 194, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(61, 7, 87, 200, '', 1, 1, false, 'L');
 
 
 
 $html= '<div>Middle Name (if applicable)</div>';
-$pdf->writeHTMLCell(60, 7, 140, 194, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(62, 7, 140, 200, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 150, 194, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(51, 7, 150, 200, '', 1, 1, false, 'L');
 
 
 
 $html= '<div><b>Applicant\'s Signature</b></div>';
-$pdf->writeHTMLCell(60, 7, 12, 216, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(120, 7, 12, 222, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 12, 211, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(130, 7, 12, 217, '', 1, 1, false, 'L');
 
 
 
 $html= '<div><b>Date of Signature (mm/dd/yyyy)</b></div>';
-$pdf->writeHTMLCell(60, 7, 140, 216, $html, 0, 1, false, 'L');
-$pdf->writeHTMLCell(62, 7, 140, 222, '', 1, 1, false, 'L');
+$pdf->writeHTMLCell(60, 7, 144, 211, $html, 0, 1, false, 'L');
+$pdf->writeHTMLCell(56, 7, 145, 217, '', 1, 1, false, 'L');
 
 
 
@@ -6874,7 +6874,13 @@ var fields = {
 	'preparer_contact_work_telephone':' ',
 	'preparer_contact_evening_telephone':' ',
 	'preparer_date_of_signature':' ',
-	'':' '
+	'info_about_child_state1':' ',
+	'info_about_child_state2':' ',
+	'info_about_child_state3':' ',
+	'info_about_child_state4':' ',
+	'interpreters_contact_info_mailling_address_state':' ',
+	'preparers_contact_info_mailling_address_state':' '
+
 	
 	
 	
