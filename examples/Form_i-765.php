@@ -774,6 +774,7 @@ $pdf->TextField('country2', 81, 7, array('strokeColor' => array(64, 64, 64), 'li
 
 $pdf->AddPage('P', 'LETTER');
 
+
 //........
 $pdf->SetFont('times', '', 12);
 $html ='<div><b>Part 2. Information About You</b> (continued)</div>';

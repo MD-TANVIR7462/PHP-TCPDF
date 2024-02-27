@@ -939,28 +939,34 @@ Enter the appropriate letter and number for your eligibility
 category below (for example, (a)(8), (c)(17)(iii)).</div>';
 $pdf->writeHTMLCell(85, 5, 119, 24, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$html =<<< EOD
-<div>(<input type="text" name="eligibility1" maxlength="5" value="" size="3" />)(<input type="text" name="eligibility2" maxlength="5" value="" size="3" />)(<input type="text" name="eligibility3" maxlength="5" value="" size="3" />)</div>
-EOD;
-$pdf->writeHTMLCell(85, 7, 150, 44, $html, 0, 1, false, true, 'J', true);
+// $html =<<< EOD
+// <div>(<input type="text" name="eligibility1" maxlength="5" value="" size="2" />)(<input type="text" name="eligibility2" maxlength="5" value="" size="3" />)(<input type="text" name="eligibility3" maxlength="5" value="" size="3" />)</div>
+// EOD;
+// $pdf->writeHTMLCell(85, 7, 150, 44, $html, 0, 1, false, true, 'J', true);
+
+$pdf->TextField('eligibility1', 9.3, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 164, 46.6);
+$pdf->TextField('eligibility2', 9.3, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 179, 46.6);
+$pdf->TextField('eligibility3', 9.3, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 193.4, 46.6);
+$pdf->SetFont('times', 'B', 12);
+$pdf->writeHTMLCell(85, 7, 162, 45.6, '( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )&nbsp;&nbsp;( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )&nbsp;&nbsp;( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )', 0, 1, false, true, 'J', true);
 //...........
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>28. </b></div>';
-$pdf->writeHTMLCell(20, 5, 112, 50, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(20, 5, 112, 52, $html, 0, 1, false, true, 'J', true);
 $html ='<div><b>(c)(3)(C) STEM OPT Eligibility Category.</b> If you
 entered the eligibility category <b>(c)(3)(C) in Item Number
 27.</b>, provide the information requested in <b>Item Numbers
 28.a. - 28.c.</b></div>';
-$pdf->writeHTMLCell(85, 5, 119, 50, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(85, 5, 119, 51.6, $html, 0, 1, false, true, 'J', true);
 
 //........
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>28.a. </b> Degree</div>';
-$pdf->writeHTMLCell(90, 5, 112, 68, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(90, 5, 112, 70, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('about_you_degree', 61, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 142, 68);
+$pdf->TextField('about_you_degree', 69, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 134, 70);
 //..........
 
 $pdf->SetFont('times', '', 10);
@@ -1970,9 +1976,9 @@ var fields = {
     'about_you_current_arrival_status':' ".showData('information_about_you_place_your_immigration_status_category')."',
     'about_you_sevis_number':' ".showData('information_about_you_place_your_student_exchange_visitor')."',
 
-    'eligibility1':' ".showData('information_about_you_elligability_category1')."',
-    'eligibility2':' ".showData('information_about_you_elligability_category2')."',
-    'eligibility3':' ".showData('information_about_you_elligability_category3')."',
+    'eligibility1':'".showData('information_about_you_elligability_category1')."',
+    'eligibility2':'".showData('information_about_you_elligability_category2')."',
+    'eligibility3':'".showData('information_about_you_elligability_category3')."',
     'about_you_degree':' ".showData('information_about_you_elligability_degree')."',
     'about_you_employee_everyfy':' ".showData('information_about_you_place_your_employer_name_e_verify')."',
 	
