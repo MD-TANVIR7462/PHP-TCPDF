@@ -944,7 +944,7 @@ $pdf->SetFont('courier', 'B', 10);
 // EOD;
 // $pdf->writeHTMLCell(85, 7, 150, 44, $html, 0, 1, false, true, 'J', true);
 
-$pdf->TextField('eligibility1', 9.3, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 164, 46.6);
+$pdf->TextField('eligibility1', 9.3, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 164.5, 46.6);
 $pdf->TextField('eligibility2', 9.3, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 179, 46.6);
 $pdf->TextField('eligibility3', 9.3, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 193.4, 46.6);
 $pdf->SetFont('times', 'B', 12);
@@ -1039,7 +1039,7 @@ $pdf->writeHTMLCell(83, 5, 120, 177, $html, 0, 1, false, true, 'J', true);
 $pdf->Image('images/right_angle.jpg', 138, 210, 4, 4, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
 //.........
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('about_you_eligibility_category_31a', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 208);
+$pdf->TextField('about_you_eligibility_category_31a', 61, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 208);
 
 
 $pdf->SetFont('times', '', 10);
