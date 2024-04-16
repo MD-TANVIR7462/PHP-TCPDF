@@ -1,6 +1,6 @@
 <?php
 
-require_once('form_header.php');   //database connection file 
+require_once('formheader.php');   //database connection file 
 //require_once("config.php");
 
 //$allDataCountry = indexByQueryAlldata("SELECT * FROM countries");
@@ -2314,198 +2314,6 @@ $pdf->writeHTMLCell(90, 50, 123.5, 194, $html, 0, 0, false, 'L');
 //..............
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $js = "
 var fields = {
 
@@ -2613,23 +2421,6 @@ var fields = {
     'additional_info_part_number4':' ',
     'additional_info_item_number4':' ',
     'aditional_inf0_name_7d':' ',
-    '':' ',
-    '':' ',
-    '':' ',
-    '':' ',
-    '':' ',
-    '':' ',
-
-
-
-
-
-
-
-
-
-
-
 
 };
 for (var fieldName in fields) {
@@ -2639,9 +2430,7 @@ for (var fieldName in fields) {
         field.value = fields[fieldName];
     }
 }
-
 ";
-
 
 $pdf->IncludeJS($js);
 
