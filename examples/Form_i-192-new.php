@@ -385,7 +385,7 @@ $pdf->writeHTMLCell(190, 5, 12, 208.5,$html, '', 0, false, true, 'L', true);
 
 //.................
 $pdf->SetFont( 'times', '', 13.4 );
-$html = '<div><input type="checkbox" name="part-1_1" value="YES" checked="" /> </div>';
+$html = '<div><input type="checkbox" name="part-1_1a" value="YES" checked="" /> </div>';
 $pdf->writeHTMLCell( 10, 5, 20.5, 215, $html, 0, 1, false, false, 'J', true );
 $pdf->SetFont( 'times', '', 10 );
 $html = '<div>Status as a victim of trafficking (T nonimmigrant status) or
@@ -395,7 +395,7 @@ $pdf->writeHTMLCell( 95, 5, 28, 215, $html, 0, 1, false, true, 'L', true );
 
 $pdf->SetFont( 'times', '', 13.4 );
 
-$html = '<div><input type="checkbox" name="part-1_2" value="YES" checked="" /> </div>';
+$html = '<div><input type="checkbox" name="part-1_1b" value="YES" checked="" /> </div>';
 $pdf->writeHTMLCell( 10, 5, 20.5, 225.5, $html, 0, 1, false, false, 'J', true );
 $pdf->SetFont( 'times', '', 10 );
 $html = '<div>Admission as a nonimmigrant (other than as a T or U nonimmigrant).</div>';
@@ -433,16 +433,267 @@ $pdf->writeHTMLCell(190, 5, 12, 25,$html, '', 0, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 10); // set font
 $html = 'Family Name (Last Name)';
-$pdf->writeHTMLCell(40, 7, 22, 30, $html, 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(40, 7, 20, 30, $html, 0, 0, false, false, 'L', true);
 $html = 'Given Name (First Name)';
 $pdf->writeHTMLCell(50, 7, 98, 30, $html, 0, 0, false, false, 'L', true);
 $html = 'Middle Name (if applicable)';
 $pdf->writeHTMLCell(50, 7, 156, 29, $html, 0, 0, false, false, 'L', true);
-
+//*...............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p2_about_you_legal_last_name', 74, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,38);
-$pdf->TextField('p2_about_you_legal_first_name', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 97,38);
-$pdf->TextField('p2_about_you_legal_middle_name', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 155.5,38);
+$pdf->TextField('p2_about_you_1_last_name', 74, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,38);
+$pdf->TextField('p2_about_you_1_first_name', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 97,38);
+$pdf->TextField('p2_about_you_1_middle_name', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 155.5,38);
+
+//*...................
+ 
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other Names Used (if any)</div>';
+$pdf->writeHTMLCell(190, 5, 12, 45,$html, '', 0, false, true, 'L', true);
+$html ='<div>Provide all other names you have ever used, including aliases, maiden name, and nicknames. If you need extra space to
+complete this section, use the space provided in <b>Part 6. Additional Information.</b></div>';
+$pdf->writeHTMLCell(190, 5, 19, 51,$html, '', 0, false, true, 'L', true);
+
+//*.............
+
+$pdf->SetFont('times', '', 10); // set font
+$html = 'Family Name (Last Name)';
+$pdf->writeHTMLCell(40, 7, 19, 58, $html, 0, 0, false, false, 'L', true);
+$html = 'Given Name (First Name)';
+$pdf->writeHTMLCell(50, 7, 98, 58, $html, 0, 0, false, false, 'L', true);
+$html = 'Middle Name (if applicable)';
+$pdf->writeHTMLCell(50, 7, 156, 56.7, $html, 0, 0, false, false, 'L', true);
+//*...............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p2_about_you_2a_last_name', 74, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20.5,67.2);
+$pdf->TextField('p2_about_you_2a_first_name', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 97,67.2);
+$pdf->TextField('p2_about_you_2a_middle_name', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 155.5,67.2);
+//*...............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p2_about_you_2b_last_name', 74, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20.5,74);
+$pdf->TextField('p2_about_you_2b_first_name', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 97,74);
+$pdf->TextField('p2_about_you_2b_middle_name', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 155.5,74);
+
+
+//*...................
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ='<div><b>Other Information</b></div>';
+$pdf->writeHTMLCell(191, 6, 13, 85, $html, "", 1, true, false, 'L', false);
+
+//*...............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alien Registration Number (A-Number) (if any)</div>';
+$pdf->writeHTMLCell(190, 5, 12, 91.5,$html, '', 0, false, true, 'L', true);
+//.............
+
+$pdf->StartTransform();
+$pdf->SetFillColor(0,0,0);
+$pdf->Rotate(-30);
+$pdf->SetFont('zapfdingbats', 'B', 10);
+
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 47, 186, false); // angle 1
+$pdf->StopTransform();
+//...........
+$pdf->SetFont('times', '', 11);
+$html ='<div><b>A- </b></div>';
+$pdf->writeHTMLCell(190, 5, 23, 97,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_3', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 29,97);
+//.............
+//*...............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USCIS Online Account Number (if any)</div>';
+$pdf->writeHTMLCell(190, 5, 96, 91.5,$html, '', 0, false, true, 'L', true);
+//.......................
+$pdf->StartTransform();
+$pdf->SetFillColor(0,0,0);
+$pdf->Rotate(-30);
+$pdf->SetFont('zapfdingbats', 'B', 10);
+
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 137.5, 141.5, false); // angle 1
+$pdf->StopTransform();
+//...........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_4', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 126,97);
+
+//......................
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell(190, 5, 12, 104,$html, '', 0, false, true, 'L', true);
+
+//...........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_5', 44, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20,109.4);
+//...................
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place of Birth</div>';
+$pdf->writeHTMLCell(190, 5, 12, 116.5,$html, '', 0, false, true, 'L', true);
+//...................
+
+$pdf->SetFont('times', '', 10);
+$html ='<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City or Town</div>';
+$pdf->writeHTMLCell(190, 5, 12, 121.5,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_6city', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20,127.2);
+//..............
+
+$pdf->SetFont('times', '', 10);
+$html ='<div>State or Province</div>';
+$pdf->writeHTMLCell(190, 5, 113, 121.5,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_6state', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 113.5,127.2);
+//.................
+
+$pdf->SetFont('times', '', 10);
+$html ='<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country</div>';
+$pdf->writeHTMLCell(190, 5, 12, 134.5,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_6country', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20,140);
+//.................
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Citizenship or Nationality</div>';
+$pdf->writeHTMLCell(190, 5, 12, 147.5,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_7', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20,153);
+//........................
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender</div>';
+$pdf->writeHTMLCell(190, 5, 12, 160,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('times', '', 10);
+$html = '
+   <input type="checkbox" name="p2_other_info_8male" value="Male" checked="" /> &nbsp; Male
+   
+   &nbsp;  &nbsp; <input type="checkbox" name="p2_other_info_8female" value="Female" checked="" /> Female
+
+   &nbsp;  &nbsp; <input type="checkbox" name="p2_other_info_8another_gender" value="Another_Gender_Identity" checked="" /> Another Gender Identity';
+
+$pdf->writeHTMLCell( 195, 0, 19.5, 166.2, $html, 0, 1, false, true, 'J', 0 );
+//./...................
+
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mailing Address (Safe address, if applicable) </div>';
+$pdf->writeHTMLCell(190, 5, 12, 172,$html, '', 0, false, true, 'L', true);
+$html ='<div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Please provide an address where you can safely receive correspondence from USCIS. </div>';
+$pdf->writeHTMLCell(190, 5, 12, 177,$html, '', 0, false, true, 'L', true);
+$html ='<div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;In Care Of Name (if any) </div>';
+$pdf->writeHTMLCell(190, 5, 12, 183,$html, '', 0, false, true, 'L', true);
+$pdf->TextField('p2_other_info_9care_name', 183, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20,188.5);
+
+//........................
+
+
+
+
+
+
+
+
+
+// //..............
+$pdf->setFont('Times', '', 10);
+$html= '<div><b>     </b> &nbsp;    &nbsp;    Street Number and Name</div>';
+$pdf->writeHTMLCell(95, 7, 12, 196.3, $html, 0, 1, false, 'L');
+
+$html= '<div> Apt. &nbsp;&nbsp;   Ste.&nbsp;  &nbsp;  Flr.  &nbsp;  &nbsp;  Number </div>';
+$pdf->writeHTMLCell(95, 7, 151, 196.3, $html, 0, 1, false, 'L');
+
+// //...........
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_9street_number_name', 130, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 202);
+
+$pdf->setFont('Times', '', 10.5);
+$html= '<div>  <input type="checkbox" name="p2_other_info_apt" value="apt" checked="" />  </div>';
+$pdf->writeHTMLCell(20, 7, 151, 202, $html, 0, 1, false, 'L');
+
+$html= '<div>  <input type="checkbox" name="p2_other_info_ste" value="ste" checked="" />  </div>';
+$pdf->writeHTMLCell(20, 7, 160,202, $html, 0, 1, false, 'L');
+
+$html= '<div>  <input type="checkbox" name="p2_other_info_flr" value="flr" checked="" />  </div>';
+$pdf->writeHTMLCell(20, 7, 169,202, $html, 0, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_9number',21.7, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),181, 202);
+
+
+// //.................
+
+$pdf->setFont('Times', '', 10);
+$html= '<div>City or Town</div>';
+$pdf->writeHTMLCell(90, 7, 20, 209, $html, 0, 1, false, 'L');
+
+
+$html= '<div>State</div>';
+$pdf->writeHTMLCell(60, 7, 152, 209, $html, 0, 1, false, 'L');
+
+
+$html= '<div>ZIP Code</div>';
+$pdf->writeHTMLCell(60, 7, 180, 209, $html, 0, 1, false, 'L');
+
+
+
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_mailing_address_city_town', 130, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 214.5);
+
+
+
+
+$html = '<select name="part2_9_state" size="0.50">';
+$html .= '<option value="">State</option>'; 
+$html .= '<option value="">BB</option>'; 
+$html .= '<option value="">CC</option>'; 
+$html .= '<option value="">DD</option>'; 
+$html .= '<option value="">EE</option>'; 
+$html .= '</select>';
+
+$pdf->writeHTMLCell(25, 5, 152, 214, $html, '', 0, 0, true, 'L');
+
+
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_mailing_address_zipcode', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 181, 214.5);
+
+
+//......................
+$pdf->setFont('Times', '', 10.5);
+$html= '<div>Province </div>';
+$pdf->writeHTMLCell(80, 7, 20, 222, $html, 0, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_mailing_address_provience', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 228);
+// //.............
+$pdf->setFont('Times', '', 10.5);
+$html= '<div>Postal Code</div>';
+$pdf->writeHTMLCell(70, 7, 74, 222, $html, 0, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_mailing_address_postal_code', 51, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 75, 228);
+
+// //.....................
+$pdf->setFont('Times', '', 10.5);
+$html= '<div>Country</div>';
+$pdf->writeHTMLCell(80, 7, 128, 222, $html, 0, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_mailing_address_country', 75, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 128.5, 228);
+// //.............
+
+
+
+
+
+
+/********************************
+******** End Page No 2 **********
+*********************************/
+
+/********************************
+******** Start Page No 3 ********
+*********************************/
+
 
 
 
@@ -475,9 +726,41 @@ var fields = {
 	'part2_1b_legal_firstname': '  ',
 	'part2_1c_legal_middlename': '  ',
 //!page 2
-     'p2_about_you_legal_last_name': ' ',
-     'p2_about_you_legal_first_name': '  ',
-     'p2_about_you_legal_middle_name': '  ',
+     'p2_about_you_1_last_name': ' ',
+     'p2_about_you_1_first_name': '  ',
+     'p2_about_you_1_middle_name': '  ',
+     'p2_about_you_2a_last_name': ' ',
+     'p2_about_you_2a_first_name': '  ',
+     'p2_about_you_2a_middle_name': '  ',
+     'p2_about_you_2b_last_name': ' ',
+     'p2_about_you_2b_first_name': '  ',
+     'p2_about_you_2b_middle_name': '  ',
+     'p2_other_info_3': '  ',
+     'p2_other_info_4': '  ',
+     'p2_other_info_5': '  ',
+     'p2_other_info_6city': '  ',
+     'p2_other_info_6state': '  ',
+     'p2_other_info_6country': '  ',
+     'p2_other_info_8female': '  ',
+     'p2_other_info_8another_gender': '  ',
+     'p2_other_info_8male': '  ',
+     'p2_other_info_7': '  ',
+
+     'p2_other_info_9care_name': '  ',
+     'p2_other_info_9street_number_name': '  ',
+     'p2_other_info_apt': '  ',
+     'p2_other_info_ste': '  ',
+     'p2_other_info_flr': '  ',
+     'p2_other_info_9number': '  ',
+     'p2_other_info_mailing_address_city_town': '  ',
+     'part2_9_state': '  ',
+     'p2_other_info_mailing_address_zipcode': '  ',
+     'p2_other_info_mailing_address_country': '  ',
+     'p2_other_info_mailing_address_postal_code': '  ',
+     'p2_other_info_mailing_address_provience': '  ',
+
+	 
+  
 
 };
 for (var fieldName in fields) {
