@@ -1113,6 +1113,100 @@ $pdf->writeHTMLCell(190, 5, 110, 245,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('p2_about_you_15_registration_number', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 116,245);
 
+/********************************
+******** End Page No 2 **********
+*********************************/
+
+/********************************
+******** Start Page No 3 ********
+*********************************/
+
+
+
+
+
+
+$pdf->AddPage( 'P', 'LETTER' );
+//*.................
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', '', 12);
+$html ='<div><b>Part 2. Information About You</b>  (continued) </div>';
+$pdf->writeHTMLCell(191, 6, 13, 18, $html, 1, 1, true, false, 'L', false);
+//*.................
+
+
+
+
+
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>16.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)</div>";
+$pdf->writeHTMLCell(190, 5, 12, 25,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 34, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 63,25.3);
+//*...................
+
+
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>17.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Marriage (mm/dd/yyyy)</div>";
+$pdf->writeHTMLCell(190, 5, 106, 25,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 34, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 163,25.3);
+//*...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>18.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place of Birth</div>";
+$pdf->writeHTMLCell(190, 5, 12, 32,$html, '', 0, false, true, 'L', true);
+$html ="<div>City or Town</div>";
+$pdf->writeHTMLCell(190, 5, 21, 38,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,43.5);
+//*...................
+$pdf->SetFont('times', '', 10);
+$html ="<div>State or Provincen</div>";
+$pdf->writeHTMLCell(190, 5, 115, 38,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 115,43.5);
+
+//*...................
+$pdf->SetFont('times', '', 10);
+$html ="<div>Country</div>";
+$pdf->writeHTMLCell(190, 5, 21, 50,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,55.5);
+
+//*...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>18.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place of Birth</div>";
+$pdf->writeHTMLCell(190, 5, 12, 64,$html, '', 0, false, true, 'L', true);
+$html ="<div>City or Town</div>";
+$pdf->writeHTMLCell(190, 5, 21, 70,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,75.5);
+//*...................
+$pdf->SetFont('times', '', 10);
+$html ="<div>State or Provincen</div>";
+$pdf->writeHTMLCell(190, 5, 115, 70,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 115,75.5);
+
+//*...................
+$pdf->SetFont('times', '', 10);
+$html ="<div>Country</div>";
+$pdf->writeHTMLCell(190, 5, 21, 82,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,87.5);
+
+//*...................
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ='<div><b>Information About Prior Marriages</b>  (if any) </div>';
+$pdf->writeHTMLCell(191, 6.2, 13, 98, $html, 0, 1, true, false, 'L', false);
+
+
+
 
 
 
