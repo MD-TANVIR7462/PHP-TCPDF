@@ -645,7 +645,7 @@ $pdf->TextField('p2_other_info_mailing_address_city_town', 130, 7, array('stroke
 
 
 $html = '<select name="part2_9_state" size="0.50">';
-$html .= '<option value="">State</option>'; 
+$html .= '<option selected value="">State</option>'; 
 $html .= '<option value="">BB</option>'; 
 $html .= '<option value="">CC</option>'; 
 $html .= '<option value="">DD</option>'; 
@@ -696,6 +696,151 @@ $pdf->TextField('p2_other_info_mailing_address_country', 75, 7, array('strokeCol
 
 
 
+
+
+
+$pdf->AddPage( 'P', 'LETTER' );
+//*.................
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', '', 12);
+$html ='<div><b>Part 2. Information About You</b>  (continued) </div>';
+$pdf->writeHTMLCell(191, 6, 13, 18, $html, 1, 1, true, false, 'L', false);
+//*.................
+
+
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ='<div><b>Address History</b></div>';
+$pdf->writeHTMLCell(191, 6, 13, 27, $html, 0, 1, true, false, 'L', false);
+
+//......................
+$pdf->SetFont('times', '', 10);
+$html ='<div>Provide physical addresses for everywhere you have lived during the last five years, whether inside or outside the United States.
+Provide your current address first. If you need extra space to complete this section, use the space provided in <b>Part 6. Additional
+Information.</b> </div>';
+$pdf->writeHTMLCell(191, 6, 12, 33.4, $html, 0, 1, false, 'L');
+
+//...................
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Physical Address 1 (current address)</div>';
+$pdf->writeHTMLCell(190, 5, 12, 48,$html, '', 0, false, true, 'L', true);
+//...................
+
+
+// //..............
+$pdf->setFont('Times', '', 10);
+$html= '<div>Street Number and Name</div>';
+$pdf->writeHTMLCell(95, 7, 21, 53, $html, 0, 1, false, 'L');
+
+$html= '<div> Apt. &nbsp;&nbsp;   Ste.&nbsp;  &nbsp;  Flr.  &nbsp;  &nbsp;  Number </div>';
+$pdf->writeHTMLCell(95, 7, 153, 53, $html, 0, 1, false, 'L');
+
+// //...........
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_9street_number_name', 130, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 22, 58.5);
+
+$pdf->setFont('Times', '', 10.5);
+$html= '<div>  <input type="checkbox" name="p2_other_info_apt" value="apt" checked="" />  </div>';
+$pdf->writeHTMLCell(20, 7, 153, 58.5, $html, 0, 1, false, 'L');
+
+$html= '<div>  <input type="checkbox" name="p2_other_info_ste" value="ste" checked="" />  </div>';
+$pdf->writeHTMLCell(20, 7, 162,58.5, $html, 0, 1, false, 'L');
+
+$html= '<div>  <input type="checkbox" name="p2_other_info_flr" value="flr" checked="" />  </div>';
+$pdf->writeHTMLCell(20, 7, 171,58.5, $html, 0, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_9number',21.7, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),183, 58.5);
+
+
+// //.................
+
+$pdf->setFont('Times', '', 10);
+$html= '<div>City or Town</div>';
+$pdf->writeHTMLCell(90, 7, 21.5, 66, $html, 0, 1, false, 'L');
+
+
+$html= '<div>State</div>';
+$pdf->writeHTMLCell(60, 7, 154, 66, $html, 0, 1, false, 'L');
+
+
+$html= '<div>ZIP Code</div>';
+$pdf->writeHTMLCell(60, 7, 182, 66, $html, 0, 1, false, 'L');
+
+
+
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_mailing_address_city_town', 130, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 22, 72);
+
+
+
+
+$html = '<select name="part2_9_state" size="0.50">';
+$html .= '<option selected value="">State</option>'; 
+$html .= '<option value="">BB</option>'; 
+$html .= '<option value="">CC</option>'; 
+$html .= '<option value="">DD</option>'; 
+$html .= '<option value="">EE</option>'; 
+$html .= '</select>';
+
+$pdf->writeHTMLCell(25, 5, 154, 72, $html, '', 0, 0, true, 'L');
+
+
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_mailing_address_zipcode', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 183, 72.5);
+
+
+//......................
+$pdf->setFont('Times', '', 10.5);
+$html= '<div>Province </div>';
+$pdf->writeHTMLCell(80, 7, 22, 80, $html, 0, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_mailing_address_provience', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 22, 86);
+// //.............
+$pdf->setFont('Times', '', 10.5);
+$html= '<div>Postal Code</div>';
+$pdf->writeHTMLCell(70, 7, 76, 80, $html, 0, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_mailing_address_postal_code', 51, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 77, 86);
+
+// //.....................
+$pdf->setFont('Times', '', 10.5);
+$html= '<div>Country</div>';
+$pdf->writeHTMLCell(80, 7, 130, 80, $html, 0, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_mailing_address_country', 75, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 130.5, 86);
+// //.............
+
+
+
+
+$pdf->setFont('Times', '', 10);
+$html= '<div>Dates of Residence</div>';
+$pdf->writeHTMLCell(90, 7, 21.5,93, $html, 0, 1, false, 'L');
+
+// //.................
+$pdf->setFont('Times', '', 10);
+$html= '<div>From (mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell(90, 7, 21.5,98, $html, 0, 1, false, 'L');
+$pdf->TextField('p2_other_info_mailing_address_country', 45, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 22, 104);
+
+
+
+// //.................
+$pdf->setFont('Times', '', 10);
+$html= '<div>To (mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell(90, 7, 79.5,98, $html, 0, 1, false, 'L');
+// $pdf->TextField('p2_other_info_mailing_address_country', 45, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 80, 104);
+$pdf->setFont('Times', 'B', 10);
+$pdf->writeHTMLCell(45, 6.5, 80,104, "PRESENT", 1, 1, false, 'L');
+// //.................
 
 
 
