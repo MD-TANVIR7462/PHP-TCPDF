@@ -1341,7 +1341,7 @@ $pdf->SetFont('times', '', 11);
 $html = '<div><input type="checkbox" name="part2_1_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp;             
 <input type="checkbox" name="part2_1_y_currently_active" value="N" checked=" " />   No 
 </div>';
-$pdf->writeHTMLCell( 60, 0, 170, 25, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 60, 0, 175, 25, $html, '', 0, 0, true, 'L' );
 
 //.........................
 
@@ -1381,7 +1381,7 @@ $pdf->writeHTMLCell( 90, 6,113.5,66,'', 1, 0, false, true, 'L', true);
 //.................
 $pdf->SetFont('times', '', 10);
 $html ="<div>State or Province</div>";
-$pdf->writeHTMLCell(190, 5, 21, 73,$html, '', 0, false, true, 'L', true);
+$pdf->writeHTMLCell(190, 5, 20.5, 73,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->writeHTMLCell( 90, 6,  21, 79,'', 1, 0, false, true, 'L', true);
 
@@ -1392,6 +1392,115 @@ $pdf->writeHTMLCell(190, 5, 115, 73,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->writeHTMLCell( 90, 6, 113.5, 79,'', 1, 0, false, true, 'L', true);
 //.................
+$pdf->SetFont('times', '', 10);
+$html ="<div>Receipt Number (if available)</div>";
+$pdf->writeHTMLCell(190, 5, 20.5, 88,$html, '', 0, false, true, 'L', true);
+//.............
+$pdf->StartTransform();
+$pdf->SetFillColor(0,0,0);
+$pdf->Rotate(-30);
+$pdf->SetFont('zapfdingbats', 'B', 10);
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 87, 158.5, false);
+$pdf->StopTransform();
+$pdf->writeHTMLCell( 70, 6, 73, 89,'', 1, 0, false, true, 'L', true);
+//*.................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>30.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you EVER been in the United States for a period of six months or more?</div>";
+$pdf->writeHTMLCell(150, 5, 12, 97.4,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('times', '', 11);
+$html = '<div><input type="checkbox" name="part2_1_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp;             
+<input type="checkbox" name="part2_1_y_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 175, 98, $html, '', 0, 0, true, 'L' );
+//.......................
+
+$pdf->SetFont('times', '', 10);
+$html ='<div>If you answered "Yes" to <b>Item Number 30</b>., provide the dates you were in the United States (from and to)<br>
+and your immigration status at the time of entry into the United States in the space provided in<br>
+<b>Part 6. Additional Information.</b></div>';
+$pdf->writeHTMLCell(190, 5, 21, 103.6,$html, '', 0, false, true, 'L', true);
+
+//*.................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>31.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you EVER filed an application or petition for immigration benefits with the U.S. Government, or has <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;one ever been filed on your behalf?</div>";
+$pdf->writeHTMLCell(190, 5, 12, 117.6,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('times', '', 11);
+$html = '<div><input type="checkbox" name="part2_1_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp;             
+<input type="checkbox" name="part2_1_y_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 175, 117.6, $html, '', 0, 0, true, 'L' );
+
+//*.................
+$pdf->SetFont('times', '', 10);
+$html ='<div>If you answered "Yes" to <b>Item Number 31.</b>, provide the information requested in <b>Item Numbers 32. - 34.</b></div>';
+$pdf->writeHTMLCell(190, 5, 21, 127.6,$html, '', 0, false, true, 'L', true);
+//*.................
+$pdf->SetFont('times', '', 10);
+$html ='<div>If you have (or somebody else on your behalf has) filed multiple applications or petitions for immigration benefits with the U.S.
+Government, use the space provided in <b>Part 6. Additional Information </b>to provide the answers to <b>Item Numbers 32. - 34.</b> for each of
+your additional applications or petitions. </div>';
+$pdf->writeHTMLCell(190, 5, 12, 134,$html, '', 0, false, true, 'L', true);
+
+//*.................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>32.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type of application or petition filed</div>";
+$pdf->writeHTMLCell(190, 5, 12, 148.6,$html, '', 0, false, true, 'L', true);
+$pdf->writeHTMLCell( 180, 6, 22, 155,'', 1, 0, false, true, 'L', true);
+
+//*.................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>33.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location the application or petition was filed (for example, USCIS office or Port of Entry)</div>";
+$pdf->writeHTMLCell(190, 5, 12, 162,$html, '', 0, false, true, 'L', true);
+$pdf->writeHTMLCell( 180, 6, 22, 169,'', 1, 0, false, true, 'L', true);
+
+//*.................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>34.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Outcome of the application or petition (for example, approved, denied, or pending).</div>";
+$pdf->writeHTMLCell(190, 5, 12, 176.6,$html, '', 0, false, true, 'L', true);
+$pdf->writeHTMLCell( 180, 6, 22, 183,'', 1, 0, false, true, 'L', true);
+
+//*.................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>35.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been denied or refused an immigration benefit by the U.S. Government, or had a benefit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; revoked or terminated (including but not limited to visas)?</div>";
+$pdf->writeHTMLCell(190, 5, 12, 191,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('times', '', 11);
+$html = '<div><input type="checkbox" name="part2_1_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp;             
+<input type="checkbox" name="part2_1_y_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 175, 191.4, $html, '', 0, 0, true, 'L' );
+//....................
+
+$pdf->SetFont('times', '', 10);
+$html ='<div>If you answered "Yes" to <b>Item Number 35.</b>, provide an explanation the information in the space provided<br>
+in <b>Part 6. Additional Information.</b></div>';
+$pdf->writeHTMLCell(190, 5, 21, 201,$html, '', 0, false, true, 'L', true);
+
+
+
+//*.................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>36.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> in or outside the United States, been arrested, cited, charged, indicted, fined, convicted,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or imprisoned for breaking or violating any law or ordinance, excluding minor traffic violations?</div>";
+$pdf->writeHTMLCell(190, 5, 12, 211.5,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('times', '', 11);
+$html = '<div><input type="checkbox" name="part2_1_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp;             
+<input type="checkbox" name="part2_1_y_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 175, 211.8, $html, '', 0, 0, true, 'L' );
+//....................
+
+
+$pdf->SetFont('times', '', 10);
+$html ='<div>If you answered "Yes" to <b>Item Number 36.</b>, describe the incidents in detail and include all offenses where<br>
+impaired driving may have been an issue in the space provided in<b>Part 6. Additional Information.</b></div>';
+$pdf->writeHTMLCell(190, 5, 21, 223,$html, '', 0, false, true, 'L', true);
+
+
+
+
+
+
 
 
 
