@@ -396,7 +396,7 @@ $pdf->writeHTMLCell( 95, 5, 28, 215, $html, 0, 1, false, true, 'L', true );
 $pdf->SetFont( 'times', '', 13.4 );
 
 $html = '<div><input type="checkbox" name="part-1_1b" value="YES" checked="" /> </div>';
-$pdf->writeHTMLCell( 10, 5, 20.5, 228.5, $html, 0, 1, false, false, 'J', true );
+$pdf->writeHTMLCell( 10, 5, 20.5, 225.5, $html, 0, 1, false, false, 'J', true );
 $pdf->SetFont( 'times', '', 10 );
 $html = '<div>Admission as a nonimmigrant (other than as a T or U nonimmigrant).</div>';
 $pdf->writeHTMLCell( 120, 5, 28, 225.5, $html, 0, 1, false, true, 'L', true );
@@ -1114,11 +1114,11 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('p2_about_you_15_registration_number', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 116,245);
 
 /********************************
-******** End Page No 2 **********
+******** End Page No 3 **********
 *********************************/
 
 /********************************
-******** Start Page No 3 ********
+******** Start Page No 4 ********
 *********************************/
 
 
@@ -1317,11 +1317,11 @@ $pdf->writeHTMLCell(90, 50, 21, 232, $html, 0, 0, false, 'L');
 
 
 /********************************
-******** End Page No 2 **********
+******** End Page No 4 **********
 *********************************/
 
 /********************************
-******** Start Page No 3 ********
+******** Start Page No 5 ********
 *********************************/
 
 $pdf->AddPage( 'P', 'LETTER' );
@@ -1499,6 +1499,181 @@ $pdf->writeHTMLCell(190, 5, 21, 223,$html, '', 0, false, true, 'L', true);
 
 
 
+/********************************
+******** End Page No 5 **********
+*********************************/
+
+/********************************
+******** Start Page No 6 ********
+*********************************/
+
+
+$pdf->AddPage( 'P', 'LETTER' );
+//*.................
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', '', 12);
+$html ='<div><b>Part 2. Information About You</b>  (continued) </div>';
+$pdf->writeHTMLCell(191, 6, 13, 18, $html, 1, 1, true, false, 'L', false);
+//.............
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ='<div><b>Travel Information</b></div>';
+$pdf->writeHTMLCell(191, 6, 13, 28, $html, '', 1, true, false, 'L', false);
+//...........
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>NOTE:</b> If you are applying for T or U nonimmigrant status and are in the United States, you may skip <b>Item Numbers 37. - 43.</b></b>
+</div>';
+$pdf->writeHTMLCell(190, 5, 12, 34,$html, '', 0, false, true, 'L', true);
+//...........
+
+$pdf->SetFont('times', '', 10);
+$html ='<div>Location at Which you Plan to Enter the United States (desired Port of Entry)</b>
+</div>';
+$pdf->writeHTMLCell(190, 5, 12, 40.6,$html, '', 0, false, true, 'L', true);
+
+//...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>37.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City</div>";
+$pdf->writeHTMLCell(190, 5, 12, 46,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 78, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,52);
+
+
+//...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>38.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</div>";
+$pdf->writeHTMLCell(190, 5, 105, 46,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$html = '<select name="p2_info_11_state" size="0.50">';
+$html .= '<option selected value="">State</option>'; 
+$html .= '<option value="">BB</option>'; 
+$html .= '<option value="">CC</option>'; 
+$html .= '<option value="">DD</option>'; 
+$html .= '<option value="">EE</option>'; 
+$html .= '</select>';
+$pdf->writeHTMLCell(25, 7, 114, 51.5, $html, '', 0, 0, true, 'L');
+
+//.......................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>39.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name of Port of Entry</div>";
+$pdf->writeHTMLCell(190, 5, 138, 46,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 144,52);
+
+
+//...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>40.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How do you plan to travel to the United States?<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(For example, by plane, ship, car)</div>";
+$pdf->writeHTMLCell(190, 5, 12, 59,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 78, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,69.5);
+//...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>41.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When do you plan to enter the United States? 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(mm/dd/yyyy)</div>";
+$pdf->writeHTMLCell(190, 5, 105, 59,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 31, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 114,69.5);
+
+
+
+
+//...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>42.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Approximate Length of Stay in the United States</div>";
+$pdf->writeHTMLCell(190, 5, 12, 77.5,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 183, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,83);
+
+//...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>43.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What is the purpose of your stay in the United States? Explain fully below.</div>";
+$pdf->writeHTMLCell(190, 5, 12, 91,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$html = <<<EOD
+<textarea cols="43" rows="8" name="additional_info_name_7d">
+</textarea>
+EOD;
+$pdf->writeHTMLCell(90, 50, 20.5,96, $html, 0, 0, false, 'L');
+
+
+
+//.............
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ='<div><b>Employment History</b></div>';
+$pdf->writeHTMLCell(191, 6, 13, 134, $html, '', 1, true, false, 'L', false);
+//...........
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1536,7 +1711,6 @@ var fields = {
      'p2_other_info_8another_gender':' ',
      'p2_other_info_8male':' ',
      'p2_other_info_7':' ',
-
      'p2_other_info_9care_name':' ',
      'p2_other_info_9street_number_name':' ',
      'p2_other_info_apt':' ',
@@ -1551,7 +1725,7 @@ var fields = {
      'p2_other_info_mailing_address_provience':' ',
      
      
-     //!page 3
+//!page 3
      
      'p2_info_10street_number_name':' ',
      'p2_info_10_ste':' ',
@@ -1565,7 +1739,6 @@ var fields = {
      'p2_info_10_postal_code':' ',
      'p2_info_10_country':' ',
      'p2_info_10_from_date':' ',
-
      'p2_info_11street_number_name':' ',
      'p2_info_11_ste':' ',
      'p2_info_11_apt':' ',
@@ -1579,40 +1752,28 @@ var fields = {
      'p2_info_11_country':' ',
      'p2_info_11_from_date':' ',
      'p2_info_11_to_date':' ',
-
-     
      'part_2_12single':' ',
-
      'part_2_12married':' ',
-
      'part_2_12divorced':' ',
-
      'part_2_12widowed':' ',
-
      'part_2_12separeted':' ',
-
      'part_2_12annulled':' ',
-
      'part_2_12other':' ',
-
      'part_2_12':' ',
      'part_2_13':' ',
-
      'p2_about_you_15_registration_number':' ',
-
      'p2_about_you_14_middle_name':' ',
-
      'p2_about_you_14_first_name':' ',
-
      'p2_about_you_14_last_name':' ',
-
      'p2_info_11_to_date':' ',
 //!page 4     
      'additional_info_name_7d':' ',
 
  
 
-	 
+//!page 5
+
+//!page 6 	 
   
 
 };
