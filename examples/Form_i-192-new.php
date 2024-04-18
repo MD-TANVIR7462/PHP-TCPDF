@@ -1316,12 +1316,13 @@ EOD;
 $pdf->writeHTMLCell(90, 50, 21, 232, $html, 0, 0, false, 'L');
 
 
+/********************************
+******** End Page No 2 **********
+*********************************/
 
-
-
-
-
-
+/********************************
+******** Start Page No 3 ********
+*********************************/
 
 $pdf->AddPage( 'P', 'LETTER' );
 //*.................
@@ -1332,19 +1333,65 @@ $pdf->SetFont('times', '', 12);
 $html ='<div><b>Part 2. Information About You</b>  (continued) </div>';
 $pdf->writeHTMLCell(191, 6, 13, 18, $html, 1, 1, true, false, 'L', false);
 //*.................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>27.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you previously filed an application for advance permission to enter the United States as a <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonimmigrant?</div>";
+$pdf->writeHTMLCell(150, 5, 12, 24.4,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('times', '', 11);
+$html = '<div><input type="checkbox" name="part2_1_y_currently_active" value="Y" checked=" " />   Yes &nbsp; &nbsp;             
+<input type="checkbox" name="part2_1_y_currently_active" value="N" checked=" " />   No 
+</div>';
+$pdf->writeHTMLCell( 60, 0, 170, 25, $html, '', 0, 0, true, 'L' );
+
+//.........................
+
+$pdf->SetFont('times', '', 10);
+$html ='<div>If you answered "Yes" to <b>Item Number 27.</b>, provide the details in <b>Item Numbers 28. - 29.</b> <br>
+If you need extra space to complete this section, use the space provided in <b>Part 6. Additional Information.</b></div>';
+$pdf->writeHTMLCell(170, 5, 21, 35.4,$html, '', 0, false, true, 'L', true);
 
 
+//.........................
 
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>28.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Application Filed (mm/dd/yyyy)</div>";
+$pdf->writeHTMLCell(150, 5, 12, 46.4,$html, '', 0, false, true, 'L', true);
+$pdf->writeHTMLCell(35, 7, 78, 46.7,'', 1, 0, false, true, 'L', true);
 
+//.........................
 
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>29.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location where you filed your application (for example, USCIS Office or Port of Entry).</div>";
+$pdf->writeHTMLCell(150, 5, 12, 54,$html, '', 0, false, true, 'L', true);
 
+//....................
 
+$html ="<div>USCIS Office or U.S. Port-of-Entry</div>";
+$pdf->writeHTMLCell(190, 5, 21, 60,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell( 90, 6, 21,66,'', 1, 0, false, true, 'L', true);
 
+//..............
+$pdf->SetFont('times', '', 10);
+$html ="<div>City or Town</div>";
+$pdf->writeHTMLCell(190, 5, 115, 60,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell( 90, 6,113.5,66,'', 1, 0, false, true, 'L', true);
 
+//.................
+$pdf->SetFont('times', '', 10);
+$html ="<div>State or Province</div>";
+$pdf->writeHTMLCell(190, 5, 21, 73,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell( 90, 6,  21, 79,'', 1, 0, false, true, 'L', true);
 
-
-
-
+//*....................
+$pdf->SetFont('times', '', 10);
+$html ="<div>Country</div>";
+$pdf->writeHTMLCell(190, 5, 115, 73,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell( 90, 6, 113.5, 79,'', 1, 0, false, true, 'L', true);
+//.................
 
 
 
