@@ -1262,7 +1262,79 @@ $html ="<div>Country</div>";
 $pdf->writeHTMLCell(190, 5, 21, 164.5,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('p2_about_you_15_registration_number', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,170);
-//...........................
+//.........................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>24.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Marriage Legally Ended (mm/dd/yyyy)</div>";
+$pdf->writeHTMLCell(190, 5, 12, 178,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 86 , 178.5);
+
+
+//.........................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>25.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place Where Marriage Legally Ended</div>";
+$pdf->writeHTMLCell(190, 5, 12, 186,$html, '', 0, false, true, 'L', true);
+
+//....................
+
+$html ="<div>City or Town</div>";
+$pdf->writeHTMLCell(190, 5, 21, 191,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,196.4);
+//..............
+$pdf->SetFont('times', '', 10);
+$html ="<div>State or Provincen</div>";
+$pdf->writeHTMLCell(190, 5, 115, 191,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_6state', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 113.5,196.4);
+//.................
+$pdf->SetFont('times', '', 10);
+$html ="<div>Country</div>";
+$pdf->writeHTMLCell(190, 5, 21, 203,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,209);
+//*...................
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ='<div><b>Immigration and Criminal History</b></div>';
+$pdf->writeHTMLCell(191, 6.2, 13,219, $html, 0, 1, true, false, 'L', false);
+
+//.........................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>25.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Explain the grounds of inadmissibility that may apply in your case.</div>";
+$pdf->writeHTMLCell(190, 5, 12, 226,$html, '', 0, false, true, 'L', true);
+
+//..........................
+
+$pdf->SetFont('courier', 'B', 10);
+$html = <<<EOD
+<textarea cols="43" rows="5" name="additional_info_name_7d">
+</textarea>
+EOD;
+$pdf->writeHTMLCell(90, 50, 21, 232, $html, 0, 0, false, 'L');
+
+
+
+
+
+
+
+
+
+$pdf->AddPage( 'P', 'LETTER' );
+//*.................
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', '', 12);
+$html ='<div><b>Part 2. Information About You</b>  (continued) </div>';
+$pdf->writeHTMLCell(191, 6, 13, 18, $html, 1, 1, true, false, 'L', false);
+//*.................
+
+
+
 
 
 
@@ -1379,6 +1451,8 @@ var fields = {
      'p2_about_you_14_last_name':' ',
 
      'p2_info_11_to_date':' ',
+//!page 4     
+     'additional_info_name_7d':' ',
 
  
 
