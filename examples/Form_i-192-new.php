@@ -1204,6 +1204,73 @@ $pdf->setCellPaddings(1, 1, 1, 1);
 $pdf->SetFont('times', 'I', 12);
 $html ='<div><b>Information About Prior Marriages</b>  (if any) </div>';
 $pdf->writeHTMLCell(191, 6.2, 13, 98, $html, 0, 1, true, false, 'L', false);
+//*...................
+$pdf->SetFont('times', '', 10);
+$html ='<div>If you have been married before, anywhere in the world, provide the information requested in <b>Item Numbers 20. - 25</b>. about your
+prior marriage. If you have had more than one previous marriage, use the space provided in <b>Part 6. Additional Information</b> to
+provide the answers to <b>Item Numbers 20. - 25.</b> for each additional marriage.</div>';
+$pdf->writeHTMLCell(191, 6.2, 13, 104.4, $html, 0, 0, false, true, 'L', true);
+//*...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>20.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prior Spouse's Legal Name (provide family name before marriage)</div>";
+$pdf->writeHTMLCell(190, 5, 12, 119.5,$html, '', 0, false, true, 'L', true);
+//*...................
+
+$pdf->SetFont('times', '', 10); // set font
+$html = 'Family Name (Last Name)';
+$pdf->writeHTMLCell(40, 7, 20.5, 124, $html, 0, 0, false, false, 'L', true);
+$html = 'Given Name (First Name)';
+$pdf->writeHTMLCell(50, 7, 98, 123.4, $html, 0, 0, false, false, 'L', true);
+$html = 'Middle Name (if applicable)';
+$pdf->writeHTMLCell(50, 7, 156, 122.5, $html, 0, 0, false, false, 'L', true);
+//*...............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p2_about_you_1_last_name', 74, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21.5,131);
+$pdf->TextField('p2_about_you_1_first_name', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 98,131);
+$pdf->TextField('p2_about_you_1_middle_name', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 156,131);
+
+//*...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>21.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)</div>";
+$pdf->writeHTMLCell(190, 5, 12, 140,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 62.5,140);
+//*...................
+
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>22.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Marriage (mm/dd/yyyy)</div>";
+$pdf->writeHTMLCell(190, 5, 105, 140,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 162,140);
+//*...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>23.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place of Marriage</div>";
+$pdf->writeHTMLCell(190, 5, 12, 147,$html, '', 0, false, true, 'L', true);
+$html ="<div>City or Town</div>";
+$pdf->writeHTMLCell(190, 5, 21, 152,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,157.4);
+//..............
+$pdf->SetFont('times', '', 10);
+$html ="<div>State or Provincen</div>";
+$pdf->writeHTMLCell(190, 5, 115, 152,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_other_info_6state', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 113.5,157.2);
+//.................
+$pdf->SetFont('times', '', 10);
+$html ="<div>Country</div>";
+$pdf->writeHTMLCell(190, 5, 21, 164.5,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p2_about_you_15_registration_number', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,170);
+//...........................
+
+
+
+
+
+
+
+
 
 
 
