@@ -48,9 +48,10 @@ class MyPDF extends TCPDF {
         $this->Cell( 40, 6.4, 'Form I-192 Edition 04/01/24 ', 0, 0, 'L' );
 
         //* if ( $this->page == 1 ) {
-        $barcode_image = "images/G-639-footer-pdf417-$this->page.png";
+        $barcode_image = "images/i192/I-192-footer-pdf417-$this->page.png";
+        // $barcode_image = "";
         //* )
-        $this->Image( $barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false );
+        $this->Image( $barcode_image, 65, 265, 95, '', 'png', '', 'T', false, 300, '', false, false, 0, false, false, false );
         //* Footer Barcode PDF417
 		
         $this->MultiCell( 61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 0, 'R', 0, 1, 157.5, 269, true );
@@ -644,12 +645,12 @@ $pdf->TextField('p2_other_info_mailing_address_city_town', 130, 7, array('stroke
 
 
 
+$pdf->SetFont('courier', 'B', 10);
 $html = '<select name="part2_9_state" size="0.50">';
-$html .= '<option selected value="">State</option>'; 
-$html .= '<option value="">BB</option>'; 
-$html .= '<option value="">CC</option>'; 
-$html .= '<option value="">DD</option>'; 
-$html .= '<option value="">EE</option>'; 
+$html .= '<option value=""  disabled selected>Select</option>'; // Disable the option
+foreach($allDataCountry as $record){
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+}
 $html .= '</select>';
 
 $pdf->writeHTMLCell(25, 5, 152, 214, $html, '', 0, 0, true, 'L');
@@ -782,11 +783,10 @@ $pdf->TextField('p2_info_10_city_town', 130, 7, array('strokeColor' => array(64,
 
 
 $html = '<select name="p2_info_10_state" size="0.50">';
-$html .= '<option selected value="">State</option>'; 
-$html .= '<option value="">BB</option>'; 
-$html .= '<option value="">CC</option>'; 
-$html .= '<option value="">DD</option>'; 
-$html .= '<option value="">EE</option>'; 
+$html .= '<option value=""  disabled selected>Select</option>'; // Disable the option
+foreach($allDataCountry as $record){
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+}
 $html .= '</select>';
 
 $pdf->writeHTMLCell(25, 5, 154, 72, $html, '', 0, 0, true, 'L');
@@ -907,11 +907,10 @@ $pdf->TextField('p2_info_11_city_town', 130, 7, array('strokeColor' => array(64,
 
 
 $html = '<select name="p2_info_11_state" size="0.50">';
-$html .= '<option selected value="">State</option>'; 
-$html .= '<option value="">BB</option>'; 
-$html .= '<option value="">CC</option>'; 
-$html .= '<option value="">DD</option>'; 
-$html .= '<option value="">EE</option>'; 
+$html .= '<option value=""  disabled selected>Select</option>'; // Disable the option
+foreach($allDataCountry as $record){
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+}
 $html .= '</select>';
 
 $pdf->writeHTMLCell(25, 5, 154, 136, $html, '', 0, 0, true, 'L');
@@ -1550,11 +1549,10 @@ $html ="<div><b>38.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State</div>";
 $pdf->writeHTMLCell(190, 5, 105, 46,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $html = '<select name="p2_info_38_state" size="0.50">';
-$html .= '<option selected value="">State</option>'; 
-$html .= '<option value="">BB</option>'; 
-$html .= '<option value="">CC</option>'; 
-$html .= '<option value="">DD</option>'; 
-$html .= '<option value="">EE</option>'; 
+$html .= '<option value=""  disabled selected>Select</option>'; // Disable the option
+foreach($allDataCountry as $record){
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+}
 $html .= '</select>';
 $pdf->writeHTMLCell(25, 7, 114, 51.5, $html, '', 0, 0, true, 'L');
 
@@ -1685,11 +1683,10 @@ $pdf->TextField('p2_info_44_city_town', 130, 7, array('strokeColor' => array(64,
 
 
 $html = '<select name="p2_info_44_state" size="0.50">';
-$html .= '<option selected value="">State</option>'; 
-$html .= '<option value="">BB</option>'; 
-$html .= '<option value="">CC</option>'; 
-$html .= '<option value="">DD</option>'; 
-$html .= '<option value="">EE</option>'; 
+$html .= '<option value=""  disabled selected>Select</option>'; // Disable the option
+foreach($allDataCountry as $record){
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+}
 $html .= '</select>';
 
 $pdf->writeHTMLCell(25, 5, 154, 195, $html, '', 0, 0, true, 'L');
@@ -1816,11 +1813,10 @@ $pdf->writeHTMLCell(60, 7, 182, 62.9, $html, 0, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('p2_info_45_city_town', 130, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21,68.5);
 $html = '<select name="p2_info_11_state" size="0.50">';
-$html .= '<option selected value="">State</option>'; 
-$html .= '<option value="">BB</option>'; 
-$html .= '<option value="">CC</option>'; 
-$html .= '<option value="">DD</option>'; 
-$html .= '<option value="">EE</option>'; 
+$html .= '<option value=""  disabled selected>Select</option>'; // Disable the option
+foreach($allDataCountry as $record){
+    $html .= '<option value="'.$record->state_code.'">'.$record->state_code.' </option>';
+}
 $html .= '</select>';
 $pdf->writeHTMLCell(25, 5, 154, 68.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
@@ -1944,7 +1940,7 @@ $pdf->TextField('p3_contact_info_4_date', 47, 7, array('strokeColor' => array(64
 ******** Start Page No 8  ********
 *********************************/
 
-//!page 09............................................ 
+//!page 08............................................ 
 $pdf->AddPage('P', 'LETTER'); //page number 09
 $pdf->SetFillColor(220,220,220);
 $pdf->setCellPaddings(1, 0.5, 1, 1); // set cell padding
@@ -1964,36 +1960,195 @@ $pdf->SetFont('times', '', 10);
 $html ="<div><b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interpreter's Family Name (Last Name)</div>";
 $pdf->writeHTMLCell(190, 5, 12, 33,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p3_contact_info_1_daytime_number', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 38.5);
+$pdf->TextField('p4_interpreter_info_1_family_name', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 38.5);
 //...................
 $pdf->SetFont('times', '', 10);
 $html ="<div> Interpreter's Given Name (First Name)</div>";
-$pdf->writeHTMLCell(190, 5, 116, 33,$html, '', 0, false, true, 'L', true);
+$pdf->writeHTMLCell(190, 5, 112, 33,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p3_contact_info_2_telephone_number', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 118, 38.5);
+$pdf->TextField('p4_interpreter_info_1_given_name', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 113, 38.5);
 //...................
 $pdf->SetFont('times', '', 10);
 $html ="<div><b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interpreter's Business or Organization Name</div>";
 $pdf->writeHTMLCell(190, 5, 12, 46.5,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p3_contact_info_3_email', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 52);
+$pdf->TextField('p4_interpreter_info_2', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 52);
+//.............
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ="<div><b>Interpreter's Contact Information</b></div>";
+$pdf->writeHTMLCell(191, 6, 13, 62, $html, '', 1, true, false, 'L', false);
+
+//..........................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interpreter's Daytime Telephone Number</div>";
+$pdf->writeHTMLCell(190, 5, 12, 69,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p4_interpreter_info_3', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 74.5);
+//...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interpreter's Mobile Telephone Number (if any)</div>";
+$pdf->writeHTMLCell(190, 5, 112, 69,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p4_interpreter_info_4', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 74.5);
+//...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interpreter's Email Address (if any)</div>";
+$pdf->writeHTMLCell(190, 5, 12, 82.5,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p4_interpreter_info_5', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 88);
+
+
+//.............
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ="<div><b>Interpreter's Certification</b></div>";
+$pdf->writeHTMLCell(191, 6, 13, 98, $html, '', 1, true, false, 'L', false);
+
+//..........................
+$pdf->SetFont('times', '', 10);
+$html ="<div>I certify, under penalty of perjury, that I am fluent in English and</div>";
+$pdf->writeHTMLCell(190, 5, 12, 106.5,$html, '', 0, false, true, 'L', true);
+
+$pdf->writeHTMLCell(190, 5, 203.5, 107.5,",", '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p4_interpreter_certification', 98, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 106, 106.5);
+
+
+//..........................
+$pdf->SetFont('times', '', 10);
+$html ="<div>and I have interpreted every question on the application and instructions and interpreted the applicant's answers to the questions in<br>
+that language, and the applicant informed me that they understood every instruction, question, and answer on the application.</div>";
+$pdf->writeHTMLCell(190, 5, 12, 113.5,$html, '', 0, false, true, 'L', true);
+
+
+//................
+
+//...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interpreter's Signaturer</div>";
+$pdf->writeHTMLCell(190, 5, 12, 123,$html, '', 0, false, true, 'L', true);
+$pdf->writeHTMLCell(132, 5, 20.5, 129.3,'', 1, 0, false, true, 'L', true);
+
+//............
+$pdf->SetFont('times', '', 10);
+$html ="<div>Date of Signature (mm/dd/yyyy)</div>";
+$pdf->writeHTMLCell(190, 5, 155, 123,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p4_interpreter_info_6', 47, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 155.5, 129);
+
+
+
+// !
+
+
+$pdf->SetFillColor(220,220,220);
+$pdf->setCellPaddings(1, 0.5, 1, 1); // set cell padding
+$pdf->SetFont('times', '', 12); // set font
+$html ="<div><b>Part 5. Contact Information, Declaration, and Signature of the Person Preparing this Application,
+if Other Than the Applicant</b></div>";
+$pdf->writeHTMLCell(191, 7, 13, 139, $html, 1, 1, true, false, 'J', true);
+
+//.............
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ="<div><b>Preparer's Full Name</b></div>";
+$pdf->writeHTMLCell(191, 6, 13, 152.7, $html, '', 1, true, false, 'L', false);
 
 
 
 
 
 
+//..........................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preparer's Family Name (Last Name)</div>";
+$pdf->writeHTMLCell(190, 5, 12, 158,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_preparare_info_1_family_name', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 163.5);
+// //...................
+$pdf->SetFont('times', '', 10);
+$html ="<div> Preparer's Given Name (First Name)</div>";
+$pdf->writeHTMLCell(190, 5, 112, 158,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_preparare_info_1_given_name', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 113, 163.5);
+//...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preparer's Business or Organization Name</div>";
+$pdf->writeHTMLCell(190, 5, 12, 171.5,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_preparare_info_2', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 177);
+//.............
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ="<div><b>Preparer's Contact Information</b></div>";
+$pdf->writeHTMLCell(191, 6, 13, 186, $html, '', 1, true, false, 'L', false);
+
+// //..........................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preparer's Daytime Telephone Number</div>";
+$pdf->writeHTMLCell(190, 5, 12, 192,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_preparare_info_3', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 198);
+// //...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preparer's Mobile Telephone Number (if any)</div>";
+$pdf->writeHTMLCell(190, 5, 112, 192,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_preparare_info_4', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 198.5);
+// //...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preparer's Email Address (if any)</div>";
+$pdf->writeHTMLCell(190, 5, 12, 205.5,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_preparare_info_5', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 211);
+
+
+// //.............
+$pdf->setCellHeightRatio(1.2);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 1, 1); 
+$pdf->SetFont('times', 'I', 12);
+$html ="<div><b>Preparer's Certification</b></div>";
+$pdf->writeHTMLCell(191, 6, 13, 220, $html, '', 1, true, false, 'L', false);
+
+// //..........................
+$pdf->SetFont('times', '', 10);
+$html ="<div>I certify, under penalty of perjury, that I prepared this application for the applicant at their request and with express consent and that
+all of the responses and information contained in and submitted with the application is complete, true, and correct and reflects only
+information provided by the applicant. The applicant reviewed the responses and information and informed me that they understand
+the responses and information in or submitted with the application.</div>";
+$pdf->writeHTMLCell(190, 5, 12, 226,$html, '', 0, false, true, 'L', true);
 
 
 
 
+// //..........................
 
 
 
+// //................
 
+// //...................
+$pdf->SetFont('times', '', 10);
+$html ="<div><b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preparer's Signature</div>";
+$pdf->writeHTMLCell(190, 5, 12, 243,$html, '', 0, false, true, 'L', true);
+$pdf->writeHTMLCell(132, 5, 20.5, 249,'', 1, 0, false, true, 'L', true);
 
-
-
+// //............
+$pdf->SetFont('times', '', 10);
+$html ="<div>Date of Signature (mm/dd/yyyy)</div>";
+$pdf->writeHTMLCell(190, 5, 155, 243,$html, '', 0, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_preparare_info_6', 47, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 155.5, 249);
 
 
 
@@ -2520,6 +2675,35 @@ var fields = {
     'p3_contact_info_3_email':' ',
 
     'p3_contact_info_4_date':' ',
+
+ //!page 7.................	 
+
+    'p4_interpreter_info_1_family_name':' ',
+ 
+    'p4_interpreter_info_1_given_name':' ',
+    
+    'p4_interpreter_info_2':' ',
+    
+    'p4_interpreter_info_3':' ',
+    
+    'p4_interpreter_info_4':' ',
+    
+    'p4_interpreter_info_5':' ',
+
+    'p4_interpreter_info_6':' ',
+    
+    'p4_interpreter_certification':' ',
+
+    'p5_preparare_info_1_family_name':' ',
+    'p5_preparare_info_1_given_name':' ',
+    'p5_preparare_info_2':' ',
+    'p5_preparare_info_3':' ',
+    'p5_preparare_info_4':' ',
+    'p5_preparare_info_5':' ',
+    'p5_preparare_info_6':' ',
+    'p5_preparare_certification':' ',
+
+   
 
 
 
