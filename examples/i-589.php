@@ -1,9 +1,9 @@
 <?php
 
-//require_once('form_header.php');   //database connection file 
+require_once('formheader.php');   //database connection file 
 
-require_once("config.php");
-$allDataCountry = indexByQueryAllData("SELECT * FROM countries");
+// require_once("config.php");
+// $allDataCountry = indexByQueryAllData("SELECT * FROM countries");
 
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
@@ -66,17 +66,22 @@ class MyPDF extends TCPDF {
 		$header_top_border = array(
 		   'B' => array('width' => 0.5, 'color' => array(0,0,0), 'dash' => 0, 'cap' => 'butt'),
 		);
-		$this->Cell(191.5, 4, '', $header_top_border, 1, 1);
+	if($this->page > 1){
+   	$this->Cell(189.5, 4, '', $header_top_border, 1, 1);
+      $this->SetFont('times', '', 9);
+		$this->Cell(38, 6, "Form I-589 Edition 03/01/23 ", 0, 0, 'R');	
+		$this->MultiCell(59, 5.8, 'Page '.$this->getAliasNumPage(), 0, 'R', 0, 1, 152.5, 264.5, true);
+   }
 		
         // Set font
-        $this->SetFont('times', '', 9);
-		
-		$this->Cell(180, 6, "Form I-589 (Rev. 08/25/20) ", 0, 0, 'R');
-		
-        // $this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 'T', 'R', 1, 0);
-		
-		$this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage(), 0, 'R', 0, 1, 153, 264.5, true);
-		
+
+  
+if($this->page==1){       
+   $this->SetFont('times', '', 9.2);
+   $this->MultiCell(59, 10, 'Page '.$this->getAliasNumPage(), 0, 'R', 0, 1, 152.5, 264.5, true);   
+   $this->MultiCell(59, 10, 'Form I-589 Edition 03/01/23', 0, 'L', 0, 1, 13, 264.5, true);
+}
+
         // Page number
         
     }
@@ -157,24 +162,24 @@ $style = array(
  
 // $pdf->Ln(2);
 
-// Logo
+// !Logo
 $pdf->SetFont('times', 'B', 9);	// set font
-$pdf->MultiCell(80, 7, "Department of Homeland Security", 0, 'L', 0, 1, 12, 8, true);
+$pdf->MultiCell(80, 1, "Department of Homeland Security", 0, 'L', 0, 1, 12, 8, true);
 
 $pdf->SetFont('times', '', 9);	// set font
-$pdf->MultiCell(80, 7, "U.S. Citizenship and Immigration Services", 0, 'L', 0, 1, 12, 12, true);
+$pdf->MultiCell(80, 1, "U.S. Citizenship and Immigration Services", 0, 'L', 0, 1, 12, 12, true);
 
 $pdf->SetFont('times', 'B', 9);	// set font
-$pdf->MultiCell(80, 7, "U.S. Department of Justice", 0, 'L', 0, 1, 12, 18, true);
+$pdf->MultiCell(80, 1, "U.S. Department of Justice", 0, 'L', 0, 1, 12, 18, true);
 
 $pdf->SetFont('times', '', 9);	// set font
-$pdf->MultiCell(80, 7, "Executive Office for Immigration Review", 0, 'L', 0, 1, 12, 22, true);
+$pdf->MultiCell(80, 1, "Executive Office for Immigration Review", 0, 'L', 0, 1, 12, 22, true);
 
 
 
 
 $pdf->SetFont('times', '', 9);	// set font
-$pdf->MultiCell(80, 15, "OMB No. 1615-0067; Expires 07/31/2022", 0, 'R', 0, 1, 124, 8, true);
+$pdf->MultiCell(80, 1, "OMB No. 1615-0067; Expires 06/30/2026", 0, 'R', 0, 1, 124, 8, true);
 
 
 
@@ -182,7 +187,7 @@ $pdf->MultiCell(80, 15, "OMB No. 1615-0067; Expires 07/31/2022", 0, 'R', 0, 1, 1
 
 $pdf->SetFont('times', 'B', 14);	// set font
 $pdf->setCellPaddings(2, 1, 6, 0); // set cell padding
-$pdf->MultiCell(80, 5, "I-589, Application for Asylum and for Withholding of Removal", 0, 'R', 0, 1, 129, 13, true);
+$pdf->MultiCell(80, 1, "I-589, Application for Asylum and for Withholding of Removal", 0, 'R', 0, 1, 129, 13, true);
 
 $pdf->Ln(1.3);
 
@@ -197,25 +202,27 @@ $pdf->SetLineWidth(0.1); // set border width
 $pdf->SetDrawColor(0,0,0); // set color for cell border
 $pdf->SetFillColor(255,255,255); // set filling color
 $pdf->setCellHeightRatio(1.1); // set cell height ratio
-$pdf->MultiCell(0, 0, '', 'T', 1, 'C', 1, 12.8, 30.65, false, 'T', 'C');
-//...........
+$pdf->MultiCell(0, 0, '', 'T', 1, 'C', 1, 12.8, 29.65, false, 'T', 'C');
+// ...........
 
-$pdf->SetFont('times', 'B', 9);	// set font
-$pdf->MultiCell(190, 7, "START HERE - Type or print in black ink. See the instructions for information about eligibility and how to complete and file this application. There is no filing fee for this application.", 0, 'L', 0, 1, 12, 33, true);
+$pdf->SetFont('times', 'B', 9.5);	// set font
+$pdf->MultiCell(190, 1, "START HERE - Type or print in black ink. See the instructions for information about eligibility and how to complete and file this application. There is no filing fee for this application.", 0, 'L', 0, 1, 12, 30, true);
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.5);
 $html ='<div><b>NOTE: </b>  <input type="checkbox" name="notice" value="N"/> Check this box if you also want to apply for withholding of removal under the Convention Against Torture.</div>';
-$pdf->writeHTMLCell(190, 7, 12, 41, $html, 0, 1, false, false, 'L', true);
-//...........
+$pdf->writeHTMLCell(190, 1, 12, 40, $html, 0, 1, false, false, 'L', true);
+// //...........
 
 $pdf->SetFillColor(220,220,220);
-$pdf->writeHTMLCell (189.6, 206, 13, 48, "", 1, 1, false,true,'C', true);
+$pdf->writeHTMLCell (189.6, 1, 13, 48, "", "T", 1, false,true,'C', true);
+$pdf->writeHTMLCell (189.6, 1, 13, 248.9, "", "B", 1, false,true,'C', true);
+
 $pdf->SetFont('times', 'B', 12); 
-$pdf->writeHTMLCell (189, 5, 13.3, 48.2, "Part A.I. Information About You", "B", 1, true,true,'L', true); 
+$pdf->writeHTMLCell (189, 3, 13.3, 48.2, "Part A.I. Information About You", "B", 1, true,true,'L', true); 
 //...........
 $pdf->SetFont('times', '', 9);
-$html ='<div><b>1. </b> Alien Registration Number(s) <i>(A-Number) (if any) </i></div>';
-$pdf->writeHTMLCell(100, 4, 13, 54, $html, 0, 1, false, true, 'L', true);
+$html ='<div><b>1. </b> Alien Registration Number(s) (A-Number) <i>(if any) </i></div>';
+$pdf->writeHTMLCell(100, 1, 13, 54, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_alien_registration_number', 68, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 14, 59);
 $pdf->writeHTMLCell (1, 10, 82, 55, "", "R", 1, false,true,'C', true);  //verticale line | .
@@ -223,7 +230,7 @@ $pdf->writeHTMLCell (1, 10, 82, 55, "", "R", 1, false,true,'C', true);  //vertic
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>2. </b> U.S. Social Security Number <i> (if any) </i></div>';
-$pdf->writeHTMLCell(100, 4, 59, 54, $html, 0, 1, false, true, 'C', true);
+$pdf->writeHTMLCell(100, 1, 59, 54, $html, 0, 1, false, true, 'C', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_us_social_security_number', 52, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 84, 59);
 $pdf->writeHTMLCell (1, 10, 135, 55, "", "R", 1, false,true,'C', true);  //verticale line | .
@@ -232,7 +239,7 @@ $pdf->writeHTMLCell (1, 10, 135, 55, "", "R", 1, false,true,'C', true);  //verti
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>3. </b> USCIS Online Account Number <i> (if any) </i></div>';
-$pdf->writeHTMLCell(100, 4, 115, 54, $html, 0, 1, false, true, 'C', true);
+$pdf->writeHTMLCell(100, 1, 115, 54, $html, 0, 1, false, true, 'C', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_uscis_online_account_number', 65, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 137, 59);
 
@@ -243,7 +250,7 @@ $pdf->writeHTMLCell (189.6, 1, 13, 65, "", "T", 1, false,true,'C', true);  // 1,
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>4. </b> Complete Last Name</div>';
-$pdf->writeHTMLCell(100, 4, 13, 64, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 13, 64, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_complete_lastname', 75, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 14, 69);
 $pdf->writeHTMLCell (1, 10, 89, 65, "", "R", 1, false,true,'C', true);  //verticale line | .
@@ -251,7 +258,7 @@ $pdf->writeHTMLCell (1, 10, 89, 65, "", "R", 1, false,true,'C', true);  //vertic
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>5. </b>  First Name </div>';
-$pdf->writeHTMLCell(100, 4, 50, 64, $html, 0, 1, false, true, 'C', true);
+$pdf->writeHTMLCell(100, 1, 50, 64, $html, 0, 1, false, true, 'C', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_first_name', 52, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 90, 69);
 $pdf->writeHTMLCell (1, 10, 141, 65, "", "R", 1, false,true,'C', true);  //verticale line | .
@@ -260,7 +267,7 @@ $pdf->writeHTMLCell (1, 10, 141, 65, "", "R", 1, false,true,'C', true);  //verti
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>6. </b> Middle Name</div>';
-$pdf->writeHTMLCell(100, 4, 103, 64, $html, 0, 1, false, true, 'C', true);
+$pdf->writeHTMLCell(100, 1, 103, 64, $html, 0, 1, false, true, 'C', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_middle_name', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 142, 69);
 
@@ -268,27 +275,27 @@ $pdf->writeHTMLCell (189.6, 1, 13, 69, "", "B", 1, false,true,'C', true);  // 4,
 //.......
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>7. </b> What other names have you used <i>(include maiden name and aliases)?</i></div>';
-$pdf->writeHTMLCell(100, 4, 13, 74, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 13, 74, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_what_other_name_used', 188, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 14, 79);
 $pdf->writeHTMLCell (189.6, 1, 13, 79, "", "B", 1, false,true,'C', true);  // 7 .end
 //...........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>8. </b> Residence in the U.S. <i>(where you physically reside)</i></div>';
-$pdf->writeHTMLCell(100, 4, 13, 84, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 13, 84, $html, 0, 1, false, true, 'L', true);
 
 $pdf->writeHTMLCell (189.6, 1, 13, 85, "", "B", 1, false, true,'C', true);  // 7 horizontal line .end
 
 //...........
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 8.7);
 $html ='<div> Street Number and Name </div>';
-$pdf->writeHTMLCell(100, 4, 13, 90, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 13, 90, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_residence_street_number_name', 130, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 94);
 //..........
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 8.7);
 $html ='<div> Apt. Number </div>';
-$pdf->writeHTMLCell(100, 4, 143, 90, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 143, 90, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_residence_apt_number', 59, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 94);
 
@@ -296,220 +303,226 @@ $pdf->writeHTMLCell (1, 9, 142, 91, "", "R", 1, false,true,'C', true);  //vertic
 $pdf->writeHTMLCell (189.6, 1, 13, 94, "", "B", 1, false, true,'C', true);  // 8 horizontal line .end
 //...............
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 8.7);
 $html ='<div> City </div>';
-$pdf->writeHTMLCell(100, 4, 13, 99, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 13, 99, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_residence_city', 54, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 103);
 //..........
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 8.7);
 $html ='<div> State </div>';
-$pdf->writeHTMLCell(100, 4, 67, 99, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 67, 99, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_residence_state', 50, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 68, 103);
 //............
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 8.7);
 $html ='<div> Zip Code </div>';
-$pdf->writeHTMLCell(100, 4, 117, 99, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 117, 99, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_residence_zipcode', 30, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 119, 103);
 //.............
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 8.7);
 $html ='<div> Telephone Number <br> (  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp;  )</div>';
-$pdf->writeHTMLCell(100, 4, 149, 99, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 149, 99, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_residence_telephone_code', 10, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 152, 103);
 $pdf->TextField('a_i_residence_telephone_number', 37, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 165, 103);
-//............
-
+// ............
+// 
 $pdf->writeHTMLCell (1, 9, 67, 100, "", "R", 1, false,true,'C', true);  //verticale line | .
 $pdf->writeHTMLCell (1, 9, 117, 100, "", "R", 1, false,true,'C', true);  //verticale line | .
 $pdf->writeHTMLCell (1, 9, 149, 100, "", "R", 1, false,true,'C', true);  //verticale line | .
-$pdf->writeHTMLCell (189.6, 1, 13, 103, "", "B", 1, false, true,'C', true);  // 8 horizontal line .end
+$pdf->writeHTMLCell (189.6, 1, 13, 103, "", "B", 1, false, true,'C', true);  
+
+$pdf->writeHTMLCell (189.6, 1, 13, 107, "", "B", 1, false, true,'C', true);  
+$pdf->writeHTMLCell (189.6, 60, 13, 48, "", "L", 1, false, true,'C', true);   
+$pdf->writeHTMLCell (189.6, 60, 13, 108, "", "L", 1, false, true,'C', true);  
+$pdf->writeHTMLCell (189.6, 60, 13, 168, "", "L", 1, false, true,'C', true);  
+
+$pdf->writeHTMLCell (189.6, 60, 202.5, 48, "", "L", 1, false, true,'C', true);   
+$pdf->writeHTMLCell (189.6, 60, 202.5, 108, "", "L", 1, false, true,'C', true);  
+$pdf->writeHTMLCell (189.6, 60, 202.5, 168, "", "L", 1, false, true,'C', true);  
+
+// ..............20
+$pdf->SetFont('times', '', 8.7);
+$html ='<div><b>(NOTE</b>: <i>You must be residing in the United States to submit this form.</i>)
+</div>';
+$pdf->writeHTMLCell(100, 4, 13, 107.8, $html, 0, 1, false, true, 'L', true);
 //...............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>9. </b>Mailing Address in the U.S. <i>(if different than the address in Item Number 8)</i></div>';
-$pdf->writeHTMLCell(120, 4, 13, 108, $html, 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell (189.6, 1, 13, 108, "", "B", 1, false, true,'C', true);  //9 horizontal line .end
-//...........
+$pdf->writeHTMLCell(120, 4, 13, 113, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell (189.6, 1, 13, 113, "", "B", 1, false, true,'C', true);  //9 horizontal line .end
+// //...........
 
 $pdf->SetFont('times', '', 9);
 $html ='<div> In Care Of <i>(if applicable):</i> </div>';
-$pdf->writeHTMLCell(100, 4, 13, 112, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 13, 117, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_mailing_in_care_of', 130, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 117);
-//.............
+$pdf->TextField('a_i_mailing_in_care_of', 130, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 122);
+// //.............
 $pdf->SetFont('times', '', 9);
 $html ='<div> Telephone Number <br> (  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp;  )</div>';
-$pdf->writeHTMLCell(100, 4, 143, 113, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 143, 117, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_mailing_telephone_code', 10, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 146, 117);
-$pdf->TextField('a_i_mailing_telephone_number', 44, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 158, 117);
+$pdf->TextField('a_i_mailing_telephone_code', 10, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 146, 122);
+$pdf->TextField('a_i_mailing_telephone_number', 44, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 158, 122);
 //............
 
-$pdf->writeHTMLCell (1, 9, 142, 114, "", "R", 1, false,true,'C', true);  //verticale line | .
-$pdf->writeHTMLCell (189.6, 1, 13, 117, "", "B", 1, false, true,'C', true);  // 9 horizontal line .end
-//...............
+$pdf->writeHTMLCell (1, 9, 142, 119, "", "R", 1, false,true,'C', true);  //verticale line | .
+$pdf->writeHTMLCell (189.6, 1, 13, 122, "", "B", 1, false, true,'C', true);  // 9 horizontal line .end
+// //...............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div> Street Number and Name </div>';
-$pdf->writeHTMLCell(100, 4, 13, 122, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 13, 127, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_mailing_street_number_name', 129, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 126);
-//..........
+$pdf->TextField('a_i_mailing_street_number_name', 129, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 131);
+// //..........
 $pdf->SetFont('times', '', 9);
 $html ='<div> Apt. Number </div>';
-$pdf->writeHTMLCell(100, 4, 143, 122, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 143, 127, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_mailing_apt_number', 58, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 144, 126);
-$pdf->writeHTMLCell (1, 9, 142, 123, "", "R", 1, false,true,'C', true);  //verticale line | .
-$pdf->writeHTMLCell (189.6, 1, 13, 126, "", "B", 1, false, true,'C', true);  // 9 horizontal line .end
-//...........
+$pdf->TextField('a_i_mailing_apt_number', 58, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 144, 131);
+$pdf->writeHTMLCell (1, 9, 142, 128, "", "R", 1, false,true,'C', true);  //verticale line | .
+$pdf->writeHTMLCell (189.6, 1, 13, 131, "", "B", 1, false, true,'C', true);  // 9 horizontal line .end
+// //...........
 
 $pdf->SetFont('times', '', 9);
 $html ='<div> City </div>';
-$pdf->writeHTMLCell(100, 4, 13, 131, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 13, 136, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_mailing_city', 67, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 135);
-//..........
+$pdf->TextField('a_i_mailing_city', 67, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 140);
+// //..........
 $pdf->SetFont('times', '', 9);
 $html ='<div> State </div>';
-$pdf->writeHTMLCell(100, 4, 80, 131, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 80, 136, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_mailing_state', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 82, 135);
-//............
+$pdf->TextField('a_i_mailing_state', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 82, 140);
+// //............
 $pdf->SetFont('times', '', 9);
 $html ='<div> Zip Code </div>';
-$pdf->writeHTMLCell(100, 4, 143, 131, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 143, 136, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_mailing_zipcode', 58, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 144, 135);
-//.............
-$pdf->writeHTMLCell (1, 9, 142, 132, "", "R", 1, false,true,'C', true);  //verticale line | .
-$pdf->writeHTMLCell (1, 9, 80, 132, "", "R", 1, false,true,'C', true);  //verticale line | .
-$pdf->writeHTMLCell (189.6, 1, 13, 135, "", "B", 1, false, true,'C', true);  // 9 horizontal line .end
+$pdf->TextField('a_i_mailing_zipcode', 58, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 144, 140);
+// //.............
+$pdf->writeHTMLCell (1, 9, 142, 137, "", "R", 1, false,true,'C', true);  //verticale line | .
+$pdf->writeHTMLCell (1, 9, 80, 137, "", "R", 1, false,true,'C', true);  //verticale line | .
+$pdf->writeHTMLCell (189.6, 1, 13, 140, "", "B", 1, false, true,'C', true);  // 9 horizontal line .end
 
-//...........
+// //...........
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>10.  </b> Gender:  <input type="checkbox" name="gender" value="male"/>    Male   <input type="checkbox" name="gender" value="female"/> Female </div>';
-$pdf->writeHTMLCell(100, 4, 13, 140, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 13, 145, $html, 0, 1, false, true, 'L', true);
 
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>11.  </b>  Marital Status:  <input type="checkbox" name="marital" value="single"/>    Single   <input type="checkbox" name="marital" value="married"/> Married    <input type="checkbox" name="divorced" value="divorced"/> Divorced    <input type="checkbox" name="widowed" value="widowed"/> Widowed</div>';
-$pdf->writeHTMLCell(120, 4, 71, 140, $html, 0, 1, false, true, 'L', true);
-//..........
+$pdf->writeHTMLCell(120, 4, 71, 145, $html, 0, 1, false, true, 'L', true);
+// //..........
 
-$pdf->writeHTMLCell (1, 5, 70, 141, "", "R", 1, false,true,'C', false);  //verticale line | .
-$pdf->writeHTMLCell (189.6, 1, 13, 139, "", "B", 1, false, true,'C', true);  // 10 horizontal line .end
+$pdf->writeHTMLCell (1, 5, 70, 146, "", "R", 1, false,true,'C', false);  //verticale line | .
+$pdf->writeHTMLCell (189.6, 1, 13, 145, "", "B", 1, false, true,'C', true);  // 10 horizontal line .end
 
-//..........
+// //..........
 
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>12.  </b>  Date of Birth <i>(mm/dd/yyyy)</i></div>';
-$pdf->writeHTMLCell(100, 4, 13, 144, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 13, 149.6, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_date_of_birth', 57, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 148);
-//...........
+$pdf->TextField('a_i_date_of_birth', 57, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 154.5);
+// //...........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>13.  </b>  City and Country of Birth</div>';
-$pdf->writeHTMLCell(120, 4, 71, 144, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(120, 4, 71, 149.6, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_country_of_birth', 130, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 72, 148);
+$pdf->TextField('a_i_country_of_birth', 130, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 72, 154.5);
 
-$pdf->writeHTMLCell (1, 7, 70, 146, "", "R", 1, false,true,'C', false);  //verticale line | .
-$pdf->writeHTMLCell (189.6, 1, 13, 147, "", "B", 1, false, true,'C', true);  // 13 horizontal line .end
-//..........
+$pdf->writeHTMLCell (1, 9, 70, 151, "", "R", 1, false,true,'C', false);  //verticale line | .
+$pdf->writeHTMLCell (189.6, 1, 13, 154, "", "B", 1, false, true,'C', true);  // 13 horizontal line .end
+// //..........
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>14.  </b>  Present Nationality <i>(Citizenship)</i></div>';
-$pdf->writeHTMLCell(100, 4, 13, 152, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 13, 158.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_present_nationality', 57, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 156);
-//........
+$pdf->TextField('a_i_present_nationality', 57, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 163);
+// //........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>15.  </b> Nationality at Birth</div>';
-$pdf->writeHTMLCell(120, 4, 71, 152, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(120, 4, 71, 158.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_nationality_at_birth', 47, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 72, 156);
-//.........
+$pdf->TextField('a_i_nationality_at_birth', 47, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 72, 163);
+// //.........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>16.  </b>  Race, Ethnic, or Tribal Group</div>';
-$pdf->writeHTMLCell(120, 4, 120, 152, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(120, 4, 120, 158.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_race_ethnic_tribal', 48, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 121, 156);
-//..........
+$pdf->TextField('a_i_race_ethnic_tribal', 48, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 121, 163);
+// //..........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>17.  </b> Religion </div>';
-$pdf->writeHTMLCell(100, 4, 170, 152, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 170, 158.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_religion', 31, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 171, 156);
+$pdf->TextField('a_i_religion', 31, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 171, 163);
 
-$pdf->writeHTMLCell (1, 8, 70, 153, "", "R", 1, false,true,'C', false);  //verticale line | .
-$pdf->writeHTMLCell (1, 8, 119, 153, "", "R", 1, false,true,'C', false);  //verticale line | .
-$pdf->writeHTMLCell (1, 8, 169, 153, "", "R", 1, false,true,'C', false);  //verticale line | .
-$pdf->writeHTMLCell (189.6, 1, 13, 155, "", "B", 1, false, true,'C', true);  // 17 horizontal line .end
-//..........
+$pdf->writeHTMLCell (1, 7.8, 70, 160, "", "R", 1, false,true,'C', false);  //verticale line | .
+$pdf->writeHTMLCell (1, 7.8, 119, 160, "", "R", 1, false,true,'C', false);  //verticale line | .
+$pdf->writeHTMLCell (1, 7.8, 169, 160, "", "R", 1, false,true,'C', false);  //verticale line | .
+$pdf->writeHTMLCell (189.6, 1, 13, 161.9, "", "B", 1, false, true,'C', true);  // 17 horizontal line .end
+// //..........
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>18. </b><i> Check the box, a through c, that applies:</i></div>';
-$pdf->writeHTMLCell(100, 4, 13, 160, $html, 0, 1, false, true, 'L', true);
-//........
-$pdf->SetFont('times', '', 9);
+$pdf->writeHTMLCell(100, 4, 13, 166.5, $html, 0, 1, false, true, 'L', true);
+// //........
+$pdf->SetFont('times', '', 9.5);
 $html ='<div><b>a. </b> <input type="checkbox" name="never_been" value="a"/> I have never been in Immigration Court proceedings.</div>';
-$pdf->writeHTMLCell(100, 4, 71, 160, $html, 0, 1, false, true, 'L', true);
-//.........
+$pdf->writeHTMLCell(100, 4, 73.5, 166.8, $html, 0, 1, false, true, 'L', true);
+// //.........
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.5);
 $html ='<div><b>b. </b> <input type="checkbox" name="iam_now" value="a"/> I am now in Immigration Court proceedings. </div>';
-$pdf->writeHTMLCell(100, 4, 17, 163, $html, 0, 1, false, true, 'L', true);
-//............
-$pdf->SetFont('times', '', 9);
-$html ='<div><b>c. </b> <input type="checkbox" name="iam_not_now" value="a"/> I am not now in Immigration Court proceedings, but I have been in the past.</div>';
-$pdf->writeHTMLCell(120, 4, 87, 163, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 17, 170.3, $html, 0, 1, false, true, 'L', true);
+// //............
+$pdf->SetFont('times', '', 9.5);
+$html ='<div><b>c. </b> <input type="checkbox" name="iam_not_now" value="a"/> I am <b>not</b> now in Immigration Court proceedings, but I have been in the past.</div>';
+$pdf->writeHTMLCell(120, 4, 90, 170.3, $html, 0, 1, false, true, 'L', true);
 
-$pdf->writeHTMLCell (189.6, 1, 13, 163, "", "B", 1, false, true,'C', true);  // 18 horizontal line .end
-//..........
+$pdf->writeHTMLCell (189.6, 1, 13, 170, "", "B", 1, false, true,'C', true);  // 18 horizontal line .end
+// //..........
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>19. </b><i> Complete 19 a through c. </i></div>';
-$pdf->writeHTMLCell(100, 4, 13, 167, $html, 0, 1, false, true, 'L', true);
-//........
+$pdf->writeHTMLCell(100, 4, 13, 174.5, $html, 0, 1, false, true, 'L', true);
+// //........
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>a. </b> When did you last leave your country? <i>(mm/dd/yyyy)</i> </div>';
-$pdf->writeHTMLCell(100, 4, 17, 171, $html, 0, 1, false, true, 'L', true);
-//............
+$pdf->writeHTMLCell(100, 4, 17, 178, $html, 0, 1, false, true, 'L', true);
+// //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_last_leave_country', 20, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 90, 170);
-$pdf->writeHTMLCell (20, 1, 90, 170, "", "B", 1, false, true,'C', true);  // 17 horizontal line .end
-//.........
+$pdf->TextField('a_i_last_leave_country', 20, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 90, 177);
+$pdf->writeHTMLCell (20, 1, 90, 177, "", "B", 1, false, true,'C', true);  // 17 horizontal line .end
+// //.........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>b. </b> What is your current I-94 Number, if any?</div>';
-$pdf->writeHTMLCell(100, 4, 115, 171, $html, 0, 1, false, true, 'L', true);
-//............
+$pdf->writeHTMLCell(100, 4, 115, 178, $html, 0, 1, false, true, 'L', true);
+// //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_current_i-94_number', 25, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 175, 170);
-$pdf->writeHTMLCell (25, 1, 175, 170, "", "B", 1, false, true,'C', true);  // 17 horizontal line .end
-//...........
+$pdf->TextField('a_i_current_i-94_number', 25, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 175, 177);
+$pdf->writeHTMLCell (25, 1, 175, 177, "", "B", 1, false, true,'C', true);  // 17 horizontal line .end
+// //...........
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>c. </b>List each entry into the U.S. beginning with your most recent entry.<i> List date (mm/dd/yyyy), place, and your status for each entry. (Attach additional sheets as needed.)</i> </div>';
-$pdf->writeHTMLCell(170, 4, 18, 175, $html, 0, 1, false, true, 'L', true);
-
-//.........
-$pdf->SetFont('times', '', 9);
-$html ='<div>Date</div>';
-$pdf->writeHTMLCell(100, 4, 18, 184, $html, 0, 1, false, true, 'L', true);
-//............
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_date1', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 26, 185);
-$pdf->writeHTMLCell (25, 1, 26, 184, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+$pdf->writeHTMLCell(170, 4, 16, 182, $html, 0, 1, false, true, 'L', true);
 
 //.........
 $pdf->SetFont('times', '', 9);
@@ -517,183 +530,194 @@ $html ='<div>Date</div>';
 $pdf->writeHTMLCell(100, 4, 18, 191, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_date2', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 26, 192);
+$pdf->TextField('a_i_date1', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 26, 192);
 $pdf->writeHTMLCell (25, 1, 26, 191, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
-//...........
 
+// //.........
 $pdf->SetFont('times', '', 9);
 $html ='<div>Date</div>';
 $pdf->writeHTMLCell(100, 4, 18, 198, $html, 0, 1, false, true, 'L', true);
-//............
+// //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_date3', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 26, 199);
-$pdf->writeHTMLCell (25, 1, 26, 198, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
-//..............................
+$pdf->TextField('a_i_date2', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 26, 198);
+$pdf->writeHTMLCell (25, 1, 26, 197, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+// //...........
+
+$pdf->SetFont('times', '', 9);
+$html ='<div>Date</div>';
+$pdf->writeHTMLCell(100, 4, 18, 204, $html, 0, 1, false, true, 'L', true);
+// //............
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_i_date3', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 26, 205);
+$pdf->writeHTMLCell (25, 1, 26, 204, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+// //..............................
 
 $pdf->SetFont('times', '', 9);
 $html ='<div>Place</div>';
-$pdf->writeHTMLCell(100, 4, 53, 184, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 53, 190, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_place1', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 62, 185);
-$pdf->writeHTMLCell (40, 1, 62, 184, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+$pdf->TextField('a_i_place1', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 62, 191);
+$pdf->writeHTMLCell (40, 1, 62, 190, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
 
-//.....................
+// //.....................
 
 $pdf->SetFont('times', '', 9);
 $html ='<div>Place</div>';
-$pdf->writeHTMLCell(100, 4, 53, 191, $html, 0, 1, false, true, 'L', true);
-//............
+$pdf->writeHTMLCell(100, 4, 53, 197, $html, 0, 1, false, true, 'L', true);
+// //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_place2', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 62, 192);
-$pdf->writeHTMLCell (40, 1, 62, 191, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+$pdf->TextField('a_i_place2', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 62, 198);
+$pdf->writeHTMLCell (40, 1, 62, 197, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
 //..............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div>Place</div>';
-$pdf->writeHTMLCell(100, 4, 53, 198, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 53, 204, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_place3', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 62, 199);
-$pdf->writeHTMLCell (40, 1, 62, 198, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+$pdf->TextField('a_i_place3', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 62, 205);
+$pdf->writeHTMLCell (40, 1, 62, 204, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
 
-//..........................................................
-
-//.........
-$pdf->SetFont('times', '', 9);
-$html ='<div>Status</div>';
-$pdf->writeHTMLCell(100, 4, 105, 184, $html, 0, 1, false, true, 'L', true);
-//............
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_status1', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 115, 185);
-$pdf->writeHTMLCell (25, 1, 115, 184, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+// //..........................................................
 
 //.........
 $pdf->SetFont('times', '', 9);
 $html ='<div>Status</div>';
-$pdf->writeHTMLCell(100, 4, 105, 191, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 105, 189, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_status2', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 115, 192);
-$pdf->writeHTMLCell (25, 1, 115, 191, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
-//...........
+$pdf->TextField('a_i_status1', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 115, 191);
+$pdf->writeHTMLCell (25, 1, 115, 190, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+
+//.........
+$pdf->SetFont('times', '', 9);
+$html ='<div>Status</div>';
+$pdf->writeHTMLCell(100, 4, 105, 197, $html, 0, 1, false, true, 'L', true);
+//............
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_i_status2', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 115, 198);
+$pdf->writeHTMLCell (25, 1, 115, 197, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+// //...........
 
 $pdf->SetFont('times', '', 9);
 $html ='<div>Status</div>';
-$pdf->writeHTMLCell(100, 4, 105, 198, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 105, 204, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_status3', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 115, 199);
-$pdf->writeHTMLCell (25, 1, 115, 198, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+$pdf->TextField('a_i_status3', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 115, 205);
+$pdf->writeHTMLCell (25, 1, 115, 204, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
 
 //...........................
 $pdf->SetFont('times', '', 9);
 $html ='<div>Date Status Expired</div>';
-$pdf->writeHTMLCell(100, 4, 142, 184, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 142, 190, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_date_status_expired', 30, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 170, 185);
-$pdf->writeHTMLCell (30, 1, 170, 184, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
+$pdf->TextField('a_i_date_status_expired', 30, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 170, 191);
+$pdf->writeHTMLCell (30, 1, 170, 190, "", "B", 1, false, true,'C', true);  // 19 horizontal line .end
 //........
-$pdf->writeHTMLCell (189.6, 1, 13, 199, "", "B", 1, false,true,'C', true);
-//.........
+$pdf->writeHTMLCell (189.6, 1, 13, 205, "", "B", 1, false,true,'C', true);
+// //.........
 
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>20. </b> What country issued your last passport or travel<br> &nbsp; &nbsp; &nbsp;
 document?</div>';
-$pdf->writeHTMLCell(80, 4, 13, 204, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 4, 13, 210, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_what_country_issued', 70, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 212);
+$pdf->TextField('a_i_what_country_issued', 70, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 218);
 //........
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>21. </b> Passport Number</div>';
-$pdf->writeHTMLCell(80, 4, 85, 204, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 4, 85, 210, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_passport_number', 53, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 115, 205);
-//........
+$pdf->TextField('a_i_passport_number', 53, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 115, 211.5);
+// //........
 
 
 $pdf->SetFont('times', '', 9);
 $html ='<div>Travel Document Number</div>';
-$pdf->writeHTMLCell(80, 4, 85, 211, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 4, 85, 217, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_travel_document_number', 46, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 122, 212);
+$pdf->TextField('a_i_travel_document_number', 46, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 122, 218);
 //........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>22. </b> Expiration Date <br>  &nbsp; &nbsp; &nbsp;
 (mm/dd/yyyy)</div>';
-$pdf->writeHTMLCell(80, 4, 170, 204, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 4, 170, 210, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_expiration_date', 32, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 170, 212);
+$pdf->TextField('a_i_expiration_date', 32, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 170, 218);
 //........
-$pdf->writeHTMLCell (189.6, 1, 13, 211, "", "B", 1, false,true,'C', true); // horizontal line 
+$pdf->writeHTMLCell (189.6, 1, 13, 217, "", "B", 1, false,true,'C', true); // horizontal line 
 
-$pdf->writeHTMLCell (1, 12, 83, 205, "", "R", 1, false,true,'C', false);  //verticale line | .
-$pdf->writeHTMLCell (1, 12, 168, 205, "", "R", 1, false,true,'C', false);  //verticale line | .
-$pdf->writeHTMLCell (85, 1, 84, 205, "", "B", 1, false,true,'C', true); // horizontal line 2
+$pdf->writeHTMLCell (1, 12, 83, 210.8, "", "R", 1, false,true,'C', false);  //verticale line | .
+$pdf->writeHTMLCell (1, 12, 168, 210.8, "", "R", 1, false,true,'C', false);  //verticale line | .
+$pdf->writeHTMLCell (85, 1, 84, 211.6, "", "B", 1, false,true,'C', true); // horizontal line 2
 
 //.................
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>23. </b> What is your native language <i>(include dialect, if applicable)?</i></div>';
-$pdf->writeHTMLCell(110, 4, 13, 216, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(110, 4, 13, 222, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_what_is_your_native_language', 85, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 221);
+$pdf->TextField('a_i_what_is_your_native_language', 85, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 227);
 //........
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>24. </b>Are you fluent in English? <br>  &nbsp; &nbsp; &nbsp;  <input type="checkbox" name="fluent_english" value="Y"/>  Yes    &nbsp;   <input type="checkbox" name="fluent_english" value="N"/>   No   </div>';
-$pdf->writeHTMLCell(100, 4, 99, 216, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 99, 222, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>25.</b>What other languages do you speak fluently?</div>';
-$pdf->writeHTMLCell(100, 4, 140, 216, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 140, 222, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_what_other_language_speak_fluently', 62, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 140, 221);
+$pdf->TextField('a_i_what_other_language_speak_fluently', 62, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 140, 227);
 //............
-$pdf->writeHTMLCell (189.6, 1, 13, 221, "", "B", 1, false,true,'C', true); // horizontal line 
-$pdf->writeHTMLCell (1, 10, 98, 217, "", "R", 1, false,true,'C', false);  //verticale line | .
-$pdf->writeHTMLCell (1, 10, 139, 217, "", "R", 1, false,true,'C', false);  //verticale line | .
+$pdf->writeHTMLCell (189.6, 1, 13, 227, "", "B", 1, false,true,'C', true); // horizontal line 
+$pdf->writeHTMLCell (1, 10, 98, 223, "", "R", 1, false,true,'C', false);  //verticale line | .
+$pdf->writeHTMLCell (1, 10, 139, 223, "", "R", 1, false,true,'C', false);  //verticale line | .
 //..................
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>For EOIR use only.</b></div>';
-$pdf->writeHTMLCell(60, 5, 30, 226, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(60, 3, 30, 232, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>For USCIS use only.</b></div>';
-$pdf->writeHTMLCell(15, 7, 70, 226, $html, 0, 1, false, true, 'C', true);
+$pdf->writeHTMLCell(15, 1, 70, 232, $html, 0, 1, false, true, 'C', true);
 
 $html ='<div><b>Action:</b></div>';
-$pdf->writeHTMLCell(50, 7, 70, 226, $html, 0, 1, false, true, 'C', true);
+$pdf->writeHTMLCell(50, 1, 70, 232, $html, 0, 1, false, true, 'C', true);
 
 $html ='<div><b>Decision:</b></div>';
-$pdf->writeHTMLCell(50, 7, 130, 226, $html, 0, 1, false, true, 'C', true);
+$pdf->writeHTMLCell(50, 1, 130, 232, $html, 0, 1, false, true, 'C', true);
 
 //.............
 $html ='<div>Interview Date: _____________________</div>';
-$pdf->writeHTMLCell(100, 7, 90, 230, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 90, 236, $html, 0, 1, false, true, 'L', true);
 
 $html ='<div>Approval Date: ____________________</div>';
-$pdf->writeHTMLCell(100, 7, 148, 230, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 148, 236, $html, 0, 1, false, true, 'L', true);
 
 $html ='<div>Asylum Officer ID No.: ______________</div>';
-$pdf->writeHTMLCell(100, 7, 90, 236, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 90, 242, $html, 0, 1, false, true, 'L', true);
 
 $html ='<div>Denial Date: ______________________</div>';
-$pdf->writeHTMLCell(100, 7, 148, 236, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 148, 242, $html, 0, 1, false, true, 'L', true);
 
 $html ='<div>Referral Date: _____________________</div>';
-$pdf->writeHTMLCell(100, 7, 148, 242, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 1, 148, 248, $html, 0, 1, false, true, 'L', true);
 
-$pdf->writeHTMLCell (1, 27, 68, 227, "", "R", 1, false,true,'C', false);  //verticale line | .
+$pdf->writeHTMLCell (1, 26.3, 13, 228, "", "L", 1, false,true,'C', false);  
+$pdf->writeHTMLCell (1, 21.3, 68, 233, "", "R", 1, false,true,'C', false);  
+$pdf->writeHTMLCell (1, 26.3, 202.5, 228, "", "L", 1, false,true,'C', false);  
 
 //.................. page number 1 end -----------------------------------------------------------------------------
 
@@ -813,7 +837,7 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_race_ethnic_tribal_group', 65, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 78, 67);
 //............
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.7);
 $html ='<div><b>14. </b> Gender <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="gender2" value="m"/>  &nbsp; Male  &nbsp; <input type="checkbox" name="gender2" value="f"/>  &nbsp;  Female</div>';
 $pdf->writeHTMLCell(100, 4, 145, 62, $html, 0, 1, false, true, 'L', true);
 //............
@@ -823,12 +847,14 @@ $pdf->writeHTMLCell(190, 1, 13, 67, "", "B", 1, false, true, 'L', true);
 
 //.............
 $pdf->SetFont('times', '', 9);
-$html ='<div><b>15.</b>  Is this person in the U.S.?  <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="person_us" value="y"/>  Yes <b>(Complete Blocks 16 to 24.) </b>  &nbsp; &nbsp; <input type="checkbox" name="person_us" value="n"/>   No (Specify location) :</div>';
+$html ='<div><b>15.</b>  Is this person in the U.S.?  <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="person_us" value="y"/>  Yes <i>(Complete Blocks 16 to 24.) </i>  &nbsp; &nbsp; <input type="checkbox"
+ name="person_us" value="n"/>   No <i>(Specify location)</i> :</div>';
 $pdf->writeHTMLCell(100, 4, 13, 72, $html, 0, 1, false, true, 'L', true);
 //................
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_nationality_citizenship', 93, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 110, 76);
+$pdf->TextField('a_ii_nationality_citizenship', 98, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 105, 74.8);
 
+$pdf->writeHTMLCell(98, 1, 105, 75, "", "B", 1, false, true, 'L', true);
 $pdf->writeHTMLCell(190, 1, 13, 76, "", "B", 1, false, true, 'L', true);
 //............
 
@@ -905,9 +931,12 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>24.</b> If in the U.S., is your spouse to be included in this application? (Check the appropriate box.) </div>';
 $pdf->writeHTMLCell(180, 4, 13, 105, $html, 0, 1, false, true, 'L', true);
 
-$pdf->SetFont('times', '', 9);
-$html ='<div><input type="checkbox" name="include" value="y"/>  Yes <i>(Attach one photograph of your spouse in the upper right corner of Page 9 on the extra copy of the application submitted for this person.)</i><br><br><input type="checkbox" name="include" value="n"/>   No  </div>';
+$pdf->SetFont('times', '', 10);
+$html ='<div> <input type="checkbox" name="include" value="y"/>  Yes';
 $pdf->writeHTMLCell(190, 5, 15, 110, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10);
+$html ='<div> <input type="checkbox" name="include" value="n"/> No  </div>';
+$pdf->writeHTMLCell(190, 5, 15, 115, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->writeHTMLCell(190, 1, 13, 100, "", "B", 1, false, true, 'L', true); // table end --------------------
 
@@ -920,9 +949,9 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>Your Children</b>. List <b>all</b> of your children, regardless of age, location, or marital status. </div>';
 $pdf->writeHTMLCell(180, 4, 13, 122, $html, 0, 1, false, true, 'L', true);
 
-$pdf->SetFont('times', '', 9);
-$html ='<div><input type="checkbox" name="children" value="y"/>  I do not have any children.  <i>(Skip to <b>Part A.III., Information about your background.)</b></i>
-<br><input type="checkbox" name="children" value="n"/>  I have children. &nbsp;  &nbsp;  &nbsp;   Total number of children:  ____________</div>';
+$pdf->SetFont('times', '', 9.7);
+$html ='<div><input type="checkbox" name="children" value="y"/> I do not have any children.  <i>(Skip to Part A.III., Information about your background.)</i>
+<br><input type="checkbox" name="children" value="n"/> &nbsp;&nbsp;  I have children. &nbsp;  &nbsp;  &nbsp;   Total number of children:  ____________</div>';
 $pdf->writeHTMLCell(190, 5, 15, 127, $html, 0, 1, false, true, 'L', true);
 
 //...........
@@ -1017,7 +1046,7 @@ $pdf->writeHTMLCell(100, 4, 108, 167, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child_race_ethnic_tribal_group', 45, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 108, 172);
 //............
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.7);
 $html ='<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child_gender" value="m"/>  Male  &nbsp;  <input type="checkbox" name="child_gender" value="f"/>  Female </div>';
 $pdf->writeHTMLCell(100, 4, 155, 167, $html, 0, 1, false, true, 'L', true);
 
@@ -1025,12 +1054,13 @@ $pdf->writeHTMLCell(190, 1, 13, 173, "", "B", 1, false, true, 'L', true); // hor
 
 //............
 
-$pdf->SetFont('times', '', 9);
-$html ='<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us" value="n"/> No <i>(Specify location):</i> </div>';
+$pdf->SetFont('times', '', 9.7);
+$html ='<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us3" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us3" value="n"/> No <i>(Specify location):</i> </div>';
 $pdf->writeHTMLCell(180, 4, 13, 179, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_is_this_us', 68, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 135, 180);
+$pdf->TextField('a_ii_child_is_this_us', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 179);
 //............
+$pdf->writeHTMLCell(60, 1, 143, 179, "", "B", 1, false, true, 'L', true);// horizontal line -----
 $pdf->writeHTMLCell(190, 1, 13, 180, "", "B", 1, false, true, 'L', true);// horizontal line -----
 
 //......................
@@ -1081,17 +1111,17 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child_what_is_expiration_date', 58, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 70, 205);
 //............
 
-$pdf->SetFont('times', '', 9);
-$html ='<div><b>20. </b> Is your child in Immigration Court proceedings? <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding" value="n"/> No</div>';
+$pdf->SetFont('times', '', 9.7);
+$html ='<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding" value="n"/> No</div>';
 $pdf->writeHTMLCell(180, 4, 130, 197, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->writeHTMLCell(1, 12, 68, 198, "", "R", 1, false, true, 'L', true); //vertical line 
 $pdf->writeHTMLCell(1, 12, 127, 198, "", "R", 1, false, true, 'L', true); //vertical line
 $pdf->writeHTMLCell(190, 1, 13, 205, "", "B", 1, false, true, 'L', true); // horizontal line---
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.7);
 $html ='<div><b>21. </b> If in the U.S., is this child to be included in this application? <i>(Check the appropriate box.)</i>
- <br><br> &nbsp; &nbsp; &nbsp;<input type="checkbox" name="inc_application" value="y"/>   Yes   <i>(Attach one photograph of your child in the upper right corner of Page 9 on the extra copy of the application submitted for this person.)</i> <br><br> &nbsp; &nbsp; &nbsp;<input type="checkbox" name="inc_application" value="n"/>   No </div>';
+ <br><br> &nbsp; &nbsp; &nbsp;<input type="checkbox" name="inc_application" value="y"/>   Yes    <br><br> &nbsp; &nbsp; &nbsp;<input type="checkbox" name="inc_application" value="n"/>   No </div>';
 $pdf->writeHTMLCell(190, 7, 13, 210, $html, 0, 1, false, true, 'L', true);
 //............table 2 end 
 
@@ -1195,12 +1225,13 @@ $pdf->writeHTMLCell(190, 1, 13, 50, "", "B", 1, false, true, 'L', true); // hori
 
 //............
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.7);
 $html ='<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us" value="n"/> No <i>(Specify location):</i> </div>';
-$pdf->writeHTMLCell(180, 4, 13, 55, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(180, 4, 13, 55.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child2_is_this_us', 68, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 135, 57);
+$pdf->TextField('a_ii_child2_is_this_us', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 56);
 //............
+$pdf->writeHTMLCell(60, 1, 143, 56, "", "B", 1, false, true, 'L', true);// horizontal line -----
 $pdf->writeHTMLCell(190, 1, 13, 57, "", "B", 1, false, true, 'L', true);// horizontal line -----
 
 //......................
@@ -1251,8 +1282,8 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child2_what_is_expiration_date', 58, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 70, 82);
 //............
 
-$pdf->SetFont('times', '', 9);
-$html ='<div><b>20. </b> Is your child in Immigration Court proceedings? <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding" value="n"/> No</div>';
+$pdf->SetFont('times', '', 9.7);
+$html ='<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding" value="n"/> No</div>';
 $pdf->writeHTMLCell(180, 4, 130, 74, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->writeHTMLCell(1, 12, 68, 75, "", "R", 1, false, true, 'L', true); //vertical line 
@@ -1358,13 +1389,14 @@ $pdf->writeHTMLCell(190, 1, 13, 128, "", "B", 1, false, true, 'L', true); // hor
 
 //............
 
-$pdf->SetFont('times', '', 9);
-$html ='<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us" value="n"/> No <i>(Specify location):</i> </div>';
+$pdf->SetFont('times', '', 9.7);
+$html ='<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us2" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us2" value="n"/> No <i>(Specify location):</i> </div>';
 $pdf->writeHTMLCell(180, 4, 13, 134, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child2_is_this_us', 68, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 135, 135);
+$pdf->TextField('a_ii_child2_is_this_us', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 134);
 //............
-$pdf->writeHTMLCell(190, 1, 13, 135, "", "B", 1, false, true, 'L', true);// horizontal line -----
+$pdf->writeHTMLCell(60, 1, 143, 134, "", "B", 1, false, true, 'L', true);// horizontal line -----
+$pdf->writeHTMLCell(190, 1, 13, 135.5, "", "B", 1, false, true, 'L', true);// horizontal line -----
 
 //......................
 $pdf->SetFont('times', '', 9);
@@ -1414,9 +1446,9 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child2_what_is_expiration_date', 58, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 70, 160);
 //............
 
-$pdf->SetFont('times', '', 9);
-$html ='<div><b>20. </b> Is your child in Immigration Court proceedings? <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding" value="n"/> No</div>';
-$pdf->writeHTMLCell(180, 4, 130, 152, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 9.7);
+$html ='<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding" value="n"/> No</div>';
+$pdf->writeHTMLCell(180, 4, 129, 152, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->writeHTMLCell(1, 12, 68, 153, "", "R", 1, false, true, 'L', true); //vertical line 
 $pdf->writeHTMLCell(1, 12, 127, 153, "", "R", 1, false, true, 'L', true); //vertical line
@@ -1514,7 +1546,7 @@ $pdf->writeHTMLCell(100, 4, 108, 198, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child3_race_ethnic_tribal_group', 45, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 108, 203);
 //............
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.7);
 $html ='<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child3_gender" value="m"/>  Male  &nbsp;  <input type="checkbox" name="child3_gender" value="f"/>  Female </div>';
 $pdf->writeHTMLCell(100, 4, 155, 198, $html, 0, 1, false, true, 'L', true);
 
@@ -1522,45 +1554,46 @@ $pdf->writeHTMLCell(190, 1, 13, 203, "", "B", 1, false, true, 'L', true); // hor
 
 //............
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.7);
 $html ='<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child3_us" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child3_us" value="n"/> No <i>(Specify location):</i> </div>';
-$pdf->writeHTMLCell(180, 4, 13, 208, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(180, 4, 13, 208.4, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child3_is_this_us', 68, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 135, 209);
+$pdf->TextField('a_ii_child3_is_this_us', 60, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 143, 209);
 //............
-$pdf->writeHTMLCell(190, 1, 13, 208, "", "B", 1, false, true, 'L', true);// horizontal line -----
+$pdf->writeHTMLCell(60, 1, 143, 208, "", "B", 1, false, true, 'L', true);// horizontal line -----
+$pdf->writeHTMLCell(190, 1, 13, 209, "", "B", 1, false, true, 'L', true);// horizontal line -----
 
 //......................
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>14.</b> Place of last entry into the U.S.</div>';
-$pdf->writeHTMLCell(100, 4, 13, 213, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 13, 213.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child3_place_of_last_entry_us', 45, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 13, 221);
 //............
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 8.8);
 $html ='<div><b>15.</b> Date of last entry into the <br>   &nbsp;  &nbsp;   U.S. (mm/dd/yyyy)</div>';
-$pdf->writeHTMLCell(100, 4, 60, 213, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 60, 213.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child3_date_last_entry_us', 48, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 60, 221);
 //............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>16.</b> I-94 Number <i> (if any) </i></div>';
-$pdf->writeHTMLCell(100, 4, 108, 213, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 108, 213.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child3_I94number_ifany', 41, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 109, 221);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>17.</b> Status when last admitted 
 <br> &nbsp; &nbsp; <i>(Visa type, if any)</i></div>';
-$pdf->writeHTMLCell(100, 4, 150, 213, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 150, 213.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child3_status_when_last_admited', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 151, 221);
 //............
-$pdf->writeHTMLCell(1, 12, 58, 214, "", "R", 1, false, true, 'L', true); //vertical line 
-$pdf->writeHTMLCell(1, 12, 107, 214, "", "R", 1, false, true, 'L', true); //vertical line
-$pdf->writeHTMLCell(1, 12, 149, 214, "", "R", 1, false, true, 'L', true); //vertical line
+$pdf->writeHTMLCell(1, 11.2, 58, 214.8, "", "R", 1, false, true, 'L', true); //vertical line 
+$pdf->writeHTMLCell(1, 11.2, 107, 214.8, "", "R", 1, false, true, 'L', true); //vertical line
+$pdf->writeHTMLCell(1, 11.2, 149, 214.8, "", "R", 1, false, true, 'L', true); //vertical line
 $pdf->writeHTMLCell(190, 1, 13, 220, "", "B", 1, false, true, 'L', true); // horizontal line---
 //......................
 $pdf->SetFont('times', '', 9);
@@ -1578,19 +1611,21 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child3_what_is_expiration_date', 58, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 70, 233);
 //............
 
-$pdf->SetFont('times', '', 9);
-$html ='<div><b>20. </b> Is your child in Immigration Court proceedings? <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding3" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding3" value="n"/> No</div>';
-$pdf->writeHTMLCell(180, 4, 130, 225, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 9.7);
+$html ='<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br>&nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding3" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding3" value="n"/> No</div>';
+$pdf->writeHTMLCell(180, 4, 129, 225, $html, 0, 1, false, true, 'L', true);
 //............
 
-$pdf->writeHTMLCell(1, 12, 68, 226, "", "R", 1, false, true, 'L', true); //vertical line 
-$pdf->writeHTMLCell(1, 12, 127, 226, "", "R", 1, false, true, 'L', true); //vertical line
+$pdf->writeHTMLCell(1, 12.5, 68, 226, "", "R", 1, false, true, 'L', true); //vertical line 
+$pdf->writeHTMLCell(1, 12.5, 127, 226, "", "R", 1, false, true, 'L', true); //vertical line
 $pdf->writeHTMLCell(190, 1, 13, 233, "", "B", 1, false, true, 'L', true); // horizontal line---
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.7);
 $html ='<div><b>21. </b> If in the U.S., is this child to be included in this application? <i>(Check the appropriate box.)</i>
- <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl3_application" value="y"/>   Yes   <i>(Attach one photograph of your spouse in the upper right corner of Page 9 on the extra copy of the application submitted for this person.)</i> <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl3_application" value="n"/>   No </div>';
-$pdf->writeHTMLCell(190, 7, 13, 240, $html, 0, 1, false, true, 'L', true);
+ <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl3_application" value="y"/>   Yes    </div>';
+$pdf->writeHTMLCell(190, 7, 13, 239, $html, 0, 1, false, true, 'L', true);
+$html ='<div><input type="checkbox" name="incl3_application" value="n"/>&nbsp;  No </div>';
+$pdf->writeHTMLCell(190, 7, 15.5, 247, $html, 0, 1, false, true, 'L', true);
 
 //............page 3 table 3 end ----------------------------------
 
@@ -2007,8 +2042,8 @@ why in your responses to the following questions. </div>';
 $pdf->writeHTMLCell(192, 7, 13, 33, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 9);
-$html ='<div>Refer to Instructions, <b>Part 1. Filing Instructions, Section II., Basis of Eligibility, Parts A. - D., Section V., Completing the Form, Part B.; and 
-Section VII. Additional Evidence That You Should Submit,</b> for more information on completing this section of the form.</div>';
+$html ='<div>Refer to Instructions, Part 1. Filing Instructions, Section II., Basis of Eligibility, Parts A. - D., Section V., Completing the Form, Part B.; and 
+Section VII. Additional Evidence That You Should Submit,for more information on completing this section of the form.</div>';
 $pdf->writeHTMLCell(192, 7, 13, 57, $html, 0, 1, false, true, 'L', true);
 
 
@@ -2074,7 +2109,7 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>A. </b> Have you, your family, or close friends or colleagues ever experienced harm or mistreatment or threats in the past by anyone?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 101, $html, 0, 1, false, true, 'L', true);
 
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="threats" value="t"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="threats" value="t"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 105, $html, 0, 1, false, true, 'L', true);
 
@@ -2093,7 +2128,7 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>B. </b>  Do you fear harm or mistreatment if you return to your home country?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 176, $html, 0, 1, false, true, 'L', true);
 
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="mistreatment" value="t"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="mistreatment" value="t"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 180, $html, 0, 1, false, true, 'L', true);
 
@@ -2118,7 +2153,7 @@ $html ='<div><b>2. </b>   Have you or your family members ever been accused, cha
 country other than the United States (including for an immigration law violation)?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 25, $html, 0, 1, false, true, 'L', true);
 
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="violation" value="v"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="violation" value="v"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 32, $html, 0, 1, false, true, 'L', true);
 
@@ -2135,7 +2170,7 @@ limited to, a political party, student group, labor union, religious organizatio
 ethnic group, human rights group, or the press or media?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 80, $html, 0, 1, false, true, 'L', true);
 
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="human_right" value="h"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="human_right" value="h"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 92, $html, 0, 1, false, true, 'L', true);
 
@@ -2150,7 +2185,7 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>3.B. </b>  Do you or your family members continue to participate in any way in these organizations or groups?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 145, $html, 0, 1, false, true, 'L', true);
 
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="participate" value="h"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="participate" value="h"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 150, $html, 0, 1, false, true, 'L', true);
 
@@ -2165,7 +2200,7 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>4. </b> Are you afraid of being subjected to torture in your home country or any other country to which you may be returned?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 202, $html, 0, 1, false, true, 'L', true);
 
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="afraid" value="h"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="afraid" value="h"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 207, $html, 0, 1, false, true, 'L', true);
 
@@ -2177,7 +2212,7 @@ $pdf->writeHTMLCell(182, 33, 19, 220, "", 1, 1, false, true, 'L', true); // tabl
 
 // add a page
 $pdf->AddPage('P', 'LETTER');  // page number 7
-$pdf->SetFont('times', '', 12); 
+$pdf->SetFont('times', '', 10); 
 $html3 ='<div><b>Part C. Additional Information About Your Application</b></div>';
 $pdf->writeHTMLCell (191, 5, 13, 17, $html3, 1, 1, true,true,'L', true); 
 //.............
@@ -2193,7 +2228,7 @@ withholding of removal?</div>';
 $pdf->writeHTMLCell(188, 7, 13, 34, $html, 0, 1, false, true, 'L', true);
 //.........
 
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="refugee" value="h"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="refugee" value="h"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 41, $html, 0, 1, false, true, 'L', true);
 
@@ -2214,7 +2249,7 @@ through or reside in any other country before entering the United States? </div>
 $pdf->writeHTMLCell(188, 7, 13, 108, $html, 0, 1, false, true, 'L', true);
 //.........
 
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="reside" value="r"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="reside" value="r"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 116, $html, 0, 1, false, true, 'L', true);
 //...........
@@ -2224,7 +2259,7 @@ $html ='<div><b>2.B. </b>Have you, your spouse, your child(ren), or other family
 in any country other than the one from which you are now claiming asylum?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 122, $html, 0, 1, false, true, 'L', true);
 //.........
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="claiming" value="r"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="claiming" value="r"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 130, $html, 0, 1, false, true, 'L', true);
 //...........
@@ -2242,7 +2277,7 @@ $html ='<div><b>3. </b>Have you, your spouse or your child(ren) ever ordered, in
 because of his or her race, religion, nationality, membership in a particular social group or belief in a particular political opinion?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 188, $html, 0, 1, false, true, 'L', true);
 //.........
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="ordered" value="0"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="ordered" value="1"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 198, $html, 0, 1, false, true, 'L', true);
 //...........
@@ -2255,7 +2290,7 @@ $pdf->writeHTMLCell(182, 35, 19, 210, "", 1, 1, false, true, 'L', true);  // tab
 
 // add a page
 $pdf->AddPage('P', 'LETTER');  // page number 8
-$pdf->SetFont('times', '', 12); 
+$pdf->SetFont('times', '', 10); 
 $html3 ='<div><b>Part C. Additional Information About Your Application</b>(continued)</div>';
 $pdf->writeHTMLCell (191, 5, 13, 17, $html3, 1, 1, true,true,'L', true); 
 //.............
@@ -2264,7 +2299,7 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>4. </b> After you left the country where you were harmed or fear harm, did you return to that country?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 24, $html, 0, 1, false, true, 'L', true);
 //.........
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="return" value="r"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="return" value="r"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 29, $html, 0, 1, false, true, 'L', true);
 //...........
@@ -2280,7 +2315,7 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>5. </b> Are you filing this application more than 1 year after your last arrival in the United States?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 93, $html, 0, 1, false, true, 'L', true);
 //.........
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="arrival" value="r"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="arrival" value="r"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 98, $html, 0, 1, false, true, 'L', true);
 //...........
@@ -2298,7 +2333,7 @@ $html ='<div><b>6. </b> Have you or any member of your family included in the ap
 sentenced for any crimes in the United States (including for an immigration law violation)?</div>';
 $pdf->writeHTMLCell(192, 7, 13, 168, $html, 0, 1, false, true, 'L', true);
 //.........
-$pdf->SetFont('times', '', 12);
+$pdf->SetFont('times', '', 10);
 $html ='<div><input type="checkbox" name="crimes" value="r"/>   Yes    &nbsp; &nbsp; <input type="checkbox" name="crimes" value="r"/>  No </div>';
 $pdf->writeHTMLCell(190, 7, 18, 177, $html, 0, 1, false, true, 'L', true);
 //...........
@@ -2319,45 +2354,37 @@ $pdf->writeHTMLCell(182, 45, 19, 208, "", 1, 1, false, true, 'L', true);  // tab
 
 // add a page
 $pdf->AddPage('P', 'LETTER');  // page number 9
-$pdf->SetFont('times', '', 12); 
+$pdf->SetFont('times', '', 10); 
 $html3 ='<div><b>Part D. Your Signature</b></div>';
 $pdf->writeHTMLCell (191, 5, 13, 17, $html3, 1, 1, true,true,'L', true); 
 //.............
 $pdf->SetFont('times', '', 9);
-$html ='<div>I certify, under penalty of perjury under the laws of the United States of America, that this application and the 
-evidence submitted with it are all true and correct. Title 18, United States Code, Section 1546(a), provides in part: 
-Whoever knowingly makes under oath, or as permitted under penalty of perjury under Section 1746 of Title 28, 
-United States Code, knowingly subscribes as true, any false statement with respect to a material fact in any 
-application, affidavit, or other document required by the immigration laws or regulations prescribed thereunder, or 
-knowingly presents any such application, affidavit, or other document containing any such false statement or 
-which fails to contain any reasonable basis in law or fact - shall be fined in accordance with this title or 
-imprisoned for up to 25 years. I authorize the release of any information from my immigration record that U.S. 
-Citizenship and Immigration Services (USCIS) needs to determine eligibility for the benefit I am seeking.</div>';
-$pdf->writeHTMLCell(145, 7, 12, 24, $html, 0, 1, false, true, 'J', true);
+$html ='<div>I certify, under penalty of perjury under the laws of the United States of America, that this application and the evidence submitted with it are all true<br>
+and correct. Title 18, United States Code, Section 1546(a), provides in part: Whoever knowingly makes under oath, or as permitted under penalty of<br>
+perjury under Section 1746 of Title 28, United States Code, knowingly subscribes as true, any false statement with respect to a material fact in any<br>
+application, affidavit, or other document required by the immigration laws or regulations prescribed thereunder, or knowingly presents any such<br>
+application, affidavit, or other document containing any such false statement or which fails to contain any reasonable basis in law or fact - shall be<br>
+fined in accordance with this title or imprisoned for up to 25 years. I certify that I am physically present in the United States or seeking admission at<br>
+a Port of Entry when I execute this application. I authorize the release of any information from my immigration record that U.S. Citizenship and<br>
+Immigration Services (USCIS) needs to determine eligibility for the benefit I am seeking.</div>';
+$pdf->writeHTMLCell(190, 7, 12, 24, $html, 0, 1, false, true, 'J', true);
 //.........
-$pdf->writeHTMLCell(44, 34, 160, 25, "", 1, 1, false, true, 'J', true); //.....bordered box ...........
-$pdf->SetFont('times', '', 9);
-$html ='<div>Staple your photograph here or 
-the photograph of the family 
-member to be included on the 
-extra copy of the application 
-submitted for that person.</div>';
-$pdf->writeHTMLCell(43, 10, 160, 30, $html, 0, 1, false, true, 'C', true);
+
 //.........
-$pdf->writeHTMLCell(192, 1, 13, 56, "", "B", 1, false, true, 'L', true);  //.....Horizontal line ..........
+$pdf->writeHTMLCell(192, 1, 13, 52, "", "B", 1, false, true, 'L', true);  //.....Horizontal line ..........
 //.............
 $pdf->SetFont('times', 'B', 9);
-$html ='<div><i>WARNING:</i> Applicants who are in the United States unlawfully are subject to removal if their asylum or withholding claims are not 
-granted by an asylum officer or an immigration judge. Any information provided in completing this application may be used as a basis for 
-the institution of, or as evidence in, removal proceedings even if the application is later withdrawn. Applicants determined to have 
-knowingly made a frivolous application for asylum will be permanently ineligible for any benefits under the Immigration and Nationality 
-Act. You may not avoid a frivolous finding simply because someone advised you to provide false information in your asylum application. If 
-filing with USCIS, unexcused failure to appear for an appointment to provide biometrics (such as fingerprints) and your biographical 
-information within the time allowed may result in an asylum officer dismissing your asylum application or referring it to an immigration 
-judge. Failure without good cause to provide DHS with biometrics or other biographical information while in removal proceedings may 
-result in your application being found abandoned by the immigration judge. See sections 208(d)(5)(A) and 208(d)(6) of the INA and 8 CFR 
+$html ='<div><i>WARNING:</i> Applicants who are in the United States unlawfully are subject to removal if their asylum or withholding claims are not
+granted by an asylum officer or an immigration judge. Any information provided in completing this application may be used as a basis for
+the institution of, or as evidence in, removal proceedings even if the application is later withdrawn. Applicants determined to have
+knowingly made a frivolous application for asylum will be permanently ineligible for any benefits under the Immigration and Nationality
+Act. You may not avoid a frivolous finding simply because someone advised you to provide false information in your asylum application. If
+filing with USCIS, unexcused failure to appear for an appointment to provide biometrics (such as fingerprints) and your biographical
+information within the time allowed may result in an asylum officer dismissing your asylum application or referring it to an immigration
+judge. Failure without good cause to provide DHS with biometrics or other biographical information while in removal proceedings may
+result in your application being found abandoned by the immigration judge. See sections 208(d)(5)(A) and 208(d)(6) of the INA and 8 CFR
 sections 208.10, 1208.10, 208.20, 1003.47(d) and 1208.20.</div>';
-$pdf->writeHTMLCell(190, 7, 12, 62, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(190, 7, 12, 58, $html, 0, 1, false, true, 'L', true);
 //.........
 $pdf->writeHTMLCell(190, 10, 12, 99, "", 1, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 9);
@@ -2567,13 +2594,13 @@ $pdf->writeHTMLCell(191, 7, 12, 24, $html, 0, 1, false, true, 'L', true);
 //.........
 $pdf->writeHTMLCell(191, 7, 12, 28, "", "B", 1, false, true, 'L', true);
 //........
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.3);
 $html ='<div>I swear (affirm) that I know the contents of this application that I am signing, including the attached documents and supplements, that they are 
 <input type="checkbox" name="swer" value="Y"/>  all true or <input type="checkbox" name="swer" value="N"/>  not all true to the best of my knowledge and that correction(s) numbered ______ to ______ were made by me or at my request. 
 Furthermore, I am aware that if I am determined to have knowingly made a frivolous application for asylum I will be permanently ineligible for any 
 benefits under the Immigration and Nationality Act, and that I may not avoid a frivolous finding simply because someone advised me to provide 
 false information in my asylum application.</div>';
-$pdf->writeHTMLCell(180, 7, 12, 36, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(185, 7, 12, 36, $html, 0, 1, false, true, 'L', true);
 //..............
 $pdf->SetFont('times', '', 9);
 $html ='<div>Signed and sworn to before me by the above named applicant on:</div>';
@@ -3123,6 +3150,8 @@ $pdf->TextField('additional_claim_to_asylum', 190, 170, array('strokeColor' => a
 $js = "
 var fields = {
     'additional_claim_to_asylum':' ',
+    'part_e_attorney_online_account_number':' ',
+    'part_e_attorney_state_bar_number':' ',
 
 
 
