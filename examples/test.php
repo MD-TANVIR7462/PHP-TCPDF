@@ -78,13 +78,49 @@ if ($contentHeight > ($pdf->getPageHeight() - $pdf->GetY())) {
 }
 
 // Now, add your content
-$pdf->setCellPaddings(1, 1, 0, 1); // set cell padding
-$pdf->SetLineWidth(0.1); // set border width
-$pdf->SetDrawColor(0,0,0); // set color for cell border
-$pdf->SetFillColor(255,255,255); // set filling color
-$pdf->setCellHeightRatio(1.1); // set cell height ratio
+function breakText($text, $maxLength) {
+    $lines = [];
+    $words = explode(" ", $text);
+    $currentLine = '';
+    
+    foreach ($words as $word) {
+        if (strlen($currentLine) + strlen($word) <= $maxLength) {
+            // Word fits within the current line
+            $currentLine .= $word . ' ';
+        } else {
+            // Word exceeds the maximum length, start a new line
+            $lines[] = trim($currentLine);
+            $currentLine = $word . ' ';
+        }
+    }
+    
+    // Add the remaining part of the last line
+    if (!empty($currentLine)) {
+        $lines[] = trim($currentLine);
+    }
+    
+    return $lines;
+}
 
-$pdf->writeHTMLCell(1, 220, 13, 48, "", "L", 1, false, true, 'C', true);
+$pdf->setFont('Times', '', 10);
+
+$html = '<div><b>7.a. </b>&nbsp;Page Number </div>';
+$pdf->writeHTMLCell(30, 7, 112, 180, $html, 0, 0, false, 'L');
+$pdf->setFont('courier', 'B', 10);
+
+// Your original text
+$text = ''; // Put your text here
+
+// Break the text into lines
+$lines = breakText($text, 30);
+
+// Insert each line into the PDF as a separate text field
+$yPosition = 18.5; // Initial y position
+foreach ($lines as $line) {
+    $pdf->TextField('additional_information_7a', 60, 60, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, $yPosition);
+    $pdf->Text(30, $s + 5, $line); // Adjust the x position as needed
+    $yPosition -= 7; // Move to the next line
+}
 
 $js = "
 var fields = {
