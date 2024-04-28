@@ -11,7 +11,7 @@ include "intake_header.php";
 <fieldset class="setpage">
 	<div class="form-group">
 		<div class="page_number">
-			<p style="text-align:right;margin-right:20px;"><b>Page 1 of 11</b></p>
+			<p style=""><b>Page 1 of 11</b></p>
 		</div>
 		<div class="bg-info text-center">
 			<h4><b>To be completed by an attorney or accredited representative (if any).</b> </h4>
