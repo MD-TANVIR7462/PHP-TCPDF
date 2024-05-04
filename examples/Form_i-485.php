@@ -337,9 +337,11 @@ $html ='<div><b>To be completed by an attorney or accredited representative </b>
 $pdf->writeHTMLCell(190, 7, 13, 96, $html, 1, 1, true, true, 'C', true);
 //..........
 $pdf->SetFont('times', 'B', 10);
-$checked_no = (showData('i_485_g28_box')=='Y')? "checked":"";
-$html ='<div> <input type="checkbox" name="i_485_g28_box" value="Y" checked="'.$checked_no.'" />  Select this box if Form G-28 is <br> attached.</div>';
+$checked = (showData('i_485_g28_box')=='Y')? "checked":"";
+$html ='<div> <input type="checkbox" name="i_485_g28_box" value="Y" checked="'.$checked.'" /> &nbsp;Select this box if &nbsp; Form G-28 is</div>';
 $pdf->writeHTMLCell(37, 20, 13, 103, $html, 'LRB', 0, false, true, 'C', true);
+$html ='<div>attached.</div>';
+$pdf->writeHTMLCell(15, 10, 21, 110, $html, '', 0, false, true, 'C', true);
 //........
 $pdf->SetFont('times', '', 10);
 $pdf->setCellHeightRatio(1.2);
@@ -355,8 +357,8 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('attorney_statebar_number', 43, 7,array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),88, 114);
 //.............
 $pdf->SetFont('times', '', 10);
-$html ='<div> <b>  Attorney or Accredited Representative
-USCIS Online Account Number </b> (if any) <br> </div>';
+$html ='<div><b>Attorney or Accredited Representative <br>
+  USCIS Online Account Number </b> (if any) <br> </div>';
 $pdf->writeHTMLCell(71, 20, 132, 103, $html, 'RB', 0, false, true, 'C', true);
 
 $pdf->SetFont('courier', 'B', 10);
@@ -370,11 +372,11 @@ $pdf->setCellPaddings(0); // set cell padding
 $html ='&nbsp;<input type="text" class="heighttext" name="attorney_uscis_online_number" value="'.showData('attorney_uscis_online_number').'" size="14" style="letter-spacing:2.8mm; width: 200px" maxlength="12" />';
 
 $pdf->setCellHeightRatio(1.8);
-$pdf->writeHTMLCell(56, 6, 138.7, 114, $html, 0, 1, false, true, 'J', 0);
-$pdf->writeHTMLCell(60, 6, 140.5, 114, "", 1, 1, false, true, 'J', 0);
+$pdf->writeHTMLCell(56, 6, 136.6, 114, $html, 0, 1, false, true, 'J', 0);
+$pdf->writeHTMLCell(60, 6, 138.5, 114, "", 1, 1, false, true, 'J', 0);
 
 $pdf->setCellHeightRatio(1.2);
-$pdf->SetDrawColor(200,200,200); // set color for cell border
+$pdf->SetDrawColor(0,0,0); // set color for cell border
 $pdf->writeHTMLCell(5, 3, 145.7, 114, "", "LR", 1, false, true, 'L', true);
 $pdf->writeHTMLCell(5, 3, 155.7, 114, "", "LR", 1, false, true, 'L', true);
 $pdf->writeHTMLCell(5, 3, 165.7, 114, "", "LR", 1, false, true, 'L', true);
@@ -412,50 +414,50 @@ $pdf->TextField('i_485_a_number', 50, 7, array('strokeColor' => array(64, 64, 64
 
 $pdf->SetFont('times', '', 10);
 $pdf->setCellHeightRatio(1.1);
-$html ='<div><b>NOTE TO ALL APPLICANTS: </b>If you do not completely fill out this application or fail to submit required documents listed in the nstructions, U.S. Citizenship and Immigration Services (USCIS) may deny your application.</div>';
-$pdf->writeHTMLCell(190, 7, 13, 130, $html, 0, 1, false, true, 'J', true);
+$html ='<div><b>NOTE TO ALL APPLICANTS: </b>If you do not completely fill out this application or fail to submit required documents listed in the Instructions, U.S. Citizenship and Immigration Services (USCIS) may deny your application.</div>';
+$pdf->writeHTMLCell(190, 7, 13, 131, $html, 0, 1, false, true, 'J', true);
 
 
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1); 
-$html ='<div><b>Part 1. Information About You</b>(Person applying 
+$html ='<div><b>Part 1. Information About You</b> (Person applying 
 for lawful permanent residence)</div>';
-$pdf->writeHTMLCell(90, 12, 13, 140, $html, 1, 1, true, false, 'L', true);
+$pdf->writeHTMLCell(90, 2, 13, 143, $html, 1, 1, true, false, 'L', true);
 
 $pdf->SetFont('times', 'I', 12);
 $html ='<div><b>Your Current Legal Name </b>(do not provide a
 nickname)</div>';
-$pdf->writeHTMLCell(90, 12, 13, 154, $html, 0, 1, true, false, 'L', true);
+$pdf->writeHTMLCell(90, 2, 13, 157, $html, 0, 1, true, false, 'L', true);
 
 //......
 
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp;  (Last Name) </div>';
-$pdf->writeHTMLCell(35, 10, 12, 165, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 2, 12, 169, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('info_about_you_family_lastname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 167);
+$pdf->TextField('info_about_you_family_lastname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 170.5);
 //............
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp; (First Name) </div>';
-$pdf->writeHTMLCell(35, 10, 12, 174, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 2, 12, 178, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('info_about_you_family_firstname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 175.5);
+$pdf->TextField('info_about_you_family_firstname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 179.2);
 
 //.......
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.c.  </b>  Middle Name  </div>';
-$pdf->writeHTMLCell(35, 10, 12, 183, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 2, 12, 187, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('info_about_you_family_middlename', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 184);
+$pdf->TextField('info_about_you_family_middlename', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 187.6);
 
 //..........
 
 $pdf->SetFont('times', 'I', 12);
 $html ='<div><b>Other Names You Have Used Since Birth</b>(if
 applicable)</div>';
-$pdf->writeHTMLCell(90, 12, 13, 192, $html, 0, 1, true, false, 'L', true);
+$pdf->writeHTMLCell(90, 2, 13, 197, $html, 0, 1, true, false, 'L', true);
 //....
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>NOTE:</b> Provide all other names you have ever used, including
@@ -463,76 +465,76 @@ your family name at birth, other legal names, nicknames,
 aliases, and assumed names. If you need extra space to
 complete this section, use the space provided in <b>Part 14.
 Additional Information.</b></div>';
-$pdf->writeHTMLCell(90, 12, 13, 204, $html, 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(90, 2, 13, 209, $html, 0, 1, false, false, 'L', true);
 
 //.........
 
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>2.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp;  (Last Name) </div>';
-$pdf->writeHTMLCell(35, 10, 12, 224, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 2, 12, 231, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_family_lastname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 226);
+$pdf->TextField('additional_info_family_lastname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 233);
 //............
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>2.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp; (First Name) </div>';
-$pdf->writeHTMLCell(35, 10, 12, 232.5, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 1, 12, 239.5, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_family_firstname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 234.5);
+$pdf->TextField('additional_info_family_firstname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 241.5);
 
 //.......
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>2.c.  </b>  Middle Name  </div>';
-$pdf->writeHTMLCell(35, 10, 12, 243, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 1, 12, 249, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_family_middlename', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 243);
+$pdf->TextField('additional_info_family_middlename', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 250);
 
 //.......... left side end 
 
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>3.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp;  (Last Name) </div>';
-$pdf->writeHTMLCell(35, 10, 112, 138, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 10, 112, 142, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_3_family_lastname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 140);
+$pdf->TextField('additional_info_3_family_lastname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 144);
 //............
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>3.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp; (First Name) </div>';
-$pdf->writeHTMLCell(35, 10, 112, 147, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 10, 112, 151, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_3_family_firstname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 149);
+$pdf->TextField('additional_info_3_family_firstname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 153);
 
 //.......
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>3.c.  </b>  Middle Name  </div>';
-$pdf->writeHTMLCell(35, 10, 112, 158, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 10, 112, 162, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_3_family_middlename', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 158);
+$pdf->TextField('additional_info_3_family_middlename', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 162);
 
 //..........
 
-$pdf->writeHTMLCell(91, 2, 112, 167, '', 'T', 1, false, false, 'J', true);
+$pdf->writeHTMLCell(91, 2, 112, 171, '', 'T', 1, false, false, 'J', true);
 
 //.......
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>4.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp;  (Last Name) </div>';
-$pdf->writeHTMLCell(35, 10, 112, 168, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 10, 112, 172, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_4_family_lastname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 170);
+$pdf->TextField('additional_info_4_family_lastname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 174);
 //............
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>4.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp; (First Name) </div>';
-$pdf->writeHTMLCell(35, 10, 112, 177, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 10, 112, 181, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_4_family_firstname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 179);
+$pdf->TextField('additional_info_4_family_firstname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 183);
 
 //.......
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>4.c.  </b>  Middle Name  </div>';
-$pdf->writeHTMLCell(35, 10, 112, 188, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(35, 10, 112, 192, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_4_family_middlename', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 188);
+$pdf->TextField('additional_info_4_family_middlename', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 192);
 //......
 
 //.............
@@ -542,13 +544,13 @@ $pdf->setCellHeightRatio(1.1);
 $pdf->setCellPaddings(1, 0.5, 1, 0.5); // set cell padding
 $pdf->SetFontSize(11.6); // set font
 $html ='<div><b>Other Information About You</b></div>';
-$pdf->writeHTMLCell(90, 7, 113, 197, $html, 0, 1, true, false, 'J', true);
+$pdf->writeHTMLCell(90, 6.6, 113, 201.4, $html, 0, 1, true, false, 'J', true);
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>5.   </b>   Date of Birth (mm/dd/yyyy)</div>';
-$pdf->writeHTMLCell(80, 10, 112, 206, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(80, 10, 112, 210, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('other_info_you_date_of_birth', 40, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 163, 206);
+$pdf->TextField('other_info_you_date_of_birth', 40, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 163, 210);
 
 //........
 
@@ -557,7 +559,7 @@ $html ='<div><b>NOTE: </b>In addition to providing your actual date of birth,
 include any other dates of birth you have used in
 connection with any legal names or non-legal names in
 he space provided in <b>Part 14. Additional Information.</b></div>';
-$pdf->writeHTMLCell(90, 7, 112, 214, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(90, 7, 112, 218, $html, 0, 1, false, true, 'J', true);
 
 //......
 
@@ -565,15 +567,15 @@ $pdf->SetFont('times', '', 10);
 $checked_male = (showData('other_information_about_you_gender')=='male')? "checked":"";
 $checked_female = (showData('other_information_about_you_gender')=='female')? "checked":"";
 $html ='<div><b>6.    </b> Sex   <input type="checkbox" name="gender" value="M"  checked="'.$checked_male.'" />  Male  &nbsp;  <input type="checkbox" name="gender" value="F" checked="'.$checked_female.'"/>  Female</div>';
-$pdf->writeHTMLCell(80, 10, 112, 232, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(80, 10, 112, 236, $html, 0, 1, false, true, 'J', true);
 
 //........
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>7.   </b>  City or Town of Birth</div>';
-$pdf->writeHTMLCell(80, 10, 112, 240, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(80, 10, 112, 244, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('other_info_you_city_town_of_birth', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 118, 245);
+$pdf->TextField('other_info_you_city_town_of_birth', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 118, 249);
 //......end page 1 
 
 $pdf->AddPage('P', 'LETTER'); //page number 2
@@ -603,22 +605,22 @@ $pdf->writeHTMLCell(91, 12, 13, 17, $html, 1, 1, true, false, 'L', true);
 //.......
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>8. </b>  &nbsp; Country of Birth</div>';
+$html ='<div><b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Birth</div>';
 $pdf->writeHTMLCell(35, 10, 12, 29, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('infor_about_you_country_birth', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 34.5);
+$pdf->TextField('infor_about_you_country_birth', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21, 34.5);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>9.  </b>  Country of Citizenship or Nationality</div>';
+$html ='<div><b>9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Citizenship or Nationality</div>';
 $pdf->writeHTMLCell(80, 7, 12, 42, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('info_about_you_citizen_nationality', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 47.5);
+$pdf->TextField('info_about_you_citizen_nationality', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21, 47.5);
 
 
 //....
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>10. </b>  &nbsp; &nbsp; Alien Registration Number (A-Number) (if any) </div>';
+$html ='<div><b>10.</b>&nbsp;&nbsp;&nbsp;&nbsp;Alien Registration Number (A-Number) (if any) </div>';
 $pdf->writeHTMLCell(80, 5, 12, 54, $html, 0, 1, false, false, 'J', true);
 //.......
 $pdf->StartTransform();
@@ -643,7 +645,7 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>NOTE: </b>If you have <b>EVER</b> used other A-Numbers,
 include the additional A-Numbers in the space provided
 in <b>Part 14. Additional Information.</b></div>';
-$pdf->writeHTMLCell(80, 7, 22, 67, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(80, 7, 21, 67, $html, 0, 1, false, false, 'J', true);
 
 //............
 $pdf->SetFont('times', '', 10);
@@ -661,8 +663,8 @@ $pdf->setCellPaddings(1, 0.5, 1, 0.5); // set cell padding
 $pdf->SetFontSize(11.6); // set font
 $html ='<div><b>U.S. Mailing Address </b></div>';
 $pdf->writeHTMLCell(90, 7, 13, 109, $html, 0, 1, true, false, 'J', true);
-$pdf->SetFont('times', 'I', 8);
-$html ='<div><a href="https://tools.usps.com/go/ZipLookupAction_input"><i>(USPS ZIP Code Lookup)</i></a></div>';
+$pdf->SetFont('times', 'BI', 8);
+$html ='<div><a href="https://tools.usps.com/go/ZipLookupAction_input"><b><i>(USPS ZIP Code Lookup)</i></b></a></div>';
 $pdf->writeHTMLCell(90, 7, 13, 162, $html, 0, 1, false, false, 'R', true);
 //...........
 $pdf->SetFont('times', '', 10);
@@ -723,13 +725,13 @@ $pdf->writeHTMLCell(90, 7, 13, 167, $html, 0, 1, true, false, 'J', true);
 
 $pdf->SetFont('times', '', 10);
 $pdf->setCellHeightRatio(1.2);
-$html ='<div>If you are applying based on the Violence Against Women Act
-(VAWA) or as a special immigrant juvenile, human trafficking
-victim (T nonimmigrant), or victim of qualifying criminal
-activity (U nonimmigrant) and you do not want USCIS to send
-notices about this application to your home, you may provide an
+$html ='<div>If you are applying based on the Violence Against Women Act<br>
+(VAWA) or as a special immigrant juvenile, human trafficking<br>
+victim (T nonimmigrant), or victim of a qualifying crime (U<br>
+nonimmigrant) and you do not want USCIS to send notices<br>
+about this application to your home, you may provide an<br>
 alternative and/or safe mailing address.</div>';
-$pdf->writeHTMLCell(90, 7, 13, 175, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 13, 175, $html, 0, 1, false, true, 'L', true);
 
 
 //.........
@@ -976,7 +978,7 @@ $pdf->StopTransform();
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1); 
-$html ='<div><b>Part 1. Information About You</b>(Person applying 
+$html ='<div><b>Part 1. Information About You</b> (Person applying 
 for lawful permanent residence) (continued)</div>';
 $pdf->writeHTMLCell(90, 12, 13, 18, $html, 1, 1, true, false, 'L', true);
 
@@ -1046,9 +1048,9 @@ $pdf->StopTransform();
 //........
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>26.b. </b> Expiration Date of Authorized Stay Shown on Form <br> &nbsp; &nbsp; &nbsp; &nbsp; I-94
+$html ='<div><b>26.b. </b> Expiration Date of Authorized Stay Shown on Form I-94 <br>&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
 (mm/dd/yyyy) </div>';
-$pdf->writeHTMLCell(90, 7, 12, 115, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 12, 115, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('info_about_you_recent_immigration_pasport_expire_date_authorized', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 60, 121);
 
@@ -1117,7 +1119,7 @@ Form I-485 Instructions for more information, including any
 <b>Additional Instructions</b> that relate to the immigrant category 
 you select.)
 </div>';
-$pdf->writeHTMLCell(90, 7, 112, 26, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(94, 7, 112, 26, $html, 0, 1, false, true, 'L', true);
 
 
 
@@ -1521,7 +1523,7 @@ A). For detailed filing instructions, read the Form I-485
 Instructions (including any <b>Additional Instructions</b> that
 relate to the immigrant category that you selected <b>Item 
 Numbers 1.a. - 1.g.)</b> and Supplement A Instructions.</div>';
-$pdf->writeHTMLCell(85, 7, 19, 160, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(85, 7, 19, 160, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', 'I', 12);
 $html ='<div><b>Information About Your Immigrant Category</b></div>';
@@ -1553,7 +1555,7 @@ $pdf->SetFont('times', '', 10);
 $html ='<div>If you are a <b>derivative applicant</b> (the spouse or unmarried
 child under 21 years of age of a principal applicant), provide the
 following information for the <b>principal applicant.</b></div>';
-$pdf->writeHTMLCell(90, 7, 112, 62, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(90, 7, 112, 62, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 10);
 $html ='<div>Principal Applicant\'s Name</div>';
@@ -2484,7 +2486,7 @@ $pdf->StopTransform();
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1); 
-$html ='<div><b>Part 4. Additional Information About You</b><br>(Continued)</div>';
+$html ='<div><b>Part 4. Information About Your Parents </b><br>(Continued)</div>';
 $pdf->writeHTMLCell(90, 7, 13, 17, $html, 1, 0, true, true, 'L', true);
 //.......
 
@@ -2847,10 +2849,10 @@ in any other country, provide the following information about
 your prior spouse. If you have had more than one previous
 marriage, use the space provided in <b>Part 14. Additional
 Information</b> to provide the information below.</div>';
-$pdf->writeHTMLCell(90, 7, 12, 40, $html, 0, 1, false, true, 'J', false);
+$pdf->writeHTMLCell(95, 7, 12, 40, $html, 0, 1, false, true, 'L', false);
 $html ='<div>Prior Spouse\'s Legal Name (provide family name before
 marriage)</div>';
-$pdf->writeHTMLCell(90, 7, 12, 61, $html, 0, 1, false, true, 'J', false);
+$pdf->writeHTMLCell(90, 7, 12, 61, $html, 0, 1, false, true, 'L', false);
 //........
 
 $pdf->SetFont('times', '', 10);
@@ -2977,7 +2979,7 @@ elsewhere and includes any missing children and those
 born to you outside of marriage.
 
 </div>';
-$pdf->writeHTMLCell(80, 7, 118, 25, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(80, 7, 118, 25, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('total_number_of_children', 25, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 179, 58);
 
@@ -3428,7 +3430,7 @@ any way associated with any organization, association,
 fund, foundation, party, club, society, or similar group in
 the United States or in any other location in the world
 including any military service?</div>';
-$pdf->writeHTMLCell(85, 7, 117, 29, $html, 0, 0, false, true, 'J', true);
+$pdf->writeHTMLCell(85, 7, 117, 29, $html, 0, 0, false, true, 'L', true);
 $page9_part8_1_yes = (showData('i_485_general_eligibility_military_status')=='Y')? "checked":"";
 $page9_part8_1_no = (showData('i_485_general_eligibility_military_status')=='N')? "checked":"";
 $html= '<div><input type="checkbox" name="gligiblity" value="Y" checked="'.$page9_part8_1_yes.'" />  Yes  &nbsp; <input type="checkbox" name="gligiblity" value="N" checked="'.$page9_part8_1_no.'" />  No</div>';
@@ -3443,7 +3445,7 @@ this section, use the space provided in <b>Part 14. Additional
 Information.</b> If you answered "No," but are unsure of your
 answer, provide an explanation of the events and circumstances
 in the space provided in <b>Part 14. Additional Information.</b></div>';
-$pdf->writeHTMLCell(92, 7, 112, 52, $html, 0, 0, false, true, 'J', true);
+$pdf->writeHTMLCell(92, 7, 112, 52, $html, 0, 0, false, true, 'L', true);
 
 
 $pdf->SetFont('times', '', 10);
@@ -3683,12 +3685,12 @@ $pdf->TextField('organization3_date_to', 33, 7, array('strokeColor' => array(64,
 //...............
 
 $pdf->SetFont('times', '', 10);
-$html= '<div>Answer <b>Item Numbers 14. - 86.b.</b> Choose the answer that you
-think is correct. If you answer "Yes" to any questions <b>(or if
-you answer "No," but are unsure of your answer)</b>, provide
-in explanation of the events and circumstances in the space
+$html= '<div>Answer <b>Item Numbers 14. - 86.b.</b> Choose the answer that you<br>
+think is correct. If you answer "Yes" to any questions <b>(or if<br>
+you answer "No," but are unsure of your answer)</b>, provide<br>
+in explanation of the events and circumstances in the space<br>
 provided in <b>Part 14. Additional Information.</b></div>';
-$pdf->writeHTMLCell(90, 7, 12, 154, $html, 0, 0, false, true, 'J', true);
+$pdf->writeHTMLCell(93, 7, 12, 154, $html, 0, 0, false, true, 'L', true);
 //.......
 
 $pdf->SetFont('times', '', 10);
@@ -3887,7 +3889,7 @@ where you were arrested, cited, detained, or charged; when
 (date) the event occurred; and the outcome or disposition (fo
 example, no charges filed, charges dismissed, jail, probation,
 community service).</div>';
-$pdf->writeHTMLCell(92, 7, 112, 138, $html, 0, 0, false, true, 'J', true);
+$pdf->writeHTMLCell(92, 7, 112, 138, $html, 0, 0, false, true, 'L', true);
 
 //.........
 
@@ -4896,19 +4898,25 @@ $pdf->writeHTMLCell(90, 7, 12, 25, $html, 0, 0, false, true, 'L', true);
 $html= '<div>Identify the total value of your household liabilities (including both secured and unsecured liabilities).</div>';
 $pdf->writeHTMLCell(190, 7, 20, 25, $html, 0, 0, false, true, 'L', true);
 
-$html= '<div><input type="checkbox" name="part8_65_1" value="$0" checked="'.$checked_no.'" />  $0</div>';
+$checked_65a = (showData('i_485_general_eligibility_household_liabilities')=='0')? "checked":"";
+$checked_65b= (showData('i_485_general_eligibility_household_liabilities')=='1_10100')? "checked":"";
+$checked_65c = (showData('i_485_general_eligibility_household_liabilities')=='10101_57700')? "checked":"";
+$checked_65d= (showData('i_485_general_eligibility_household_liabilities')=='57701_186800')? "checked":"";
+$checked_65e = (showData('i_485_general_eligibility_household_liabilities')=='over_186800')? "checked":"";
+
+$html= '<div><input type="checkbox" name="part8_65_1" value="$0" checked="'.$checked_65a.'" />  $0</div>';
 $pdf->writeHTMLCell(85, 7, 20,  32, $html, 0, 0, false, true, 'L', false);
 
-$html= '<div><input type="checkbox" name="part8_65_2" value="$1-10,100" checked="'.$checked_no.'" />  $1-10,100</div>';
+$html= '<div><input type="checkbox" name="part8_65_2" value="$1-10,100" checked="'.$checked_65b.'" />  $1-10,100</div>';
 $pdf->writeHTMLCell(85, 7, 35,  32, $html, 0, 0, false, true, 'L', false);
 
-$html= '<div><input type="checkbox" name="part8_65_3" value="$10,101-57,700" checked="'.$checked_no.'" />  $10,101-57,700</div>';
+$html= '<div><input type="checkbox" name="part8_65_3" value="$10,101-57,700" checked="'.$checked_65c.'" />  $10,101-57,700</div>';
 $pdf->writeHTMLCell(85, 7, 60,  32, $html, 0, 0, false, true, 'L', false);
 
-$html= '<div><input type="checkbox" name="part8_65_4" value="$57,701-186,800" checked="'.$checked_no.'" />  $57,701-186,800</div>';
+$html= '<div><input type="checkbox" name="part8_65_4" value="$57,701-186,800" checked="'.$checked_65d.'" />  $57,701-186,800</div>';
 $pdf->writeHTMLCell(85, 7, 95,  32, $html, 0, 0, false, true, 'L', false);
 
-$html= '<div><input type="checkbox" name="part8_65_5" value="Over $186,800" checked="'.$checked_no.'" />  Over $186,800</div>';
+$html= '<div><input type="checkbox" name="part8_65_5" value="Over $186,800" checked="'.$checked_65e.'" />  Over $186,800</div>';
 $pdf->writeHTMLCell(85, 7, 130,  32, $html, 0, 0, false, true, 'L', false);
 
 
@@ -4919,33 +4927,45 @@ $html= '<div> What is the highest degree or level of school you have completed?<
 $pdf->writeHTMLCell(190, 7, 20, 40, $html, 0, 0, false, true, 'L', true);
 
 //..first row 
-$html= '<div><input type="checkbox" name="part8_66_1" value=" Grades 1" checked="'.$checked_no.'" />  Grades 1 through 11</div>';
+$checked_66a = (showData('i_485_general_eligibility_highest_degree')=='grades1_11')? "checked":"";
+$checked_66b= (showData('i_485_general_eligibility_highest_degree')=='grades11_nodiploma')? "checked":"";
+$checked_66c = (showData('i_485_general_eligibility_highest_degree')=='high_school_credential')? "checked":"";
+$checked_66d= (showData('i_485_general_eligibility_highest_degree')=='no_degree')? "checked":"";
+$checked_66e = (showData('i_485_general_eligibility_highest_degree')=='associate_degree')? "checked":"";
+$checked_66f= (showData('i_485_general_eligibility_highest_degree')=='bachelor_degree')? "checked":"";
+$checked_66g = (showData('i_485_general_eligibility_highest_degree')=='master_degree')? "checked":"";
+$checked_66h= (showData('i_485_general_eligibility_highest_degree')=='professional_degree')? "checked":"";
+$checked_66i = (showData('i_485_general_eligibility_highest_degree')=='doctorate_degree')? "checked":"";
+
+
+
+$html= '<div><input type="checkbox" name="part8_66_1" value=" Grades 1" checked="'.$checked_66a.'" />  Grades 1 through 11</div>';
 $pdf->writeHTMLCell(85, 7, 20,  47, $html, 0, 0, false, true, 'L', false);
 
-$html= '<div><input type="checkbox" name="part8_66_2" value="12th grade - no diploma" checked="'.$checked_no.'" />  12th grade - no diploma</div>';
+$html= '<div><input type="checkbox" name="part8_66_2" value="12th grade - no diploma" checked="'.$checked_66b.'" />  12th grade - no diploma</div>';
 $pdf->writeHTMLCell(85, 7, 55,  47, $html, 0, 0, false, true, 'L', false);
 
-$html= '<div><input type="checkbox" name="part8_66_3" value="GED" checked="'.$checked_no.'" />  High school diploma, GED, or alternative credential</div>';
+$html= '<div><input type="checkbox" name="part8_66_3" value="GED" checked="'.$checked_66c.'" />  High school diploma, GED, or alternative credential</div>';
 $pdf->writeHTMLCell(85, 7, 95,  47, $html, 0, 0, false, true, 'L', false);
 
 //..Second row 
-$html= '<div><input type="checkbox" name="part8_66_4" value="1 more" checked="'.$checked_no.'" />  1 or more years of college credit, no degree</div>';
+$html= '<div><input type="checkbox" name="part8_66_4" value="1 more" checked="'.$checked_66d.'" />  1 or more years of college credit, no degree</div>';
 $pdf->writeHTMLCell(85, 7, 20,  53, $html, 0, 0, false, true, 'L', false);
 
-$html= '<div><input type="checkbox" name="part8_66_5" value="Associate degree" checked="'.$checked_no.'" />  Associate\'s degree</div>';
+$html= '<div><input type="checkbox" name="part8_66_5" value="Associate degree" checked="'.$checked_66e.'" />  Associate\'s degree</div>';
 $pdf->writeHTMLCell(85, 7, 95,  53, $html, 0, 0, false, true, 'L', false);
 
-$html= '<div><input type="checkbox" name="part8_66_6" value="Bachelor" checked="'.$checked_no.'" />  Bachelor\'s degree</div>';
+$html= '<div><input type="checkbox" name="part8_66_6" value="Bachelor" checked="'.$checked_66f.'" />  Bachelor\'s degree</div>';
 $pdf->writeHTMLCell(85, 7, 130,  53, $html, 0, 0, false, true, 'L', false);
 //third row 
 
-$html= '<div><input type="checkbox" name="part8_66_7" value="Master" checked="'.$checked_no.'" />  Master\'s degree</div>';
+$html= '<div><input type="checkbox" name="part8_66_7" value="Master" checked="'.$checked_66g.'" />  Master\'s degree</div>';
 $pdf->writeHTMLCell(85, 7, 20,  59, $html, 0, 0, false, true, 'L', false);
 
-$html= '<div><input type="checkbox" name="part8_66_8" value="Professional" checked="Professional degree"/>  Professional degree (JD, MD, DMD, etc.)</div>';
+$html= '<div><input type="checkbox" name="part8_66_8" value="Professional" checked="'.$checked_66h.'"  />  Professional degree (JD, MD, DMD, etc.)</div>';
 $pdf->writeHTMLCell(85, 7, 55,  59, $html, 0, 0, false, true, 'L', false);
 
-$html= '<div><input type="checkbox" name="part8_66_9" value="Doctorate degree" checked="'.$checked_no.'" /> Doctorate degree</div>';
+$html= '<div><input type="checkbox" name="part8_66_9" value="Doctorate degree" checked="'.$checked_66i.'" /> Doctorate degree</div>';
 $pdf->writeHTMLCell(85, 7, 130,  59, $html, 0, 0, false, true, 'L', false);
 //.........
 $pdf->SetFont('times', '', 10);
@@ -4968,8 +4988,9 @@ $html= '<div><b>68.a. <b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 123, $html, 0, 0, false, true, 'L', true);
 $html= '<div>Have you ever received Supplemental Security Income (SSI). Temporary Assistance for Needy Families (TANF), or State, Tribal, territorial, or local, cash benefit programs for income maintenance (often called "General Assistance" in the State context, but which also exist under other names)?</div>';
 $pdf->writeHTMLCell(160, 7, 20, 123, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_68a" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_68a" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_68a_received_supplemental_security_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_68a_received_supplemental_security_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_68a" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_68a" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 175,  130, $html, 0, 0, false, true, 'L', false);
 
 //.....
@@ -4977,8 +4998,9 @@ $html= '<div><b>68.b. <b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 140, $html, 0, 0, false, true, 'L', true);
 $html= '<div>Have you ever received long-term institutionalization at government expense?</div>';
 $pdf->writeHTMLCell(160, 7, 20, 140, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_68b" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_68b" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_68b_longterm_institutionalization_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_68b_longterm_institutionalization_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_68b" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_68b" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 175,  140, $html, 0, 0, false, true, 'L', false);
 
 //.....
@@ -5080,10 +5102,10 @@ $pdf->writeHTMLCell(1, 35.6, 112, 205, "", "R", 1, false, true, 'C', true); // v
 $pdf->writeHTMLCell(1, 35.6, 150, 205, "", "R", 1, false, true, 'C', true); // verticle line ..
 //..........
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part8_table_institution_68c_1', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 212);
-$pdf->TextField('part8_table_institution_68c_2', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 219);
-$pdf->TextField('part8_table_institution_68c_3', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 226);
-$pdf->TextField('part8_table_institution_68c_4', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 233.5);
+$pdf->TextField('part8_table_institution_68d_1', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 212);
+$pdf->TextField('part8_table_institution_68d_2', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 219);
+$pdf->TextField('part8_table_institution_68d_3', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 226);
+$pdf->TextField('part8_table_institution_68d_4', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 233.5);
 //.........
 
 $pdf->TextField('part8_table_date_form_68d_1', 40, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 73, 212);
@@ -5139,8 +5161,9 @@ $html= '<div><b>69.a. <b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 40, $html, 0, 0, false, true, 'J', true);
 $html= '<div>Have you <b>EVER </b>failed or refused to attend or to remain in attendance at any removal proceeding filed against you on or after April 1, 1997?</div>';
 $pdf->writeHTMLCell(85, 7, 20, 40, $html, 0, 0, false, true, 'J', true);
-
-$html= '<div> <input type="checkbox" name="part8_69" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_69" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_69a_failed_refused_attend_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_69a_failed_refused_attend_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_69" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_69" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 80, 50, $html, 0, 0, false, true, 'J', false);
 
 //..........
@@ -5151,8 +5174,9 @@ $html= '<div><b>69.b. <b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 55, $html, 0, 0, false, true, 'J', true);
 $html= '<div>If your answer to <b>Item Number 69.a.</b> is "Yes," do you believe you had reasonable cause? </div>';
 $pdf->writeHTMLCell(85, 7, 20, 55, $html, 0, 0, false, true, 'J', true);
-
-$html= '<div> <input type="checkbox" name="part8_69b" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_69b" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_69b_reasonable_cause_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_69b_reasonable_cause_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_69b" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_69b" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 80, 60, $html, 0, 0, false, true, 'J', false);
 
 //..........
@@ -5173,8 +5197,9 @@ $html= '<div><b>70. <b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 80, $html, 0, 0, false, true, 'J', true);
 $html= '<div>Have you <b>EVER</b> submitted fraudulent or counterfeit documentation to any U.S. Government official to obtain or attempt to obtain any immigration benefit, including a visa or entry into the United States?</div>';
 $pdf->writeHTMLCell(85, 7, 20, 80, $html, 0, 0, false, true, 'J', true);
-
-$html= '<div> <input type="checkbox" name="part8_70" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_70" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_70_submitted_fraudulent_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_70_submitted_fraudulent_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_70" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_70" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 80, 95, $html, 0, 0, false, true, 'J', false);
 
 //..........
@@ -5184,8 +5209,9 @@ $html= '<div><b>71. <b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 100, $html, 0, 0, false, true, 'J', true);
 $html= '<div>Have you <b>EVER</b> lied about, concealed, or misrepresented any information on an application or petition to obtain a visa, other documentation required for entry into the United States, admission to the United States, or any other kind of immigration benefit?</div>';
 $pdf->writeHTMLCell(85, 7, 20, 100, $html, 0, 0, false, true, 'J', true);
-
-$html= '<div> <input type="checkbox" name="part8_71" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_71" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_71_concealed_misrepresented_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_71_concealed_misrepresented_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_71" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_71" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 80, 120, $html, 0, 0, false, true, 'J', false);
 
 //..........
@@ -5196,8 +5222,9 @@ $html= '<div><b>72. <b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 125, $html, 0, 0, false, true, 'J', true);
 $html= '<div>Have you <b>EVER</b> falsely claimed to be a U.S. citizen (in writing or any other way)?</div>';
 $pdf->writeHTMLCell(85, 7, 20, 125, $html, 0, 0, false, true, 'J', true);
-
-$html= '<div> <input type="checkbox" name="part8_72" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_72" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_72_falsely_claimed_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_72_falsely_claimed_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_72" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_72" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 80, 130, $html, 0, 0, false, true, 'J', false);
 
 //..........
@@ -5208,8 +5235,9 @@ $html= '<div><b>73. <b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 135, $html, 0, 0, false, true, 'J', true);
 $html= '<div>Have you <b>EVER</b> been a stowaway on a vessel or aircraft arriving in the United States?</div>';
 $pdf->writeHTMLCell(85, 7, 20, 135, $html, 0, 0, false, true, 'J', true);
-
-$html= '<div> <input type="checkbox" name="part8_73" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_73" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_73_stowaway_vessel_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_73_stowaway_vessel_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_73" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_73" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 80, 140, $html, 0, 0, false, true, 'J', false);
 
 //..........
@@ -5222,8 +5250,9 @@ assisted, abetted, or aided any foreign national to enter or
 to try to enter the United States illegally (alien
 smuggling)?</div>';
 $pdf->writeHTMLCell(85, 7, 20, 145, $html, 0, 0, false, true, 'J', true);
-
-$html= '<div> <input type="checkbox" name="part8_74" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_74" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_74_knowingly_encouraged_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_74_knowingly_encouraged_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_74" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_74" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 80, 160, $html, 0, 0, false, true, 'J', false);
 
 //..........
@@ -5234,8 +5263,9 @@ $pdf->writeHTMLCell(90, 7, 12, 165, $html, 0, 0, false, true, 'J', true);
 $html= '<div>Are you under a final order of civil penalty for violating
 INA section 274C for use of fraudulent documents?</div>';
 $pdf->writeHTMLCell(85, 7, 20, 165, $html, 0, 0, false, true, 'J', true);
-
-$html= '<div> <input type="checkbox" name="part8_75" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_75" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_75_under_final_order_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_75_under_final_order_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_75" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_75" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 80, 175, $html, 0, 0, false, true, 'J', false);
 
 //..........
@@ -5256,8 +5286,9 @@ from the United States or have you ever departed the
 United States on your own after having been ordered
 excluded, deported, or removed from the United States?</div>';
 $pdf->writeHTMLCell(85, 7, 20, 200, $html, 0, 0, false, true, 'J', true);
-
-$html= '<div> <input type="checkbox" name="part8_76" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_76" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_76_excluded_deported_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_76_excluded_deported_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_76" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_76" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 80, 220, $html, 0, 0, false, true, 'J', false);
 
 //..........
@@ -5269,8 +5300,9 @@ $pdf->writeHTMLCell(90, 7, 12, 225, $html, 0, 0, false, true, 'J', true);
 $html= '<div>Have you <b>EVER</b> entered the United States without being
 inspected and admitted or paroled? </div>';
 $pdf->writeHTMLCell(85, 7, 20, 225, $html, 0, 0, false, true, 'J', true);
-
-$html= '<div> <input type="checkbox" name="part8_77" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_77" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_77_without_being_inspected_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_77_without_being_inspected_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_77" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_77" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(85, 7, 80, 235, $html, 0, 0, false, true, 'J', false);
 
 //.......... left side end 
@@ -5285,8 +5317,9 @@ $pdf->writeHTMLCell(90, 7, 112, 25, $html, 0, 0, false, true, 'L', true);
 $html= '<div>For more than 180 days but less than a year, and then
 departed the United States?</div>';
 $pdf->writeHTMLCell(85, 7, 120, 25, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_78a" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_78a" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_78a_departed_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_78a_departed_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_78a" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_78a" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 180, 32, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5296,8 +5329,9 @@ $html= '<div><b>78.b.<b/></div>';
 $pdf->writeHTMLCell(90, 7, 112, 38, $html, 0, 0, false, true, 'L', true);
 $html= '<div>For one year or more and then departed the United States?</div>';
 $pdf->writeHTMLCell(85, 7, 120, 38, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_78b" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_78b" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_78b_more_then_departed_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_78b_more_then_departed_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_78b" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_78b" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 180, 45, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5314,8 +5348,9 @@ $html= '<div><b>79.a.<b/></div>';
 $pdf->writeHTMLCell(90, 7, 112, 95, $html, 0, 0, false, true, 'L', true);
 $html= '<div>Having been unlawfully present in the United States for more than one year in the aggregate?</div>';
 $pdf->writeHTMLCell(85, 7, 120, 95, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_79a" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_79a" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_79a_unlawfully_present_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_79a_unlawfully_present_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_79a" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_79a" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 180, 100, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5325,8 +5360,9 @@ $html= '<div><b>79.b.<b/></div>';
 $pdf->writeHTMLCell(90, 7, 112, 105, $html, 0, 0, false, true, 'L', true);
 $html= '<div>Having been deported, excluded, or removed from the United States?</div>';
 $pdf->writeHTMLCell(85, 7, 120, 105, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_79b" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_79b" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_79b_been_deported_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_79b_been_deported_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_79b" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_79b" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 180, 110, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5342,8 +5378,9 @@ $html= '<div><b>80.<b/></div>';
 $pdf->writeHTMLCell(90, 7, 112, 128, $html, 0, 0, false, true, 'L', true);
 $html= '<div>Do you plan to practice polygamy in the United States?</div>';
 $pdf->writeHTMLCell(85, 7, 120, 128, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_80" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_80" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_80_practice_polygamy_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_80_practice_polygamy_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_80" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_80" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 180, 133, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5353,8 +5390,9 @@ $html= '<div><b>81.<b/></div>';
 $pdf->writeHTMLCell(90, 7, 112, 137, $html, 0, 0, false, true, 'L', true);
 $html= '<div>Are you accompanying another foreign national who requires your protection or guardianship but who is inadmissible after being certified by a medical officer as being helpless from sickness, physical or mental disability, or infancy, as described in INA section 232(c)?</div>';
 $pdf->writeHTMLCell(85, 7, 120, 137, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_81" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_81" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_81_accompanying_another_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_81_accompanying_another_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_81" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_81" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 180, 160, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5367,8 +5405,9 @@ withholding custody of a U.S. citizen child outside the
 United States from a U.S. citizen who has been granted
 custody of the child?</div>';
 $pdf->writeHTMLCell(85, 7, 120, 165, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_82" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_82" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_82_assisted_detaining_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_82_assisted_detaining_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_82" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_82" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 180, 180, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5380,8 +5419,9 @@ $html= '<div>Have you <b>EVER</b> voted in violation of any Federal, state,
 or local constitutional provision, statute, ordinance, or
 regulation in the United States?</div>';
 $pdf->writeHTMLCell(80, 7, 120, 185, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_83" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_83" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_83_violation_federal_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_83_violation_federal_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_83" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_83" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 180, 200, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5392,8 +5432,9 @@ $pdf->writeHTMLCell(90, 7, 112, 205, $html, 0, 0, false, true, 'L', true);
 $html= '<div>Have you <b>EVER</b> renounced U.S. citizenship to avoid
 being taxed by the United States?</div>';
 $pdf->writeHTMLCell(80, 7, 120, 205, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_84" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_84" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_84_renounced_citizenship_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_84_renounced_citizenship_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_84" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_84" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 180, 212, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5411,8 +5452,9 @@ service in the U.S. armed forces or in the U.S. National
 Security Training Corps on the ground that you are a
 foreign national?</div>';
 $pdf->writeHTMLCell(80, 7, 120, 225, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_85" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_85" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_85a_exemption_discharge_status')=='Y')? "checked":"";
+$checked_no = (showData('i_485_85a_exemption_discharge_status')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_85" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_85" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 180, 240, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5446,8 +5488,9 @@ $html= '<div><b>85.b.<b/></div>';
 $pdf->writeHTMLCell(80, 7, 12, 30, $html, 0, 0, false, true, 'L', true);
 $html= '<div>Been relieved or discharged from such training or service on the ground that you are a foreign national?</div>';
 $pdf->writeHTMLCell(85, 7, 20, 30, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_85b" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_85b" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_relieved_from_foreign_national_training')=='Y')? "checked":"";
+$checked_no = (showData('i_485_relieved_from_foreign_national_training')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_85b" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_85b" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 80, 40, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5457,8 +5500,9 @@ $html= '<div><b>85.c.<b/></div>';
 $pdf->writeHTMLCell(80, 7, 12, 45, $html, 0, 0, false, true, 'L', true);
 $html='<div>Been convicted of desertion from the U.S. armed forces?</div>';
 $pdf->writeHTMLCell(85, 7, 20, 45, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_85c" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_85c" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_convicted_desertion_us_armed_forces')=='Y')? "checked":"";
+$checked_no = (showData('i_485_convicted_desertion_us_armed_forces')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_85c" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_85c" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 80, 52, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5468,8 +5512,9 @@ $html= '<div><b>86.a.<b/></div>';
 $pdf->writeHTMLCell(80, 7, 12, 57, $html, 0, 0, false, true, 'L', true);
 $html='<div>Have you <b>EVER</b> left or remained outside the United States to avoid or evade training or service in the U.S. armed forces in time of war or a period declared by the President to be a national emergency?</div>';
 $pdf->writeHTMLCell(84, 7, 20, 57, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part8_86a" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part8_86a" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_remained_outside_united_states_during_war')=='Y')? "checked":"";
+$checked_no = (showData('i_485_remained_outside_united_states_during_war')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part8_86a" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part8_86a" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(80, 7, 80, 72, $html, 0, 0, false, true, 'L', false);
 
 //......
@@ -5506,8 +5551,9 @@ $pdf->writeHTMLCell(90, 7, 12, 140, $html, 0, 0, false, true, 'L', true);
 $html= '<div>Are you requesting an accommodation because of your
 disabilities and or impairments?</div>';
 $pdf->writeHTMLCell(84, 7, 20,140, $html, 0, 0, false, true, 'L', true);
-
-$html= '<div> <input type="checkbox" name="part9_1" value="Y" checked="'.$checked_no.'" />  Yes   <input type="checkbox" name="part9_1" value="N" checked="'.$checked_no.'" />  No </div>';
+$checked_yes = (showData('i_485_requesting_accommodation_for_disabilities')=='Y')? "checked":"";
+$checked_no = (showData('i_485_requesting_accommodation_for_disabilities')=='N')? "checked":"";
+$html= '<div> <input type="checkbox" name="part9_1" value="Y" checked="'.$checked_yes.'" />  Yes   <input type="checkbox" name="part9_1" value="N" checked="'.$checked_no.'" />  No </div>';
 $pdf->writeHTMLCell(84, 7, 80,  146, $html, 0, 0, false, true, 'J', false);
 //.....
 
@@ -5519,7 +5565,9 @@ $pdf->writeHTMLCell(84, 7, 20, 152, $html, 0, 0, false, true, 'J', true);
 //.........
 
 $pdf->SetFont('times', '', 10);
-$html= '<div><b>2.a.   <b/><input type="checkbox" name="part9_2a" value="Y" checked="'.$checked_no.'" /></div>';
+$checked = (showData('i_485_deaf_hard_of_hearing_req_for_accommodation')=='Y')? "checked":"";
+$html= '<div><b>2.a.   <b/><input type="checkbox" name="part9_2a" value="Y" checked="'.$checked.'" /></div>';
+
 $pdf->writeHTMLCell(90, 7, 12, 167, $html, 0, 0, false, true, 'L', true);
 $html= '<div>I am deaf or hard of hearing and request the
 following accommodation. (If you are requesting a
@@ -5538,7 +5586,9 @@ $pdf->writeHTMLCell(80, 15, 25, 185, $html, 0, 0, false, true, 'L', true);
 //.......
 
 $pdf->SetFont('times', '', 10);
-$html= '<div><b>2.b.   <b/><input type="checkbox" name="part9_2b" value="Y" checked="'.$checked_no.'" /></div>';
+$checked = (showData('i_485_blind_low_vision_req_for_accommodation')=='Y')? "checked":"";
+$html= '<div><b>2.b.   <b/><input type="checkbox" name="part9_2b" value="Y" checked="'.$checked.'" /></div>';
+
 $pdf->writeHTMLCell(90, 7, 12, 205, $html, 0, 0, false, true, 'L', true);
 $html= '<div>I am blind or have low vision and request the
 following accommodation:</div>';
@@ -5555,7 +5605,9 @@ $pdf->writeHTMLCell(80, 15, 25, 215, $html, 0, 0, false, true, 'L', true);
 
 
 $pdf->SetFont('times', '', 10);
-$html= '<div><b>2.c.   <b/><input type="checkbox" name="part9_2c" value="Y" checked="'.$checked_no.'" /></div>';
+$checked = (showData('i_485_another_type_of_disability')=='Y')? "checked":"";
+$html= '<div><b>2.c.   <b/><input type="checkbox" name="part9_2c" value="Y" checked="'.$checked.'" /></div>';
+
 $pdf->writeHTMLCell(90, 7, 112, 16, $html, 0, 0, false, true, 'L', true);
 $html= '<div>I have another type of disability and/or impairment.
 Describe the nature of your disability and/or
@@ -5594,7 +5646,9 @@ applicable, select the box for <b>Item Number 2.</b></div>';
 $pdf->writeHTMLCell(90, 7, 112, 100, $html, 0, 0, false, true, 'J', true);
 //..........
 $pdf->SetFont('times', '', 10);
-$html= '<div><b>1.a. <b/><input type="checkbox" name="part10_1a" value="Y" checked="'.$checked_no.'" /></div>';
+$checked = (showData('i_485_applicant_statement_1a_status')=='Y')? "checked":"";
+$html= '<div><b>1.a. <b/><input type="checkbox" name="part10_1a" value="Y" checked="'.$checked.'" /></div>';
+
 $pdf->writeHTMLCell(90, 7, 112, 110, $html, 0, 0, false, true, 'L', true);
 $html= '<div>I can read and understand English, and I have read
 and understand every question and instruction on this
@@ -5603,7 +5657,9 @@ $pdf->writeHTMLCell(79, 7, 124, 110, $html, 0, 0, false, true, 'L', true);
 //........
 
 $pdf->SetFont('times', '', 10);
-$html= '<div><b>1.b.   <b/><input type="checkbox" name="part10_1b" value="Y" checked="'.$checked_no.'" /></div>';
+$checked = (showData('i_485_applicant_statement_1b_status')=='Y')? "checked":"";
+$html= '<div><b>1.b.   <b/><input type="checkbox" name="part10_1b" value="Y" checked="'.$checked.'" /></div>';
+
 $pdf->writeHTMLCell(90, 7, 112, 126, $html, 0, 0, false, true, 'J', true);
 $html= '<div>The interpreter named in <b>Part 11.</b> read to me every
 question and instruction on this application and my
@@ -5615,7 +5671,9 @@ everything.</div>';
 $pdf->writeHTMLCell(79, 7, 124, 146, $html, 0, 0, false, true, 'L', true);
 //.......
 $pdf->SetFont('times', '', 10);
-$html= '<div><b>2.   <b/><input type="checkbox" name="part10_2" value="Y" checked="'.$checked_no.'" /></div>';
+$checked = (showData('i_485_applicant_statement_2_status')=='Y')? "checked":"";
+$html= '<div><b>2.   <b/><input type="checkbox" name="part10_2" value="Y" checked="'.$checked.'" /></div>';
+
 $pdf->writeHTMLCell(90, 7, 112, 156, $html, 0, 0, false, true, 'J', true);
 $html= '<div>At my request, the preparer named in <b>Part 12.</b>,</div>';
 $pdf->writeHTMLCell(79, 7, 124, 156, $html, 0, 0, false, true, 'J', true);
@@ -5833,7 +5891,10 @@ $pdf->TextField('interpreter_mailing_addres_street', 56, 7, array('strokeColor' 
 
 //...........
 $pdf->SetFont('times', '', 10);
-$html= '<div><b>3.b.  </b>  <input type="checkbox" name="apt8" value="apt" checked="'.$checked_no.'" /> Apt.   &nbsp;&nbsp; <input type="checkbox" name="ste8" value="ste" checked="'.$checked_no.'" /> Ste. &nbsp;&nbsp; <input type="checkbox" name="flr8" value="flr" checked="'.$checked_no.'" /> Flr.</div>';
+$mailing_apt = (showData('i_485_interpreter_mailing_address_apt_ste_flr')=='apt')? "checked":"";
+$mailing_ste = (showData('i_485_interpreter_mailing_address_apt_ste_flr')=='ste')? "checked":"";
+$mailing_flr = (showData('i_485_interpreter_mailing_address_apt_ste_flr')=='flr')? "checked":"";
+$html= '<div><b>3.b.  </b>  <input type="checkbox" name="apt8" value="apt" checked="'.$mailing_apt.'" /> Apt.   &nbsp;&nbsp; <input type="checkbox" name="ste8" value="ste" checked="'.$mailing_ste.'" /> Ste. &nbsp;&nbsp; <input type="checkbox" name="flr8" value="flr" checked="'.$mailing_flr.'" /> Flr.</div>';
 $pdf->writeHTMLCell(90, 7, 112, 109, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('interpreter_mailing_addres_apt_ste_flr', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 168, 109);
@@ -6055,7 +6116,12 @@ $pdf->TextField('preparer_mailing_addres_street', 55, 7, array('strokeColor' => 
 
 //..........
 $pdf->SetFont('times', '', 10);
-$html= '<div><b>3.b.  </b>  <input type="checkbox" name="apt8" value="apt" checked="'.$checked_no.'" /> Apt.   &nbsp;&nbsp; <input type="checkbox" name="ste8" value="ste" checked="'.$checked_no.'" /> Ste. &nbsp;&nbsp; <input type="checkbox" name="flr8" value="flr" checked="'.$checked_no.'" /> Flr.</div>';
+
+$mailing_apt = (showData('i_485_preparer_mailing_address_apt_ste_flr')=='apt')? "checked":"";
+$mailing_ste = (showData('i_485_preparer_mailing_address_apt_ste_flr')=='ste')? "checked":"";
+$mailing_flr = (showData('i_485_preparer_mailing_address_apt_ste_flr')=='flr')? "checked":"";
+
+$html= '<div><b>3.b.  </b>  <input type="checkbox" name="apt8" value="apt" checked="'.$mailing_apt.'" /> Apt.   &nbsp;&nbsp; <input type="checkbox" name="ste8" value="ste" checked="'.$mailing_ste.'" /> Ste. &nbsp;&nbsp; <input type="checkbox" name="flr8" value="flr" checked="'.$mailing_flr.'" /> Flr.</div>';
 $pdf->writeHTMLCell(90, 7, 112, 35, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('preparer_mailing_addres_apt_ste_flr', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 168, 35);
@@ -6146,7 +6212,9 @@ $html= '<div>Preparer\'s Statement</div>';
 $pdf->writeHTMLCell(90.5, 7, 113, 145,  $html,  0, 1, true, 'L');
 
 $pdf->SetFont('times', '', 10);
-$html= '<div><b>7.a.   <b/><input type="checkbox" name="part12_7a" value="Y" checked="'.$checked_no.'" /></div>';
+$checked = (showData('i_485_preparer_statement_7a')=='Y')? "checked":"";
+
+$html= '<div><b>7.a.   <b/><input type="checkbox" name="part12_7a" value="Y" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 112, 153, $html, 0, 0, false, true, 'J', true);
 $html= '<div>I am not an attorney or accredited representative<br> but
 have prepared this application on behalf of <br>the
@@ -6155,10 +6223,14 @@ $pdf->writeHTMLCell(79, 7, 124, 153, $html, 0, 0, false, true, 'J', true);
 //.......
 
 $pdf->SetFont('times', '', 10);
-$html= '<div><b>7.b.   <b/><input type="checkbox" name="part12_7b" value="Y" checked="'.$checked_no.'" /></div>';
+$checked = (showData('i_485_preparer_statement_7b')=='Y')? "checked":"";
+$html= '<div><b>7.b.   <b/><input type="checkbox" name="part12_7b" value="Y" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 112, 169, $html, 0, 0, false, true, 'J', true);
+
+$checked_extends = (showData('i_485_preparer_statement_7b_extend')=='Y')? "checked":"";
+$checked_not_extends = (showData('i_485_preparer_statement_7b_not_extend')=='Y')? "checked":"";
 $html= '<div>I am an attorney or accredited representative and<br> my
-representation of the applicant in this case<br><input type="checkbox" name="a" value="Y" checked="'.$checked_no.'" />  extends <input type="checkbox" name="b" value="Y" checked="'.$checked_no.'" /> does not extend beyond the<br>
+representation of the applicant in this case<br><input type="checkbox" name="a" value="Y" checked="'.$checked_extends.'" />  extends <input type="checkbox" name="b" value="Y" checked="'.$checked_not_extends.'" /> does not extend beyond the<br>
 preparation of this application.</div>';
 $pdf->writeHTMLCell(79, 7, 124, 169, $html, 0, 0, false, true, 'J', true);
 //.........
@@ -6191,7 +6263,7 @@ $pdf->setFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1); // set cell padding
 $html ='<div><b>Part 12. Contact Information, Declaration, and Signature of the Person Preparing this
 Application, if Other Than the Applicant</b>(continued)</div>';
-$pdf->writeHTMLCell(91, 7, 13, 17, $html, 1, 0, true, true, 'L', true);
+$pdf->writeHTMLCell(91, 7, 13, 17, $html, 1, 1, true, true, 'L', true);
 //......
 
 $pdf->setFont('Times', 'BI', 12);
@@ -6275,13 +6347,13 @@ $pdf->writeHTMLCell(92, 7, 112, 87, $html, 0, 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 112, 93, '', 1, 0, false, 'L');
 
 $pdf->setFont('Times', '', 10);
-$html= '<div> Date of Signature (mm/dd/yyyy)</div>';
+$html= '<div>Date of Signature (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(90, 7, 112, 102, $html, 0, 1, false, 'L');
 $pdf->setFont('courier', 'B', 10);
 $pdf->TextField('i_485_page_19_p13_signature', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 172, 102);
 // $pdf->writeHTMLCell(30, 7, 172, 102, '', 1, 0, false, 'L');
 //.......
-
+$pdf->setFont('Times', '', 10);
 $html= '<div>Applicant\'s Signature (sign in ink)</div>';
 $pdf->writeHTMLCell(92, 7, 112, 112, $html, 0, 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 112, 118, '', 1, 0, false, 'L');
@@ -6836,71 +6908,119 @@ var fields = {
     'organization3_nature_of_group':' ".showData('i_485_general_eligibility_org3_nature_group')."',
     'organization3_date_from':' ".showData('i_485_general_eligibility_org3_date_from')."',
     'organization3_date_to':' ".showData('i_485_general_eligibility_org3_date_to')."',
-
+    'general_eligibility_inadmisibility67':' ".showData('i_485_general_eligibility_list_your_certification')."',
     
-    'applicants_contact_telephone':' ".showData('volag_number')."',
-    'applicants_contact_mobile':' ".showData('volag_number')."',
-    'applicants_contact_email':' ".showData('volag_number')."',
-    'applicants_date_of_signature':' ".showData('volag_number')."',
+//page 13 
+    'general_eligibility_household_size':' ".showData('i_485_general_eligibility_household_size')."',
+//page 14 start
 
-    'interpreter_family_last_name':' ".showData('volag_number')."',
-    'interpreter_family_first_name':' ".showData('volag_number')."',
-    'interpreter_family_organization_name':' ".showData('volag_number')."',
+    'part8_table_benefit_received1':' ".showData('i_485_general_eligibility_benefit_receive','0')."',
+    'part8_table_benefit_received2':' ".showData('i_485_general_eligibility_benefit_receive','1')."',
+    'part8_table_benefit_received3':' ".showData('i_485_general_eligibility_benefit_receive','2')."',
+    'part8_table_benefit_received4':' ".showData('i_485_general_eligibility_benefit_receive','3')."',
 
-    'interpreter_mailing_addres_street':' ".showData('volag_number')."',
-    'interpreter_mailing_addres_apt_ste_flr':' ".showData('volag_number')."',
-    'interpreter_mailing_addres_city_town':' ".showData('volag_number')."',
-    'interpreter_mailing_addres_state':' ".showData('volag_number')."',
-    'interpreter_mailing_addres_zipcode':' ".showData('volag_number')."',
-    'interpreter_mailing_addres_province':' ".showData('volag_number')."',
-    'interpreter_mailing_addres_postalcode':' ".showData('volag_number')."',
-    'interpreter_mailing_addres_country':' ".showData('volag_number')."',
+    'part8_table_startdate_68c_1':' ".showData('i_485_general_eligibility_benefit_start_date','0')."',
+    'part8_table_startdate_68c_2':' ".showData('i_485_general_eligibility_benefit_start_date','1')."',
+    'part8_table_startdate_68c_3':' ".showData('i_485_general_eligibility_benefit_start_date','2')."',
+    'part8_table_startdate_68c_4':' ".showData('i_485_general_eligibility_benefit_start_date','3')."',
 
-    'interpreter_contact_daytime_telephone':' ',
-    'interpreter_contact_mobile_telephone':' ',
-    'interpreter_contact_email':' ',
-    'interpreter_certification':' ',
-    'interpreter_signature_date':' ',
-    'preparer_family_last_name':' ',
-    'preparer_family_given_name':' ',
-    'preparer_family_business_name':' ',
 
-    'preparer_mailing_addres_street':' ',
-    'preparer_mailing_addres_apt_ste_flr':' ',
-    'preparer_mailing_addres_city_town':' ',
-    'preparer_mailing_addres_state':' ',
-    'preparer_mailing_addres_zipcode':' ',
-    'preparer_mailing_addres_province':' ',
-    'preparer_mailing_addres_postalcode':' ',
-    'preparer_mailing_addres_country':' ',
+    'part8_table_end_date_68c_1':' ".showData('i_485_general_eligibility_benefit_end_date','0')."',
+    'part8_table_end_date_68c_2':' ".showData('i_485_general_eligibility_benefit_end_date','1')."',
+    'part8_table_end_date_68c_3':' ".showData('i_485_general_eligibility_benefit_end_date','2')."',
+    'part8_table_end_date_68c_4':' ".showData('i_485_general_eligibility_benefit_end_date','3')."',
 
-    'preparers_contact_daytime_telephone':' ',
-    'preparers_contact_mobile_telephone':' ',
-    'preparers_contact_email':' ',
+
+    'part8_table_dollaramount_68c_1':' ".showData('i_485_general_eligibility_benefit_amount','0')."',
+    'part8_table_dollaramount_68c_2':' ".showData('i_485_general_eligibility_benefit_amount','1')."',
+    'part8_table_dollaramount_68c_3':' ".showData('i_485_general_eligibility_benefit_amount','2')."',
+    'part8_table_dollaramount_68c_4':' ".showData('i_485_general_eligibility_benefit_amount','3')."',
+
+
+
+    'part8_table_institution_68d_1':' ".showData('i_485_general_eligibility_institution_name','0')."',
+    'part8_table_institution_68d_2':' ".showData('i_485_general_eligibility_institution_name','1')."',
+    'part8_table_institution_68d_3':' ".showData('i_485_general_eligibility_institution_name','2')."',
+    'part8_table_institution_68d_4':' ".showData('i_485_general_eligibility_institution_name','3')."',
+
+    'part8_table_date_form_68d_1':' ".showData('i_485_general_eligibility_institution_date_from','0')."',
+    'part8_table_date_form_68d_2':' ".showData('i_485_general_eligibility_institution_date_from','1')."',
+    'part8_table_date_form_68d_3':' ".showData('i_485_general_eligibility_institution_date_from','2')."',
+    'part8_table_date_form_68d_4':' ".showData('i_485_general_eligibility_institution_date_from','3')."',
+
+    'part8_table_date_to_68d_1':' ".showData('i_485_general_eligibility_institution_date_to','0')."',
+    'part8_table_date_to_68d_2':' ".showData('i_485_general_eligibility_institution_date_to','1')."',
+    'part8_table_date_to_68d_3':' ".showData('i_485_general_eligibility_institution_date_to','2')."',
+    'part8_table_date_to_68d_4':' ".showData('i_485_general_eligibility_institution_date_to','3')."',
+
+    'part8_table_reason_68d_1':' ".showData('i_485_general_eligibility_institution_reason','0')."',
+    'part8_table_reason_68d_2':' ".showData('i_485_general_eligibility_institution_reason','1')."',
+    'part8_table_reason_68d_3':' ".showData('i_485_general_eligibility_institution_reason','2')."',
+    'part8_table_reason_68d_4':' ".showData('i_485_general_eligibility_institution_reason','3')."',
+
+//page 14 end
+
+//page 16
+    'part_9_2a_accomodation_for_individuals':' ".showData('i_485_deaf_hard_of_hearing_language_sign')."',
+    'part_9_2b_accomodation_for_individuals':' ".showData('i_485_blind_low_vision_desc')."',
+    'part_9_2c_accomodation_for_individuals':' ".showData('i_485_another_type_of_disability_desc')."',
+    'applicants_contact_telephone':' ".showData('i_485_applicant_daytime_tel')."',
+    'applicants_contact_mobile':' ".showData('i_485_applicant_mobile')."',
+    'applicants_contact_email':' ".showData('i_485_applicant_email')."',
+//page 16 end
+
+//page 17 start
+    'applicants_date_of_signature':' ".showData('i_485_applicant_sign_date')."',
+    'interpreter_family_last_name':' ".showData('i_485_interpreter_family_last_name')."',
+    'interpreter_family_first_name':' ".showData('i_485_interpreter_family_given_first_name')."',
+    'interpreter_family_organization_name':' ".showData('i_485_interpreter_business_name')."',
+
+    'interpreter_mailing_addres_street':' ".showData('i_485_interpreter_mailing_address_street_number')."',
+    'interpreter_mailing_addres_apt_ste_flr':' ".showData('i_485_interpreter_mailing_address_apt_ste_flr_value')."',
+    'interpreter_mailing_addres_city_town':' ".showData('i_485_interpreter_mailing_address_city_town')."',
+    'interpreter_mailing_addres_state':' ".showData('i_485_interpreter_mailing_address_state')."',
+    'interpreter_mailing_addres_zipcode':' ".showData('i_485_interpreter_mailing_address_zip_code')."',
+    'interpreter_mailing_addres_province':' ".showData('i_485_interpreter_mailing_address_province')."',
+    'interpreter_mailing_addres_postalcode':' ".showData('i_485_interpreter_mailing_address_postal_code')."',
+    'interpreter_mailing_addres_country':' ".showData('i_485_interpreter_mailing_address_country')."',
+    'interpreter_contact_daytime_telephone':' ".showData('i_485_interpreter_daytime_tel')."',
+    'interpreter_contact_mobile_telephone':' ".showData('i_485_interpreter_mobile')."',
+    'interpreter_contact_email':' ".showData('i_485_interpreter_email')."',
+//page 17 end
+//page 18 start
+    'interpreter_certification':' ".showData('i_485_interpreter_certification_language_skill')."',
+    'interpreter_signature_date':' ".showData('i_485_interpreter_sign_date')."',
+    'preparer_family_last_name':' ".showData('i_485_preparer_family_last_name')."',
+    'preparer_family_given_name':' ".showData('i_485_preparer_family_given_first_name')."',
+    'preparer_family_business_name':' ".showData('i_485_preparer_business_name')."',
+
+    'preparer_mailing_addres_street':' ".showData('i_485_preparer_mailing_address_street_number')."',
+    'preparer_mailing_addres_apt_ste_flr':' ".showData('i_485_preparer_mailing_address_apt_ste_flr_value')."',
+    'preparer_mailing_addres_city_town':' ".showData('i_485_preparer_mailing_address_city_town')."',
+    'preparer_mailing_addres_state':' ".showData('i_485_preparer_mailing_address_state')."',
+    'preparer_mailing_addres_zipcode':' ".showData('i_485_preparer_mailing_address_zip_code')."',
+    'preparer_mailing_addres_province':' ".showData('i_485_preparer_mailing_address_province')."',
+    'preparer_mailing_addres_postalcode':' ".showData('i_485_preparer_mailing_address_postal_code')."',
+    'preparer_mailing_addres_country':' ".showData('i_485_preparer_mailing_address_country')."',
+
+    'preparers_contact_daytime_telephone':' ".showData('i_485_preparer_daytime_tel')."',
+    'preparers_contact_mobile_telephone':' ".showData('i_485_preparer_mobile')."',
+    'preparers_contact_email':' ".showData('i_485_preparer_email')."',
+
+//page 18 end
+
+
+
     'Preparer_signature_date':' ".showData('i_485_preparer_sign_date')."',
-
-    'part_13_numbered':' ',
-    'part_13_through':' ',
-    'part_13_through2':' ',
-    'part_13_pages':' ',
-
-
-    
-    'general_eligibility_household_size':' ',
-    'general_eligibility_inadmisibility67':' ',
-    'part_9_2a_accomodation_for_individuals':' ',
-    'part_9_2b_accomodation_for_individuals':' ',
-    'part_9_2c_accomodation_for_individuals':' ',
     'part13_numbered':' ',
     'part13_through':' ',
     'part13_numbered_pages':' ',
     'part13_through2':' ',
     'i_485_page_19_p13_signature':' ".showData('i_485_uscis_officer_printed_date')."',
 
+//page 19 end
 
-
-
-	// Page 7
+	// Page 20
     'i_485_additional_info_1a':' ".showData('i_485_additional_info_last_name')."',
     'i_485_additional_info_1b':' ".showData('i_485_additional_info_first_name')."',
     'i_485_additional_info_1c':' ".showData('i_485_additional_info_middle_name')."',
