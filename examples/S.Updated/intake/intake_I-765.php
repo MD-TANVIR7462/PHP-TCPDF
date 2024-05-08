@@ -163,8 +163,8 @@ include "intake_header.php";
 
 		</div><!-- right side column -->
 	</div>
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -383,13 +383,7 @@ include "intake_header.php";
 			<div class="form-group">
 				<label class="control-label col-md-12">14. Do you want the SSA to issue you a Social Security card? (You must also answer "Yes" to Item Number 15., Consent for Disclosure, to receive a card.): </label>
 				<div class="col-md-5 col-md-offset-7">
-					<label class="control-label">
-						<input type="radio" name="other_information_social_security_card_issue" value="yes" <?php echo (showData('other_information_social_security_card_issue') == 'yes') ? 'checked' : ''; ?>> Yes
-					</label>
-					&nbsp;
-					<label class="control-label">
-						<input type="radio" name="other_information_social_security_card_issue" value="no" <?php echo (showData('other_information_social_security_card_issue') == 'no') ? 'checked' : ''; ?>> No
-					</label>
+					<?php echo createRadio("other_information_social_security_card_issue")?>
 				</div>
 			</div>
 
@@ -401,13 +395,7 @@ include "intake_header.php";
 			<div class="form-group">
 				<label class="control-label col-md-12">15.Consent for Disclosure: I authorize disclosure of information from this application to the SSA as required for the purpose of assigning me an SSN and issuing me a Social Security card.: </label>
 				<div class="col-md-5 col-md-offset-7">
-					<label class="control-label">
-						<input type="radio" name="other_information_constant_for_disclosure" value="yes" <?php echo (showData('other_information_constant_for_disclosure') == 'yes') ? 'checked' : ''; ?>> Yes
-					</label>
-					&nbsp;
-					<label class="control-label">
-						<input type="radio" name="other_information_constant_for_disclosure" value="no" <?php echo (showData('other_information_constant_for_disclosure') == 'no') ? 'checked' : ''; ?>> No
-					</label>
+					<?php echo createRadio("other_information_constant_for_disclosure")?>
 				</div>
 			</div>
 
@@ -464,10 +452,9 @@ include "intake_header.php";
 
 		</div><!-- right side column -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -681,10 +668,9 @@ include "intake_header.php";
 			
 		</div><!--end of right side column -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -707,46 +693,28 @@ include "intake_header.php";
 			<div class="bg-info">
 				<h4><b><i>Applicant's Statement</i></b></h4>
 			</div>
-			<h5><b>NOTE: Select the box for either Item Number 1.a. or 1.b. If applicable, select the box for Item Number 2. </b></h5>
+			<h5><b>NOTE:</b> Select the box for either <b>Item Number 1.a. or 1.b.</b> If applicable, select the box for Item Number 2. </h5>
 
 			<div class="form-group">
-				<label class="control-label col-md-12">1.a.
-					
-					<input type="hidden" name="applicant_statement_1a" id="applicant_statement_1a" value="<?php echo (showData('applicant_statement_1a') == 'Y') ? 'Y' : 'N'; ?>" />
-
-					<input type="checkbox" onChange="checkboxValue(this,'applicant_statement_1a')" <?php echo (showData('applicant_statement_1a') == 'Y') ? 'checked' : ''; ?>> I can read and understand English, and I have read and
-					understand every question and instruction on this
-					application and my answer to every question.: 
-
-				</label>
+				<div class="col-md-12"><b>1.a.</b> <?php echo createCheckbox("i_765_applicant_statement_1a_status")?> I can read and understand English, and I have read and understand every question and instruction on this application and my answer to every question.:
+				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-md-12">1.b.
-					
-					<input type="hidden" name="applicant_statement_1b" id="applicant_statement_1b" value="<?php echo (showData('applicant_statement_1b') == 'Y') ? 'Y' : 'N'; ?>" />
-
-					<input type="checkbox" onChange="checkboxValue(this,'applicant_statement_1b')" <?php echo (showData('applicant_statement_1b') == 'Y') ? 'checked' : ''; ?>> The interpreter named in Part 4. read to me every
-				question and instruction on this application and my
-				answer to every question in
-				</label>
+				<div class="col-md-12"><b>1.b.</b> <?php echo createCheckbox("i_765_applicant_statement_1b_status")?>  The interpreter named in <b>Part 4.</b> read to me every question and instruction on this application and my answer to every question in
+				</div>
+				<div class="col-md-12">
+					<input type="text" class="form-control" name="i_765_applicant_statement_1b_language" value="<?php echo showData('i_765_applicant_statement_1b_language')?>" />
+					<p>a language in which I am fluent, and I understood everything</p>
+				</div>
 			</div>
-			
-			<input type="text" class="form-control" name="applicant_statement_1_b_write" value="<?php echo showData('applicant_statement_1_b_write')?>" />
-			<h5><b>a language in which I am fluent, and I understood everything</b></h5>
-
 			<div class="form-group">
-				<label class="control-label col-md-12">2.
-					
-					<input type="hidden" name="applicant_statement_2" id="applicant_statement_2" value="<?php echo (showData('applicant_statement_2') == 'Y') ? 'Y' : 'N'; ?>" />
-
-					<input type="checkbox" onChange="checkboxValue(this,'applicant_statement_2')" <?php echo (showData('applicant_statement_2') == 'Y') ? 'checked' : ''; ?>> At my request, the preparer named in Part 5.,
-				</label>
+				<div class="col-md-12">2. <?php echo createCheckbox("i_765_applicant_statement_2_status")?> At my request, the preparer named in Part 5.,
+				</div>
+				<div class="col-md-12">
+					<input type="text" class="form-control" name="i_765_applicant_statement_2_preparer" value="<?php echo showData('i_765_applicant_statement_2_preparer')?>" />
+					<p>prepared this application for me based only upon information I provided or authorized.</p>
+				</div>
 			</div>
-			
-			<input type="text" class="form-control" name="applicant_statement_2_write" value="<?php echo showData('applicant_statement_2_write')?>" />
-			<h5><b>prepared this application for me based only upon information I provided or authorized.</b></h5>
-
-
 			<div class="bg-info">
 				<h4><b><i>Applicant's Contact Information</i></b></h4>
 			</div>
@@ -818,10 +786,9 @@ include "intake_header.php";
 			</div>
 		</div><!--end of right side column -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1065,10 +1032,9 @@ include "intake_header.php";
 			</div>
 		</div><!--end of right side column -->				
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1133,10 +1099,9 @@ include "intake_header.php";
 
 		</div><!--end of right side column -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1144,187 +1109,186 @@ include "intake_header.php";
 ------------------------------------------------------------------------>
 
 <fieldset class="setpage">
-				<div class="row">
-					<div class="page_number">
-						<b><p style="padding-left:1000px;">Page 7 of 7</p></b>
-					</div>
-					
-                    <div class="col-md-6">
-						<div class="bg-info">
-							<h4><b>Part 6. Additional Information</b></h4>
-						</div>
-						
-                        <p>If you need extra space to provide any additional information
-						within this application, use the space below. If you need more
-						space than what is provided, you may make copies of this page
-						to complete and file with this application or attach a separate
-						sheet of paper. Type or print your name and A-Number (if any)
-						at the top of each sheet; indicate the <b>Page Number, Part
-						Number,</b> and <b>Item Number</b> to which your answer refers; and
-						sign and date each sheet.</p>
+	<div class="row">
+		<div class="page_number">
+			<b><p style="padding-left:1000px;">Page 7 of 7</p></b>
+		</div>
+		
+		<div class="col-md-6">
+			<div class="bg-info">
+				<h4><b>Part 6. Additional Information</b></h4>
+			</div>
+			
+			<p>If you need extra space to provide any additional information
+			within this application, use the space below. If you need more
+			space than what is provided, you may make copies of this page
+			to complete and file with this application or attach a separate
+			sheet of paper. Type or print your name and A-Number (if any)
+			at the top of each sheet; indicate the <b>Page Number, Part
+			Number,</b> and <b>Item Number</b> to which your answer refers; and
+			sign and date each sheet.</p>
 
-						<div class="form-group">
-							<label class="control-label col-md-5">1.a. Family Name(Last Name):</label>
-							<div class="col-md-7">
-								<input type="text" class="form-control" name="i_765_additional_info_last_name" value="<?php echo showData('i_765_additional_info_last_name')?>" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-md-5">1.b. Given Name(First Name):</label>
-							<div class="col-md-7">
-								<input type="text" class="form-control" name="i_765_additional_info_first_name" value="<?php echo showData('i_765_additional_info_first_name')?>" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-md-5">1.c. Middle Name:</label>
-							<div class="col-md-7">
-								<input type="text" class="form-control" name="i_765_additional_info_middle_name" value="<?php echo showData('i_765_additional_info_middle_name')?>" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-md-5">2. A-Number (if any) ► A-</label>
-							<div class="col-md-7">
-								<input type="text" maxlength="9" class="form-control" name="i_765_additional_info_a_number" value="<?php echo showData('i_765_additional_info_a_number')?>" />
-							</div>
-						</div>
-						<div class="d-flexible">
-							<div class="form-group">
-								<label class="control-label col-md-12">3.a. Page Number</label>
-								<div class="col-md-12">
-									<input type="text" maxlength="2" class="form-control" name="i_765_additional_info_3a_page_no" value="<?php echo showData('i_765_additional_info_3a_page_no')?>" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-12">3.b. Part Number</label>
-								<div class="col-md-12">
-									<input type="text" maxlength="6" class="form-control" name="i_765_additional_info_3b_part_no" value="<?php echo showData('i_765_additional_info_3b_part_no')?>" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-12">3.c. Item Number</label>
-								<div class="col-md-12">
-									<input type="text" maxlength="342" class="form-control" name="i_765_additional_info_3c_item_no" value="<?php echo showData('i_765_additional_info_3c_item_no')?>" />
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-12">
-								<span><b>3.d.</b></span>
-								<textarea class="form-control" id="i_765_additional_info_3d" name="i_765_additional_info_3d" maxlength="310" rows="8" cols="50"><?php echo showData('i_765_additional_info_3d')?></textarea>
-							</div>
-						</div>
-						<div class="d-flexible">
-							<div class="form-group">
-								<label class="control-label col-md-12">4.a. Page Number</label>
-								<div class="col-md-12">
-									<input type="text" maxlength="2" class="form-control" name="i_765_additional_info_4a_page_no" value="<?php echo showData('i_765_additional_info_4a_page_no')?>" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-12">4.b. Part Number</label>
-								<div class="col-md-12">
-									<input type="text" maxlength="6" class="form-control" name="i_765_additional_info_4b_part_no" value="<?php echo showData('i_765_additional_info_4b_part_no')?>" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-12">4.c. Item Number</label>
-								<div class="col-md-12">
-									<input type="text" maxlength="6" class="form-control" name="i_765_additional_info_4c_item_no" value="<?php echo showData('i_765_additional_info_4c_item_no')?>" />
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-12">
-								<span><b>4.d.</b></span>
-								<textarea class="form-control" id="i_765_additional_info_4d" name="i_765_additional_info_4d" maxlength="342" rows="8" cols="50"><?php echo showData('i_765_additional_info_4d')?></textarea>
-							</div>
-						</div>
-					</div><!--end of left side column -->
-                    
-                    <div class="col-md-6">
-						<div class="d-flexible">
-							<div class="form-group">
-								<label class="control-label col-md-12">5.a. Page Number</label>
-								<div class="col-md-12">
-									<input type="text" class="form-control" maxlength="2" name="i_765_additional_info_5a_page_no" value="<?php echo showData('i_765_additional_info_5a_page_no')?>" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-12">5.b. Part Number</label>
-								<div class="col-md-12">
-									<input type="text" class="form-control" maxlength="6" name="i_765_additional_info_5b_part_no" value="<?php echo showData('i_765_additional_info_5b_part_no')?>" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-12">5.c. Item Number</label>
-								<div class="col-md-12">
-									<input type="text" maxlength="6" class="form-control" name="i_765_additional_info_5c_item_no" value="<?php echo showData('i_765_additional_info_5c_item_no')?>" />
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-12">
-								<span><b>5.d.</b></span>
-								<textarea class="form-control" id="i_765_additional_info_5d" name="i_765_additional_info_5d" maxlength="227" rows="8" cols="50"><?php echo showData('i_765_additional_info_5d')?></textarea>
-							</div>
-						</div>
-						<div class="d-flexible">
-							<div class="form-group">
-								<label class="control-label col-md-12">6.a. Page Number</label>
-								<div class="col-md-12">
-									<input type="text" class="form-control" maxlength="2" name="i_765_additional_info_6a_page_no" value="<?php echo showData('i_765_additional_info_6a_page_no')?>" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-12">6.b. Part Number</label>
-								<div class="col-md-12">
-									<input type="text" class="form-control" maxlength="6" name="i_765_additional_info_6b_part_no" value="<?php echo showData('i_765_additional_info_6b_part_no')?>" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-12">6.c. Item Number</label>
-								<div class="col-md-12">
-									<input type="text" class="form-control" maxlength="6" name="i_765_additional_info_6c_item_no" value="<?php echo showData('i_765_additional_info_6c_item_no')?>" />
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-12">
-								<span><b>6.d.</b></span>
-								<textarea class="form-control" id="i_765_additional_info_6d" name="i_765_additional_info_6d" maxlength="303" rows="8" cols="50"><?php echo showData('i_765_additional_info_6d')?></textarea>
-							</div>
-						</div>
-						<div class="d-flexible">
-							<div class="form-group">
-								<label class="control-label col-md-12">7.a. Page Number</label>
-								<div class="col-md-12">
-									<input type="text" class="form-control" maxlength="2" name="i_765_additional_info_7a_page_no" value="<?php echo showData('i_765_additional_info_7a_page_no')?>" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-12">7.b. Part Number</label>
-								<div class="col-md-12">
-									<input type="text" class="form-control" maxlength="6" name="i_765_additional_info_7b_part_no" value="<?php echo showData('i_765_additional_info_7b_part_no')?>" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-12">7.c. Item Number</label>
-								<div class="col-md-12">
-									<input type="text" class="form-control" maxlength="6" name="i_765_additional_info_7c_item_no" value="<?php echo showData('i_765_additional_info_7c_item_no')?>" />
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-12">
-								<span><b>7.d.</b></span>
-								<textarea class="form-control" id="i_765_additional_info_7d" name="i_765_additional_info_7d" maxlength="342" rows="8" cols="50"><?php echo showData('i_765_additional_info_7d')?></textarea>
-							</div>
-						</div>
-					</div><!--end of right side column -->
+			<div class="form-group">
+				<label class="control-label col-md-5">1.a. Family Name(Last Name):</label>
+				<div class="col-md-7">
+					<input type="text" class="form-control" name="i_765_additional_info_last_name" value="<?php echo showData('i_765_additional_info_last_name')?>" />
 				</div>
-
-				<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-				<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-5">1.b. Given Name(First Name):</label>
+				<div class="col-md-7">
+					<input type="text" class="form-control" name="i_765_additional_info_first_name" value="<?php echo showData('i_765_additional_info_first_name')?>" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-5">1.c. Middle Name:</label>
+				<div class="col-md-7">
+					<input type="text" class="form-control" name="i_765_additional_info_middle_name" value="<?php echo showData('i_765_additional_info_middle_name')?>" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-5">2. A-Number (if any) ► A-</label>
+				<div class="col-md-7">
+					<input type="text" maxlength="9" class="form-control" name="i_765_additional_info_a_number" value="<?php echo showData('i_765_additional_info_a_number')?>" />
+				</div>
+			</div>
+			<div class="d-flexible">
+				<div class="form-group">
+					<label class="control-label col-md-12">3.a. Page Number</label>
+					<div class="col-md-12">
+						<input type="text" maxlength="2" class="form-control" name="i_765_additional_info_3a_page_no" value="<?php echo showData('i_765_additional_info_3a_page_no')?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-12">3.b. Part Number</label>
+					<div class="col-md-12">
+						<input type="text" maxlength="6" class="form-control" name="i_765_additional_info_3b_part_no" value="<?php echo showData('i_765_additional_info_3b_part_no')?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-12">3.c. Item Number</label>
+					<div class="col-md-12">
+						<input type="text" maxlength="342" class="form-control" name="i_765_additional_info_3c_item_no" value="<?php echo showData('i_765_additional_info_3c_item_no')?>" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-12">
+					<span><b>3.d.</b></span>
+					<textarea class="form-control" id="i_765_additional_info_3d" name="i_765_additional_info_3d" maxlength="310" rows="8" cols="50"><?php echo showData('i_765_additional_info_3d')?></textarea>
+				</div>
+			</div>
+			<div class="d-flexible">
+				<div class="form-group">
+					<label class="control-label col-md-12">4.a. Page Number</label>
+					<div class="col-md-12">
+						<input type="text" maxlength="2" class="form-control" name="i_765_additional_info_4a_page_no" value="<?php echo showData('i_765_additional_info_4a_page_no')?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-12">4.b. Part Number</label>
+					<div class="col-md-12">
+						<input type="text" maxlength="6" class="form-control" name="i_765_additional_info_4b_part_no" value="<?php echo showData('i_765_additional_info_4b_part_no')?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-12">4.c. Item Number</label>
+					<div class="col-md-12">
+						<input type="text" maxlength="6" class="form-control" name="i_765_additional_info_4c_item_no" value="<?php echo showData('i_765_additional_info_4c_item_no')?>" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-12">
+					<span><b>4.d.</b></span>
+					<textarea class="form-control" id="i_765_additional_info_4d" name="i_765_additional_info_4d" maxlength="342" rows="8" cols="50"><?php echo showData('i_765_additional_info_4d')?></textarea>
+				</div>
+			</div>
+		</div><!--end of left side column -->
+		
+		<div class="col-md-6">
+			<div class="d-flexible">
+				<div class="form-group">
+					<label class="control-label col-md-12">5.a. Page Number</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" maxlength="2" name="i_765_additional_info_5a_page_no" value="<?php echo showData('i_765_additional_info_5a_page_no')?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-12">5.b. Part Number</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" maxlength="6" name="i_765_additional_info_5b_part_no" value="<?php echo showData('i_765_additional_info_5b_part_no')?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-12">5.c. Item Number</label>
+					<div class="col-md-12">
+						<input type="text" maxlength="6" class="form-control" name="i_765_additional_info_5c_item_no" value="<?php echo showData('i_765_additional_info_5c_item_no')?>" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-12">
+					<span><b>5.d.</b></span>
+					<textarea class="form-control" id="i_765_additional_info_5d" name="i_765_additional_info_5d" maxlength="227" rows="8" cols="50"><?php echo showData('i_765_additional_info_5d')?></textarea>
+				</div>
+			</div>
+			<div class="d-flexible">
+				<div class="form-group">
+					<label class="control-label col-md-12">6.a. Page Number</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" maxlength="2" name="i_765_additional_info_6a_page_no" value="<?php echo showData('i_765_additional_info_6a_page_no')?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-12">6.b. Part Number</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" maxlength="6" name="i_765_additional_info_6b_part_no" value="<?php echo showData('i_765_additional_info_6b_part_no')?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-12">6.c. Item Number</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" maxlength="6" name="i_765_additional_info_6c_item_no" value="<?php echo showData('i_765_additional_info_6c_item_no')?>" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-12">
+					<span><b>6.d.</b></span>
+					<textarea class="form-control" id="i_765_additional_info_6d" name="i_765_additional_info_6d" maxlength="303" rows="8" cols="50"><?php echo showData('i_765_additional_info_6d')?></textarea>
+				</div>
+			</div>
+			<div class="d-flexible">
+				<div class="form-group">
+					<label class="control-label col-md-12">7.a. Page Number</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" maxlength="2" name="i_765_additional_info_7a_page_no" value="<?php echo showData('i_765_additional_info_7a_page_no')?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-12">7.b. Part Number</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" maxlength="6" name="i_765_additional_info_7b_part_no" value="<?php echo showData('i_765_additional_info_7b_part_no')?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-12">7.c. Item Number</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" maxlength="6" name="i_765_additional_info_7c_item_no" value="<?php echo showData('i_765_additional_info_7c_item_no')?>" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-12">
+					<span><b>7.d.</b></span>
+					<textarea class="form-control" id="i_765_additional_info_7d" name="i_765_additional_info_7d" maxlength="342" rows="8" cols="50"><?php echo showData('i_765_additional_info_7d')?></textarea>
+				</div>
+			</div>
+		</div><!--end of right side column -->
+	</div>
+	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <?php include "intake_footer.php"?>

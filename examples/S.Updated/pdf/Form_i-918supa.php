@@ -202,9 +202,6 @@ $pdf->writeHTMLCell( 47, 5, 88.5, 62.5, '<b> Wait Listed', '', 1, false, true, '
 $pdf->SetFont( 'times', '', 8 );
 $pdf->writeHTMLCell( 23, 3, 89, 77, 'Stamp Number', 'T', 1, false, true, 'L', true );
 $pdf->writeHTMLCell( 25.5, 3, 115.5, 77, 'Date (mm/dd/yyyy)', 'T', 1, false, true, 'L', true );
-//*?..Table End......
-
-//*?second Table Start ....
 
 $pdf->writeHTMLCell ( 190, 18, 13, 83.5, '', 1, 1, false, true, 'C', true );
 
@@ -237,7 +234,7 @@ $pdf->SetFont( 'courier', 'B', 10 );
 $pdf->TextField( 'attorney_state_bar_number', 46, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 96, 93.4 );
 
 $pdf->SetFont( 'times', '', 9.7 );
-$html = '<div><b>Attorney or According Representative USCIS Online Account Number</b> (if any)</div>';
+$html = '<div><b>Attorney or Accredited Representative USCIS Online Account Number</b> (if any)</div>';
 $pdf->writeHTMLCell( 60, 15, 143.7, 83.5, $html, 0, 1, false, true, 'L', true );
 
 $pdf->SetFont( 'courier', 'B', 10 );
@@ -1177,9 +1174,64 @@ space provided in <b>Part 11. Additional Information</b> to provide
 an explanation.
 </div>';
 $pdf->writeHTMLCell( 90, 7, 112, 103, $html, 0, 1, false, true, 'J', true );
-// //*..........................
 
-$pdf->SetFont( 'times', '', 6 );
+//..................
+
+if(showData('family_member_immigration_proceedings_removal')=="Y") $checked_data = "checked"; else $checked_data = "";
+$html = '<div><b>7.b. </b> &nbsp;&nbsp;
+<input type="checkbox" name="part-2_7b" value="Y" checked="'.$checked_data.'" /> Removal Proceedings</div>';
+$pdf->writeHTMLCell( 90, 0, 112, 136, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 90, 0, 119, 141, 'Removal Date (mm/dd/yyyy)', '', 0, 0, true, 'L' );
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('family_member_immigration_proceedings_removal_date', 32, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 172, 141);
+
+//..................
+
+$pdf->SetFont('times', '', 9.7);
+if(showData('family_member_immigration_proceedings_exclusion')=="Y") $checked_data = "checked"; else $checked_data = "";
+
+$html = '<div><b>7.c. </b> &nbsp;&nbsp;
+<input type="checkbox" name="part-2_7c" value="Y" checked="'.$checked_data.'" /> Exclusion Proceedings</div>';
+$pdf->writeHTMLCell( 90, 0, 112, 147, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 90, 0, 119, 152, 'Exclusion Date (mm/dd/yyyy)', '', 0, 0, true, 'L' );
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('family_member_immigration_proceedings_exclusion_date', 32, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 172, 152);
+
+//..................
+
+$pdf->SetFont('times', '', 9.7);
+if(showData('family_member_immigration_proceedings_deportion')=="Y") $checked_data = "checked"; else $checked_data = "";
+
+$html = '<div><b>7.d. </b> &nbsp;&nbsp;
+<input type="checkbox" name="part-2_7d" value="Y" checked="'.$checked_data.'" /> Deportation Proceedings</div>';
+$pdf->writeHTMLCell( 90, 0, 112, 157, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 90, 0, 119, 161.5, 'Deportation Date (mm/dd/yyyy)', '', 0, 0, true, 'L' );
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('family_member_immigration_proceedings_deportion_date', 32, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 172, 161.5);
+
+//..................
+
+$pdf->SetFont('times', '', 9.7);
+if(showData('family_member_immigration_proceedings_rescission')=="Y") $checked_data = "checked"; else $checked_data = "";
+$html = '<div><b>7.e. </b> &nbsp;&nbsp;
+<input type="checkbox" name="part-2_7e" value="Y" checked="'.$checked_data.'" /> Rescission Proceedings</div>';
+$pdf->writeHTMLCell( 90, 0, 112, 167, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 90, 0, 119, 171.5, 'Rescission Date (mm/dd/yyyy)', '', 0, 0, true, 'L' );
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('family_member_immigration_proceedings_rescission_date', 32, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 172, 171.5);
+
+//..................
+
+$pdf->SetFont('times', '', 9.7);
+if(showData('family_member_immigration_proceedings_judicial')=="Y") $checked_data = "checked"; else $checked_data = "";
+$html = '<div><b>7.f. </b> &nbsp;&nbsp;
+<input type="checkbox" name="part-2_7f" value="Y" checked="'.$checked_data.'" /> Judicial Proceedings</div>';
+$pdf->writeHTMLCell( 90, 0, 112, 177, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 90, 0, 119, 182, 'Judicial Date (mm/dd/yyyy)', '', 0, 0, true, 'L' );
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('family_member_immigration_proceedings_judicial_date', 32, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 172, 182);
+
+/* $pdf->SetFont( 'times', '', 6 );
 $pdf->writeHTMLCell( 3, 2, 120, 137.5, '', 1, 1, false, true, 'L', false );
 $pdf->SetFont( 'times', '', 9.7 );
 $html = '<div><b>7.b.   &nbsp;  </b>  &nbsp;   &nbsp;&nbsp; Removal Proceedings  <br>      &nbsp;  &nbsp; &nbsp;  Removal Date (mm/dd/yyyy)</div>';
@@ -1223,7 +1275,9 @@ $html = '<div><b>7.f.   &nbsp;  </b>  &nbsp;   &nbsp;&nbsp; Judicial Proceedings
 </div>';
 $pdf->writeHTMLCell( 90, 0, 112, 176, $html, '', 0, 0, true, 'L' );
 $pdf->writeHTMLCell( 39, 3, 165, 179, '', 1, 1, false, true, 'L', true );
-//*/...........................
+*/
+
+
 $pdf->SetFont( 'times', '', 9.7 );
 $html = '<div><b>8.   &nbsp;  </b>     Your family member would like an Employment<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Authorization Document.</div>';
@@ -1249,7 +1303,7 @@ employment authorization until he or she is lawfully
 admitted to the United States. Do <b>not </b>file Form I-765 for
 a family member living outside the United States.
 </div>';
-$pdf->writeHTMLCell( 90, 7, 112, 204, $html, 0, 1, false, true, 'J', true );
+$pdf->writeHTMLCell( 85, 7, 119, 204, $html, 0, 1, false, true, 'L', true );
 
 /********************************
 ******** End Page No 3 **********
@@ -1669,7 +1723,7 @@ $part5_4c_no    = (showData('i_918a_part_5_processing_information_continued_4_c'
 
 $html = '<div>
 <input type="checkbox" name="part5_4c_y_currently_active" value="Y" checked="'.$part5_4c_yes.'"/>  Yes &nbsp; &nbsp; 
-<input type="checkbox" name="part5_4c_n_currently_active" value="N" checked="'.$part5_4c_yes.'"/>  No
+<input type="checkbox" name="part5_4c_n_currently_active" value="N" checked="'.$part5_4c_no.'"/>  No
 </div>';
 $pdf->writeHTMLCell( 60, 0, 70, 68, $html, '', 0, 0, true, 'L' );
 //*.........
@@ -3244,7 +3298,7 @@ $pdf->TextField('part8_4_Telephone', 83, 7, array('strokeColor' => array(64, 64,
 //......
 
 $pdf->setFont('Times', '', 10);
-$html = '<div><b>5. </b>  &nbsp; Preparer\'s  Email Address (if any)</div>';
+$html = '<div><b>5. </b>  &nbsp; Qualifying Family Member\'s Email Address (if any)</div>';
 $pdf->writeHTMLCell(95, 7, 12, 75, $html, 0, 0, false, 'L');
 $pdf->setFont('courier', 'B', 10);
 $pdf->TextField('part8_5_email', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),20,81);
@@ -3253,11 +3307,10 @@ $pdf->TextField('part8_5_email', 83, 7, array('strokeColor' => array(64, 64, 64)
 
 $pdf->setFillColor(220, 220, 220); 
 $pdf->setFont('Times', 'BI', 13);
-$pdf->setCellHeightRatio(1);
+$pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 1, 1, 1); // set cell padding
 $pdf->SetFontSize(12); // set font
-$html= "<div>Qualifying Family Member's Declaration and
-Certification</div>";
+$html= "<div>Qualifying Family Member's Declaration and Certification</div>";
 $pdf->writeHTMLCell(90, 7, 13, 91, $html, 0, 1, true, 'L');
 // //.........
 $pdf->SetFont('times', '', 10); // set font
@@ -3267,7 +3320,7 @@ that USCIS may require that I submit original documents to
 USCIS at a later date. Furthermore, I authorize the release of
 any information from any of my records that USCIS may need
 to determine my eligibility for the immigration benefit I seek';
-$pdf->writeHTMLCell(95, 7, 12, 102, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(95, 7, 12, 104, $html, '', 0, 0, true, 'L');
 
 
 $pdf->SetFont('times', '', 10); // set font
@@ -3277,7 +3330,7 @@ to other entities and persons where necessary for the
 administration and enforcement of U.S. immigration laws. Any
 disclosure shall be in accordance with 8 U.S.C. section 1367
 and 8 CFR 214.14(e).';
-$pdf->writeHTMLCell(95, 7, 12, 126, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(95, 7, 12, 132, $html, '', 0, 0, true, 'L');
 
 
 $pdf->SetFont('times', '', 10); // set font
@@ -3285,7 +3338,7 @@ $html = 'I understand that USCIS may require me to appear for an
 appointment to take my biometrics (fingerprints, photograph,
 and/or signature) and, at that time, if I am required to provide
 biometrics, I will be required to sign an oath reaffirming that:';
-$pdf->writeHTMLCell(95, 7, 12, 150, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(95, 7, 12, 159, $html, '', 0, 0, true, 'L');
 
 
 $pdf->SetFont('times', '', 9.9); // set font
@@ -3295,7 +3348,7 @@ contained in, and submitted with, my supplement;
 and submitted with, my supplement; and 
 <br><b>3)</b> All of this information was complete, true, and<br> correct
 at the time of filing.';
-$pdf->writeHTMLCell(95, 7, 23, 167, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(95, 7, 23, 177, $html, '', 0, 0, true, 'L');
 
 
 $pdf->SetFont('times', '', 10); // set font
@@ -3305,7 +3358,7 @@ provided or authorized by me, that I reviewed and understand
 all of the information contained in, and submitted with, my
 supplement, and that all of this information is complete, true,
 and correct.';
-$pdf->writeHTMLCell(95, 7, 12, 192, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(95, 7, 12, 205, $html, '', 0, 0, true, 'L');
 
 
 
@@ -3323,7 +3376,7 @@ $pdf->writeHTMLCell(83, 7, 121, 30, "", 1, 1, false, true, 'J', true);
 //........
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>6.b.  </b> Date of Signature (mm/dd/yyyy) </div>';
+$html ='<div><b>6.b.  </b> Date of Signature (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(90, 7, 112, 39, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part8_6b', 30, 7,array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),174, 40);
@@ -3519,18 +3572,18 @@ $pdf->writeHTMLCell(95, 20, 12, 51, $html, 0, 0, false, 'L');
 //..........
 
 $pdf->SetFont('times', 'I', 12);
-$html ='<div><b>Interpreter\'s Signature </b></div>';
+$html ='<div><b>Interpreter\'s Signature</b></div>';
 $pdf->writeHTMLCell(91, 6, 13, 102, $html, 0, 0, true, false, 'L', false);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>7.a.  </b>  Interpreter\'s Signature</div>';
+$html ='<div><b>7.a.  </b> Interpreter\'s Signature (sign in ink)</div>';
 $pdf->writeHTMLCell(90, 7, 12, 110, $html, 0, 1, false, true, 'J', true);
 $pdf->writeHTMLCell(83, 7, 21, 115, "", 1, 1, false, true, 'J', true);
 //........
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>7.b.  </b> Date of Signature (mm/dd/yyyy) </div>';
+$html ='<div><b>7.b.  </b> Date of Signature (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(90, 7, 12, 125, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('i_918a_interpreter_sign_date', 30, 7,array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),74, 125);
@@ -3682,7 +3735,7 @@ $pdf->writeHTMLCell(90, 7, 113, 145, $html, 0, 0, true, false, 'L', false);
 //..........
 $pdf->SetFont('times', '', 10);
 
-$part10_7a = (showData('i_918a_part_9_interpreter_contact_7_a')=='Y')?'checked':'';
+$part10_7a = (showData('i_918a_preparer_statement_7a')=='Y')?'checked':'';
 
 $html = '<div><b>7.a. </b> <input type="checkbox" name="part10_7a" value="Y" checked="'.$part10_7a.'" /></div>';
 $pdf->writeHTMLCell(20, 7, 112, 152, $html, 0, 0, false, 'L');
@@ -3692,16 +3745,17 @@ petitioner and qualifying family member and with the
 petitioner's and qualifying family member's consent.</div>";
 $pdf->writeHTMLCell(84, 7, 124, 152, $html, 0, 0, false, 'L');
 //..........
-$part10_7b = (showData('i_918a_part_9_interpreter_contact_7_b')=='Y')?'checked':'';
+$part10_7b = (showData('i_918a_preparer_statement_7b')=='Y')?'checked':'';
 
 $html = '<div><b>7.b. </b><input type="checkbox" name="part10_7b" value="Y" checked="'.$part10_7b.'" /></div>';
 $pdf->writeHTMLCell(20, 7, 112, 172, $html, 0, 0, false, 'L');
-$html = '<div> I am an attorney or accredited representative and
-my representation of the petitioner and qualifying family
-member in this case 
-&nbsp;&nbsp;&nbsp;&nbsp;extends &nbsp;&nbsp;&nbsp;&nbsp;does not extend beyond the
-preparation of this supplement.
-</div>';
+
+if(showData('i_918a_preparer_statement_7b_extend')=="Y") $checkbox_extend_status = "checked";
+else $checkbox_extend_status = "";
+if(showData('i_918a_preparer_statement_7b_not_extend')=="Y") $checkbox_not_extend_status = "checked";
+else $checkbox_not_extend_status = "";
+
+$html = '<div> I am an attorney or accredited representative and my representation of the petitioner and qualifying family member in this case <input type="checkbox" name="i_918a_extends" value="Y" checked="'.$checkbox_extend_status.'" /> extends <input type="checkbox" name="i_918a_not_extends" value="Y" checked="'.$checkbox_not_extend_status.'" /> does not extend beyond the preparation of this supplement.</div>';
 $pdf->writeHTMLCell(80, 7, 124, 172, $html, 0, 0, false, 'L');
 
 $html = '<div><b>NOTE:</b> If you are an attorney or accredited
@@ -3711,9 +3765,9 @@ submit a completed Form G-28, Notice of Entry of
 Appearance as Attorney or Accredited Representative,
 with this supplement.</div>';
 $pdf->writeHTMLCell(83, 7, 124, 192, $html, 0, 0, false, 'L');
-$pdf->setCellHeightRatio( 0 );
+/* $pdf->setCellHeightRatio( 0 );
 $pdf->writeHTMLCell(2.5, 2.5, 155, 182.5, "", 1, 0, false, 'L');
-$pdf->writeHTMLCell(2.5, 2.5, 171, 182.5, "", 1, 0, false, 'L');
+$pdf->writeHTMLCell(2.5, 2.5, 171, 182.5, "", 1, 0, false, 'L'); */
 
 /********************************
 ******** End Page No 10 *********
@@ -3774,18 +3828,17 @@ $pdf->setCellPaddings( 1, 1, 1, 1 );
 // set cell padding
 $pdf->SetFontSize( 11.6 );
 // set font
-$html = '<div>Preparer\'s Signature </div>';
+$html = '<div>Preparer\'s Signature</div>';
 $pdf->writeHTMLCell( 92, 7, 13, 109, $html, 0, 1, true, 'L' );
 //.....
 $pdf->setFont( 'Times', '', 10 );
-$html = '<div><b>8.a. </b> &nbsp;
-Preparer\'s Signature ( sign in ink )</div>';
+$html = '<div><b>8.a. </b> &nbsp;Preparer\'s Signature (sign in ink)</div>';
 $pdf->writeHTMLCell( 92, 7, 12, 117, $html, 0, 1, false, 'L' );
 $pdf->writeHTMLCell( 83, 7, 22, 123, '', 1, 0, false, 'L' );
 $pdf->setFont( 'Times', '', 10 );
 //.............
 $html = '<div><b>8.b. </b>&nbsp;
-Date of Signature ( mm/dd/yyyy )</div>';
+Date of Signature (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell( 92, 7, 12, 134, $html, 0, 1, false, 'L' );
 $pdf->setFont( 'courier', 'B', 10 );
 $pdf->TextField( 'i_918a_preparer_sign_date', 30, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 75, 134 );
@@ -4107,6 +4160,15 @@ var fields = {
 'part4_6d_Marriage_Ended': ' ".showData('additional_information_about_your_qualifying_family_member_not_in_united_states_date_marriage_ended2')."',
 'part4_6e_Where': ' ".showData('additional_information_about_your_qualifying_family_member_not_in_united_states_where_did_marriage_end2')."',
 'part4_6f': ' ".showData('additional_information_about_your_qualifying_family_member_not_in_united_states_how_did_the_marriage_end2')."',
+'family_member_immigration_proceedings_removal_date':' ".showData('family_member_immigration_proceedings_removal_date')."',
+'family_member_immigration_proceedings_exclusion_date':' ".showData('family_member_immigration_proceedings_exclusion_date')."',
+'family_member_immigration_proceedings_deportion_date':' ".showData('family_member_immigration_proceedings_deportion_date')."',
+'family_member_immigration_proceedings_rescission_date':' ".showData('family_member_immigration_proceedings_rescission_date')."',
+'family_member_immigration_proceedings_judicial_date':' ".showData('family_member_immigration_proceedings_judicial_date')."',
+
+
+
+
 
 // page 4
 'part5_2a': ' ".showData('processing_information_why_was_your_family_member_arested')."',

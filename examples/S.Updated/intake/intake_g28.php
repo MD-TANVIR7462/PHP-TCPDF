@@ -246,8 +246,8 @@ include "intake_header.php";
 
 		</div><!-- right side column -->
 	</div>
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset><!-- field set 1 end  -->
 
 <!----------------------------------------------------------------------
@@ -376,9 +376,9 @@ include "intake_header.php";
 	</div>
 
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
-</fieldset>
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset><!-- field set 2 end  -->
 
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
@@ -559,7 +559,7 @@ include "intake_header.php";
 	</div>
 	
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <?php include "intake_footer.php"?>

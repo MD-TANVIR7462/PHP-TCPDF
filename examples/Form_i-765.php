@@ -1,5 +1,5 @@
 <?php
-require_once('formheader.php');   //database connection file 
+require_once('formheader.php');  //database connection file 
 
 
 
@@ -1651,7 +1651,7 @@ $pdf->writeHTMLCell(90, 7, 13, 42,  $html,  0, 1, true, 'L');
 
 $pdf->SetFont('times', '', 10);
 
-if(showData('i_765_preparer_statement_7a')=="Y") $  = "checked"; else $checkbox_status = "";
+if(showData('i_765_preparer_statement_7a')=="Y") $checkbox_status = "checked"; else $checkbox_status = "";
 $html= '<div><b>7.a.<b/> <input type="checkbox" name="i_765_preparer_statement_7a" value="Y" checked="'.$checkbox_status.'" /></div>';
 
 $pdf->writeHTMLCell(90, 7, 12, 50, $html, 0, 0, false, true, 'J', true);

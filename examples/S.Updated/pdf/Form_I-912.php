@@ -316,7 +316,7 @@ $pdf->SetFont('times', '', 10); // set font
 $html = '<b>1.</b>';
 $pdf->writeHTMLCell(10, 7, 12, 193.5, $html, 0, 0, false, false, 'L', true);
 
-$checked_data = (showData('i_912_part_2_legal_guardian_status')=='Y')? "checked":"";
+if(showData('i_912_part_2_legal_guardian_status')=="Y") $checked_data = "checked"; else $checked_data = "";
 $html = '<div><input type="checkbox" name="part-1_2" value="Y" checked="'.$checked_data.'" /></div>';
 $pdf->writeHTMLCell( 10, 7, 17, 193.5, $html, 0, 1, false, false, 'J', true );
 $html = '<div>Check here if you are a parent or legal guardian filing on behalf of the person seeking the fee waiver.</div>';
@@ -412,7 +412,7 @@ $pdf->StopTransform(); */
 ******** Start Page No 2 ********
 *********************************/
 
-$pdf->AddPage('P', 'LETTER');//Page 2 
+$pdf->AddPage('P', 'LETTER');
 $pdf->SetFillColor( 220, 220, 220 );
 $pdf->SetFont( 'times', '', 10 );
 $pdf->setCellHeightRatio( 1.3 );

@@ -69,7 +69,8 @@ $(document).on('submit', '#registration_form', function(event){
 		contentType:false,
 		processData:false,
 		success:function(data){
-			alert(data);
+			// alert(data);
+			toastr.success(data);
 		}
 	}); 
 });

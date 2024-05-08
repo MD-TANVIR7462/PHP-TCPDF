@@ -17,12 +17,8 @@ include "intake_header.php";
 	<div class="form-group">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-1">
-				<label class="control-label">
-					<input type="hidden" name="form_918_g28_is_attached" id="form_918_g28_is_attached"
-						value="<?php echo (showData('form_918_g28_is_attached') == 'Y') ? 'Y' : 'N'; ?>" />
-
-					<input type="checkbox" onChange="checkboxValue(this,'form_918_g28_is_attached')"
-						<?php echo (showData('form_918_g28_is_attached') == 'Y') ? 'checked' : ''; ?>>
+				<label class="control-label">					
+					<?php echo createCheckbox("form_918_g28_is_attached")?>	
 					Select this box if Form G-28 is attached.
 				</label>
 				<br>
@@ -353,11 +349,8 @@ include "intake_header.php";
 			</div>
 		</div><!-- right side column -->
 	</div>
-
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next"
-		style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-		id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset><!-- field set 1 end  -->
 
 <!----------------------------------------------------------------------
@@ -675,99 +668,60 @@ include "intake_header.php";
 			</div>
 			<div class="form-group">
 				<label class="control-label col-md-7"> 7.b.
-
-					<input type="hidden" name="part_2_7b_removal_proceding" id="part_2_7b_removal_proceding"
-						value="<?php echo (showData('part_2_7b_removal_proceding') == 'Y') ? 'Y' : 'N'; ?>" />
-
-					<input type="checkbox" onChange="checkboxValue(this,'part_2_7b_removal_proceding')"
-						<?php echo (showData('part_2_7b_removal_proceding')=='Y')? 'checked':'' ?>
-						value="Y">
-					Removal Proceedings Removal Date (mm/dd/yyyy)
-
+					<?php echo createCheckbox("my_immigration_proceedings_removal")?>
+					Removal Proceedings <br>Removal Date (mm/dd/yyyy)
 				</label>
 				<div class="col-md-5">
-					<input type="date" class="form-control" name="part_2_7b_removal_proceding_date"
-						value="<?php echo showData('part_2_7b_removal_proceding_date')?>">
+					<input type="date" class="form-control" name="my_immigration_proceedings_removal_date"
+						value="<?php echo showData('my_immigration_proceedings_removal_date')?>">
 				</div>
 			</div>
-
 			<div class="form-group">
 				<label class="control-label col-md-7"> 7.c.
-
-					<input type="hidden" name="part_2_7c_exclusion_proceding"
-						id="part_2_7c_exclusion_proceding"
-						value="<?php echo (showData('part_2_7c_exclusion_proceding') == 'Y') ? 'Y' : 'N'; ?>" />
-
-					<input type="checkbox" onChange="checkboxValue(this,'part_2_7c_exclusion_proceding')"
-						<?php echo (showData('part_2_7c_exclusion_proceding')=='Y')? 'checked':'' ?>
-						value="Y">
-					Exclusion Proceedings Exclusion Date (mm/dd/yyyy)
-
+					<?php echo createCheckbox("my_immigration_proceedings_exclusion")?>
+					Exclusion Proceedings <br>Exclusion Date (mm/dd/yyyy)
 				</label>
 				<div class="col-md-5">
-					<input type="date" class="form-control" name="part_2_7c_exclusion_proceding_date"
-						value="<?php echo showData('part_2_7c_exclusion_proceding_date')?>">
+					<input type="date" class="form-control" name="my_immigration_proceedings_exclusion_date"
+						value="<?php echo showData('my_immigration_proceedings_exclusion_date')?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-md-7"> 7.d.
-
-					<input type="hidden" name="part_2_7d_deportion_proceding"
-						id="part_2_7d_deportion_proceding"
-						value="<?php echo (showData('part_2_7d_deportion_proceding') == 'Y') ? 'Y' : 'N'; ?>" />
-
-					<input type="checkbox" onChange="checkboxValue(this,'part_2_7d_deportion_proceding')"
-						<?php echo (showData('part_2_7d_deportion_proceding')=='Y')? 'checked':'' ?>
-						value="Y"> Deportation Proceedings Deportation Date(mm/dd/yyyy)
+					<?php echo createCheckbox("imy_immigration_proceedings_deportion")?>
+					Deportation Proceedings <br>Deportation Date(mm/dd/yyyy)
 				</label>
 				<div class="col-md-5">
-					<input type="date" class="form-control" name="part_2_7d_deportion_proceding_date"
-						value="<?php echo showData('part_2_7d_deportion_proceding_date')?>">
+					<input type="date" class="form-control" name="my_immigration_proceedings_deportion_date"
+						value="<?php echo showData('my_immigration_proceedings_deportion_date')?>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-md-7"> 7.e.
-
-					<input type="hidden" name="part_2_7e_rescission_proceding"
-						id="part_2_7e_rescission_proceding"
-						value="<?php echo (showData('part_2_7e_rescission_proceding') == 'Y') ? 'Y' : 'N'; ?>" />
-
-					<input type="checkbox" onChange="checkboxValue(this,'part_2_7e_rescission_proceding')"
-						<?php echo (showData('part_2_7e_rescission_proceding')=='Y')? 'checked':'' ?>
-						value="Y"> Rescission Proceedings Rescission Date (mm/dd/yyyy)
+					<?php echo createCheckbox("my_immigration_proceedings_rescission")?>
+					Rescission Proceedings <br>Rescission Date (mm/dd/yyyy)
 				</label>
 				<div class="col-md-5">
-					<input type="date" class="form-control" name="part_2_7e_rescission_proceding_date"
-						value="<?php echo showData('part_2_7e_rescission_proceding_date')?>">
+					<input type="date" class="form-control" name="my_immigration_proceedings_rescission_date"
+						value="<?php echo showData('my_immigration_proceedings_rescission_date')?>">
 				</div>
 			</div>
-
 			<div class="form-group">
 				<label class="control-label col-md-7"> 7.f.
-
-					<input type="hidden" name="part_2_7f_judicial_proceding"
-						id="part_2_7f_judicial_proceding"
-						value="<?php echo (showData('part_2_7f_judicial_proceding') == 'Y') ? 'Y' : 'N'; ?>" />
-
-					<input type="checkbox" onChange="checkboxValue(this,'part_2_7f_judicial_proceding')"
-						<?php echo (showData('part_2_7f_judicial_proceding')=='Y')? 'checked':'' ?>
-						value="Y"> Judicial Proceedings Judicial Date (mm/dd/yyyy)
+					<?php echo createCheckbox("my_immigration_proceedings_judicial")?>
+					Judicial Proceedings <br>Judicial Date (mm/dd/yyyy)
 				</label>
 				<div class="col-md-5">
-					<input type="date" class="form-control" name="part_2_7f_judicial_proceding_date"
-						value="<?php echo showData('part_2_7f_judicial_proceding_date')?>">
+					<input type="date" class="form-control" name="my_immigration_proceedings_judicial_date"
+						value="<?php echo showData('my_immigration_proceedings_judicial_date')?>">
 				</div>
 			</div>
-
 		</div>
 		<!--end column-->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next"
-		style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-		id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1163,10 +1117,8 @@ include "intake_header.php";
 		<!--end column-->
 	</div>
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next"
-		style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-		id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1598,10 +1550,8 @@ include "intake_header.php";
 		<!--end column-->
 	</div>
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next"
-		style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-		id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -2045,10 +1995,8 @@ include "intake_header.php";
 		<!--end column-->
 	</div>
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next"
-		style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-		id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -2531,10 +2479,8 @@ include "intake_header.php";
 		<!--end column-->
 	</div>
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next"
-		style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-		id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -2879,10 +2825,8 @@ include "intake_header.php";
 		<!--end column-->
 	</div>
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next"
-		style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-		id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -3053,11 +2997,9 @@ include "intake_header.php";
 		</div><!-- right side column end -->
 
 	</div>
-	
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
-	
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />	
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -3352,11 +3294,9 @@ include "intake_header.php";
 			</div>
 		</div><!-- right side column end -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
-
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -3436,13 +3376,9 @@ include "intake_header.php";
 		</div><!-- right side column end -->
 
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" 
-	style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-		id="submit_data" />
-
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -3629,9 +3565,8 @@ include "intake_header.php";
 			</div>
 		</div><!--end column-->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <?php include "intake_footer.php"?>

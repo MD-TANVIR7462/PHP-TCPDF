@@ -89,7 +89,7 @@ $pdf->setImageScale( PDF_IMAGE_SCALE_RATIO );
 ******** Start Page No 1 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 
 //* set style for barcode
 $style = array(
@@ -150,13 +150,6 @@ $pdf->setCellHeightRatio( 1.1 );
 //* set cell height ratio
 $pdf->MultiCell( 0, 0, '', 'T', 1, 'C', 1, 12.8, 30.65, false, 'T', 'C' );
 
-//*!..............<<< Page 1 >>>-----------------//*
-
-/**
-* ?<<<<<<< First Page Starts from Here >>>>>
-*/
-
-//*?..Table Start ..............
 $pdf->SetFillColor( 220, 220, 220 );
 $pdf->SetFont( 'times', 'B', 11 );
 $pdf->writeHTMLCell( 190, 47, 13, 35, '',  1,  0, false, false, 'C', true );
@@ -171,9 +164,7 @@ $pdf->writeHTMLCell( 30, 5, 33, 35, $html, 0, 1, false, true, 'C', true );
 
 //*............
 $pdf->SetFont( 'times', '', 8 );
-//* ! CheckBOx $pdf->writeHTMLCell( 3, 1, 30, 52, '',  1,  1, false, true, 'L', false );
-//*! Underline $pdf->writeHTMLCell( 31, 5, 35, 58, '', 'B', 1, false, true, 'L', true );
-//*........
+
 $pdf->writeHTMLCell( 1, 28, 68.5, 35, '', 'R', 1, false, true, 'L', true );
 $pdf->writeHTMLCell( 112.5, 10, 28.5, 63, '', 'T', 1, false, true, 'L', true );
 $pdf->writeHTMLCell( 1, 47, 140, 35, '', 'R', 1, false, true, 'L', true );
@@ -195,9 +186,6 @@ $pdf->writeHTMLCell( 47, 5, 88.5, 62.5, '<b> Wait Listed', '', 1, false, true, '
 $pdf->SetFont( 'times', '', 8 );
 $pdf->writeHTMLCell( 23, 3, 89, 77, 'Stamp Number', 'T', 1, false, true, 'L', true );
 $pdf->writeHTMLCell( 25.5, 3, 115.5, 77, 'Date (mm/dd/yyyy)', 'T', 1, false, true, 'L', true );
-//*?..Table End......
-
-//*?second Table Start ....
 
 $pdf->writeHTMLCell ( 190, 18, 13, 83.5, '', 1, 1, false, true, 'C', true );
 
@@ -208,8 +196,11 @@ $html = '<div><b>To be completed by an attorney or accredited representative</b>
 $pdf->writeHTMLCell( 40, 7, 15, 85, $html,  0,  1, false, true, 'L', false );
 
 $pdf->SetFont( 'times', '', 12 );
-$html = '<div><b>  </b>   <input type="checkbox" name="table_2_CheckBox" value="Y" checked=" " /> </div>';
-$pdf->writeHTMLCell( 40, 15, 20, 83.5, $html, 0, 1, false, true, 'R', true );
+
+
+if(showData('form_918_g28_is_attached')=="Y") $checked_data = "checked"; else $checked_data = "";
+$html = '<div><input type="checkbox" name="table_2_CheckBox" value="Y" checked="'.$checked_data.'" /></div>';
+$pdf->writeHTMLCell( 40, 15, 33, 83.5, $html, 0, 1, false, true, 'R', true );
 
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>Select this box if <br>Form G-28 is <br>attached.</b></div>';
@@ -231,9 +222,7 @@ $html = '<div><b>Attorney or According Representative USCIS Online Account Numbe
 $pdf->writeHTMLCell( 60, 15, 143.7, 83.5, $html, 0, 1, false, true, 'L', true );
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField( 'Attorney_or_According_Representative', 57, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 145, 93.4 );
-
-//*? <<< second Table End >>>.....
+$pdf->TextField( 'attorney_uscis_online_account_number', 57, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 145, 93.4 );
 
 $pdf->SetFont( 'times', 'B', 10 );
 //* set font
@@ -247,8 +236,6 @@ $pdf->SetFont( 'zapfdingbats', 'B', 10 );
 $pdf->MultiCell( 10, 10, 't', '', 'L', 0, 1, 11, 100.7, false );
 //* angle
 $pdf->StopTransform();
-
-//* ?<<< part 1 start >>>.........
 
 $pdf->SetFillColor( 220, 220, 220 );
 $pdf->SetFont('times', '', 10);
@@ -313,7 +300,6 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField( 'part1_2c_middlename', 60, 7, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 43, 175 );
 //*.............
 
-//*?Home address section -Part-1------------------
 $pdf->SetFillColor( 220, 220, 220 );
 $pdf->SetFont( 'times', 'I', 10 );
 //* set font
@@ -600,7 +586,7 @@ $pdf->writeHTMLCell( 195, 0, 119, 249.8, $html, 0, 1, false, true, 'J', 0 );
 ******** Start Page No 2 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 //* page number 2
 //*.........
 
@@ -898,7 +884,7 @@ $html = '<div>
 $pdf->writeHTMLCell( 60, 0, 170, 125, $html, '', 0, 0, true, 'L' );
 //*....................
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>7.a.   &nbsp;  </b>      I was or am in immigration proceedings.</div>';
+$html = '<div><b>7.a. &nbsp;</b>I was or am in immigration proceedings.</div>';
 $pdf->writeHTMLCell( 90, 0, 112, 134, $html, '', 0, 0, true, 'L' );
 
 if(showData('part_2_q7_immigration_proceding')=="Y") $checked_yes = "checked"; else $checked_yes = "";
@@ -918,60 +904,73 @@ type or print “Current” in the appropriate date field. Select <b>all
 applicable</b> boxes.Use the space provided in <b>Part 8. Additional
 Information </b> to provide an explanation.
 </div>';
-$pdf->writeHTMLCell( 90, 7, 112, 148, $html, 0, 1, false, true, 'J', true );
-//*..........................
+$pdf->writeHTMLCell( 90, 7, 112, 148, $html, 0, 1, false, true, 'L', true );
 
-$pdf->SetFont( 'times', '', 6 );
+/* $pdf->SetFont( 'times', '', 6 );
 $pdf->writeHTMLCell( 3, 2, 120, 179.5, '', 1, 1, false, true, 'L', false );
-$pdf->SetFont('times', '', 9.7);
-$html = '<div><b>7.b.   &nbsp;  </b>  &nbsp;   &nbsp;&nbsp; Removal Proceedings  <br>      &nbsp;  &nbsp; &nbsp;  Removal Date (mm/dd/yyyy)</div>';
+$pdf->SetFont('times', '', 9.7); */
+
+if(showData('my_immigration_proceedings_removal')=="Y") $checked_data = "checked"; else $checked_data = "";
+$html = '<div><b>7.b. </b> &nbsp;&nbsp;
+<input type="checkbox" name="part-2_7b" value="Y" checked="'.$checked_data.'" /> Removal Proceedings</div>';
 $pdf->writeHTMLCell( 90, 0, 112, 178, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 90, 0, 119, 184, 'Removal Date (mm/dd/yyyy)', '', 0, 0, true, 'L' );
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part_2_7b_removal_proceding_date', 40, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 164, 184);
-// $pdf->writeHTMLCell( 40, 3, 164, 182, '', 1, 1, false, true, 'L', true );
+$pdf->TextField('my_immigration_proceedings_removal_date', 40, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 164, 184);
 
-//*........................
-$pdf->SetFont( 'times', '', 6 );
+/* $pdf->SetFont( 'times', '', 6 );
 $pdf->writeHTMLCell( 3, 2, 120, 190.5, '', 1, 1, false, true, 'L', false );
+$pdf->SetFont('times', '', 9.7); */
+
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>7.c.   &nbsp;  </b>  &nbsp;   &nbsp;&nbsp; Exclusion Proceedings  <br>      &nbsp;  &nbsp; &nbsp;  Exclusion Date (mm/dd/yyyy)</div>';
+if(showData('my_immigration_proceedings_exclusion')=="Y") $checked_data = "checked"; else $checked_data = "";
+
+$html = '<div><b>7.c. </b> &nbsp;&nbsp;
+<input type="checkbox" name="part-2_7c" value="Y" checked="'.$checked_data.'" /> Exclusion Proceedings</div>';
 $pdf->writeHTMLCell( 90, 0, 112, 189, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 90, 0, 119, 194, 'Exclusion Date (mm/dd/yyyy)', '', 0, 0, true, 'L' );
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part_2_7c_exclusion_proceding_date', 40, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 164, 193);
-// $pdf->writeHTMLCell( 40, 3, 164, 193, '', 1, 1, false, true, 'L', true );
+$pdf->TextField('my_immigration_proceedings_exclusion_date', 40, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 164, 193);
 
-//*........................
-//*........................
-$pdf->SetFont( 'times', '', 6 );
+/* $pdf->SetFont( 'times', '', 6 );
 $pdf->writeHTMLCell( 3, 2, 120, 200.5, '', 1, 1, false, true, 'L', false );
+$pdf->SetFont('times', '', 9.7); */
+
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>7.d.   &nbsp;  </b>  &nbsp;   &nbsp;&nbsp; Deportation Proceedings  <br>      &nbsp;  &nbsp; &nbsp;  Deportation Date (mm/dd/yyyy)</div>';
+if(showData('my_immigration_proceedings_deportion')=="Y") $checked_data = "checked"; else $checked_data = "";
+
+$html = '<div><b>7.d. </b> &nbsp;&nbsp;
+<input type="checkbox" name="part-2_7d" value="Y" checked="'.$checked_data.'" /> Deportation Proceedings</div>';
 $pdf->writeHTMLCell( 90, 0, 112, 199, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 90, 0, 119, 204, 'Deportation Date (mm/dd/yyyy)', '', 0, 0, true, 'L' );
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part_2_7d_deportion_proceding_date', 40, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 164, 202);
+$pdf->TextField('my_immigration_proceedings_deportion_date', 40, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 164, 202);
 
-// $pdf->writeHTMLCell( 40, 3, 164, 203, '', 1, 1, false, true, 'L', true );
-
-//*........................
-$pdf->SetFont( 'times', '', 6 );
+/* $pdf->SetFont( 'times', '', 6 );
 $pdf->writeHTMLCell( 3, 2, 120, 210.5, '', 1, 1, false, true, 'L', false );
+$pdf->SetFont('times', '', 9.7); */
+
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>7.e.   &nbsp;  </b>  &nbsp;   &nbsp;&nbsp; Rescission Proceedings  <br>      &nbsp;  &nbsp; &nbsp;  Rescission Date (mm/dd/yyyy)</div>';
+if(showData('my_immigration_proceedings_rescission')=="Y") $checked_data = "checked"; else $checked_data = "";
+$html = '<div><b>7.e. </b> &nbsp;&nbsp;
+<input type="checkbox" name="part-2_7e" value="Y" checked="'.$checked_data.'" /> Rescission Proceedings</div>';
 $pdf->writeHTMLCell( 90, 0, 112, 209, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 90, 0, 119, 214, 'Rescission Date (mm/dd/yyyy)', '', 0, 0, true, 'L' );
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part_2_7e_rescission_proceding_date', 40, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 164, 213.067);
+$pdf->TextField('my_immigration_proceedings_rescission_date', 40, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 164, 213.067);
 
-// $pdf->writeHTMLCell( 40, 3, 164, 213, '', 1, 1, false, true, 'L', true );
-
-//*........................
-$pdf->SetFont( 'times', '', 6 );
+/* $pdf->SetFont( 'times', '', 6 );
 $pdf->writeHTMLCell( 3, 2, 120, 220.5, '', 1, 1, false, true, 'L', false );
+$pdf->SetFont('times', '', 9.7); */
+
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>7.f.   &nbsp;  </b>  &nbsp;   &nbsp;&nbsp; Judicial Proceedings  <br>      &nbsp;  &nbsp; &nbsp;  Judicial Date (mm/dd/yyyy)
-</div>';
+if(showData('my_immigration_proceedings_judicial')=="Y") $checked_data = "checked"; else $checked_data = "";
+$html = '<div><b>7.f. </b> &nbsp;&nbsp;
+<input type="checkbox" name="part-2_7f" value="Y" checked="'.$checked_data.'" /> Judicial Proceedings</div>';
 $pdf->writeHTMLCell( 90, 0, 112, 219, $html, '', 0, 0, true, 'L' );
+$pdf->writeHTMLCell( 90, 0, 119, 224, 'Judicial Date (mm/dd/yyyy)', '', 0, 0, true, 'L' );
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part_2_7f_judicial_proceding_date', 40, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 164, 223);
+$pdf->TextField('my_immigration_proceedings_judicial_date', 40, 6, array( 'strokeColor' => array( 64, 64, 64 ), 'lineWidth'=>1, 'borderStyle'=>'solid' ), array(), 164, 223);
 
 /********************************
 ******** End Page No 2 **********
@@ -981,7 +980,7 @@ $pdf->TextField('part_2_7f_judicial_proceding_date', 40, 6, array( 'strokeColor'
 ******** Start Page No 3 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 //* page number 3
 //*............
 
@@ -1404,7 +1403,7 @@ $pdf->writeHTMLCell( 60, 0, 170, 232, $html, '', 0, 0, true, 'L' );
 ******** Start Page No 4 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 //* page number 3
 //*...........
 
@@ -1832,7 +1831,7 @@ $pdf->writeHTMLCell(60, 0, 170, 234.5, $html, '', 0, 0, true, 'L');
 ******** Start Page No 5 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 //* page number 1
 //*.............
 
@@ -2294,7 +2293,7 @@ $pdf->writeHTMLCell( 60, 0, 174.6, 210, $html, '', 0, 0, true, 'L' );
 ******** Start Page No 6 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 $pdf->SetFont( 'times', '', 12 );
 $pdf->SetFillColor( 220, 220, 220 );
 $pdf->setCellPaddings( 1, 1, 0, 1 );
@@ -2777,7 +2776,7 @@ $pdf->writeHTMLCell( 60, 0, 175.5, 212, $html, '', 0, 0, true, 'L' );
 ******** Start Page No 7 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 $pdf->setFillColor( 220, 220, 220 );
 
 $pdf->setFont( 'times', '', 12 );
@@ -3152,7 +3151,7 @@ $pdf->writeHTMLCell( 90, 0, 121, 200, $html, '', 0, 0, true, 'L' );
 ******** Start Page No 8 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 //*8th page.........................>>>
 $pdf->setFillColor( 220, 220, 220 );
 $pdf->setFont( 'times', '', 12 );
@@ -3423,7 +3422,7 @@ $pdf->TextField('i_918_interpreter_business_name', 83, 7, array( 'strokeColor' =
 ******** Start Page No 9 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 //*9th page
 $pdf->setFillColor( 220, 220, 220 );
 $pdf->setFont( 'times', '', 12 );
@@ -3763,7 +3762,7 @@ $pdf->TextField('i_918_preparer_email', 83, 7, array( 'strokeColor' => array( 64
 ******** Start Page No 10 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 //*10th page
 
 $pdf->setFillColor( 220, 220, 220 );
@@ -3882,7 +3881,7 @@ $pdf->TextField('i_918_preparer_sign_date', 30, 7, array( 'strokeColor' => array
 ******** Start Page No 11 ********
 *********************************/
 
-$pdf->AddPage( 'P', 'LETTER' );
+$pdf->AddPage('P', 'LETTER');
 
 $pdf->setFillColor( 220, 220, 220 );
 
@@ -4126,7 +4125,7 @@ $pdf->writeHTMLCell( 90, 7, 119, 198, $html, 0, 0, false, 'L' ); */
 
 $js = "
 var fields = {
-'Attorney_or_According_Representative':' ".showData('attorney_uscis_online_account_number')." ',
+'attorney_uscis_online_account_number':' ".showData('attorney_uscis_online_account_number')." ',
 'attorney_state_bar_number' : ' ".showData('attorney_state_bar_number')."',
 'part1_1a_lastname':' ".showData('information_about_you_family_last_name')." ',
 'part1_1b_firstname':' ".showData('information_about_you_given_first_name')." ',
@@ -4165,7 +4164,9 @@ var fields = {
 '8_Married':' ',
 '8_Divorced':' ',
 '8_Widowed':' ',
-//*page-2
+
+// page 2
+
 'Part_1_9_Male': ' ',
 'Part_1_9_Female': ' ',
 
@@ -4183,13 +4184,14 @@ var fields = {
 'part1_20_Date_of_LastEntry':' ".showData('other_information_about_you_date_of_last_entry_us')." ',
 'part1_21_Date_Authorized':' ".showData('other_information_about_you_date_authorized_stay_expired')."',
 'part1_22_Current_immigration_status':' ".showData('other_information_about_you_current_immigration_status')."',
-'part_2_7b_removal_proceding_date':' ".showData('part_2_7b_removal_proceding_date')."',
-'part_2_7c_exclusion_proceding_date':' ".showData('part_2_7c_exclusion_proceding_date')."',
-'part_2_7d_deportion_proceding_date':' ".showData('part_2_7d_deportion_proceding_date')."',
-'part_2_7e_rescission_proceding_date':' ".showData('part_2_7e_rescission_proceding_date')."',
-'part_2_7f_judicial_proceding_date':' ".showData('part_2_7f_judicial_proceding_date')."',
+'my_immigration_proceedings_removal_date':' ".showData('my_immigration_proceedings_removal_date')."',
+'my_immigration_proceedings_exclusion_date':' ".showData('my_immigration_proceedings_exclusion_date')."',
+'my_immigration_proceedings_deportion_date':' ".showData('my_immigration_proceedings_deportion_date')."',
+'my_immigration_proceedings_rescission_date':' ".showData('my_immigration_proceedings_rescission_date')."',
+'my_immigration_proceedings_judicial_date':' ".showData('my_immigration_proceedings_judicial_date')."',
 
-//*page-3
+// page 3
+
 'part2_8a_date_of_Entry':' ".showData('additional_info_about_you_date_of_entry')."',
 'part2_8b_city_or_town':' ".showData('additional_info_about_you_place_of_entry_city_town')."',
 'part2_8c_state':' ".showData('additional_info_about_you_place_of_entry_state')."',
@@ -4211,7 +4213,6 @@ var fields = {
 'part2_12d_province':' ".showData('information_about_you_safe_foreign_notification_province')."',
 'part2_12e_postal_code':' ".showData('information_about_you_safe_foreign_notification_postal_code')."',
 'part2_12f_country':' ".showData('information_about_you_safe_foreign_notification_country')."',
-
 'part3_2a':' ".showData('processing_information_why_were_you_arested')."',
 'part3_2b':' ".showData('processing_information_date_of_arrest_citation_detension_or_charge')."',
 'part3_2c_city_or_town':' ".showData('processing_information_arrest_city_town')."',
@@ -4225,11 +4226,12 @@ var fields = {
 'part3_3e':' ".showData('processing_information_arrest_country2')."',
 'part3_3f':' ".showData('processing_information_arrest_outcome_disposition2')."',
 
-//*page-5
+// page 5
 
-//*page-6
+// page 6
 
-//*page 7
+// page 7
+
 'part4_1a_lastname':' ".showData('current_spouse_last_name')." ',
 'part4_1b_FirstName':' ".showData('current_spouse_first_name')." ',
 'part4_1c_middleName':' ".showData('current_spouse_middle_name')." ',
@@ -4237,7 +4239,6 @@ var fields = {
 'part4_3_Country_of_Birth':' ".showData('current_spouse_birth_place_country')." ',
 'part4_4_Relationship':'  ".showData('information_about_spouse_children_relationship')." ',
 'part4_5_Current_Location':'  ".showData('information_about_spouse_children_current_location')." ',
-
 'part4_6a_lastname':' ".showData('information_about_spouse_children_2_family_last_name')." ',
 'part4_6b_FirstName':' ".showData('information_about_spouse_children_2_given_first_name')." ',
 'part4_6c_middleName':' ".showData('information_about_spouse_children_2_middle_name')." ',
@@ -4245,7 +4246,6 @@ var fields = {
 'part4_8_Country_of_Birth':' ".showData('information_about_spouse_children_2_country_of_birth')." ',
 'part4_9_Relationship':'  ".showData('information_about_spouse_children_2_relationship')." ',
 'part4_10_Current_Location':' ".showData('information_about_spouse_children_2_current_location')." ',
-
 'part4_11a_lastname':' ".showData('information_about_spouse_children_3_family_last_name')." ',
 'part4_11b_FirstName':'  ".showData('information_about_spouse_children_3_given_first_name')." ',
 'part4_11c_middleName':'  ".showData('information_about_spouse_children_3_middle_name')." ',
@@ -4253,8 +4253,6 @@ var fields = {
 'part4_13_Country_of_Birth':' ".showData('information_about_spouse_children_3_country_of_birth')." ',
 'part4_14_Relationship':'  ".showData('information_about_spouse_children_3_relationship')." ',
 'part4_15_Current_Location':' ".showData('information_about_spouse_children_3_current_location')." ',
-
-
 'part4_16a_lastname':' ".showData('information_about_spouse_children_4_family_last_name')." ',
 'part4_16b_FirstName':' ".showData('information_about_spouse_children_4_given_first_name')." ',
 'part4_16c_middleName':' ".showData('information_about_spouse_children_4_middle_name')." ',
@@ -4262,7 +4260,6 @@ var fields = {
 'part4_18_Country_of_Birth':' ".showData('information_about_spouse_children_4_country_of_birth')." ',
 'part4_19_Relationship':' ".showData('information_about_spouse_children_4_relationship')." ',
 'part4_20_Current_Location':' ".showData('information_about_spouse_children_4_current_location')." ',
-
 'part4_21a_lastname':' ".showData('information_about_spouse_children_5_family_last_name')." ',
 'part4_21b_FirstName':' ".showData('information_about_spouse_children_5_given_first_name')." ',
 'part4_21c_middleName':' ".showData('information_about_spouse_children_5_middle_name')." ',
@@ -4271,19 +4268,19 @@ var fields = {
 'part4_24_Relationship':' ".showData('information_about_spouse_children_5_relationship')." ',
 'part4_25_Current_Location':' ".showData('information_about_spouse_children_5_current_location')." ',
 
-//*page 8
+// page 8
 'i_918_petitioner_statement_1b':' ".showData('i_918_petitioner_statement_1b')."',
 'i_918_petitioner_statement_2':' ".showData('i_918_petitioner_statement_2')."',
 'i_918_petitioner_daytime_tel':' ".showData('i_918_petitioner_daytime_tel')." ',
 'i_918_petitioner_mobile':' ".showData('i_918_petitioner_mobile')." ',
 'i_918_petitioner_email':' ".showData('i_918_petitioner_email')." ',
 'i_918_petitioner_sign_date':' ".showData('i_918_petitioner_sign_date')."',
-
 'i_918_interpreter_family_last_name':' ".showData('i_918_interpreter_family_last_name')."',
 'i_918_interpreter_family_given_first_name':' ".showData('i_918_interpreter_family_given_first_name')."',
 'i_918_interpreter_business_name':' ".showData('i_918_interpreter_business_name')."',
 
-//*page 9
+// page 9
+
 'i_918_interpreter_mailing_address_street_number':' ".showData('i_918_interpreter_mailing_address_street_number')."',
 'i_918_interpreter_mailing_address_apt_ste_flr_value':' ".showData('i_918_interpreter_mailing_address_apt_ste_flr_value')."',
 'i_918_interpreter_mailing_address_city_town':' ".showData('i_918_interpreter_mailing_address_city_town')."',
@@ -4297,11 +4294,9 @@ var fields = {
 'i_918_interpreter_email':' ".showData('i_918_interpreter_email')."',
 'i_918_interpreter_certification_language_skill':' ".showData('i_918_interpreter_certification_language_skill')."',
 'i_918_interpreter_sign_date':' ".showData('i_918_interpreter_sign_date')."',
-
 'i_918_preparer_family_last_name':' ".showData('i_918_preparer_family_last_name')."',
 'i_918_preparer_family_given_first_name':' ".showData('i_918_preparer_family_given_first_name')."',
 'i_918_preparer_business_name':' ".showData('i_918_preparer_business_name')."',
-
 'i_918_preparer_mailing_address_street_number':' ".showData('i_918_preparer_mailing_address_street_number')."',
 'i_918_preparer_mailing_address_apt_ste_flr_value':' ".showData('i_918_preparer_mailing_address_apt_ste_flr_value')."',
 'i_918_preparer_mailing_address_city_town':' ".showData('i_918_preparer_mailing_address_city_town')."',
@@ -4314,31 +4309,28 @@ var fields = {
 'i_918_preparer_mobile':' ".showData('i_918_preparer_mobile')."',
 'i_918_preparer_email':' ".showData('i_918_preparer_email')."',
 
-//*page 10
+// page 10
+
 'i_918_preparer_sign_date':' ".showData('i_918_preparer_sign_date')."',
 
-//*page 11
+// page 11
+
 'i_918_additional_info_last_name':' ".showData('i_918_additional_info_last_name')."',
 'i_918_additional_info_first_name':' ".showData('i_918_additional_info_first_name')."',
 'i_918_additional_info_middle_name':' ".showData('i_918_additional_info_middle_name')."',
 'i_918_additional_info_a_number':' ".showData('i_918_additional_info_a_number')."',
-
 'i_918_additional_info_3a_page_no':' ".showData('i_918_additional_info_3a_page_no')."',
 'i_918_additional_info_3b_part_no':' ".showData('i_918_additional_info_3b_part_no')."',
 'i_918_additional_info_3c_item_no':' ".showData('i_918_additional_info_3c_item_no')."',
-
 'i_918_additional_info_4a_page_no':' ".showData('i_918_additional_info_4a_page_no')."',
 'i_918_additional_info_4b_part_no':' ".showData('i_918_additional_info_4b_part_no')."',
 'i_918_additional_info_4c_item_no':' ".showData('i_918_additional_info_4c_item_no')."',
-
 'i_918_additional_info_5a_page_no':' ".showData('i_918_additional_info_5a_page_no')."',
 'i_918_additional_info_5b_part_no':' ".showData('i_918_additional_info_5b_part_no')."',
 'i_918_additional_info_5c_item_no':' ".showData('i_918_additional_info_5c_item_no')."',
-
 'i_918_additional_info_6a_page_no':' ".showData('i_918_additional_info_6a_page_no')."',
 'i_918_additional_info_6b_part_no':' ".showData('i_918_additional_info_6b_part_no')."',
 'i_918_additional_info_6c_item_no':' ".showData('i_918_additional_info_6c_item_no')."',
-
 'i_918_additional_info_7a_page_no':' ".showData('i_918_additional_info_7a_page_no')."',
 'i_918_additional_info_7b_part_no':' ".showData('i_918_additional_info_7b_part_no')."',
 'i_918_additional_info_7c_item_no':' ".showData('i_918_additional_info_7c_item_no')."',

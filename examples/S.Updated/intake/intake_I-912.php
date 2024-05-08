@@ -145,9 +145,8 @@ include "intake_header.php";
 			</div>
 		</div><!-- end of right side column -->
 	</div>
-	
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset><!-- end of fieldset 1 -->
 
 <!----------------------------------------------------------------------
@@ -432,10 +431,9 @@ include "intake_header.php";
 			</table>
 		</div><!-- end of left side column -->
 	</div>
-	
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset><!-- end of fieldset 2 -->
 
 <!----------------------------------------------------------------------
@@ -479,9 +477,6 @@ include "intake_header.php";
 				<p>Other (Explain)</p>
 				<div><input type="text" class="form-control" name="income_federal_poverty_guide_other_exp" value="<?= showData('income_federal_poverty_guide_other_exp')?>"></div>
 			</div>
-			
-			
-			
 			<div class="form-group">
 				<label class="control-label col-md-12">2. If you are currently unemployed, are you currently
 					receiving unemployment benefits?</label>
@@ -533,7 +528,6 @@ include "intake_header.php";
 					</div>
 				</div>
 			</div>
-			
 			<div class="form-group">
 				<div class="control-label col-md-12"><b>7.</b> Annual Adjusted Gross Income of All Family Members
 					<p>&nbsp;&nbsp;&nbsp;&nbsp;Provide the annual adjusted gross income of all family members counted as part of your household.<br>
@@ -549,8 +543,6 @@ include "intake_header.php";
 					</div>
 				</div>
 			</div>
-
-			
 			<div class="form-group">
 				<div class="control-label col-md-12"><b>8.</b> Total Adjusted Gross Household Income (add the amounts from <b>Item Numbers 6.</b> and <b>7.</b>)</div>
 				<div class="col-md-5 col-md-offset-7">
@@ -563,171 +555,6 @@ include "intake_header.php";
 					</div>
 				</div>
 			</div>
-
-
-			<!--
-			<div class="form-group">
-				<div class="control-label col-md-12"> &nbsp;&nbsp;<b>A.</b> If you answered “No” to <b>Item
-						Number 3</b>., does your
-					spouse provide any financial support to your
-					household? </div>
-				<div class="col-md-7 col-md-offset-8">
-					<?php echo createRadio("i_912_part_5_income_continued_infomration_about_your_spouse_3a")?>
-				</div>
-			</div>
-			<div class="bg-info">
-				<h4><b>Your Household Size</b></h4>
-			</div>
-			<div class="form-group">
-				<div class="control-label col-md-12"><b>4.</b> Are you the person providing the primary
-					financial support for your household?</div>
-				<div class="col-md-7 col-md-offset-8">
-					<?php echo createRadio("i_912_part_5_income_continued_infomration_about_your_spouse_4")?>
-				</div>
-			</div>
-			<p>If you answered “Yes” to Item Number 4., type or print your name on the line marked “self” in
-				the table below. If you answered
-				“No” to Item Number 4., type or print your name on the line marked “self” in the table below
-				and add the head of household's
-				name on the line below yours.</p>
-			<table>
-				<tr class="bg-info">
-					<th colspan="6" style="padding:5px;">Household Size</th>
-				</tr>
-				<tr>
-					<th>Full Name </th>
-					<th>Date of Birth</th>
-					<th>Relationship to You</th>
-					<th>Married</th>
-					<th>Full-Time Student</th>
-					<th>Is any income earned by this person counted towards the household income?</th>
-				</tr>
-				<tr>
-					<td><input type="text" class="form-control" name="your_household_size_full_name[]" maxlength="17"
-							value="<?= showData('your_household_size_full_name','0')?>"></td>
-					<td><input type="date" class="form-control" name="your_household_size_date_of_birth[]"
-							value="<?= showData('your_household_size_date_of_birth','0')?>"></td>
-					<td>Self</td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_married_1")?></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_full_time_1")?></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_counted_1")?></td>
-				</tr>
-				<tr>
-					<td><input type="text" class="form-control" name="your_household_size_full_name[]" maxlength="17"
-							value="<?= showData('your_household_size_full_name','1')?>"></td>
-					<td><input type="date" class="form-control" name="your_household_size_date_of_birth[]"
-							value="<?= showData('your_household_size_date_of_birth','1')?>"></td>
-					<td><input type="text" class="form-control" name="your_household_relate[]"  maxlength="13"
-							value="<?= showData('your_household_relate','0')?>"></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_married_2")?></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_full_time_2")?></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_counted_2")?></td>
-				</tr>
-				<tr>
-					<td><input type="text" class="form-control" name="your_household_size_full_name[]" maxlength="17"
-							value="<?= showData('your_household_size_full_name','2')?>"></td>
-					<td><input type="date" class="form-control" name="your_household_size_date_of_birth[]"
-							value="<?= showData('your_household_size_date_of_birth','2')?>"></td>
-					<td><input type="text" class="form-control" name="your_household_relate[]" maxlength="13"
-							value="<?= showData('your_household_relate','1')?>"></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_married_3")?></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_full_time_3")?></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_counted_3")?></td>
-				</tr>
-				<tr>
-					<td><input type="text" class="form-control" name="your_household_size_full_name[]" maxlength="17"
-							value="<?= showData('your_household_size_full_name','3')?>"></td>
-					<td><input type="date" class="form-control" name="your_household_size_date_of_birth[]"
-							value="<?= showData('your_household_size_date_of_birth','3')?>"></td>
-					<td><input type="text" class="form-control" name="your_household_relate[]" maxlength="13"
-							value="<?= showData('your_household_relate','2')?>"></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_married_4")?></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_full_time_4")?></td>
-					<td><?php echo createRadio("i_912_part_5_income_continued_household_size_counted_4")?></td>
-				</tr>
-				<tr>
-					<td colspan="5" style="text-align:right;padding:5px;"><b>Total Household Size (including self)</b></td>
-					<td><input type="text" class="form-control" name="your_household_total_size" value="<?= showData('your_household_total_size')?>"></td>
-				</tr>
-			</table>
-			<div class="bg-info">
-				<h4><b>Your Annual Household Income</b></h4>
-			</div>
-			<p>Provide information about your income and the income of all family members counted as part of
-				your household. You must list all
-				amounts in U.S. dollars.</p>
-
-			
-			
-			<p>Provide the total annual amount you receive in additional income or financial support from a
-				source outside of your household.
-				(Do not include the amount provided in <b>Item Numbers 5</b>. or <b>6</b> .) You must add
-				all of the
-				additional income and financial support
-				amounts and put the total amount in the space provided. Type or print "0" in the total box
-				if there are none. Select the type of
-				additional income or financial support that you receive and provide documentation.</p>
-			<div class="form-group">
-				<div class="col-md-3">
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Parental')? 'checked':'' ?> value="Parental">
-						<p>Parental Support</p>
-					</div>
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Spousal')? 'checked':'' ?> value="Spousal">
-						<p>Spousal Support (Alimony)</p>
-					</div>
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Child')? 'checked':'' ?> value="Child">
-						<p>Child Support</p>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Educational Stipends')? 'checked':'' ?> value="Educational Stipends">
-						<p>Educational Stipends</p>
-					</div>
-
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Royalties')? 'checked':'' ?> value="Royalties">
-						<p>Royalties</p>
-					</div>
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Pensions')? 'checked':'' ?> value="Pensions">
-						<p>Pensions</p>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Unemployment')? 'checked':'' ?> value="Unemployment">
-						<p>Unemployment Benefits</p>
-					</div>
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Social Security')? 'checked':'' ?> value="Social Security">
-						<p>Social Security Benefits</p>
-					</div>
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Veteran')? 'checked':'' ?> value="Veteran">
-						<p>Veteran's Benefits</p>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Financial Support')? 'checked':'' ?> value="Financial Support">
-						<p>Financial Support From Adult Children,
-							Dependents, Other People Living in the
-							Household</p>
-					</div>
-					<div class="d-flexible">
-						<input type="radio" name="i_912_information_about_biography_info_eye_color" <?php echo (showData('i_912_information_about_biography_info_eye_color')=='Other')? 'checked':'' ?> value="Other">
-						<p>Other (Explain)</p>
-					</div>
-					<input type="text" class="form-control" name="i_912_annual_household_income_chkbox_expl"
-						value="<?= showData('i_912_annual_household_income_chkbox_expl')?>">
-				</div>
-			</div> -->
-			
-			
 			<div class="form-group">
 				<div class="control-label col-md-12"><b>9.</b> Has anything changed since the date you filed your Federal tax returns or is there any difference in your<br>
 					circumstances from the information on your petition? &nbsp;(For example, your marital status, income, or<br>
@@ -742,10 +569,9 @@ include "intake_header.php";
 			
 		</div><!-- left side column end -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset><!-- end of fieldset 3 -->
 
 <!----------------------------------------------------------------------
@@ -760,33 +586,11 @@ include "intake_header.php";
 	<!-- page Number -->
 	<br>
 	<div class="row">
-		
-			<!--<div class="bg-info">
-				<h4><b>Part 5. Income at or Below 150 Percent of the Federal Poverty Guidelines (continued)</b> </h4>
-			</div>
-			<div class="form-group">
-				<div class="control-label col-md-12"><b>8.</b>&nbsp;&nbsp; Total Household Income (add the amounts from Item Numbers 5., 6., and 7.)</div>
-				<div class="col-md-5 col-md-offset-7">
-					<div class="d-flexible">
-						<span
-							style="left: calc(var(--scale-factor)*36.00px); top: calc(var(--scale-factor)*531.66px); font-size: calc(var(--scale-factor)*10.00px); font-family: serif; gap:1rem;"
-							role="presentation" dir="ltr">$</span><input type="text" class="form-control"
-							name="federal_poverty_guidelines_total_household_income" maxlength="14"
-							value="<?= showData('federal_poverty_guidelines_total_household_income')?>">
-					</div>
-				</div>
-			</div>
-			<textarea
-				name="federal_poverty_guidelines_provide_any_additional_information_about_your_circumstances"
-				cols="30" rows="10"
-				class="form-control"><?= showData('federal_poverty_guidelines_provide_any_additional_information_about_your_circumstances')?></textarea>-->
-		
-
 		<div class="col-md-6">
 			<div class="bg-info">
 				<h4><b>Part 6. Financial Hardship</b></h4>
 			</div>
-			<p>If you selected <b>Item Number 1.C.</b> in <b>Part 1</b>., complete this section.</p>
+			<p>1. If you selected <b>Item Number 1.C.</b> in <b>Part 1</b>., complete this section.</p>
 			<p>You may also use this space to provide any additional information about your circumstances that you would like U.S. Citizenship
 				and Immigration Services (USCIS) to consider. If you or any family members have a situation that has caused you to incur
 				expenses, debts, or loss of income, describe the situation in the box below. Specify the amounts of the expenses, debts, and
@@ -898,18 +702,11 @@ include "intake_header.php";
 				</div>
 			</div>
 			
-			
-			
-			
-			
-			
 		</div><!-- end of right side column -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
-
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset><!-- end of fieldset 4 -->
 
 <!----------------------------------------------------------------------
@@ -988,11 +785,8 @@ include "intake_header.php";
 						value="<?= showData('requestors_daytime_email_addr')?>">
 				</div>
 			</div>
-				
-				
 		</div><!-- end of left side column -->
-		<div class="col-md-6">
-			
+		<div class="col-md-6">			
 			<div class="bg-info">
 				<h4><b>Requestor's Certification</b></h4>
 			</div>
@@ -1012,7 +806,6 @@ include "intake_header.php";
 				true, and correct. </p>
 			<p>I certify, under penalty of perjury, that I provided or authorized all of the information in my request, I understand all of the information contained in, and submitted with, my request, and that all of this information is complete, true, and correct.</p>
 			<p><b>WARNING:</b> If you knowingly and willfully falsify or conceal a material fact or submit a false document with your Form I-912, USCIS will deny your fee waiver request and may deny any other immigration benefit. In addition, you may face severe penalties provided by law and may be subject to criminal prosecution.</p>
-				
 				
 			<div class="bg-info">
 				<h4><b>Requestor's Signature</b></h4>
@@ -1040,13 +833,10 @@ include "intake_header.php";
 				Instructions, USCIS may deny your request.</p>				
 		</div><!-- end of right side column -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
-	
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />	
 </fieldset><!-- end of fieldset 5 -->
-
 
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
@@ -1229,12 +1019,10 @@ include "intake_header.php";
 			</div>
 		</div><!-- end of right side column -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
-
-</fieldset><!-- end of fieldset 6  -->
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset><!-- end of fieldset 6 -->
 
 <!----------------------------------------------------------------------
 -------------------------------- page 7 --------------------------------
@@ -1434,11 +1222,10 @@ include "intake_header.php";
 			</div>
 		</div><!-- end of right side column -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
-</fieldset><!-- end of fieldset 8  -->
+	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset><!-- end of fieldset 8 -->
 
 <!----------------------------------------------------------------------
 -------------------------------- page 8 -------------------------------
@@ -1614,9 +1401,8 @@ include "intake_header.php";
 			</div>
 		</div><!-- end of right side column -->
 	</div>
-
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-	<input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
-</fieldset><!-- end of fieldset 11  -->
+	<input style="float: right" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset><!-- end of fieldset 11 -->
 
 <?php include "intake_footer.php"?>
