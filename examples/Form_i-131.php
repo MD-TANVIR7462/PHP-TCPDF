@@ -263,7 +263,8 @@ $pdf->writeHTMLCell(28, 7, 167, 33, $html, 0, 1, false, true, 'C', false);
 //.....
 
 $pdf->SetFont('times', '', 14);
-$html ='<input type="checkbox"  name="g28box" value="1" checked=" " />';
+$checked = (showData('i_131_g28_checkbox')=='Y')? "checked":"";
+$html ='<input type="checkbox"  name="i_131_g28_checkbox" value="1" checked="'.$checked.'" />';
 $pdf->writeHTMLCell(37, 7, 163, 52, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>Fill in box if G-28 is attached to represent<br>the applicant.</div>';
@@ -345,22 +346,27 @@ $pdf->TextField('about_your_physical_street_number', 60, 7, array('strokeColor' 
 $pdf->SetFont('times', '', 10); 
 $html= '<div><b>2.c.</b></div>';
 $pdf->writeHTMLCell(15, 0, 12, 166, $html, '', 0, 0, true, 'L');
+
+$mailing_apt = (showData('information_about_you_home_apt_ste_flr')=='apt')? "checked":"";
+$mailing_ste = (showData('information_about_you_home_apt_ste_flr')=='ste')? "checked":"";
+$mailing_flr = (showData('information_about_you_home_apt_ste_flr')=='flr')? "checked":"";
+
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Apt1" value="Apt1" checked="" />';
+$html= '<input type="checkbox" name="Apt1" value="Apt1" checked="'.$mailing_apt.'" />';
 $pdf->writeHTMLCell(5, 0, 28.5, 165, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Apt.</div>';
 $pdf->writeHTMLCell(25, 0, 20, 166, $html, '', 0, 0, true, 'L');
 //
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Ste1" value="Ste1" checked="" />';
+$html= '<input type="checkbox" name="Ste1" value="Ste1" checked="'.$mailing_ste.'" />';
 $pdf->writeHTMLCell(5, 0, 42.5, 165, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Ste.</div>';
 $pdf->writeHTMLCell(25, 0, 35, 166, $html, '', 0, 0, true, 'L');
 //
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Flr1" value="Flr1" checked="" />';
+$html= '<input type="checkbox" name="Flr1" value="Flr1" checked="'.$mailing_flr.'" />';
 $pdf->writeHTMLCell(5, 0, 57, 165, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Flr.</div>';
@@ -418,9 +424,10 @@ $pdf->TextField('about_your_physical_country', 71, 7, array('strokeColor' => arr
 
 
 $pdf->SetFont('times', 'I', 12);
+$pdf->setCellHeightRatio(1.5); // set cell height ratio
 $html ='<div><b>Other Information</b></div>';
 $pdf->writeHTMLCell(90, 7, 113, 108, $html, 0, 0, true, true, 'L', false);
-
+$pdf->setCellHeightRatio(1.1); // set cell height ratio
 //............
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>3.  </b> Alien Registration Number (A-Number) </div>';
@@ -459,15 +466,17 @@ $pdf->SetFont('times', '', 10);
 $html= '<div>Gender</div>';
 $pdf->writeHTMLCell(25, 0, 117, 170, $html, '', 0, 0, true, 'L');
 // //
+$male = (showData('other_information_about_you_gender')=='male')? "checked":"";
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="gender" value="male" checked=" " />';
+$html= '<input type="checkbox" name="gender" value="male" checked="'.$male.'" />';
 $pdf->writeHTMLCell(5, 0, 130, 169, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Male</div>';
 $pdf->writeHTMLCell(25, 0, 136, 170, $html, '', 0, 0, true, 'L');
 // //
+$female = (showData('other_information_about_you_gender')=='female')? "checked":"";
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="gender" value="female" checked=" " />';
+$html= '<input type="checkbox" name="gender" value="female" checked="'.$female.'" />';
 $pdf->writeHTMLCell(5, 0, 145, 169, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Female</div>';
@@ -503,9 +512,9 @@ $pdf->SetFont('times', '', 12); // set font
 $html ='<div><b>Part 2. Application Type</b></div>';
 $pdf->writeHTMLCell(191, 7, 13, 17, $html, 1, 1, true, false, 'J', true);
 //..........
-
+$checked = (showData('i_131_permanent_residence_1a_status')=='Y')? "checked":"";
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>1.a.  </b><input type="checkbox" name="part2_1a" value="1" checked=" " /></div>';
+$html ='<div><b>1.a.  </b><input type="checkbox" name="part2_1a" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 25, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I am a permanent resident or conditional resident of
@@ -513,9 +522,9 @@ the United States, and I am applying for a reentry
 permit.</div>';
 $pdf->writeHTMLCell(80, 7, 24, 25, $html, 0, 1, false, true, 'L', true);
 //........
-
+$checked = (showData('i_131_refuge_asylee_residence_1b_status')=='Y')? "checked":"";
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>1.b.  </b><input type="checkbox" name="part2_1b" value="1" checked=" " /></div>';
+$html ='<div><b>1.b.  </b><input type="checkbox" name="part2_1b" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 37, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I now hold U.S. refugee or asylec status, and I am
@@ -524,7 +533,8 @@ $pdf->writeHTMLCell(80, 7, 24, 37, $html, 0, 1, false, true, 'L', true);
 //........
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>1.c.  </b><input type="checkbox" name="part2_1c" value="1" checked=" " /></div>';
+$checked = (showData('i_131_direct_result_refugee_1c_status')=='Y')? "checked":"";
+$html ='<div><b>1.c.  </b><input type="checkbox" name="part2_1c" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 47, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I am a permanent resident as a direct result of refugee
@@ -533,7 +543,8 @@ Travel Document.</div>';
 $pdf->writeHTMLCell(80, 7, 24, 47, $html, 0, 1, false, true, 'L', true);
 //........
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>1.d.  </b><input type="checkbox" name="part2_1d" value="1" checked=" " /></div>';
+$checked = (showData('i_131_direct_result_refugee_1d_status')=='Y')? "checked":"";
+$html ='<div><b>1.d.  </b><input type="checkbox" name="part2_1d" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 60, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I am applying for an Advance Parole Document to
@@ -543,7 +554,8 @@ $pdf->writeHTMLCell(80, 7, 24, 60, $html, 0, 1, false, true, 'L', true);
 //........
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>1.e.  </b><input type="checkbox" name="part2_1e" value="1" checked=" " /></div>';
+$checked = (showData('i_131_outside_united_1e_status')=='Y')? "checked":"";
+$html ='<div><b>1.e.  </b><input type="checkbox" name="part2_1e" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 73, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I am outside the United States, and I am applying for
@@ -552,7 +564,8 @@ $pdf->writeHTMLCell(80, 7, 24, 73, $html, 0, 1, false, true, 'L', true);
 //........
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>1.f.&nbsp;&nbsp; </b><input type="checkbox" name="part2_1f" value="1" checked=" " /></div>';
+$checked = (showData('i_131_applying_advance_parole_1f_status')=='Y')? "checked":"";
+$html ='<div><b>1.f.&nbsp;&nbsp; </b><input type="checkbox" name="part2_1f" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 83, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I am applying for an Advance Parole Document for a
@@ -666,25 +679,28 @@ $pdf->TextField('applicationt_your_physical_street_number', 60, 7, array('stroke
 
 
 //.................
+$mailing_apt = (showData('travel_application_physical_address_apt_ste_flr')=='apt')? "checked":"";
+$mailing_ste = (showData('travel_application_physical_address_apt_ste_flr')=='ste')? "checked":"";
+$mailing_flr = (showData('travel_application_physical_address_apt_ste_flr')=='flr')? "checked":"";
 $pdf->SetFont('times', '', 10); 
 $html= '<div><b>2.j.</b></div>';
 $pdf->writeHTMLCell(15, 0, 112, 93.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Apt2" value="Apt2" checked="" />';
+$html= '<input type="checkbox" name="Apt2" value="Apt2" checked="'.$mailing_apt.'" />';
 $pdf->writeHTMLCell(5, 0, 127.5, 92.6, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Apt.</div>';
 $pdf->writeHTMLCell(25, 0, 120, 93.5, $html, '', 0, 0, true, 'L');
 //
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Ste2" value="Ste2" checked="" />';
+$html= '<input type="checkbox" name="Ste2" value="Ste2" checked="'.$mailing_ste.'" />';
 $pdf->writeHTMLCell(5, 0, 141.5, 92.6, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Ste.</div>';
 $pdf->writeHTMLCell(25, 0, 134, 93.5, $html, '', 0, 0, true, 'L');
 //
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Flr2" value="Flr2" checked="" />';
+$html= '<input type="checkbox" name="Flr2" value="Flr2" checked="'.$mailing_flr.'" />';
 $pdf->writeHTMLCell(5, 0, 155, 92.6, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Flr.</div>';
@@ -769,7 +785,9 @@ $html ='<div><b>3.a. </b></div>';
 $pdf->writeHTMLCell(90, 7, 12, 181, $html, 0, 1, false, false, 'L', true);
 $html ='<div>Are you, or any person included in this application, now <br>in exclusion, deportation, removal, or rescission<br>proceedings?</div>';
 $pdf->writeHTMLCell(100, 7, 20, 180, $html, 0, 1, false, true, 'L', true);
-$html ='<div><input type="checkbox" name="part3" value="yes" checked=" " />    Yes &nbsp;&nbsp;&nbsp; <input type="checkbox" name="part3" value="no" checked=" " />   No</div>';
+$checked_yes = (showData('i_131_person_included_application_3a_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_person_included_application_3a_status')=='N')? "checked":"";
+$html ='<div><input type="checkbox" name="part3" value="yes" checked="'.$checked_yes.'" />    Yes &nbsp;&nbsp;&nbsp; <input type="checkbox" name="part3" value="no" checked="'.$checked_no.'" />   No</div>';
 $pdf->writeHTMLCell(90, 7, 77, 189, $html, 0, 1, false, true, 'J', true);
 //......
 
@@ -788,8 +806,9 @@ $html ='<div>Have you ever before been issued a reentry permit or
 Refugee Travel Document? <i>(If "Yes" give the following
 information for the last document issued to you):</i></div>';
 $pdf->writeHTMLCell(85, 7, 120, 155.7, $html, 0, 1, false, true, 'L', true);
-
-$html ='<div><input type="checkbox" name="part34a" value="yes" checked=" " />   Yes &nbsp; &nbsp;&nbsp;<input type="checkbox" name="part34a" value="no" checked=" " />   No</div>';
+$checked_yes = (showData('i_131_ever_before_issued_4a_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_ever_before_issued_4a_status')=='N')? "checked":"";
+$html ='<div><input type="checkbox" name="part34a" value="yes" checked="'.$checked_yes.'" />   Yes &nbsp; &nbsp;&nbsp;<input type="checkbox" name="part34a" value="no" checked="'.$checked_no.'" />   No</div>';
 $pdf->writeHTMLCell(90, 7, 170, 168, $html, 0, 1, false, true, 'J', true);
 //......
 
@@ -816,7 +835,9 @@ $html ='<div>If you are applying for a non-DACA related Advance Parole Document,
 before skipping to Part 7.</i></div>';
 $pdf->writeHTMLCell(190, 7, 12, 208, $html, 0, 1, false, true, 'J', true);
 
-//......page number 2 end --------------------------------------------------------------------------------------------------------
+//--------------------------------------
+// --------------page number 2 end -----
+// -------------------------------------
 
 
 // add a page
@@ -831,7 +852,8 @@ $pdf->writeHTMLCell(90, 7, 12, 24.5, $html, 0, 1, false, true, 'L', true);
 //.......
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_5" value="1" checked=" " /></div>';
+$checked = (showData('i_131_where_do_travel_5_status')=='Y')? "checked":"";
+$html ='<div><b>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_5" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 31, $html, 0, 1, false, false, 'J', true);
 $html ='<div>To the U.S. address shown in <b>Part 1 (2.a through
 2.i.)</b> of this form.</div>';
@@ -840,7 +862,8 @@ $pdf->writeHTMLCell(77, 7, 24, 31, $html, 0, 1, false, true, 'J', true);
 
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_6" value="1" checked=" " /></div>';
+$checked = (showData('i_131_embasy_consulate_6_status')=='Y')? "checked":"";
+$html ='<div><b>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_6" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 40.4, $html, 0, 1, false, false, 'J', true);
 $html ='<div>To a U.S. Embassy or consulate at:</div>';
 $pdf->writeHTMLCell(80, 7, 24, 40.4, $html, 0, 1, false, true, 'J', true);
@@ -862,7 +885,8 @@ $pdf->TextField('part_3_processing_country', 71, 7, array('strokeColor' => array
 
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_7" value="1" checked=" " /></div>';
+$checked = (showData('i_131_dhs_office_overseas_7_status')=='Y')? "checked":"";
+$html ='<div><b>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_7" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 64, $html, 0, 1, false, false, 'J', true);
 $html ='<div>To a DHS office overseas at:</div>';
 $pdf->writeHTMLCell(80, 7, 24, 64, $html, 0, 1, false, true, 'J', true);
@@ -891,7 +915,8 @@ $pdf->writeHTMLCell(90, 7, 12, 89, $html, 0, 1, false, true, 'J', true);
 //.......
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_8" value="1" checked=" " /></div>';
+$checked = (showData('i_131_where_should_notice_8_status')=='Y')? "checked":"";
+$html ='<div><b>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_8" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 99, $html, 0, 1, false, false, 'J', true);
 $html ='<div>To the address shown in <b>Part 2 (2.h. through 2.p.)</b>
 of this form.</div>';
@@ -900,7 +925,8 @@ $pdf->writeHTMLCell(77, 7, 24, 99, $html, 0, 1, false, true, 'L', true);
 
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_9" value="1" checked=" " /></div>';
+$checked = (showData('i_131_address_shown_9_status')=='Y')? "checked":"";
+$html ='<div><b>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_9" value="1" checked="'.$checked.'" /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 109, $html, 0, 1, false, false, 'J', true);
 $html ='<div>To the address shown in <b>Part 3 (10.a. through 10.i.)</b>
 of this form.:</div>';
@@ -923,24 +949,27 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('processing_your_physical_street_number', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 39);
 //.................
 $pdf->SetFont('times', '', 10); 
-$html= '<div><b>2.c.</b></div>';
+$html= '<div><b>10.c.</b></div>';
 $pdf->writeHTMLCell(15, 0, 112, 49, $html, '', 0, 0, true, 'L');
+$mailing_apt = (showData('travel_processing_address_apt_ste_flr')=='apt')? "checked":"";
+$mailing_ste = (showData('travel_processing_address_apt_ste_flr')=='ste')? "checked":"";
+$mailing_flr = (showData('travel_processing_address_apt_ste_flr')=='flr')? "checked":"";
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Apt3" value="Apt3" checked="" />';
+$html= '<input type="checkbox" name="Apt3" value="Apt3" checked="'.$mailing_apt.'" />';
 $pdf->writeHTMLCell(5, 0, 128.5, 48, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Apt.</div>';
 $pdf->writeHTMLCell(25, 0, 120.5, 49, $html, '', 0, 0, true, 'L');
 //
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Ste3" value="Ste3" checked="" />';
+$html= '<input type="checkbox" name="Ste3" value="Ste3" checked="'.$mailing_ste.'" />';
 $pdf->writeHTMLCell(5, 0, 142.5, 48, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Ste.</div>';
 $pdf->writeHTMLCell(25, 0, 135, 49, $html, '', 0, 0, true, 'L');
 //
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Flr3" value="Flr3" checked="" />';
+$html= '<input type="checkbox" name="Flr3" value="Flr3" checked="'.$mailing_flr.'" />';
 $pdf->writeHTMLCell(5, 0, 157, 48, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Flr.</div>';
@@ -1028,7 +1057,7 @@ $pdf->writeHTMLCell(80, 7, 20, 128.6, $html, 0, 1, false, true, 'J', true);
 //........
 $pdf->setFont('courier', 'B', 10);
 $pdf->setCellHeightRatio( 1.8 );
-$pdf->TextField('part_4_1a', 82.7, 27, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('part_4_1a')),21, 138);
+$pdf->TextField('part_4_1a', 82.7, 27, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),21, 138);
 $pdf->setCellHeightRatio( 1.1 );
 
 //.........
@@ -1042,7 +1071,7 @@ $pdf->writeHTMLCell(80, 7, 120, 128.6, $html, 0, 1, false, true, 'J', true);
 //........
 $pdf->setFont('courier', 'B', 10);
 $pdf->setCellHeightRatio( 1.8 );
-$pdf->TextField('part_4_1b', 81.7, 27, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('part_4_1b')),121, 138);
+$pdf->TextField('part_4_1b', 81.7, 27, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),121, 138);
 $pdf->setCellHeightRatio( 1.1 );
 
 //.........
@@ -1070,17 +1099,27 @@ because you considered yourself to be a nonresident? <i>(If
 "Yes" give details on a separate sheet of paper.)</i></div>';
 $pdf->writeHTMLCell(85, 7, 118, 178, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10);
-$html ='<div><input type="checkbox" name="part5_2" value="yes" checked=" " />   &nbsp;   Yes  <input type="checkbox" name="part3" value="no" checked=" " />   No</div>';
+$checked_yes = (showData('i_131_since_you_became_2_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_since_you_became_2_status')=='N')? "checked":"";
+$html ='<div><input type="checkbox" name="part5_2" value="yes" checked="'.$checked_yes.'" />   &nbsp;   Yes  <input type="checkbox" name="part3" value="no" checked="'.$checked_no.'" />   No</div>';
 $pdf->writeHTMLCell(90, 7, 180, 199, $html, 0, 1, false, true, 'J', true );
 //......
+$part5_1a = (showData('i_131_lessthan_6_month_1a_status')=='Y')? "checked":"";
+$part5_1b = (showData('i_131_6_month_to_1b_status')=='Y')? "checked":"";
+$part5_1c = (showData('i_131_1_to_two_year_1b_status')=='Y')? "checked":"";
+$part5_1d = (showData('i_131_2_to_3_year_1d_status')=='Y')? "checked":"";
+$part5_1e = (showData('i_131_3_to_4_year_1e_status')=='Y')? "checked":"";
+$part5_1f = (showData('i_131_morethan_4_year_1f_status')=='Y')? "checked":"";
+
+
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>1.a.</b>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part5_1a" value="1" checked=" " /> &nbsp;   less than 6 months</div>';
+$html ='<div><b>1.a.</b>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part5_1a" value="1" checked="'.$part5_1a.'" /> &nbsp;   less than 6 months</div>';
 $pdf->writeHTMLCell(90, 7, 12, 194, $html, 0, 1, false, true, 'J', true);
 
 //........
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>1.b.</b>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part5_1b" value="1" checked=" " /> &nbsp;   6 months to 1 year</div>';
+$html ='<div><b>1.b.</b>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part5_1b" value="1" checked="'.$part5_1b.'" /> &nbsp;   6 months to 1 year</div>';
 $pdf->writeHTMLCell(90, 7, 12, 199, $html, 0, 1, false, true, 'J', true);
 
 //.......
@@ -1090,13 +1129,13 @@ $pdf->writeHTMLCell(90, 7, 12, 204, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(90, 7, 26, 204, "1 to 2 years", 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
-$html ='<input type="checkbox" name="part5_1c" value="1" checked=" " />';
+$html ='<input type="checkbox" name="part5_1c" value="1" checked="'.$part5_1c.'" />';
 $pdf->writeHTMLCell(90, 7, 20, 204, $html, 0, 1, false, true, 'J', true);
 
 //..........
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>1.d.  </b>   <input type="checkbox" name="part5_1d" value="1" checked=" " /> &nbsp;    2 to 3 years</div>';
+$html ='<div><b>1.d.  </b>   <input type="checkbox" name="part5_1d" value="1" checked="'.$part5_1d.'" /> &nbsp;    2 to 3 years</div>';
 $pdf->writeHTMLCell(90, 7, 65, 194, $html, 0, 1, false, true, 'J', true);
 //........
 $pdf->SetFont('times', '', 10);
@@ -1105,7 +1144,7 @@ $pdf->writeHTMLCell(90, 7, 65, 199, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(90, 7, 79, 199, " 3 to 4 years", 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
-$html ='<input type="checkbox" name="part5_1e" value="1" checked=" " />';
+$html ='<input type="checkbox" name="part5_1e" value="1" checked="'.$part5_1e.'" />';
 $pdf->writeHTMLCell(90, 7, 73, 199, $html, 0, 1, false, true, 'J', true);
 
 
@@ -1116,7 +1155,7 @@ $pdf->writeHTMLCell(90, 7, 65, 204, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(90, 7, 79, 204, "more than 4 years", 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
-$html ='<input type="checkbox" name="part5_1f" value="1" checked=" " />';
+$html ='<input type="checkbox" name="part5_1f" value="1" checked="'.$part5_1f.'" />';
 $pdf->writeHTMLCell(90, 7, 73, 204, $html, 0, 1, false, true, 'J', true);
 
 
@@ -1144,10 +1183,12 @@ $pdf->writeHTMLCell(90, 7, 12, 37, $html, 0, 1, false, true, 'L', true);
 //....
 
 $pdf->SetFont('times', '', 10);
+$checked_yes = (showData('i_131_do_you_plan_to_travel_2_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_do_you_plan_to_travel_2_status')=='N')? "checked":"";
 $html ='<div><b>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Do you plan to travel to the country<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; named above?</div>';
 $pdf->writeHTMLCell(70, 7, 12, 50, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10);
-$html ='<div><input type="checkbox" name="part6_2" value="yes" checked=" " />   &nbsp;   Yes  <input type="checkbox" name="part6_2" value="no" checked=" " />   No</div>';
+$html ='<div><input type="checkbox" name="part6_2" value="yes" checked="'.$checked_yes.'" />   &nbsp;   Yes  <input type="checkbox" name="part6_2" value="no" checked="'.$checked_no.'" />   No</div>';
 $pdf->writeHTMLCell(90, 7, 77, 52, $html, 0, 1, false, true, 'J', true );
 //......
 
@@ -1161,7 +1202,9 @@ $html ='<div><b>3.a.&nbsp;&nbsp;</b>Returned to the country named<br>&nbsp;&nbsp
 above?</div>';
 $pdf->writeHTMLCell(90, 7, 12, 67, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
-$html ='<div><input type="checkbox" name="part6_3a" value="yes" checked=" " />   &nbsp;   Yes  <input type="checkbox" name="part6_3a" value="no" checked=" " />   No</div>';
+$checked_yes = (showData('i_131_since_you_were_accorded_3a_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_since_you_were_accorded_3a_status')=='N')? "checked":"";
+$html ='<div><input type="checkbox" name="part6_3a" value="yes" checked="'.$checked_yes.'" />   &nbsp;   Yes  <input type="checkbox" name="part6_3a" value="no" checked="'.$checked_no.'" />   No</div>';
 $pdf->writeHTMLCell(90, 7, 77, 70, $html, 0, 1, false, true, 'J', true );
 //......
 
@@ -1170,7 +1213,9 @@ $html ='<div><b>3.b. </b> Applied for and/or obtained a national passport, passp
 renewal, or entry permit of that country? </div>';
 $pdf->writeHTMLCell(91, 7, 12, 79, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
-$html ='<div><input type="checkbox" name="part6_3b" value="yes" checked=" " />   &nbsp;   Yes  <input type="checkbox" name="part6_3b" value="no" checked=" " />   No</div>';
+$checked_yes = (showData('i_131_applied_obtained_3b_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_applied_obtained_3b_status')=='N')? "checked":"";
+$html ='<div><input type="checkbox" name="part6_3b" value="yes" checked="'.$checked_yes.'" />   &nbsp;   Yes  <input type="checkbox" name="part6_3b" value="no" checked="'.$checked_no.'" />   No</div>';
 $pdf->writeHTMLCell(90, 7, 77, 87, $html, 0, 1, false, true, 'J', true );
 //......
 
@@ -1179,7 +1224,9 @@ $html ='<div><b>3.c. </b>Applied for and/or received any benefit from such count
 (for example, health insurance benefits)?</div>';
 $pdf->writeHTMLCell(91, 7, 112, 25, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10);
-$html ='<div><input type="checkbox" name="part6_3c" value="yes" checked=" " />   &nbsp;   Yes  <input type="checkbox" name="part6_3c" value="no" checked=" " />   No</div>';
+$checked_yes = (showData('i_131_received_benefit_3c_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_received_benefit_3c_status')=='N')? "checked":"";
+$html ='<div><input type="checkbox" name="part6_3c" value="yes" checked="'.$checked_yes.'" />   &nbsp;   Yes  <input type="checkbox" name="part6_3c" value="no" checked="'.$checked_no.'" />   No</div>';
 $pdf->writeHTMLCell(90, 7, 177, 33, $html, 0, 1, false, true, 'J', true );
 //......
 
@@ -1194,7 +1241,9 @@ $html ='<div><b>4.a. </b>Reacquired the nationality of the<br> &nbsp; &nbsp; &nb
 country named above?</div>';
 $pdf->writeHTMLCell(91, 7, 112, 50, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10);
-$html ='<div><input type="checkbox" name="part6_4a" value="yes" checked=" " />   &nbsp;   Yes  <input type="checkbox" name="part6_4a" value="no" checked=" " />   No</div>';
+$checked_yes = (showData('i_131_reacquired_nationality_4a_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_reacquired_nationality_4a_status')=='N')? "checked":"";
+$html ='<div><input type="checkbox" name="part6_4a" value="yes" checked="'.$checked_yes.'" />   &nbsp;   Yes  <input type="checkbox" name="part6_4a" value="no" checked="'.$checked_no.'" />   No</div>';
 $pdf->writeHTMLCell(90, 7, 177, 51, $html, 0, 1, false, true, 'J', true );
 //......
 
@@ -1202,7 +1251,9 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>4.b. </b> Acquired a new nationality?  </div>';
 $pdf->writeHTMLCell(91, 7, 112, 60, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10);
-$html ='<div><input type="checkbox" name="part6_4b" value="yes" checked=" " />   &nbsp;   Yes  <input type="checkbox" name="part6_4b" value="no" checked=" " />   No</div>';
+$checked_yes = (showData('i_131_reacquired_new_nationality_4b_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_reacquired_new_nationality_4b_status')=='N')? "checked":"";
+$html ='<div><input type="checkbox" name="part6_4b" value="yes" checked="'.$checked_yes.'" />   &nbsp;   Yes  <input type="checkbox" name="part6_4b" value="no" checked="'.$checked_no.'" />   No</div>';
 $pdf->writeHTMLCell(90, 7, 177, 61, $html, 0, 1, false, true, 'J', true );
 //......
 
@@ -1211,7 +1262,9 @@ $html ='<div><b>4.c. </b>  Been granted refugee or asylee status<br>  &nbsp; &nb
 in any other country?</div>';
 $pdf->writeHTMLCell(91, 7, 112, 70, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10);
-$html ='<div><input type="checkbox" name="part6_4c" value="yes" checked=" " />   &nbsp;   Yes  <input type="checkbox" name="part6_4c" value="no" checked=" " /> No </div>';
+$checked_yes = (showData('i_131_been_granted_refugee_4c_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_been_granted_refugee_4c_status')=='N')? "checked":"";
+$html ='<div><input type="checkbox" name="part6_4c" value="yes" checked="'.$checked_yes.'" />   &nbsp;   Yes  <input type="checkbox" name="part6_4c" value="no" checked="'.$checked_no.'" /> No </div>';
 $pdf->writeHTMLCell(90, 7, 177, 71, $html, 0, 1, false, true, 'J', true );
 
 //......
@@ -1231,7 +1284,9 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>1. </b>How many trips do you intend to use this document?</div>';
 $pdf->writeHTMLCell(91, 7, 12, 121, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
-$html ='<div><input type="checkbox" name="part7_1" value="yes" checked=" " />&nbsp;One Trip  &nbsp;&nbsp; <input type="checkbox" name="part7_1" value="no" checked=" " />   More than one trip </div>';
+$checked_one = (showData('i_131_how_many_trip_entend')=='one')? "checked":"";
+$checked_more = (showData('i_131_how_many_trip_entend')=='more')? "checked":"";
+$html ='<div><input type="checkbox" name="part7_1" value="yes" checked="'.$checked_one.'" />&nbsp;One Trip  &nbsp;&nbsp; <input type="checkbox" name="part7_1" value="no" checked="'.$checked_more.'" />   More than one trip </div>';
 $pdf->writeHTMLCell(90, 7, 50, 126.5, $html, 0, 1, false, true, 'J', true );
 
 //.......
@@ -1265,7 +1320,8 @@ $pdf->writeHTMLCell(90, 7, 12, 179, $html, 0, 1, false, true, 'J', true);
 //.......
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>3. </b>  <input type="checkbox" name="part7_3" value="1" checked=" " /> </div>';
+$checked = (showData('i_131_the_address_shown_3_status')=='Y')? "checked":"";
+$html ='<div><b>3. </b>  <input type="checkbox" name="part7_3" value="1" checked="'.$checked.'" /> </div>';
 $pdf->writeHTMLCell(90, 7, 12, 190, $html, 0, 1, false, true, 'J', true);
 $html ='<div>To the address shown in<b> Part 2 (2.h. through 2.p.)</b>
 of this form. </div>';
@@ -1274,7 +1330,8 @@ $pdf->writeHTMLCell(75, 7, 22, 190, $html, 0, 1, false, true, 'J', true);
 //......
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>4. </b>  <input type="checkbox" name="part7_4" value="1" checked=" " /> </div>';
+$checked = (showData('i_131_the_address_shown_4_status')=='Y')? "checked":"";
+$html ='<div><b>4. </b>  <input type="checkbox" name="part7_4" value="1" checked="'.$checked.'" /> </div>';
 $pdf->writeHTMLCell(90, 7, 12, 203, $html, 0, 1, false, true, 'J', true);
 $html ='<div>To the address shown in <b>Part 7 (4.a. through 4.i.)</b>
 of this form.</div>';
@@ -1300,22 +1357,25 @@ $pdf->TextField('part7_your_physical_street_number', 58, 7, array('strokeColor' 
 $pdf->SetFont('times', '', 10); 
 $html= '<div><b>4.c.</b></div>';
 $pdf->writeHTMLCell(15, 0, 112, 126, $html, '', 0, 0, true, 'L');
+$mailing_apt = (showData('travel_advance_parole_address_apt_ste_flr')=='apt')? "checked":"";
+$mailing_ste = (showData('travel_advance_parole_address_apt_ste_flr')=='ste')? "checked":"";
+$mailing_flr = (showData('travel_advance_parole_address_apt_ste_flr')=='flr')? "checked":"";
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Apt4" value="Apt4" checked="" />';
+$html= '<input type="checkbox" name="Apt4" value="Apt4" checked="'.$mailing_apt.'" />';
 $pdf->writeHTMLCell(5, 0, 128.5, 125, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Apt.</div>';
 $pdf->writeHTMLCell(25, 0, 120, 126, $html, '', 0, 0, true, 'L');
 //
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Ste4" value="Ste4" checked="" />';
+$html= '<input type="checkbox" name="Ste4" value="Ste4" checked="'.$mailing_ste.'" />';
 $pdf->writeHTMLCell(5, 0, 142.5, 125, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Ste.</div>';
 $pdf->writeHTMLCell(25, 0, 135, 126, $html, '', 0, 0, true, 'L');
 //
-$pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Flr4" value="Flr4" checked="" />';
+$pdf->SetFont('times', '', 14);    
+$html= '<input type="checkbox" name="Flr4" value="Flr4" checked="'.$mailing_flr.'" />';
 $pdf->writeHTMLCell(5, 0, 157, 125, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $html= '<div>Flr.</div>';
@@ -1400,7 +1460,9 @@ parole.</div>';
 $pdf->writeHTMLCell(55, 10, 18, 223, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><input type="checkbox" name="part8_1" value="Y" checked=" "/>  Yes  <input type="checkbox" name="part8_1" value="N" checked=" "/> No </div>';
+$checked_yes = (showData('i_131_requesting_employment_authorization_1_status')=='Y')? "checked":"";
+$checked_no = (showData('i_131_requesting_employment_authorization_1_status')=='N')? "checked":"";
+$html ='<div><input type="checkbox" name="part8_1" value="Y" checked="'.$checked_yes.'"/>  Yes  <input type="checkbox" name="part8_1" value="N" checked="'.$checked_no.'"/> No </div>';
 $pdf->writeHTMLCell(40, 7, 75, 224, $html, 0, 1, false, true, 'J', true);
 
 
@@ -1448,9 +1510,9 @@ $pdf->SetFont('times', '', 15);
 $html ='<div>(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</div>';
 $pdf->writeHTMLCell(80, 7, 156, 44, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part10_daytime_phone_code1', 12, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 159.2, 44.7);
-$pdf->TextField('part10_daytime_phone_code2', 12, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 174.5, 44.7);
-$pdf->TextField('part10_daytime_phone_code3', 14, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 190, 44.7);
+$pdf->TextField('part9_2_daytime_phone1', 12, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 159.2, 44.7);
+$pdf->TextField('part9_2_daytime_phone2', 12, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 174.5, 44.7);
+$pdf->TextField('part9_2_daytime_phone3', 14, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 190, 44.7);
 
 //............
 $pdf->SetFont('times', '', 10);
@@ -1517,17 +1579,21 @@ $pdf->SetFont('times', '', 10);
 $html= '<div><b>3.b.</b></div>';
 $pdf->writeHTMLCell(15, 0, 12, 174, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Apt5" value="Apt5" checked="" />';
+$mailing_apt = (showData('i_131_preparer_mailing_address_apt_ste_flr')=='apt')? "checked":"";
+$mailing_ste = (showData('i_131_preparer_mailing_address_apt_ste_flr')=='ste')? "checked":"";
+$mailing_flr = (showData('i_131_preparer_mailing_address_apt_ste_flr')=='flr')? "checked":"";
+//................
+$html= '<input type="checkbox" name="Apt5" value="Apt5" checked="'.$mailing_apt.'" />';
 $pdf->writeHTMLCell(5, 0, 27.5, 173.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 20, 174, "Apt.", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Ste5" value="Ste5" checked="" />';
+$html= '<input type="checkbox" name="Ste5" value="Ste5" checked="'.$mailing_ste.'" />';
 $pdf->writeHTMLCell(5, 0, 41.5, 173.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 34, 174, "Ste.", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Flr5" value="Flr5" checked="" />';
+$html= '<input type="checkbox" name="Flr5" value="Flr5" checked="'.$mailing_flr.'" />';
 $pdf->writeHTMLCell(5, 0, 56, 173.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 49, 174, "Flr.", '', 0, 0, true, 'L');
@@ -1597,9 +1663,9 @@ $pdf->SetFont('times', '', 15);
 $html ='<div>(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - </div>';
 $pdf->writeHTMLCell(80, 7, 118, 100, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part9_2_daytime_phone1', 12, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 121.4, 100.7);
-$pdf->TextField('part9_2_daytime_phone2', 12, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 136.5, 100.7);
-$pdf->TextField('part9_2_daytime_phone3', 14, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 153, 100.7);
+$pdf->TextField('part10_daytime_phone_code1', 12, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 121.4, 100.7);
+$pdf->TextField('part10_daytime_phone_code2', 12, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 136.5, 100.7);
+$pdf->TextField('part10_daytime_phone_code3', 14, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 153, 100.7);
 
 $pdf->TextField('part10_daytime_phone_extension', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 188, 102);
 //............
@@ -1642,123 +1708,110 @@ $pdf->writeHTMLCell(90, 7, 112, 180, $html, 0, 0, false, 'L');
 $js = "
 var fields = {
     'attorney_state_licence':' $attorneyData->bar_number',
-    'about_your_lastname':' ',
-    'about_your_firstname':' ',
-    'about_your_middlename':' ',
-    'about_your_physical_care_of_name':' ',
-    'about_your_physical_street_number':' ',
-    'about_your_physical_apt_ste_flr':' ',
-    'about_your_physical_city_or_town':' ',
-    'about_your_physical_state':' ',
-    'about_your_physical_zip_code':' ',
-    'about_your_physical_postal_code':' ',
-    'about_your_physical_province':' ',
-    'about_your_physical_country':' ',
+    'about_your_lastname':' ".showData('information_about_you_family_last_name')."',
+    'about_your_firstname':' ".showData('information_about_you_given_first_name')."',
+    'about_your_middlename':' ".showData('information_about_you_middle_name')."',
+    'about_your_physical_care_of_name':' ".showData('information_about_you_home_care_of_name')."',
+    'about_your_physical_street_number':' ".showData('information_about_you_home_street_number')."',
+    'about_your_physical_apt_ste_flr':' ".showData('information_about_you_home_apt_ste_flr_value')."',
+    'about_your_physical_city_or_town':' ".showData('information_about_you_home_city_town')."',
+    'about_your_physical_state':' ".showData('information_about_you_home_state')."',
+    'about_your_physical_zip_code':' ".showData('information_about_you_home_zip_code')."',
+    'about_your_physical_postal_code':' ".showData('information_about_you_home_postal_code')."',
+    'about_your_physical_province':' ".showData('information_about_you_home_province')."',
+    'about_your_physical_country':' ".showData('information_about_you_home_country')."',
+    'other_information_alien_reg_number':' ".showData('other_information_about_you_alien_registration_number')."',
+    'other_information_country_of_birth':' ".showData('other_information_about_you_country_of_birth')."',
+    'other_information_country_of_citizenship':' ".showData('other_information_about_you_country_of_citizen')."',
+    'other_information_class_of_admission':' ".showData('i_131_information_about_you_class_of_admission')."',
+    'other_information_date_of_birth':' ".showData('other_information_about_you_date_of_birth')."',
+    'other_information_us_social_security':' ".showData('other_information_about_you_social_security_number')."',
 
-    'other_information_alien_reg_number':' ',
-    'other_information_country_of_birth':' ',
-    'other_information_country_of_citizenship':' ',
-    'other_information_class_of_admission':' ',
-    'other_information_date_of_birth':' ',
-    'other_information_us_social_security':' ',
+//page 2 ....
+    'part_2_application_2a':' ".showData('travel_application_type_last_name')."',
+    'part_2_application_2b':' ".showData('travel_application_type_first_name')."',
+    'part_2_application_2c':' ".showData('travel_application_type_middle_name')."',
+    'part_2_application_2d':' ".showData('travel_application_type_date_of_birth')."',
+    'part_2_application_2e':' ".showData('travel_application_type_country_of_birth')."',
+    'part_2_application_2f':' ".showData('travel_application_type_country_of_citizen')."',
+    'part_2_application_2g1':' ".showData('travel_application_type_daytime_tel1')."',
+    'part_2_application_2g2':' ".showData('travel_application_type_daytime_tel2')."',
+    'part_2_application_2g3':' ".showData('travel_application_type_daytime_tel3')."',
+    'application_your_physical_care_of_name':' ".showData('travel_application_physical_address_care_of_name')."',
+    'applicationt_your_physical_street_number':' ".showData('travel_application_physical_street_number')."',
+    'application_your_physical_apt_ste_flr':' ".showData('travel_application_physical_address_apt_ste_flr_value')."',
+    'application_your_physical_city_or_town':' ".showData('travel_application_physical_address_city_town')."',
+    'application_your_physical_state':' ".showData('travel_application_physical_address_state')."',
+    'application_your_physical_zip_code':' ".showData('travel_application_physical_address_zip_code')."',
+    'application_your_physical_postal_code':' ".showData('travel_application_physical_address_postal_code')."',
+    'application_your_physical_province':' ".showData('travel_application_physical_address_province')."',
+    'application_your_physical_country':' ".showData('travel_application_physical_address_country')."',
+    'date_of_independent_depreture':' ".showData('travel_processing_info_date_of_intended')."',
+    'except_day_of_length':' ".showData('travel_processing_info_expected_length_of_trip')."',
+    'part_3_processing_info_3b':' ".showData('travel_processing_info_name_of_dhs_office')."',
+    'part_3_processing_info_4b':' ".showData('travel_processing_info_date_issued')."',
+    'part_3_processing_info_4c':' ".showData('travel_processing_info_disposition')."',
 
-    'application_your_physical_care_of_name':' ',
-    'applicationt_your_physical_street_number':' ',
-    'application_your_physical_apt_ste_flr':' ',
-    'application_your_physical_city_or_town':' ',
-    'application_your_physical_state':' ',
-    'application_your_physical_zip_code':' ',
-    'application_your_physical_postal_code':' ',
-    'application_your_physical_province':' ',
-    'application_your_physical_country':' ',
-
-    'date_of_independent_depreture':' ',
-    'except_day_of_length':' ',
-
-    'processing_your_physical_care_of_name':' ',
-    'processing_your_physical_street_number':' ',
-    'processing_your_physical_apt_ste_flr':' ',
-    'processing_your_physical_city_or_town':' ',
-    'processing_your_physical_state':' ',
-    'processing_your_physical_zip_code':' ',
-    'processing_your_physical_postal_code':' ',
-    'processing_your_physical_province':' ',
-    'processing_your_physical_country':' ',
-//page 2 part 2....
-    'part_2_application_2a':' ',
-    'part_2_application_2b':' ',
-    'part_2_application_2c':' ',
-    'part_2_application_2d':' ',
-    'part_2_application_2e':' ',
-    'part_2_application_2f':' ',
-    'part_2_application_2g1':' ',
-    'part_2_application_2g2':' ',
-    'part_2_application_2g3':' ',
-//page 2 part 3.....
-    'part_3_processing_info_3b':' ',
-    'part_3_processing_info_4b':' ',
-    'part_3_processing_info_4c':' ',
-    'part_3_processing_city_town':' ',
-    'part_3_processing_country':' ',
-    'part_3_processing_7a_city_town':' ',
-    'part_3_processing_7b_country':' ',
+//page 3 ....
+    'part_3_processing_city_town':' ".showData('travel_processing_info_embassy_city_town')."',
+    'part_3_processing_country':' ".showData('travel_processing_info_embassy_country')."',
+    'part_3_processing_7a_city_town':' ".showData('travel_processing_info_dhs_office_city_town')."',
+    'part_3_processing_7b_country':' ".showData('travel_processing_info_dhs_office_country')."',
+    'processing_your_physical_care_of_name':' ".showData('travel_processing_address_care_of_name')."',
+    'processing_your_physical_street_number':' ".showData('travel_processing_address_street_number')."',
+    'processing_your_physical_apt_ste_flr':' ".showData('travel_processing_address_apt_ste_flr_value')."',
+    'processing_your_physical_city_or_town':' ".showData('travel_processing_address_city_town')."',
+    'processing_your_physical_state':' ".showData('travel_processing_address_state')."',
+    'processing_your_physical_zip_code':' ".showData('travel_processing_address_zip_code')."',
+    'processing_your_physical_postal_code':' ".showData('travel_processing_address_postal_code')."',
+    'processing_your_physical_province':' ".showData('travel_processing_address_province')."',
+    'processing_your_physical_country':' ".showData('travel_processing_address_country')."',
+    'part3_daytime_phone_10j_1':' ".showData('travel_processing_address_daytime_tel1')."',
+    'part3_daytime_phone_10j_2':' ".showData('travel_processing_address_daytime_tel2')."',
+    'part3_daytime_phone_10j_3':' ".showData('travel_processing_address_daytime_tel3')."',
+    'part_4_1a':' ".showData('information_about_proposed_travel_purpose_trip')."',
+    'part_4_1b':' ".showData('information_about_proposed_travel_country_list')."',
 
 
+//page 4 ....
+    'part_6_country_you_are_refugee':' ".showData('i_131_country_which_are_you_refugee')."',
+    'part_7_city_town':' ".showData('i_131_overseas_notification_city_town')."',
+    'part_7_country':' ".showData('i_131_overseas_notification_country')."',
+    'part7_your_physical_care_of_name':' ".showData('travel_advance_parole_address_care_of_name')."',
+    'part7_your_physical_street_number':' ".showData('travel_advance_parole_address_street_number')."',
+    'part7_your_physical_apt_ste_flr':' ".showData('travel_advance_parole_address_apt_ste_flr_value')."',
+    'part7_your_physical_city_or_town':' ".showData('travel_advance_parole_address_city_town')."',
+    'part7_your_physical_state':' ".showData('travel_advance_parole_address_state')."',
+    'part7_your_physical_zip_code':' ".showData('travel_advance_parole_address_zip_code')."',
+    'part7_your_physical_postal_code':' ".showData('travel_advance_parole_address_postal_code')."',
+    'part7_your_physical_province':' ".showData('travel_advance_parole_address_province')."',
+    'part7_your_physical_country':' ".showData('travel_advance_parole_address_country')."',
+    'part7_4j_daytime_phone1':' ".showData('travel_advance_parole_daytime_tel1')."',
+    'part7_4j_daytime_phone2':' ".showData('travel_advance_parole_daytime_tel2')."',
+    'part7_4j_daytime_phone3':' ".showData('travel_advance_parole_daytime_tel3')."',
 
-    //................
-    'part_4_1a':'',
-    'part_4_1b':'',
-    'part_6_country_you_are_refugee':' ',
-    'part_7_city_town':' ',
-    'part_7_country':' ',
-
-    'part7_your_physical_care_of_name':' ',
-    'part7_your_physical_street_number':' ',
-    'part7_your_physical_apt_ste_flr':' ',
-    'part7_your_physical_city_or_town':' ',
-    'part7_your_physical_state':' ',
-    'part7_your_physical_zip_code':' ',
-    'part7_your_physical_postal_code':' ',
-    'part7_your_physical_province':' ',
-    'part7_your_physical_country':' ',
-
-    'signature_applicant_date_of_signature':' ',
-    'part8_daytime_phone_code':' ',
-    'part8_daytime_phone_number1':' ',
-    'part8_daytime_phone_number2':' ',
-
-    'part9_preparer_last_name':' ',
-    'part9_preparer_first_name':' ',
-    'part9_preparer_business_org_name':' ',
-
-    'part9_your_mailing_street_number':' ',
-    'part9_your_mailing_apt_ste_flr':' ',
-    'part9_your_mailing_city_or_town':' ',
-    'part9_your_mailing_state':' ',
-    'part9_your_mailing_zip_code':' ',
-    'part9_your_mailing_postal_code':' ',
-    'part9_your_mailing_province':' ',
-    'part9_your_mailing_country':' ',
-
-    'part10_daytime_phone_code1':' ',
-    'part10_daytime_phone_code2':' ',
-    'part10_daytime_phone_code3':' ',
-    'part9_daytime_phone_number1':' ',
-    'part9_daytime_phone_number2':' ',
-    'part10_daytime_phone_extension':' ',
-
-    'part9_preparer_email_address':' ',
-    'part9_preparer_date_of_signature':' ',
-    'part3_daytime_phone_10j_1':' ',
-    'part3_daytime_phone_10j_2':' ',
-    'part3_daytime_phone_10j_3':' ',
-    'part7_4j_daytime_phone1':' ',
-    'part7_4j_daytime_phone2':' ',
-    'part7_4j_daytime_phone3':' ',
-    'part9_2_daytime_phone1':' ',
-    'part9_2_daytime_phone2':' ',
-    'part9_2_daytime_phone3':' ',
-
+//page 5 ....
+    'signature_applicant_date_of_signature':' ".showData('i_131_applicant_sign_date')."',
+    'part9_2_daytime_phone1':' ".showData('i_131_applicant_daytime_tel1')."',
+    'part9_2_daytime_phone2':' ".showData('i_131_applicant_daytime_tel2')."',
+    'part9_2_daytime_phone3':' ".showData('i_131_applicant_daytime_tel3')."',
+    'part9_preparer_last_name':' ".showData('i_131_preparer_family_last_name')."',
+    'part9_preparer_first_name':' ".showData('i_131_preparer_family_given_first_name')."',
+    'part9_preparer_business_org_name':' ".showData('i_131_preparer_business_name')."',
+    'part9_your_mailing_street_number':' ".showData('i_131_preparer_mailing_address_street_number')."',
+    'part9_your_mailing_apt_ste_flr':' ".showData('i_131_preparer_mailing_address_apt_ste_flr_value')."',
+    'part9_your_mailing_city_or_town':' ".showData('i_131_preparer_mailing_address_city_town')."',
+    'part9_your_mailing_state':' ".showData('i_131_preparer_mailing_address_state')."',
+    'part9_your_mailing_zip_code':' ".showData('i_131_preparer_mailing_address_zip_code')."',
+    'part9_your_mailing_postal_code':' ".showData('i_131_preparer_mailing_address_postal_code')."',
+    'part9_your_mailing_province':' ".showData('i_131_preparer_mailing_address_province')."',
+    'part9_your_mailing_country':' ".showData('i_131_preparer_mailing_address_country')."',
+    'part10_daytime_phone_code1':' ".showData('i_131_preparer_daytime_tel1')."',
+    'part10_daytime_phone_code2':' ".showData('i_131_preparer_daytime_tel2')."',
+    'part10_daytime_phone_code3':' ".showData('i_131_preparer_daytime_tel3')."',
+    'part10_daytime_phone_extension':' ".showData('i_131_preparer_extension')."',
+    'part9_preparer_email_address':' ".showData('i_131_preparer_email_address')."',
+    'part9_preparer_date_of_signature':' ".showData('i_131_preparer_intended_sign_date')."',
 
 };
 for (var fieldName in fields) {
