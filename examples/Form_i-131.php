@@ -1056,8 +1056,13 @@ separate sheet of paper.)</i></div>';
 $pdf->writeHTMLCell(80, 7, 20, 128.6, $html, 0, 1, false, true, 'J', true);
 //........
 $pdf->setFont('courier', 'B', 10);
-$pdf->setCellHeightRatio( 1.8 );
-$pdf->TextField('part_4_1a', 82.7, 27, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),21, 138);
+$pdf->setCellHeightRatio( 1.9);
+$pdf->writeHTMLCell( 82, 1, 21, 133, '',  "B",  0, false, false, 'C', true );// line 1
+$pdf->writeHTMLCell( 82, 1, 21, 138, '',  "B",  0, false, false, 'C', true );// line 2
+$pdf->writeHTMLCell( 82, 1, 21, 143, '',  "B",  0, false, false, 'C', true );// line 3
+$pdf->writeHTMLCell( 82, 1, 21, 148, '',  "B",  0, false, false, 'C', true );// line 4
+$pdf->TextField('part_4_1a', 82.7, 27, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), 
+array('v' => showData('information_about_proposed_travel_purpose_trip')),21, 138);
 $pdf->setCellHeightRatio( 1.1 );
 
 //.........
@@ -1070,9 +1075,14 @@ space, continue on a separate sheet of paper.)</i></div>';
 $pdf->writeHTMLCell(80, 7, 120, 128.6, $html, 0, 1, false, true, 'J', true);
 //........
 $pdf->setFont('courier', 'B', 10);
-$pdf->setCellHeightRatio( 1.8 );
-$pdf->TextField('part_4_1b', 81.7, 27, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),121, 138);
-$pdf->setCellHeightRatio( 1.1 );
+$pdf->setCellHeightRatio(1.9);
+$pdf->writeHTMLCell( 81, 1, 121, 133, '',  "B",  0, false, false, 'C', true ); // line 1
+$pdf->writeHTMLCell( 81, 1, 121, 138, '',  "B",  0, false, false, 'C', true ); // line 2
+$pdf->writeHTMLCell( 81, 1, 121, 142, '',  "B",  0, false, false, 'C', true ); // line 3
+$pdf->writeHTMLCell( 81, 1, 121, 147, '',  "B",  0, false, false, 'C', true ); // line 4
+$pdf->TextField('part_4_1b', 81.7, 27, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), 
+array('v' => showData('information_about_proposed_travel_country_list')),121, 138);
+$pdf->setCellHeightRatio( 1.1);
 
 //.........
 $pdf->SetFont('times', 'B', 12); // set font
@@ -1769,8 +1779,6 @@ var fields = {
     'part3_daytime_phone_10j_1':' ".showData('travel_processing_address_daytime_tel1')."',
     'part3_daytime_phone_10j_2':' ".showData('travel_processing_address_daytime_tel2')."',
     'part3_daytime_phone_10j_3':' ".showData('travel_processing_address_daytime_tel3')."',
-    'part_4_1a':' ".showData('information_about_proposed_travel_purpose_trip')."',
-    'part_4_1b':' ".showData('information_about_proposed_travel_country_list')."',
 
 
 //page 4 ....
