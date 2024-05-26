@@ -1672,7 +1672,7 @@ $pdf->TextField('3rd_total_income', 28.7, 7, array('strokeColor' => array(64, 64
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>25.  </b><input type="checkbox" name="not_require" value="Y" checked=" " /></div>';
-$pdf->writeHTMLCell(90, 7, 12, 226, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 12, 225, $html, 0, 1, false, true, 'L', true);
 $html ='<div>I was not required to file a Federal income tax return
 as my income was below the IRS required level and I
 have attached evidence to support this.</div>';
@@ -1702,18 +1702,18 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.  </b>&nbsp;&nbsp; &nbsp;Enter the balance of all savings and checking accounts.</div>';
 $pdf->writeHTMLCell(90, 7, 112, 85, $html, 0, 1, false, true, 'L', true);
 
-$pdf->writeHTMLCell(90, 7, 155, 91, '$', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 165, 91, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('balance_saving_account', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169, 90.5); 
 
 //.........
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>2.  </b>&nbsp;&nbsp; &nbsp;Enter the net cash value of real-estate holdings. (Net <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value 
- means current assessed value minus mortgage debt.)</div>';
+$html ='<di><b>2.  </b>&nbsp;&nbsp; &nbsp;Enter the net cash value of real-estate holdings. (Net <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value 
+ means currvent assessed value minus mortgage debt.)</div>';
 $pdf->writeHTMLCell(92, 7, 112, 98, $html, 0, 1, false, true, 'L', true);
 
-$pdf->writeHTMLCell(90, 7, 155, 108, '$', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 165, 108, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('net_cash_value', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169, 107.5);
 //............
@@ -1723,7 +1723,7 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>3.  </b>&nbsp;&nbsp; &nbsp;Enter the net cash value of all stocks, bonds, certificates<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of deposit, and any other assets not already included in <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Item Number 1. or Item Number 2</b>.</div>';
 $pdf->writeHTMLCell(93, 7, 112, 114, $html, 0, 1, false, true, 'L', true);
 
-$pdf->writeHTMLCell(90, 7, 155, 128, '$', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 165, 128, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('cash_value_all_stock', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169, 128);
 
@@ -1733,7 +1733,7 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>4.  </b>&nbsp;&nbsp; &nbsp;Add together <b>Item Numbers 1. - 3.</b> and enter the number<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;here.</div>';
 $pdf->writeHTMLCell(93, 7, 112, 135, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', 'B', 10.2);
-$pdf->writeHTMLCell(90, 7, 133, 140, '<div>TOTAL:&nbsp;&nbsp;&nbsp;$</div>', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 149, 140, '<div>TOTAL:&nbsp;&nbsp;&nbsp;$</div>', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('together_totals', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169, 140);
 //............
@@ -1757,7 +1757,7 @@ $html ='<div><b>5.b.  </b>   Your household member\'s assets from Form I-864A <b
 (optional).</div>';
 $pdf->writeHTMLCell(90, 7, 112, 168, $html, 0, 1, false, true, 'L', true);
 
-$pdf->writeHTMLCell(90, 7, 155, 173, '$', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 165, 173, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('house_hold_member_assets', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169, 173); 
 
@@ -1782,7 +1782,7 @@ $html ='<div><b>6.  </b>&nbsp;&nbsp; &nbsp;Enter the balance of the principal im
 checking accounts.</div>';
 $pdf->writeHTMLCell(95, 7, 112, 205, $html, 0, 1, false, true, 'L', true);
 
-$pdf->writeHTMLCell(90, 7, 155, 212, '$', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 165, 212, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('enter_balance_of_principals', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169, 211); 
 //..........
@@ -1793,7 +1793,7 @@ real estate holdings. (Net value means investment value<br>&nbsp;&nbsp;&nbsp;&nb
 minus mortgage debt.)</div>';
 $pdf->writeHTMLCell(90, 7, 112, 218, $html, 0, 1, false, true, 'L', true);
 
-$pdf->writeHTMLCell(90, 7, 155, 227, '$', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 165, 227, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('net_cash_value_of_principals', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169, 227);
 
@@ -1805,7 +1805,7 @@ stocks, bonds, certificates of deposit, and other assets not<br>&nbsp;&nbsp;&nbs
 included in <b>Item Number 6</b>. or <b>Item Number 7.</b></div>';
 $pdf->writeHTMLCell(90, 7, 112, 234, $html, 0, 1, false, true, 'L', true);
 
-$pdf->writeHTMLCell(90, 7, 155, 247, '$', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 165, 247, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('current_cash_value_of_immigrants', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169, 247);
 //...........page 5 end 
@@ -1873,33 +1873,33 @@ $pdf->SetFont('times', '', 12);
 $pdf->setCellPaddings(1, 1, 0, 1);
 $html ='<div><b>Part 7. Use of Assets to Supplement Income 
 </b>(Optional) (continued)</div>';
-$pdf->writeHTMLCell(90, 7, 13, 49, $html, 1, 1, true, true, 'L',true);
+$pdf->writeHTMLCell(91, 7, 13, 49, $html, 1, 1, true, true, 'L',true);
 //.......
 
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>9.  </b>    Add together <b>Item Numbers 6. - 8.</b> and enter the number<br> &nbsp; &nbsp;&nbsp; here</div>';
-$pdf->writeHTMLCell(90, 7, 12, 62, $html, 0, 1, false, true, 'L', true);
+$html ='<div><b>9.  </b>&nbsp;&nbsp;&nbsp;Add together <b>Item Numbers 6. - 8.</b> and enter the number<br> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;here</div>';
+$pdf->writeHTMLCell(90, 7, 12, 61, $html, 0, 1, false, true, 'L', true);
 
-$pdf->writeHTMLCell(90, 7, 54, 67, '$', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7,  65, 67, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('add_together_item_number6_8', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 57, 67);
+$pdf->TextField('add_together_item_number6_8', 35 , 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 69, 67);
 
 $pdf->SetFont('times', 'B', 10);
 $html ='<div><b>Total Value of Assets </b></div>';
-$pdf->writeHTMLCell(90, 7, 12, 74, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 12, 73, $html, 0, 1, false, true, 'L', true);
 
 //...........
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>10.  </b>    Add together <b>Item Numbers 4., 5.b.</b>, and<b> 9.</b> and enter the<br>  &nbsp; &nbsp; &nbsp; 
 number here.</div>';
-$pdf->writeHTMLCell(90, 7, 12, 80, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 12, 79, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', 'B', 10);
-$pdf->writeHTMLCell(90, 7, 35, 90, 'TOTAL :', 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(90, 7, 54, 90, '$', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 48, 88, 'TOTAL :', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 65, 88, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('add_together_item_number4_5_9', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 57, 90);
+$pdf->TextField('add_together_item_number4_5_9', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 69, 88);
 
 //..........
 
@@ -1908,7 +1908,7 @@ $pdf->setCellPaddings(1, 1, 0, 1);
 $html ='<div><b>Part 8. Sponsor\'s Contract, Statement, Contact
 Information, Declaration, Certification, and
 Signature</b></div>';
-$pdf->writeHTMLCell(90, 7, 13, 100, $html, 1, 1, true, true, 'L',true);
+$pdf->writeHTMLCell(91, 7, 13, 100, $html, 1, 1, true, true, 'L',true);
 
 //........
 
