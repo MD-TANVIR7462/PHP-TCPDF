@@ -1,4 +1,12 @@
 <?php
+$singleDataNote= json_decode(file_get_contents('http://demolms.siscotech.com/views/work_file/apiData.php'));
+
+function showData($name){
+	global $singleDataNote;
+	if(isset($singleDataNote->$name)) return $singleDataNote->$name;
+	else return '';
+}
+
 function createCheckbox($fieldName,$fieldTitle=""){
 	
 	if(showData($fieldName) == "Y") {
@@ -42,6 +50,9 @@ function createRadio($fieldName){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- Toastr -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 <style type="text/css">
 #registration_form fieldset:not(:first-of-type) {
@@ -119,8 +130,7 @@ th, td {
 	text-align: center;
 	border-collapse: collapse;
 }
-</style>
-<style>
+
 iframe {
 	display: none;
 }
@@ -192,6 +202,9 @@ body {
     border: none !important;
     box-shadow: none !important;
 }
+.toast-message {
+	color: #fff;
+}
 </style>
 </head>
 <body>
@@ -203,5 +216,5 @@ body {
 		  <h3><?php echo $page_heading?> &nbsp;&nbsp; <div id="google_translate_element"></div></h3>  
 		</div>
 		<form id="registration_form" class="form-horizontal" action="#" method="post">
-			<input type="hidden" name="id" value="<?php echo $singleData->id?>" />
-			<input type="hidden" name="client_id" value="<?php echo $clientId?>" />
+			<!-- <input type="hidden" name="id" value="<?php //echo $singleData->id?>" />
+			<input type="hidden" name="client_id" value="<?php //echo $clientId?>" /> -->

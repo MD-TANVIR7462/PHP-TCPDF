@@ -94,8 +94,14 @@ $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 // set a barcode on the page footer
 // $pdf->setBarcode(date('Y-m-d H:i:s'));
 
-// add a page
-$pdf->AddPage('P', 'LETTER');  // page number 1
+
+
+/********************************
+******** Start Page No 1 ********
+*********************************/
+
+
+$pdf->AddPage('P', 'LETTER');
 
 // set style for barcode
 $style = array(
@@ -182,8 +188,10 @@ $html ='<div>To Be Completed by an <i>Attorney or Accredited Representative,</i>
 $pdf->writeHTMLCell(40, 30, 163, 33, $html,  0,  1, false, true, 'C', false);
 //.......
 
+if(showData('i_102_g28_checkbox')=="Y") $g_28 = "checked"; else $g_28 = "";
+
 $pdf->SetFont('times', '', 13);
-$html ='<div><b>  </b>   <input type="checkbox" name="attached" value="Y" checked=" " /></div>';
+$html ='<div><b>  </b>   <input type="checkbox" name="attached" value="Y" checked="'.$g_28.'" /></div>';
 $pdf->writeHTMLCell(20, 15, 142, 48, $html, 0, 1, false, true, 'R', true);
 
 $pdf->SetFont('times', '', 10);
@@ -328,20 +336,23 @@ $pdf->TextField('us_mailing_street_number_name', 82.5, 7, array('strokeColor' =>
 //...........
 
 $pdf->SetFont('times', '', 10); // set font
+if(showData('information_about_you_us_mailing_apt_ste_flr')=="apt") $checked_apt = "checked"; else $checked_apt = "";
+if(showData('information_about_you_us_mailing_apt_ste_flr')=="ste") $checked_ste = "checked"; else $checked_ste = "";
+if(showData('information_about_you_us_mailing_apt_ste_flr')=="flr") $checked_flr = "checked"; else $checked_flr = "";
 $html= '<div><b>5.c. </b></div>';
 $pdf->writeHTMLCell(60, 0, 112, 105.6, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); // set font
-$html= '<input type="checkbox" name="Apt1" value="Apt1" checked="" />';
+$html= '<input type="checkbox" name="Apt1" value="Apt1" checked="'.$checked_apt.'" />';
 $pdf->writeHTMLCell(5, 0, 120, 104.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 126, 105.6, "Apt.", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Ste1" value="Ste1" checked="" />';
+$html= '<input type="checkbox" name="Ste1" value="Ste1" checked="'.$checked_ste.'" />';
 $pdf->writeHTMLCell(5, 0, 135, 104.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 141, 105.6, "Ste.", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Flr1" value="Flr1" checked="" />';
+$html= '<input type="checkbox" name="Flr1" value="Flr1" checked="'.$checked_flr.'" />';
 $pdf->writeHTMLCell(5, 0, 149, 104.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 155, 105.6, "Flr.", '', 0, 0, true, 'L');
@@ -376,10 +387,12 @@ $pdf->SetFont('times', '', 10);
 $html= '<div><b>6.</b></div>';
 $pdf->writeHTMLCell(50, 4, 112, 131, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
+if(showData('is_your_current_mailing_address_same_as_physical')=="Y") $yes = "checked"; else $Yes = "";
+if(showData('is_your_current_mailing_address_same_as_physical')=="N") $No = "checked"; else $No = "";
 $html= '<div>Is your current U.S. mailing address the same as your <br>U.S. physical address?</div>';
 $pdf->writeHTMLCell(90, 7, 120, 131, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$html ='<div><input type="checkbox" name="us_6" value="Y" checked=" " />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="us_6" value="N" checked=" " /></div>';
+$html ='<div><input type="checkbox" name="us_6" value="Y" checked="'.$Yes.'" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="us_6" value="N" checked="'.$No.'" /></div>';
 $pdf->writeHTMLCell(80, 7, 175, 136, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(80, 7, 181, 137, "Yes", 0, 1, false, true, 'J', true);
@@ -408,7 +421,7 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>7.a.</b>&nbsp;&nbsp;&nbsp;In Care Of Name   </div>';
 $pdf->writeHTMLCell(90, 7, 112, 165, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('us_physical__in_care', 82.3, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 121.4, 170);
+$pdf->TextField('us_physical_in_care', 82.3, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 121.4, 170);
 //.........
 
 $pdf->SetFont('times', '', 10);
@@ -419,20 +432,23 @@ $pdf->TextField('us_physical_street_number_name', 82, 7, array('strokeColor' => 
 //...........
 
 $pdf->SetFont('times', '', 10); // set font
+if(showData('information_about_you_mailing_apt_ste_flr')=="apt") $checked_apt = "checked"; else $checked_apt = "";
+if(showData('information_about_you_mailing_apt_ste_flr')=="ste") $checked_ste = "checked"; else $checked_ste = "";
+if(showData('information_about_you_mailing_apt_ste_flr')=="flr") $checked_flr = "checked"; else $checked_flr = "";
 $html= '<div><b>7.c. </b></div>';
 $pdf->writeHTMLCell(60, 0, 112, 192, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); // set font
-$html= '<input type="checkbox" name="Apt2" value="Apt2" checked="" />';
+$html= '<input type="checkbox" name="Apt2" value="Apt2" checked="'.$checked_apt.'" />';
 $pdf->writeHTMLCell(5, 0, 120, 191.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 126, 192.6, "Apt.", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Ste2" value="Ste2" checked="" />';
+$html= '<input type="checkbox" name="Ste2" value="Ste2" checked="'.$checked_ste.'" />';
 $pdf->writeHTMLCell(5, 0, 135, 191.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 141, 192.6, "Ste.", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$html= '<input type="checkbox" name="Flr2" value="Flr2" checked="" />';
+$html= '<input type="checkbox" name="Flr2" value="Flr2" checked="'.$checked_flr.'" />';
 $pdf->writeHTMLCell(5, 0, 149, 191.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 155, 192.6, "Flr.", '', 0, 0, true, 'L');
@@ -1000,8 +1016,17 @@ $pdf->ComboBox('other_info_country_citizenship', 82, 7, array(
 ), array(), array(), 121, 252);
 //.........
 
-// add a page
-$pdf->AddPage('P', 'LETTER');  // page number 2
+
+/********************************
+******** End Page No 1 **********
+*********************************/
+
+/********************************
+******** Start Page No 2 ********
+*********************************/
+
+
+$pdf->AddPage('P', 'LETTER'); 
 
 //............
 
@@ -1951,8 +1976,11 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>15.</b> &nbsp; &nbsp;Indicate the type of Port-of-Entry at which you last <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entered the United States:</div>';
 $pdf->writeHTMLCell(95, 7, 12, 90, $html, 0, 1, false, true, 'L', true);
 
+if(showData('other_information_about_you_type_of_port_entry')=="land_border") $checked_land = "checked"; else $checked_land = "";
+if(showData('other_information_about_you_type_of_port_entry')=="airport") $checked_airport = "checked"; else $checked_airport = "";
+if(showData('other_information_about_you_type_of_port_entry')=="seaport") $checked_seaport = "checked"; else $checked_seaport = "";
 $pdf->SetFont('times', '', 14); 
-$html ='<div><input type="checkbox" name="Land Border" value="Land Border" checked=" " />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="Airport" value="Airport" checked=" " />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="Seaport" value="Seaport" checked=" " /></div>';
+$html ='<div><input type="checkbox" name="Land Border" value="Land Border" checked=" '.$checked_land.' " />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="Airport" value="Airport" checked="'.$checked_airport.'" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="Seaport" value="Seaport" checked="'.$checked_seaport.'" /></div>';
 $pdf->writeHTMLCell(80, 7, 20, 99, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>Land Border</div>';
@@ -2309,7 +2337,7 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>19.c.  </b>  Middle Name  </div>';
 $pdf->writeHTMLCell(90, 7, 12, 237, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('your_legal_name_middle_name', 61, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 237);
+$pdf->TextField('entry_information_middle_name', 61, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 237);
 
 //.............
 $pdf->SetFont('times', '', 12);
@@ -2332,7 +2360,8 @@ $html ='<div>I am applying to replace my lost or stolen Form 1-94
 <br>or Form 1-94W.</div>';
 $pdf->writeHTMLCell(90, 7, 127, 36, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 14);
-$html ='<input type="checkbox" name="applicant1a" value="Y" checked=" " />';
+if(showData('i_102_p2_1a_applying_to_replace_status')=="Y") $checked = "checked"; else $checked = "";
+$html ='<input type="checkbox" name="applicant1a" value="Y" checked="'.$checked.'" />';
 $pdf->writeHTMLCell(90, 7, 120, 36, $html, 0, 1, false, true, 'J', true);
 //.........
 
@@ -2340,7 +2369,8 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.b.</b></div>';
 $pdf->writeHTMLCell(90, 7, 112, 46, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 14);
-$html ='<input type="checkbox" name="applicant1b" value="Y" checked=" " />';
+if(showData('i_102_p2_1b_form_i_95_status')=="Y") $checked = "checked"; else $checked = "";
+$html ='<input type="checkbox" name="applicant1b" value="Y" checked="'.$checked.'" />';
 $pdf->writeHTMLCell(90, 7, 120, 46, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I am applying to replace my lost or stolen Form 1-95.</div>';
@@ -2351,7 +2381,8 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.c.</b></div>';
 $pdf->writeHTMLCell(90, 7, 112, 52, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 14);
-$html ='<input type="checkbox" name="applicant1c" value="Y" checked=" " />';
+if(showData('i_102_p2_1c_orginal_form_i_94_status')=="Y") $checked = "checked"; else $checked = "";
+$html ='<input type="checkbox" name="applicant1c" value="Y" checked="'.$checked.'" />';
 $pdf->writeHTMLCell(90, 7, 120, 52, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I am applying to replace my Form 1-94 or Form
@@ -2364,7 +2395,8 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.d.</b></div>';
 $pdf->writeHTMLCell(90, 7, 112, 65, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 14);
-$html ='<input type="checkbox" name="applicant1d" value="Y" checked=" " />';
+if(showData('i_102_p2_1d_orginal_i_95_status')=="Y") $checked = "checked"; else $checked = "";
+$html ='<input type="checkbox" name="applicant1d" value="Y" checked="'.$checked.'" />';
 $pdf->writeHTMLCell(90, 7, 120, 65, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I am applying to replace my Form I-95 because it was
@@ -2376,7 +2408,8 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.e.</b></div>';
 $pdf->writeHTMLCell(90, 7, 112, 74, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 14);
-$html ='<input type="checkbox" name="applicant1e" value="Y" checked=" " />';
+if(showData('i_102_p2_issued_form_i_94_status')=="Y") $checked = "checked"; else $checked = "";
+$html ='<input type="checkbox" name="applicant1e" value="Y" checked="'.$checked.'" />';
 $pdf->writeHTMLCell(90, 7, 120, 74, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I was not issued Form 1-94 when I was admitted by
@@ -2390,7 +2423,8 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.f.</b></div>';
 $pdf->writeHTMLCell(90, 7, 112, 88, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 14);
-$html ='<input type="checkbox" name="applicant1f" value="Y" checked=" " />';
+if(showData('i_102_p2_issued_form_i_94w_status')=="Y") $checked = "checked"; else $checked = "";
+$html ='<input type="checkbox" name="applicant1f" value="Y" checked="'.$checked.'" />';
 $pdf->writeHTMLCell(90, 7, 120, 88, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div>I was issued Form 1-94, Form 1-94W, or Form 1-95 by
@@ -2411,7 +2445,7 @@ $pdf->writeHTMLCell( 76.6, 1, 128.1, 103.5, '',  "B",  0, false, false, 'C', tru
 $pdf->writeHTMLCell( 76.6, 1, 128.1, 108.5, '',  "B",  0, false, false, 'C', true );// line 4 
 $pdf->writeHTMLCell( 76.6, 1, 128.1, 113.2, '',  "B",  0, false, false, 'C', true );// line 5
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('reason_for_application_1f', 77, 35,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),128, 129);
+$pdf->TextField('reason_for_application_1f', 77, 35,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),128, 129); //i_102_p2_1f_provide_explanation
 $pdf->setCellHeightRatio(1.2); 
 //...........
 
@@ -2424,7 +2458,8 @@ $html ='<div>I was not issued Form 1-94 when I entered as a
 </div>';
 $pdf->writeHTMLCell(90, 7, 127, 166, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 14);
-$html ='<input type="checkbox" name="applicant1g" value="Y" checked=" " />';
+if(showData('i_102_p2_1g_was_not_issued_Status')=="Y") $checked = "checked"; else $checked = "";
+$html ='<input type="checkbox" name="applicant1g" value="Y" checked="'.$checked.'" />';
 $pdf->writeHTMLCell(90, 7, 120, 166, $html, 0, 1, false, true, 'J', true);
 //...........
 
@@ -2445,7 +2480,11 @@ application?</div>';
 $pdf->writeHTMLCell(90, 7, 120, 193, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('times', '', 14); 
-$html ='<div><input type="checkbox" name="part3_1a" value="Y" checked=" " />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part3_1a" value="N" checked=" " /></div>';
+
+if(showData('i_102_p3_1a_are_you_status')=='Y') $checked_y = 'checked'; else $checked_y = '';
+if(showData('i_102_p3_1a_are_you_status')=='N') $checked_n = 'checked'; else $checked_n = '';
+
+$html ='<div><input type="checkbox" name="part3_1a" value="Y" checked="'.$checked_y.'" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part3_1a" value="N" checked="'.$checked_n.'" /></div>';
 $pdf->writeHTMLCell(80, 7, 175, 197, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(80, 7, 181, 198, "Yes", 0, 1, false, true, 'J', true);
@@ -2474,8 +2513,17 @@ $pdf->writeHTMLCell(90, 4, 112, 220, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('uscis_form_number_name', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 121.6, 225);
 
-// add a page
-$pdf->AddPage('P', 'LETTER');  // page number 3
+
+/********************************
+******** End Page No 2 **********
+*********************************/
+
+/********************************
+******** Start Page No 3 ********
+*********************************/
+
+
+$pdf->AddPage('P', 'LETTER');
 
 //...........
 
@@ -2490,7 +2538,9 @@ $pdf->SetFont('times', '', 10);
 $html= '<div><b>2.a.</b> &nbsp; Are you now in removal proceedings?</div>';
 $pdf->writeHTMLCell(90, 4, 12, 27, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$html ='<div><input type="checkbox" name="part3_2a" value="Y" checked=" " />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part3_2a" value="N" checked=" " /></div>';
+if(showData('i_102_p3_2a_removal_proceedings_Status')=='Y') $checked_y = 'checked'; else $checked_y = '';
+if(showData('i_102_p3_2a_removal_proceedings_Status')=='N') $checked_n = 'checked'; else $checked_n = '';
+$html ='<div><input type="checkbox" name="part3_2a" value="Y" checked="'.$checked_y.'" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part3_2a" value="N" checked="'.$checked_n.'" /></div>';
 $pdf->writeHTMLCell(80, 7, 76, 27, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(80, 4, 82, 28, "Yes", 0, 1, false, true, 'J', true);
@@ -2558,7 +2608,7 @@ $html ='<div><b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicant\'s Email Address (
 $pdf->writeHTMLCell(90, 7, 12, 143, $html, 0, 1, false, true, 'J', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('applicant_contact_info_telephone', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 148);
+$pdf->TextField('applicant_contact_info_email', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 148);
 //...............
 
 $pdf->SetFillColor(220,220,220);
@@ -2714,8 +2764,17 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('Interpreter_signature_date', 31, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 173, 195);
 //...............page 3 end ...........
 
-// add a page
-$pdf->AddPage('P', 'LETTER');  // page number 4
+
+/********************************
+******** End Page No 3 **********
+*********************************/
+
+/********************************
+******** Start Page No 4 ********
+*********************************/
+
+
+$pdf->AddPage('P', 'LETTER');
 
 //...........
 $pdf->SetFont('times', '', 12);
@@ -2836,8 +2895,16 @@ $pdf->TextField('peparer_date_of_signature', 31, 7, array('strokeColor' => array
 //..........
  
 
-// add a page
-$pdf->AddPage('P', 'LETTER');  // page number 5
+/********************************
+******** End Page No 4 **********
+*********************************/
+
+/********************************
+******** Start Page No 5 ********
+*********************************/
+
+
+$pdf->AddPage('P', 'LETTER');
 //..........
 
 $pdf->SetFont('times', '', 12);
@@ -3097,15 +3164,15 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>7.d.</b> </div>';
 $pdf->writeHTMLCell(90, 7, 112, 196, $html, 0, 1, false, false, 'L', true);
 $pdf->setCellHeightRatio(1.8); 
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 192.1, '',  "B",  0, false, false, 'C', true );// line 1
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 196.5, '',  "B",  0, false, false, 'C', true );// line 2
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 200.8, '',  "B",  0, false, false, 'C', true );// line 3
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 205.3, '',  "B",  0, false, false, 'C', true );// line 4 
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 209.8, '',  "B",  0, false, false, 'C', true );// line 5
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 214, '',  "B",  0, false, false, 'C', true );// line 6
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 218.8, '',  "B",  0, false, false, 'C', true );// line 7
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 223.6, '',  "B",  0, false, false, 'C', true );// line 8 
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 228.1, '',  "B",  0, false, false, 'C', true );// line 9
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 192.1, '',  "B",  0, false, false, 'C', true ); // line 1
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 196.5, '',  "B",  0, false, false, 'C', true ); // line 2
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 200.8, '',  "B",  0, false, false, 'C', true ); // line 3
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 205.3, '',  "B",  0, false, false, 'C', true ); // line 4 
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 209.8, '',  "B",  0, false, false, 'C', true ); // line 5
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 214, '',  "B",  0, false, false, 'C', true );   // line 6
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 218.8, '',  "B",  0, false, false, 'C', true ); // line 7
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 223.6, '',  "B",  0, false, false, 'C', true ); // line 8 
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 228.1, '',  "B",  0, false, false, 'C', true ); // line 9
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('additional_info_name_7d', 82, 65,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),122.5, 195);
 $pdf->setCellHeightRatio(1.2); 
@@ -3115,103 +3182,91 @@ $pdf->setCellHeightRatio(1.2);
 $js = "
 var fields = {
     'attorney_state_license_number':' $attorneyData->bar_number',
-    'info_about_you_alien_reg':' ',
-    'info_about_you_uscis_online':' ',
-    'your_legal_name_last_name':' ',
-    'your_legal_name_first_name':' ',
-    'your_legal_name_middle_name':' ',
-    'other_names_used_last_name':' ',
-    'other_names_used_first_name':' ',
-    'other_names_used_middle_name':' ',
-    'us_mailing__incare':' ', 
-    'us_mailing_street_number_name':' ',
-    'us_mailing_apt_ste_flr':' ',
-    'us_mailing_city_town':' ',
-    'us_mailing_state':' ',
-    'us_mailing_zipcode':' ',
-    'us_physical__in_care':' ',
-    'us_physical_street_number_name':' ',
-    'us_physical_apt_ste_flr':' ',
-    'us_physical_state':' ',
-    'us_physical_zipcode':' ',
-    'us_physical_city_town':' ',
-    'other_info_date_birth':' ',
-    'other_info_country_birth':' ',
-    'other_info_country_birth_18d':' ',
-    'other_info_country_citizenship':' ',
-    'info_about_you_us_social_security':' ',
-    'info_about_you_us_date_of_last':' ',
-    'info_about_you_city_state':' ',
-    'info_about_you_class_of_addmission':' ',
-    'info_about_you_current_nonimmigration_status':' ',
-    'info_about_you_form_i94':' ',
-    'info_about_you_dates_status_expires':' ',
-    'info_about_you_passport_number':' ',
-    'info_about_you_travel_document':' ',
-    'info_about_you_expiration_date':' ',
-    'entry_information_last_name':' ',
-    'entry_information_first_name':' ',
-    'uscis_form_number_name':' ',
-    'reason_for_application_1f':'',
-    'applicant_statement_1b':' ',
-    'applicant_statement_2':' ',
-    'procesing_information_2b':'',
-    'applicant_contact_info_daytime':' ',
-    'applicant_contact_info_mobile':' ',
-    'applicant_contact_info_telephone':' ',
-    'applicant_signature_date':' ',
-    'interpreter_full_famiy_name':' ',
-    'interpreter_full_given_name':' ',
-    'interpreter_full_business_name':' ',
-    'interpreter_mailing_address_street_name':' ',
-    'interpreter_mailing_address__apt_ste_flr':' ',
-    'interpreter_mailing_address_city_or_town':' ',
-    'interpreter_mailing_address_state':' ',
-    'interpreter_mailing_address_zip_code':' ',
-    'interpreter_mailing_address_province':' ',
-    'interpreter_mailing_address_postal_code':' ',
-    'interpreter_mailing_address_country':' ',
-    'interpreter_contact_info_daytime':' ',
-    'interpreter_contact_info_mobile':' ',
-    'interpreter_contact_info_email':' ',
-    'interpreter_certification_perjury':' ',
-    'interpreter_date_of_signature':' ',
-    'preparer_full_famiy_name':' ',
-    'preparer_full_given_name':' ',
-    'preparer_full_business_name':' ',
-    'preparer_mailing_address_street_name':' ',
-    'preparer_mailing_address__apt_ste_flr':' ',
-    'preparer_mailing_address_city_or_town':' ',
-    'preparer_mailing_address_state':' ',
-    'preparer_mailing_address_zip_code':' ',
-    'preparer_mailing_address_province':' ',
-    'preparer_mailing_address_postal_code':' ',
-    'preparer_mailing_address_country':' ',
-    'preparer_contact_info_daytime':' ',
-    'preparer_contact_info_mobile':' ',
-    'preparer_contact_info_email':' ',
-    'peparer_date_of_signature':' ',
-    'additional_info_family_last_name':' ',
-    'additional_info_given_first_name':' ',
-    'additional_info_middle_name':' ',
-    'additional_info_a_number':' ',
-    'additional_info_name_page_number':' ',
-    'additional_info_name_part_number':' ',
-    'additional_info_name_item_number':' ',
-    'additional_info_name_page_number1':' ',
-    'additional_info_name_part_number1':' ',
-    'additional_info_name_item_number1':' ',
-    'additional_info_page_number2':' ',
-    'additional_info_part_number2':' ',
-    'additional_info_item_number2':' ',
-    'additional_info_page_number3':' ',
-    'additional_info_part_number3':' ',
-    'additional_info_item_number3':' ',
-    'additional_info_page_number4':' ',
-    'additional_info_part_number4':' ',
-    'additional_info_item_number4':' ',
-    'interpreter_certify':' ',
-    'Interpreter_signature_date':' ',
+    'info_about_you_alien_reg':' ".showData('other_information_about_you_alien_registration_number')."',
+    'info_about_you_uscis_online':' ".showData('other_information_about_you_uscis_online_account_number')." ',
+    'your_legal_name_last_name':' ".showData('information_about_you_family_last_name')." ',
+    'your_legal_name_first_name':' ".showData('information_about_you_given_first_name')." ',
+    'your_legal_name_middle_name':' ".showData('information_about_you_middle_name')." ',
+    'other_names_used_last_name':' ".showData('information_about_you_other_family_last_name')." ',
+    'other_names_used_first_name':' ".showData('information_about_you_other_given_first_name')." ',
+    'other_names_used_middle_name':' ".showData('information_about_you_other_middle_name')." ',
+    'us_mailing__incare':' ".showData('information_about_you_us_mailing_care_of_name')." ', 
+    'us_mailing_street_number_name':' ".showData('information_about_you_us_mailing_street_number')." ',
+    'us_mailing_apt_ste_flr':' ".showData('information_about_you_us_mailing_apt_ste_flr_value')." ',
+    'us_mailing_city_town':' ".showData('information_about_you_us_mailing_city_town')." ',
+    'us_mailing_state':' ".showData('information_about_you_us_mailing_state')." ',
+    'us_mailing_zipcode':' ".showData('information_about_you_us_mailing_zip_code')." ',
+    'us_physical_in_care':' ".showData('information_about_you_mailing_care_of_name')." ',
+    'us_physical_street_number_name':' ".showData('information_about_you_mailing_street_number')." ',
+    'us_physical_apt_ste_flr':' ".showData('information_about_you_mailing_apt_ste_flr_value')." ',
+    'us_physical_city_town':' ".showData('information_about_you_mailing_city_town')." ',
+    'us_physical_state':' ".showData('information_about_you_mailing_state')." ',
+    'us_physical_zipcode':' ".showData('information_about_you_mailing_zip_code')." ',
+    'other_info_date_birth':' ".showData('other_information_about_you_date_of_birth')." ',
+    'other_info_country_birth':' ".showData('other_information_about_you_country_of_birth')." ',
+    'other_info_country_citizenship':' ".showData('other_information_about_you_country_of_citizen')." ',
+//page-1 end
+    'info_about_you_us_social_security':' ".showData('other_information_about_you_social_security_number')." ',
+    'info_about_you_us_date_of_last':' ".showData('other_information_about_you_date_of_entry')." ',
+    'info_about_you_city_state':' ".showData('other_information_about_you_place_of_entry_city_town')." ',
+    'info_about_you_class_of_addmission':' ".showData('other_information_about_you_class_of_addmission')." ',
+    'info_about_you_current_nonimmigration_status':' ".showData('other_information_about_you_current_nonimmigration_status')." ',
+    'info_about_you_dates_status_expires':' ".showData('other_information_about_you_status_expire_date')." ',
+    'info_about_you_form_i94':' ".showData('i_94_imgt_arrival_record_number')." ',
+    'info_about_you_passport_number':' ".showData('other_information_about_you_passport_number')." ',
+    'info_about_you_travel_document':' ".showData('other_information_about_you_travel_document_number')." ',
+    'other_info_country_birth_18d':' ".showData('i_94_imgt_country_issuance_passport')." ',
+    'info_about_you_expiration_date':' ".showData('other_information_about_you_expiry_date_issuance_passport')." ',
+    'entry_information_last_name':' ".showData('i_94_family_last_name')." ',
+    'entry_information_first_name':' ".showData('i_94_given_first_name')." ',
+    'entry_information_middle_name':' ".showData('i_94_middle_name')." ',
+    'reason_for_application_1f':'', 
+// 'reason_for_application_1f':' ".showData('i_102_p2_1f_provide_explanation')." ', 
+    'uscis_form_number_name':' ".showData('i_102_p3_1b_uscis_number_name')." ',  
+//page-2 end
+// 'procesing_information_2b':' ".showData('i_102_p3_2b_provide_detailed')." ', 
+    'procesing_information_2b':'', 
+    'applicant_contact_info_daytime':' ".showData('i_102_p4_1_daytime_tel')." ',
+    'applicant_contact_info_mobile':' ".showData('i_102_p4_2_mobile_number')." ',
+    'applicant_contact_info_email':' ".showData('i_102_p4_3_email_address')." ',
+    'applicant_signature_date':' ".showData('i_102_p4_4_date_signature')." ',
+    'interpreter_full_famiy_name':' ".showData('i_102_p5_interpreter_last_name')." ',
+    'interpreter_full_given_name':' ".showData('i_102_p5_interpreter_first_name')." ',
+    'interpreter_full_business_name':' ".showData('i_102_p5_interpreter_organization_name')." ',
+    'interpreter_contact_info_daytime':' ".showData('i_102_p5_interpreter_daytime_tel')." ',
+    'interpreter_contact_info_mobile':' ".showData('i_102_p5_interpreter_mobile_number')." ',
+    'interpreter_contact_info_email':' ".showData('i_102_p5_interpreter_email')." ',
+    'interpreter_certify':' ".showData('i_102_p5_interpreter_certification_language')." ',
+    'Interpreter_signature_date':' ".showData('i_102_p5_interpreter_certification_date_signature  ')." ',
+//page 3 end    
+    'preparer_full_famiy_name':' ".showData('i_102_p6_preparer_last_name')." ',
+    'preparer_full_given_name':' ".showData('i_102_p6_preparer_first_name')." ',
+    'preparer_full_business_name':' ".showData('i_102_p6_preparer_organization_name')." ', 
+    'preparer_contact_info_daytime':' ".showData('i_102_p6_preparer_daytime_tel')." ',
+    'preparer_contact_info_mobile':' ".showData('i_102_p6_preparer_mobile')." ',
+    'preparer_contact_info_email':' ".showData('i_102_p6_preparer_email')." ',
+    'peparer_date_of_signature':' ".showData('i_102_preparer_sign_date')." ',
+//page 4 end    
+    'additional_info_family_last_name':' ".showData('i_102_additional_info_last_name')." ',
+    'additional_info_given_first_name':' ".showData('i_102_additional_info_first_name')." ',
+    'additional_info_middle_name':' ".showData('i_102_additional_info_middle_name')." ',
+    'additional_info_a_number':' ".showData('i_102_additional_info_a_number')." ',
+    'additional_info_name_page_number':' ".showData('i_102_additional_info_3a_page_no')." ',
+    'additional_info_name_part_number':' ".showData('i_102_additional_info_3b_part_no')." ',
+    'additional_info_name_item_number':' ".showData('i_102_additional_info_3c_item_no')." ',
+    'additional_info_name_page_number1':' ".showData('i_102_additional_info_4a_page_no')." ',
+    'additional_info_name_part_number1':' ".showData('i_102_additional_info_4b_part_no')." ',
+    'additional_info_name_item_number1':' ".showData('i_102_additional_info_4c_item_no')." ',
+    'additional_info_page_number2':' ".showData('i_102_additional_info_5a_page_no')." ',
+    'additional_info_part_number2':' ".showData('i_102_additional_info_5b_part_no')." ',
+    'additional_info_item_number2':' ".showData('i_102_additional_info_5c_item_no')." ',
+    'additional_info_page_number3':' ".showData('i_102_additional_info_6a_page_no')." ',
+    'additional_info_part_number3':' ".showData('i_102_additional_info_6b_part_no')." ',
+    'additional_info_item_number3':' ".showData('i_102_additional_info_6c_item_no')." ',
+    'additional_info_page_number4':' ".showData('i_102_additional_info_7a_page_no')." ',
+    'additional_info_part_number4':' ".showData('i_102_additional_info_7b_part_no')." ',
+    'additional_info_item_number4':' ".showData('i_102_additional_info_7c_item_no')." ',
+
 
 };
 for (var fieldName in fields) {

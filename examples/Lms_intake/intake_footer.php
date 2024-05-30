@@ -60,7 +60,7 @@ function googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
-$(document).on('submit', '#registration_form', function(event){
+/* $(document).on('submit', '#registration_form', function(event){
 	event.preventDefault();
 	$.ajax({
 		url:"fetch.php?formNo=<?php echo $formNo?>&<?php echo $getId?>",
@@ -69,10 +69,11 @@ $(document).on('submit', '#registration_form', function(event){
 		contentType:false,
 		processData:false,
 		success:function(data){
-			alert(data);
+			// alert(data);
+			toastr.success(data);
 		}
 	}); 
-});
+}); */
 </script>
 <script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
 </body>

@@ -9,7 +9,7 @@ include "intake_header.php";
 ------------------------------------------------------------------------>
 
 <fieldset class="setpage">
-    <div class="form-group ">
+    <div class="form-group">
         <div class="page_number">
             <b>
                 <p style="padding-left:1000px;">Page 1 of 12</p>
@@ -30,14 +30,14 @@ include "intake_header.php";
                 </div>
                 <div class="col-lg-3">
                     <label class=""> <span class="font-weight-bold">Attorney State Bar Number</span> (if
-                    applicable):</label>
+                    applicable)</label>
                     <br>
                     <input type="text" maxlength="15" class="form-control" name="attorney_state_bar_number"
                         value="<?php echo showData('attorney_state_bar_number')?>" />
                 </div>
                 <div class="col-lg-4">
                     <label class="control-label">Attorney or According Representative USCIS Online
-                    Account Number (if any):</label>
+                    Account Number (if any)</label>
                     <input type="text" class="form-control" maxlength="12"
                         name="attorney_uscis_online_account_number"
                         value="<?php echo showData('attorney_uscis_online_account_number')?>" />
@@ -59,23 +59,27 @@ include "intake_header.php";
             </div>
             <p>
                 <span class="fs-6 fw-bold "> 1.</span> <span class="font-2xl">The family member that I am
-                filing for is my:</span>
+                filing for is my</span>
             </p>
             <div class="margin">
                 <div class="form-check ">
-                    <input type="radio" class="form-check-input " id="spouse" name="#" value="spouse">
+                    <input type="radio" class="form-check-input" name="i_918a_part1_family_members_relations" value="spouse" 
+                    <?php echo (showData('i_918a_part1_family_members_relations')=='spouse') ? 'checked':''?>>
                     <label class="form-check-label" for="spouse">Spouse</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" class="form-check-input" id="parent" name="#" value="parent">
+                    <input type="radio" class="form-check-input" name="i_918a_part1_family_members_relations" value="parent" 
+                    <?php echo (showData('i_918a_part1_family_members_relations')=='parent') ? 'checked':''?>>
                     <label class="form-check-label" for="parent">Parent</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" class="form-check-input" id="child" name="#" value="child">
+                    <input type="radio" class="form-check-input" name="i_918a_part1_family_members_relations" value="child" 
+                    <?php echo (showData('i_918a_part1_family_members_relations')=='child') ? 'checked':''?>>
                     <label class="form-check-label" for="child">Child</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" class="form-check-input" id="sibling" name="#" value="sibling">
+                    <input type="radio" class="form-check-input" name="i_918a_part1_family_members_relations" value="sibling" 
+                    <?php echo (showData('i_918a_part1_family_members_relations')=='sibling') ? 'checked':''?>>
                     <label class="form-check-label" for="sibling">Unmarried sibling under 18 years of
                     age</label>
                 </div>
@@ -85,7 +89,7 @@ include "intake_header.php";
                     <h4><b>Part 2. Information About You</b> </h4>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">1.a. Family Name(Last Name):</label>
+                    <label class="control-label col-md-5">1.a. Family Name(Last Name)</label>
                     <div class="col-md-7">
                         <input type="text" maxlength="29" class="form-control"
                             name="information_about_you_family_last_name"
@@ -93,7 +97,7 @@ include "intake_header.php";
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">1.b. Given Name(First Name):</label>
+                    <label class="control-label col-md-5">1.b. Given Name(First Name)</label>
                     <div class="col-md-7">
                         <input type="text" maxlength="29" class="form-control"
                             name="information_about_you_given_first_name"
@@ -101,7 +105,7 @@ include "intake_header.php";
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">1.c. Middle Name:</label>
+                    <label class="control-label col-md-5">1.c. Middle Name</label>
                     <div class="col-md-7">
                         <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name"
                             value="<?php echo showData('information_about_you_middle_name')?>" />
@@ -113,7 +117,7 @@ include "intake_header.php";
                     <h4><b>Other Information</b> </h4>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">2. Date of Birth (mm/dd/yyyy):</label>
+                    <label class="control-label col-md-5">2. Date of Birth (mm/dd/yyyy)</label>
                     <div class="col-md-7 ">
                         <input type="date" class="form-control" name="other_information_about_you_date_of_birth"
                             value="<?= showData('other_information_about_you_date_of_birth')?>" />
@@ -150,22 +154,23 @@ include "intake_header.php";
                 <label class="col-md-12 ">5. Status of your Form I-918 </label>
                 <div class="col-md-12 " style='margin-left:10px; margin-top:0px;'>
                     <label class="control-label">
-                    <input type="radio" name="#" value="pending"> Pending
+                    <input type="radio" name="i_918a_part_2_other_information_status" value="pending" 
+                    <?php echo (showData('i_918a_part_2_other_information_status')=='pending') ?'checked':''?>> Pending
                     </label>
                     &nbsp;
                     <label class="control-label">
-                    <input type="radio" name="#" value="approved"> Approved
+                    <input type="radio" name="i_918a_part_2_other_information_status" value="approved" <?php echo (showData('i_918a_part_2_other_information_status')=='approved') ?'checked':''?>> Approved
                     </label>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 mt-5 ">
+        <div class="col-md-6 mt-5">
             <div class="bg-info">
                 <h4><b> Part 3. Information About Your Qualifying Family Member (Derivative)</b> 
                 </h4>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">1.a. Family Name(Last Name):</label>
+                <label class="control-label col-md-5">1.a. Family Name(Last Name)</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="information_about_your_qualifying_family_member_family_last_name" maxlength="29"
@@ -173,7 +178,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">1.b. Given Name(First Name):</label>
+                <label class="control-label col-md-5">1.b. Given Name(First Name)</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="information_about_your_qualifying_family_member_given_first_name" maxlength="29"
@@ -181,7 +186,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">1.c. Middle Name:</label>
+                <label class="control-label col-md-5">1.c. Middle Name</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="information_about_your_qualifying_family_member_middle_name" maxlength="29"
@@ -190,7 +195,7 @@ include "intake_header.php";
             </div>
             <h5><b>Other Names Used (Include maiden name, nicknames, and aliases, if applicable) </b></h5>
             <div class="form-group">
-                <label class="control-label col-md-5">2.a. Family Name(Last Name):</label>
+                <label class="control-label col-md-5">2.a. Family Name(Last Name)</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="information_about_your_qualifying_family_member_other_family_last_name" maxlength="29"
@@ -198,7 +203,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">2.b. Given Name(First Name):</label>
+                <label class="control-label col-md-5">2.b. Given Name(First Name)</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="information_about_your_qualifying_family_member_other_given_first_name" maxlength="29"
@@ -206,7 +211,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">2.c. Middle Name:</label>
+                <label class="control-label col-md-5">2.c. Middle Name</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="information_about_your_qualifying_family_member_other_middle_name" maxlength="29"
@@ -222,7 +227,7 @@ include "intake_header.php";
             </div>
             <div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">3.a. Street Number and Name:</label>
+                    <label class="control-label col-md-5">3.a. Street Number and Name</label>
                     <div class="col-md-7">
                         <input type="text" class="form-control"
                             name="information_about_your_qualifying_family_member_residence_street_number" maxlength="28"
@@ -276,10 +281,8 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next"
-        style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-        id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -310,7 +313,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">4.b. Street Number and Name:</label>
+                <label class="control-label col-md-5">4.b. Street Number and Name</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="information_about_you_safe_mailing_street_number" maxlength="28"
@@ -452,30 +455,28 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="control-label  "><b>11. Marital Status </b> &nbsp;
-                <input type="radio"
-                    name="information_about_your_qualifying_family_member_other_marital_status"
-                    value="single">
-                Single &nbsp;
-                <input type="radio"
-                    name="information_about_your_qualifying_family_member_other_marital_status"
-                    value="married"> Married &nbsp;
-                <input type="radio"
-                    name="information_about_your_qualifying_family_member_other_marital_status"
-                    value="divorced">
-                Divorced &nbsp;
-                <input type="radio"
-                    name="information_about_your_qualifying_family_member_other_marital_status"
-                    value="widowed">
-                Wodowed
+                <input type="radio" name="i_918a_info_about_your_marital_status" value="single" 
+                <?php echo (showData('i_918a_info_about_your_marital_status')=='single')?'checked':''?>> Single &nbsp;
+
+                <input type="radio" name="i_918a_info_about_your_marital_status" value="married" 
+                <?php echo (showData('i_918a_info_about_your_marital_status')=='married')?'checked':''?>> Married &nbsp;
+
+                <input type="radio" name="i_918a_info_about_your_marital_status" value="divorced" 
+                <?php echo (showData('i_918a_info_about_your_marital_status')=='divorced')?'checked':''?>> Divorced &nbsp;
+
+                <input type="radio" name="i_918a_info_about_your_marital_status"  value="widowed" 
+                <?php echo (showData('i_918a_info_about_your_marital_status')=='widowed')?'checked':''?>> Widowed
             </div>
+
             <div class="control-label  "><b>12. Gender </b> &nbsp;
-                <input type="radio" name="information_about_your_qualifying_family_member_other_gender"
-                    value="male">
-                Male &nbsp;
-                <input type="radio" name="information_about_your_qualifying_family_member_other_gender"
-                    value="female"> Female &nbsp;
+                <input type="radio" name="i_918a_infor_about_family_member_gender" value="male" 
+                <?php echo (showData('i_918a_infor_about_family_member_gender')=='male') ?'checked':''?>> Male &nbsp;
+
+                <input type="radio" name="i_918a_infor_about_family_member_gender" value="female" 
+                <?php echo (showData('i_918a_infor_about_family_member_gender')=='female') ?'checked':''?>> Female &nbsp;
             </div>
         </div>
+        
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label col-md-12">13. Form I-94 Arrival-Departure Record Number
@@ -655,10 +656,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next"
-        style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-        id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -683,24 +682,21 @@ include "intake_header.php";
                 mailing address you want notified if this supplement is
                 approved.</b>
             </h6>
-            <h5><b>3.a. Type of Office (Select only one box):</b></h5>
+            <h5><b>3.a. Type of Office (Select only one box)</b></h5>
             <div class="col-md-4">
-                <input type="radio"
-                    name="additional_information_about_your_qualifying_family_member_type_of_office"
-                    value="us_consulate">
+                <input type="radio" name="i_918a_additional_info_type_of_office" value="us_consulate" 
+                <?php echo (showData('i_918a_additional_info_type_of_office')=='us_consulate') ?'checked':'' ?>>
                 U.S. Consulate &nbsp;
             </div>
             <div class="col-md-6">
-                <input type="radio"
-                    name="additional_information_about_your_qualifying_family_member_type_of_office"
-                    value="pre_flight_inspection">
-                Pre-Flight Inspection
+                <input type="radio" name="i_918a_additional_info_type_of_office" value="pre_flight" 
+                <?php echo (showData('i_918a_additional_info_type_of_office')=='pre_flight') ?'checked':'' ?>>
+                Pre-Flight Inspection &nbsp;
             </div>
             <div class="col-md-12">
-                <input type="radio"
-                    name="additional_information_about_your_qualifying_family_member_type_of_office"
-                    value="port_of_entry">
-                Port-of-Entry
+                <input type="radio" name="i_918a_additional_info_type_of_office" value="port_entry" 
+                <?php echo (showData('i_918a_additional_info_type_of_office')=='port_entry') ?'checked':'' ?>>
+                Port-of-Entry &nbsp;
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.b. City or Town </label>
@@ -737,7 +733,7 @@ include "intake_header.php";
                 Port-of-Entry) </b>
             </h6>
             <div class="form-group">
-                <label class="control-label col-md-5">4.a. Street Number and Name:</label>
+                <label class="control-label col-md-5">4.a. Street Number and Name</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" maxlength="25"
                         name="additional_information_about_your_qualifying_family_member_not_in_united_states_street_number_and_name"
@@ -798,7 +794,7 @@ include "intake_header.php";
                 documents such as divorce decrees or death certificates</b>
             </h6>
             <div class="form-group">
-                <label class="control-label col-md-5">5.a. Family Name(Last Name) :</label>
+                <label class="control-label col-md-5">5.a. Family Name(Last Name) </label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="additional_information_about_your_qualifying_family_member_not_in_united_states_family_last_name" maxlength="29"
@@ -806,7 +802,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">5.b. Given Name(First Name) :</label>
+                <label class="control-label col-md-5">5.b. Given Name(First Name) </label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="additional_information_about_your_qualifying_family_member_not_in_united_states_given_first_name"maxlength="29"
@@ -814,7 +810,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">5.c. Middle Name :</label>
+                <label class="control-label col-md-5">5.c. Middle Name </label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="additional_information_about_your_qualifying_family_member_not_in_united_states_middle_name"maxlength="29"
@@ -848,7 +844,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">6.a. Family Name(Last Name) :</label>
+                <label class="control-label col-md-5">6.a. Family Name(Last Name) </label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"
                         name="additional_information_about_your_qualifying_family_member_not_in_united_states_family_last_name2" maxlength="39"
@@ -856,7 +852,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">6.b. Given Name(First Name) :</label>
+                <label class="control-label col-md-5">6.b. Given Name(First Name) </label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" class="form-control"
                         name="additional_information_about_your_qualifying_family_member_not_in_united_states_given_first_name2" maxlength="29"
@@ -864,7 +860,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">6.c. Middle Name :</label>
+                <label class="control-label col-md-5">6.c. Middle Name </label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" class="form-control"
                         name="additional_information_about_your_qualifying_family_member_not_in_united_states_middle_name2" maxlength="29"
@@ -898,17 +894,12 @@ include "intake_header.php";
             <div class="bg-info">
                 <h4><b> Other Information </b> </h4>
             </div>
-            <div>
+            <div class="form-group">
                 <h5><b>7.a. Your family member was or is in immigration
                     proceedings. </b>
                 </h5>
-                <div class="col-md-3">
-                    <input type="radio" name="d" value="hispanic or latino">
-                    Yes &nbsp;
-                </div>
-                <div class="col-md-3">
-                    <input type="radio" name="d" value="not hispanic or latino">
-                    No
+                <div class="col-md-6">
+                   <?php echo createRadio("i_918a_part_4_other_info_immegration_process")?> 
                 </div>
             </div>
             <h6 class='col-md-12'>If you answered "Yes," select the type of proceedings. If your
@@ -923,13 +914,8 @@ include "intake_header.php";
                 <h5><b>8. Your family member would like an Employment
                     Authorization Document. </b>
                 </h5>
-                <div class="col-md-3">
-                    <input type="radio" name="d" value="hispanic or latino">
-                    Yes &nbsp;
-                </div>
-                <div class="col-md-3">
-                    <input type="radio" name="d" value="not hispanic or latino">
-                    No
+                <div class="col-md-6">
+                   <?php echo createRadio("i_918a_part_4_other_info_employment_authorization")?>  
                 </div>
             </div>
             <h6 class='col-md-12'><b>NOTE:</b> If you answered "Yes," submit Form I-765,
@@ -943,10 +929,8 @@ include "intake_header.php";
         </section>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next"
-        style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-        id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -991,9 +975,7 @@ include "intake_header.php";
                     has not
                     been arrested?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part5_processing_info_1a_crime_status")?> 
                     </div>
                 </div>
             </article>
@@ -1005,9 +987,7 @@ include "intake_header.php";
                     (DHS), former Immigration and Nationalization Service
                     (INS), and military officers) for any reason?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_1_b")?>
                     </div>
                 </div>
             </article>
@@ -1016,9 +996,7 @@ include "intake_header.php";
                     <label class="control-label col-md-12">1.c. Been charged with committing any crime or
                     offense? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_1_c")?>
                     </div>
                 </div>
             </article>
@@ -1028,9 +1006,7 @@ include "intake_header.php";
                     if the violation
                     was subsequently expunged or pardoned)?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_1_d")?>
                     </div>
                 </div>
             </article>
@@ -1041,9 +1017,7 @@ include "intake_header.php";
                     program (for example, diversion, deferred prosecution,
                     withheld adjudication, deferred adjudication)?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_1_e")?>
                     </div>
                 </div>
             </article>
@@ -1053,9 +1027,7 @@ include "intake_header.php";
                     on probation,
                     or been paroled? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_1_f")?>
                     </div>
                 </div>
             </article>
@@ -1063,9 +1035,7 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-12">1.g. Been held in jail or prison?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_1_g")?>
                     </div>
                 </div>
             </article>
@@ -1075,9 +1045,7 @@ include "intake_header.php";
                     rehabilitation,
                     or other act of clemency or similar action?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_1_h")?>
                     </div>
                 </div>
             </article>
@@ -1087,9 +1055,7 @@ include "intake_header.php";
                     prosecution for a
                     criminal offense in the United States?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_exercised_prosecution_1_i")?>
                     </div>
                 </div>
             </article>
@@ -1228,10 +1194,8 @@ include "intake_header.php";
         </section>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next"
-        style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-        id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1258,9 +1222,7 @@ include "intake_header.php";
                     engage in,
                     prostitution or procurement of prostitution?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_4_a")?>
                     </div>
                 </div>
             </article>
@@ -1271,9 +1233,7 @@ include "intake_header.php";
                     but not limited to, illegal gambling?
                     Y</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_4_b")?>
                     </div>
                 </div>
             </article>
@@ -1283,9 +1243,7 @@ include "intake_header.php";
                     abetted, or
                     aided any alien to try to enter the United States illegally? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_4_c")?>
                     </div>
                 </div>
             </article>
@@ -1296,9 +1254,7 @@ include "intake_header.php";
                     assisted, abetted, or colluded in the illicit trafficking of any
                     controlled substance?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_4_d")?>
                     </div>
                 </div>
             </article>
@@ -1313,9 +1269,7 @@ include "intake_header.php";
                     (including an
                     aircraft, vessel, or vehicle)?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_5_a")?>
                     </div>
                 </div>
             </article>
@@ -1329,9 +1283,7 @@ include "intake_header.php";
                     condition for the release of the individual seized or
                     detained?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_5_b")?>
                     </div>
                 </div>
             </article>
@@ -1339,9 +1291,7 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-12">5.c. Assassination?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_5_c")?>
                     </div>
                 </div>
             </article>
@@ -1352,9 +1302,7 @@ include "intake_header.php";
                     indirectly, the safety of one or more individuals or to
                     cause substantial damage to property?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_5_d")?>
                     </div>
                 </div>
             </article>
@@ -1367,9 +1315,7 @@ include "intake_header.php";
                     indirectly, the safety of one or more individuals or to
                     cause substantial damage to property? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_5_e")?>
                     </div>
                 </div>
             </article>
@@ -1390,9 +1336,7 @@ include "intake_header.php";
                     of the
                     Immigration and Nationality Act (INA)?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_6_a")?>
                     </div>
                 </div>
             </article>
@@ -1403,9 +1347,7 @@ include "intake_header.php";
                     aircraft, vessel, or vehicle)?
                     Y</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_6_b")?>
                     </div>
                 </div>
             </article>
@@ -1419,9 +1361,7 @@ include "intake_header.php";
                     condition for the release of the individual seized or
                     detained?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_6_c")?>
                     </div>
                 </div>
             </article>
@@ -1429,9 +1369,7 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-12">6.d. Assassination?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_6_d")?>
                     </div>
                 </div>
             </article>
@@ -1442,9 +1380,7 @@ include "intake_header.php";
                     indirectly, the safety of one or more individuals or to cause
                     substantial damage to property? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_6_e")?>
                     </div>
                 </div>
             </article>
@@ -1457,9 +1393,7 @@ include "intake_header.php";
                     safety of one or more individuals or to cause substantial
                     damage to property?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_6_f")?>
                     </div>
                 </div>
             </article>
@@ -1470,9 +1404,7 @@ include "intake_header.php";
                     providing
                     material support to a terrorist organization?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_6_g")?>
                     </div>
                 </div>
             </article>
@@ -1485,9 +1417,7 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-12">7.a. Espionag</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_7_a")?>
                     </div>
                 </div>
             </article>
@@ -1498,9 +1428,7 @@ include "intake_header.php";
                     which is in opposition to, or the control, or overthrow of
                     the Government of the United States? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_7_b")?>
                     </div>
                 </div>
             </article>
@@ -1511,9 +1439,7 @@ include "intake_header.php";
                     to espionage or sabotage or to violate any law involving
                     the export of goods, technology, or sensitive information?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_7_c")?>
                     </div>
                 </div>
             </article>
@@ -1525,19 +1451,15 @@ include "intake_header.php";
                     totalitarian party, except when membership was
                     involuntary? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_8_membership_was_involuntary")?>
                     </div>
                 </div>
             </article>
         </section>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next"
-        style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-        id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1568,9 +1490,7 @@ include "intake_header.php";
                     because of race, religion, nationality, membership in a
                     particular social group or political opinion?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_9_political_opinion")?>
                     </div>
                 </div>
             </article>
@@ -1584,9 +1504,7 @@ include "intake_header.php";
                     genocide?
                     </label>
                     <div class="col-md-3 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_10_a")?>
                     </div>
                 </div>
             </article>
@@ -1594,9 +1512,7 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-12">10.b. &nbsp;&nbsp;Killing any person? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_10_b")?>
                     </div>
                 </div>
             </article>
@@ -1606,9 +1522,7 @@ include "intake_header.php";
                     injuring any
                     person?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_10_c")?>
                     </div>
                 </div>
             </article>
@@ -1619,9 +1533,7 @@ include "intake_header.php";
                     relations with
                     any person who was being forced or threatened?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_10_d")?>
                     </div>
                 </div>
             </article>
@@ -1632,9 +1544,7 @@ include "intake_header.php";
                     exercise
                     religious beliefs?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_10_e")?>
                     </div>
                 </div>
             </article>
@@ -1646,9 +1556,7 @@ include "intake_header.php";
                     national origin, membership in a particular social group,
                     or political opinion?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_10_f")?>
                     </div>
                 </div>
             </article>
@@ -1659,9 +1567,7 @@ include "intake_header.php";
                     residence by
                     force, threat of force, compulsion, or duress?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_10_g")?>
                     </div>
                 </div>
             </article>
@@ -1680,9 +1586,7 @@ include "intake_header.php";
                     Numbers 10.a. - 10.g., urged, or encouraged another
                     person, to commit such acts?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_11_commit_such_acts")?>
                     </div>
                 </div>
             </article>
@@ -1696,9 +1600,7 @@ include "intake_header.php";
                     beaten, or
                     injured?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_12_a")?>
                     </div>
                 </div>
             </article>
@@ -1709,9 +1611,7 @@ include "intake_header.php";
                     by force,
                     compulsion, or duress?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_12_b")?>
                     </div>
                 </div>
             </article>
@@ -1722,9 +1622,7 @@ include "intake_header.php";
                     any kind of
                     sexual contact or relations?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_12_c")?>
                     </div>
                 </div>
             </article>
@@ -1743,9 +1641,7 @@ include "intake_header.php";
                     unit, rebel group, guerilla group,
                     militia, or other insurgent organization?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_13_a")?>
                     </div>
                 </div>
             </article>
@@ -1758,9 +1654,7 @@ include "intake_header.php";
                     persons?
                     Y</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_13_b")?>
                     </div>
                 </div>
             </article>
@@ -1774,9 +1668,7 @@ include "intake_header.php";
                     you or other persons transported, possessed, or used any
                     type of weapon? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_13_c")?>
                     </div>
                 </div>
             </article>
@@ -1793,9 +1685,7 @@ include "intake_header.php";
                     paramilitary, or weapons
                     training?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_14_a")?>
                     </div>
                 </div>
             </article>
@@ -1808,9 +1698,7 @@ include "intake_header.php";
                     other persons used any type of weapon against any person
                     or threatened to do so? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_14_b")?>
                     </div>
                 </div>
             </article>
@@ -1824,9 +1712,7 @@ include "intake_header.php";
                     who to your knowledge used them against another
                     person?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_14_c")?>
                     </div>
                 </div>
             </article>
@@ -1843,9 +1729,7 @@ include "intake_header.php";
                     15.a. &nbsp;&nbsp;Recruited, enlisted, conscripted, or used any person under 15
                     years of age to serve in or help an armed force or group? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_15_a")?>
                     </div>
                 </div>
             </article>
@@ -1857,9 +1741,7 @@ include "intake_header.php";
                     hostilities, or to help or provide services to people in
                     combat?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_15_b")?>
                     </div>
                 </div>
             </article>
@@ -1870,9 +1752,7 @@ include "intake_header.php";
                     exclusion,
                     rescission, or deportation proceedings? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_16_deporation_processdings")?>
                     </div>
                 </div>
             </article>
@@ -1884,19 +1764,15 @@ include "intake_header.php";
                     rescission, or deportation proceedings initiated against
                     him or her?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_17_removal_exclusion_resission")?>
                     </div>
                 </div>
             </article>
         </section>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next"
-        style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-        id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1920,9 +1796,7 @@ include "intake_header.php";
                     removed, excluded,
                     or deported from the United States?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_18_deported_from_the_united_state")?>
                     </div>
                 </div>
             </article>
@@ -1933,9 +1807,7 @@ include "intake_header.php";
                     removed, excluded, or deported from the United States?
                     </label>
                     <div class="col-md-3 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_19")?>
                     </div>
                 </div>
             </article>
@@ -1945,9 +1817,7 @@ include "intake_header.php";
                     denied a visa or
                     denied admission to the United States? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_20")?>
                     </div>
                 </div>
             </article>
@@ -1958,9 +1828,7 @@ include "intake_header.php";
                     departure by an immigration officer or an immigration
                     judge and failed to depart within the allotted time?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_21")?>
                     </div>
                 </div>
             </article>
@@ -1972,9 +1840,7 @@ include "intake_header.php";
                     and/or using false documentation to unlawfully satisfy a
                     requirement of the INA)?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_22")?>
                     </div>
                 </div>
             </article>
@@ -1986,9 +1852,7 @@ include "intake_header.php";
                     procured a visa or other documentation, for entry into the
                     United States or any immigration benefit?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_23")?>
                     </div>
                 </div>
             </article>
@@ -1999,9 +1863,7 @@ include "intake_header.php";
                     avoid being drafted into the U.S. Armed Forces or U.S.
                     Coast Guard?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_24")?>
                     </div>
                 </div>
             </article>
@@ -2013,9 +1875,7 @@ include "intake_header.php";
                     residence requirement and not yet complied with that
                     requirement or obtained a waiver of such? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                         <?php echo createRadio("i_918a_part_5_processing_information_continued_25")?>
                     </div>
                 </div>
             </article>
@@ -2027,9 +1887,7 @@ include "intake_header.php";
                     United States citizenship, outside the United States from a
                     United States citizen granted custody?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_26")?>
                     </div>
                 </div>
             </article>
@@ -2039,9 +1897,7 @@ include "intake_header.php";
                     practice polygamy in the
                     United States? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_27")?>
                     </div>
                 </div>
             </article>
@@ -2051,9 +1907,7 @@ include "intake_header.php";
                     entered the United States
                     as a stowaway? </label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_28")?>
                     </div>
                 </div>
             </article>
@@ -2063,9 +1917,7 @@ include "intake_header.php";
                     have a communicable
                     disease of public health significance?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_29_a")?>
                     </div>
                 </div>
             </article>
@@ -2079,9 +1931,7 @@ include "intake_header.php";
                     a threat to the property, safety, or welfare of yourself or
                     others?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_29_b")?>
                     </div>
                 </div>
             </article>
@@ -2091,9 +1941,7 @@ include "intake_header.php";
                     has your family member
                     EVER been a drug abuser or drug addict?</label>
                     <div class="col-md-7 col-md-offset-8">
-                        <input type="radio" name="" value="yes">
-                        Yes &nbsp;
-                        <input type="radio" name="" value="no"> No
+                        <?php echo createRadio("i_918a_part_5_processing_information_continued_29_c")?>
                     </div>
                 </div>
             </article>
@@ -2110,7 +1958,7 @@ include "intake_header.php";
             </p>
             <article>
                 <div class="form-group">
-                    <label class="control-label col-md-5">1.a. Family Name(Last Name) :</label>
+                    <label class="control-label col-md-5">1.a. Family Name(Last Name) </label>
                     <div class="col-md-7">
                         <input type="text" class="form-control"
                             name="information_about_family_member_spouse_children_family_last_name" maxlength="29"
@@ -2118,7 +1966,7 @@ include "intake_header.php";
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">1.b. Given Name(First Name) :</label>
+                    <label class="control-label col-md-5">1.b. Given Name(First Name) </label>
                     <div class="col-md-7">
                         <input type="text" class="form-control"
                             name="information_about_family_member_spouse_children_given_first_name" maxlength="29"
@@ -2126,7 +1974,7 @@ include "intake_header.php";
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">1.c. Middle Name :</label>
+                    <label class="control-label col-md-5">1.c. Middle Name </label>
                     <div class="col-md-7">
                         <input type="text" class="form-control"
                             name="information_about_family_member_spouse_children_middle_name" maxlength="29"
@@ -2161,7 +2009,7 @@ include "intake_header.php";
             </article>
             <article>
                 <div class="form-group">
-                    <label class="control-label col-md-5">5.a. Family Name(Last Name) :</label>
+                    <label class="control-label col-md-5">5.a. Family Name(Last Name) </label>
                     <div class="col-md-7">
                         <input type="text" class="form-control"
                             name="information_about_family_member_spouse_children_family_last_name2" maxlength="29"
@@ -2169,7 +2017,7 @@ include "intake_header.php";
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">5.b. Given Name(First Name) :</label>
+                    <label class="control-label col-md-5">5.b. Given Name(First Name) </label>
                     <div class="col-md-7">
                         <input type="text" class="form-control"
                             name="information_about_family_member_spouse_children_given_first_name2" maxlength="29"
@@ -2177,7 +2025,7 @@ include "intake_header.php";
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">5.c. Middle Name :</label>
+                    <label class="control-label col-md-5">5.c. Middle Name </label>
                     <div class="col-md-7">
                         <input type="text" class="form-control"
                             name="information_about_family_member_spouse_children_middle_name2" maxlength="29"
@@ -2212,7 +2060,7 @@ include "intake_header.php";
             </article>
             <article>
                 <div class="form-group">
-                    <label class="control-label col-md-5">9.a. Family Name(Last Name) :</label>
+                    <label class="control-label col-md-5">9.a. Family Name(Last Name) </label>
                     <div class="col-md-7">
                         <input type="text" class="form-control"
                             name="information_about_family_member_spouse_children_family_last_name3" maxlength="29"
@@ -2220,7 +2068,7 @@ include "intake_header.php";
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">9.b. Given Name(First Name) :</label>
+                    <label class="control-label col-md-5">9.b. Given Name(First Name) </label>
                     <div class="col-md-7">
                         <input type="text" class="form-control"
                             name="information_about_family_member_spouse_children_given_first_name3" maxlength="29"
@@ -2228,7 +2076,7 @@ include "intake_header.php";
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-5">9.c. Middle Name :</label>
+                    <label class="control-label col-md-5">9.c. Middle Name </label>
                     <div class="col-md-7">
                         <input type="text" class="form-control"
                             name="information_about_family_member_spouse_children_middle_name3" maxlength="29"
@@ -2263,10 +2111,8 @@ include "intake_header.php";
         </section>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next"
-        style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save"
-        id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -2295,14 +2141,17 @@ include "intake_header.php";
                 applicable, select the box for <b>Item Number 2.</b>
             </p>
             <div class="d-flexible">
-                <b>1.a.</b> <input type="checkbox" name="" id="">
+                <b>1.a.</b>
+                <?php echo createCheckbox("i_918a_prat_7_petitioner_statement")?>
                 <p>I can read and understand English, and I have read
                     and understand every question and instruction on
                     this supplement and my answer to every question.
                 </p>
             </div>
             <div class="d-flexible">
-                <b>1.b.</b> <input type="checkbox" name="" id="">
+                <b>1.b.</b> 
+                <?php echo createCheckbox("i_918a_prat_7_petitioner_statement_1_b")?>
+
                 <p>The interpreter named in <b>Part 9.</b> read to me every
                     question and instruction on this application and my
                     answer to every question in
@@ -2315,7 +2164,9 @@ include "intake_header.php";
                 everything.
             </p>
             <div class="d-flexible">
-                <b>2.</b> <input type="checkbox" name="" id="">
+                <b>2.</b> 
+                <?php echo createCheckbox("i_918a_part_7_petitioner_statement_2")?>
+
                 <p>At my request, the preparer named in <b>Part 10.</b></p>
             </div>
             <input type="text" class="form-control"
@@ -2420,11 +2271,8 @@ include "intake_header.php";
             </h5>
             <div class="form-group">
                 <label class="control-label col-md-12">1.a.
-                <input type="hidden" name="i_918a_petitioner_info_part8_1a" id="i_918a_petitioner_info_part8_1a"
-                    value="<?php echo (showData('i_918a_petitioner_info_part8_1a') == 'Y') ? 'Y' : 'N'; ?>" />
+                <?php echo createCheckbox("i_918a_petitioner_info_part8_1a")?>
 
-                <input type="checkbox" onChange="checkboxValue(this,'i_918a_petitioner_info_part8_1a')"
-                <?php echo (showData('i_918a_petitioner_info_part8_1a') == 'Y') ? 'checked' : ''; ?>>
                 I can read and understand English, and I have read
                 and understand every question and instruction on
                 this petition and my answer to every question.
@@ -2432,12 +2280,8 @@ include "intake_header.php";
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">1.b.
-                <input type="hidden" name="i_918a_petitioner_info_part8_1b"
-                    id="i_918a_petitioner_info_part8_1b"
-                    value="<?php echo (showData('i_918a_petitioner_info_part8_1b') == 'Y') ? 'Y' : 'N'; ?>" />
-                <input type="checkbox"
-                    onChange="checkboxValue(this,'i_918a_petitioner_info_part8_1b')"
-                    <?php echo (showData('i_918a_petitioner_info_part8_1b') == 'Y') ? 'checked' : ''; ?>>
+                <?php echo createCheckbox("i_918a_petitioner_info_part8_1b")?>
+
                 The interpreter named in Part 9. read to me every
                 question and instruction on this supplement and my
                 answer to every question in </label>
@@ -2450,11 +2294,7 @@ include "intake_header.php";
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">2.
-                <input type="hidden" name="i_918a_petitioner_info_part8_2" id="i_918a_petitioner_info_part8_2"
-                    value="<?php echo (showData('i_918a_petitioner_info_part8_2') == 'Y') ? 'Y' : 'N'; ?>" />
-                <input type="checkbox"
-                    onChange="checkboxValue(this,'i_918a_petitioner_info_part8_2')"
-                    <?php echo (showData('i_918a_petitioner_info_part8_2') == 'Y') ? 'checked' : ''; ?>>
+                <?php echo createCheckbox("i_918a_petitioner_info_part8_2")?>
                 At my request, the preparer named in Part 10.,</label>
                 <input type="text" class="form-control"
                     name="i_918a_petitioner_info_part8_2_answer"
@@ -2465,8 +2305,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -2639,7 +2479,7 @@ include "intake_header.php";
                     Flr.:
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" <input type="text" class="form-control"
+                    <input type="text" class="form-control" type="text" class="form-control"
                         name="i_918a_interpreter_mailing_address_apt_ste_flr_value" maxlength="6"
                         value="<?php echo showData('i_918a_interpreter_mailing_address_apt_ste_flr_value')?>">
                 </div>
@@ -2729,8 +2569,8 @@ include "intake_header.php";
         <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -2928,7 +2768,9 @@ include "intake_header.php";
                 <h4><b>Preparer's Statement</b> </h4>
             </div>
             <div class="d-flexible">
-                <b>7.a.</b> <input type="checkbox" name="" id="">
+                <b>7.a.</b> 
+                <?php echo createCheckbox("i_918a_preparer_statement_7a")?>
+
                 <p>I am not an attorney or accredited representative but
                     have prepared this supplement on behalf of the
                     petitioner and qualifying family member and with the
@@ -2936,13 +2778,14 @@ include "intake_header.php";
                 </p>
             </div>
             <div class="d-flexible">
-                <b>7.b.</b> <input type="checkbox" name="" id="">
+                <b>7.b.</b> 
+                <?php echo createCheckbox("i_918a_preparer_statement_7b")?>
+
                 <p>I am an attorney or accredited representative and my
                     representation of the petitioner and qualifying family
                     member in this case
-                    <input type="checkbox" name="" id=""> extends <input type="checkbox" name="" id=""> does
-                    not extend beyond the
-                    preparation of this supplement.
+                    <?php echo createCheckbox("i_918a_preparer_statement_7b_extend")?>  extends 
+                    <?php echo createCheckbox("i_918a_preparer_statement_7b_not_extend")?>  does not extend beyond the preparation of this supplement.
                 </p>
             </div>
             <p><b>NOTE:</b> If you are an attorney or accredited
@@ -2956,8 +2799,8 @@ include "intake_header.php";
         <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -3017,8 +2860,8 @@ include "intake_header.php";
         <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+    <input type="submit" name="data[password]" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -3049,21 +2892,21 @@ include "intake_header.php";
                 <h4><b>Your Full Name (Principal)</b> </h4>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">1.a. Family Name(Last Name) :</label>
+                <label class="control-label col-md-5">1.a. Family Name(Last Name) </label>
                 <div class="col-md-7">
                     <input type="text" class="form-control"  name="i_918a_additional_info_last_name"
                         value="<?php echo showData('i_918a_additional_info_last_name')?>" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">1.b. Given Name(First Name) :</label>
+                <label class="control-label col-md-5">1.b. Given Name(First Name) </label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" name="i_918a_additional_info_first_name"
                         value="<?php echo showData('i_918a_additional_info_first_name')?>" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">1.c. Middle Name :</label>
+                <label class="control-label col-md-5">1.c. Middle Name </label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" name="i_918a_additional_info_middle_name"
                         value="<?php echo showData('i_918a_additional_info_middle_name')?>" />
@@ -3234,7 +3077,7 @@ include "intake_header.php";
         <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" id="submit_data" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <?php include "intake_footer.php"?>

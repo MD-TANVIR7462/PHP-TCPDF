@@ -1687,7 +1687,7 @@ if(isset($singleDataNote->spouse_company_dates)) $spouse_company_dates = $single
         <div class="form-group">
 			<label class="control-label col-md-6">Have other attorneys worked on this matter?</label>
 			<div class="col-md-6">
-				<label class="radio-inline">
+				<label class="radio-inline">  
 					<input type="radio" name="attorneys_worked" value="Yes" <?php echo ($attorneys_worked=="Yes") ? "checked" : " "?>> Yes
 				</label>
 				<label class="radio-inline">

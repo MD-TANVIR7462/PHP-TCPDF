@@ -12,14 +12,7 @@ class MyPDF extends TCPDF {
     public function Header() {
         $this->SetY(13);
 		if ($this->page > 1){
-		  // return;
-			// $this->Cell(0, 30, '<< Company Heading >>', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-			
-
-			/* $top_border = array(
-			   'T' => array('width' => 2, 'color' => array(0,0,0), 'dash' => 0, 'cap' => 'square'),
-			);
-			$this->Cell(184, 0, '', $top_border, 1, 1); */
+		 
 			
 			$this->SetLineWidth(2); // set border width
 			// $this->SetDrawColor(0,0,0); // set color for cell border
@@ -107,10 +100,11 @@ $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-// set a barcode on the page footer
-// $pdf->setBarcode(date('Y-m-d H:i:s'));
 
-// add a page
+/********************************
+******** Start Page No 1 ********
+*********************************/
+
 $pdf->AddPage('P', 'LETTER');
 
 // set style for barcode
@@ -283,7 +277,7 @@ $html ='<div><b> Attorney State Bar Number </b> <br> (if applicable)</div>';
 $pdf->writeHTMLCell(50, 22, 90, 72.5, $html, 0, 0, false, true, 'L',true);
 $pdf->writeHTMLCell(50, 22, 90, 70,"", 'R', 0, false, true, 'L',true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('attorney_state_bar_number', 48.5, 7,array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 90.3, 82.5);
+$pdf->TextField('attorney_state_bar_number', 46.5, 7,array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 91, 82.5);
 
 //..........
 
@@ -401,7 +395,7 @@ $pdf->writeHTMLCell(30, 1, 12, 240.4, $html, 0, 0, false, false, 'L',false);
 $pdf->writeHTMLCell(60, 1, 12, 250.3, "<b>1.c.</b> &nbsp;&nbsp;Middle Name", 0, 0, false, false, 'L',false);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('information_about_you_las_tname', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 42, 232);
+$pdf->TextField('information_about_you_last_tname', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 42, 232);
 
 $pdf->TextField('information_about_you_first_name', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 42, 241);
 
@@ -435,7 +429,10 @@ $pdf->TextField('mailing_address_street_name_number', 59, 7, array('strokeColor'
 
 //...........
 $pdf->SetFont('times', '', 10); // set font
-$html= '<div><b>2.c. </b>&nbsp; &nbsp; <input type="checkbox" name="mail_apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="mail_ste" value="Ste" checked="" />Ste. <input type="checkbox" name="mail_flr" value="Flr" checked="" /> Flr.</div>';
+if(showData('information_about_you_us_mailing_apt_ste_flr')=="apt") $part2_apt = "checked"; else $part2_apt = "";
+if(showData('information_about_you_us_mailing_apt_ste_flr')=="ste") $part2_ste = "checked"; else $part2_ste = "";
+if(showData('information_about_you_us_mailing_apt_ste_flr')=="flr") $part2_flr = "checked"; else $part2_flr = "";
+$html= '<div><b>2.c. </b>&nbsp; &nbsp; <input type="checkbox" name="mail_apt" value="Apt" checked="'.$part2_apt.'" />Apt. &nbsp;&nbsp;<input type="checkbox" name="mail_ste" value="Ste" checked="'.$part2_ste.'" />Ste. <input type="checkbox" name="mail_flr" value="Flr" checked="'.$part2_flr.'" /> Flr.</div>';
 $pdf->writeHTMLCell(60, 0, 112, 131, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('mailing_address_apt_ste_flr', 40, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),  163, 131);
@@ -538,8 +535,14 @@ $html ='<div><b>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Daytime Telephone Number</di
 $pdf->writeHTMLCell(90, 7, 112, 241, $html, 0, 0, false, true, 'L',true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('other_information_daytime_telephone', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 246.5);
-//........
 
+/********************************
+******** End Page No 1 **********
+*********************************/
+
+/********************************
+******** Start Page No 2 ********
+*********************************/
 $pdf->AddPage('P', 'LETTER'); // page number 2
 
 $pdf->SetFillColor(220, 220, 220);
@@ -872,6 +875,14 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('family_member5_uscis_online_account', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 142, 246);
 
 
+/********************************
+******** End Page No 2 **********
+*********************************/
+
+/********************************
+******** Start Page No 3 ********
+*********************************/
+
 $pdf->AddPage('P', 'LETTER'); // page number 3
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1); 
@@ -1130,6 +1141,7 @@ $html= '<div><b>10.</b>&nbsp;&nbsp;&nbsp;&nbsp;U.S. Social Security Number (Requ
 $pdf->writeHTMLCell(90, 0, 112, 160, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('sponsor_other_information_us_social__security_number', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 158, 165.5);
+$pdf->Image('images/right_angle.jpg', 154,167.5, 3.5, 3.5, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
 //........
 
 
@@ -1168,12 +1180,14 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('sponsor_other_information_a_number', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 158, 207);
 $pdf->SetFont('times', 'B', 12);
 $pdf->writeHTMLCell(90, 0, 151, 207, 'A-', '', 0, 0, true, 'L');
+$pdf->Image('images/right_angle.jpg', 148,209, 3.5, 3.5, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
 //........
 $pdf->SetFont('times', '', 10);// set font
 $html= '<div><b>13.   &nbsp;  </b>       Sponsor\'s USCIS Online Account Number (if any)</div>';
 $pdf->writeHTMLCell(90, 0, 112, 215, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('sponsor_other_information_uscis_online_number', 61.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 142.5, 220);
+$pdf->Image('images/right_angle.jpg', 138,222, 3.5, 3.5, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
 //..........
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(95, 0, 112, 228, 'Military Service (To be completed by petitioner sponsors only.)', 0, 0, false, 'L');
@@ -1187,7 +1201,15 @@ $html= '<div><input type="checkbox" name="currently_active" value="Y" checked=" 
 </div>';
 $pdf->writeHTMLCell(60, 0, 177, 239, $html, '', 0, 0, true, 'L');
 
-//..........
+
+/********************************
+******** End Page No 3 **********
+*********************************/
+
+/********************************
+******** Start Page No 4 ********
+*********************************/
+
 $pdf->AddPage('P', 'LETTER'); // page number 4
 $pdf->SetLineWidth(0.4); // set border width
 $pdf->SetFillColor(220,220,220);
@@ -1335,14 +1357,16 @@ $pdf->TextField('part_6_4_employed', 86, 7, array('strokeColor' => array(64, 64,
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>5.     </b>&nbsp;&nbsp; &nbsp;<input type="checkbox" name="retired" value="Y" checked=" " />  Retired Since (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(90, 2, 112, 38, $html, 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(31, 6.4, 173, 43, '', 1, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part_6_5_retired_date', 31, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 173, 43);
 
 //...........
 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>6.     </b>&nbsp;&nbsp; &nbsp;<input type="checkbox" name="un_employeed" value="Y" checked=" " />Unemployed Since (mm/dd/yyyy)  </div>';
 $pdf->writeHTMLCell(90, 7, 112, 49.6, $html, 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(31, 6.4, 173, 56, '', 1, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part_6_6_unemployed_date', 31, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 173, 56);
 
 
 $pdf->SetFont('times', '', 10);
@@ -1350,7 +1374,7 @@ $html ='<div><b>7.     </b>&nbsp;&nbsp; &nbsp;My current individual annual incom
 $pdf->writeHTMLCell(90, 7, 112, 62, $html, 0, 1, false, true, 'L', true);
 $pdf->writeHTMLCell(90, 7, 170, 68, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('current_annual_income', 31, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 173, 68);
+$pdf->TextField('part_6_7_annual_income', 31, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 173, 68);
 
 
 //..........
@@ -1481,8 +1505,13 @@ $pdf->writeHTMLCell(90, 2, 112, 249, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('person_4_current_income', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169, 249.5); 
 
-//...........................................
+/********************************
+******** End Page No 4 **********
+*********************************/
 
+/********************************
+******** Start Page No 5 ********
+*********************************/
 
 $pdf->AddPage('P', 'LETTER'); // page number 5
 $pdf->SetLineWidth(0.4); // set border width
@@ -1778,7 +1807,14 @@ $pdf->writeHTMLCell(90, 7, 112, 234, $html, 0, 1, false, true, 'L', true);
 $pdf->writeHTMLCell(90, 7, 165, 247, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('current_cash_value_of_immigrants', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169, 247);
-//...........page 5 end 
+
+/********************************
+******** End Page No 5 **********
+*********************************/
+
+/********************************
+******** Start Page No 6 ********
+*********************************/
 
 $pdf->AddPage('P', 'LETTER'); // page number 6
 
@@ -1834,9 +1870,9 @@ $html ='<div><b> Remarks </b></div>';
 $pdf->writeHTMLCell(56, 15, 148, 13, $html, 0, 1, false, true, 'L', true);
 $pdf->writeHTMLCell(56, 16, 148, 17, '', 'LB', 1, false, true, 'L', true);
 
-$pdf->SetFont('times', 'I', 8);
+$pdf->SetFont('times', 'I', 7.8);
 $html ='<div>The total Value of all assets, Line 10, must equal 5 times (3 time for suposes and children of USC\'s, or 1 time for orphans to be formally adopted in the U.S) the difference between the poverty guidelines and sponsor\'s household income, Line 10. </div>';
-$pdf->writeHTMLCell(100, 7, 102, 30, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 7, 102, 31, $html, 0, 1, false, true, 'L', true);
 //............page 6 upper box end 
 
 $pdf->SetFont('times', '', 12);
@@ -2025,7 +2061,14 @@ becomes a lawful permanent resident based on a Form I-864
 that you signed, that person may sue you for this support.</div>';
 $pdf->writeHTMLCell(92, 7, 112, 236, $html, 0, 1, false, true, 'L', true);
 
-//..........page 6 end ..........
+
+/********************************
+******** End Page No 6 **********
+*********************************/
+
+/********************************
+******** Start Page No 7 ********
+*********************************/
 
 $pdf->AddPage('P', 'LETTER'); // page number 7
 
@@ -2084,8 +2127,6 @@ $pdf->writeHTMLCell(90, 7, 16, 133, 'B.', 0, 1, false, true, 'L', true);
 $pdf->writeHTMLCell(90, 7, 16, 143, 'C.', 0, 1, false, true, 'L', true);
 $pdf->writeHTMLCell(90, 7, 16, 153, 'D.', 0, 1, false, true, 'L', true);
 $pdf->writeHTMLCell(90, 7, 16, 168, 'E.', 0, 1, false, true, 'L', true);
-
-
 $pdf->SetFont('times', '', 10);
 $html='<div>Becomes a U.S. citizen;</div>';
 $pdf->writeHTMLCell(90, 7, 22, 125, $html, 0, 1, false, true, 'L', true);
@@ -2106,20 +2147,13 @@ removal proceedings, a new grant of adjustment of
 status, based on a new affidavit of support, if one is
 required; or</div>';
 $pdf->writeHTMLCell(85, 7, 22, 153, $html, 0, 1, false, true, 'L', true);
-
-
-
 $html='<div>Dies.</div>';
 $pdf->writeHTMLCell(90, 7, 22, 168, $html, 0, 1, false, true, 'L', true);
 //.........
-
 $pdf->SetFont('times', '', 10);
 $html='<div><b>NOTE:</b> Divorce <b>does not</b> terminate your obligations under
 Form I-864.</div>';
 $pdf->writeHTMLCell(90, 7, 12, 174, $html, 0, 1, false, true, 'L', true);
-
-
-
 $pdf->SetFont('times', '', 10);
 $html='<div>Your obligations under a Form I-864 that you signed also end if
 you die. Therefore, if you die, your estate is not required to <br>
@@ -2127,18 +2161,20 @@ take responsibility for the person\'s support after your death. <br>
 However, your estate may owe any support that you<br>
 accumulated before you died.</div>';
 $pdf->writeHTMLCell(93, 7, 12, 184, $html, 0, 1, false, true, 'L', true);
-
-
+//..........
+$pdf->setCellHeightRatio(1);
 $pdf->SetFont('times', 'BI', 12);
+$pdf->setCellPaddings(1, 0.5, 0, 0);
 $html='<div>Sponsor\'s Statement</div>';
-$pdf->writeHTMLCell(92, 7, 12, 208, $html, 0, 1, true, true, 'L', true);
-
+$pdf->writeHTMLCell(92, 6, 12, 208, $html, 0, 1, true, true, 'L', true);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 1, 0, 1);
 $pdf->SetFont('times', '', 10);
 $html='<div><b>NOTE:</b> Select the box for either <b>Item Number 1.a.</b> or <b>1.b.</b>
 If applicable, select the box for <b>Item Number 2.</b></div>';
-$pdf->writeHTMLCell(90, 7, 12, 215, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 12, 214.4, $html, 0, 1, false, true, 'L', true);
 
-$html='<div><b>1.a    </b>    <input type="checkbox" name="sponsor" value="Y" checked=" " /></div>';
+$html='<div><b>1.a    </b>    <input type="checkbox" name="sponsor_1a" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(90, 7, 12, 225, $html, 0, 1, false, true, 'L', true);
 
 $html='<div>I can read and understand English, and I have read<br>
@@ -2148,7 +2184,7 @@ $pdf->writeHTMLCell(80, 7, 24, 225, $html, 0, 1, false, true, 'L', true);
 
 //..........page 7 left side end ..
 
-$html='<div><b>1.b    </b>    <input type="checkbox" name="sponsor" value="Y" checked=" " /></div>';
+$html='<div><b>1.b    </b>    <input type="checkbox" name="sponsor_1b" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(80, 7, 112, 16, $html, 0, 1, false, true, 'L', true);
 
 $html='<div>The interpreter named in <b>Part 9.</b> read to me every
@@ -2166,7 +2202,7 @@ $pdf->writeHTMLCell(80, 1, 203, 53, ',', 0, 1, false, true, 'L', true);// comma 
 //...........
 
 $pdf->SetFont('times', '', 10);
-$html='<div><b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="sponsor" value="Y" checked=" " /></div>';
+$html='<div><b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="sponsor_1c" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(80, 1, 112, 46, $html, 0, 1, false, true, 'L', true);
 
 $html='<div>At my request, the preparer named in <b>Part 10.</b>, <br><br><br>
@@ -2178,11 +2214,11 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('at_my_request_preparer_name', 79, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 125, 52);
 $pdf->setCellHeightRatio(1);
 $pdf->SetFont('times', 'BI', 12);
+$pdf->setCellPaddings(1, 0.5, 0, 0);
 $html='<div>Sponsor\'s Contact Information</div>';
 $pdf->writeHTMLCell(92, 6, 112, 70, $html, 0, 1, true, true, 'L', true);
-
-
-
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 1, 0, 1);
 $pdf->SetFont('times', '', 10);
 $html='<div><b>3.    </b>     Sponsor\'s Daytime Telephone Number</div>';
 $pdf->writeHTMLCell(80, 1, 112, 76, $html, 0, 1, false, true, 'L', true);
@@ -2206,12 +2242,13 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('sponsor_email_address', 86, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 118, 106.5);
 
 //........
-
+$pdf->setCellHeightRatio(1);
 $pdf->SetFont('times', 'BI', 12);
+$pdf->setCellPaddings(1, 0.5, 0, 0);
 $html='<div>Sponsor\'s Declaration and Certification</div>';
-$pdf->writeHTMLCell(92, 6, 112, 115.5, $html, 0, 1, true, true, 'L', true);
-
+$pdf->writeHTMLCell(92, 6, 112, 116, $html, 0, 1, true, true, 'L', true);
 $pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 1, 0, 1);
 $pdf->SetFont('times', '', 10);
 $html='<div>Copies of any documents I have submitted are exact
 photocopies of unaltered, original documents, and I understand
@@ -2269,7 +2306,14 @@ $pdf->writeHTMLCell(80, 1, 122, 236, $html, 0, 1, false, true, 'L', true);
 
 
 
-//...........page 7 end 
+
+/********************************
+******** End Page No 7 **********
+*********************************/
+
+/********************************
+******** Start Page No 8 ********
+*********************************/
 
 
 $pdf->AddPage('P', 'LETTER'); // page number 8
@@ -2282,16 +2326,16 @@ Signature</b>(continued)</div>';
 $pdf->writeHTMLCell(90, 7, 13, 17, $html, 1, 1, true, true, 'L',true);
 
 $pdf->SetFont('times', 'B', 10);
-$pdf->writeHTMLCell(90, 7, 16, 34,  'D.', 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(90, 7, 16, 52, 'E.', 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(90, 7, 16, 75, 'F.', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 19, 34,  'D.', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 19, 52, 'E.', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(90, 7, 19, 75, 'F.', 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 10);
 $html='<div>Each of the Federal income tax returns submitted in<br>
 support of this affidavit are true copies, or are<br>
 unaltered tax transcripts, of the tax returns I filed<br>
 with the IRS; </div>';
-$pdf->writeHTMLCell(80, 7, 22, 34, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 7, 27, 34, $html, 0, 1, false, true, 'L', true);
 
 
 $html='<div>I understand that, if I am related to the sponsored<br>
@@ -2299,13 +2343,13 @@ immigrant by marriage, the termination of the<br>
 marriage (by divorce, dissolution, annulment, or<br>
 other legal process) will not relieve me of my<br>
 obligations under this Form I-864; and</div>';
-$pdf->writeHTMLCell(80, 7, 22, 52, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 7, 27, 52, $html, 0, 1, false, true, 'L', true);
 
 
 $html='<div>I authorize the Social Security Administration to<br>
 release information about me in its records to<br>
 USCIS and DOS.</div>';
-$pdf->writeHTMLCell(80, 7, 22, 75, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 7, 27, 75, $html, 0, 1, false, true, 'L', true);
 //.........
 
 $pdf->SetFont('times', 'BI', 12);
@@ -2524,7 +2568,14 @@ $pdf->writeHTMLCell(80, 7, 112, 225, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('interpreter_date_of_signature', 32, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 173, 225);
 
-//.........page 8 end 
+
+/********************************
+******** End Page No 8 **********
+*********************************/
+
+/********************************
+******** Start Page No 9 ********
+*********************************/
 
 
 $pdf->AddPage('P', 'LETTER'); // page number 9
@@ -2606,6 +2657,11 @@ $pdf->TextField('preparer_mailing_address_city_town', 60, 7, array('strokeColor'
 $pdf->SetFont('times', '', 10); // set font
 $html= '<div><b>3.d.</b>&nbsp;&nbsp;&nbsp;&nbsp;State</div>';
 $pdf->writeHTMLCell(50, 0, 12, 132, $html, '', 0, 0, true, 'L');
+
+
+
+
+
 
 $html = '<select name="preparer_mailing_address_state" size="0.5">';
 $pdf->SetFont('courier', 'B', 10);
@@ -2753,21 +2809,29 @@ $pdf->writeHTMLCell(80, 7, 112, 170, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('preperer_date_of_signature', 31, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 173, 170);
 
-//.....page 9 end 
 
-$pdf->AddPage('P', 'LETTER'); // page number 10
+/********************************
+******** End Page No 9 **********
+*********************************/
 
-$pdf->setFillColor(220, 220, 220); 
-$pdf->setFont('Times', 'B', 13);
-$pdf->setCellHeightRatio(1);
-$pdf->setCellPaddings(1, 1, 1, 1); // set cell padding
-$pdf->SetFontSize(11.6); // set font
-$html= '<div>Part 11. Additional Information </div>';
-$pdf->writeHTMLCell(92, 7, 13, 18, $html, 1, 1, true, 'L');
-//........
-$pdf->setCellHeightRatio(1.2);
-$pdf->setFont('Times', '', 10);
-$html= '<div>If you need extra space to provide any additional information<br>
+/********************************
+******** Start Page No 10 ********
+*********************************/
+
+
+$pdf->AddPage('P', 'LETTER');  
+//..........
+
+$pdf->SetFont('times', '', 12);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(0.5, 0.5, 0, 0.5); 
+$html ='<div><b>Part 11. &nbsp;Additional Information</b><i></i></div>';
+$pdf->writeHTMLCell(91, 6, 13, 16.6, $html, 1, 1, true, false, 'L', true);
+//...........
+$pdf->setCellPaddings(1, 1, 0, 0.9); 
+
+$pdf->SetFont('times', '', 10);
+$html ='<div>If you need extra space to provide any additional information<br>
 within this affidavit, use the space below. If you need more<br>
 space than what is provided, you may make copies of this page<br>
 to complete and file with this affidavit or attach a separate sheet<br>
@@ -2775,457 +2839,447 @@ of paper. Type or print your name and A-Number (if any) at the<br>
 top of each sheet; indicate the <b>Page Number, Part Number</b>,<br>
 and <b>Item Number</b> to which your answer refers; and sign and<br>
 date each sheet.</div>';
-$pdf->writeHTMLCell(95, 25, 12, 26, $html, 0, 1, 0, true, 'L', false, false);
-//...........
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>1.a. </b> &nbsp; Family Name<br> &nbsp; &nbsp; &nbsp; &nbsp; (Last Name)</div>';
-$pdf->writeHTMLCell(35, 7, 12, 61, $html, 0, 1, false, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_864_aditional_1a_family_name', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 44, 63.6);
-
-//........
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>1.b. </b> &nbsp; Given Name<br> &nbsp; &nbsp; &nbsp; &nbsp; (First Name)</div>';
-$pdf->writeHTMLCell(35, 7, 12, 71, $html, 0, 1, false, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_864_aditional_1b_given_name', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 44, 73);
-
-//.......
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>1.c. </b> &nbsp; Middle Name</div>';
-$pdf->writeHTMLCell(35, 7, 12, 81, $html, 0, 1, false, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_864_aditional_1c_last_name', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 44, 82);
-
-//.......
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>2. </b> &nbsp;&nbsp; A-Number (if any) </div>';
-$pdf->writeHTMLCell(40, 7, 12, 91, $html, 0, 1, false, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_864_aditional_2_a_number', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 60, 91);
-
-
-
-$pdf->setFont('Times', '', 12);
-$html= '<div><b>A-</b></div>';
-$pdf->writeHTMLCell(7, 7, 54, 91, $html, 0, 0, false, 'L');
+$pdf->writeHTMLCell(103, 7, 12, 23, $html, 0, 1, false, true, 'L', true);
 //............
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>3.a. </b>&nbsp;Page Number </div>';
-$pdf->writeHTMLCell(30, 7, 12, 102, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_3a', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21, 107.5);
-//.....
-
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>3.b. </b>&nbsp;Part Number </div>';
-$pdf->writeHTMLCell(30, 7, 43, 102, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_3b', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 50, 107.5);
-
-//......
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>3.c. </b>&nbsp;Item Number </div>';
-$pdf->writeHTMLCell(30, 7, 75, 102, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_3c', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 83, 107.5);
-//............
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>3.d. </b> </div>';
-$pdf->writeHTMLCell(10, 7, 12, 116, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-
-$html = <<<EOD
-<textarea cols="20" rows="13" name="additional_information_3d">
-
-</textarea>
-EOD;
-$pdf->writeHTMLCell(90, 60, 20, 116, $html, 0, 0, false, 'L');
-
+$pdf->setCellHeightRatio(1.1); 
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>1.a.</b>&nbsp;&nbsp;&nbsp;&nbsp;Family Name <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Last Name) </div>';
+$pdf->writeHTMLCell(90, 7, 12, 62, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_family_last_name', 61, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 64);
 //.......
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>4.a. </b>&nbsp;Page Number </div>';
-$pdf->writeHTMLCell(30, 7, 12, 174, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_4a', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 21, 180);
-//........
-
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>4.b. </b>&nbsp;Part Number </div>';
-$pdf->writeHTMLCell(30, 7, 43, 174, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_4b', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 50, 180);
-
-//......
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>4.c. </b>&nbsp;Item Number </div>';
-$pdf->writeHTMLCell(30, 7, 75, 174, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_4c', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 83, 180);
-
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>1.b.&nbsp;&nbsp;&nbsp;&nbsp;</b>Given Name <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(First Name) </div>';
+$pdf->writeHTMLCell(90, 7, 12, 71, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_given_first_name', 61, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 73);
 //.........
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>1.c.&nbsp;&nbsp;&nbsp;&nbsp;</b>Middle Name  </div>';
+$pdf->writeHTMLCell(90, 7, 12, 81.5, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_middle_name', 61, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 43, 81.5);
+//..........
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>2.  </b>  &nbsp;&nbsp;&nbsp;&nbsp;A-Number  (if any)  </div>';
+$pdf->writeHTMLCell(90, 7, 12, 89, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('times', '', 11);
+$pdf->writeHTMLCell(90, 7, 51.5, 92.7, "<b>A-</b>", 0, 1, false, false, 'L', true);
+$pdf->Image('images/right_angle.jpg', 48, 94.5, 3.2, 3.2, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_a_number', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 57.9, 93);
 
+//............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>3.a.  </b> &nbsp;Page Number</div>';
+$pdf->writeHTMLCell(90, 7, 12, 101, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_name_page_number', 19.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 22, 106);
+//.............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>3.b.</b> &nbsp;&nbsp;Part Number</div>';
+$pdf->writeHTMLCell(90, 7, 45, 101, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_name_part_number', 19.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 54, 106);
+//............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>3.c.</b> &nbsp;&nbsp;Item Number</div>';
+$pdf->writeHTMLCell(90, 7, 75, 101, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_name_item_number', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 84, 106);
 
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>4.d. </b> </div>';
-$pdf->writeHTMLCell(10, 7, 12, 190, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-
-$html = <<<EOD
-<textarea cols="20" rows="13" name="additional_information_4d">
-
-</textarea>
-EOD;
-$pdf->writeHTMLCell(90, 60, 20, 190, $html, 0, 0, false, 'L');
-
-                                            //.......page 12. left end 
-// ....... start right side 
-
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>5.a. </b>&nbsp;Page Number </div>';
-$pdf->writeHTMLCell(30, 7, 112, 17, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_5a', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 23);
-//.....
-
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>5.b. </b>&nbsp;Part Number </div>';
-$pdf->writeHTMLCell(30, 7, 145, 17, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_5b', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 152, 23);
-
-//......
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>5.c. </b>&nbsp;Item Number </div>';
-$pdf->writeHTMLCell(30, 7, 175, 17, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_5c', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 182, 23);
-//.........
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>5.d. </b> </div>';
-$pdf->writeHTMLCell(10, 7, 112, 33, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-
-$html = <<<EOD
-<textarea cols="20" rows="13" name="additional_information_5d">
-
-</textarea>
-EOD;
-$pdf->writeHTMLCell(90, 70, 119, 32, $html, 0, 0, false, 'L');
-
-//.....
-
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>6.a. </b>&nbsp;Page Number </div>';
-$pdf->writeHTMLCell(30, 7, 112, 98, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_6a', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 104);
-//.....
-
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>6.b. </b>&nbsp;Part Number </div>';
-$pdf->writeHTMLCell(30, 7, 145, 98, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_6b', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 152, 104);
-
-//......
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>6.c. </b>&nbsp;Item Number </div>';
-$pdf->writeHTMLCell(30, 7, 175, 98, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_6c', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 182, 104);
-//.........
-
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>6.d. </b> </div>';
-$pdf->writeHTMLCell(10, 7, 112, 114, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-
-$html = <<<EOD
-<textarea cols="20" rows="13" name="additional_information_6d">
-
-</textarea>
-EOD;
-$pdf->writeHTMLCell(90, 60, 119, 114, $html, 0, 0, false, 'L');
+//............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>3.d.</b> </div>';
+$pdf->writeHTMLCell(90, 7, 12, 116, $html, 0, 1, false, false, 'L', true);
 
 //..........
+$pdf->setCellHeightRatio(1.8); 
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell( 82, 1, 21.6, 113.1, '',  "B",  0, false, false, 'C', true ); // line 1
+$pdf->writeHTMLCell( 82, 1, 21.6, 117.5, '',  "B",  0, false, false, 'C', true ); // line 2
+$pdf->writeHTMLCell( 82, 1, 21.6, 121.8, '',  "B",  0, false, false, 'C', true ); // line 3
+$pdf->writeHTMLCell( 82, 1, 21.6, 126.3, '',  "B",  0, false, false, 'C', true ); // line 4 
+$pdf->writeHTMLCell( 82, 1, 21.6, 131, '',  "B",  0, false, false, 'C', true );   // line 5
+$pdf->writeHTMLCell( 82, 1, 21.6, 135.8, '',  "B",  0, false, false, 'C', true ); // line 6
+$pdf->writeHTMLCell( 82, 1, 21.6, 140.5, '',  "B",  0, false, false, 'C', true ); // line 7
+$pdf->writeHTMLCell( 82, 1, 21.6, 145.2, '',  "B",  0, false, false, 'C', true ); // line 8 
+$pdf->writeHTMLCell( 82, 1, 21.6, 150, '',  "B",  0, false, false, 'C', true );   // line 9
+$pdf->writeHTMLCell( 82, 1, 21.6, 154, '',  "B",  0, false, false, 'C', true );   // line 10
+$pdf->TextField('aditional_inf0_name_3d', 82.5, 64,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),21.5, 116);
+$pdf->setCellHeightRatio(1.2); 
 
+//............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>4.a.  </b> &nbsp;Page Number</div>';
+$pdf->writeHTMLCell(90, 7, 12, 180, $html, 0, 1, false, false, 'L', true);
 
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>7.a. </b>&nbsp;Page Number </div>';
-$pdf->writeHTMLCell(30, 7, 112, 174, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_7a', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 180);
-//.....
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_name_page_number1', 19.5, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 22, 185.2);
 
+//.............
 
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>7.b. </b>&nbsp;Part Number </div>';
-$pdf->writeHTMLCell(30, 7, 145, 174, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_7b', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 152, 180);
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>4.b.</b> &nbsp;&nbsp;Part Number</div>';
+$pdf->writeHTMLCell(90, 7, 45, 180, $html, 0, 1, false, false, 'L', true);
 
-//......
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_name_part_number1', 19.5, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 54, 185.2);
 
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>7.c. </b>&nbsp;Item Number </div>';
-$pdf->writeHTMLCell(30, 7, 175, 174, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
-$pdf->TextField('additional_information_7c', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 183, 180);
+//............
 
-//.........
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>4.c.</b> &nbsp;&nbsp;Item Number</div>';
+$pdf->writeHTMLCell(90, 7, 75, 180, $html, 0, 1, false, false, 'L', true);
 
-$pdf->setFont('Times', '', 10);
-$html= '<div><b>7.d. </b> </div>';
-$pdf->writeHTMLCell(10, 7, 112, 190, $html, 0, 0, false, 'L');
-$pdf->setFont('courier', 'B', 10);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_name_item_number1', 20, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 84, 185.2);
 
-$html = <<<EOD
-<textarea cols="20" rows="13" name="additional_information_7d"> 
-</textarea>
-EOD;
-$pdf->writeHTMLCell(90, 60, 119, 190, $html, 0, 0, false, 'L');
+//............
 
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>4.d.</b> </div>';
+$pdf->writeHTMLCell(90, 7, 12, 193, $html, 0, 1, false, false, 'L', true);
 
-// 'attorney_state_bar_number':' $attorney_state_bar_number',
-// 'uscis_online_account_number':' $uscis_online_account_number',
+$pdf->setCellHeightRatio(1.8); 
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell( 82, 1, 21.6, 190.7, '',  "B",  0, false, false, 'C', true );// line 1
+$pdf->writeHTMLCell( 82, 1, 21.6, 194.5, '',  "B",  0, false, false, 'C', true );// line 2
+$pdf->writeHTMLCell( 82, 1, 21.6, 198.8, '',  "B",  0, false, false, 'C', true );// line 3
+$pdf->writeHTMLCell( 82, 1, 21.6, 203.3, '',  "B",  0, false, false, 'C', true );// line 4 
+$pdf->writeHTMLCell( 82, 1, 21.6, 207.8, '',  "B",  0, false, false, 'C', true );// line 5
+$pdf->writeHTMLCell( 82, 1, 21.6, 212, '',  "B",  0, false, false, 'C', true );// line 6
+$pdf->writeHTMLCell( 82, 1, 21.6, 216.8, '',  "B",  0, false, false, 'C', true );// line 7
+$pdf->writeHTMLCell( 82, 1, 21.6, 221.6, '',  "B",  0, false, false, 'C', true );// line 8 
+$pdf->writeHTMLCell( 82, 1, 21.6, 226.1, '',  "B",  0, false, false, 'C', true );// line 9
+$pdf->writeHTMLCell( 82, 1, 21.6, 230, '',  "B",  0, false, false, 'C', true );// line 9
+$pdf->TextField('aditional_inf0_name_4d', 82.5, 62,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),21.5, 194);
+$pdf->setCellHeightRatio(1.2); 
+//............
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>5.a.  </b> &nbsp;Page Number</div>';
+$pdf->writeHTMLCell(90, 7, 112, 16, $html, 0, 1, false, false, 'L', true);
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_page_number2', 19.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 122, 21.2);
+
+//.............
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>5.b.</b> &nbsp;&nbsp;Part Number</div>';
+$pdf->writeHTMLCell(90, 7, 145, 16, $html, 0, 1, false, false, 'L', true);
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_part_number2', 19.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 154, 21.2);
+
+//.............
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>5.c.</b> &nbsp;Item Number</div>';
+$pdf->writeHTMLCell(90, 7, 176, 16, $html, 0, 1, false, false, 'L', true);
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_item_number2', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 184, 21.2);
+
+//.............
+
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>5.d.</b> </div>';
+$pdf->writeHTMLCell(90, 7, 112, 30, $html, 0, 1, false, false, 'L', true);
+
+$pdf->setCellHeightRatio(1.8); 
+$pdf->writeHTMLCell( 81.4, 1, 122.7, 29.1, '',  "B",  0, false, false, 'C', true );// line 1
+$pdf->writeHTMLCell( 81.4, 1, 122.7, 33.5, '',  "B",  0, false, false, 'C', true );// line 2
+$pdf->writeHTMLCell( 81.4, 1, 122.7, 37.8, '',  "B",  0, false, false, 'C', true );// line 3
+$pdf->writeHTMLCell( 81.4, 1, 122.7, 42.3, '',  "B",  0, false, false, 'C', true );// line 4 
+$pdf->writeHTMLCell( 81.4, 1, 122.7, 46.8, '',  "B",  0, false, false, 'C', true );// line 5
+$pdf->writeHTMLCell( 81.4, 1, 122.7, 51, '',  "B",  0, false, false, 'C', true );// line 6
+$pdf->writeHTMLCell( 81.4, 1, 122.7, 55.8, '',  "B",  0, false, false, 'C', true );// line 7
+$pdf->writeHTMLCell( 81.4, 1, 122.7, 60.6, '',  "B",  0, false, false, 'C', true );// line 8 
+$pdf->writeHTMLCell( 81.4, 1, 122.7, 65.1, '',  "B",  0, false, false, 'C', true );// line 9
+$pdf->writeHTMLCell( 81.4, 1, 122.7, 69, '',  "B",  0, false, false, 'C', true );// line 10
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_name_5d', 82, 64,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),122.5, 31);
+$pdf->setCellHeightRatio(1.2); 
+//...........
+
+//............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>6.a.  </b> &nbsp;Page Number</div>';
+$pdf->writeHTMLCell(90, 7, 112, 101, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_page_number3', 19.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 122, 106);
+//.............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>6.b.</b> &nbsp;&nbsp;Part Number</div>';
+$pdf->writeHTMLCell(90, 7, 145, 101, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_part_number3', 19.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 154, 106);
+//............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>6.c.</b> &nbsp;&nbsp;Item Number</div>';
+$pdf->writeHTMLCell(90, 7, 175, 101, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_item_number3', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 184, 106);
+
+//............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>6.d.</b> </div>';
+$pdf->writeHTMLCell(90, 7, 112, 116, $html, 0, 1, false, false, 'L', true);
+//..........
+$pdf->setCellHeightRatio(1.8); 
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell( 82, 1, 121.6, 113.1, '',  "B",  0, false, false, 'C', true ); // line 1
+$pdf->writeHTMLCell( 82, 1, 121.6, 117.5, '',  "B",  0, false, false, 'C', true ); // line 2
+$pdf->writeHTMLCell( 82, 1, 121.6, 121.8, '',  "B",  0, false, false, 'C', true ); // line 3
+$pdf->writeHTMLCell( 82, 1, 121.6, 126.3, '',  "B",  0, false, false, 'C', true ); // line 4 
+$pdf->writeHTMLCell( 82, 1, 121.6, 131, '',  "B",  0, false, false, 'C', true );   // line 5
+$pdf->writeHTMLCell( 82, 1, 121.6, 135.8, '',  "B",  0, false, false, 'C', true ); // line 6
+$pdf->writeHTMLCell( 82, 1, 121.6, 140.5, '',  "B",  0, false, false, 'C', true ); // line 7
+$pdf->writeHTMLCell( 82, 1, 121.6, 145.2, '',  "B",  0, false, false, 'C', true ); // line 8 
+$pdf->writeHTMLCell( 82, 1, 121.6, 150, '',  "B",  0, false, false, 'C', true );   // line 9
+$pdf->writeHTMLCell( 82, 1, 121.6, 154, '',  "B",  0, false, false, 'C', true );   // line 10
+$pdf->TextField('additional_info_name_6d', 82.5, 64,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),121.5, 116);
+$pdf->setCellHeightRatio(1.2);  
+//............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>7.a.  </b> &nbsp;Page Number</div>';
+$pdf->writeHTMLCell(90, 7, 112, 180, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_page_number4', 19.5, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 122, 185.2);
+//.............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>7.b.</b> &nbsp;&nbsp;Part Number</div>';
+$pdf->writeHTMLCell(90, 7, 145, 180, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_part_number4', 19.5, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 154, 185.2);
+//............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>7.c.</b> &nbsp;&nbsp;Item Number</div>';
+$pdf->writeHTMLCell(90, 7, 175, 180, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('additional_info_item_number4', 20, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 184, 185.2);
+//............
+$pdf->SetFont('times', '', 10);
+$html ='<div><b>7.d.</b> </div>';
+$pdf->writeHTMLCell(90, 7, 112, 193, $html, 0, 1, false, false, 'L', true);
+$pdf->setCellHeightRatio(1.8); 
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell( 82, 1, 121.6, 190.7, '',  "B",  0, false, false, 'C', true );// line 1
+$pdf->writeHTMLCell( 82, 1, 121.6, 194.5, '',  "B",  0, false, false, 'C', true );// line 2
+$pdf->writeHTMLCell( 82, 1, 121.6, 198.8, '',  "B",  0, false, false, 'C', true );// line 3
+$pdf->writeHTMLCell( 82, 1, 121.6, 203.3, '',  "B",  0, false, false, 'C', true );// line 4 
+$pdf->writeHTMLCell( 82, 1, 121.6, 207.8, '',  "B",  0, false, false, 'C', true );// line 5
+$pdf->writeHTMLCell( 82, 1, 121.6, 212, '',  "B",  0, false, false, 'C', true );// line 6
+$pdf->writeHTMLCell( 82, 1, 121.6, 216.8, '',  "B",  0, false, false, 'C', true );// line 7
+$pdf->writeHTMLCell( 82, 1, 121.6, 221.6, '',  "B",  0, false, false, 'C', true );// line 8 
+$pdf->writeHTMLCell( 82, 1, 121.6, 226.1, '',  "B",  0, false, false, 'C', true );// line 9
+$pdf->writeHTMLCell( 82, 1, 121.6, 230, '',  "B",  0, false, false, 'C', true );// line 9
+$pdf->TextField('additional_info_name_7d', 82.5, 62,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),121.5, 194);
+
 
 $js = "
 var fields = {
+    'attorney_state_bar_number':' $attorneyData->bar_number',
+    'uscis_online_account_number':' $attorneyData->uscis_online_account_number',
+    'Basis_For_Filing_Affidavit_of_Support':' ".showData('')." ',
+    'filed_an_alien_worker_petition_on_behalf':' ".showData('')." ',
+    'have_an_ownership_interest':' ".showData('')." ',
+    'which_fields_an_alien_worker':' ".showData('')." ',
+    'information_about_you_last_tname':' ".showData('information_about_you_family_last_name')." ',
+    'information_about_you_first_name':' ".showData('information_about_you_given_first_name')." ',
+    'information_about_you_middle_name':' ".showData('information_about_you_middle_name')." ',
 
-    'Basis_For_Filing_Affidavit_of_Support':' ',
-    'filed_an_alien_worker_petition_on_behalf':' ',
-    'have_an_ownership_interest':' ',
-    'which_fields_an_alien_worker':' ',
-    'information_about_you_middle_name':' ',
-    'information_about_you_first_name':' ',
-    'information_about_you_las_tname':' ',
+    'mailing_address_care_of_name':' ".showData('information_about_you_us_mailing_care_of_name')." ',
+    'mailing_address_street_name_number':' ".showData('information_about_you_us_mailing_street_number')." ',
+    'mailing_address_apt_ste_flr':' ".showData('information_about_you_us_mailing_apt_ste_flr_value')." ',
+    'mailing_address_city_town':' ".showData('information_about_you_us_mailing_city_town')." ',
+    'mailing_address_state':' ".showData('information_about_you_us_mailing_city_town')." ',
+    'mailing_address_zipcode':' ".showData('information_about_you_us_mailing_zip_code')." ',
+    'mailing_address_province':' ".showData('information_about_you_us_mailing_province')." ',
+    'mailing_address_postal_code':' ".showData('information_about_you_us_mailing_postal_code')." ',
+    'mailing_address_country':' ".showData('information_about_you_us_mailing_country')." ',
 
-    'mailing_address_care_of_name':' ',
-    'mailing_address_street_name_number':' ',
-    'mailing_address_apt_ste_flr':' ',
-    'mailing_address_city_town':' ',
-    'mailing_address_state':' ',
-    'mailing_address_zipcode':' ',
-    'mailing_address_province':' ',
-    'mailing_address_postal_code':' ',
-    'mailing_address_country':' ',
+    'other_information_cityzen_or_nationality':' ".showData('other_information_about_you_country_of_citizen')." ',
+    'other_information_date_of_birth':' ".showData('other_information_about_you_date_of_birth')." ',
+    'other_information_alien_number':' ".showData('other_information_about_you_alien_registration_number')." ',
+    'other_information_uscis_online_number':' ".showData('other_information_about_you_uscis_online_account_number')." ',
+    'other_information_daytime_telephone':' ".showData('information_about_you_daytime_tel')." ',
+//page 1 end.....
+    'family_member1_las_tname':' ".showData('')." ',
+    'family_member1_first_name':' ".showData('')." ',
+    'family_member1_middle_name':' ".showData('')." ',
+    'family_member1_relation_to_immigrant':' ".showData('')." ',
+    'family_member1_date_of_birth':' ".showData('')." ',
+    'family_member1_alien_number':' ".showData('')." ',
+    'family_member1_uscis_online_account':' ".showData('')." ',
 
-    'other_information_cityzen_or_nationality':' ',
-    'other_information_date_of_birth':' ',
-    'other_information_alien_number':' ',
-    'other_information_uscis_online_number':' ',
-    'other_information_daytime_telephone':' ',
+    'family_member2_las_tname':' ".showData('')." ',
+    'family_member2_first_name':' ".showData('')." ',
+    'family_member2_middle_name':' ".showData('')." ',
+    'family_member2_relation_to_immigrant':' ".showData('')." ',
+    'family_member2_date_of_birth':' ".showData('')." ',
+    'family_member2_alien_number':' ".showData('')." ',
+    'family_member2_uscis_online_account':' ".showData('')." ',
 
-    'family_member1_las_tname':' ',
-    'family_member1_first_name':' ',
-    'family_member1_middle_name':' ',
-    'family_member1_relation_to_immigrant':' ',
-    'family_member1_date_of_birth':' ',
-    'family_member1_alien_number':' ',
-    'family_member1_uscis_online_account':' ',
+    'family_member3_las_tname':' ".showData('')." ',
+    'family_member3_first_name':' ".showData('')." ',
+    'family_member3_middle_name':' ".showData('')." ',
+    'family_member3_relation_to_immigrant':' ".showData('')." ',
+    'family_member3_date_of_birth':' ".showData('')." ',
+    'family_member3_alien_number':' ".showData('')." ',
+    'family_member3_uscis_online_account':' ".showData('')." ',
 
-    'family_member2_las_tname':' ',
-    'family_member2_first_name':' ',
-    'family_member2_middle_name':' ',
-    'family_member2_relation_to_immigrant':' ',
-    'family_member2_date_of_birth':' ',
-    'family_member2_alien_number':' ',
-    'family_member2_uscis_online_account':' ',
+    'family_member4_las_tname':' ".showData('')." ',
+    'family_member4_first_name':' ".showData('')." ',
+    'family_member4_middle_name':' ".showData('')." ',
+    'family_member4_relation_to_immigrant':' ".showData('')." ',
+    'family_member4_date_of_birth':' ".showData('')." ',
+    'family_member4_alien_number':' ".showData('')." ',
+    'family_member4_uscis_online_account':' ".showData('')." ',
 
-    'family_member3_las_tname':' ',
-    'family_member3_first_name':' ',
-    'family_member3_middle_name':' ',
-    'family_member3_relation_to_immigrant':' ',
-    'family_member3_date_of_birth':' ',
-    'family_member3_alien_number':' ',
-    'family_member3_uscis_online_account':' ',
-
-    'family_member4_las_tname':' ',
-    'family_member4_first_name':' ',
-    'family_member4_middle_name':' ',
-    'family_member4_relation_to_immigrant':' ',
-    'family_member4_date_of_birth':' ',
-    'family_member4_alien_number':' ',
-    'family_member4_uscis_online_account':' ',
-
-    'family_member5_las_tname':' ',
-    'family_member5_first_name':' ',
-    'family_member5_middle_name':' ',
-    'family_member5_relation_to_immigrant':' ',
-    'family_member5_date_of_birth':' ',
-    'family_member5_alien_number':' ',
-    'family_member5_uscis_online_account':' ',
-
-    'part3_29_enter_total_number':' ',
-    'information_you_sponsor_last_name':' ',
-    'information_you_sponsor_first_name':' ',
-    'information_you_sponsor_middle_name':' ',
-
-    'sponsor_mailing_address_care_of_name':' ',
-    'sponsor_mailing_address_street_name_number':' ',
-    'sponsor_mailing_address_apt_ste_flr':' ',
-    'sponsor_mailing_address_city_town':' ',
-    'sponsor_mailing_address_state':' ',
-    'sponsor_mailing_address_zipcode':' ',
-    'sponsor_mailing_address_province':' ',
-    'sponsor_mailing_address_postal_code':' ',
-    'sponsor_mailing_address_country':' ',
-
-    'sponsor_physical_address_care_of_name':' ',
-    'sponsor_physical_address_street_name_number':' ',
-    'sponsor_physical_address_apt_ste_flr':' ',
-    'sponsor_physical_address_city_town':' ',
-    'sponsor_physical_address_state':' ',
-    'sponsor_physical_address_zipcode':' ',
-    'sponsor_physical_address_province':' ',
-    'sponsor_physical_address_postal_code':' ',
-    'sponsor_physical_address_country':' ',
-
-    'sponsor_other_information_country':' ',
-    'sponsor_other_information_date_of_birth':' ',
-    'sponsor_other_information_city_of_birth':' ',
-    'sponsor_other_information_state_province_of_birth':' ',
-    'sponsor_other_information_country_of_birth':' ',
-    'sponsor_other_information_us_social__security_number':' ',
-    'sponsor_other_information_a_number':' ',
-    'sponsor_other_information_uscis_online_number':' ',
-
-    'part5_1':' ',
+    'family_member5_las_tname':' ".showData('')." ',
+    'family_member5_first_name':' ".showData('')." ',
+    'family_member5_middle_name':' ".showData('')." ',
+    'family_member5_relation_to_immigrant':' ".showData('')." ',
+    'family_member5_date_of_birth':' ".showData('')." ',
+    'family_member5_alien_number':' ".showData('')." ',
+    'family_member5_uscis_online_account':' ".showData('')." ',
+    'part3_29_enter_total_number':' ".showData('')." ',
+    'information_you_sponsor_last_name':' ".showData('')." ',
+    'information_you_sponsor_first_name':' ".showData('')." ',
+    'information_you_sponsor_middle_name':' ".showData('')." ',
+    'sponsor_mailing_address_care_of_name':' ".showData('')." ',
+    'sponsor_mailing_address_street_name_number':' ".showData('')." ',
+    'sponsor_mailing_address_apt_ste_flr':' ".showData('')." ',
+    'sponsor_mailing_address_city_town':' ".showData('')." ',
+    'sponsor_mailing_address_state':' ".showData('')." ',
+    'sponsor_mailing_address_zipcode':' ".showData('')." ',
+    'sponsor_mailing_address_province':' ".showData('')." ',
+    'sponsor_mailing_address_postal_code':' ".showData('')." ',
+    'sponsor_mailing_address_country':' ".showData('')." ',
+    'sponsor_physical_address_care_of_name':' ".showData('')." ',
+    'sponsor_physical_address_street_name_number':' ".showData('')." ',
+    'sponsor_physical_address_apt_ste_flr':' ".showData('')." ',
+    'sponsor_physical_address_city_town':' ".showData('')." ',
+    'sponsor_physical_address_state':' ".showData('')." ',
+    'sponsor_physical_address_zipcode':' ".showData('')." ',
+    'sponsor_physical_address_province':' ".showData('')." ',
+    'sponsor_physical_address_postal_code':' ".showData('')." ',
+    'sponsor_physical_address_country':' ".showData('')." ',
+    'sponsor_other_information_country':' ".showData('')." ',
+    'sponsor_other_information_date_of_birth':' ".showData('')." ',
+    'sponsor_other_information_city_of_birth':' ".showData('')." ',
+    'sponsor_other_information_state_province_of_birth':' ".showData('')." ',
+    'sponsor_other_information_country_of_birth':' ".showData('')." ',
+    'sponsor_other_information_us_social__security_number':' ".showData('')." ',
+    'sponsor_other_information_a_number':' ".showData('')." ',
+    'sponsor_other_information_uscis_online_number':' ".showData('')." ',
+    'part5_1':' ".showData('')." ',
     'part5_2_yourself':'   1',
-    'part5_3_currently_married':' ',
-    'part5_4_depend_child':' ',
-    'part5_5_other_depend':' ',
-    'part5_6_sponsors':' ',
-    'part5_7_optional':' ',
+    'part5_3_currently_married':' ".showData('')." ',
+    'part5_4_depend_child':' ".showData('')." ',
+    'part5_5_other_depend':' ".showData('')." ',
+    'part5_6_sponsors':' ".showData('')." ',
+    'part5_7_optional':' ".showData('')." ',
     'part5_8_household':'   1',
-    'part_6_1_employed':' ',
-    'part_6_2_employer1':' ',
-    'part_6_3_employer2':' ',
-    'part_6_4_employed':' ',
-    'current_annual_income':' ',
+    'part_6_1_employed':' ".showData('')." ',
+    'part_6_2_employer1':' ".showData('')." ',
+    'part_6_3_employer2':' ".showData('')." ',
+    'part_6_4_employed':' ".showData('')." ',
+    'part_6_5_retired_date':' ".showData('')." ',
+    'part_6_6_unemployed_date':' ".showData('')." ',
+    'part_6_7_annual_income':' ".showData('')." ',
+    'person_1_name':' ".showData('')." ',
+    'person_1_relation':' ".showData('')." ',
+    'person_1_current_income':' ".showData('')." ',
+    'person_2_name':' ".showData('')." ',
+    'person_2_relation':' ".showData('')." ',
+    'person_2_current_income':' ".showData('')." ',
+    'person_3_name':' ".showData('')." ',
+    'person_3_relation':' ".showData('')." ',
+    'person_3_current_income':' ".showData('')." ',
+    'person_4_name':' ".showData('')." ',
+    'person_4_relation':' ".showData('')." ',
+    'person_4_current_income':' ".showData('')." ',
+    'my_current_house_hold_income':' ".showData('')." ',
+    'accompanying_dependent_name':' ".showData('')." ',
+    'most_recent_tax_year':' ".showData('')." ',
+    '2nd_most_recent_tax_year':' ".showData('')." ',
+    '3rd_most_recent_tax_year':' ".showData('')." ',
+    'total_income':' ".showData('')." ',
+    '2nd_total_income':' ".showData('')." ',
+    '3rd_total_income':' ".showData('')." ',
+    'balance_saving_account':' ".showData('')." ',
+    'net_cash_value':' ".showData('')." ',
+    'cash_value_all_stock':' ".showData('')." ',
+    'together_totals':' ".showData('')." ',
+    'use_asets_name_of_relative':' ".showData('')." ',
+    'house_hold_member_assets':' ".showData('')." ',
+    'enter_balance_of_principals':' ".showData('')." ',
+    'net_cash_value_of_principals':' ".showData('')." ',
+    'current_cash_value_of_immigrants':' ".showData('')." ',
+    'add_together_item_number6_8':' ".showData('')." ',
+    'add_together_item_number4_5_9':' ".showData('')." ',
+    'the_interpreter_named':' ".showData('')." ',
+    'at_my_request_preparer_name':' ".showData('')." ',
+    'sponsor_daytime_telephone_number':' ".showData('')." ',
+    'sponsor_mobile_telephone_number':' ".showData('')." ',
+    'sponsor_email_address':' ".showData('')." ',
+    'sponsor_signature_date':' ".showData('')." ',
+    'interpreter_family_last_name':' ".showData('')." ',
+    'interpreter_given_first_name':' ".showData('')." ',
+    'interpreter_business_org_name':' ".showData('')." ',
+    'interpreter_mailing_address_street_name_number':' ".showData('')." ',
+    'interpreter_mailing_address_apt_ste_flr':' ".showData('')." ',
+    'interpreter_mailing_address_city_town':' ".showData('')." ',
+    'interpreter_mailing_address_state':' ".showData('')." ',
+    'interpreter_mailing_address_zipcode':' ".showData('')." ',
+    'interpreter_mailing_address_province':' ".showData('')." ',
+    'interpreter_mailing_address_postal_code':' ".showData('')." ',
+    'interpreter_mailing_address_country':' ".showData('')." ', 
+    'interpreter_daytime_telephone_number':' ".showData('')." ',
+    'interpreter_mobile_telephone_number':' ".showData('')." ',
+    'interpreter_email_address':' ".showData('')." ',
+    'interpreter_certification':' ".showData('')." ',
+    'interpreter_date_of_signature':' ".showData('')." ',
+    'preparer_family_last_name':' ".showData('')." ',
+    'preparer_given_first_name':' ".showData('')." ',
+    'preparer_business_org_name':' ".showData('')." ',
+    'preparer_mailing_address_street_name_number':' ".showData('')." ',
+    'preparer_mailing_address_apt_ste_flr':' ".showData('')." ',
+    'preparer_mailing_address_city_town':' ".showData('')." ',
+    'preparer_mailing_address_state':' ".showData('')." ',
+    'preparer_mailing_address_zipcode':' ".showData('')." ',
+    'preparer_mailing_address_province':' ".showData('')." ',
+    'preparer_mailing_address_postal_code':' ".showData('')." ',
+    'preparer_mailing_address_country':' ".showData('')." ',
+    'preparer_daytime_telephone_number':' ".showData('')." ',
+    'preparer_mobile_telephone_number':' ".showData('')." ',
+    'preparer_email_address':' ".showData('')." ',
+    'preperer_date_of_signature':' ".showData('')." ',
 
-    'person_1_name':' ',
-    'person_1_relation':' ',
-    'person_1_current_income':' ',
 
-    'person_2_name':' ',
-    'person_2_relation':' ',
-    'person_2_current_income':' ',
-
-    'person_3_name':' ',
-    'person_3_relation':' ',
-    'person_3_current_income':' ',
-
-    'person_4_name':' ',
-    'person_4_relation':' ',
-    'person_4_current_income':' ',
-
-    'my_current_house_hold_income':' ',
-    'accompanying_dependent_name':' ',
-
-    'most_recent_tax_year':' ',
-    '2nd_most_recent_tax_year':' ',
-    '3rd_most_recent_tax_year':' ',
-
-    'total_income':' ',
-    '2nd_total_income':' ',
-    '3rd_total_income':' ',
-    'balance_saving_account':' ',
-    'net_cash_value':' ',
-    'cash_value_all_stock':' ',
-    'together_totals':' ',
-    'use_asets_name_of_relative':' ',
-    'house_hold_member_assets':' ',
-    'enter_balance_of_principals':' ',
-    'net_cash_value_of_principals':' ',
-    'current_cash_value_of_immigrants':' ',
-    'add_together_item_number6_8':' ',
-    'add_together_item_number4_5_9':' ',
-    'the_interpreter_named':' ',
-    'at_my_request_preparer_name':' ',
-
-    'sponsor_daytime_telephone_number':' ',
-    'sponsor_mobile_telephone_number':' ',
-    'sponsor_email_address':' ',
-
-    'sponsor_signature_date':' ',
-    'interpreter_family_last_name':' ',
-    'interpreter_given_first_name':' ',
-    'interpreter_business_org_name':' ',
-   
-    'interpreter_mailing_address_street_name_number':' ',
-    'interpreter_mailing_address_apt_ste_flr':' ',
-    'interpreter_mailing_address_city_town':' ',
-    'interpreter_mailing_address_state':' ',
-    'interpreter_mailing_address_zipcode':' ',
-    'interpreter_mailing_address_province':' ',
-    'interpreter_mailing_address_postal_code':' ',
-    'interpreter_mailing_address_country':' ', 
-    'interpreter_daytime_telephone_number':' ',
-    'interpreter_mobile_telephone_number':' ',
-    'interpreter_email_address':' ',
-    'interpreter_certification':' ',
-    'interpreter_date_of_signature':' ',
-
-    'preparer_family_last_name':' ',
-    'preparer_given_first_name':' ',
-    'preparer_business_org_name':' ',
-
-    'preparer_mailing_address_street_name_number':' ',
-    'preparer_mailing_address_apt_ste_flr':' ',
-    'preparer_mailing_address_city_town':' ',
-    'preparer_mailing_address_state':' ',
-    'preparer_mailing_address_zipcode':' ',
-    'preparer_mailing_address_province':' ',
-    'preparer_mailing_address_postal_code':' ',
-    'preparer_mailing_address_country':' ',
-
-    'preparer_daytime_telephone_number':' ',
-    'preparer_mobile_telephone_number':' ',
-    'preparer_email_address':' ',
-    'preperer_date_of_signature':' ',
-
-    'i_864_aditional_1a_family_name':' ',
-    'i_864_aditional_1b_given_name':' ',
-    'i_864_aditional_1c_last_name':' ',
-    'i_864_aditional_2_a_number':' ',
-
-    'additional_information_3a':' ',
-    'additional_information_3b':' ',
-    'additional_information_3c':' ',
-    'additional_information_4a':' ',
-    'additional_information_4b':' ',
-    'additional_information_4c':' ',
-    'additional_information_4d':' ',
-    'additional_information_5a':' ',
-    'additional_information_5b':' ',
-    'additional_information_5c':' ',
-    'additional_information_5d':' ',
-    'additional_information_6a':' ',
-    'additional_information_6b':' ',
-    'additional_information_6c':' ',
-    'additional_information_6d':' ',
-    'additional_information_7a':' ',
-    'additional_information_7b':' ',
-    'additional_information_7c':' ',
-    'additional_information_7d':' ',
-
+    'additional_info_family_last_name':' ".showData('')." ',
+    'additional_info_given_first_name':' ".showData('')." ',
+    'additional_info_middle_name':' ".showData('')." ',
+    'additional_info_a_number':' ".showData('')." ',
+    'additional_info_name_page_number':' ".showData('')." ',
+    'additional_info_name_part_number':' ".showData('')." ',
+    'additional_info_name_item_number':' ".showData('')." ',
+    'additional_info_name_page_number1':' ".showData('')." ',
+    'additional_info_name_part_number1':' ".showData('')." ',
+    'additional_info_name_item_number1':' ".showData('')." ',
+    'additional_info_page_number2':' ".showData('')." ',
+    'additional_info_part_number2':' ".showData('')." ',
+    'additional_info_item_number2':' ".showData('')." ',
+    'additional_info_page_number3':' ".showData('')." ',
+    'additional_info_part_number3':' ".showData('')." ',
+    'additional_info_item_number3':' ".showData('')." ',
+    'additional_info_page_number4':' ".showData('')." ',
+    'additional_info_part_number4':' ".showData('')." ',
+    'additional_info_item_number4':' ".showData('')." ',
     
 };
 
@@ -3238,9 +3292,6 @@ for (var fieldName in fields) {
 }";
 
 $pdf->IncludeJS($js);
-
-// reset pointer to the last page
-// $pdf->lastPage();
 //Close and output PDF document
 $pdf->Output('form I-864.pdf', 'I');
 
