@@ -31,29 +31,11 @@ class MyPDF extends TCPDF {
 			$this->SetFillColor(255,255,255); // set filling color
 			$this->MultiCell(191, 0, '', 'T', 1, 'C', 1, 12.8, 14.9, false, 'T', 'C');
 
-            // $this->StartTransform();
-            // $this->SetFillColor(0,0,0);
-            // $this->Rotate(-270);
-            // $this->SetFont('zapfdingbats', 'B', 10);
-            // $this->MultiCell(10, 10, "t", '', 'R', 0, 0, 25, 150, false); header angle
-            // $this->StopTransform();
-
-            
-            // $this->SetFont('times', 'B', 10);
-            // $this->writeHTMLCell(60, 7, 120, 2, 'A-', 0, 1, false, false, 'C', true);
-            // $this->writeHTMLCell(51, 7, 153, 3, '', 1, 1, false, true, 'C', true);
+          
 
 			
 		}
-		// parent::Header();
 		
-        // Logo
-        /* $image_file = K_PATH_IMAGES.'logo_example.jpg';
-           $this->Image($image_file, 10, 10, 15, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false); */
-        // Set font
-        /* $this->SetFont('helvetica', 'B', 20); */
-        // Title
-        /* $this->Cell(0, 15, '<< Company Heading >>', 0, false, 'C', 0, '', 0, false, 'M', 'M'); */
     }
 
     // Page footer
