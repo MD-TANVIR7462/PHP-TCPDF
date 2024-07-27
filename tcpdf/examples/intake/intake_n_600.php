@@ -614,7 +614,6 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
@@ -643,12 +642,9 @@ include "intake_header.php";
         <p><b>NOTE</b>: If you select “Other” and you need extra space to complete this section, use the space provided
             in <b>Part 11.Additional Information</b>.</p>
     </div>
-  
     <div class="form-group">
         <label class="control-label" style="width: 100%; margin-bottom: 5px;">D. I obtained LPR status through adjustment of status in the United States or admission as a LPR (if applicable)</label>
-
     </div>
-  
     <div class=" col-md-4">
             <label class="control-label " style="margin-left: 15px;">Date I became a LPR</label> <br>
             <label class="control-label " style="margin-left: 15px;">(mm/dd/yyyy)</label>
@@ -729,13 +725,9 @@ include "intake_header.php";
         <label class="control-label " style="margin-left: 15px;">D. Date Physical Custody Began <br>(mm/dd/yyyy)</label>
         <div class="col-md-12"> <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>"> </div>
     </div>
-
-
-
-
         <div class="form-group">
         <label class="control-label " style="margin-left: 15px;">18. Did you have to be re-adopted in the United States?</label> <br>
-        <div class="col-md-2 col-md-offset-2"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+        <div class="col-md-2 col-md-offset-4"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
         <p class="col-md-12">If you answered "Yes" to <b>Item Number 18</b>., complete <b>Items A. - D.</b></p>
         <p class="col-md-12"><b>A.</b> Place of Final Adoption</p>
         </div>
@@ -785,6 +777,18 @@ include "intake_header.php";
         <div class="col-md-12"> <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>"> </div>
     </div>
 
+    <div class="form-group">
+        <label class="control-label " style="margin-left: 15px;">19. Were your parents married to each other when you were born (or adopted)?</label> <br>
+        <div class="col-md-2 col-md-offset-6"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+    </div>
+    <div class="form-group">
+        <label class="control-label " style="margin-left: 15px;">20. Did your parents marry after you were born?</label> <br>
+        <div class="col-md-2 col-md-offset-4"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+    </div>
+    <div class="form-group">
+        <label class="control-label " style="margin-left: 15px;">21. Do you regularly reside in the United States in the legal and physical custody of your U.S. citizen parents?</label> <br>
+        <div class="col-md-2 col-md-offset-8"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+    </div>
 
 
 
