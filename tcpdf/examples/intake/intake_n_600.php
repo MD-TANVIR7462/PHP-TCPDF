@@ -231,7 +231,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 2 of 15</b></p>
    <div class=" form-group">
     <div class="form-group" style="margin-bottom: 10px;">
@@ -617,11 +617,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 3 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;">
     <h4><b>Part 2. Information About You (continued)</b></h4>
@@ -789,6 +789,99 @@ include "intake_header.php";
         <label class="control-label " style="margin-left: 15px;">21. Do you regularly reside in the United States in the legal and physical custody of your U.S. citizen parents?</label> <br>
         <div class="col-md-2 col-md-offset-8"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
     </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 3 --------------------------------
+------------------------------------------------------------------------>
+<fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;""><b>Page 4 of 15</b></p>
+    <div class=" bg-info col-md-12" style="margin-top:10px;">
+    <h4><b>Part 2. Information About You (continued)</b></h4>
+    </div>
+    <div class="form-group">
+        <label class="control-label " style="margin-left: 15px;">22. Have you been absent from the United States since you first arrived?</label> <br>
+        <div class="col-md-2 col-md-offset-8"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+    </div>
+    <div class="form-group">
+      <p style='margin-left:20px'>Complete the following information <b>only if you are claiming U.S. citizenship at the time of birth if you were born before
+      October 10, 1952.</b> If you need extra space to complete this section, use the space provided in <b>Part 11. Additional Information</b>.</p>
+    </div>
+    <div class=" col-md-5">
+            <label class="control-label " style="margin-left: 15px;">A. Date You Left the United States <br>(mm/dd/yyyy)</label>
+            <div class="col-md-12">
+                <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+        </div>
+        <div class=" col-md-5">
+            <label class="control-label " style="margin-left: 15px;">B. Date You Returned to the <br>United States (mm/dd/yyyy) </label>
+            <div class="col-md-12">
+                <input type="date" class="form-control" name="information_about_you_current_given_first_name"  maxlength="" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+            </div>
+        </div>
+        <div class="row form-group" >
+            <label class="control-label" style="width: 100%; margin:0px 0px 5px 10px">C. Place of Entry Upon Return to the United States</label>
+        <div class="form-group col-md-6">
+            <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+            <div>
+                <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" />
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label class="control-label" style=" margin-bottom: 5px;">State</label>
+                <select class="form-control" name="information_about_you_residence_state"
+                    style="width: 100%; padding: 5px; margin-top: 3%;">
+                    <option value=''>Select</option>
+                    <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('information_about_you_residence_state')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                </select>
+        </div>
+    </div>
+    <div class="row form-group" >
+        <div class="form-group col-md-4">
+            <label class="control-label" style="width: 100%; margin-bottom: 5px;">D. Date You Left the United States <br>(mm/dd/yyyy)</label>
+            <div>
+                <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" />
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label class="control-label" style="width: 100%; margin-bottom: 5px;">E. Date You Returned to the <br>United States (mm/dd/yyyy)</label>
+            <div>
+                <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" />
+            </div>
+        </div>
+
+    </div>
+    <div class="row form-group" >
+            <label class="control-label" style="width: 100%; margin:0px 0px 5px 10px">F. Place of Entry Upon Return to the United States</label>
+        <div class="form-group col-md-6">
+            <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+            <div>
+                <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" />
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label class="control-label" style=" margin-bottom: 5px;">State</label>
+                <select class="form-control" name="information_about_you_residence_state"
+                    style="width: 100%; padding: 5px; margin-top: 3%;">
+                    <option value=''>Select</option>
+                    <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('information_about_you_residence_state')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                </select>
+        </div>
+    </div>
 
 
 
@@ -802,6 +895,66 @@ include "intake_header.php";
 
 
 
+
+
+
+        <div class="row"
+        style="display: flex; flex-wrap: wrap;  margin:0px 0px 10px 20px;  justify-items:center; align-items: center; width:98% ">
+        <div class="form-group" style="flex: 1.5; margin-bottom: 10px;">
+            <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+            <div style="width: 100%;">
+                <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>"
+                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            </div>
+        </div>
+        <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+            <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+            <div style="width: 100%;">
+                <select class="form-control" name="information_about_you_residence_state"
+                    style="width: 100%; padding: 5px; margin-top: 3%;">
+                    <option value=''>Select</option>
+                    <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('information_about_you_residence_state')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                </select>
+            </div>
+        </div>
+        <div class="form-group" style="flex: 2; margin-bottom: 10px;">
+            <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country</label>
+            <input type="text" class="form-control" name="" value="<?php echo showData('') ?>"
+                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+        </div>
+    </div>
+
+    <div class=" col-md-4">
+        <label class="control-label " style="margin-left: 15px;">B. Date of Adoption <br>(mm/dd/yyyy)</label>
+        <div class="col-md-12"><input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>"></div>
+    </div>
+    <div class=" col-md-4">
+        <label class="control-label " style="margin-left: 15px;">C. Date Legal Custody Began <br>(mm/dd/yyyy)</label>
+        <div class="col-md-12"><input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>"></div>
+    </div>
+    <div class=" col-md-4" style='margin-bottom:20px'>
+        <label class="control-label " style="margin-left: 15px;">D. Date Physical Custody Began <br>(mm/dd/yyyy)</label>
+        <div class="col-md-12"> <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>"> </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label " style="margin-left: 15px;">19. Were your parents married to each other when you were born (or adopted)?</label> <br>
+        <div class="col-md-2 col-md-offset-6"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+    </div>
+    <div class="form-group">
+        <label class="control-label " style="margin-left: 15px;">20. Did your parents marry after you were born?</label> <br>
+        <div class="col-md-2 col-md-offset-4"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+    </div>
+    <div class="form-group">
+        <label class="control-label " style="margin-left: 15px;">21. Do you regularly reside in the United States in the legal and physical custody of your U.S. citizen parents?</label> <br>
+        <div class="col-md-2 col-md-offset-8"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+    </div>
     <!-- buttons     -->
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
