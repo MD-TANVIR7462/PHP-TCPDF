@@ -1038,7 +1038,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+ <!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 5 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 4. Information About Your U.S. Citizen Biological Father (or Adoptive Father) (continued)</b></h4></div>
              
@@ -1157,7 +1157,7 @@ include "intake_header.php";
         </div>
         <div class=" col-md-6">
             <label class="control-label " >Certificate of Citizenship Number</label>
-            <div class="col-md-12">
+            <div >
                 <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
         </div>
@@ -1174,14 +1174,14 @@ include "intake_header.php";
         </div>
         <div class=" col-md-6">
             <label class="control-label " >Place of Naturalization (Name of Court or USCIS Office Location)</label>
-            <div class="col-md-12">
+            <div >
                 <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
         </div>
         <div class='row col-md-12'>
             <div class=" col-md-6">
                 <label class="control-label" >City or Town</label>
-                <div class="col-md-12">
+                <div>
                     <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                 </div>
             </div>
@@ -1223,14 +1223,15 @@ include "intake_header.php";
               <label class="control-label " style="margin-left: 15px;">7. Has your father ever lost U.S. citizenship or taken any action that would cause loss of U.S. citizenship?</label> <br>
               <div class="col-md-2 col-md-offset-4"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
             </div>
-                  <P style='margin-left:20px'>If you answered “Yes” to <b>Item Number 7</b>., provide an explanation in <b>Part 11. Additional Information</b>.</P>
-                  <P style='margin-left:20px'><b>8. Marital History</b></P>
+                  <P style='margin:0px 0px 5px 20px'>If you answered “Yes” to <b>Item Number 7</b>., provide an explanation in <b>Part 11. Additional Information</b>.</P>
+                  <P style='margin:0px 0px 5px 20px'><b>8. Marital History</b></P> 
             <div class=" col-md-10">
-            <label class="control-label" style='margin-left:20px' >A. How many times has your U.S. citizen father been married (including annulled marriages and marriages to the same person)?</label>
+            <label class="control-label"  >A. How many times has your U.S. citizen father been married (including annulled marriages and marriages to the same person)?</label> <br>
             </div>
              <div class=" col-md-2">
                 <input type="text" class="form-control" name="information_about_you_current_given_first_name"maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
             </div>
+            <br>
 
     <div class="form-group">
         <label style='margin-left:10px'>B. What is your U.S. citizen father's current marital status?</label><br>
@@ -1280,33 +1281,53 @@ include "intake_header.php";
 <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 6 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 4. Information About Your U.S. Citizen Biological Father (or Adoptive Father) (continued)</b></h4></div>
-             
             <div class="row" style="margin-bottom: 20px;">
+                <label class="control-label col-md-12 " style="margin-left: 12px;">9. Information About U.S. Citizen Father's Current Spouse</label>
                 <div class=" col-md-4">
-                    <label class="control-label " style="margin-left: 12px;">2. Date of Birth (mm/dd/yyyy)</label>
+                    <label class="control-label " style="margin-left: 12px;">A. Family Name (Last Name)</label>
                     <div class="col-md-12">
-                        <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
-                    <label class="control-label " style="margin-left: 15px;">3. Country of Birth </label>
+                    <label class="control-label " style="margin-left: 15px;">Given Name (First Name)</label>
                     <div class="col-md-12">
                         <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
-                    <label class="control-label " style="margin-left: 15px;">4. Country of Citizenship or Nationality</label>
+                    <label class="control-label " style="margin-left: 15px;">Middle Name</label>
                     <div class="col-md-12">
                         <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
                     </div>
                 </div>
             </div>
-        <label class="control-label col-md-12">5. Physical Address</label>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 12px;">B. Date of Birth (mm/dd/yyyy)</label>
+                    <div class="col-md-12">
+                        <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                    </div>
+                </div>
+                <div class=" col-md-6">
+                    <label class="control-label " style="margin-left: 15px;">C. Country of Birth </label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                    </div>
+                </div>
+                <div class=" col-md-6">
+                    <label class="control-label " style="margin-left: 15px;">D. Country of Citizenship or Nationality</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
+                    </div>
+                </div>
+            </div>
+        <label class="control-label col-md-12" style='margin-bottom:5px'>E. Spouse's Physical Address</label>
     <div class="form-group">
         <div style="margin-left:1.5%; margin-right: 1.5%;">
             <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
                 <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
-                    <label  style=" margin-bottom: 5px;">Street Number and Name (Type or print "Deceased" and the date of death if your father has passed away.)</label>
+                    <label  style=" margin:0px 0px  5px 5px;">Street Number and Name </label>
                     <div style="width: 100%;">
                         <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
@@ -1386,47 +1407,20 @@ include "intake_header.php";
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-12">6. My father is a U.S. citizen by</label>
-        <div class="col-md-12 ">
-            <div class="form-group">
-                <label class="control-label"><?php echo createCheckbox("Passport") ?>Birth in the United States</label>
-                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>Acquisition after birth through naturalization of alien parents</label> <br>
-                <label class="control-label" ><?php echo createCheckbox("Travel Document") ?>Birth abroad to U.S. citizen parents</label>
-            </div>
+        <div class=" col-md-4">
+            <label class="control-label " >F. Date of Marriage (mm/dd/yyyy)</label>
+                <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+
         </div>
-        <div class=" col-md-6">
-            <label class="control-label " >Certificate of Citizenship Number</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
-            </div>
-        </div>
-        <div class=" col-md-6">
-            <label class="control-label " style="margin-left: 15px;">Alien Registration Number (A-Number) (if any)</label>
-            <div class="col-md-8">
-                <input type="text" class="form-control" name="information_about_you_current_given_first_name"maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
-            </div>
-        </div>
-        <div class="col-md-12 ">
-            <div class="form-group">
-                <label class="control-label"><?php echo createCheckbox("Passport") ?>Naturalization</label>   
-            </div>
-        </div>
-        <div class=" col-md-6">
-            <label class="control-label " >Place of Naturalization (Name of Court or USCIS Office Location)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
-            </div>
-        </div>
+        <label class="control-label col-md-12" >G. Place of Marriage</label>
         <div class='row col-md-12'>
-            <div class=" col-md-6">
+            <div class=" col-md-5">
                 <label class="control-label" >City or Town</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
-                </div>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
-                   <div class="form-group col-md-3" >
+                   <div class=" col-md-2" style='margin-top:1%' >
                       <label class="control-label" >State</label>
-                        <select class="form-control" name="" style="width: 100%; padding: 5px; margin-top: 3%;">
+                        <select class="form-control" name=''>
                             <option value=''>Select</option>
                             <?php
                             foreach ($allDataCountry as $record) {
@@ -1437,76 +1431,71 @@ include "intake_header.php";
                             ?>
                         </select>
                     </div>
+            <div class=" col-md-5">
+                <label class="control-label" >City or Town</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
+            </div>
+            <label class="control-label col-md-12">H. Spouse's Immigration Status</label>
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="control-label"><?php echo createCheckbox("Passport") ?>U.S. Citizen</label>
+                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>Lawful Permanent Resident</label> <br>
+                <label class="control-label" ><?php echo createCheckbox("Travel Document") ?>Other (Explain):</label>
+                <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            </div>
+        </div>
+          <p style='margin-left:11px' class='col-md-12'>If you selected "Other," provide an explanation. If you need extra space to complete this section, use the space provided in <b>Part 11. Additional Information</b>.</p>
+          <div class="form-group">
+              <label class="control-label col-md-12 " >I. Is your U.S. citizen father's current spouse also your biological (or adopted) mother?</label> <br>
+              <div class="col-md-2 col-md-offset-6"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+            </div>
+            <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 5. Information About Your U.S. Citizen Biological Mother (or Adoptive Mother)</b></h4></div>
+            <p style='margin-left:11px' class='col-md-12'><b>NOTE:</b> Complete this section if you are claiming citizenship through a U.S. citizen biological mother (or adoptive mother). <b>Provide
+            information about yourself</b> if you are a U.S. citizen mother applying for a Certificate of Citizenship on behalf of your minor biological or adopted child.</p>
+
+            <div class=" col-md-12" style="margin-top:10px;"><b>1. Current Legal Name of U.S. Citizen Mother </b></p></div>
             <div class="row" style="margin-bottom: 20px;">
                 <div class=" col-md-4">
-                    <label class="control-label " style="margin-left: 12px;">Certificate of Naturalization Number</label>
+                    <label class="control-label " style="margin-left: 12px;">Family Name (Last Name)</label>
                     <div class="col-md-12">
-                        <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
-                    <label class="control-label " style="margin-left: 15px;">A-Number (if any)</label>
+                    <label class="control-label " style="margin-left: 15px;">Given Name (First Name)</label>
                     <div class="col-md-12">
                         <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
-                    <label class="control-label " style="margin-left: 15px;">Date of Naturalization (mm/dd/yyyy)</label>
+                    <label class="control-label " style="margin-left: 15px;">Middle Name</label>
                     <div class="col-md-12">
-                        <input type="date" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-              <label class="control-label " style="margin-left: 15px;">7. Has your father ever lost U.S. citizenship or taken any action that would cause loss of U.S. citizenship?</label> <br>
-              <div class="col-md-2 col-md-offset-4"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 12px;">2. Date of Birth (mm/dd/yyyy)</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 15px;">3. Country of Birth </label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 15px;">4. Country of Citizenship or Nationality</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
+                    </div>
+                </div>
             </div>
-                  <P style='margin-left:20px'>If you answered “Yes” to <b>Item Number 7</b>., provide an explanation in <b>Part 11. Additional Information</b>.</P>
-                  <P style='margin-left:20px'><b>8. Marital History</b></P>
-            <div class=" col-md-10">
-            <label class="control-label" style='margin-left:20px' >A. How many times has your U.S. citizen father been married (including annulled marriages and marriages to the same person)?</label>
-            </div>
-             <div class=" col-md-2">
-                <input type="text" class="form-control" name="information_about_you_current_given_first_name"maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
-            </div>
 
-    <div class="form-group">
-        <label style='margin-left:10px'>B. What is your U.S. citizen father's current marital status?</label><br>
-        <div style="margin-left:2%">
-            <input type="radio" id="hair_bald" name="biographic_info_hair_color" value="bald"
-                <?php echo (showData('biographic_info_hair_color') == 'bald') ? 'checked' : '' ?>>
-            <label for="hair_bald">Single, Never Married</label><br>
-
-            <input type="radio" id="hair_black" name="biographic_info_hair_color" value="black"
-                <?php echo (showData('biographic_info_hair_color') == 'black') ? 'checked' : '' ?>>
-            <label for="hair_black">Married</label><br>
-
-            <input type="radio" id="hair_blond" name="biographic_info_hair_color" value="blond"
-                <?php echo (showData('biographic_info_hair_color') == 'blond') ? 'checked' : '' ?>>
-            <label for="hair_blond">Divorced</label><br>
-
-            <input type="radio" id="hair_brown" name="biographic_info_hair_color" value="brown"
-                <?php echo (showData('biographic_info_hair_color') == 'brown') ? 'checked' : '' ?>>
-            <label for="hair_brown">Widowed</label><br>
-
-            <input type="radio" id="hair_gray" name="biographic_info_hair_color" value="gray"
-                <?php echo (showData('biographic_info_hair_color') == 'gray') ? 'checked' : '' ?>>
-            <label for="hair_gray">Separated</label><br>
-
-            <input type="radio" id="hair_red" name="biographic_info_hair_color" value="red"
-                <?php echo (showData('biographic_info_hair_color') == 'red') ? 'checked' : '' ?>>
-            <label for="hair_red">Marriage Annulled </label><br>
-
-            <input type="radio" id="hair_sandy" name="biographic_info_hair_color" value="sandy"
-                <?php echo (showData('biographic_info_hair_color') == 'sandy') ? 'checked' : '' ?>>
-            <label for="hair_sandy">Other (Explain):</label>
-            <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>"
-                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-        </div>
-    </div>
-        <p style='margin-left:20px'>If you selected "Other," provide an explanation. If you need extra space to complete this section, use the space provided in <b>Part 11. Additional Information.</b></p>
-      </div>
 
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
