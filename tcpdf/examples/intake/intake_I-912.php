@@ -831,7 +831,7 @@ include "intake_header.php";
 			<p><b>NOTE TO ALL REQUESTORS:</b> If you do not completely fill out this request or fail to
 				submit required documents listed in the
 				Instructions, USCIS may deny your request.</p>				
-		</div><!-- end of right side column -->
+		</div>
 	</div>
 	<input type="button" name="previous" class="previous btn btn-default" value="Previous" />
 	<input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />

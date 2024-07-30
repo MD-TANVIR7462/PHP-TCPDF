@@ -7,12 +7,12 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right"><b>Page 1 of 15</b></p>
     <table style="border-collapse: collapse; ">
         <thead>
             <tr>
-                <th colspan="4" style="padding: 5px; text-align: center; " class="bg-info">To be completed by an
+                <th colspan="4" style="padding: 5px; text-align: center; " class="bg-info">To 666 be completed by an
                     Attorney or Accredited Representative (if any).</th>
             </tr>
         </thead>
@@ -28,10 +28,10 @@ include "intake_header.php";
                         <label class="control-label ">Attorney State Bar Number (if applicable)</label>
                         <input type="text" class="form-control" value="" disabled>
                     </div>
-                    <!-- <div>
+                    <div>
 						<p>Attorney State Bar Number (if applicable)</p>
 						<input type="text" class="form-control" value="<?php echo $attorneyData->bar_number?>" disabled>
-					</div> -->
+					</div>
                 </td>
                 <td style="padding: 5px;">
                     <div>
@@ -39,10 +39,10 @@ include "intake_header.php";
                             (if any)</label>
                         <input type="text" class="form-control" value="" disabled>
                     </div>
-                    <!-- <div>
+                    <div>
 						<p>Attorney or Accredited Representative USCIS Online Account Number (if any)</p>
 						<input type="text" class="form-control" value="<?php echo $attorneyData->uscis_online_account_number?>" disabled >
-					</div> -->
+					</div>
                 </td>
             </tr>
         </tbody>
@@ -224,7 +224,7 @@ include "intake_header.php";
     </div>
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
@@ -1278,7 +1278,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 6 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 4. Information About Your U.S. Citizen Biological Father (or Adoptive Father) (continued)</b></h4></div>
             <div class="row" style="margin-bottom: 20px;">
@@ -1405,8 +1405,7 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
-    </div>
-    <div class="form-group">
+      </div>
         <div class=" col-md-4">
             <label class="control-label " >F. Date of Marriage (mm/dd/yyyy)</label>
                 <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
@@ -1432,7 +1431,7 @@ include "intake_header.php";
                         </select>
                     </div>
             <div class=" col-md-5">
-                <label class="control-label" >City or Town</label>
+                <label class="control-label" >Country</label>
                       <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
             </div>
@@ -1498,6 +1497,1150 @@ include "intake_header.php";
 
 
 
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 7 --------------------------------
+------------------------------------------------------------------------>
+<!-- <fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;""><b>Page 7 of 15</b></p>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 5. Information About Your U.S. Citizen Biological Mother (or Adoptive Mother) (continued)</b></h4></div>
+            
+
+        <label class="control-label col-md-12" style='margin-bottom:5px'>5. Physical Address</label>
+    <div class="form-group">
+        <div style="margin-left:1.5%; margin-right: 1.5%;">
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
+                    <label  style=" margin:0px 0px  5px 5px;">Street Number and Name (Type or print "Deceased" and the date of death if your mother has passed away.) </label>
+                    <div style="width: 100%;">
+                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                    <div style="flex: 1; margin-left: 5%;">
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
+                        </label>
+                    </div>
+                </div>
+                <div style="flex: 0.6;">
+                    <label class="control-label">Number</label>
+                    <input type="text" class="form-control" name="information_about_you_residence_apt_ste_flr_value" maxlength="5" value="<?php echo showData('information_about_you_residence_apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                    <div style="width: 100%;">
+                        <select class="form-control" name="" style="width: 100%; padding: 5px; margin-top: 3%;">
+                            <option value=''>Select</option>
+                            <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code + 4</label>
+                <div class='d-flexible'>
+                    <div style="width: 50%;">
+                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
+                    </div>
+                    <div style="width: 40%;">
+                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province (foreign address only)</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code (foreign address only)</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="9" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country (foreign address only)</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label class="control-label col-md-12">6. My mother is a U.S. citizen by</label>
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="control-label"><?php echo createCheckbox("Passport") ?>Birth in the United States</label>
+                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>Acquisition after birth through naturalization of alien parents</label> <br>
+                <label class="control-label" ><?php echo createCheckbox("Travel Document") ?>Birth abroad to U.S. citizen parents</label>
+            </div>
+        </div>
+        <div class=" col-md-6">
+            <label class="control-label " >Certificate of Citizenship Number</label>
+            <div >
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+        </div>
+        <div class=" col-md-6">
+            <label class="control-label " >A-Number (if any)</label>
+            <div >
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+        </div>
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="control-label"><?php echo createCheckbox("Passport") ?>Naturalization</label>   
+            </div>
+        </div>
+        <div class=" col-md-6">
+            <label class="control-label " >Place of Naturalization (Name of Court or USCIS Office Location)</label>
+            <div >
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+        </div>
+        <div class='row col-md-12'>
+            <div class=" col-md-6">
+                <label class="control-label" >City or Town</label>
+                <div>
+                    <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                </div>
+            </div>
+                   <div class="form-group col-md-3" >
+                      <label class="control-label" >State</label>
+                        <select class="form-control" name="" style="width: 100%; padding: 5px; margin-top: 3%;">
+                            <option value=''>Select</option>
+                            <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 12px;">Certificate of Naturalization Number</label>
+                    <div class="col-md-12">
+                        <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 15px;">A-Number (if any)</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 15px;">Date of Naturalization (mm/dd/yyyy)</label>
+                    <div class="col-md-12">
+                        <input type="date" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label " style="margin-left: 15px;">7. Has your mother ever lost U.S. citizenship or taken any action that would cause loss of U.S. citizenship?</label> <br>
+              <div class="col-md-2 col-md-offset-4"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+            </div>
+                  <P style='margin:0px 0px 5px 20px'>If you answered “Yes” to <b>Item Number 7</b>., provide an explanation in <b>Part 11. Additional Information</b>.</P>
+                  <P style='margin:0px 0px 5px 20px'><b>8. Marital History</b></P> 
+            <div class=" col-md-10">
+            <label class="control-label"  >A. How many times has your U.S. citizen mother been married (including annulled marriages and marriages to the same person)?</label> <br>
+            </div>
+             <div class=" col-md-2">
+                <input type="text" class="form-control" name="information_about_you_current_given_first_name"maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+            </div>
+            <br>
+
+    <div class="form-group">
+        <label style='margin-left:10px'>B. What is your U.S. citizen mother's current marital status?  </label><br>
+        <div style="margin-left:2%">
+            <input type="radio" id="hair_bald" name="biographic_info_hair_color" value="bald"
+                <?php echo (showData('biographic_info_hair_color') == 'bald') ? 'checked' : '' ?>>
+            <label for="hair_bald">Single, Never Married</label><br>
+
+            <input type="radio" id="hair_black" name="biographic_info_hair_color" value="black"
+                <?php echo (showData('biographic_info_hair_color') == 'black') ? 'checked' : '' ?>>
+            <label for="hair_black">Married</label><br>
+
+            <input type="radio" id="hair_blond" name="biographic_info_hair_color" value="blond"
+                <?php echo (showData('biographic_info_hair_color') == 'blond') ? 'checked' : '' ?>>
+            <label for="hair_blond">Divorced</label><br>
+
+            <input type="radio" id="hair_brown" name="biographic_info_hair_color" value="brown"
+                <?php echo (showData('biographic_info_hair_color') == 'brown') ? 'checked' : '' ?>>
+            <label for="hair_brown">Widowed</label><br>
+
+            <input type="radio" id="hair_gray" name="biographic_info_hair_color" value="gray"
+                <?php echo (showData('biographic_info_hair_color') == 'gray') ? 'checked' : '' ?>>
+            <label for="hair_gray">Separated</label><br>
+
+            <input type="radio" id="hair_red" name="biographic_info_hair_color" value="red"
+                <?php echo (showData('biographic_info_hair_color') == 'red') ? 'checked' : '' ?>>
+            <label for="hair_red">Marriage Annulled </label><br>
+
+            <input type="radio" id="hair_sandy" name="biographic_info_hair_color" value="sandy"
+                <?php echo (showData('biographic_info_hair_color') == 'sandy') ? 'checked' : '' ?>>
+            <label for="hair_sandy">Other (Explain):</label>
+            <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>"
+                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+        </div>
+    </div>
+        <p style='margin-left:20px'>If you selected "Other," provide an explanation. If you need extra space to complete this section, use the space provided in <b>Part 11. Additional Information.</b></p>
+      </div>
+
+      <div class=" col-md-12" style="margin-top:10px;"><b>9. Information About U.S. Citizen Mother's Current Spouse </b></p></div>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 12px;">A. Family Name (Last Name)</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 15px;">Given Name (First Name)</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 15px;">Middle Name</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 12px;">B. Date of Birth (mm/dd/yyyy)</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <label class="control-label " style="margin-left: 15px;">C. Country of Birth </label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                    </div>
+                </div>
+            </div>
+
+
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 8 --------------------------------
+------------------------------------------------------------------------>
+<!-- <fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;""><b>Page 8 of 15</b></p>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 5. Information About Your U.S. Citizen Biological Mother (or Adoptive Mother) (continued)</b></h4></div>
+    <div class=" col-md-6">
+            <label class="control-label " >D. Country of Citizenship or Nationality</label>
+            <div >
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+    </div>
+        <label class="control-label col-md-12" style='margin-bottom:5px'>E. Spouse's Physical Address</label>
+    <div class="form-group">
+        <div style="margin-left:1.5%; margin-right: 1.5%;">
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
+                    <label  style=" margin:0px 0px  5px 5px;">Street Number and Name</label>
+                    <div style="width: 100%;">
+                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                    <div style="flex: 1; margin-left: 5%;">
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
+                        </label>
+                    </div>
+                </div>
+                <div style="flex: 0.6;">
+                    <label class="control-label">Number</label>
+                    <input type="text" class="form-control" name="information_about_you_residence_apt_ste_flr_value" maxlength="5" value="<?php echo showData('information_about_you_residence_apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                    <div style="width: 100%;">
+                        <select class="form-control" name="" style="width: 100%; padding: 5px; margin-top: 3%;">
+                            <option value=''>Select</option>
+                            <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code + 4</label>
+                <div class='d-flexible'>
+                    <div style="width: 50%;">
+                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
+                    </div>
+                    <div style="width: 40%;">
+                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province (foreign address only)</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code (foreign address only)</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="9" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country (foreign address only)</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <label class="control-label " >F. Date of Marriage (mm/dd/yyyy)</label>
+                <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+
+        </div>
+
+      </div>
+      
+            <label class="control-label col-md-12" >G. Place of Marriage</label>
+        <div class='row col-md-12'>
+            <div class=" col-md-5">
+                <label class="control-label" >City or Town</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+                   <div class=" col-md-2" style='margin-top:1%' >
+                      <label class="control-label" >State</label>
+                        <select class="form-control" name=''>
+                            <option value=''>Select</option>
+                            <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+            <div class=" col-md-5">
+                <label class="control-label" >Country</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+            </div>
+            <label class="control-label col-md-12">H. Spouse's Immigration Status</label>
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="control-label"><?php echo createCheckbox("Passport") ?>U.S. Citizen</label>
+                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>Lawful Permanent Resident</label> <br>
+                <label class="control-label" ><?php echo createCheckbox("Travel Document") ?>Other (Explain):</label>
+                <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            </div>
+        </div>
+        <div class="form-group">
+              <label class="control-label col-md-12 " >I. Is your U.S. citizen mother's current spouse also your biological (or adopted) father?</label> <br>
+              <div class="col-md-2 col-md-offset-6"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+        </div>
+        <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 6. Physical Presence in the United States From Birth Until Filing of Form N-600</b></h4></div>
+            <p style='margin-left:11px' class='col-md-12'><b>NOTE:</b> Only applicants born outside the United States claiming to have been born U.S. citizens are required to provide all the dates
+    when your U.S. citizen biological father or U.S. citizen biological mother resided in the United States. <b>Include all dates from your
+    birth until the date you file your Form N-600</b>.</p>
+
+    <label class="control-label col-md-12">1. Indicate whether this information relates to your U.S. citizen father or mother</label>
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="control-label"><?php echo createCheckbox("Passport") ?>U.S. Citizen Father</label>
+                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>U.S. Citizen Mother</label> <br>
+            </div>
+            </div>
+            <label class="control-label col-md-12">2. Physical Presence in the United States </label>
+            <div class='row col-md-12'>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">A.</span> From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+   
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">B.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+        
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">C.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+     
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">D.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+       
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">E.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+        
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">F.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+     
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">G.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+       
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">H.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+    
+      </div>
+  </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 9 --------------------------------
+------------------------------------------------------------------------>
+<!-- <fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;""><b>Page 9 of 15</b></p>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 5. Information About Your U.S. Citizen Biological Mother (or Adoptive Mother) (continued)</b></h4></div>
+    <div class=" col-md-6">
+            <label class="control-label " >D. Country of Citizenship or Nationality</label>
+            <div >
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+    </div>
+        <label class="control-label col-md-12" style='margin-bottom:5px'>E. Spouse's Physical Address</label>
+    <div class="form-group">
+        <div style="margin-left:1.5%; margin-right: 1.5%;">
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
+                    <label  style=" margin:0px 0px  5px 5px;">Street Number and Name</label>
+                    <div style="width: 100%;">
+                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                    <div style="flex: 1; margin-left: 5%;">
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
+                        </label>
+                    </div>
+                </div>
+                <div style="flex: 0.6;">
+                    <label class="control-label">Number</label>
+                    <input type="text" class="form-control" name="information_about_you_residence_apt_ste_flr_value" maxlength="5" value="<?php echo showData('information_about_you_residence_apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                    <div style="width: 100%;">
+                        <select class="form-control" name="" style="width: 100%; padding: 5px; margin-top: 3%;">
+                            <option value=''>Select</option>
+                            <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code + 4</label>
+                <div class='d-flexible'>
+                    <div style="width: 50%;">
+                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
+                    </div>
+                    <div style="width: 40%;">
+                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province (foreign address only)</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code (foreign address only)</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="9" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country (foreign address only)</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <label class="control-label " >F. Date of Marriage (mm/dd/yyyy)</label>
+                <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+
+        </div>
+
+      </div>
+      
+            <label class="control-label col-md-12" >G. Place of Marriage</label>
+        <div class='row col-md-12'>
+            <div class=" col-md-5">
+                <label class="control-label" >City or Town</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+                   <div class=" col-md-2" style='margin-top:1%' >
+                      <label class="control-label" >State</label>
+                        <select class="form-control" name=''>
+                            <option value=''>Select</option>
+                            <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+            <div class=" col-md-5">
+                <label class="control-label" >Country</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+            </div>
+            <label class="control-label col-md-12">H. Spouse's Immigration Status</label>
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="control-label"><?php echo createCheckbox("Passport") ?>U.S. Citizen</label>
+                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>Lawful Permanent Resident</label> <br>
+                <label class="control-label" ><?php echo createCheckbox("Travel Document") ?>Other (Explain):</label>
+                <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            </div>
+        </div>
+        <div class="form-group">
+              <label class="control-label col-md-12 " >I. Is your U.S. citizen mother's current spouse also your biological (or adopted) father?</label> <br>
+              <div class="col-md-2 col-md-offset-6"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+        </div>
+        <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 6. Physical Presence in the United States From Birth Until Filing of Form N-600</b></h4></div>
+            <p style='margin-left:11px' class='col-md-12'><b>NOTE:</b> Only applicants born outside the United States claiming to have been born U.S. citizens are required to provide all the dates
+    when your U.S. citizen biological father or U.S. citizen biological mother resided in the United States. <b>Include all dates from your
+    birth until the date you file your Form N-600</b>.</p>
+
+    <label class="control-label col-md-12">1. Indicate whether this information relates to your U.S. citizen father or mother</label>
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="control-label"><?php echo createCheckbox("Passport") ?>U.S. Citizen Father</label>
+                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>U.S. Citizen Mother</label> <br>
+            </div>
+            </div>
+            <label class="control-label col-md-12">2. Physical Presence in the United States </label>
+            <div class='row col-md-12'>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">A.</span> From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+   
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">B.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+        
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">C.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+     
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">D.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+       
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">E.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+        
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">F.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+     
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">G.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+       
+      </div>
+      <div class="col-md-6">
+                
+            <div class=" col-md-6">
+                <label class="control-label" ><span style="margin-right:8px">H.</span>From (mm/dd/yyyy) </label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+ 
+            <div class=" col-md-6">
+                <label class="control-label" >To (mm/dd/yyyy)</label>
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            </div>
+    
+      </div>
+  </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+
+<!----------------------------------------------------------------------
+-------------------------------- page 10 --------------------------------
+------------------------------------------------------------------------>
+<!-- <fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;""><b>Page 10 of 15</b></p>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 8. Applicant's Statement, Contact Information, Certification, and Signature (continued)</b></h4></div>
+            <label class="control-label " >I understand that USCIS may require me to appear for an appointment to take my biometrics (fingerprints, photograph, and/or
+            signature) and, at that time, if I am required to provide biometrics, I will be required to sign an oath reaffirming that:</label>
+    <p style="padding:5px 0px 7px 25px"><b>1)</b> I reviewed and provided or authorized all of the information in my application;</p>
+    <p style="padding:0px 0px 7px 25px"><b>2)</b> I understood all of the information contained in, and submitted with, my application; and </p>
+    <p style="padding:0px 0px 7px 25px"><b>3)</b> All of this information was complete, true, and correct at the time of filing.</p>
+    <label class="control-label " >I certify, under penalty of perjury, that I provided or authorized all of the information in my application, I understand all of the
+    information contained in, and submitted with, my application, and that all of this information is complete, true, and correct.</label>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Applicant's Signature</i></b></h4></div>
+
+ <div class="row col-md-12">
+
+ <div class="col-md-8">
+				<label class="control-label ">6. Applicant's Signature</label>
+					<input type="text" class="form-control" disabled />
+	</div>
+			<div class="col-md-4">
+				<label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
+						<input type="date" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+
+			<p><b>NOTE TO ALL APPLICANTS:</b> If you do not completely fill out this application or fail to submit required documents listed in the Instructions, USCIS may deny your application</p>	
+
+            <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 9. Interpreter's Contact Information, Certification, and Signature</b></h4></div>
+
+    <label class="control-label " >Provide the following information about the interpreter.</label>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Interpreter's Full Name</i></b></h4></div>
+
+    <div class="col-md-6">
+				<label class="control-label ">1. Interpreter's Family Name (Last Name)</label>
+					<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>" />
+	</div>
+			<div class="col-md-6">
+				<label class="control-label ">Interpreter's Given Name (First Name)</label>
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+			<div class="col-md-6">
+				<label class="control-label ">2. Interpreter's Business or Organization Name (if any)</label>
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+            <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Interpreter's Mailing Address</i></b></h4></div>
+
+    </div>
+    <div class="form-group">
+        <div style="margin-left:1.5%; margin-right: 1.5%;">
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
+                    <label  style=" margin:5px 0px  5px 5px;">3. Street Number and Name</label>
+                    <div style="width: 100%;">
+                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                    <div style="flex: 1; margin-left: 5%;">
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
+                        </label>
+                    </div>
+                </div>
+                <div style="flex: 0.6;">
+                    <label class="control-label">Number</label>
+                    <input type="text" class="form-control" name="information_about_you_residence_apt_ste_flr_value" maxlength="5" value="<?php echo showData('information_about_you_residence_apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                    <div style="width: 100%;">
+                        <select class="form-control" name="" style="width: 100%; padding: 5px; margin-top: 3%;">
+                            <option value=''>Select</option>
+                            <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code + 4</label>
+                <div class='d-flexible'>
+                    <div style="width: 50%;">
+                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
+                    </div>
+                    <div style="width: 40%;">
+                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province </label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code </label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="9" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country </label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="row col-md-12" style='margin-bottom:10px'>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Interpreter's Contact Information</i></b></h4></div>
+
+    <div class="col-md-6">
+				<label class="control-label ">4. Interpreter's Daytime Telephone Number</label>
+					<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>" />
+	</div>
+			<div class="col-md-6">
+				<label class="control-label ">5. Interpreter's Mobile Telephone Number (if any)</label>
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+			<div class="col-md-6">
+				<label class="control-label ">6. Interpreter's Email Address (if any)</label>
+						<input type="email" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+    </div>
+    </div>
+
+
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 11 --------------------------------
+------------------------------------------------------------------------>
+<!-- <fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;""><b>Page 11 of 15</b></p>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 8. Applicant's Statement, Contact Information, Certification, and Signature (continued)</b></h4></div>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Interpreter's Certification</i></b></h4></div>
+            <label class="control-label " >I certify, under penalty of perjury, that:</label><br>
+   
+    <label class="control-label " >I am fluent in English and</label>
+    <input type="text" class="form-control col-md-4" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+    <label class="control-label " >which is the same language specified in Part 8.,
+    Item B. in Item Number 1., and I have read to this applicant in the identified language every question and instruction on this
+    application and his or her answer to every question. The applicant informed me that he or she understands every instruction, question,
+    and answer on the application, including the Applicant's Certification, and has verified the accuracy of every answer.</label>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Interpreter's Signature</i></b></h4></div>
+
+    <div class="row col-md-12">
+
+    <div class="col-md-8">
+				<label class="control-label ">7. Interpreter's Signature</label>
+					<input type="text" class="form-control" disabled />
+	</div>
+			<div class="col-md-4">
+				<label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
+						<input type="date" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+            <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 10. Contact Information, Declaration, and Signature of the Person Preparing this Application, if Other Than the Applicant </b></h4></div>
+
+    <label class="control-label " >Provide the following information about the preparer.</label>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Preparer's Full Name</i></b></h4></div>
+
+    <div class="col-md-6">
+				<label class="control-label ">1. Preparer's Family Name (Last Name)</label>
+					<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>" />
+	</div>
+			<div class="col-md-6">
+				<label class="control-label ">Preparer's Given Name (First Name)</label>
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+			<div class="col-md-6">
+				<label class="control-label ">2. Preparer's Business or Organization Name (if any)</label>
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+            <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Preparer's Mailing Address</i></b></h4></div>
+
+    </div>
+    <div class="form-group">
+        <div style="margin-left:1.5%; margin-right: 1.5%;">
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
+                    <label  style=" margin:5px 0px  5px 5px;">3. Street Number and Name</label>
+                    <div style="width: 100%;">
+                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                    <div style="flex: 1; margin-left: 5%;">
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
+                        </label>
+                    </div>
+                </div>
+                <div style="flex: 0.6;">
+                    <label class="control-label">Number</label>
+                    <input type="text" class="form-control" name="information_about_you_residence_apt_ste_flr_value" maxlength="5" value="<?php echo showData('information_about_you_residence_apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                    <div style="width: 100%;">
+                        <select class="form-control" name="" style="width: 100%; padding: 5px; margin-top: 3%;">
+                            <option value=''>Select</option>
+                            <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code + 4</label>
+                <div class='d-flexible'>
+                    <div style="width: 50%;">
+                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
+                    </div>
+                    <div style="width: 40%;">
+                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province </label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code </label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="9" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country </label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="row col-md-12" style='margin-bottom:10px'>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Preparer's Contact Information</i></b></h4></div>
+
+    <div class="col-md-6">
+				<label class="control-label ">4. Preparer's Daytime Telephone Number</label>
+					<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>" />
+	</div>
+			<div class="col-md-6">
+				<label class="control-label ">5. Preparer's Mobile Telephone Number (if any)</label>
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+			<div class="col-md-6">
+				<label class="control-label ">6. Preparer's Email Address (if any)</label>
+						<input type="email" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+    </div>
+    </div>
+
+
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 12 --------------------------------
+------------------------------------------------------------------------>
+<fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;""><b>Page 12 of 15</b></p>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 10. Contact Information. Declaration, and Signature of the Person Preparing this Application, if Other Than the Applicant (continued)</b></h4></div>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Preparer's Statement</i></b></h4></div>
+    <div class="form-group">
+	
+				<label class="control-label col-md-12">7. A.
+                <?php echo createCheckbox("")?> I am not an attorney or accredited representative but have prepared this application on behalf of the applicant and with the applicant's consent.
+				</label>
+	</div>
+    <div class="form-group">
+				<label class="control-label col-md-12" style="margin-left:10px">B.<?php echo createCheckbox("")?> I am an attorney or accredited representative and my representation of the applicant in this case <br></label>
+				<div class="d-flexible col-md-12">
+                <label class="control-label " style="margin-left:10px"><?php echo createCheckbox("")?> extends </label>
+				<label class="control-label "><?php echo createCheckbox("")?> does not extend beyond the preparation of this application.</label>
+                </div>
+	</div>
+    <div class="form-group">
+		<p><b>NOTE:</b> If you are an attorney or accredited representative whose representation extends beyond preparation of this
+application, you may be obliged to submit a completed Form G-28, Notice of Entry of Appearance as Attorney or
+Accredited Representative, with this application.</p>
+	</div>
+
+			
+			
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Preparer's Certification</i></b></h4></div>
+    <p class="form-group">
+   <b> By my signature, I certify, under penalty of perjury, that I prepared this application at the request of the applicant. The applicant then
+reviewed this completed application and informed me that he or she understands all of the information contained in, and submitted
+with, his or her application, including the Applicant's Certification, and that all of this information is complete, true, and correct. I
+completed this application based only on information that the applicant provided to me or authorized me to obtain or use</b>
+    </p>
+    <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Preparer's Signature</i></b></h4></div>
+
+    <div class="row col-md-12">
+
+    <div class="col-md-8">
+				<label class="control-label ">7. Interpreter's Signature</label>
+					<input type="text" class="form-control" disabled />
+	</div>
+			<div class="col-md-4" style="margin-bottom:10px">
+				<label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
+						<input type="date" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+			</div>
+            
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />

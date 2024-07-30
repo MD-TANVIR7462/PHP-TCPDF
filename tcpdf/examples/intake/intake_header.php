@@ -1,11 +1,16 @@
 <?php
-$singleDataNote= json_decode(file_get_contents('http://demolms.siscotech.com/views/work_file/apiData.php'));
-
+// $singleDataNote= json_decode(file_get_contents('http://demolms.siscotech.com/views/work_file/apiData.php'));
+$singleDataNote= '';
 function showData($name){
 	global $singleDataNote;
 	if(isset($singleDataNote->$name)) return $singleDataNote->$name;
 	else return '';
 }
+// function showData($name){
+// 	global $singleDataNote;
+// 	if(isset($singleDataNote->$name)) return $singleDataNote->$name;
+// 	else return '';
+// }
 
 function createCheckbox($fieldName,$fieldTitle=""){
 	
@@ -47,12 +52,12 @@ function createRadio($fieldName){
 <meta name="google" content="notranslate"/>
 <meta name="robots" content="noindex,nofollow">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <!-- Toastr -->
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>  
 
 <style type="text/css">
 #registration_form fieldset:not(:first-of-type) {
