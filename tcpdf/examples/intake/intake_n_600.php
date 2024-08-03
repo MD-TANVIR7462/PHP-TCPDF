@@ -223,7 +223,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 2 of 15</b></p>
    <div class=" form-group">
     <div class="form-group" style="margin-bottom: 10px;">
@@ -608,11 +608,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 3 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;">
     <h4><b>Part 2. Information About You (continued)</b></h4>
@@ -783,11 +783,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 4 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 2. Information About You (continued)</b></h4></div>
     <div class="form-group">
@@ -1029,11 +1029,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
 ------------------------------------------------------------------------>
- <fieldset class="setpage">
+ <!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 5 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 4. Information About Your U.S. Citizen Biological Father (or Adoptive Father) (continued)</b></h4></div>
              
@@ -1041,13 +1041,13 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 12px;">2. Date of Birth (mm/dd/yyyy)</label>
                     <div class="col-md-12">
-                        <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                        <input type="date" class="form-control" name="information_about_you_current_family_last_name"  value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">3. Country of Birth </label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="25" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
@@ -1064,7 +1064,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
                     <label  style=" margin-bottom: 5px;">Street Number and Name (Type or print "Deceased" and the date of death if your father has passed away.)</label>
                     <div style="width: 100%;">
-                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" maxlength="34" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
@@ -1089,7 +1089,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="40" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -1114,7 +1114,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
                     </div>
                     <div style="width: 40%;">
-                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="4" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -1123,7 +1123,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province (foreign address only)</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="20" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -1135,7 +1135,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country (foreign address only)</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="34" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -1153,13 +1153,13 @@ include "intake_header.php";
         <div class=" col-md-6">
             <label class="control-label " >Certificate of Citizenship Number</label>
             <div >
-                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="30" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
         </div>
         <div class=" col-md-6">
             <label class="control-label " style="margin-left: 15px;">Alien Registration Number (A-Number) (if any)</label>
             <div class="col-md-8">
-                <input type="text" class="form-control" name="information_about_you_current_given_first_name"maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                <input type="text" class="form-control" name="information_about_you_current_given_first_name"maxlength="9" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
             </div>
         </div>
         <div class="col-md-12 ">
@@ -1170,7 +1170,7 @@ include "intake_header.php";
         <div class=" col-md-6">
             <label class="control-label " >Place of Naturalization (Name of Court or USCIS Office Location)</label>
             <div >
-                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="40" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
         </div>
         <div class='row col-md-12'>
@@ -1198,19 +1198,19 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 12px;">Certificate of Naturalization Number</label>
                     <div class="col-md-12">
-                        <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">A-Number (if any)</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="9" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">Date of Naturalization (mm/dd/yyyy)</label>
                     <div class="col-md-12">
-                        <input type="date" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
+                        <input type="date" class="form-control" name="information_about_you_current_middle_name"  value="<?php echo showData('information_about_you_current_middle_name') ?>">
                     </div>
                 </div>
             </div>
@@ -1224,7 +1224,7 @@ include "intake_header.php";
             <label class="control-label"  >A. How many times has your U.S. citizen father been married (including annulled marriages and marriages to the same person)?</label> <br>
             </div>
              <div class=" col-md-2">
-                <input type="text" class="form-control" name="information_about_you_current_given_first_name"maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                <input type="text" class="form-control" name="information_about_you_current_given_first_name"maxlength="5" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
             </div>
             <br>
 
@@ -1258,7 +1258,7 @@ include "intake_header.php";
             <input type="radio" id="other2" name="biographic_info_hair_color" value="sandy"
                 <?php echo (showData('biographic_info_hair_color') == 'sandy') ? 'checked' : '' ?>>
             <label for="other2">Other (Explain):</label>
-            <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>"
+            <input type="text" class="form-control" name="" maxlength="82" value="<?php echo showData('') ?>"
                 style="width: 100%; padding: 5px; margin-bottom: 5px;" />
         </div>
     </div>
@@ -1269,11 +1269,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 6 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 4. Information About Your U.S. Citizen Biological Father (or Adoptive Father) (continued)</b></h4></div>
             <div class="row" style="margin-bottom: 20px;">
@@ -1281,7 +1281,7 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 12px;">A. Family Name (Last Name)</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="30" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
@@ -1293,7 +1293,7 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">Middle Name</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="25" value="<?php echo showData('information_about_you_current_middle_name') ?>">
                     </div>
                 </div>
             </div>
@@ -1301,19 +1301,19 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 12px;">B. Date of Birth (mm/dd/yyyy)</label>
                     <div class="col-md-12">
-                        <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                        <input type="date" class="form-control" name="information_about_you_current_family_last_name"  value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-6">
                     <label class="control-label " style="margin-left: 15px;">C. Country of Birth </label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="35" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-6">
                     <label class="control-label " style="margin-left: 15px;">D. Country of Citizenship or Nationality</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="34" value="<?php echo showData('information_about_you_current_middle_name') ?>">
                     </div>
                 </div>
             </div>
@@ -1324,7 +1324,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
                     <label  style=" margin:0px 0px  5px 5px;">Street Number and Name </label>
                     <div style="width: 100%;">
-                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" maxlength="34" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
@@ -1349,7 +1349,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="40" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -1374,7 +1374,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
                     </div>
                     <div style="width: 40%;">
-                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="4" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -1383,7 +1383,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province (foreign address only)</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="20" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -1395,7 +1395,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country (foreign address only)</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="34" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -1410,7 +1410,7 @@ include "intake_header.php";
         <div class='row col-md-12'>
             <div class=" col-md-5">
                 <label class="control-label" >City or Town</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="30" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
                    <div class=" col-md-2" style='margin-top:1%' >
                       <label class="control-label" >State</label>
@@ -1427,7 +1427,7 @@ include "intake_header.php";
                     </div>
             <div class=" col-md-5">
                 <label class="control-label" >Country</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="37" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
             </div>
             <label class="control-label col-md-12">H. Spouse's Immigration Status</label>
@@ -1436,7 +1436,7 @@ include "intake_header.php";
                 <label class="control-label"><?php echo createCheckbox("Passport") ?>U.S. Citizen</label>
                 <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>Lawful Permanent Resident</label> <br>
                 <label class="control-label" ><?php echo createCheckbox("Travel Document") ?>Other (Explain):</label>
-                <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                <input type="text" class="form-control" name="" maxlength="81" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
           <p style='margin-left:11px' class='col-md-12'>If you selected "Other," provide an explanation. If you need extra space to complete this section, use the space provided in <b>Part 11. Additional Information</b>.</p>
@@ -1473,7 +1473,7 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 12px;">2. Date of Birth (mm/dd/yyyy)</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                        <input type="date" class="form-control" name="information_about_you_current_family_last_name"  value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
@@ -1485,7 +1485,7 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">4. Country of Citizenship or Nationality</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="27" value="<?php echo showData('information_about_you_current_middle_name') ?>">
                     </div>
                 </div>
             </div>
@@ -1495,11 +1495,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 7 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 7 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 5. Information About Your U.S. Citizen Biological Mother (or Adoptive Mother) (continued)</b></h4></div>
             
@@ -1511,7 +1511,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
                     <label  style=" margin:0px 0px  5px 5px;">Street Number and Name (Type or print "Deceased" and the date of death if your mother has passed away.) </label>
                     <div style="width: 100%;">
-                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" maxlength="34" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
@@ -1536,7 +1536,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="40" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -1561,7 +1561,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
                     </div>
                     <div style="width: 40%;">
-                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="4" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -1570,7 +1570,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province (foreign address only)</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="20" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -1582,7 +1582,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country (foreign address only)</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="34" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -1601,13 +1601,13 @@ include "intake_header.php";
         <div class=" col-md-6">
             <label class="control-label " >Certificate of Citizenship Number</label>
             <div >
-                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="30" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
         </div>
         <div class=" col-md-6">
             <label class="control-label " >A-Number (if any)</label>
             <div >
-                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="9" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
         </div>
         <div class="col-md-12 ">
@@ -1618,14 +1618,14 @@ include "intake_header.php";
         <div class=" col-md-6">
             <label class="control-label " >Place of Naturalization (Name of Court or USCIS Office Location)</label>
             <div >
-                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="40" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
         </div>
         <div class='row col-md-12'>
             <div class=" col-md-6">
                 <label class="control-label" >City or Town</label>
                 <div>
-                    <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                    <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="34" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                 </div>
             </div>
                    <div class="form-group col-md-3" >
@@ -1646,13 +1646,13 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 12px;">Certificate of Naturalization Number</label>
                     <div class="col-md-12">
-                        <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="30" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">A-Number (if any)</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="9" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
@@ -1664,7 +1664,7 @@ include "intake_header.php";
             </div>
             <div class="form-group">
               <label class="control-label " style="margin-left: 15px;">7. Has your mother ever lost U.S. citizenship or taken any action that would cause loss of U.S. citizenship?</label> <br>
-              <div class="col-md-2 col-md-offset-4"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
+              <div class="col-md-2 col-md-offset-8"><?php echo createRadio("additional_info_us_citizen_status") ?></div>
             </div>
                   <P style='margin:0px 0px 5px 20px'>If you answered “Yes” to <b>Item Number 7</b>., provide an explanation in <b>Part 11. Additional Information</b>.</P>
                   <P style='margin:0px 0px 5px 20px'><b>8. Marital History</b></P> 
@@ -1672,7 +1672,7 @@ include "intake_header.php";
             <label class="control-label"  >A. How many times has your U.S. citizen mother been married (including annulled marriages and marriages to the same person)?</label> <br>
             </div>
              <div class=" col-md-2">
-                <input type="text" class="form-control" name="information_about_you_current_given_first_name"maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                <input type="text" class="form-control" name="information_about_you_current_given_first_name"maxlength="5" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
             </div>
             <br>
 
@@ -1706,8 +1706,7 @@ include "intake_header.php";
             <input type="radio" id="Other" name="biographic_info_hair_color" value="sandy"
                 <?php echo (showData('biographic_info_hair_color') == 'sandy') ? 'checked' : '' ?>>
             <label for="Other">Other (Explain):</label>
-            <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>"
-                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            <input type="text" class="form-control" name="" maxlength="81" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" />
         </div>
     </div>
         <p style='margin-left:20px'>If you selected "Other," provide an explanation. If you need extra space to complete this section, use the space provided in <b>Part 11. Additional Information.</b></p>
@@ -1718,7 +1717,7 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 12px;">A. Family Name (Last Name)</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="30" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
@@ -1730,7 +1729,7 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">Middle Name</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="25" value="<?php echo showData('information_about_you_current_middle_name') ?>">
                     </div>
                 </div>
             </div>
@@ -1738,13 +1737,13 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 12px;">B. Date of Birth (mm/dd/yyyy)</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                        <input type="date" class="form-control" name="information_about_you_current_family_last_name"  value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
-                <div class=" col-md-4">
+                <div class=" col-md-6">
                     <label class="control-label " style="margin-left: 15px;">C. Country of Birth </label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="35" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
                     </div>
                 </div>
             </div>
@@ -1753,17 +1752,17 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 8 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 8 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 5. Information About Your U.S. Citizen Biological Mother (or Adoptive Mother) (continued)</b></h4></div>
     <div class=" col-md-6">
             <label class="control-label " >D. Country of Citizenship or Nationality</label>
             <div >
-                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="34" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
     </div>
         <label class="control-label col-md-12" style='margin-bottom:5px'>E. Spouse's Physical Address</label>
@@ -1773,7 +1772,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
                     <label  style=" margin:0px 0px  5px 5px;">Street Number and Name</label>
                     <div style="width: 100%;">
-                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" maxlength="34" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
@@ -1798,7 +1797,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="40" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -1823,7 +1822,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
                     </div>
                     <div style="width: 40%;">
-                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="4" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -1832,7 +1831,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province (foreign address only)</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="20" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -1844,7 +1843,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country (foreign address only)</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="34" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -1861,7 +1860,7 @@ include "intake_header.php";
         <div class='row col-md-12'>
             <div class=" col-md-5">
                 <label class="control-label" >City or Town</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="34" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
                    <div class=" col-md-2" style='margin-top:1%' >
                       <label class="control-label" >State</label>
@@ -1878,7 +1877,7 @@ include "intake_header.php";
                     </div>
             <div class=" col-md-5">
                 <label class="control-label" >Country</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="34" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
             </div>
             <label class="control-label col-md-12">H. Spouse's Immigration Status</label>
@@ -1887,7 +1886,7 @@ include "intake_header.php";
                 <label class="control-label"><?php echo createCheckbox("Passport") ?>U.S. Citizen</label>
                 <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>Lawful Permanent Resident</label> <br>
                 <label class="control-label" ><?php echo createCheckbox("Travel Document") ?>Other (Explain):</label>
-                <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                <input type="text" class="form-control" name="" maxlength="81" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
         <div class="form-group">
@@ -1912,12 +1911,12 @@ include "intake_header.php";
                 
             <div class=" col-md-6">
                 <label class="control-label" ><span style="margin-right:8px">A.</span> From (mm/dd/yyyy) </label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
  
             <div class=" col-md-6">
                 <label class="control-label" >To (mm/dd/yyyy)</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
    
       </div>
@@ -1925,12 +1924,12 @@ include "intake_header.php";
                 
             <div class=" col-md-6">
                 <label class="control-label" ><span style="margin-right:8px">B.</span>From (mm/dd/yyyy) </label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
  
             <div class=" col-md-6">
                 <label class="control-label" >To (mm/dd/yyyy)</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
         
       </div>
@@ -1938,12 +1937,12 @@ include "intake_header.php";
                 
             <div class=" col-md-6">
                 <label class="control-label" ><span style="margin-right:8px">C.</span>From (mm/dd/yyyy) </label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
  
             <div class=" col-md-6">
                 <label class="control-label" >To (mm/dd/yyyy)</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
      
       </div>
@@ -1951,12 +1950,12 @@ include "intake_header.php";
                 
             <div class=" col-md-6">
                 <label class="control-label" ><span style="margin-right:8px">D.</span>From (mm/dd/yyyy) </label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
  
             <div class=" col-md-6">
                 <label class="control-label" >To (mm/dd/yyyy)</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
        
       </div>
@@ -1964,12 +1963,12 @@ include "intake_header.php";
                 
             <div class=" col-md-6">
                 <label class="control-label" ><span style="margin-right:8px">E.</span>From (mm/dd/yyyy) </label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
  
             <div class=" col-md-6">
                 <label class="control-label" >To (mm/dd/yyyy)</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
         
       </div>
@@ -1977,12 +1976,12 @@ include "intake_header.php";
                 
             <div class=" col-md-6">
                 <label class="control-label" ><span style="margin-right:8px">F.</span>From (mm/dd/yyyy) </label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
  
             <div class=" col-md-6">
                 <label class="control-label" >To (mm/dd/yyyy)</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
      
       </div>
@@ -1990,12 +1989,12 @@ include "intake_header.php";
                 
             <div class=" col-md-6">
                 <label class="control-label" ><span style="margin-right:8px">G.</span>From (mm/dd/yyyy) </label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
  
             <div class=" col-md-6">
                 <label class="control-label" >To (mm/dd/yyyy)</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
        
       </div>
@@ -2003,12 +2002,12 @@ include "intake_header.php";
                 
             <div class=" col-md-6">
                 <label class="control-label" ><span style="margin-right:8px">H.</span>From (mm/dd/yyyy) </label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
  
             <div class=" col-md-6">
                 <label class="control-label" >To (mm/dd/yyyy)</label>
-                      <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                      <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
             </div>
     
       </div>
@@ -2016,11 +2015,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 9 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 9 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 5. Information About Your U.S. Citizen Biological Mother (or Adoptive Mother) (continued)</b></h4></div>
     <div class=" col-md-12">
@@ -2043,12 +2042,12 @@ include "intake_header.php";
                 
                 <div class=" col-md-6">
                     <label class="control-label" ><span style="margin-right:8px">A.</span>From (mm/dd/yyyy) </label>
-                          <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                          <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                 </div>
      
                 <div class=" col-md-6">
                     <label class="control-label" >To (mm/dd/yyyy)</label>
-                          <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                          <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                 </div>
            
           </div>
@@ -2056,12 +2055,12 @@ include "intake_header.php";
                     
                 <div class=" col-md-6">
                     <label class="control-label" ><span style="margin-right:8px">B.</span>From (mm/dd/yyyy) </label>
-                          <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                          <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                 </div>
      
                 <div class=" col-md-6">
                     <label class="control-label" >To (mm/dd/yyyy)</label>
-                          <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+                          <input type="date" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                 </div>
         
           </div>
@@ -2087,7 +2086,7 @@ include "intake_header.php";
     <div class="form-group row">
     <div class=" col-md-12">
         <label class="control-label" >B. <?php echo createCheckbox("")?> The interpreter named in Part 9. read to me every question and instruction on this application and my answer to  every question, in</label>
-        <input type="text" class="form-control " name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+        <input type="text" class="form-control " name="information_about_you_current_family_last_name" maxlength="18" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
         <label class="control-label" >a language in which I am fluent and I understood everything.  </label>
     </div>
     </div>
@@ -2095,7 +2094,7 @@ include "intake_header.php";
     <div class="form-group row">
     <div class=" col-md-12">
         <label class="control-label" ><?php echo createCheckbox("")?> At my request, the preparer named in Part 10.,</label>
-        <input type="text" class="form-control " name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+        <input type="text" class="form-control " name="information_about_you_current_family_last_name" maxlength="50" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
         <label class="control-label" >prepared this application for me based only upon information I provided or authorized.</label>
     </div>
     </div>
@@ -2104,15 +2103,15 @@ include "intake_header.php";
 
     <div class="col-md-6">
 				<label class="control-label ">4. Applicant's  Daytime Telephone Number</label>
-					<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>" />
+					<input type="text" class="form-control" name="requestors_statement_date_of_sign" maxlength="10" value="<?= showData('requestors_statement_date_of_sign')?>" />
 	</div>
 			<div class="col-md-6">
 				<label class="control-label ">5. Applicant's  Mobile Telephone Number (if any)</label>
-						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign"  maxlength="10" value="<?= showData('requestors_statement_date_of_sign')?>">
 			</div>
 			<div class="col-md-6">
 				<label class="control-label ">6. Applicant's  Email Address (if any)</label>
-						<input type="email" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+						<input type="email" class="form-control" name="requestors_statement_date_of_sign" maxlength="42" value="<?= showData('requestors_statement_date_of_sign')?>">
 			</div>
     </div>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Applicant's Certification</i></b></h4></div>
@@ -2126,11 +2125,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 10 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 10 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 8. Applicant's Statement, Contact Information, Certification, and Signature (continued)</b></h4></div>
             <label class="control-label " >I understand that USCIS may require me to appear for an appointment to take my biometrics (fingerprints, photograph, and/or
@@ -2162,15 +2161,15 @@ include "intake_header.php";
 
     <div class="col-md-6">
 				<label class="control-label ">1. Interpreter's Family Name (Last Name)</label>
-					<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>" />
+					<input type="text" class="form-control" name="requestors_statement_date_of_sign"  maxlength="43" value="<?= showData('requestors_statement_date_of_sign')?>" />
 	</div>
 			<div class="col-md-6">
 				<label class="control-label ">Interpreter's Given Name (First Name)</label>
-						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" maxlength="43" value="<?= showData('requestors_statement_date_of_sign')?>">
 			</div>
 			<div class="col-md-6">
 				<label class="control-label ">2. Interpreter's Business or Organization Name (if any)</label>
-						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" maxlength="34" value="<?= showData('requestors_statement_date_of_sign')?>">
 			</div>
             <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Interpreter's Mailing Address</i></b></h4></div>
 
@@ -2181,7 +2180,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
                     <label  style=" margin:5px 0px  5px 5px;">3. Street Number and Name</label>
                     <div style="width: 100%;">
-                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" maxlength="34" class="form-control" name=""  value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
@@ -2206,7 +2205,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="35" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -2231,7 +2230,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
                     </div>
                     <div style="width: 40%;">
-                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="4" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -2240,7 +2239,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province </label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="20" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -2252,7 +2251,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country </label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="40" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -2263,15 +2262,15 @@ include "intake_header.php";
 
     <div class="col-md-6">
 				<label class="control-label ">4. Interpreter's Daytime Telephone Number</label>
-					<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>" />
+					<input type="text" class="form-control" name="requestors_statement_date_of_sign" maxlength="10" value="<?= showData('requestors_statement_date_of_sign')?>" />
 	</div>
 			<div class="col-md-6">
 				<label class="control-label ">5. Interpreter's Mobile Telephone Number (if any)</label>
-						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" maxlength="10" value="<?= showData('requestors_statement_date_of_sign')?>">
 			</div>
 			<div class="col-md-6">
 				<label class="control-label ">6. Interpreter's Email Address (if any)</label>
-						<input type="email" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+						<input type="email" class="form-control" name="requestors_statement_date_of_sign" maxlength="42" value="<?= showData('requestors_statement_date_of_sign')?>">
 			</div>
     </div>
     </div>
@@ -2280,18 +2279,18 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 11 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 11 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 8. Applicant's Statement, Contact Information, Certification, and Signature (continued)</b></h4></div>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Interpreter's Certification</i></b></h4></div>
             <label class="control-label " >I certify, under penalty of perjury, that:</label><br>
    
     <label class="control-label " >I am fluent in English and</label>
-    <input type="text" class="form-control col-md-4" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+    <input type="text" maxlength="18"  class="form-control col-md-4" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
     <label class="control-label " >which is the same language specified in Part 8.,
     Item B. in Item Number 1., and I have read to this applicant in the identified language every question and instruction on this
     application and his or her answer to every question. The applicant informed me that he or she understands every instruction, question,
@@ -2315,15 +2314,15 @@ include "intake_header.php";
 
     <div class="col-md-6">
 				<label class="control-label ">1. Preparer's Family Name (Last Name)</label>
-					<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>" />
+					<input type="text" class="form-control" name="requestors_statement_date_of_sign" maxlength="43" value="<?= showData('requestors_statement_date_of_sign')?>" />
 	</div>
 			<div class="col-md-6">
 				<label class="control-label ">Preparer's Given Name (First Name)</label>
-						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" maxlength="43" value="<?= showData('requestors_statement_date_of_sign')?>">
 			</div>
 			<div class="col-md-6">
 				<label class="control-label ">2. Preparer's Business or Organization Name (if any)</label>
-						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" maxlength="34" value="<?= showData('requestors_statement_date_of_sign')?>">
 			</div>
             <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Preparer's Mailing Address</i></b></h4></div>
 
@@ -2334,7 +2333,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3.5; margin-bottom: 10px;">
                     <label  style=" margin:5px 0px  5px 5px;">3. Street Number and Name</label>
                     <div style="width: 100%;">
-                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" maxlength="34" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
@@ -2359,7 +2358,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="25" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -2384,7 +2383,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" /> 
                     </div>
                     <div style="width: 40%;">
-                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="4" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -2393,7 +2392,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province </label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="20" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
@@ -2405,7 +2404,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country </label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="" maxlength="40" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -2416,15 +2415,15 @@ include "intake_header.php";
 
     <div class="col-md-6">
 				<label class="control-label ">4. Preparer's Daytime Telephone Number</label>
-					<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>" />
+					<input type="text" class="form-control" name="requestors_statement_date_of_sign" maxlength="10" value="<?= showData('requestors_statement_date_of_sign')?>" />
 	</div>
 			<div class="col-md-6">
 				<label class="control-label ">5. Preparer's Mobile Telephone Number (if any)</label>
-						<input type="text" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+						<input type="text" class="form-control" name="requestors_statement_date_of_sign" maxlength="10" value="<?= showData('requestors_statement_date_of_sign')?>">
 			</div>
 			<div class="col-md-6">
 				<label class="control-label ">6. Preparer's Email Address (if any)</label>
-						<input type="email" class="form-control" name="requestors_statement_date_of_sign" value="<?= showData('requestors_statement_date_of_sign')?>">
+						<input type="email" class="form-control" name="requestors_statement_date_of_sign" maxlength="42" value="<?= showData('requestors_statement_date_of_sign')?>">
 			</div>
     </div>
     </div>
@@ -2433,11 +2432,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 12 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 12 of 15</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 10. Contact Information. Declaration, and Signature of the Person Preparing this Application, if Other Than the Applicant (continued)</b></h4></div>
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b><i>Preparer's Statement</i></b></h4></div>
@@ -2483,11 +2482,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 13 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<fieldset class="setpage"
     <p style="text-align: right; margin-right: 15px;"><b>Page 13 of 15</b></p>
     <div class="bg-info">
         <h4><b>Part 11. Additional Information </b></h4>
@@ -2514,7 +2513,7 @@ include "intake_header.php";
         <div class=" col-md-4">
             <label class="control-label ">Middle (if applicable)</label>
             <div class="col-md-12">
-                <input type="text" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+                <input type="text" class="form-control" name="n_400_additional_info_middle_name" maxlength="25" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
             </div>
         </div>
     </div>
@@ -2522,7 +2521,7 @@ include "intake_header.php";
         <div class=" col-md-6">
             <label class="control-label ">2. A-Number (if any) ► A-</label>
             <div class="col-md-12">
-                <input type="text" class="form-control" name="n_400_additional_info_last_name" maxlength="35" value="<?php echo showData('n_400_additional_info_last_name') ?>">
+                <input type="text" class="form-control" name="n_400_additional_info_last_name" maxlength="9" value="<?php echo showData('n_400_additional_info_last_name') ?>">
             </div>
         </div>
     </div>
@@ -2537,20 +2536,20 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">B. Part Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_400_additional_info_2b_part_no" maxlength="6" value="<?php echo showData('n_400_additional_info_2b_part_no') ?>">
+                    <input type="text" class="form-control" name="n_400_additional_info_2b_part_no" maxlength="4" value="<?php echo showData('n_400_additional_info_2b_part_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">C. Item Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_400_additional_info_2c_item_no" maxlength="6" value="<?php echo showData('n_400_additional_info_2c_item_no') ?>">
+                    <input type="text" class="form-control" name="n_400_additional_info_2c_item_no" maxlength="9" value="<?php echo showData('n_400_additional_info_2c_item_no') ?>">
                 </div>
             </div>
         </div>
         <div class="form-group">
         <label class="control-label col-md-12">D.</label>
             <div class="col-md-12">
-                <textarea name="n_400_additional_info_2d" class="form-control" maxlength="255" cols="30" rows="10"><?php echo showData('n_400_additional_info_2d') ?></textarea>
+                <textarea name="n_400_additional_info_2d" class="form-control" maxlength="265" cols="30" rows="10"><?php echo showData('n_400_additional_info_2d') ?></textarea>
             </div>
         </div>
         <div class="d-flexible">
@@ -2563,20 +2562,20 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">B. Part Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_400_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('n_400_additional_info_3b_part_no') ?>">
+                    <input type="text" class="form-control" name="n_400_additional_info_3b_part_no" maxlength="4" value="<?php echo showData('n_400_additional_info_3b_part_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">C. Item Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_400_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('n_400_additional_info_3c_item_no') ?>">
+                    <input type="text" class="form-control" name="n_400_additional_info_3c_item_no" maxlength="9" value="<?php echo showData('n_400_additional_info_3c_item_no') ?>">
                 </div>
             </div>
         </div>
         <div class="form-group">
         <label class="control-label col-md-12">D.</label>
             <div class="col-md-12">
-                <textarea name="n_400_additional_info_3d" class="form-control" maxlength="256" cols="30" rows="10"><?php echo showData('n_400_additional_info_3d') ?></textarea>
+                <textarea name="n_400_additional_info_3d" class="form-control" maxlength="265" cols="30" rows="10"><?php echo showData('n_400_additional_info_3d') ?></textarea>
             </div>
         </div>
         <div class="d-flexible">
@@ -2589,20 +2588,20 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">B. Part Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_400_additional_info_4b_part_no" maxlength="6" value="<?php echo showData('n_400_additional_info_4b_part_no') ?>">
+                    <input type="text" class="form-control" name="n_400_additional_info_4b_part_no" maxlength="4" value="<?php echo showData('n_400_additional_info_4b_part_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">C. Item Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_400_additional_info_4c_item_no" maxlength="6" value="<?php echo showData('n_400_additional_info_4c_item_no') ?>">
+                    <input type="text" class="form-control" name="n_400_additional_info_4c_item_no" maxlength="9" value="<?php echo showData('n_400_additional_info_4c_item_no') ?>">
                 </div>
             </div>
         </div>
         <div class="form-group">
         <label class="control-label col-md-12">D.</label>
             <div class="col-md-12">
-                <textarea class="form-control" name="n_400_additional_info_4d" maxlength="341" class="form-control" cols="30" rows="10"><?php echo showData('n_400_additional_info_4d') ?></textarea>
+                <textarea class="form-control" name="n_400_additional_info_4d" maxlength="346" class="form-control" cols="30" rows="10"><?php echo showData('n_400_additional_info_4d') ?></textarea>
             </div>
         </div>
         <div class="d-flexible">
@@ -2615,20 +2614,20 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">B. Part Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_400_additional_info_5b_part_no" maxlength="6" value="<?php echo showData('n_400_additional_info_5b_part_no') ?>">
+                    <input type="text" class="form-control" name="n_400_additional_info_5b_part_no" maxlength="4" value="<?php echo showData('n_400_additional_info_5b_part_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">C. Item Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_400_additional_info_5c_item_no" maxlength="6" value="<?php echo showData('n_400_additional_info_5c_item_no') ?>">
+                    <input type="text" class="form-control" name="n_400_additional_info_5c_item_no" maxlength="9" value="<?php echo showData('n_400_additional_info_5c_item_no') ?>">
                 </div>
             </div>
         </div>
         <div class="form-group">
         <label class="control-label col-md-12">D.</label>
             <div class="col-md-12">
-                <textarea class="form-control" name="n_400_additional_info_5d" maxlength="341" class="form-control" cols="30" rows="10"><?php echo showData('n_400_additional_info_5d') ?></textarea>
+                <textarea class="form-control" name="n_400_additional_info_5d" maxlength="346" class="form-control" cols="30" rows="10"><?php echo showData('n_400_additional_info_5d') ?></textarea>
             </div>
         </div>
     </div>
@@ -2642,7 +2641,7 @@ include "intake_header.php";
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 14 of 15</b></p>
     <div class="bg-info">
-        <h4><b>NOTE: Do not complete Parts 12. and 13. unless the USCIS officer instructs you to do so at the interview.</b></h4>
+        <h4><b><span style="color:red">NOTE</span>: Do not complete Parts 12. and 13. unless the USCIS officer instructs you to do so at the interview.</b></h4>
     </div>
     <div class="bg-info">
     <h4><b>Part 12. Affidavit (do NOT complete this part unless instructed to do so AT THE INTERVIEW) </b></h4>
@@ -2659,46 +2658,46 @@ include "intake_header.php";
         <div class=" col-md-8">
             <label class="control-label ">Applicant's, Parent's, or Legal Guardian's Signature</label>
             
-                <input type="text" class="form-control" disabled name="n_400_additional_info_last_name" maxlength="35" value="<?php echo showData('n_400_additional_info_last_name') ?>">
+                <input type="text" class="form-control" disabled name" maxlength="" disabled value="<?php echo showData('') ?>">
         
         </div>
         <div class=" col-md-4">
             <label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+                <input type="date" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
         </div>
     </div>
     <div class="row form-group" style="margin-bottom: 20px;">
         <div class=" col-md-8">
             <label class="control-label ">Subscribed and sworn or affirmed before me upon examination of the applicant (parent, legal, guardian) on  at</label>
-           <input type="text" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+           <input type="text" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
            <p style="text-align:center"><b>(Location)</b></p>
         </div>
         <div class=" col-md-4">
             <label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+                <input type="date" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
         </div>
     </div>
     <div class="row form-group" style="margin-bottom: 20px;">
         <div class=" col-md-6">
             <label class="control-label ">USCIS Officer's Printed Name</label>
-           <input type="text" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+           <input type="text" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
           
         </div>
         <div class=" col-md-6">
             <label class="control-label ">USCIS Officer's Title</label>
-                <input type="text" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+                <input type="text" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
         </div>
     </div>
     <div class="row form-group" style="margin-bottom: 20px;">
         <div class=" col-md-8">
             <label class="control-label ">USCIS Officer's Signature</label>
             
-                <input type="text" class="form-control" disabled name="n_400_additional_info_last_name" maxlength="35" value="<?php echo showData('n_400_additional_info_last_name') ?>">
+                <input type="text" class="form-control" disabled name" maxlength="" disabled value="<?php echo showData('') ?>">
         
         </div>
         <div class=" col-md-4">
             <label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+                <input type="date" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
         </div>
     </div>
     <div class="bg-info"><h4><b>Part 13. Officer Report and Recommendation on Application for Certificate of Citizenship (for USCIS use ONLY)</b></h4></div>
@@ -2708,7 +2707,7 @@ include "intake_header.php";
     <div class="form-group"><label class="control-label col-md-12">2. <?php echo createCheckbox("")?> The applicant derived or acquired U.S. citizenship on </label></div>
    <div class="row form-group">
     <div class="col-md-5">
-    <input type="date" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+    <input type="date" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
     <p for="" class="" style="text-align:center"><b>Date (mm/dd/yyyy)</b> </p>
     </div>
    </div>
@@ -2721,7 +2720,7 @@ include "intake_header.php";
     <div class="form-group"><label class="control-label col-md-12" style="margin-left:20px">E. <?php echo createCheckbox("")?> Other</label></div>
     <div class="row form-group"   >
     <div class="col-md-5">
-    <input type="text"  class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+    <input type="text"  class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
     </div>
     </div>
     <div class="form-group"><label class="control-label col-md-12">4. <?php echo createCheckbox("")?> The applicant has not been expatriated since that time</label></div>
@@ -2740,71 +2739,71 @@ include "intake_header.php";
     <label class="control-label col-md-12">I recommend that this Form N-600 be:</label>
         <div class="col-md-12 ">
             <div class="form-group">
-                <label class="control-label"><?php echo createCheckbox("Passport") ?>Approved</label>
-                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>Denied</label> 
+                <label class="control-label"><?php echo createCheckbox("") ?>Approved</label>
+                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("") ?>Denied</label> 
             </div>
         </div>
             <label class="control-label col-md-12 ">Issue Certificate of Citizenship in the name of</label>
             <div class=" col-md-4">
         <label class="control-label " >Family Name (Last Name)</label>
      
-            <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35"
-                value="<?php echo showData('information_about_you_current_family_last_name') ?>">
+            <input type="text" class="form-control" name="information_a" maxlength=""
+                disabled value="<?php echo showData('') ?>">
 
     </div>
     <div class=" col-md-4">
         <label class="control-label ">Given Name (First Name)</label>
 
-            <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27"
-                value="<?php echo showData('information_about_you_current_given_first_name') ?>">
+            <input type="text" class="form-control" name="information_a" maxlength=""
+                disabled value="<?php echo showData('') ?>">
 
     </div>
     <div class=" col-md-4" style='margin-bottom:20px'>
         <label class="control-label ">Middle Name (if applicable)
         </label>
         
-            <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22"
-                value="<?php echo showData('information_about_you_current_middle_name') ?>">
+            <input type="text" class="form-control" name="informat" maxlength=""
+                disabled value="<?php echo showData('') ?>">
    
     </div>
     <div class="row form-group" style="margin-bottom: 20px;">
         <div class=" col-md-6">
             <label class="control-label ">USCIS Officer's Printed Name</label>
-           <input type="text" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+           <input type="text" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
           
         </div>
         <div class=" col-md-6">
             <label class="control-label ">USCIS Officer's Title</label>
-                <input type="text" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+                <input type="text" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
         </div>
     </div>
     <div class="row form-group" style="margin-bottom: 20px;">
         <div class=" col-md-8">
             <label class="control-label ">USCIS Officer's Signature</label>
             
-                <input type="text" class="form-control" disabled name="n_400_additional_info_last_name" maxlength="35" value="<?php echo showData('n_400_additional_info_last_name') ?>">
+                <input type="text" class="form-control" disabled name" maxlength="" disabled value="<?php echo showData('') ?>">
         
         </div>
         <div class=" col-md-4">
             <label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+                <input type="date" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
         </div>
     </div>
     <hr style="border:1px solid gray">
         <div class="col-md-12 ">
             <div class="form-group">
-                <label class="control-label"><?php echo createCheckbox("Passport") ?>I do</label>
-                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("Travel Document") ?>do not concur with the USCIS Officer's recommendation of Form N-600.</label> 
+                <label class="control-label"><?php echo createCheckbox("") ?>I do</label>
+                <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("") ?>do not concur with the USCIS Officer's recommendation of Form N-600.</label> 
             </div>
         </div>
     <div class="row form-group" style="margin-bottom: 20px;">
         <div class=" col-md-8">
             <label class="control-label ">USCIS Officer's Signature</label>
-                <input type="text" class="form-control" disabled name="n_400_additional_info_last_name" maxlength="35" value="<?php echo showData('n_400_additional_info_last_name') ?>">
+                <input type="text" class="form-control" disabled name" maxlength="" disabled value="<?php echo showData('') ?>">
         </div>
         <div class=" col-md-4">
             <label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="n_400_additional_info_middle_name" maxlength="22" value="<?php echo showData('n_400_additional_info_middle_name') ?>">
+                <input type="date" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
