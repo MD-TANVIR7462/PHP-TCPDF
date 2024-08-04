@@ -6,11 +6,7 @@ function showData($name){
 	if(isset($singleDataNote->$name)) return $singleDataNote->$name;
 	else return '';
 }
-// function showData($name){
-// 	global $singleDataNote;
-// 	if(isset($singleDataNote->$name)) return $singleDataNote->$name;
-// 	else return '';
-// }
+
 
 function createCheckbox($fieldName,$fieldTitle=""){
 	
