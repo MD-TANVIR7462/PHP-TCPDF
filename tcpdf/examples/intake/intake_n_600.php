@@ -761,7 +761,7 @@ include "intake_header.php";
     <div class=" bg-info col-md-12" style="margin-top:10px;"><h4><b>Part 2. Information About You (continued)</b></h4></div>
     <div class="form-group">
         <label class="control-label " style="margin-left: 15px;">22. Have you been absent from the United States since you first arrived?</label> <br>
-        <div class="col-md-2 col-md-offset-8"><?php echo createRadio("information_about_you_absent_since_first_arrived") ?></div>
+        <div class="col-md-2 col-md-offset-8"><?php echo createRadio("information_about_you_absent_since_first_arrived_status") ?></div>
     </div>
     <div class="form-group">
       <p style='margin-left:20px'>Complete the following information <b>only if you are claiming U.S. citizenship at the time of birth if you were born before
@@ -1208,7 +1208,7 @@ include "intake_header.php";
 
             <input type="radio" id="other2" name="biological_father_marital_status" value="other" <?php echo (showData('biological_father_marital_status') == 'other') ? 'checked' : '' ?>>
             <label for="other2">Other (Explain):</label>
-            <input type="text" class="form-control" name="biological_father_marital_other_value" maxlength="82" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            <input type="text" class="form-control" name="biological_father_marital_other_value" maxlength="82" value="<?php echo showData('biological_father_marital_other_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
         </div>
     </div>
         <p style='margin-left:20px'>If you selected "Other," provide an explanation. If you need extra space to complete this section, use the space provided in <b>Part 11. Additional Information.</b></p>
@@ -1438,9 +1438,6 @@ include "intake_header.php";
                     </div>
                 </div>
             </div>
-
-
-
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
@@ -1655,7 +1652,7 @@ include "intake_header.php";
             <input type="radio" id="Other" name="biological_mother_marital_status" value="other"
                 <?php echo (showData('biological_mother_marital_status') == 'other') ? 'checked' : '' ?>>
             <label for="Other">Other (Explain):</label>
-            <input type="text" class="form-control" name="" maxlength="81" value="<?php echo showData('') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            <input type="text" class="form-control" name="biological_mother_marital_other" maxlength="81" value="<?php echo showData('biological_mother_marital_other') ?>"  style="width: 100%; padding: 5px; margin-bottom: 5px;" />
         </div>
     </div>
         <p style='margin-left:20px'>If you selected "Other," provide an explanation. If you need extra space to complete this section, use the space provided in <b>Part 11. Additional Information.</b></p>
