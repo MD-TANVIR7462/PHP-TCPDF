@@ -1,6 +1,6 @@
 <?php
-// $singleDataNote= json_decode(file_get_contents('http://demolms.siscotech.com/views/work_file/apiData.php'));
-$singleDataNote= '';
+$singleDataNote= json_decode(file_get_contents('http://demolms.siscotech.com/views/work_file/apiData.php'));
+// $singleDataNote= '';
 function showData($name){
 	global $singleDataNote;
 	if(isset($singleDataNote->$name)) return $singleDataNote->$name;
