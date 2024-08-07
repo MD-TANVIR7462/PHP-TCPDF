@@ -2503,52 +2503,52 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">4. A. Page Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_600_additional_info_6a_page_no" maxlength="2" value="<?php echo showData('n_600_additional_info_6a_page_no') ?>">
+                    <input type="text" class="form-control" name="n_600_additional_info_4a_page_no" maxlength="2" value="<?php echo showData('n_600_additional_info_6a_page_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">B. Part Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_600_additional_info_6b_part_no" maxlength="4" value="<?php echo showData('n_600_additional_info_6b_part_no') ?>">
+                    <input type="text" class="form-control" name="n_600_additional_info_4b_part_no" maxlength="4" value="<?php echo showData('n_600_additional_info_6b_part_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">C. Item Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_600_additional_info_6c_item_no" maxlength="9" value="<?php echo showData('n_600_additional_info_6c_item_no') ?>">
+                    <input type="text" class="form-control" name="n_600_additional_info_4c_item_no" maxlength="9" value="<?php echo showData('n_600_additional_info_6c_item_no') ?>">
                 </div>
             </div>
         </div>
         <div class="form-group">
         <label class="control-label col-md-12">D.</label>
             <div class="col-md-12">
-                <textarea name="n_600_additional_info_6d" class="form-control" maxlength="265" cols="30" rows="10"><?php echo showData('n_600_additional_info_6d') ?></textarea>
+                <textarea name="n_600_additional_info_4d" class="form-control" maxlength="265" cols="30" rows="10"><?php echo showData('n_600_additional_info_4d') ?></textarea>
             </div>
         </div>
         <div class="d-flexible">
             <div class="form-group">
                 <label class="control-label col-md-12">5. A. Page Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_600_additional_info_6a_page_no" maxlength="2" value="<?php echo showData('n_600_additional_info_6a_page_no') ?>">
+                    <input type="text" class="form-control" name="n_600_additional_info_5a_page_no" maxlength="2" value="<?php echo showData('n_600_additional_info_6a_page_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">B. Part Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_600_additional_info_6b_part_no" maxlength="4" value="<?php echo showData('n_600_additional_info_6b_part_no') ?>">
+                    <input type="text" class="form-control" name="n_600_additional_info_5b_part_no" maxlength="4" value="<?php echo showData('n_600_additional_info_6b_part_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">C. Item Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="n_600_additional_info_6c_item_no" maxlength="9" value="<?php echo showData('n_600_additional_info_6c_item_no') ?>">
+                    <input type="text" class="form-control" name="n_600_additional_info_5c_item_no" maxlength="9" value="<?php echo showData('n_600_additional_info_6c_item_no') ?>">
                 </div>
             </div>
         </div>
         <div class="form-group">
         <label class="control-label col-md-12">D.</label>
             <div class="col-md-12">
-                <textarea class="form-control" name="n_600_additional_info_4d" maxlength="346" class="form-control" cols="30" rows="10"><?php echo showData('n_600_additional_info_4d') ?></textarea>
+                <textarea class="form-control" name="n_600_additional_info_5d" maxlength="346" class="form-control" cols="30" rows="10"><?php echo showData('n_600_additional_info_5d') ?></textarea>
             </div>
         </div>
         <div class="d-flexible">
