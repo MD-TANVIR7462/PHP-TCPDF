@@ -892,8 +892,7 @@ $pdf->writeHTMLCell(0, 0, 21, 111, 'If you are single and have <b>never</b> marr
 //..........
 $pdf->writeHTMLCell(0, 0, 12, 117, '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you are currently married, is your spouse a current member of the U.S. armed forces?', 0, 0, false, true, 'L', true);
 //..........
-if (showData('other_information_about_you_marital_spouse_armed_force_status') == "Y") $checked = "checked";
-else $checked = "";
+if (showData('other_information_about_you_marital_spouse_armed_force_status') == "Y") $checked = "checked";else $checked = "";
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 178.5, 117.5, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);

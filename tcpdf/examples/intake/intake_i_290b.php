@@ -907,7 +907,7 @@ include "intake_header.php";
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="sub mmit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
 ------------------------ page 6 -------------------------
