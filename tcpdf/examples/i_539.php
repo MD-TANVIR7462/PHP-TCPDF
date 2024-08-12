@@ -386,9 +386,9 @@ if (showData('information_about_you_residence_apt_ste_flr') == "apt") $checked_a
 if (showData('information_about_you_residence_apt_ste_flr') == "ste") $checked_ste = "checked";else $checked_ste = "";
 if (showData('information_about_you_residence_apt_ste_flr') == "flr") $checked_flr = "checked";else $checked_flr = "";
 $pdf->SetFont('times', 'B', 14);
-$pdf->writeHTMLCell(5, 1, 152, 234, '<input type="checkbox" name="p4_apt" value="apt"   checked="' . $checked_apt . '" />', 0, 1, false, false, 'L', false);
-$pdf->writeHTMLCell(5, 1, 159, 234, '<input type="checkbox" name="p4_ste" value="ste"   checked="' . $checked_ste . '"/>', 0, 1, false, false, 'L', false);
-$pdf->writeHTMLCell(5, 1, 167, 234, '<input type="checkbox" name="p4_flr" value="flr"   checked="' . $checked_flr . '"/>', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 152, 234, '<input type="checkbox" name="p4_apt2" value="apt"   checked="' . $checked_apt . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 159, 234, '<input type="checkbox" name="p4_ste2" value="ste"   checked="' . $checked_ste . '"/>', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 167, 234, '<input type="checkbox" name="p4_flr2" value="flr"   checked="' . $checked_flr . '"/>', 0, 1, false, false, 'L', false);
 /******************************
  ******** End Page No 1 ******
  ******************************/
@@ -431,10 +431,10 @@ $pdf->writeHTMLCell(140, 1, 182, 28.4, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
 if (showData('additional_info_damage_property_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 28, '<input type="checkbox" name="p9_6a_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 175.5, 28, '<input type="checkbox" name="p4_6_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 if (showData('additional_info_damage_property_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 28, '<input type="checkbox" name="p9_6a_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 28, '<input type="checkbox" name="p4_6_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..................
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 34.5, 'Have you <b>EVER</b> ordered, incited, called for, committed, assisted, helped with, or otherwise participated in any of the following: ', 0, 1, false, 'L');
@@ -447,10 +447,10 @@ $pdf->writeHTMLCell(140, 1, 182, 42.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
 if (showData('additional_info_engaged_in_kidnapping_or_hijacking_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 42.6, '<input type="checkbox" name="p9_6b_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 175.5, 42.6, '<input type="checkbox" name="p4_7a_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 if (showData('additional_info_engaged_in_kidnapping_or_hijacking_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 42.6, '<input type="checkbox" name="p9_6b_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 42.6, '<input type="checkbox" name="p4_7a_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 50, '<b>7.b.</b>&nbsp;&nbsp;&nbsp;Killing any person?', 0, 1, false, 'L');
@@ -460,10 +460,10 @@ $pdf->writeHTMLCell(140, 1, 182, 50.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
 if (showData('additional_info_attempted_planned_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 50.6, '<input type="checkbox" name="p9_6c_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 175.5, 50.6, '<input type="checkbox" name="p4_7b_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 if (showData('additional_info_attempted_planned_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 50.6, '<input type="checkbox" name="p9_6c_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 50.6, '<input type="checkbox" name="p4_7b_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 58, '<b>7.c</b>&nbsp;&nbsp;&nbsp;&nbsp;Intentionally and severely injuring any person?', 0, 1, false, 'L');
@@ -473,10 +473,10 @@ $pdf->writeHTMLCell(140, 1, 182, 58.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
 if (showData('additional_info_torture_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 58.6, '<input type="checkbox" name="p9_7a_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 175.5, 58.6, '<input type="checkbox" name="p4_7c_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 if (showData('additional_info_torture_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 58.6, '<input type="checkbox" name="p9_7a_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 58.6, '<input type="checkbox" name="p4_7c_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 66, '<b>7.d.</b>&nbsp;&nbsp;&nbsp;Engaging in any kind of sexual contact or relations with any person who did not consent or was unable to<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;consent, or was being forced or threatened?', 0, 1, false, 'L');
@@ -486,230 +486,181 @@ $pdf->writeHTMLCell(140, 1, 182,66.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
 if (showData('additional_info_genocide_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5,66.6, '<input type="checkbox" name="p9_7b_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 175.5,66.6, '<input type="checkbox" name="p4_7d_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 if (showData('additional_info_genocide_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189,66.6, '<input type="checkbox" name="p9_7b_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189,66.6, '<input type="checkbox" name="p4_7d_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 84, '<b>7.c.</b>&nbsp;&nbsp;&nbsp;Killing or trying to kill any person? ', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 12, 76, "<b>7.e.</b>&nbsp;&nbsp;&nbsp;Limiting or denying any person's ability to exercise religious beliefs?", 0, 1, false, 'L');
 //....
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 84.8, $html, 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 182, 76.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
 if (showData('additional_info_kill_any_person_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 84.6, '<input type="checkbox" name="p9_7c_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 175.5, 76.6, '<input type="checkbox" name="p4_7e_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 if (showData('additional_info_kill_any_person_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 84.6, '<input type="checkbox" name="p9_7c_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 76.6, '<input type="checkbox" name="p4_7e_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 91, '<b>7.d.</b>&nbsp;&nbsp;&nbsp;Intentionally and severely injuring or trying to injure any person?', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 12, 83, 'Have you <b>EVER</b>', 0, 1, false, 'L');
+//..........................
+
+
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(0, 0, 12, 91, '<b>8.a.</b>&nbsp;&nbsp;&nbsp;Served in, been a member of, assisted, or participated in any military unit, paramilitary unit, police unit, self-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defense unit, vigilante unit, rebel group, guerrilla group, militia, insurgent organization, or any other armed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group?', 0, 1, false, 'L');
 //....
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 91.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
 if (showData('additional_info_injure_any_person_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 91.6, '<input type="checkbox" name="p9_7d_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 175.5, 91.6, '<input type="checkbox" name="p4_8a_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 if (showData('additional_info_injure_any_person_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 91.6, '<input type="checkbox" name="p9_7d_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 91.6, '<input type="checkbox" name="p4_8a_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //......................
+
+
+
+
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 98, '<b>7.e.</b>&nbsp;&nbsp;&nbsp;Any kind of sexual contact or activity with any person who did not consent (did not agree) or was<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unable to consent (could not agree), or was being forced or threatened by you or by someone else?', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 12, 106, '<b>8.b.</b>&nbsp;&nbsp;&nbsp;Worked, volunteered, or otherwise served in any prison, jail, prison camp, detention facility, labor camp, or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;any other situation that involved detaining persons?', 0, 1, false, 'L');
 //....
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 98.8, $html, 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 182, 106.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_sexual_contact_status') == "Y") $checked = "checked";
+if (showData('additional_info_injure_any_person_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 99, '<input type="checkbox" name="p9_7e_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_sexual_contact_status') == "N") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 175.5, 106.6, '<input type="checkbox" name="p4_8b_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+if (showData('additional_info_injure_any_person_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 99, '<input type="checkbox" name="p9_7e_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 106.6, '<input type="checkbox" name="p4_8b_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //......................
+
+
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 109, '<b>7.f.</b>&nbsp;&nbsp;&nbsp;&nbsp;Not letting someone practice their religion?', 0, 1, false, 'L');
-//....
-$html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 109.8, $html, 0, 0, false, true, 'L', true);
-$pdf->SetFont('times', '', 14);
-if (showData('additional_info_practice_religion_status') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 109.6, '<input type="checkbox" name="p9_7f_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_practice_religion_status') == "N") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 109.6, '<input type="checkbox" name="p9_7f_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-//......................
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 115, '<b>7.g.</b>&nbsp;&nbsp;&nbsp;Causing harm or suffering to any person because of their race, religion, national origin, membership in<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a particular social group, or political opinion?', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 12, 115, '<b>9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been a member of, assisted, or participated in any group, unit, or organization of any kind<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in which you or other persons used or threatened to use any type of weapon against any person or<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;threatened to do so? ', 0, 1, false, 'L');
 //....
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 116.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
 if (showData('additional_info_political_opinion_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 116, '<input type="checkbox" name="p9_7g_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 175.5, 116, '<input type="checkbox" name="p4_9_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 if (showData('additional_info_political_opinion_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 116, '<input type="checkbox" name="p9_7g_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 116, '<input type="checkbox" name="p4_9_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+
 //......................
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 125, '<b>8.a.</b>&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> served in, been a member of, assisted (helped), or participated in any military or <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;police unit? ', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 12, 129, '<b>10.</b>', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 20, 129, 'Have you <b>EVER</b>sold, provided, or transported weapons, or assisted any person in selling, providing, or <br>
+transporting weapons, which, you knew or believed would be used against another person?', 0, 1, false, 'L');
 //....
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 126.2, $html, 0, 0, false, true, 'L', true);
-$pdf->SetFont('times', '', 14);
-if (showData('additional_info_participate_in_military_police_status') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 126, '<input type="checkbox" name="p9_8a_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_participate_in_military_police_status') == "N") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 126, '<input type="checkbox" name="p9_8a_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-//......................
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 135, '<b>8.b.</b>', 0, 1, false, 'L');
-$pdf->writeHTMLCell(0, 0, 20, 135, 'Have you <b>EVER</b> served in, been a member of, assisted (helped), or participated in any armed group (a<br>
-group that carries weapons), for example: paramilitary unit (a group of people who act like a military<br>
-group but are not part of the official military), self-defense unit, vigilante unit, rebel group, or guerrilla<br>
-group?', 0, 1, false, 'L');
-$pdf->writeHTMLCell(0, 0, 20, 154, 'If you answered “Yes” to <b>Item Number 8.a.</b> or <b>Item Number 8.b.</b>, include the name of the country,<br>
-the name of the military unit or armed group, your rank or position, and your dates of involvement in<br>
-your explanation in <b>Part 14. Additional Information</b>.', 0, 1, false, 'L');
-//....
-$html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 136.2, $html, 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 182, 129.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
 if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 136, '<input type="checkbox" name="p9_8b_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 175.5, 129, '<input type="checkbox" name="p4_10_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 136, '<input type="checkbox" name="p9_8b_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-//......................
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 169, '<b>9.</b>', 0, 1, false, 'L');
-$pdf->writeHTMLCell(0, 0, 20, 169, 'Have you <b>EVER</b> worked, volunteered, or otherwise served in a place where people were detained<br>
-(forced to stay), for example, a prison, jail, prison camp (a camp where prisoners of war or political<br>
-prisoners are kept), detention facility, or labor camp, or have you <b>EVER</b> directed or participated in any<br>
-other activity that involved detaining people?', 0, 1, false, 'L');
-//....
-$html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 170.2, $html, 0, 0, false, true, 'L', true);
-$pdf->SetFont('times', '', 14);
-if (showData('additional_info_participate_detaining_people_status') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 170, '<input type="checkbox" name="p9_9_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_participate_detaining_people_status') == "N") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 170, '<input type="checkbox" name="p9_9_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-//......................
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 188, '<b>10.a.</b>', 0, 1, false, 'L');
-$pdf->writeHTMLCell(0, 0, 20, 188, 'Were you <b>EVER</b> a part of any group, or did you <b>EVER</b> help any group, unit, or organization that used<br>
-a weapon against any person, or threatened to do so?', 0, 1, false, 'L');
-//....
-$html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 189.2, $html, 0, 0, false, true, 'L', true);
-$pdf->SetFont('times', '', 14);
-if (showData('additional_info_help_organization_status') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 189, '<input type="checkbox" name="p9_10a_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_help_organization_status') == "N") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 189, '<input type="checkbox" name="p9_10a_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-//......................
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 198, '<b>10.b.</b>', 0, 1, false, 'L');
-$pdf->writeHTMLCell(0, 0, 20, 198, 'If you answered “Yes” to <b>Item Number 10.a.</b>, when you were part of this group, or when you helped<br>
-this group, did you ever use a weapon against another person?', 0, 1, false, 'L');
-//....
-$html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 199.2, $html, 0, 0, false, true, 'L', true);
-$pdf->SetFont('times', '', 14);
-if (showData('additional_info_use_weapon_against_person_status') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 199, '<input type="checkbox" name="p9_10b_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_use_weapon_against_person_status') == "N") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 199, '<input type="checkbox" name="p9_10b_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-//......................
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 208.5, '<b>10.c.</b>', 0, 1, false, 'L');
-$pdf->writeHTMLCell(0, 0, 20, 208.5, 'If you answered “Yes” to <b>Item Number 10.a.</b>, when you were part of this group, or when you helped<br>
-this group, did you ever threaten another person that you would use a weapon against that person?', 0, 1, false, 'L');
-//....
-$html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 209.2, $html, 0, 0, false, true, 'L', true);
-$pdf->SetFont('times', '', 14);
-if (showData('additional_info_threaten_another_person_status') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 209, '<input type="checkbox" name="p9_10c_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_threaten_another_person_status') == "N") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 209, '<input type="checkbox" name="p9_10c_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 129, '<input type="checkbox" name="p4_10_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 
 //......................
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 219, '<b>11.</b>', 0, 1, false, 'L');
-$pdf->writeHTMLCell(0, 0, 20, 219, 'Have you <b>EVER</b> sold, provided, or transported weapons, or assisted any person in selling, providing,<br>
-or transporting weapons, which you knew or believed would be used against another person?', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 12, 142, '<b>11.</b>', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 20, 142, 'Have you <b>EVER</b>sold, received any weapons training, paramilitary training, or other military-type training?', 0, 1, false, 'L');
 //....
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 220.2, $html, 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 182, 142.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_transported_status') == "Y") $checked = "checked";
+if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 220, '<input type="checkbox" name="p9_11_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_transported_status') == "N") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 175.5, 142, '<input type="checkbox" name="p4_11_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 220, '<input type="checkbox" name="p9_11_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 142, '<input type="checkbox" name="p4_11_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 
 //......................
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 230, '<b>12.</b>', 0, 1, false, 'L');
-$pdf->writeHTMLCell(0, 0, 20, 230, 'Have you <b>EVER</b> received any weapons training, paramilitary training, or other military-type training?', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 12, 150, '<b>12.</b>', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 20, 150, 'Have you <b>EVER</b>violated the terms of the nonimmigrant status you now hold?', 0, 1, false, 'L');
 //....
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 231.2, $html, 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 182, 150.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_weapons_training_status') == "Y") $checked = "checked";
+if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 231, '<input type="checkbox" name="p9_12_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_weapons_training_status') == "N") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 175.5, 150, '<input type="checkbox" name="p4_12_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 231, '<input type="checkbox" name="p9_12_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 150, '<input type="checkbox" name="p4_12_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+//..........................
 
-//......................
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 237, '<b>13.</b>', 0, 1, false, 'L');
-$pdf->writeHTMLCell(0, 0, 20, 237, 'Have you <b>EVER</b> recruited (asked), enlisted (signed up), conscripted (required to join), or used any<br>person under 15 years of age to serve in or help an armed group, or attempted or worked with others to<br>do so?', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 12, 158, '<b>13.</b>', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 20, 158, 'Are you now in removal proceedings?', 0, 1, false, 'L');
 //....
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 239.2, $html, 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 182, 158.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_used_person_under_status') == "Y") $checked = "checked";
+if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 239, '<input type="checkbox" name="p9_13_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_used_person_under_status') == "N") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 175.5, 158, '<input type="checkbox" name="p4_13_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 239, '<input type="checkbox" name="p9_13_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-//......................
+$pdf->writeHTMLCell(5, 1, 189, 158, '<input type="checkbox" name="p4_13_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+
+//..........................
+
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(0, 0, 12, 251, '<b>14.</b>', 0, 1, false, 'L');
-$pdf->writeHTMLCell(0, 0, 20, 251, 'Have you <b>EVER</b> used any person under 15 years of age to take part in hostilities or attempted or<br>worked with others to do so? This could include participating in combat or providing services related<br>to combat (such as serving as a messenger or transporting supplies).', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 12, 166, '<b>14.</b>', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 20, 166, 'Have you <b>EVER</b>been employed in the United States since last admitted or granted an extension or change <br>of status?', 0, 1, false, 'L');
 //....
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
-$pdf->writeHTMLCell(140, 1, 182, 252.2, $html, 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 182, 166.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_used_person_hostilities_status') == "Y") $checked = "checked";
+if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 175.5, 252, '<input type="checkbox" name="p9_14_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_used_person_hostilities_status') == "N") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 175.5, 166, '<input type="checkbox" name="p4_14_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 189, 252, '<input type="checkbox" name="p9_14_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 189, 166, '<input type="checkbox" name="p4_14_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+
+//..........................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(0, 0, 12, 175, 'If you answered "No" to <b>Item Number 14</b>., fully describe how you are supporting yourself in <b>Part 8. Additional Information</b>.<br>
+Include documentary evidence of the source, amount, and basis for any income', 0, 1, false, 'L');
+//..........................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(0, 0, 12, 186, 'If you answered "Yes"  <b>to Item Number 14</b>., fully describe any and all periods of employment in <b>Part 8. Additional Information.</b><br>
+Include the name and address of the employer, weekly income, and whether the employment was specifically authorized by USCIS.', 0, 1, false, 'L');
+//..........................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(0, 0, 12, 197, '<b>15.</b>', 0, 1, false, 'L');
+$pdf->writeHTMLCell(0, 0, 20, 197, 'Are you currently or have you <b>EVER</b> been a J-1 exchange visitor or a J-2 dependent of a J-1 exchange<br>visitor? ', 0, 1, false, 'L');
+//....
+$html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
+$pdf->writeHTMLCell(140, 1, 182, 197.2, $html, 0, 0, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 175.5, 197, '<input type="checkbox" name="p4_15_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 189, 197, '<input type="checkbox" name="p4_15_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+//..........................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(0, 0, 12, 207, 'If you answered "Yes" <b>to Item Number 15</b>., you must provide the dates you maintained status as a J-1 exchange visitor or J-2
+dependent in <b>Part 8. Additional Information.</b> ', 0, 1, false, 'L');
+
 /******************************
  ******** End Page No 4 ******
  ******************************/
