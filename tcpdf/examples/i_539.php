@@ -401,15 +401,289 @@ $pdf->writeHTMLCell(5, 1, 167, 234, '<input type="checkbox" name="p4_flr2" value
 // $pdf->SetFont('times', '', 12);
 // $pdf->SetFillColor(220, 220, 220);
 // $pdf->setCellPaddings(1, 1, 0, 1); 
-// $html ='<div><b>Part 1. Information About You (continued)</b></div>';
-// $pdf->writeHTMLCell(190, 7, 13, 17, $html, 1, 1, true, false, 'L', true);
+// $html ='<div><b>Part 1. Information About You </b>(continued)</div>';
+// $pdf->writeHTMLCell(191, 7, 13, 17, $html, 1, 1, true, false, 'L', true);
 // //...........
 // $pdf->SetFont('times', '', 12);
 // $pdf->SetFillColor(220, 220, 220);
 // $pdf->setCellPaddings(1, 1, 0, 1); 
 // $html ='<div><b><i>Other Information About You</i></b></div>';
-// $pdf->writeHTMLCell(190, 6.7, 13, 26.3, $html, 0, 1, true, false, 'L', true);
+// $pdf->writeHTMLCell(191, 6.7, 13, 26.3, $html, 0, 1, true, false, 'L', true);
+// //..................
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(0, 0, 12, 34,'<b>7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Birth', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 111, 34, '<b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Citizenship or Nationality', 0, 0, false, true, 'L', true);
+// //..................
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('p1_2_alien_registration_number', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 39.5);
+// $pdf->TextField('p1_2_uscis_online_acount_number', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 39.5);
+// //............
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(0, 0, 12, 48,'<b>9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 73, 48, '<b>10.</b>&nbsp;&nbsp;&nbsp;&nbsp;U.S. Social Security Number (if any)', 0, 0, false, true, 'L', true);
+// //..................
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('p1_2_alien_registration_number', 47, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 53);
+// $pdf->TextField('p1_2_uscis_online_acount_number', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 87, 53);
+// //............
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(0, 0, 12, 61,'<b>11.</b>&nbsp;&nbsp;&nbsp;Provide Information About Your Most Recent Entry Into the United States', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 19, 67.5,'Date of Last Arrival Into the ', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 19, 72,'United States (mm/dd/yyyy) ', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 69, 67.5,'Form I-94 Arrival-Departure', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 69, 72,'Record Number', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 139, 67.5,'Passport Number', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 139, 72,'(if any)', 0, 0, false, true, 'L', true);
+// //................
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('p1_2_alien_registration_number', 47, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 77.4);
+// $pdf->TextField('p1_2_uscis_online_acount_number', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 76.5, 77.4);
+// $pdf->TextField('p1_2_uscis_online_acount_number', 63.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 140.5, 77.4);
+// //......................
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(0, 0, 19, 85,'Travel Document Number', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 19, 89.5,'(if any)', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 69, 85,'Country of Passport or ', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 69, 89.5,'Travel Document Issuance', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 139, 85,'Passport or Travel Document Expiration ', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 139, 89.5,'Date (mm/dd/yyyy)', 0, 0, false, true, 'L', true);
+// //................
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('p1_2_alien_registration_number', 47, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 95);
+// $pdf->TextField('p1_2_uscis_online_acount_number', 68.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 70, 95);
+// $pdf->TextField('p1_2_uscis_online_acount_number', 63.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 140.5, 95);
+// //..................
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(0, 0, 12, 103.6,'<b>7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current Nonimmigrant Status (for example, F-1 student, H-4 dependent, etc.)', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, 139, 103.6, 'Date Status Expires (mm/dd/yyyy) ', 0, 0, false, true, 'L', true);
+// //..................
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('p1_2_alien_registration_number', 118.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 108.5);
+// $pdf->TextField('p1_2_uscis_online_acount_number', 63.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 140.5, 108.5);
+// //............
+// //..............
+// $pdf->SetFont('times', '', 10); // set font
+// $html = 'Select this box if you were granted Duration of Status (D/S).';
+// $pdf->writeHTMLCell(190, 6, 24.5, 116, $html, 0, 1, false, false, 'L', true);
+// $pdf->SetFont('times', '', 14); // set font
+// $pdf->writeHTMLCell(6, 6, 18, 115.6, '<input type="checkbox" name="a_lawful_permanent_resident_a" value="Y" checked=""  />', 0, 1, false, false, 'L', true);
+// //...........
+// $pdf->SetFont('times', '', 12);
+// $pdf->SetFillColor(220, 220, 220);
+// $pdf->setCellPaddings(1, 1, 0, 1); 
+// $html ='<div><b>Part 2. Application Type</b></div>';
+// $pdf->writeHTMLCell(191, 6.7, 13, 128, $html, 1, 1, true, false, 'L', true); 
+// //...................
 
+// $pdf->SetFont('times', '', 10); // set font
+// $pdf->writeHTMLCell(190, 6, 11, 136, '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am applying for (select <b>only one</b> box):', 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(140, 1, 25, 142.3, 'Reinstatement to student status.', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(140, 1, 25, 148.3, 'An extension of stay in my current status.', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(140, 1, 25, 154.3, 'A change of status.', 0, 0, false, true, 'L', true);
+// $pdf->SetFont('times', '', 14);
+// if (showData('current_spouse_us_citizen_by_birth_status') == "Y") $checked = "checked";else $checked = "";
+// $pdf->writeHTMLCell(5, 1, 18.2, 142, '<input type="checkbox" name="p5_5a_status" value="Y" checked="'. $checked . '" />', 0, 1, false, false, 'L', false);
+// if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";else $checked = "";
+// $pdf->writeHTMLCell(5, 1, 18.2, 148.2, '<input type="checkbox" name="p5_5a_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+// if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";else $checked = "";
+// $pdf->writeHTMLCell(5, 1, 18.2, 154.2, '<input type="checkbox" name="p5_5a_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+// //............
+// $pdf->setCellHeightRatio(1.5); // set cell height ratio
+// $pdf->SetFont('times', '', 10); // set font
+// $pdf->writeHTMLCell(1190, 6, 11, 162, '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you are applying for a change of status or change of employer/information medium, complete the following:', 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(100, 6, 19, 167, 'I am requesting to change my status or employer/information<br>medium to:', 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(100, 6, 130, 164, 'I am requesting the change to be effective <br>(mm/dd/yyyy)', 0, 0, false, false, 'L', true);
+// $pdf->setCellHeightRatio(1.1); // set cell height ratio
+// //..............
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->ComboBox('p2_2_combobox', 92, 7, array(
+// ' A1 - AMBASSADOR, DIPLOMAT',
+// ' A2 - OTHER DIPLOMATIC OFFICIALS',
+// ' A3 - ATTENDANTS OF A-1, A-2',
+// ' B1 - TEMPORARY VISITOR FOR BUSINESS',
+// ' B1A - NI PERSNL-DOM SRVANT OF NI EMP',
+// ' B1B - NI DOMESTIC SERVANT OF USC',
+// ' B1C - NI EMPLOYED BY FOREIGN AIRLINE',
+// ' B1D - NI - MISSIONARIES',
+// ' B2 - TEMPORARY VISITOR FOR PLEASURE',
+// ' C1 - ALIEN IN TRANSIT THROUGH U.S.',
+// ' C2 - ALIEN IN TRANSIT TO UN HQ',
+// ' C3 - FRN GOV OFF IN TRANSIT THRU US',
+// ' C4 - TRANSIT WITHOUT A VISA',
+// ' CH - PAROLEE (HUMANITARIAN-HQ AUTH)',
+// ' CW1 - Principal Transitional Workers',
+// ' CW2 - Dependent of CW1',
+// ' E1S - Spouse of a Treaty Trader',
+// ' E1Y - Child of a Treaty Trader',
+// ' E2C - CNMI Investor',
+// ' E2S - Spouse of a Treaty Investor',
+// ' E2Y - Child of a Treaty Investor',
+// ' E3S - Spouse of Australian Free Trade',
+// ' E3Y - Child of Australian Free Trade',
+// ' F1 - Student - Academic',
+// ' F2 - Spouse-Child of F-1',
+// ' G1 - Principal Rep. Foreign Govt',
+// ' G2 - Other Rep Foreign Govt',
+// ' G3 - Rep Non-Recognized Foreign Gov',
+// ' G4 - Officer-Employee Intl. Org.',
+// ' G5 - Attendants of G1, G2, G3, G4',
+// ' H4 - SPS or Child of H1, H2, H3 or H2R',
+// ' I - Foreign Press',
+// ' J1 - Exchange Visitor - Others',
+// ' J1S - EXCHANGE VISITOR = STUDENT',
+// ' J2 - SPOUSE-CHILD OF J-1',
+// ' J2S - SPOUSE-CHILD OF J-1S',
+// ' K3 - SPOUSE OF USC',
+// ' K4 - CHILD OF USC',
+// ' L2S - SPOUSE OF AN L-1A OR L-1B',
+// ' L2Y - CHILD OF AN L-1A OR L-1B',
+// ' M1 - STUDENT - VOCATIONAL-NON-ACAD.',
+// ' M2 - SPOUSE-CHILD OF M-1',
+// ' N1 - PRINCIPAL REP. OF NATO MEMBER',
+// ' N2 - OTHER REP. OF NATO MEMBER',
+// ' N3 - CLERICAL STAFF FOR N-1, N-2',
+// ' N4 - OFFICIALS OF NATO',
+// ' N5 - EXPERTS EMPLOYED BY NATO',
+// ' N6 - CIVILIAN COMPONENT OF NATO',
+// ' N7 - ATTENDANTS OF N-1 THROUGH N-6',
+// ' N8 - PARENT OF SPEC IMMIGRANT CHILD',
+// ' N9 - SPOUSE-CHILD OF N8',
+// ' O3 - SPOUSE-CHILD OF O-1, O-2',
+// ' P4 - SPOUSE-CHILD OF P-1, P-2, P-3',
+// ' R2 - SPOUSE-CHILD OF R-1',
+// ' T1 - VICTIM OF SEVERE FORM OF TRAFK',
+// ' T2 - SPOUSE OF T1',
+// ' T3 - CHILD OF T1',
+// ' T4 - PARENT OF T1',
+// ' T5 - UNMARRIED UNDER 18 SIBLG T1 NI',
+// ' TD - NAFTA DEPENDENT',
+// ' U1 - VICTIM OF CRIMINAL ACTIVITY',
+// ' U2 - SPOUSE OF U1',
+// ' U3 - CHILD OF U1',
+// ' U4 - PARENT OF U1',
+// ' U5 - UNMARRIED UNDER 18 SIBLG U1 NI',
+// ' V1 - SPOUSE OF LPR',
+// ' V2 - CHILD OF LPR',
+// ' V3 - CHILD OF V2',
+// ' WB - VISITOR FOR BUSINESS - VWPP',
+// ' WT - VISITOR FOR PLEASURE - VWP'
+// 	), array(), array(), 37, 174);
+
+// 	$pdf->SetFont('courier', 'B', 10);
+// 	$pdf->TextField('p1_2_alien_registration_number', 51, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 153, 174.5);
+// //............
+// $pdf->SetFont('times', '', 10); // set font
+// $pdf->writeHTMLCell(190, 6, 11, 182, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of people included in this application (select only one box):', 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(140, 1, 25, 188.3, 'I am the only applicant.', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(140, 1, 25, 194.3, 'I am filing this application for myself and members of my family. ', 0, 0, false, true, 'L', true);
+// $pdf->SetFont('times', '', 14);
+// if (showData('current_spouse_us_citizen_by_birth_status') == "Y") $checked = "checked";else $checked = "";
+// $pdf->writeHTMLCell(5, 1, 18.2, 188, '<input type="checkbox" name="p5_5a_status" value="Y" checked="'. $checked . '" />', 0, 1, false, false, 'L', false);
+// if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";else $checked = "";
+// $pdf->writeHTMLCell(5, 1, 18.2, 194.2, '<input type="checkbox" name="p5_5a_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+// //.............
+// $pdf->SetFont('times', '', 10); // set font
+// $pdf->writeHTMLCell(190, 6, 11, 201, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The total number of people (including me) in the application is: (Form I-539A is required for each co-applicant.)', 0, 0, false, false, 'L', true);
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('p1_2_alien_registration_number', 24, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 180, 201);
+// //.............
+// $pdf->SetFont('times', '', 10); // set font
+// $pdf->writeHTMLCell(190, 6, 11, 208, '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The name of the school you will attend (if applicable) as an Academic Student, Vocational Student, or Exchange Visitor.', 0, 0, false, false, 'L', true);
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('p1_2_alien_registration_number',184, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 214);
+// //.............
+// $pdf->SetFont('times', '', 10); // set font
+// $pdf->writeHTMLCell(190, 6, 11, 223.5, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Student and Exchange Visitor Information System (SEVIS) ID Number, if applicable.', 0, 0, false, false, 'L', true);
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('p1_2_alien_registration_number',53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 151, 223);
+// //...........
+// $pdf->SetFont('times', '', 12);
+// $pdf->SetFillColor(220, 220, 220);
+// $pdf->setCellPaddings(1, 1, 0, 1); 
+// $pdf->writeHTMLCell(191, 6.7, 13, 233,'<div><b>Part 3. Processing Information </b></div>', 1, 1, true, false, 'L', true); 
+// //.............
+// //.............
+// $pdf->SetFont('times', '', 10); // set font
+// $pdf->writeHTMLCell(190, 6, 11, 241.5, '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I/We request that my/our current or requested status be extended until (mm/dd/yyyy):', 0, 0, false, false, 'L', true);
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('p1_2_alien_registration_number',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 142, 241.5);
+// //..........................
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(0, 0, 11, 249, '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Is this application based on an extension or change of status already granted to your spouse, child, or <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent?', 0, 1, false, 'L');
+// //....
+// $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
+// $pdf->writeHTMLCell(140, 1, 182, 249.4, $html, 0, 0, false, true, 'L', true);
+// $pdf->SetFont('times', '', 14);
+// if (showData('additional_info_damage_property_status') == "Y") $checked = "checked";
+// else $checked = "";
+// $pdf->writeHTMLCell(5, 1, 175.5, 249.5, '<input type="checkbox" name="p4_6_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+// if (showData('additional_info_damage_property_status') == "N") $checked = "checked";
+// else $checked = "";
+// $pdf->writeHTMLCell(5, 1, 189, 249.5, '<input type="checkbox" name="p4_6_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
+/******************************
+ ******** End Page No 2 *******
+ ******************************/
+
+/******************************
+ ******** Start Page No 3*****
+ ******************************/
+$pdf->AddPage('P', 'LETTER');
+$pdf->SetFont('times', '', 12);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 0, 1); 
+$html ='<div><b>Part 3. Processing Information </b>(continued)</div>';
+$pdf->writeHTMLCell(191, 6.7, 13, 19, $html, 1, 1, true, false, 'L', true); 
+//...................
+
+$pdf->SetFont('times', '', 9.6); // set font
+$pdf->writeHTMLCell(191, 6, 11, 26, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Is this application based on a separate petition or application to provide your spouse, child, or parent an extension or change of status?', 0, 0, false, false, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(140, 1, 25, 32.3, 'Yes, filed with this Form I-539.', 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 25, 38.3, 'No.', 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 25, 44.3, 'Yes, filed previously and pending with U.S. Citizenship and Immigration Services (USCIS).', 0, 0, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('current_spouse_us_citizen_by_birth_status') == "Y") $checked = "checked";else $checked = "";
+$pdf->writeHTMLCell(5, 1, 18.2, 32, '<input type="checkbox" name="p5_5a_status" value="Y" checked="'. $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";else $checked = "";
+$pdf->writeHTMLCell(5, 1, 18.2, 38.2, '<input type="checkbox" name="p5_5a_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";else $checked = "";
+$pdf->writeHTMLCell(5, 1, 18.2, 44.2, '<input type="checkbox" name="p5_5a_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//...................
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(191, 6, 11, 55, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 2</b>. or <b>Item Number 3.</b>, select the Form type below.', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(140, 1, 25, 61.3, 'Form I-539, Application to Extend/Change Nonimmigrant Status', 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 25, 67.3, 'Form I-129, Petition for a Nonimmigrant Worker.', 0, 0, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('current_spouse_us_citizen_by_birth_status') == "Y") $checked = "checked";else $checked = "";
+$pdf->writeHTMLCell(5, 1, 18.2, 61, '<input type="checkbox" name="p5_5a_status" value="Y" checked="'. $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";else $checked = "";
+$pdf->writeHTMLCell(5, 1, 18.2, 67.2, '<input type="checkbox" name="p5_5a_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//......................
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 11, 75, '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 2. or 3</b>., provide the USCIS Receipt Number.', '', 1, false, 'L');
+//.....................
+$pdf->Image('images/right_angle.jpg', 146, 76.4, 3.3, 3.3);
+$pdf->setFont('courier', 'B', 10);
+$pdf->TextField('p8_additional_info_a_number', 54, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 150, 75);
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 11, 83, 'If the petition or application is pending with USCIS, also provide the following information:', '', 1, false, 'L');
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 11, 90, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First and Last Name of Beneficiary or Applicant', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 19, 96, 'First Name of Beneficiary or Applicant', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 110, 96, 'Last Name of Beneficiary or Applicant', '', 1, false, 'L');
+$pdf->setFont('courier', 'B', 10);
+$pdf->TextField('p8_additional_info_a_number', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 101);
+$pdf->TextField('p8_additional_info_a_number', 93, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 111, 101);
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 11, 109, '<b>7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Filed (mm/dd/yyyy)', '', 1, false, 'L');
+$pdf->setFont('courier', 'B', 10);
+$pdf->TextField('p8_additional_info_a_number', 49, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 114);
+$pdf->SetFont('times', '', 12);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 0, 1); 
+$html ='<div><b>Part 4. Additional Information About the Principal Applicant</b></div>';
+$pdf->writeHTMLCell(191, 6.7, 13, 127, $html, 1, 1, true, false, 'L', true); 
 /******************************
  ******** End Page No 3 *******
  ******************************/
@@ -507,8 +781,6 @@ $pdf->writeHTMLCell(5, 1, 189, 76.6, '<input type="checkbox" name="p4_7e_staus" 
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 83, 'Have you <b>EVER</b>', 0, 1, false, 'L');
 //..........................
-
-
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 91, '<b>8.a.</b>&nbsp;&nbsp;&nbsp;Served in, been a member of, assisted, or participated in any military unit, paramilitary unit, police unit, self-<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defense unit, vigilante unit, rebel group, guerrilla group, militia, insurgent organization, or any other armed<br>
@@ -524,10 +796,6 @@ if (showData('additional_info_injure_any_person_status') == "N") $checked = "che
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 91.6, '<input type="checkbox" name="p4_8a_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //......................
-
-
-
-
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 106, '<b>8.b.</b>&nbsp;&nbsp;&nbsp;Worked, volunteered, or otherwise served in any prison, jail, prison camp, detention facility, labor camp, or<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;any other situation that involved detaining persons?', 0, 1, false, 'L');
@@ -617,9 +885,7 @@ $pdf->writeHTMLCell(5, 1, 175.5, 158, '<input type="checkbox" name="p4_13_staus"
 if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 158, '<input type="checkbox" name="p4_13_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-
 //..........................
-
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 166, '<b>14.</b>', 0, 1, false, 'L');
 $pdf->writeHTMLCell(0, 0, 20, 166, 'Have you <b>EVER</b>been employed in the United States since last admitted or granted an extension or change <br>of status?', 0, 1, false, 'L');
@@ -633,7 +899,6 @@ $pdf->writeHTMLCell(5, 1, 175.5, 166, '<input type="checkbox" name="p4_14_staus"
 if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 166, '<input type="checkbox" name="p4_14_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-
 //..........................
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 175, 'If you answered "No" to <b>Item Number 14</b>., fully describe how you are supporting yourself in <b>Part 8. Additional Information</b>.<br>
@@ -775,7 +1040,13 @@ $pdf->SetFont('zapfdingbats', '', 22);  // symbol font
 $pdf->writeHTMLCell(82, 7, 12, 109.8, TCPDF_FONTS::unichr(225), 0, 0, false, 'L');
 $pdf->writeHTMLCell(82, 7, 12, 235.5, TCPDF_FONTS::unichr(225), 0, 0, false, 'L');
 //...........
-// !..............................
+/******************************
+ ******** End Page No 5 ******
+ ******************************/
+
+/******************************
+ ******** Start Page No 6 ****
+ ******************************/
 $pdf->AddPage('P', 'LETTER');
 $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);
@@ -963,51 +1234,6 @@ $pdf->writeHTMLCell(174.5, 1, 21.2, 236.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 242.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.8, 33.2, 21, 222, '', 1, 1, false, 'L');
 //...........
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $js = "
 var fields = {
 
@@ -1046,6 +1272,11 @@ var fields = {
 	'p1_6_state':' " . showData('') . "',
 
 	'p1_6_zip_code':' " . showData('') . "',
+
+//!page 1 end..........
+
+	'p2_2_combobox':'  " . showData('') . "',
+
 
 //!page 1 end..........
 
