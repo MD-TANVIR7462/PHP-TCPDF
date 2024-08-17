@@ -15,14 +15,7 @@ class MyPDF extends TCPDF {
     public function Header() {
         $this->SetY(13);
 		if ($this->page > 1){
-		  // return;
-			// $this->Cell(0, 30, '<< Company Heading >>', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-			
-			/* $top_border = array(
-			   'T' => array('width' => 2, 'color' => array(0,0,0), 'dash' => 0, 'cap' => 'square'),
-			);
-			$this->Cell(184, 0, '', $top_border, 1, 1); */
-			
+		 
 			$this->SetLineWidth(2); // set border width
 			// $this->SetDrawColor(0,0,0); // set color for cell border
 			$this->SetFillColor(255,255,255); // set filling color
@@ -33,29 +26,9 @@ class MyPDF extends TCPDF {
 			$this->SetFillColor(255,255,255); // set filling color
 			$this->MultiCell(191, 0, '', 'T', 1, 'C', 1, 12.8, 14.9, false, 'T', 'C');
 
-            // $this->StartTransform();
-            // $this->SetFillColor(0,0,0);
-            // $this->Rotate(-270);
-            // $this->SetFont('zapfdingbats', 'B', 10);
-            // $this->MultiCell(10, 10, "t", '', 'R', 0, 0, 25, 150, false); header angle
-            // $this->StopTransform();
-
-            
-            // $this->SetFont('times', 'B', 10);
-            // $this->writeHTMLCell(60, 7, 120, 2, 'A-', 0, 1, false, false, 'C', true);
-            // $this->writeHTMLCell(51, 7, 153, 3, '', 1, 1, false, true, 'C', true);
-
 			
 		}
-		// parent::Header();
-		
-        // Logo
-        /* $image_file = K_PATH_IMAGES.'logo_example.jpg';
-           $this->Image($image_file, 10, 10, 15, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false); */
-        // Set font
-        /* $this->SetFont('helvetica', 'B', 20); */
-        // Title
-        /* $this->Cell(0, 15, '<< Company Heading >>', 0, false, 'C', 0, '', 0, false, 'M', 'M'); */
+	
     }
 
     // Page footer
@@ -82,9 +55,6 @@ class MyPDF extends TCPDF {
     }
 }
 
-// create new PDF document
-// $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-// $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, false, 'ISO-8859-1', false);
 
 $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
@@ -132,30 +102,7 @@ $style = array(
     'module_height' => 1 // height of a single module in points
 );
 
-// define barcode style
-/*$style = array(
-    'position' => '',
-    'align' => 'C',
-    'stretch' => false,
-    'fitwidth' => true,
-    'cellfitalign' => '',
-    'border' => true,
-    'hpadding' => 'auto',
-    'vpadding' => 'auto',
-    'fgcolor' => array(0,0,0),
-    'bgcolor' => false, //array(255,255,255),
-    'text' => true,
-    'font' => 'helvetica',
-    'fontsize' => 8,
-    'stretchtext' => 4
-);*/
 
-
-// $html = '<h4>PDF Example</h4><br><p>Welcome to the Jungle</p>';
-
-//$pdf->Text(50, 85, 'PDF417 (ISO/IEC 15438:2006)');
- 
-// $pdf->Ln(2);
 
 // Logo
 $pdf->SetFont('times', 'B', 9);	// set font
@@ -169,17 +116,8 @@ $pdf->MultiCell(80, 7, "U.S. Department of Justice", 0, 'L', 0, 1, 12, 18, true)
 
 $pdf->SetFont('times', '', 9);	// set font
 $pdf->MultiCell(80, 7, "Executive Office for Immigration Review", 0, 'L', 0, 1, 12, 22, true);
-
-
-
-
 $pdf->SetFont('times', '', 9);	// set font
 $pdf->MultiCell(80, 15, "OMB No. 1615-0067; Expires 07/31/2022", 0, 'R', 0, 1, 124, 8, true);
-
-
-
-
-
 $pdf->SetFont('times', 'B', 14);	// set font
 $pdf->setCellPaddings(2, 1, 6, 0); // set cell padding
 $pdf->MultiCell(80, 5, "I-589, Application for Asylum and for Withholding of Removal", 0, 'R', 0, 1, 129, 13, true);

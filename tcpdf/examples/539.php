@@ -1,3 +1,4 @@
+
 <?php
 //!database connection file 
 // require_once('formheader.php');   
@@ -7,10 +8,12 @@ require_once("config.php");
 require_once('tcpdf_include.php');
 
 //Extend the TCPDF class to create custom Header and Footer
-class MyPDF extends TCPDF{
+class MyPDF extends TCPDF
+{
 
 	//Page header
-	public function Header(){
+	public function Header()
+	{
 		$this->SetY(13);
 		if ($this->page > 1) {
 			$this->SetLineWidth(2); // set border width
@@ -75,7 +78,10 @@ $pdf->SetAutoPageBreak(FALSE, PDF_MARGIN_BOTTOM);
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
+// set a barcode on the page footer
+// $pdf->setBarcode(date('Y-m-d H:i:s'));
 
+// add a page
 $pdf->AddPage('P', 'LETTER');  // page number 1
 
 // set style for barcode
@@ -1514,15 +1520,3 @@ $pdf->IncludeJS($js);
 // $pdf->lastPage();
 //Close and output PDF document
 $pdf->Output('I-539.pdf', 'I');
-
-
-
-
-
-
-
-
-
-
-
-

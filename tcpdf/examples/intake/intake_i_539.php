@@ -7,7 +7,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 1 of 7</b></p>
     <table style="border-collapse: collapse; ">
         <thead>
@@ -33,7 +33,7 @@ include "intake_header.php";
                     <div>
                         <label class="control-label ">Attorney or Accredited Representative USCIS Online Account Number
                             (if any)</label>
-                        <input type="text" class="form-control" value="" disabled>
+                        <input type="text" class="form-control" value="" maxlength="12" disabled>
                     </div>
                 </td>
             </tr>
@@ -50,14 +50,14 @@ include "intake_header.php";
     <div class=" col-md-4">
         <label class="control-label " style="margin-left: 15px;">Family Name (Last Name)</label>
         <div class="col-md-12">
-            <input type="text" class="form-control" name="information_about_you_family_last_name" maxlength="35"
+            <input type="text" class="form-control" name="information_about_you_family_last_name" maxlength="29"
                 value="<?php echo showData('information_about_you_family_last_name') ?>">
         </div>
     </div>
     <div class=" col-md-4">
         <label class="control-label " style="margin-left: 15px;">Given Name (First Name)</label>
         <div class="col-md-12">
-            <input type="text" class="form-control" name="information_about_you_given_first_name" maxlength="27"
+            <input type="text" class="form-control" name="information_about_you_given_first_name" maxlength="28"
                 value="<?php echo showData('information_about_you_given_first_name') ?>">
         </div>
     </div>
@@ -65,23 +65,19 @@ include "intake_header.php";
         <label class="control-label " style="margin-left: 15px;">Middle Name (if applicable)
         </label>
         <div class="col-md-12">
-            <input type="text" class="form-control" name="information_about_you_middle_name" maxlength="22"
+            <input type="text" class="form-control" name="information_about_you_middle_name" maxlength="27"
                 value="<?php echo showData('information_about_you_middle_name') ?>">
         </div>
     </div>
 
     <div class=" col-md-6" style='margin-bottom:20px'>
-        <label class="control-label " style="">2. Alien Registration Number (A-Number) (if any)</label>
-        <div class="col-md-12 d-flexible">
-            ►A-<input type="text" class="form-control" name="other_information_about_you_date_of_birth" maxlength="22"
-                value="<?php echo showData('other_information_about_you_date_of_birth') ?>">
+        <label class="control-label ">2. Alien Registration Number (A-Number) (if any)</label>
+        <div class="col-md-12 d-flexible"> ►A-<input type="text" class="form-control" name="other_information_about_you_date_of_birth" maxlength="9" value="<?php echo showData('other_information_about_you_date_of_birth') ?>">
         </div>
     </div>
     <div class=" col-md-6" style='margin-bottom:20px'>
-        <label class="control-label " style="">3. USCIS Online Account Number (if any)</label>
-        <div class="col-md-12 d-flexible">
-            ►<input type="text" class="form-control" name="other_information_about_you_country_of_birth" maxlength="35"
-                value="<?php echo showData('other_information_about_you_country_of_birth') ?>">
+        <label class="control-label ">3. USCIS Online Account Number (if any)</label>
+        <div class="col-md-12 d-flexible"> ►<input type="text" class="form-control" name="other_information_about_you_country_of_birth" maxlength="12" value="<?php echo showData('other_information_about_you_country_of_birth') ?>">
         </div>
     </div>
     <div class="form-group" style="margin-bottom: 10px;">
@@ -93,10 +89,6 @@ include "intake_header.php";
                 style="width: 100%; padding: 5px; margin-bottom: 5px;" />
         </div>
     </div>
-
-
-
-
     <div style="margin:0px 2% 0px 2%;">
         <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
@@ -137,7 +129,7 @@ include "intake_header.php";
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="40" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
+                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="28" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
@@ -164,7 +156,6 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code_value1" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code_value1') ?>"
                             style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
-
                 </div>
             </div>
         </div>
@@ -176,7 +167,6 @@ include "intake_header.php";
     <div class="form-group" style="margin-bottom: 10px;">
         <label class="control-label" style="width: 100%; margin-bottom: 5px;">6. Your Current Physical Address </label>
     </div>
-
     <div style="margin:0px 2% 0px 2%;">
         <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
@@ -217,7 +207,7 @@ include "intake_header.php";
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="40" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
+                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="28" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
@@ -241,18 +231,264 @@ include "intake_header.php";
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
                 <div class='d-flexible'>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code_value1" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code_value1') ?>"
-                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code_value1" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code_value1') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
+<!----------------------------------------------------------------------
+-------------------------------- page 2 --------------------------------
+------------------------------------------------------------------------>
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 2 of 7</b></p>
+    <div class="bg-info">
+        <h4><b>Part 1. Information About You (continued)</b></h4>
+    </div>
+    <div class="bg-info">
+        <h4><b><i>Other Information About You</i></b></h4>
+    </div>
+    <div class="row form-group" style="margin-bottom: 20px;">
+        <div class="col-md-6">
+            <label class="control-label ">7. Country of Birth</label>
+            <div>
+                <input type="text" class="form-control" name="information_about_you_legally_change_family_last_name" maxlength="39" value="<?php echo showData('information_about_you_legally_change_family_last_name') ?>">
+            </div>
+        </div>
+        <div class=" col-md-6">
+            <label class="control-label ">8. Country of Citizenship or Nationality</label>
+            <div>
+                <input type="text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="39" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+            </div>
+        </div>
+        <div class=" col-md-5">
+            <label class="control-label "> 9. Date of Birth (mm/dd/yyyy)</label>
+            <div>
+                <input type="date" class="form-control" name="information_about_you_legally_change_given_first_name" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+            </div>
+        </div>
+        <div class=" col-md-5">
+            <label class="control-label "> 10. U.S. Social Security Number (if any)</label>
+            <div class="d-flexible">
+                ►<input type="text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="9" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+            </div>
+        </div>
+    </div>
+    <div style="margin-bottom: 2%;" class=" col-md-12">
+        <label class="control-label ">11. Provide Information About Your Most Recent Entry Into the United States</label>
+    </div>
+    <div class="row form-group" style="margin-bottom: 20px;">
+        <div class=" col-md-4">
+            <label class="control-label ">Date of Last Arrival Into the</label>
+            <label class="control-label ">United States (mm/dd/yyyy)</label>
+            <div> <input type=" date" class="form-control" name="information_about_you_legally_change_family_last_name"  value="<?php echo showData('information_about_you_legally_change_family_last_name') ?>"> </div>
+        </div>
+        <div class="col-md-4">
+            <label class="control-label ">Form I-94 Arrival-Departure</label><br>
+            <label class="control-label ">Record Number</label>
+            <div class="d-flexible">►<input type=" text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="11" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <label class="control-label ">Passport Number </label> <br>
+            <label class="control-label ">(if any)</label>
+            <div><input type=" text" class="form-control" name="information_about_you_legally_change_middle_name" maxlength="30" value="<?php echo showData('information_about_you_legally_change_middle_name') ?>"></div>
+        </div>
+    </div>
+    <div class="row form-group" style="margin-bottom: 20px;">
+        <div class=" col-md-4">
+            <label class="control-label">Travel Document Number</label><br>
+            <label class="control-label">(if any)</label>
+            <div> <input type=" text" class="form-control" name="information_about_you_legally_change_family_last_name" maxlength="22" value="<?php echo showData('information_about_you_legally_change_family_last_name') ?>"> </div>
+        </div>
+        <div class=" col-md-4">
+            <label class="control-label">Country of Passport or</label>
+            <label class="control-label">Travel Document Issuance</label>
+            <div><input type=" text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="32" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <label class="control-label">Passport or Travel Document Expiration</label> <br>
+            <label class="control-label">Date (mm/dd/yyyy)</label>
+            <div><input type="date" class="form-control" name="information_about_you_legally_change_middle_name"  value="<?php echo showData('information_about_you_legally_change_middle_name') ?>"></div>
+        </div>
+    </div>
+    <div class="row form-group" style="margin-bottom: 20px;">
+        <div class=" col-md-8">
+            <label class="control-label ">12. Current Nonimmigrant Status (for example, F-1 student, H-4 dependent, etc.)</label>
+            <div> <input type=" date" class="form-control" name="information_about_you_legally_change_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_legally_change_family_last_name') ?>"> </div>
+        </div>
+        <div class=" col-md-4">
+            <label class="control-label ">Date Status Expires (mm/dd/yyyy)</label><br>
+            <div><input type="date" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" style="margin:1% 0 0 1.5% "><?php echo createCheckbox("current_spouse_us_citizen_by_birth_status") ?>Select this box if you were granted Duration of Status (D/S).</label>
+        </div>
+    </div>
+    <div class="bg-info">
+        <h4><b>Part 2. Application Type </b></h4>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-12">1. I am applying for (select only one box):</label>
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="control-label" style="margin-left: 30px;"><input type="radio" name="other_information_about_you_marital_status" value="single" <?php echo (showData('other_information_about_you_marital_status') == 'single') ? 'checked' : '' ?>> Reinstatement to student status.</label> <br>
+                <label class="control-label" style="margin-left: 30px;"><input type="radio" name="other_information_about_you_marital_status" value="married" <?php echo (showData('other_information_about_you_marital_status') == 'married') ? 'checked' : '' ?>> An extension of stay in my current status.</label> <br>
+                <label class="control-label" style="margin-left: 30px;"><input type="radio" name="other_information_about_you_marital_status" value="divorced" <?php echo (showData('other_information_about_you_marital_status') == 'divorced') ? 'checked' : '' ?>> A change of status.</label>
+            </div>
+        </div>
+        <label class="control-label col-md-12">2. If you are applying for a change of status or change of employer/information medium, complete the following:</label>
+        <div class="row form-group" style="margin-bottom: 20px;">
+            <div class=" col-md-8">
+                <label class="control-label">I am requesting to change my status or employer/information </label><br>
+                <label class="control-label">medium to:</label>
+                <div>
+                    <select class="form-control" name="i_290b_appeal_or_motion_adverse_decision">
+                        <option value=''></option>
+                        <?php
+                        $values = [
+                            ' A1 - AMBASSADOR, DIPLOMAT',
+                            ' A2 - OTHER DIPLOMATIC OFFICIALS',
+                            ' A3 - ATTENDANTS OF A-1, A-2',
+                            ' B1 - TEMPORARY VISITOR FOR BUSINESS',
+                            ' B1A - NI PERSNL-DOM SRVANT OF NI EMP',
+                            ' B1B - NI DOMESTIC SERVANT OF USC',
+                            ' B1C - NI EMPLOYED BY FOREIGN AIRLINE',
+                            ' B1D - NI - MISSIONARIES',
+                            ' B2 - TEMPORARY VISITOR FOR PLEASURE',
+                            ' C1 - ALIEN IN TRANSIT THROUGH U.S.',
+                            ' C2 - ALIEN IN TRANSIT TO UN HQ',
+                            ' C3 - FRN GOV OFF IN TRANSIT THRU US',
+                            ' C4 - TRANSIT WITHOUT A VISA',
+                            ' CH - PAROLEE (HUMANITARIAN-HQ AUTH)',
+                            ' CW1 - Principal Transitional Workers',
+                            ' CW2 - Dependent of CW1',
+                            ' E1S - Spouse of a Treaty Trader',
+                            ' E1Y - Child of a Treaty Trader',
+                            ' E2C - CNMI Investor',
+                            ' E2S - Spouse of a Treaty Investor',
+                            ' E2Y - Child of a Treaty Investor',
+                            ' E3S - Spouse of Australian Free Trade',
+                            ' E3Y - Child of Australian Free Trade',
+                            ' F1 - Student - Academic',
+                            ' F2 - Spouse-Child of F-1',
+                            ' G1 - Principal Rep. Foreign Govt',
+                            ' G2 - Other Rep Foreign Govt',
+                            ' G3 - Rep Non-Recognized Foreign Gov',
+                            ' G4 - Officer-Employee Intl. Org.',
+                            ' G5 - Attendants of G1, G2, G3, G4',
+                            ' H4 - SPS or Child of H1, H2, H3 or H2R',
+                            ' I - Foreign Press',
+                            ' J1 - Exchange Visitor - Others',
+                            ' J1S - EXCHANGE VISITOR = STUDENT',
+                            ' J2 - SPOUSE-CHILD OF J-1',
+                            ' J2S - SPOUSE-CHILD OF J-1S',
+                            ' K3 - SPOUSE OF USC',
+                            ' K4 - CHILD OF USC',
+                            ' L2S - SPOUSE OF AN L-1A OR L-1B',
+                            ' L2Y - CHILD OF AN L-1A OR L-1B',
+                            ' M1 - STUDENT - VOCATIONAL-NON-ACAD.',
+                            ' M2 - SPOUSE-CHILD OF M-1',
+                            ' N1 - PRINCIPAL REP. OF NATO MEMBER',
+                            ' N2 - OTHER REP. OF NATO MEMBER',
+                            ' N3 - CLERICAL STAFF FOR N-1, N-2',
+                            ' N4 - OFFICIALS OF NATO',
+                            ' N5 - EXPERTS EMPLOYED BY NATO',
+                            ' N6 - CIVILIAN COMPONENT OF NATO',
+                            ' N7 - ATTENDANTS OF N-1 THROUGH N-6',
+                            ' N8 - PARENT OF SPEC IMMIGRANT CHILD',
+                            ' N9 - SPOUSE-CHILD OF N8',
+                            ' O3 - SPOUSE-CHILD OF O-1, O-2',
+                            ' P4 - SPOUSE-CHILD OF P-1, P-2, P-3',
+                            ' R2 - SPOUSE-CHILD OF R-1',
+                            ' T1 - VICTIM OF SEVERE FORM OF TRAFK',
+                            ' T2 - SPOUSE OF T1',
+                            ' T3 - CHILD OF T1',
+                            ' T4 - PARENT OF T1',
+                            ' T5 - UNMARRIED UNDER 18 SIBLG T1 NI',
+                            ' TD - NAFTA DEPENDENT',
+                            ' U1 - VICTIM OF CRIMINAL ACTIVITY',
+                            ' U2 - SPOUSE OF U1',
+                            ' U3 - CHILD OF U1',
+                            ' U4 - PARENT OF U1',
+                            ' U5 - UNMARRIED UNDER 18 SIBLG U1 NI',
+                            ' V1 - SPOUSE OF LPR',
+                            ' V2 - CHILD OF LPR',
+                            ' V3 - CHILD OF V2',
+                            ' WB - VISITOR FOR BUSINESS - VWPP',
+                            ' WT - VISITOR FOR PLEASURE - VWP'
+                        ];
+                        $selected_value = showData('i_290b_appeal_or_motion_adverse_decision');
+                        foreach ($values as $value) {
+                            $selected = ($value == $selected_value) ? "selected" : "";
+                            echo "<option value='$value' $selected>$value</option>";
+                        }
+                        ?>
+                    </select>
+
+                </div>
+            </div>
+            <div class=" col-md-4">
+                <label class="control-label">I am requesting the change to be effective </label>
+                <label class="control-label">(mm/dd/yyyy)</label>
+                <div><input type="date" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+                </div>
+            </div>
+        </div>
+        <label class="control-label col-md-12">3. Number of people included in this application (select only one box):</label>
+        <div class="col-md-12 ">
+            <div class="form-group">
+                <label class="control-label" style="margin-left: 30px;"><input type="radio" name="other_information_about_you_marital_status" value="single" <?php echo (showData('other_information_about_you_marital_status') == 'single') ? 'checked' : '' ?>> I am the only applicant</label> <br>
+                <label class="control-label" style="margin-left: 30px;"><input type="radio" name="other_information_about_you_marital_status" value="married" <?php echo (showData('other_information_about_you_marital_status') == 'married') ? 'checked' : '' ?>> I am filing this application for myself and members of my family. </label> <br>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-9">4. The total number of people (including me) in the application is: (Form I-539A is required for each co-applicant.)</label>
+            <div class="col-md-3">
+                <div><input type="text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">5. The name of the school you will attend (if applicable) as an Academic Student, Vocational Student, or Exchange Visitor</label>
+            <div class="col-md-12">
+                <div><input type="text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-8">6. Your Student and Exchange Visitor Information System (SEVIS) ID Number, if applicable</label>
+            <div class="col-md-4">
+                <div><input type="text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+                </div>
+            </div>
+        </div>
+        <div class="bg-info">
+            <h4><b>Part 3. Processing Information</b></h4>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-9">1. I/We request that my/our current or requested status be extended until (mm/dd/yyyy):</label>
+            <div class="col-md-3">
+                <div><input type="text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-10">2. Is this application based on an extension or change of status already granted to your spouse, child, or parent?</label>
+            <div class="col-md-2">
+                <?php echo createRadio("additional_info_military_training_status") ?>
+            </div>
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ------------------------------------------------------------------------>
@@ -271,7 +507,6 @@ include "intake_header.php";
                 <label class="control-label" style="margin-left: 30px;"><input type="radio" name="other_information_about_you_marital_status" value="divorced" <?php echo (showData('other_information_about_you_marital_status') == 'divorced') ? 'checked' : '' ?>> Yes, filed previously and pending with U.S. Citizenship and Immigration Services (USCIS).</label>
             </div>
         </div>
-        <label class="control-label col-md-12">If you are single and have never married, go to Part 6. Information About Your Children</label>
     </div>
     <div class="form-group">
         <label class="control-label col-md-12">4. If you answered "Yes" to Item Number 2. or Item Number 3., select the Form type below.</label>
@@ -394,7 +629,7 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-    <div class=" col-md-12">
+    <div class=" col-md-12" style="margin-bottom: 2%;">
         <label class="control-label ">Answer the following questions. If you answer "Yes" to any of the questions in Item Numbers 3. - 15., use the space provided in Part 8. Additional Information to provide an explanation</label>
     </div>
     <div class="form-group row">
@@ -419,11 +654,10 @@ include "intake_header.php";
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
-
-<!-------------------------------------------------------
------------------------- page 4 -------------------------
---------------------------------------------------------->
-<!-- <fieldset class="setpage">
+<!----------------------------------------------------------------------
+-------------------------------- page 4 --------------------------------
+------------------------------------------------------------------------>
+<fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 7</b></p>
     <div class="bg-info">
         <h4><b>Part 4. Additional Information About the Applicant (continued)</b></h4>
@@ -529,12 +763,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset> -->
-
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style=" text-align: right;""><b>Page 5 of 7</b></p>
 
     <div class=" bg-info col-md-12" style="margin-top:10px;">
@@ -637,12 +870,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
-
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 6 of 7</b></p>
     <div class=" bg-info col-md-12" style="margin-top:10px;">
     <h4><b>Part 7. Contact Information, Declaration, and Signature of the Person Preparing this Application, if Other Than the Applicant</b></h4>
@@ -707,12 +939,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
-
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 7--------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 7 of 7</b></p>
 
     <div class="bg-info">
@@ -774,14 +1005,14 @@ include "intake_header.php";
             </div>
         </div>
         <div class="form-group">
-           
+
             <div class="col-md-12">
                 <textarea name="n_600_additional_info_3d" class="form-control" maxlength="265" cols="30" rows="10"><?php echo showData('n_600_additional_info_3d') ?></textarea>
             </div>
         </div>
         <div class="d-flexible">
             <div class="form-group">
-                <label class="control-label col-md-12">4.  Page Number</label>
+                <label class="control-label col-md-12">4. Page Number</label>
                 <div class="col-md-12">
                     <input type="text" class="form-control" name="n_600_additional_info_4a_page_no" maxlength="2" value="<?php echo showData('n_600_additional_info_6a_page_no') ?>">
                 </div>
@@ -806,7 +1037,7 @@ include "intake_header.php";
         </div>
         <div class="d-flexible">
             <div class="form-group">
-                <label class="control-label col-md-12">5.  Page Number</label>
+                <label class="control-label col-md-12">5. Page Number</label>
                 <div class="col-md-12">
                     <input type="text" class="form-control" name="n_600_additional_info_5a_page_no" maxlength="2" value="<?php echo showData('n_600_additional_info_6a_page_no') ?>">
                 </div>
@@ -857,7 +1088,7 @@ include "intake_header.php";
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 
 
 <?php include "intake_footer.php" ?>
