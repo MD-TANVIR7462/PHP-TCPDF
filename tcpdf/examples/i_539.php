@@ -7,10 +7,12 @@ require_once("config.php");
 require_once('tcpdf_include.php');
 
 //Extend the TCPDF class to create custom Header and Footer
-class MyPDF extends TCPDF{
+class MyPDF extends TCPDF
+{
 
 	//Page header
-	public function Header(){
+	public function Header()
+	{
 		$this->SetY(13);
 		if ($this->page > 1) {
 			$this->SetLineWidth(2); // set border width
@@ -1039,9 +1041,6 @@ $pdf->writeHTMLCell(5, 1, 189, 197, '<input type="checkbox" name="p4_15_staus" v
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 207, 'If you answered "Yes" <b>to Item Number 15</b>., you must provide the dates you maintained status as a J-1 exchange visitor or J-2
 dependent in <b>Part 8. Additional Information.</b> ', 0, 1, false, 'L');
-//......................
-
-
 /******************************
  ******** End Page No 4 ******
  ******************************/
@@ -1389,7 +1388,7 @@ var fields = {
 
 	'p1_6_zip_code':' " . showData('') . "',
 
-//!page 1 end..........
+//!page 1 end 2 start..........
 
 	'p1_7_country_birth':'  " . showData('') . "',
 	'p1_8_country_citizenship':'  " . showData('') . "',
@@ -1411,7 +1410,7 @@ var fields = {
 	'p3_1_date':'  " . showData('') . "',
 
 
-//!page 2 end..........
+//!page 2 end 3 start..........
 	'p3_uscis_reseipt_number':'  " . showData('') . "',
 	'p3_6_first_name':'  " . showData('') . "',
 	'p3_6_last_name':'  " . showData('') . "',
@@ -1425,67 +1424,47 @@ var fields = {
 	'p4_2_province':'  " . showData('') . "',
 	'p4_2_postal_code':'  " . showData('') . "',
 	'p4_2_country':'  " . showData('') . "',
+//!page 3 end 5 start..........
 
+	'p5_applicant_daytime':' " . showData('i_539_applicant_daytime_tel') . "',
+	'p5_applicant_mobile':' " . showData('i_539_applicant_mobile') . "',
+	'p5_applicant_email':' " . showData('i_539_applicant_email') . "',
+	'p5_applicant_signature_date':' " . showData('i_539_applicant_sign_date') . "',
+	'p6_Interpreter_family_name':' " . showData('i_539_interpreter_family_last_name') . "',
+	'p6_Interpreter_given_name':' " . showData('i_539_interpreter_given_first_name') . "',
+	'p6_Interpreter_business_name':' " . showData('i_539_interpreter_business_name') . "',
+	'p6_Interpreter_daytime':' " . showData('i_539_interpreter_daytime_tel') . "',
+	'p6_Interpreter_mobile':' " . showData('i_539_interpreter_mobile') . "',
+	'p6_Interpreter_email':' " . showData('i_539_interpreter_email') . "',
+	'p6_interpreter_fluent_english':' " . showData('i_539_interpreter_certification_language_skill') . "',
+	'p6_interpreter_signature_date':' " . showData('i_539_interpreter_sign_date') . "',
+//!page 5 end 6 start..........
 
+	'p7_Preparer_family_name':' " . showData('i_539_preparer_family_last_name') . "',
+	'p7_Preparer_given_name':' " . showData('i_539_preparer_family_given_first_name') . "',
+	'p7_Preparer_business_name':' " . showData('i_539_preparer_business_name') . "',
+	'p7_Preparer_daytime':' " . showData('i_539_preparer_daytime_tel') . "',
+	'p7_Preparer_mobile':' " . showData('i_539_preparer_mobile') . "',
+	'p7_Preparer_email':' " . showData('i_539_preparer_email') . "',
+	'p7_Preparer_signature_date':' " . showData('i_539_preparer_sign_date') . "',
+//!page 6 end 7 start..........
 
-//!page 3 end..........
-
-	'p5_applicant_daytime':' " . showData('') . "',
-
-	
-	'p5_applicant_mobile':' " . showData('') . "',
-	
-	'p5_applicant_email':' " . showData('') . "',
-	
-	'p5_applicant_signature_date':' " . showData('') . "',
-
-	'p6_Interpreter_family_name':' " . showData('') . "',
-
-	'p6_Interpreter_given_name':' " . showData('') . "',
-
-	'p6_Interpreter_business_name':' " . showData('') . "',
-
-	'p6_Interpreter_daytime':' " . showData('') . "',
-
-	'p6_Interpreter_mobile':' " . showData('') . "',
-
-	'p6_Interpreter_email':' " . showData('') . "',
-
-	'p6_interpreter_fluent_english':' " . showData('') . "',
-
-	'p6_interpreter_signature_date':' " . showData('') . "',
-//!page 5 end..........
-
-	'p7_Preparer_family_name':' " . showData('') . "',
-
-	'p7_Preparer_given_name':' " . showData('') . "',
-
-	'p7_Preparer_business_name':' " . showData('') . "',
-
-	'p7_Preparer_daytime':' " . showData('') . "',
-
-	'p7_Preparer_mobile':' " . showData('') . "',
-
-	'p7_Preparer_email':' " . showData('') . "',
-
-	'p7_Preparer_signature_date':' " . showData('') . "',
-//!page 6 end..........
-'p8_additional_info_family_name':' " . showData('n_600_additional_info_last_name') . "',
-'p8_additional_info_given_name':' " . showData('n_600_additional_info_first_name') . "',
-'p8_additional_info_middle_name':' " . showData('n_600_additional_info_middle_name') . "',
-'p8_additional_info_a_number':' " . showData('n_600_additional_info_a_number') . "',
-'p8_additional_info_3a':' " . showData('n_600_additional_info_3a_page_no') . "',
-'p8_additional_info_3b':' " . showData('n_600_additional_info_3b_part_no') . "',
-'p8_additional_info_3c':' " . showData('n_600_additional_info_3c_item_no') . "',
-'p8_additional_info_4a':' " . showData('n_600_additional_info_4a_page_no') . "',
-'p8_additional_info_4b':' " . showData('n_600_additional_info_4b_part_no') . "',
-'p8_additional_info_4c':' " . showData('n_600_additional_info_4c_item_no') . "',
-'p8_additional_info_5a':' " . showData('n_600_additional_info_5a_page_no') . "',
-'p8_additional_info_5b':' " . showData('n_600_additional_info_5b_part_no') . "',
-'p8_additional_info_5c':' " . showData('n_600_additional_info_5c_item_no') . "',
-'p8_additional_info_6a':' " . showData('n_600_additional_info_6a_page_no') . "',
-'p8_additional_info_6b':' " . showData('n_600_additional_info_6b_part_no') . "',
-'p8_additional_info_6c':' " . showData('n_600_additional_info_6c_item_no') . "',
+	'p8_additional_info_family_name':' " . showData('i_539_additional_info_last_name') . "',
+	'p8_additional_info_given_name':' " . showData('i_539_additional_info_first_name') . "',
+	'p8_additional_info_middle_name':' " . showData('i_539_additional_info_middle_name') . "',
+	'p8_additional_info_a_number':' " . showData('i_539_additional_info_a_number') . "',
+	'p8_additional_info_3a':' " . showData('i_539_additional_info_3a_page_no') . "',
+	'p8_additional_info_3b':' " . showData('i_539_additional_info_3b_part_no') . "',
+	'p8_additional_info_3c':' " . showData('i_539_additional_info_3c_item_no') . "',
+	'p8_additional_info_4a':' " . showData('i_539_additional_info_4a_page_no') . "',
+	'p8_additional_info_4b':' " . showData('i_539_additional_info_4b_part_no') . "',
+	'p8_additional_info_4c':' " . showData('i_539_additional_info_4c_item_no') . "',
+	'p8_additional_info_5a':' " . showData('i_539_additional_info_5a_page_no') . "',
+	'p8_additional_info_5b':' " . showData('i_539_additional_info_5b_part_no') . "',
+	'p8_additional_info_5c':' " . showData('i_539_additional_info_5c_item_no') . "',
+	'p8_additional_info_6a':' " . showData('i_539_additional_info_6a_page_no') . "',
+	'p8_additional_info_6b':' " . showData('i_539_additional_info_6b_part_no') . "',
+	'p8_additional_info_6c':' " . showData('i_539_additional_info_6c_item_no') . "',
 //!page 7 end..........
 
 };
@@ -1514,15 +1493,3 @@ $pdf->IncludeJS($js);
 // $pdf->lastPage();
 //Close and output PDF document
 $pdf->Output('I-539.pdf', 'I');
-
-
-
-
-
-
-
-
-
-
-
-
