@@ -1,8 +1,8 @@
 <?php
 //!database connection file 
-// require_once('formheader.php');   
+require_once('formheader.php');
 //!local server file
-require_once("config.php");
+// require_once("config.php");
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
 
@@ -47,7 +47,7 @@ class MyPDF extends TCPDF
 		// if ($this->page == 1){
 		$barcode_image = "images/i539/I-539-footer-pdf417-$this->page.png";
 		// )
-		$this->Image($barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
+		$this->Image($barcode_image, 65, 268, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
 		$this->MultiCell(61, 6, 'Page ' . $this->getAliasNumPage() . ' of ' . $this->getAliasNbPages(), 0, 'R', 0, 1, 159, 267.5, true);
 	}
 }
@@ -267,8 +267,8 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('attorney_state_bar_number', 42, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 94, 100);
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>Attorney or According Representative USCIS Online Account Number</b>(if any)</div>';
-$pdf->writeHTMLCell(60, 15, 140, 90, $html, 0, 1, false, true, 'L', true);
+$html = '<div><b>Attorney or Accredited Representative USCIS Online Account Number</b> (if any)</div>';
+$pdf->writeHTMLCell(63, 15, 139, 90, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('attorney_or_according_representative', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 140, 100);
@@ -355,11 +355,11 @@ $pdf->writeHTMLCell(0, 0, 11, 206.5, $html, 0, 0, false, true, 'L', true);
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 178.5, 207, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('processing_info_granted_spouse_child_parent_status') == "Y") $checked = "checked";
+if (showData('is_your_current_mailing_address_same_as_physical') == "Y") $checked = "checked";
 else $checked = "";
 $html = '<input type="checkbox" name="18th_birthday" value="Y"  checked="' . $checked . '" />';
 $pdf->writeHTMLCell(5, 1, 172, 206.5, $html, 0, 1, false, false, 'L', false);
-if (showData('processing_info_granted_spouse_child_parent_status') == "N") $checked = "checked";
+if (showData('is_your_current_mailing_address_same_as_physical') == "N") $checked = "checked";
 else $checked = "";
 $html = '<input type="checkbox" name="18th_birthday" value="N" checked="' . $checked . '" />';
 $pdf->writeHTMLCell(5, 1, 186, 206.5, $html, 0, 1, false, false, 'L', false);
@@ -467,147 +467,147 @@ $pdf->writeHTMLCell(0, 0, 139, 103.6, 'Date Status Expires (mm/dd/yyyy) ', 0, 0,
 //..................
 $pdf->SetFont('courier', 'B', 10);
 $pdf->ComboBox('p1_12_nonimmigran_status_combobox', 118.5, 7, array(
-	"1B1 - H-1B1 SPECIALITY OCCUPATION",
-	"1B2 - H-1B2 DoD SPECIALITY",
-	"1B3 - H-1B3 FASHION MODEL",
-	"1B4 - H-1B4 UNIQUE PGM ARTIST-ENT",
-	"1B5 - H-1B5 ALIEN ATHLETE",
-	"1B6 - SUPPORT PERSON OF H-1",
-	"A1 - AMBASSADOR, DIPLOMAT",
-	"A2 - OTHER DIPLOMATIC OFFICIALS",
-	"A3 - ATTENDANTS OF A-1, A-2",
-	"AS - ASYLUM",
-	"ASD - ASYLUM STATUS DENIED",
-	"AW - RAW APPLIED FOR AT A PORT",
-	"B1 - TEMPORARY VISITOR FOR BUSINESS",
-	"B1A - NI PERSNL-DOM SRVANT OF NI EMP",
-	"B1B - NI DOMESTIC SERVANT OF USC",
-	"B1C - NI EMPLOYED BY FOREIGN AIRLINE",
-	"B1D - NI - MISSIONARIES",
-	"B2 - TEMPORARY VISITOR FOR PLEASURE",
-	"BE - BERING STRAIT ENTRIES",
-	"C1 - ALIEN IN TRANSIT THROUGH U.S.",
-	"C2 - ALIEN IN TRANSIT TO UN HQ",
-	"C3 - FRN GOV OFF IN TRANSIT THRU US",
-	"CW - TRANSIT WITHOUT A VISA",
-	"CC - CUBAN MASS MIGRATION PROJECT",
-	"CH - PAROLE (HUMANITARIAN-HQ AUTH)",
-	"CP - PAROLE (PUBLIC INT-HQ AUTH)",
-	"CW - PRINCIPAL TRANSITIONAL WORKERS",
-	"D1 - ALIEN CREW DEPART SAME VESSEL",
-	"D2 - ALIEN CREW DEPART OTHER VESSEL",
-	"DA - ADVANCE PAROLE (DISTRICT AUTH)",
-	"DE - PAROLEE (DEFERRED INSPECTION)",
-	"DF - PAROLEE (DISTRICT-POE AUTH)",
-	"DK - CREW ARRIVING DETAINED ON SHIP",
-	"E1 - TREATY TRADER-SPOUSE-CHILDREN",
-	"E2C - CNMI INVESTOR",
-	"E3 - AUSTRALIA FREE TRADE AGREE",
-	"E3D - SPOUSE OR CHILD OF E3",
-	"EAO - EMPLOYMENT ADVISORY OPTI",
-	"EWI - ENTRY WITHOUT INSPECTION",
-	"F1 - STUDENT - ACADEMIC",
-	"F2 - SPOUSE-CHILD OF F-1",
-	"FSM - CFA ADM FED STATES MICRO",
-	"FUG - FAMILY UNITY GRANTED",
-	"G1 - PRINCIPAL REP. FOREIGN GOVT",
-	"G2 - OTHER REP FOREIGN GOVT",
-	"G3 - REP NON-RECOGNIZED FOREIGN",
-	"G4 - OFFICER-EMPLOYEE INTL. ORG.",
-	"G5 - ATTENDANTS OF G1, G2, G3, G4",
-	"GB - VISITOR WITHOUT A VISA 15 DAY",
-	"GMB - Guam Mariana Business",
-	"GT - VISITOR WITHOUT A VISA 15 DAY",
-	"H1 - ALIEN OF DIST MERIT & ABILITY",
-	"H1A - REGISTERED NURSE",
-	"H1B - SPECIALITY OCCUPATION",
-	"H1C - NURSE RELIEF",
-	"H2 - TEMPORARY LABOR CERTIFICATION",
-	"H2A - TEMPORARY AGRICUL WORKER",
-	"H2B - TEMPORARY NON-AG WORKER",
-	"H2R - RET(H2B)WRK NOT SUBJECT TO CAP",
-	"H3 - ALIEN TRAINEE",
-	"H3A - TRAINEE",
-	"H3B - SPECIAL EDUCATION TRAINING",
-	"H4 - SPS OR CHLD OF H1,H2,H3 OR H2R",
-	"H1B1 - FREE TRADE H1B1",
-	"I - FOREIGN PRESS",
-	"IMM - IMMIGRANT",
-	"IN - INDEFINITE PAROLE",
-	"J1 - EXCHANGE VISITOR - OTHERS",
-	"J1S - EXCHANGE VISITOR - STUDENT",
-	"J2 - SPOUSE-CHILD OF J-1",
-	"J2S - SPOUSE-CHILD OF J-1S",
-	"K1 - ALIEN FIANCE(E) OF USC",
-	"K2 - CHILD OF K1",
-	"K3 - SPOUSE OF USC",
-	"K4 - CHILD OF USC",
-	"L1 - INTRA-COMPANY TRANSFEREE",
-	"L1A - MANAGER OR EXECUTIVE",
-	"L1B - SPECIALIZED KNOWLEDGE ALIEN",
-	"L2 - SPOUSE-CHILD OF L1",
-	"L1 - IMMIGRANT INVESTOR",
-	"M1 - STUDENT - VOCATIONAL-NON-ACAD.",
-	"M2 - SPOUSE-CHILD OF M-1",
-	"MP - CPA ADM MICRON. MARSHALL ISLANDS",
-	"M1 - IMMIGRANT",
-	"M3 - OTHER WORKER",
-	"M4 - VAWA SELF-PETITIONER",
-	"MW - SPOUSE-CHILD OF M1, M2",
-	"NA - CPA ADM FED STATES MICRO",
-	"NC - AMERASIAN IMMIGRANT AM INV",
-	"ND - EVACUEE AMERASIAN IMM INV",
-	"N8 - PARENT OF SPECIAL IMMIGRANT CHILD",
-	"N9 - SPOUSE-CHILD OF N8",
-	"O1 - ALIEN OF EXTRAORDINARY ABILITY",
-	"O2 - EXTRORDINARY ALIEN IN ARTS",
-	"O3 - ACCOMPANYING ALIEN TO O1",
-	"O4 - SPOUSE-CHILD OF O1, O2",
-	"P1A - ALIEN WITH ATHLETIC EVENT",
-	"P1B - ALIEN WITH ENTERTAINMENT GROUP",
-	"P2 - EXCHANGE ARTIST-ENTERTAINER",
-	"P3 - ALIEN WITH CULTURAL EVENT",
-	"P4 - SPOUSE-CHILD OF P-1, P-3",
-	"P5 - SPOUSE-CHILD OF P-2",
-	"P6 - SPOUSE-CHILD OF P-1, P-3",
-	"P9A - CPA AMERASIAN PALAU",
-	"PX - MANAGER",
-	"PX1 - PACIFIC ISLANDER",
-	"Q1 - INT'L CULTURAL EXCH VISITORS",
-	"Q2 - IRISH PEACE PROCESS PARTICIPANTS",
-	"Q3 - SPOUSE-CHILD OF Q2",
-	"R1 - RELIGIOUS OCCUPATION",
-	"R2 - SPOUSE-CHILD OF R-1",
-	"RE - REFUGEE",
-	"RN - NATIVE-BORN CHILD",
-	"S1 - ASYLUM GRANTED",
-	"S2 - SPECIAL AGRICULTURAL WORKERS",
-	"S3 - TEMPORARY FARM WORKERS",
-	"S4 - EMPLOYMENT ECONOMY FRAUD",
-	"S5 - GOVERNMENT",
-	"T1 - VICTIM OF HUMAN TRAFFICKING",
-	"T2 - SPOUSE OF T1",
-	"T3 - CHILD OF T1",
-	"T4 - PARENT OF T1",
-	"T5 - SPOUSE OF CHILD OF T1",
-	"T6 - VICTIM OF TRAFFICKING",
-	"TN - NAFTA PROFESSIONAL (CANADA)",
-	"TP - NAFTA PROFESSIONAL (MEXICO)",
-	"U1 - VICTIM OF CRIMINAL ACTIVITY",
-	"U2 - SPOUSE OF U1",
-	"U3 - CHILD OF U1",
-	"U4 - PARENT OF U1",
-	"U5 - UNMARRIED UNDER 18 SIBLG U1 NI",
-	"UN - UNKNOWN",
-	"UU - UNKNOWN",
-	"V1 - SPOUSE OF LPR",
-	"V2 - CHILD OF LPR",
-	"V2 - CHILD OF V2",
-	"WB - VISITOR FOR BUSINESS - VWPP",
-	"WD - WITHDRAWL (I-275)",
-	"WI - WITHOUT INSPECTION ",
-	"WT - VISITOR FOR PLEASURE - VWPP",
-	"X - EOIR"
+	" 1B1 - H-1B1 SPECIALITY OCCUPATION",
+	" 1B2 - H-1B2 DoD SPECIALITY",
+	" 1B3 - H-1B3 FASHION MODEL",
+	" 1B4 - H-1B4 UNIQUE PGM ARTIST-ENT",
+	" 1B5 - H-1B5 ALIEN ATHLETE",
+	" 1B6 - SUPPORT PERSON OF H-1",
+	" A1 - AMBASSADOR, DIPLOMAT",
+	" A2 - OTHER DIPLOMATIC OFFICIALS",
+	" A3 - ATTENDANTS OF A-1, A-2",
+	" AS - ASYLUM",
+	" ASD - ASYLUM STATUS DENIED",
+	" AW - RAW APPLIED FOR AT A PORT",
+	" B1 - TEMPORARY VISITOR FOR BUSINESS",
+	" B1A - NI PERSNL-DOM SRVANT OF NI EMP",
+	" B1B - NI DOMESTIC SERVANT OF USC",
+	" B1C - NI EMPLOYED BY FOREIGN AIRLINE",
+	" B1D - NI - MISSIONARIES",
+	" B2 - TEMPORARY VISITOR FOR PLEASURE",
+	" BE - BERING STRAIT ENTRIES",
+	" C1 - ALIEN IN TRANSIT THROUGH U.S.",
+	" C2 - ALIEN IN TRANSIT TO UN HQ",
+	" C3 - FRN GOV OFF IN TRANSIT THRU US",
+	" CW - TRANSIT WITHOUT A VISA",
+	" CC - CUBAN MASS MIGRATION PROJECT",
+	" CH - PAROLE (HUMANITARIAN-HQ AUTH)",
+	" CP - PAROLE (PUBLIC INT-HQ AUTH)",
+	" CW - PRINCIPAL TRANSITIONAL WORKERS",
+	" D1 - ALIEN CREW DEPART SAME VESSEL",
+	" D2 - ALIEN CREW DEPART OTHER VESSEL",
+	" DA - ADVANCE PAROLE (DISTRICT AUTH)",
+	" DE - PAROLEE (DEFERRED INSPECTION)",
+	" DF - PAROLEE (DISTRICT-POE AUTH)",
+	" DK - CREW ARRIVING DETAINED ON SHIP",
+	" E1 - TREATY TRADER-SPOUSE-CHILDREN",
+	" E2C - CNMI INVESTOR",
+	" E3 - AUSTRALIA FREE TRADE AGREE",
+	" E3D - SPOUSE OR CHILD OF E3",
+	" EAO - EMPLOYMENT ADVISORY OPTI",
+	" EWI - ENTRY WITHOUT INSPECTION",
+	" F1 - STUDENT - ACADEMIC",
+	" F2 - SPOUSE-CHILD OF F-1",
+	" FSM - CFA ADM FED STATES MICRO",
+	" FUG - FAMILY UNITY GRANTED",
+	" G1 - PRINCIPAL REP. FOREIGN GOVT",
+	" G2 - OTHER REP FOREIGN GOVT",
+	" G3 - REP NON-RECOGNIZED FOREIGN",
+	" G4 - OFFICER-EMPLOYEE INTL. ORG.",
+	" G5 - ATTENDANTS OF G1, G2, G3, G4",
+	" GB - VISITOR WITHOUT A VISA 15 DAY",
+	" GMB - Guam Mariana Business",
+	" GT - VISITOR WITHOUT A VISA 15 DAY",
+	" H1 - ALIEN OF DIST MERIT & ABILITY",
+	" H1A - REGISTERED NURSE",
+	" H1B - SPECIALITY OCCUPATION",
+	" H1C - NURSE RELIEF",
+	" H2 - TEMPORARY LABOR CERTIFICATION",
+	" H2A - TEMPORARY AGRICUL WORKER",
+	" H2B - TEMPORARY NON-AG WORKER",
+	" H2R - RET(H2B)WRK NOT SUBJECT TO CAP",
+	" H3 - ALIEN TRAINEE",
+	" H3A - TRAINEE",
+	" H3B - SPECIAL EDUCATION TRAINING",
+	" H4 - SPS OR CHLD OF H1,H2,H3 OR H2R",
+	" H1B1 - FREE TRADE H1B1",
+	" I - FOREIGN PRESS",
+	" IMM - IMMIGRANT",
+	" IN - INDEFINITE PAROLE",
+	" J1 - EXCHANGE VISITOR - OTHERS",
+	" J1S - EXCHANGE VISITOR - STUDENT",
+	" J2 - SPOUSE-CHILD OF J-1",
+	" J2S - SPOUSE-CHILD OF J-1S",
+	" K1 - ALIEN FIANCE(E) OF USC",
+	" K2 - CHILD OF K1",
+	" K3 - SPOUSE OF USC",
+	" K4 - CHILD OF USC",
+	" L1 - INTRA-COMPANY TRANSFEREE",
+	" L1A - MANAGER OR EXECUTIVE",
+	" L1B - SPECIALIZED KNOWLEDGE ALIEN",
+	" L2 - SPOUSE-CHILD OF L1",
+	" L1 - IMMIGRANT INVESTOR",
+	" M1 - STUDENT - VOCATIONAL-NON-ACAD.",
+	" M2 - SPOUSE-CHILD OF M-1",
+	" MP - CPA ADM MICRON. MARSHALL ISLANDS",
+	" M1 - IMMIGRANT",
+	" M3 - OTHER WORKER",
+	" M4 - VAWA SELF-PETITIONER",
+	" MW - SPOUSE-CHILD OF M1, M2",
+	" NA - CPA ADM FED STATES MICRO",
+	" NC - AMERASIAN IMMIGRANT AM INV",
+	" ND - EVACUEE AMERASIAN IMM INV",
+	" N8 - PARENT OF SPECIAL IMMIGRANT CHILD",
+	" N9 - SPOUSE-CHILD OF N8",
+	" O1 - ALIEN OF EXTRAORDINARY ABILITY",
+	" O2 - EXTRORDINARY ALIEN IN ARTS",
+	" O3 - ACCOMPANYING ALIEN TO O1",
+	" O4 - SPOUSE-CHILD OF O1, O2",
+	" P1A - ALIEN WITH ATHLETIC EVENT",
+	" P1B - ALIEN WITH ENTERTAINMENT GROUP",
+	" P2 - EXCHANGE ARTIST-ENTERTAINER",
+	" P3 - ALIEN WITH CULTURAL EVENT",
+	" P4 - SPOUSE-CHILD OF P-1, P-3",
+	" P5 - SPOUSE-CHILD OF P-2",
+	" P6 - SPOUSE-CHILD OF P-1, P-3",
+	" P9A - CPA AMERASIAN PALAU",
+	" PX - MANAGER",
+	" PX1 - PACIFIC ISLANDER",
+	" Q1 - INT'L CULTURAL EXCH VISITORS",
+	" Q2 - IRISH PEACE PROCESS PARTICIPANTS",
+	" Q3 - SPOUSE-CHILD OF Q2",
+	" R1 - RELIGIOUS OCCUPATION",
+	" R2 - SPOUSE-CHILD OF R-1",
+	" RE - REFUGEE",
+	" RN - NATIVE-BORN CHILD",
+	" S1 - ASYLUM GRANTED",
+	" S2 - SPECIAL AGRICULTURAL WORKERS",
+	" S3 - TEMPORARY FARM WORKERS",
+	" S4 - EMPLOYMENT ECONOMY FRAUD",
+	" S5 - GOVERNMENT",
+	" T1 - VICTIM OF HUMAN TRAFFICKING",
+	" T2 - SPOUSE OF T1",
+	" T3 - CHILD OF T1",
+	" T4 - PARENT OF T1",
+	" T5 - SPOUSE OF CHILD OF T1",
+	" T6 - VICTIM OF TRAFFICKING",
+	" TN - NAFTA PROFESSIONAL (CANADA)",
+	" TP - NAFTA PROFESSIONAL (MEXICO)",
+	" U1 - VICTIM OF CRIMINAL ACTIVITY",
+	" U2 - SPOUSE OF U1",
+	" U3 - CHILD OF U1",
+	" U4 - PARENT OF U1",
+	" U5 - UNMARRIED UNDER 18 SIBLG U1 NI",
+	" UN - UNKNOWN",
+	" UU - UNKNOWN",
+	" V1 - SPOUSE OF LPR",
+	" V2 - CHILD OF LPR",
+	" V2 - CHILD OF V2",
+	" WB - VISITOR FOR BUSINESS - VWPP",
+	" WD - WITHDRAWL (I-275)",
+	" WI - WITHOUT INSPECTION ",
+	" WT - VISITOR FOR PLEASURE - VWPP",
+	" X - EOIR"
 ), array(), array(), 20, 108.5);
 
 $pdf->TextField('p1_12_date_status_expires', 63.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 140.5, 108.5);
@@ -818,12 +818,12 @@ $pdf->writeHTMLCell(191, 6, 11, 55, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 $pdf->writeHTMLCell(140, 1, 25, 61.3, 'Form I-539, Application to Extend/Change Nonimmigrant Status', 0, 0, false, true, 'L', true);
 $pdf->writeHTMLCell(140, 1, 25, 67.3, 'Form I-129, Petition for a Nonimmigrant Worker.', 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('processing_info_form_type_status') == "I_539") $checked = "checked";
+if (showData('processing_info_form_539_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 18.2, 61, '<input type="checkbox" name="p3_4_status1" value="I_539" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-if (showData('processing_info_form_type_status') == "I_129") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 18.2, 61, '<input type="checkbox" name="p3_4_status1" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('processing_info_form_129_status') == "Y") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 18.2, 67.2, '<input type="checkbox" name="p3_4_status2" value="I_129" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 18.2, 67.2, '<input type="checkbox" name="p3_4_status2" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 //......................
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 11, 75, '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 2. or 3</b>., provide the USCIS Receipt Number.', '', 1, false, 'L');
@@ -950,7 +950,7 @@ $pdf->AddPage('P', 'LETTER');
 $pdf->setFillColor(220, 220, 220);
 //....................
 $pdf->SetFont('times', '', 12);
-$pdf->writeHTMLCell(191, 6.5, 13, 19, "<b>Part 4. Additional Information About the Applicant (continued)</b>", 1, 1, true, 'L');
+$pdf->writeHTMLCell(191, 6.5, 13, 19, "<b>Part 4. Additional Information About the Applicant </b>(continued)", 1, 1, true, 'L');
 //..........................
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(0, 0, 12, 28, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you been arrested or convicted of any criminal offense since last entering the United States? ', 0, 1, false, 'L');
@@ -1418,7 +1418,7 @@ $pdf->TextField('p8_additional_info_3a', 22, 7, array('strokeColor' => array(64,
 $pdf->TextField('p8_additional_info_3b', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 72);
 $pdf->TextField('p8_additional_info_3c', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 72);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p8_additional_info_3d', 175, 32.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('n_600_additional_info_3d')), 21, 81);
+$pdf->TextField('p8_additional_info_3d', 175, 32.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_3d')), 21, 81);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
@@ -1439,7 +1439,7 @@ $pdf->TextField('p8_additional_info_4a', 22, 7, array('strokeColor' => array(64,
 $pdf->TextField('p8_additional_info_4b', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 120);
 $pdf->TextField('p8_additional_info_4c', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 120);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p8_additional_info_4d', 175, 32.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('n_600_additional_info_4d')), 21, 129);
+$pdf->TextField('p8_additional_info_4d', 175, 32.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_4d')), 21, 129);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
@@ -1459,7 +1459,7 @@ $pdf->TextField('p8_additional_info_5a', 22, 7, array('strokeColor' => array(64,
 $pdf->TextField('p8_additional_info_5b', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 167);
 $pdf->TextField('p8_additional_info_5c', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 167);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p8_additional_info_5d', 175, 32.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('n_600_additional_info_5d')), 21, 176);
+$pdf->TextField('p8_additional_info_5d', 175, 32.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_5d')), 21, 176);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
@@ -1479,7 +1479,7 @@ $pdf->TextField('p8_additional_info_6a', 22, 7, array('strokeColor' => array(64,
 $pdf->TextField('p8_additional_info_6b', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 213);
 $pdf->TextField('p8_additional_info_6c', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71.5, 213);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p8_additional_info_6d', 175, 33, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('n_600_additional_info_6d')), 21, 222);
+$pdf->TextField('p8_additional_info_6d', 175, 33, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_6d')), 21, 222);
 $pdf->setCellHeightRatio(1.2);
 //.................
 $pdf->writeHTMLCell(174.5, 1, 21.2, 223, '', "B", 1, false, 'L');
@@ -1492,100 +1492,100 @@ $js = "
 var fields = {
 	'attorney_state_bar_number':' $attorneyData->bar_number',
 	'attorney_or_according_representative':' $attorneyData->uscis_online_account_number ',
-	'p1_1_legal_last_name':' " . showData('information_about_you_family_last_name') . "',
-	'p1_1_legal_first_name':' " . showData('information_about_you_given_first_name') . "',
-	'p1_1_legal_middle_name':' " . showData('information_about_you_middle_name') . "',
-	'p1_2_alien_registration_number':' " . showData('other_information_about_you_alien_registration_number') . "',
-	'p1_2_uscis_online_acount_number':' " . showData('other_information_about_you_uscis_online_account_number') . "',
-	'p1_4_incare_name':' " . showData('information_about_you_us_mailing_care_of_name') . "',
-	'p1_4_street_name':' " . showData('information_about_you_us_mailing_street_number') . "',
-	'p1_4_flr_ste_number':' " . showData('information_about_you_us_mailing_apt_ste_flr_value') . "',
-	'p1_4_city_town':' " . showData('information_about_you_us_mailing_city_town') . "',
-	'p1_4_state':' " . showData('information_about_you_us_mailing_state') . "',
-	'p1_4_zip_code':' " . showData('information_about_you_us_mailing_zip_code') . "',
-	'p1_6_street_name':' " . showData('information_about_you_home_street_number') . "',
-	'p1_6_flr_ste_number':' " . showData('information_about_you_home_apt_ste_flr_value') . "',
-	'p1_6_city_town':' " . showData('information_about_you_home_city_town') . "',
-	'p1_6_state':' " . showData('information_about_you_home_state') . "',
-	'p1_6_zip_code':' " . showData('information_about_you_home_zip_code') . "',
+	'p1_1_legal_last_name':' " . showData('information_about_you_family_last_name') . " ',
+	'p1_1_legal_first_name':' " . showData('information_about_you_given_first_name') . " ',
+	'p1_1_legal_middle_name':' " . showData('information_about_you_middle_name') . " ',
+	'p1_2_alien_registration_number':' " . showData('other_information_about_you_alien_registration_number') . " ',
+	'p1_2_uscis_online_acount_number':' " . showData('other_information_about_you_uscis_online_account_number') . " ',
+	'p1_4_incare_name':' " . showData('information_about_you_us_mailing_care_of_name') . " ',
+	'p1_4_street_name':' " . showData('information_about_you_us_mailing_street_number') . " ',
+	'p1_4_flr_ste_number':' " . showData('information_about_you_us_mailing_apt_ste_flr_value') . " ',
+	'p1_4_city_town':' " . showData('information_about_you_us_mailing_city_town') . " ',
+	'p1_4_state':' " . showData('information_about_you_us_mailing_state') . " ',
+	'p1_4_zip_code':' " . showData('information_about_you_us_mailing_zip_code') . " ',
+	'p1_6_street_name':' " . showData('information_about_you_home_street_number') . " ',
+	'p1_6_flr_ste_number':' " . showData('information_about_you_home_apt_ste_flr_value') . " ',
+	'p1_6_city_town':' " . showData('information_about_you_home_city_town') . " ',
+	'p1_6_state':' " . showData('information_about_you_home_state') . " ',
+	'p1_6_zip_code':' " . showData('information_about_you_home_zip_code') . " ',
 //!page 1 end 2 start..........
-	'p1_7_country_birth':'  " . showData('other_information_about_you_country_of_birth') . "',
-	'p1_8_country_citizenship':'  " . showData('other_information_about_you_country_of_citizen') . "',
-	'p1_9_date_of_birth':'  " . showData('other_information_about_you_date_of_birth') . "',
-	'p1_10_social_security_number':'  " . showData('other_information_about_you_social_security_number') . "',
-	'p1_11_date_us':'  " . showData('i_94_imgt_date_of_last_arival') . "',
-	'p1_11_record_number':'  " . showData('i_94_imgt_arrival_record_number') . "',
-	'p1_11_passport_number':'  " . showData('other_information_about_you_passport_number') . "',
-	'p1_11_travel_number':'  " . showData('i_94_imgt_date_issuance_passport') . "',
-	'p1_11_country_passport_issuance':'  " . showData('i_94_imgt_country_issuance_passport') . "',
-	'p1_11_passport_travel_expiration_date':'  " . showData('other_information_about_you_expiry_date_issuance_passport') . "',
-	'p1_12_nonimmigran_status_combobox':'  " . showData('i_539_nonimmigrant_status_combobox') . "',
-	'p1_12_date_status_expires':'  " . showData('i_539_nonimmigrant_status_expires_date') . "',
-	'p2_2_combobox':'  " . showData('i_539_application_type_request_to_change_info_combobox') . "',
-	'p2_2_requesting_date':'  " . showData('application_type_request_to_change_info_date') . "',
-	'p2_4_total_number_people':'  " . showData('application_type_i_539a_applicant') . "',
-	'p2_5_exchange_visitor':'  " . showData('application_type_name_of_school_visitor') . "',
-	'p2_6_SEVIS_id_number':'  " . showData('application_type_sevis_id_number') . "',
-	'p3_1_date':'  " . showData('processing_info_extended_date') . "',
+	'p1_7_country_birth':' " . showData('other_information_about_you_country_of_birth') . " ',
+	'p1_8_country_citizenship':' " . showData('other_information_about_you_country_of_citizen') . " ',
+	'p1_9_date_of_birth':' " . showData('other_information_about_you_date_of_birth') . " ',
+	'p1_10_social_security_number':' " . showData('other_information_about_you_social_security_number') . " ',
+	'p1_11_date_us':' " . showData('i_94_imgt_date_of_last_arival') . " ',
+	'p1_11_record_number':' " . showData('i_94_imgt_arrival_record_number') . " ',
+	'p1_11_passport_number':' " . showData('other_information_about_you_passport_number') . " ',
+	'p1_11_travel_number':' " . showData('other_information_about_you_travel_document_number') . " ',
+	'p1_11_country_passport_issuance':' " . showData('i_94_imgt_country_issuance_passport') . " ',
+	'p1_11_passport_travel_expiration_date':' " . showData('other_information_about_you_expiry_date_issuance_passport') . " ',
+	'p1_12_nonimmigran_status_combobox':' " . showData('i_539_nonimmigrant_status_combobox') . " ',
+	'p1_12_date_status_expires':' " . showData('i_539_nonimmigrant_status_expires_date') . " ',
+	'p2_2_combobox':' " . showData('i_539_application_type_request_to_change_info_combobox') . " ',
+	'p2_2_requesting_date':' " . showData('application_type_request_to_change_info_date') . " ',
+	'p2_4_total_number_people':' " . showData('application_type_i_539a_applicant') . " ',
+	'p2_5_exchange_visitor':' " . showData('application_type_name_of_school_visitor') . " ',
+	'p2_6_SEVIS_id_number':' " . showData('application_type_sevis_id_number') . " ',
+	'p3_1_date':' " . showData('processing_info_extended_date') . " ',
 //!page 2 end 3 start..........
-	'p3_uscis_reseipt_number':'  " . showData('processing_info_uscis_receipt_number') . "',
-	'p3_6_first_name':'  " . showData('beneficiary_or_applicant_first_name') . "',
-	'p3_6_last_name':'  " . showData('beneficiary_or_applicant_last_name') . "',
-	'p3_7_date_filed':'  " . showData('beneficiary_or_applicant_date_filed') . "',
-	'p4_1_passport':'  " . showData('principal_applicant_passport_number') . "',
-	'p4_1_country':'  " . showData('principal_applicant_country_issuance_passport') . "',
-	'p4_1_expiration_date':'  " . showData('principal_applicant_passport_exprire_date') . "',
-	'p4_2_street_name':'  " . showData('principal_applicant_street_number') . "',
-	'p4_2_flr_ste_number':'  " . showData('principal_applicant_apt_ste_flr_value') . "',
-	'p4_2_city_town':'  " . showData('principal_applicant_city_town') . "',
-	'p4_2_province':'  " . showData('principal_applicant_province') . "',
-	'p4_2_postal_code':'  " . showData('principal_applicant_postal_code') . "',
-	'p4_2_country':'  " . showData('principal_applicant_country') . "',
+	'p3_uscis_reseipt_number':' " . showData('processing_info_uscis_receipt_number') . " ',
+	'p3_6_first_name':' " . showData('beneficiary_or_applicant_first_name') . " ',
+	'p3_6_last_name':' " . showData('beneficiary_or_applicant_last_name') . " ',
+	'p3_7_date_filed':' " . showData('beneficiary_or_applicant_date_filed') . " ',
+	'p4_1_passport':' " . showData('principal_applicant_passport_number') . " ',
+	'p4_1_country':' " . showData('principal_applicant_country_issuance_passport') . " ',
+	'p4_1_expiration_date':' " . showData('principal_applicant_passport_exprire_date') . " ',
+	'p4_2_street_name':' " . showData('principal_applicant_street_number') . " ',
+	'p4_2_flr_ste_number':' " . showData('principal_applicant_apt_ste_flr_value') . " ',
+	'p4_2_city_town':' " . showData('principal_applicant_city_town') . " ',
+	'p4_2_province':' " . showData('principal_applicant_province') . " ',
+	'p4_2_postal_code':' " . showData('principal_applicant_postal_code') . " ',
+	'p4_2_country':' " . showData('principal_applicant_country') . " ',
 //!page 3 end 5 start..........
-	'p5_applicant_daytime':' " . showData('i_539_applicant_daytime_tel') . "',
-	'p5_applicant_mobile':' " . showData('i_539_applicant_mobile') . "',
-	'p5_applicant_email':' " . showData('i_539_applicant_email') . "',
-	'p5_applicant_signature_date':' " . showData('i_539_applicant_sign_date') . "',
-	'p6_Interpreter_family_name':' " . showData('i_539_interpreter_family_last_name') . "',
-	'p6_Interpreter_given_name':' " . showData('i_539_interpreter_given_first_name') . "',
-	'p6_Interpreter_business_name':' " . showData('i_539_interpreter_business_name') . "',
-	'p6_Interpreter_daytime':' " . showData('i_539_interpreter_daytime_tel') . "',
-	'p6_Interpreter_mobile':' " . showData('i_539_interpreter_mobile') . "',
-	'p6_Interpreter_email':' " . showData('i_539_interpreter_email') . "',
-	'p6_interpreter_fluent_english':' " . showData('i_539_interpreter_certification_language_skill') . "',
-	'p6_interpreter_signature_date':' " . showData('i_539_interpreter_sign_date') . "',
+	'p5_applicant_daytime':' " . showData('i_539_applicant_daytime_tel') . " ',
+	'p5_applicant_mobile':' " . showData('i_539_applicant_mobile') . " ',
+	'p5_applicant_email':' " . showData('i_539_applicant_email') . " ',
+	'p5_applicant_signature_date':' " . showData('i_539_applicant_sign_date') . " ',
+	'p6_Interpreter_family_name':' " . showData('i_539_interpreter_family_last_name') . " ',
+	'p6_Interpreter_given_name':' " . showData('i_539_interpreter_given_first_name') . " ',
+	'p6_Interpreter_business_name':' " . showData('i_539_interpreter_business_name') . " ',
+	'p6_Interpreter_daytime':' " . showData('i_539_interpreter_daytime_tel') . " ',
+	'p6_Interpreter_mobile':' " . showData('i_539_interpreter_mobile') . " ',
+	'p6_Interpreter_email':' " . showData('i_539_interpreter_email') . " ',
+	'p6_interpreter_fluent_english':' " . showData('i_539_interpreter_certification_language_skill') . " ',
+	'p6_interpreter_signature_date':' " . showData('i_539_interpreter_sign_date') . " ',
 //!page 5 end 6 start..........
-	'p7_Preparer_family_name':' " . showData('i_539_preparer_family_last_name') . "',
-	'p7_Preparer_given_name':' " . showData('i_539_preparer_family_given_first_name') . "',
-	'p7_Preparer_business_name':' " . showData('i_539_preparer_business_name') . "',
-	'p7_Preparer_daytime':' " . showData('i_539_preparer_daytime_tel') . "',
-	'p7_Preparer_mobile':' " . showData('i_539_preparer_mobile') . "',
-	'p7_Preparer_email':' " . showData('i_539_preparer_email') . "',
-	'p7_Preparer_signature_date':' " . showData('i_539_preparer_sign_date') . "',
+	'p7_Preparer_family_name':' " . showData('i_539_preparer_family_last_name') . " ',
+	'p7_Preparer_given_name':' " . showData('i_539_preparer_family_given_first_name') . " ',
+	'p7_Preparer_business_name':' " . showData('i_539_preparer_business_name') . " ',
+	'p7_Preparer_daytime':' " . showData('i_539_preparer_daytime_tel') . " ',
+	'p7_Preparer_mobile':' " . showData('i_539_preparer_mobile') . " ',
+	'p7_Preparer_email':' " . showData('i_539_preparer_email') . " ',
+	'p7_Preparer_signature_date':' " . showData('i_539_preparer_sign_date') . " ',
 //!page 6 end 7 start..........
-	'p8_additional_info_family_name':' " . showData('i_539_additional_info_last_name') . "',
-	'p8_additional_info_given_name':' " . showData('i_539_additional_info_first_name') . "',
-	'p8_additional_info_middle_name':' " . showData('i_539_additional_info_middle_name') . "',
-	'p8_additional_info_a_number':' " . showData('i_539_additional_info_a_number') . "',
-	'p8_additional_info_3a':' " . showData('i_539_additional_info_3a_page_no') . "',
-	'p8_additional_info_3b':' " . showData('i_539_additional_info_3b_part_no') . "',
-	'p8_additional_info_3c':' " . showData('i_539_additional_info_3c_item_no') . "',
-	'p8_additional_info_4a':' " . showData('i_539_additional_info_4a_page_no') . "',
-	'p8_additional_info_4b':' " . showData('i_539_additional_info_4b_part_no') . "',
-	'p8_additional_info_4c':' " . showData('i_539_additional_info_4c_item_no') . "',
-	'p8_additional_info_5a':' " . showData('i_539_additional_info_5a_page_no') . "',
-	'p8_additional_info_5b':' " . showData('i_539_additional_info_5b_part_no') . "',
-	'p8_additional_info_5c':' " . showData('i_539_additional_info_5c_item_no') . "',
-	'p8_additional_info_6a':' " . showData('i_539_additional_info_6a_page_no') . "',
-	'p8_additional_info_6b':' " . showData('i_539_additional_info_6b_part_no') . "',
-	'p8_additional_info_6c':' " . showData('i_539_additional_info_6c_item_no') . "',
+	'p8_additional_info_family_name':' " . showData('i_539_additional_info_last_name') . " ',
+	'p8_additional_info_given_name':' " . showData('i_539_additional_info_first_name') . " ',
+	'p8_additional_info_middle_name':' " . showData('i_539_additional_info_middle_name') . " ',
+	'p8_additional_info_a_number':' " . showData('i_539_additional_info_a_number') . " ',
+	'p8_additional_info_3a':' " . showData('i_539_additional_info_3a_page_no') . " ',
+	'p8_additional_info_3b':' " . showData('i_539_additional_info_3b_part_no') . " ',
+	'p8_additional_info_3c':' " . showData('i_539_additional_info_3c_item_no') . " ',
+	'p8_additional_info_4a':' " . showData('i_539_additional_info_4a_page_no') . " ',
+	'p8_additional_info_4b':' " . showData('i_539_additional_info_4b_part_no') . " ',
+	'p8_additional_info_4c':' " . showData('i_539_additional_info_4c_item_no') . " ',
+	'p8_additional_info_5a':' " . showData('i_539_additional_info_5a_page_no') . " ',
+	'p8_additional_info_5b':' " . showData('i_539_additional_info_5b_part_no') . " ',
+	'p8_additional_info_5c':' " . showData('i_539_additional_info_5c_item_no') . " ',
+	'p8_additional_info_6a':' " . showData('i_539_additional_info_6a_page_no') . " ',
+	'p8_additional_info_6b':' " . showData('i_539_additional_info_6b_part_no') . " ',
+	'p8_additional_info_6c':' " . showData('i_539_additional_info_6c_item_no') . " ',
 //!page 7 end..........
 };
 for (var fieldName in fields) {
-    if (!fields.hasOwnProperty(fieldName)) continue;
-    var field = getField(fieldName);
-    if (field && field.value === '') {
-        field.value = fields[fieldName];
+ if (!fields.hasOwnProperty(fieldName)) continue;
+ var field = getField(fieldName);
+ if (field && field.value === '') {
+     field.value = fields[fieldName];
     }
 }
 

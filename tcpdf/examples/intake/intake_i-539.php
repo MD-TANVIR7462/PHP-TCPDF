@@ -12,7 +12,7 @@ include "intake_header.php";
     <table style="border-collapse: collapse; ">
         <thead>
             <tr>
-                <th colspan="4" style="padding: 5px; text-align: center; " class="bg-info">To 666 be completed by an
+                <th colspan="4" style="padding: 5px; text-align: center; " class="bg-info">To be completed by an
                     Attorney or Accredited Representative (if any).</th>
             </tr>
         </thead>
@@ -163,7 +163,7 @@ include "intake_header.php";
     <div class="form-group row">
         <label class="control-label col-md-6">5. Is your mailing address the same as your physical address?</label>
         <div class="col-md-2">
-            <?php echo createRadio("processing_info_granted_spouse_child_parent_status") ?>
+            <?php echo createRadio("is_your_current_mailing_address_same_as_physical") ?>
         </div>
     </div>
     <div class="form-group" style="margin-bottom: 10px;">
@@ -242,8 +242,8 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
@@ -307,7 +307,7 @@ include "intake_header.php";
         <div class=" col-md-4">
             <label class="control-label">Travel Document Number</label><br>
             <label class="control-label">(if any)</label>
-            <div> <input type=" text" class="form-control" name="i_94_imgt_date_issuance_passport" maxlength="22" value="<?php echo showData('i_94_imgt_date_issuance_passport') ?>"> </div>
+            <div> <input type=" text" class="form-control" name="other_information_about_you_travel_document_number" maxlength="22" value="<?php echo showData('other_information_about_you_travel_document_number') ?>"> </div>
         </div>
         <div class=" col-md-4">
             <label class="control-label">Country of Passport or</label>
@@ -644,9 +644,9 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
@@ -655,7 +655,7 @@ include "intake_header.php";
     <p style="text-align: right; margin-right: 15px;"><b>Page 3 of 7
         </b></p>
     <div class="bg-info">
-        <h4><b>Part 4. Information About Your Residence (continued)</b></h4>
+        <h4><b>Part 3. Processing Information (continued)</b></h4>
     </div>
     <div class="form-group">
         <label class="control-label col-md-12">3. Is this application based on a separate petition or application to provide your spouse, child, or parent an extension or change of status?</label>
@@ -671,8 +671,8 @@ include "intake_header.php";
         <label class="control-label col-md-12">4. If you answered "Yes" to Item Number 2. or Item Number 3., select the Form type below.</label>
         <div class="col-md-12 ">
             <div class="form-group">
-                <label class="control-label col-md-8" style="margin-left: 25px;"><input type="checkbox" name="processing_info_form_type_status" value="I_539" <?php echo (showData('processing_info_form_type_status') == 'Y_539') ? 'checked' : '' ?>> Form I-539, Application to Extend/Change Nonimmigrant Status </label>
-                <label class="control-label col-md-8" style="margin-left: 25px;"><input type="checkbox" name="processing_info_form_type_status" value="I_129" <?php echo (showData('processing_info_form_type_status') == 'Y_539') ? 'checked' : '' ?>> Form I-129, Petition for a Nonimmigrant Worker</label>
+                <label class="control-label col-md-8" style="margin-left: 25px;"><?php echo createCheckbox("processing_info_form_539_status") ?> Form I-539, Application to Extend/Change Nonimmigrant Status </label>
+                <label class="control-label col-md-8" style="margin-left: 25px;"><?php echo createCheckbox("processing_info_form_129_status") ?> Form I-129, Petition for a Nonimmigrant Worker</label>
             </div>
         </div>
     </div>
@@ -729,7 +729,7 @@ include "intake_header.php";
         </div>
         <div class=" col-md-4">
             <label class="control-label ">Passport Expiration Date (mm/dd/yyyy)</label>
-            <div><input type=" text" class="form-control" name="principal_applicant_passport_exprire_date" value="<?php echo showData('principal_applicant_passport_exprire_date') ?>"></div>
+            <div><input type="date" class="form-control" name="principal_applicant_passport_exprire_date" value="<?php echo showData('principal_applicant_passport_exprire_date') ?>"></div>
         </div>
     </div>
     <div style="margin: 2%;">
@@ -809,9 +809,9 @@ include "intake_header.php";
             <?php echo createRadio("principal_applicant_permanent_residence_status") ?>
         </div>
     </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
@@ -919,9 +919,9 @@ include "intake_header.php";
     </div>
     <div class="form-group"><label class="control-label col-md-12">If you answered "Yes" to Item Number 15., you must provide the dates you maintained status as a J-1 exchange visitor or J-2
             dependent in Part 8. Additional Information. </label></div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
@@ -967,7 +967,7 @@ include "intake_header.php";
     </div>
     <div class="col-md-4">
         <label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
-        <input type="date" class="form-control" name="i_600_applicant_sign_date" value="<?= showData('i_600_applicant_sign_date') ?>">
+        <input type="date" class="form-control" name="i_539_applicant_sign_date" value="<?= showData('i_539_applicant_sign_date') ?>">
     </div>
     <div class=" bg-info col-md-12" style="margin-top:10px;">
         <h4><b>Part 6. Interpreter's Contact Information, Certification, and Signature </b></h4>
@@ -1026,9 +1026,9 @@ include "intake_header.php";
     </div>
 
 
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
@@ -1095,9 +1095,9 @@ include "intake_header.php";
     </div>
 
 
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 7--------------------------------
@@ -1173,19 +1173,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">4. Page Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_539_additional_info_4a_page_no" maxlength="2" value="<?php echo showData('i_539_additional_info_6a_page_no') ?>">
+                    <input type="text" class="form-control" name="i_539_additional_info_4a_page_no" maxlength="2" value="<?php echo showData('i_539_additional_info_4a_page_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12"> Part Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_539_additional_info_4b_part_no" maxlength="6" value="<?php echo showData('i_539_additional_info_6b_part_no') ?>">
+                    <input type="text" class="form-control" name="i_539_additional_info_4b_part_no" maxlength="6" value="<?php echo showData('i_539_additional_info_4b_part_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12"> Item Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_539_additional_info_4c_item_no" maxlength="9" value="<?php echo showData('i_539_additional_info_6c_item_no') ?>">
+                    <input type="text" class="form-control" name="i_539_additional_info_4c_item_no" maxlength="9" value="<?php echo showData('i_539_additional_info_4c_item_no') ?>">
                 </div>
             </div>
         </div>
@@ -1198,19 +1198,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">5. Page Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_539_additional_info_5a_page_no" maxlength="2" value="<?php echo showData('i_539_additional_info_6a_page_no') ?>">
+                    <input type="text" class="form-control" name="i_539_additional_info_5a_page_no" maxlength="2" value="<?php echo showData('i_539_additional_info_5a_page_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12"> Part Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_539_additional_info_5b_part_no" maxlength="6" value="<?php echo showData('i_539_additional_info_6b_part_no') ?>">
+                    <input type="text" class="form-control" name="i_539_additional_info_5b_part_no" maxlength="6" value="<?php echo showData('i_539_additional_info_5b_part_no') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">Item Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_539_additional_info_5c_item_no" maxlength="9" value="<?php echo showData('i_539_additional_info_6c_item_no') ?>">
+                    <input type="text" class="form-control" name="i_539_additional_info_5c_item_no" maxlength="9" value="<?php echo showData('i_539_additional_info_5c_item_no') ?>">
                 </div>
             </div>
         </div>
@@ -1245,7 +1245,7 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="previous" class="previous btn btn-default" value="Previous" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
