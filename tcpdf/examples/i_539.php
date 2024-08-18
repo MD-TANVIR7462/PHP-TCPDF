@@ -246,7 +246,9 @@ $html = '<div><b>To be completed by an Attorney or Accredited Representative</b>
 $pdf->writeHTMLCell(40, 7, 15, 95, $html,  0,  1, false, true, 'L', false);
 
 $pdf->SetFont('times', '', 14);
-$html = '<div><b>  </b>   <input type="checkbox" name="attached4" value="Y" checked=" " /> </div>';
+if (showData('i_539_g28_status') == "Y") $g_28 = "checked";
+else $g_28 = "";
+$html = '<div><b>  </b>   <input type="checkbox" name="attached4" value="Y" checked="' . $g_28 . '" /> </div>';
 $pdf->writeHTMLCell(40, 15, 20, 89, $html, 0, 1, false, true, 'R', true);
 
 $pdf->SetFont('times', '', 10);
@@ -277,7 +279,6 @@ $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(-30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
 $pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 25, 136, false); // angle 1
-//$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 125, 55.5, false); // angle 2
 $pdf->StopTransform();
 
 $pdf->SetFont('times', 'B', 10); // set font
@@ -336,16 +337,16 @@ foreach ($allDataCountry as $record) {
 }
 $pdf->ComboBox("p1_4_state", 20, 7, $comboBoxOptions, array(), array(), 153, 196.5);
 //...............
-if (showData('information_about_you_residence_apt_ste_flr') == "apt") $checked_apt = "checked";
+if (showData('information_about_you_us_mailing_apt_ste_flr') == "apt") $checked_apt = "checked";
 else $checked_apt = "";
-if (showData('information_about_you_residence_apt_ste_flr') == "ste") $checked_ste = "checked";
+if (showData('information_about_you_us_mailing_apt_ste_flr') == "ste") $checked_ste = "checked";
 else $checked_ste = "";
-if (showData('information_about_you_residence_apt_ste_flr') == "flr") $checked_flr = "checked";
+if (showData('information_about_you_us_mailing_apt_ste_flr') == "flr") $checked_flr = "checked";
 else $checked_flr = "";
 $pdf->SetFont('times', 'B', 14);
-$pdf->writeHTMLCell(5, 1, 152, 183.5, '<input type="checkbox" name="p4_apt" value="apt"   checked="' . $checked_apt . '" />', 0, 1, false, false, 'L', false);
-$pdf->writeHTMLCell(5, 1, 159, 183.5, '<input type="checkbox" name="p4_ste" value="ste"   checked="' . $checked_ste . '"/>', 0, 1, false, false, 'L', false);
-$pdf->writeHTMLCell(5, 1, 167, 183.5, '<input type="checkbox" name="p4_flr" value="flr"   checked="' . $checked_flr . '"/>', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 152, 183.5, '<input type="checkbox" name="p1_4_apt" value="apt"   checked="' . $checked_apt . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 159, 183.5, '<input type="checkbox" name="p1_4_ste" value="ste"   checked="' . $checked_ste . '"/>', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 167, 183.5, '<input type="checkbox" name="p1_4_flr" value="flr"   checked="' . $checked_flr . '"/>', 0, 1, false, false, 'L', false);
 //..............
 $pdf->SetFont('times', '', 10);
 $html = '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Is your mailing address the same as your physical address?';
@@ -354,11 +355,11 @@ $pdf->writeHTMLCell(0, 0, 11, 206.5, $html, 0, 0, false, true, 'L', true);
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 178.5, 207, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('information_about_you_parent_citizen_before_birth_status') == "Y") $checked = "checked";
+if (showData('processing_info_granted_spouse_child_parent_status') == "Y") $checked = "checked";
 else $checked = "";
 $html = '<input type="checkbox" name="18th_birthday" value="Y"  checked="' . $checked . '" />';
 $pdf->writeHTMLCell(5, 1, 172, 206.5, $html, 0, 1, false, false, 'L', false);
-if (showData('information_about_you_parent_citizen_before_birth_status') == "N") $checked = "checked";
+if (showData('processing_info_granted_spouse_child_parent_status') == "N") $checked = "checked";
 else $checked = "";
 $html = '<input type="checkbox" name="18th_birthday" value="N" checked="' . $checked . '" />';
 $pdf->writeHTMLCell(5, 1, 186, 206.5, $html, 0, 1, false, false, 'L', false);
@@ -386,11 +387,11 @@ foreach ($allDataCountry as $record) {
 }
 $pdf->ComboBox("p1_6_state", 20, 7, $comboBoxOptions, array(), array(), 153, 246.5);
 //..............
-if (showData('information_about_you_residence_apt_ste_flr') == "apt") $checked_apt = "checked";
+if (showData('information_about_you_home_apt_ste_flr') == "apt") $checked_apt = "checked";
 else $checked_apt = "";
-if (showData('information_about_you_residence_apt_ste_flr') == "ste") $checked_ste = "checked";
+if (showData('information_about_you_home_apt_ste_flr') == "ste") $checked_ste = "checked";
 else $checked_ste = "";
-if (showData('information_about_you_residence_apt_ste_flr') == "flr") $checked_flr = "checked";
+if (showData('information_about_you_home_apt_ste_flr') == "flr") $checked_flr = "checked";
 else $checked_flr = "";
 $pdf->SetFont('times', 'B', 14);
 $pdf->writeHTMLCell(5, 1, 152, 234, '<input type="checkbox" name="p4_apt2" value="apt"   checked="' . $checked_apt . '" />', 0, 1, false, false, 'L', false);
@@ -465,7 +466,150 @@ $pdf->writeHTMLCell(0, 0, 12, 103.6, '<b>12.</b>&nbsp;&nbsp;&nbsp;Current Nonimm
 $pdf->writeHTMLCell(0, 0, 139, 103.6, 'Date Status Expires (mm/dd/yyyy) ', 0, 0, false, true, 'L', true);
 //..................
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p1_12_nonimmigran_status', 118.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 108.5);
+$pdf->ComboBox('p1_12_nonimmigran_status_combobox', 118.5, 7, array(
+	"1B1 - H-1B1 SPECIALITY OCCUPATION",
+	"1B2 - H-1B2 DoD SPECIALITY",
+	"1B3 - H-1B3 FASHION MODEL",
+	"1B4 - H-1B4 UNIQUE PGM ARTIST-ENT",
+	"1B5 - H-1B5 ALIEN ATHLETE",
+	"1B6 - SUPPORT PERSON OF H-1",
+	"A1 - AMBASSADOR, DIPLOMAT",
+	"A2 - OTHER DIPLOMATIC OFFICIALS",
+	"A3 - ATTENDANTS OF A-1, A-2",
+	"AS - ASYLUM",
+	"ASD - ASYLUM STATUS DENIED",
+	"AW - RAW APPLIED FOR AT A PORT",
+	"B1 - TEMPORARY VISITOR FOR BUSINESS",
+	"B1A - NI PERSNL-DOM SRVANT OF NI EMP",
+	"B1B - NI DOMESTIC SERVANT OF USC",
+	"B1C - NI EMPLOYED BY FOREIGN AIRLINE",
+	"B1D - NI - MISSIONARIES",
+	"B2 - TEMPORARY VISITOR FOR PLEASURE",
+	"BE - BERING STRAIT ENTRIES",
+	"C1 - ALIEN IN TRANSIT THROUGH U.S.",
+	"C2 - ALIEN IN TRANSIT TO UN HQ",
+	"C3 - FRN GOV OFF IN TRANSIT THRU US",
+	"CW - TRANSIT WITHOUT A VISA",
+	"CC - CUBAN MASS MIGRATION PROJECT",
+	"CH - PAROLE (HUMANITARIAN-HQ AUTH)",
+	"CP - PAROLE (PUBLIC INT-HQ AUTH)",
+	"CW - PRINCIPAL TRANSITIONAL WORKERS",
+	"D1 - ALIEN CREW DEPART SAME VESSEL",
+	"D2 - ALIEN CREW DEPART OTHER VESSEL",
+	"DA - ADVANCE PAROLE (DISTRICT AUTH)",
+	"DE - PAROLEE (DEFERRED INSPECTION)",
+	"DF - PAROLEE (DISTRICT-POE AUTH)",
+	"DK - CREW ARRIVING DETAINED ON SHIP",
+	"E1 - TREATY TRADER-SPOUSE-CHILDREN",
+	"E2C - CNMI INVESTOR",
+	"E3 - AUSTRALIA FREE TRADE AGREE",
+	"E3D - SPOUSE OR CHILD OF E3",
+	"EAO - EMPLOYMENT ADVISORY OPTI",
+	"EWI - ENTRY WITHOUT INSPECTION",
+	"F1 - STUDENT - ACADEMIC",
+	"F2 - SPOUSE-CHILD OF F-1",
+	"FSM - CFA ADM FED STATES MICRO",
+	"FUG - FAMILY UNITY GRANTED",
+	"G1 - PRINCIPAL REP. FOREIGN GOVT",
+	"G2 - OTHER REP FOREIGN GOVT",
+	"G3 - REP NON-RECOGNIZED FOREIGN",
+	"G4 - OFFICER-EMPLOYEE INTL. ORG.",
+	"G5 - ATTENDANTS OF G1, G2, G3, G4",
+	"GB - VISITOR WITHOUT A VISA 15 DAY",
+	"GMB - Guam Mariana Business",
+	"GT - VISITOR WITHOUT A VISA 15 DAY",
+	"H1 - ALIEN OF DIST MERIT & ABILITY",
+	"H1A - REGISTERED NURSE",
+	"H1B - SPECIALITY OCCUPATION",
+	"H1C - NURSE RELIEF",
+	"H2 - TEMPORARY LABOR CERTIFICATION",
+	"H2A - TEMPORARY AGRICUL WORKER",
+	"H2B - TEMPORARY NON-AG WORKER",
+	"H2R - RET(H2B)WRK NOT SUBJECT TO CAP",
+	"H3 - ALIEN TRAINEE",
+	"H3A - TRAINEE",
+	"H3B - SPECIAL EDUCATION TRAINING",
+	"H4 - SPS OR CHLD OF H1,H2,H3 OR H2R",
+	"H1B1 - FREE TRADE H1B1",
+	"I - FOREIGN PRESS",
+	"IMM - IMMIGRANT",
+	"IN - INDEFINITE PAROLE",
+	"J1 - EXCHANGE VISITOR - OTHERS",
+	"J1S - EXCHANGE VISITOR - STUDENT",
+	"J2 - SPOUSE-CHILD OF J-1",
+	"J2S - SPOUSE-CHILD OF J-1S",
+	"K1 - ALIEN FIANCE(E) OF USC",
+	"K2 - CHILD OF K1",
+	"K3 - SPOUSE OF USC",
+	"K4 - CHILD OF USC",
+	"L1 - INTRA-COMPANY TRANSFEREE",
+	"L1A - MANAGER OR EXECUTIVE",
+	"L1B - SPECIALIZED KNOWLEDGE ALIEN",
+	"L2 - SPOUSE-CHILD OF L1",
+	"L1 - IMMIGRANT INVESTOR",
+	"M1 - STUDENT - VOCATIONAL-NON-ACAD.",
+	"M2 - SPOUSE-CHILD OF M-1",
+	"MP - CPA ADM MICRON. MARSHALL ISLANDS",
+	"M1 - IMMIGRANT",
+	"M3 - OTHER WORKER",
+	"M4 - VAWA SELF-PETITIONER",
+	"MW - SPOUSE-CHILD OF M1, M2",
+	"NA - CPA ADM FED STATES MICRO",
+	"NC - AMERASIAN IMMIGRANT AM INV",
+	"ND - EVACUEE AMERASIAN IMM INV",
+	"N8 - PARENT OF SPECIAL IMMIGRANT CHILD",
+	"N9 - SPOUSE-CHILD OF N8",
+	"O1 - ALIEN OF EXTRAORDINARY ABILITY",
+	"O2 - EXTRORDINARY ALIEN IN ARTS",
+	"O3 - ACCOMPANYING ALIEN TO O1",
+	"O4 - SPOUSE-CHILD OF O1, O2",
+	"P1A - ALIEN WITH ATHLETIC EVENT",
+	"P1B - ALIEN WITH ENTERTAINMENT GROUP",
+	"P2 - EXCHANGE ARTIST-ENTERTAINER",
+	"P3 - ALIEN WITH CULTURAL EVENT",
+	"P4 - SPOUSE-CHILD OF P-1, P-3",
+	"P5 - SPOUSE-CHILD OF P-2",
+	"P6 - SPOUSE-CHILD OF P-1, P-3",
+	"P9A - CPA AMERASIAN PALAU",
+	"PX - MANAGER",
+	"PX1 - PACIFIC ISLANDER",
+	"Q1 - INT'L CULTURAL EXCH VISITORS",
+	"Q2 - IRISH PEACE PROCESS PARTICIPANTS",
+	"Q3 - SPOUSE-CHILD OF Q2",
+	"R1 - RELIGIOUS OCCUPATION",
+	"R2 - SPOUSE-CHILD OF R-1",
+	"RE - REFUGEE",
+	"RN - NATIVE-BORN CHILD",
+	"S1 - ASYLUM GRANTED",
+	"S2 - SPECIAL AGRICULTURAL WORKERS",
+	"S3 - TEMPORARY FARM WORKERS",
+	"S4 - EMPLOYMENT ECONOMY FRAUD",
+	"S5 - GOVERNMENT",
+	"T1 - VICTIM OF HUMAN TRAFFICKING",
+	"T2 - SPOUSE OF T1",
+	"T3 - CHILD OF T1",
+	"T4 - PARENT OF T1",
+	"T5 - SPOUSE OF CHILD OF T1",
+	"T6 - VICTIM OF TRAFFICKING",
+	"TN - NAFTA PROFESSIONAL (CANADA)",
+	"TP - NAFTA PROFESSIONAL (MEXICO)",
+	"U1 - VICTIM OF CRIMINAL ACTIVITY",
+	"U2 - SPOUSE OF U1",
+	"U3 - CHILD OF U1",
+	"U4 - PARENT OF U1",
+	"U5 - UNMARRIED UNDER 18 SIBLG U1 NI",
+	"UN - UNKNOWN",
+	"UU - UNKNOWN",
+	"V1 - SPOUSE OF LPR",
+	"V2 - CHILD OF LPR",
+	"V2 - CHILD OF V2",
+	"WB - VISITOR FOR BUSINESS - VWPP",
+	"WD - WITHDRAWL (I-275)",
+	"WI - WITHOUT INSPECTION ",
+	"WT - VISITOR FOR PLEASURE - VWPP",
+	"X - EOIR"
+), array(), array(), 20, 108.5);
+
 $pdf->TextField('p1_12_date_status_expires', 63.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 140.5, 108.5);
 //............
 //..............
@@ -473,7 +617,9 @@ $pdf->SetFont('times', '', 10); // set font
 $html = 'Select this box if you were granted Duration of Status (D/S).';
 $pdf->writeHTMLCell(190, 6, 24.5, 116, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('times', '', 14); // set font
-$pdf->writeHTMLCell(6, 6, 18, 115.6, '<input type="checkbox" name="p1_12_DS_status" value="Y" checked=""  />', 0, 1, false, false, 'L', true);
+if (showData('granted_duration_of_status_ds') == "Y") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(6, 6, 18, 115.6, '<input type="checkbox" name="p1_12_DS_status" value="Y" checked="' . $checked . '"  />', 0, 1, false, false, 'L', true);
 //...........
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
@@ -488,15 +634,15 @@ $pdf->writeHTMLCell(140, 1, 25, 142.3, 'Reinstatement to student status.', 0, 0,
 $pdf->writeHTMLCell(140, 1, 25, 148.3, 'An extension of stay in my current status.', 0, 0, false, true, 'L', true);
 $pdf->writeHTMLCell(140, 1, 25, 154.3, 'A change of status.', 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('current_spouse_us_citizen_by_birth_status') == "Y") $checked = "checked";
+if (showData('application_type_applying_for_status') == "reinstatement") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 18.2, 142, '<input type="checkbox" name="p2_1_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 18.2, 142, '<input type="checkbox" name="p2_1_status1" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('application_type_applying_for_status') == "stayCurrentCity") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 18.2, 148.2, '<input type="checkbox" name="p2_1_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 18.2, 148.2, '<input type="checkbox" name="p2_1_status2" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('application_type_applying_for_status') == "change") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 18.2, 154.2, '<input type="checkbox" name="p2_1_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 18.2, 154.2, '<input type="checkbox" name="p2_1_status3" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 //............
 $pdf->setCellHeightRatio(1.5); // set cell height ratio
 $pdf->SetFont('times', '', 10); // set font
@@ -587,10 +733,10 @@ $pdf->writeHTMLCell(190, 6, 11, 182, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb
 $pdf->writeHTMLCell(140, 1, 25, 188.3, 'I am the only applicant.', 0, 0, false, true, 'L', true);
 $pdf->writeHTMLCell(140, 1, 25, 194.3, 'I am filing this application for myself and members of my family. ', 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('current_spouse_us_citizen_by_birth_status') == "Y") $checked = "checked";
+if (showData('application_type_number_of_included_status') == "onlyapplicant") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 18.2, 188, '<input type="checkbox" name="p2_3_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";
+if (showData('application_type_number_of_included_status') == "myfamily") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 18.2, 194.2, '<input type="checkbox" name="p2_3_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 //.............
@@ -626,10 +772,10 @@ $pdf->writeHTMLCell(0, 0, 11, 249, '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 249.4, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_damage_property_status') == "Y") $checked = "checked";
+if (showData('processing_info_granted_spouse_child_parent_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 249.5, '<input type="checkbox" name="p3_2_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_damage_property_status') == "N") $checked = "checked";
+if (showData('processing_info_granted_spouse_child_parent_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 249.5, '<input type="checkbox" name="p3_2_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //!image
@@ -657,27 +803,27 @@ $pdf->writeHTMLCell(140, 1, 25, 32.3, 'Yes, filed with this Form I-539.', 0, 0, 
 $pdf->writeHTMLCell(140, 1, 25, 38.3, 'No.', 0, 0, false, true, 'L', true);
 $pdf->writeHTMLCell(140, 1, 25, 44.3, 'Yes, filed previously and pending with U.S. Citizenship and Immigration Services (USCIS).', 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('current_spouse_us_citizen_by_birth_status') == "Y") $checked = "checked";
+if (showData('processing_info_based_on_separate_petition_status') == "Y_539") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 18.2, 32, '<input type="checkbox" name="p3_3_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 18.2, 32, '<input type="checkbox" name="p3_3_status1" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('processing_info_based_on_separate_petition_status') == "N") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 18.2, 38.2, '<input type="checkbox" name="p3_3_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 18.2, 38.2, '<input type="checkbox" name="p3_3_status2" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('processing_info_based_on_separate_petition_status') == "Y_uscis") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 18.2, 44.2, '<input type="checkbox" name="p3_3_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 18.2, 44.2, '<input type="checkbox" name="p3_3_status3" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 //...................
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(191, 6, 11, 55, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 2</b>. or <b>Item Number 3.</b>, select the Form type below.', 0, 0, false, false, 'L', true);
 $pdf->writeHTMLCell(140, 1, 25, 61.3, 'Form I-539, Application to Extend/Change Nonimmigrant Status', 0, 0, false, true, 'L', true);
 $pdf->writeHTMLCell(140, 1, 25, 67.3, 'Form I-129, Petition for a Nonimmigrant Worker.', 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('current_spouse_us_citizen_by_birth_status') == "Y") $checked = "checked";
+if (showData('processing_info_form_type_status') == "I_539") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 18.2, 61, '<input type="checkbox" name="p3_4_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-if (showData('current_spouse_us_citizen_other_status') == "Y") $checked = "checked";
+$pdf->writeHTMLCell(5, 1, 18.2, 61, '<input type="checkbox" name="p3_4_status1" value="I_539" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('processing_info_form_type_status') == "I_129") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 18.2, 67.2, '<input type="checkbox" name="p3_4_status" value="Y" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 18.2, 67.2, '<input type="checkbox" name="p3_4_status2" value="I_129" checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 //......................
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 11, 75, '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 2. or 3</b>., provide the USCIS Receipt Number.', '', 1, false, 'L');
@@ -740,11 +886,11 @@ $pdf->TextField('p4_2_province', 58, 7, array('strokeColor' => array(64, 64, 64)
 $pdf->TextField('p4_2_postal_code', 44.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 79.7, 202);
 $pdf->TextField('p4_2_country', 78.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 126, 202);
 //..............
-if (showData('information_about_you_residence_apt_ste_flr') == "apt") $checked_apt = "checked";
+if (showData('principal_applicant_apt_ste_flr') == "apt") $checked_apt = "checked";
 else $checked_apt = "";
-if (showData('information_about_you_residence_apt_ste_flr') == "ste") $checked_ste = "checked";
+if (showData('principal_applicant_apt_ste_flr') == "ste") $checked_ste = "checked";
 else $checked_ste = "";
-if (showData('information_about_you_residence_apt_ste_flr') == "flr") $checked_flr = "checked";
+if (showData('principal_applicant_apt_ste_flr') == "flr") $checked_flr = "checked";
 else $checked_flr = "";
 $pdf->SetFont('times', 'B', 14);
 $pdf->writeHTMLCell(5, 1, 152, 177, '<input type="checkbox" name="p4_2_apt" value="apt"   checked="' . $checked_apt . '" />', 0, 1, false, false, 'L', false);
@@ -761,10 +907,10 @@ $pdf->writeHTMLCell(0, 0, 12, 221, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 221.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_engaged_in_kidnapping_or_hijacking_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_immmigrant_visa_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 221.6, '<input type="checkbox" name="p4_3_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_engaged_in_kidnapping_or_hijacking_status') == "N") $checked = "checked";
+if (showData('principal_applicant_immmigrant_visa_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 221.6, '<input type="checkbox" name="p4_3_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -774,10 +920,10 @@ $pdf->writeHTMLCell(0, 0, 12, 230, '<b>4</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 230.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_attempted_planned_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_immmigrant_petiton_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 230.6, '<input type="checkbox" name="p4_4_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_attempted_planned_status') == "N") $checked = "checked";
+if (showData('principal_applicant_immmigrant_petiton_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 230.6, '<input type="checkbox" name="p4_4_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -787,19 +933,12 @@ $pdf->writeHTMLCell(0, 0, 12, 238, '<b>5</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 238.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_torture_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_permanent_residence_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 238.6, '<input type="checkbox" name="p4_5_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_torture_status') == "N") $checked = "checked";
+if (showData('principal_applicant_permanent_residence_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 238.6, '<input type="checkbox" name="p4_5_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-
-
-
-
-
-
-
 /******************************
  ******** End Page No 3 *******
  ******************************/
@@ -819,10 +958,10 @@ $pdf->writeHTMLCell(0, 0, 12, 28, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 28.4, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_damage_property_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_arrested_last_entering_us_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 28, '<input type="checkbox" name="p4_6_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_damage_property_status') == "N") $checked = "checked";
+if (showData('principal_applicant_arrested_last_entering_us_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 28, '<input type="checkbox" name="p4_6_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..................
@@ -835,10 +974,10 @@ $pdf->writeHTMLCell(0, 0, 12, 42, '<b>7.a.</b>&nbsp;&nbsp;&nbsp;Acts involving t
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 42.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_engaged_in_kidnapping_or_hijacking_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_involving_torture_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 42.6, '<input type="checkbox" name="p4_7a_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_engaged_in_kidnapping_or_hijacking_status') == "N") $checked = "checked";
+if (showData('principal_applicant_involving_torture_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 42.6, '<input type="checkbox" name="p4_7a_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -848,10 +987,10 @@ $pdf->writeHTMLCell(0, 0, 12, 50, '<b>7.b.</b>&nbsp;&nbsp;&nbsp;Killing any pers
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 50.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_attempted_planned_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_kill_any_person_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 50.6, '<input type="checkbox" name="p4_7b_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_attempted_planned_status') == "N") $checked = "checked";
+if (showData('principal_applicant_kill_any_person_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 50.6, '<input type="checkbox" name="p4_7b_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -861,10 +1000,10 @@ $pdf->writeHTMLCell(0, 0, 12, 58, '<b>7.c</b>&nbsp;&nbsp;&nbsp;&nbsp;Intentional
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 58.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_torture_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_injur_any_person_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 58.6, '<input type="checkbox" name="p4_7c_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_torture_status') == "N") $checked = "checked";
+if (showData('principal_applicant_injur_any_person_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 58.6, '<input type="checkbox" name="p4_7c_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -874,10 +1013,10 @@ $pdf->writeHTMLCell(0, 0, 12, 66, '<b>7.d.</b>&nbsp;&nbsp;&nbsp;Engaging in any 
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 66.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_genocide_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_sexual_contact_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 66.6, '<input type="checkbox" name="p4_7d_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_genocide_status') == "N") $checked = "checked";
+if (showData('principal_applicant_sexual_contact_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 66.6, '<input type="checkbox" name="p4_7d_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -887,10 +1026,10 @@ $pdf->writeHTMLCell(0, 0, 12, 76, "<b>7.e.</b>&nbsp;&nbsp;&nbsp;Limiting or deny
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 76.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_kill_any_person_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_religious_belief_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 76.6, '<input type="checkbox" name="p4_7e_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_kill_any_person_status') == "N") $checked = "checked";
+if (showData('principal_applicant_religious_belief_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 76.6, '<input type="checkbox" name="p4_7e_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -905,10 +1044,10 @@ $pdf->writeHTMLCell(0, 0, 12, 91, '<b>8.a.</b>&nbsp;&nbsp;&nbsp;Served in, been 
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 91.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_injure_any_person_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_armed_group_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 91.6, '<input type="checkbox" name="p4_8a_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_injure_any_person_status') == "N") $checked = "checked";
+if (showData('principal_applicant_armed_group_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 91.6, '<input type="checkbox" name="p4_8a_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //......................
@@ -919,10 +1058,10 @@ $pdf->writeHTMLCell(0, 0, 12, 106, '<b>8.b.</b>&nbsp;&nbsp;&nbsp;Worked, volunte
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 106.8, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_injure_any_person_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_volunteered_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 106.6, '<input type="checkbox" name="p4_8b_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_injure_any_person_status') == "N") $checked = "checked";
+if (showData('principal_applicant_volunteered_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 106.6, '<input type="checkbox" name="p4_8b_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //......................
@@ -934,10 +1073,10 @@ $pdf->writeHTMLCell(0, 0, 12, 115, '<b>9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 116.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_political_opinion_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_threatened_weapon_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 116, '<input type="checkbox" name="p4_9_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_political_opinion_status') == "N") $checked = "checked";
+if (showData('principal_applicant_threatened_weapon_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 116, '<input type="checkbox" name="p4_9_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 
@@ -950,10 +1089,10 @@ transporting weapons, which, you knew or believed would be used against another 
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 129.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_transported_weapon_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 129, '<input type="checkbox" name="p4_10_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
+if (showData('principal_applicant_transported_weapon_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 129, '<input type="checkbox" name="p4_10_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 
@@ -965,10 +1104,10 @@ $pdf->writeHTMLCell(0, 0, 20, 142, 'Have you <b>EVER</b>sold, received any weapo
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 142.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_military_training_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 142, '<input type="checkbox" name="p4_11_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
+if (showData('principal_applicant_military_training_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 142, '<input type="checkbox" name="p4_11_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 
@@ -980,10 +1119,10 @@ $pdf->writeHTMLCell(0, 0, 20, 150, 'Have you <b>EVER</b>violated the terms of th
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 150.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_violated_ninimmigrant_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 150, '<input type="checkbox" name="p4_12_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
+if (showData('principal_applicant_violated_ninimmigrant_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 150, '<input type="checkbox" name="p4_12_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -995,10 +1134,10 @@ $pdf->writeHTMLCell(0, 0, 20, 158, 'Are you now in removal proceedings?', 0, 1, 
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 158.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_removal_proceeding_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 158, '<input type="checkbox" name="p4_13_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
+if (showData('principal_applicant_removal_proceeding_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 158, '<input type="checkbox" name="p4_13_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -1009,10 +1148,10 @@ $pdf->writeHTMLCell(0, 0, 20, 166, 'Have you <b>EVER</b>been employed in the Uni
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 166.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_us_last_employed_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 166, '<input type="checkbox" name="p4_14_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
+if (showData('principal_applicant_us_last_employed_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 166, '<input type="checkbox" name="p4_14_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -1031,10 +1170,10 @@ $pdf->writeHTMLCell(0, 0, 20, 197, 'Are you currently or have you <b>EVER</b> be
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 182, 197.2, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('additional_info_participate_in_armed_group_status') == "Y") $checked = "checked";
+if (showData('principal_applicant_visitor_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 175.5, 197, '<input type="checkbox" name="p4_15_staus" value="Y"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
-if (showData('additional_info_participate_in_armed_group_status') == "N") $checked = "checked";
+if (showData('principal_applicant_visitor_status') == "N") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(5, 1, 189, 197, '<input type="checkbox" name="p4_15_staus" value="N"    checked="' . $checked . '"  />', 0, 1, false, false, 'L', false);
 //..........................
@@ -1351,81 +1490,58 @@ $pdf->writeHTMLCell(174.8, 33.2, 21, 222, '', 1, 1, false, 'L');
 //...........
 $js = "
 var fields = {
-
-	'attorney_state_bar_number':' " . showData('') . "',
-
-	'attorney_or_according_representative':' " . showData('') . "',
-
-	'p1_1_legal_last_name':' " . showData('') . "',
-
-	'p1_1_legal_first_name':' " . showData('') . "',
-
-	'p1_1_legal_middle_name':' " . showData('') . "',
-
-	'p1_2_alien_registration_number':' " . showData('') . "',
-
-	'p1_2_uscis_online_acount_number':' " . showData('') . "',
-
-	'p1_4_incare_name':' " . showData('') . "',
-
-	'p1_4_street_name':' " . showData('') . "',
-
-	'p1_4_flr_ste_number':' " . showData('') . "',
-
-	'p1_4_city_town':' " . showData('') . "',
-
-	'p1_4_state':' " . showData('') . "',
-
-	'p1_4_zip_code':' " . showData('') . "',
-
-	'p1_6_street_name':' " . showData('') . "',
-
-	'p1_6_flr_ste_number':' " . showData('') . "',
-
-	'p1_6_city_town':' " . showData('') . "',
-
-	'p1_6_state':' " . showData('') . "',
-
-	'p1_6_zip_code':' " . showData('') . "',
-
+	'attorney_state_bar_number':' $attorneyData->bar_number',
+	'attorney_or_according_representative':' $attorneyData->uscis_online_account_number ',
+	'p1_1_legal_last_name':' " . showData('information_about_you_family_last_name') . "',
+	'p1_1_legal_first_name':' " . showData('information_about_you_given_first_name') . "',
+	'p1_1_legal_middle_name':' " . showData('information_about_you_middle_name') . "',
+	'p1_2_alien_registration_number':' " . showData('other_information_about_you_alien_registration_number') . "',
+	'p1_2_uscis_online_acount_number':' " . showData('other_information_about_you_uscis_online_account_number') . "',
+	'p1_4_incare_name':' " . showData('information_about_you_us_mailing_care_of_name') . "',
+	'p1_4_street_name':' " . showData('information_about_you_us_mailing_street_number') . "',
+	'p1_4_flr_ste_number':' " . showData('information_about_you_us_mailing_apt_ste_flr_value') . "',
+	'p1_4_city_town':' " . showData('information_about_you_us_mailing_city_town') . "',
+	'p1_4_state':' " . showData('information_about_you_us_mailing_state') . "',
+	'p1_4_zip_code':' " . showData('information_about_you_us_mailing_zip_code') . "',
+	'p1_6_street_name':' " . showData('information_about_you_home_street_number') . "',
+	'p1_6_flr_ste_number':' " . showData('information_about_you_home_apt_ste_flr_value') . "',
+	'p1_6_city_town':' " . showData('information_about_you_home_city_town') . "',
+	'p1_6_state':' " . showData('information_about_you_home_state') . "',
+	'p1_6_zip_code':' " . showData('information_about_you_home_zip_code') . "',
 //!page 1 end 2 start..........
-
-	'p1_7_country_birth':'  " . showData('') . "',
-	'p1_8_country_citizenship':'  " . showData('') . "',
-	'p1_9_date_of_birth':'  " . showData('') . "',
-	'p1_10_social_security_number':'  " . showData('') . "',
-	'p1_11_date_us':'  " . showData('') . "',
-	'p1_11_record_number':'  " . showData('') . "',
-	'p1_11_passport_number':'  " . showData('') . "',
-	'p1_11_travel_number':'  " . showData('') . "',
-	'p1_11_country_passport_issuance':'  " . showData('') . "',
-	'p1_11_passport_travel_expiration_date':'  " . showData('') . "',
-	'p1_12_nonimmigran_status':'  " . showData('') . "',
-	'p1_12_date_status_expires':'  " . showData('') . "',
-	'p2_2_combobox':'  " . showData('') . "',
-	'p2_2_requesting_date':'  " . showData('') . "',
-	'p2_4_total_number_people':'  " . showData('') . "',
-	'p2_5_exchange_visitor':'  " . showData('') . "',
-	'p2_6_SEVIS_id_number':'  " . showData('') . "',
-	'p3_1_date':'  " . showData('') . "',
-
-
+	'p1_7_country_birth':'  " . showData('other_information_about_you_country_of_birth') . "',
+	'p1_8_country_citizenship':'  " . showData('other_information_about_you_country_of_citizen') . "',
+	'p1_9_date_of_birth':'  " . showData('other_information_about_you_date_of_birth') . "',
+	'p1_10_social_security_number':'  " . showData('other_information_about_you_social_security_number') . "',
+	'p1_11_date_us':'  " . showData('i_94_imgt_date_of_last_arival') . "',
+	'p1_11_record_number':'  " . showData('i_94_imgt_arrival_record_number') . "',
+	'p1_11_passport_number':'  " . showData('other_information_about_you_passport_number') . "',
+	'p1_11_travel_number':'  " . showData('i_94_imgt_date_issuance_passport') . "',
+	'p1_11_country_passport_issuance':'  " . showData('i_94_imgt_country_issuance_passport') . "',
+	'p1_11_passport_travel_expiration_date':'  " . showData('other_information_about_you_expiry_date_issuance_passport') . "',
+	'p1_12_nonimmigran_status_combobox':'  " . showData('i_539_nonimmigrant_status_combobox') . "',
+	'p1_12_date_status_expires':'  " . showData('i_539_nonimmigrant_status_expires_date') . "',
+	'p2_2_combobox':'  " . showData('i_539_application_type_request_to_change_info_combobox') . "',
+	'p2_2_requesting_date':'  " . showData('application_type_request_to_change_info_date') . "',
+	'p2_4_total_number_people':'  " . showData('application_type_i_539a_applicant') . "',
+	'p2_5_exchange_visitor':'  " . showData('application_type_name_of_school_visitor') . "',
+	'p2_6_SEVIS_id_number':'  " . showData('application_type_sevis_id_number') . "',
+	'p3_1_date':'  " . showData('processing_info_extended_date') . "',
 //!page 2 end 3 start..........
-	'p3_uscis_reseipt_number':'  " . showData('') . "',
-	'p3_6_first_name':'  " . showData('') . "',
-	'p3_6_last_name':'  " . showData('') . "',
-	'p3_7_date_filed':'  " . showData('') . "',
-	'p4_1_passport':'  " . showData('') . "',
-	'p4_1_country':'  " . showData('') . "',
-	'p4_1_expiration_date':'  " . showData('') . "',
-	'p4_2_street_name':'  " . showData('') . "',
-	'p4_2_flr_ste_number':'  " . showData('') . "',
-	'p4_2_city_town':'  " . showData('') . "',
-	'p4_2_province':'  " . showData('') . "',
-	'p4_2_postal_code':'  " . showData('') . "',
-	'p4_2_country':'  " . showData('') . "',
+	'p3_uscis_reseipt_number':'  " . showData('processing_info_uscis_receipt_number') . "',
+	'p3_6_first_name':'  " . showData('beneficiary_or_applicant_first_name') . "',
+	'p3_6_last_name':'  " . showData('beneficiary_or_applicant_last_name') . "',
+	'p3_7_date_filed':'  " . showData('beneficiary_or_applicant_date_filed') . "',
+	'p4_1_passport':'  " . showData('principal_applicant_passport_number') . "',
+	'p4_1_country':'  " . showData('principal_applicant_country_issuance_passport') . "',
+	'p4_1_expiration_date':'  " . showData('principal_applicant_passport_exprire_date') . "',
+	'p4_2_street_name':'  " . showData('principal_applicant_street_number') . "',
+	'p4_2_flr_ste_number':'  " . showData('principal_applicant_apt_ste_flr_value') . "',
+	'p4_2_city_town':'  " . showData('principal_applicant_city_town') . "',
+	'p4_2_province':'  " . showData('principal_applicant_province') . "',
+	'p4_2_postal_code':'  " . showData('principal_applicant_postal_code') . "',
+	'p4_2_country':'  " . showData('principal_applicant_country') . "',
 //!page 3 end 5 start..........
-
 	'p5_applicant_daytime':' " . showData('i_539_applicant_daytime_tel') . "',
 	'p5_applicant_mobile':' " . showData('i_539_applicant_mobile') . "',
 	'p5_applicant_email':' " . showData('i_539_applicant_email') . "',
@@ -1439,7 +1555,6 @@ var fields = {
 	'p6_interpreter_fluent_english':' " . showData('i_539_interpreter_certification_language_skill') . "',
 	'p6_interpreter_signature_date':' " . showData('i_539_interpreter_sign_date') . "',
 //!page 5 end 6 start..........
-
 	'p7_Preparer_family_name':' " . showData('i_539_preparer_family_last_name') . "',
 	'p7_Preparer_given_name':' " . showData('i_539_preparer_family_given_first_name') . "',
 	'p7_Preparer_business_name':' " . showData('i_539_preparer_business_name') . "',
@@ -1448,7 +1563,6 @@ var fields = {
 	'p7_Preparer_email':' " . showData('i_539_preparer_email') . "',
 	'p7_Preparer_signature_date':' " . showData('i_539_preparer_sign_date') . "',
 //!page 6 end 7 start..........
-
 	'p8_additional_info_family_name':' " . showData('i_539_additional_info_last_name') . "',
 	'p8_additional_info_given_name':' " . showData('i_539_additional_info_first_name') . "',
 	'p8_additional_info_middle_name':' " . showData('i_539_additional_info_middle_name') . "',
@@ -1466,7 +1580,6 @@ var fields = {
 	'p8_additional_info_6b':' " . showData('i_539_additional_info_6b_part_no') . "',
 	'p8_additional_info_6c':' " . showData('i_539_additional_info_6c_item_no') . "',
 //!page 7 end..........
-
 };
 for (var fieldName in fields) {
     if (!fields.hasOwnProperty(fieldName)) continue;

@@ -33,7 +33,7 @@ include "intake_header.php";
                     <div>
                         <label class="control-label ">Attorney or Accredited Representative USCIS Online Account Number
                             (if any)</label>
-                        <input type="text" class="form-control" value="" maxlength="12" disabled>
+                        <input type="text" class="form-control" value="<?php echo $attorneyData->uscis_online_account_number ?>" maxlength="12" disabled>
                     </div>
                 </td>
             </tr>
@@ -70,14 +70,14 @@ include "intake_header.php";
         </div>
     </div>
 
-    <div class=" col-md-6" style='margin-bottom:20px'>
+    <div class="col-md-6" style='margin-bottom:20px'>
         <label class="control-label ">2. Alien Registration Number (A-Number) (if any)</label>
-        <div class="col-md-12 d-flexible"> ►A-<input type="text" class="form-control" name="other_information_about_you_date_of_birth" maxlength="9" value="<?php echo showData('other_information_about_you_date_of_birth') ?>">
+        <div class="col-md-12 d-flexible"> ►A-<input type="text" class="form-control" name="other_information_about_you_alien_registration_number" maxlength="9" value="<?php echo showData('other_information_about_you_alien_registration_number') ?>">
         </div>
     </div>
     <div class=" col-md-6" style='margin-bottom:20px'>
         <label class="control-label ">3. USCIS Online Account Number (if any)</label>
-        <div class="col-md-12 d-flexible"> ►<input type="text" class="form-control" name="other_information_about_you_country_of_birth" maxlength="12" value="<?php echo showData('other_information_about_you_country_of_birth') ?>">
+        <div class="col-md-12 d-flexible"> ►<input type="text" class="form-control" name="other_information_about_you_uscis_online_account_number" maxlength="12" value="<?php echo showData('other_information_about_you_uscis_online_account_number') ?>">
         </div>
     </div>
     <div class="form-group" style="margin-bottom: 10px;">
@@ -153,15 +153,20 @@ include "intake_header.php";
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
                 <div class='d-flexible'>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code_value1" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code_value1') ?>"
+                        <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code') ?>"
                             style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="form-group row">
+        <label class="control-label col-md-6">5. Is your mailing address the same as your physical address?</label>
+        <div class="col-md-2">
+            <?php echo createRadio("processing_info_granted_spouse_child_parent_status") ?>
+        </div>
+    </div>
     <div class="form-group" style="margin-bottom: 10px;">
-        <label class="control-label" style="width: 100%; margin-bottom: 5px;">5. Is your mailing address the same as your physical address?</label>
         <label class="control-label" style="width: 100%; margin-bottom: 5px;">If you answered “Yes” to Item Number 5. skip to Item Number 7. If you answered “No” to Item Number 5., provide information on your physical address in Item Number 6.</label>
     </div>
     <div class="form-group" style="margin-bottom: 10px;">
@@ -172,33 +177,33 @@ include "intake_header.php";
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
                 <div style="width: 100%;">
-                    <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
+                    <input type="text" maxlength="34" class="form-control" name="information_about_you_home_street_number" value="<?php echo showData('information_about_you_home_street_number') ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
             <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
                 <div style="flex: 1; margin-left: 5%;">
                     <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="apt"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="apt"
+                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
                         Apt. &nbsp;
                     </label>
                     <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="ste"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="ste"
+                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
                         Ste. &nbsp;
                     </label>
                     <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="flr"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="flr"
+                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
                         Flr.
                     </label>
                 </div>
             </div>
             <div style="flex: 1;">
                 <label class="control-label">Number</label>
-                <input type="text" class="form-control" name="information_about_you_us_mailing_apt_ste_flr_value"
-                    maxlength="5" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>"
+                <input type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value"
+                    maxlength="5" value="<?php echo showData('information_about_you_home_apt_ste_flr_value') ?>"
                     style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
@@ -207,19 +212,19 @@ include "intake_header.php";
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="28" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
+                    <input type="text" class="form-control" name="information_about_you_home_city_town" maxlength="28" value="<?php echo showData('information_about_you_home_city_town') ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
             <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
                 <div style="width: 100%;">
-                    <select class="form-control" name="information_about_you_us_mailing_state"
+                    <select class="form-control" name="information_about_you_home_state"
                         style="width: 100%; padding: 5px; margin-top: 3%;">
                         <option value=''>Select</option>
                         <?php
                         foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
+                            if ($record->state_code == showData('information_about_you_home_state')) $selected = "selected";
                             else $selected = "";
                             echo "<option value='$record->state_code' $selected>$record->state_code</option>";
                         }
@@ -231,7 +236,7 @@ include "intake_header.php";
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
                 <div class='d-flexible'>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code_value1" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code_value1') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_home_zip_code" maxlength="5" value="<?php echo showData('information_about_you_home_zip_code') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -255,25 +260,25 @@ include "intake_header.php";
         <div class="col-md-6">
             <label class="control-label ">7. Country of Birth</label>
             <div>
-                <input type="text" class="form-control" name="information_about_you_legally_change_family_last_name" maxlength="39" value="<?php echo showData('information_about_you_legally_change_family_last_name') ?>">
+                <input type="text" class="form-control" name="other_information_about_you_country_of_birth" maxlength="39" value="<?php echo showData('other_information_about_you_country_of_birth') ?>">
             </div>
         </div>
         <div class=" col-md-6">
             <label class="control-label ">8. Country of Citizenship or Nationality</label>
             <div>
-                <input type="text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="39" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+                <input type="text" class="form-control" name="other_information_about_you_country_of_citizen" maxlength="39" value="<?php echo showData('other_information_about_you_country_of_citizen') ?>">
             </div>
         </div>
         <div class=" col-md-5">
             <label class="control-label "> 9. Date of Birth (mm/dd/yyyy)</label>
             <div>
-                <input type="date" class="form-control" name="information_about_you_legally_change_given_first_name" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+                <input type="date" class="form-control" name="other_information_about_you_date_of_birth" value="<?php echo showData('other_information_about_you_date_of_birth') ?>">
             </div>
         </div>
         <div class=" col-md-5">
             <label class="control-label "> 10. U.S. Social Security Number (if any)</label>
             <div class="d-flexible">
-                ►<input type="text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="9" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+                ►<input type="text" class="form-control" name="other_information_about_you_social_security_number" maxlength="9" value="<?php echo showData('other_information_about_you_social_security_number') ?>">
             </div>
         </div>
     </div>
@@ -284,43 +289,43 @@ include "intake_header.php";
         <div class=" col-md-4">
             <label class="control-label ">Date of Last Arrival Into the</label>
             <label class="control-label ">United States (mm/dd/yyyy)</label>
-            <div> <input type=" date" class="form-control" name="information_about_you_legally_change_family_last_name" value="<?php echo showData('information_about_you_legally_change_family_last_name') ?>"> </div>
+            <div> <input type=" date" class="form-control" name="i_94_imgt_date_of_last_arival" value="<?php echo showData('i_94_imgt_date_of_last_arival') ?>"> </div>
         </div>
         <div class="col-md-4">
             <label class="control-label ">Form I-94 Arrival-Departure</label><br>
             <label class="control-label ">Record Number</label>
-            <div class="d-flexible">►<input type=" text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="11" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+            <div class="d-flexible">►<input type=" text" class="form-control" name="i_94_imgt_arrival_record_number" maxlength="11" value="<?php echo showData('i_94_imgt_arrival_record_number') ?>">
             </div>
         </div>
         <div class=" col-md-4">
             <label class="control-label ">Passport Number </label> <br>
             <label class="control-label ">(if any)</label>
-            <div><input type=" text" class="form-control" name="information_about_you_legally_change_middle_name" maxlength="30" value="<?php echo showData('information_about_you_legally_change_middle_name') ?>"></div>
+            <div><input type=" text" class="form-control" name="other_information_about_you_passport_number" maxlength="30" value="<?php echo showData('other_information_about_you_passport_number') ?>"></div>
         </div>
     </div>
     <div class="row form-group" style="margin-bottom: 20px;">
         <div class=" col-md-4">
             <label class="control-label">Travel Document Number</label><br>
             <label class="control-label">(if any)</label>
-            <div> <input type=" text" class="form-control" name="information_about_you_legally_change_family_last_name" maxlength="22" value="<?php echo showData('information_about_you_legally_change_family_last_name') ?>"> </div>
+            <div> <input type=" text" class="form-control" name="i_94_imgt_date_issuance_passport" maxlength="22" value="<?php echo showData('i_94_imgt_date_issuance_passport') ?>"> </div>
         </div>
         <div class=" col-md-4">
             <label class="control-label">Country of Passport or</label>
             <label class="control-label">Travel Document Issuance</label>
-            <div><input type=" text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="32" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+            <div><input type=" text" class="form-control" name="i_94_imgt_country_issuance_passport" maxlength="32" value="<?php echo showData('i_94_imgt_country_issuance_passport') ?>">
             </div>
         </div>
         <div class=" col-md-4">
             <label class="control-label">Passport or Travel Document Expiration</label> <br>
             <label class="control-label">Date (mm/dd/yyyy)</label>
-            <div><input type="date" class="form-control" name="information_about_you_legally_change_middle_name" value="<?php echo showData('information_about_you_legally_change_middle_name') ?>"></div>
+            <div><input type="date" class="form-control" name="other_information_about_you_expiry_date_issuance_passport" value="<?php echo showData('other_information_about_you_expiry_date_issuance_passport') ?>"></div>
         </div>
     </div>
     <div class="row form-group" style="margin-bottom: 20px;">
         <div class=" col-md-8">
             <label class="control-label ">12. Current Nonimmigrant Status (for example, F-1 student, H-4 dependent, etc.)</label>
             <div>
-                <select class="form-control" name="i_290b_appeal_or_motion_adverse_decision">
+                <select class="form-control" name="i_539_nonimmigrant_status_combobox">
                     <option value=''></option>
                     <?php
                     $values = [
@@ -466,7 +471,7 @@ include "intake_header.php";
                         "WT - VISITOR FOR PLEASURE - VWPP",
                         "X - EOIR"
                     ];
-                    $selected_value = showData('i_290b_appeal_or_motion_adverse_decision');
+                    $selected_value = showData('i_539_nonimmigrant_status_combobox');
                     foreach ($values as $value) {
                         $selected = ($value == $selected_value) ? "selected" : "";
                         echo "<option value='$value' $selected>$value</option>";
@@ -477,11 +482,11 @@ include "intake_header.php";
         </div>
         <div class=" col-md-4">
             <label class="control-label ">Date Status Expires (mm/dd/yyyy)</label><br>
-            <div><input type="date" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+            <div><input type="date" class="form-control" name="i_539_nonimmigrant_status_expires_date" maxlength="27" value="<?php echo showData('i_539_nonimmigrant_status_expires_date') ?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" style="margin:1% 0 0 1.5% "><?php echo createCheckbox("current_spouse_us_citizen_by_birth_status") ?>Select this box if you were granted Duration of Status (D/S).</label>
+            <label class="control-label" style="margin:1% 0 0 1.5% "><?php echo createCheckbox("granted_duration_of_status_ds") ?>Select this box if you were granted Duration of Status (D/S).</label>
         </div>
     </div>
     <div class="bg-info">
@@ -502,7 +507,7 @@ include "intake_header.php";
                 <label class="control-label">I am requesting to change my status or employer/information </label><br>
                 <label class="control-label">medium to:</label>
                 <div>
-                    <select class="form-control" name="">
+                    <select class="form-control" name="i_539_application_type_request_to_change_info_combobox">
                         <option value=''></option>
                         <?php
                         $values = [
@@ -577,7 +582,7 @@ include "intake_header.php";
                             ' WB - VISITOR FOR BUSINESS - VWPP',
                             ' WT - VISITOR FOR PLEASURE - VWP'
                         ];
-                        $selected_value = showData('i_539_application_type_request_to_change_info');
+                        $selected_value = showData('i_539_application_type_request_to_change_info_combobox');
                         foreach ($values as $value) {
                             $selected = ($value == $selected_value) ? "selected" : "";
                             echo "<option value='$value' $selected>$value</option>";
@@ -666,15 +671,15 @@ include "intake_header.php";
         <label class="control-label col-md-12">4. If you answered "Yes" to Item Number 2. or Item Number 3., select the Form type below.</label>
         <div class="col-md-12 ">
             <div class="form-group">
-                <label class="control-label col-md-8" style="margin-left: 25px;"><?php echo createCheckbox("current_spouse_us_citizen_by_birth_status") ?>Form I-539, Application to Extend/Change Nonimmigrant Status </label>
-                <label class="control-label col-md-8" style="margin-left: 25px;"><?php echo createCheckbox("current_spouse_us_citizen_other_status") ?>Form I-129, Petition for a Nonimmigrant Worker</label>
+                <label class="control-label col-md-8" style="margin-left: 25px;"><input type="checkbox" name="processing_info_form_type_status" value="I_539" <?php echo (showData('processing_info_form_type_status') == 'Y_539') ? 'checked' : '' ?>> Form I-539, Application to Extend/Change Nonimmigrant Status </label>
+                <label class="control-label col-md-8" style="margin-left: 25px;"><input type="checkbox" name="processing_info_form_type_status" value="I_129" <?php echo (showData('processing_info_form_type_status') == 'Y_539') ? 'checked' : '' ?>> Form I-129, Petition for a Nonimmigrant Worker</label>
             </div>
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-md-8">5. If you answered "Yes" to Item Number 2. or 3., provide the USCIS Receipt Number.</label>
         <div class="col-md-4">
-            <input type="text" maxlength="13" class="form-control" name="other_information_about_you_uscis_online_account_number" value="<?php echo showData('other_information_about_you_uscis_online_account_number') ?>" />
+            <input type="text" maxlength="13" class="form-control" name="processing_info_uscis_receipt_number" value="<?php echo showData('processing_info_uscis_receipt_number') ?>" />
         </div>
     </div>
     <div class="form-group">
@@ -687,19 +692,19 @@ include "intake_header.php";
         <div class="col-md-6">
             <label class="control-label ">First Name of Beneficiary or Applicant</label>
             <div>
-                <input type="text" class="form-control" name="information_about_you_legally_change_family_last_name" maxlength="41" value="<?php echo showData('information_about_you_legally_change_family_last_name') ?>">
+                <input type="text" class="form-control" name="beneficiary_or_applicant_first_name" maxlength="41" value="<?php echo showData('beneficiary_or_applicant_first_name') ?>">
             </div>
         </div>
         <div class=" col-md-6">
             <label class="control-label "> Last Name of Beneficiary or Applicant</label>
             <div>
-                <input type="text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="43" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+                <input type="text" class="form-control" name="beneficiary_or_applicant_last_name" maxlength="43" value="<?php echo showData('beneficiary_or_applicant_last_name') ?>">
             </div>
         </div>
         <div class=" col-md-5">
             <label class="control-label "> 7. Date Filed (mm/dd/yyyy)</label>
             <div>
-                <input type="date" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+                <input type="date" class="form-control" name="beneficiary_or_applicant_date_filed" value="<?php echo showData('beneficiary_or_applicant_date_filed') ?>">
             </div>
         </div>
     </div>
@@ -714,17 +719,17 @@ include "intake_header.php";
     <div class="row form-group" style="margin-bottom: 20px;">
         <div class=" col-md-4">
             <label class="control-label ">Passport Number</label>
-            <div> <input type=" text" class="form-control" name="information_about_you_legally_change_family_last_name" maxlength="24" value="<?php echo showData('information_about_you_legally_change_family_last_name') ?>">
+            <div> <input type=" text" class="form-control" name="principal_applicant_passport_number" maxlength="24" value="<?php echo showData('principal_applicant_passport_number') ?>">
             </div>
         </div>
         <div class=" col-md-4">
             <label class="control-label ">Country of Passport Issuance</label>
-            <div><input type=" text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="33" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
+            <div><input type=" text" class="form-control" name="principal_applicant_country_issuance_passport" maxlength="33" value="<?php echo showData('principal_applicant_country_issuance_passport') ?>">
             </div>
         </div>
         <div class=" col-md-4">
             <label class="control-label ">Passport Expiration Date (mm/dd/yyyy)</label>
-            <div><input type=" text" class="form-control" name="information_about_you_legally_change_middle_name" value="<?php echo showData('information_about_you_legally_change_middle_name') ?>"></div>
+            <div><input type=" text" class="form-control" name="principal_applicant_passport_exprire_date" value="<?php echo showData('principal_applicant_passport_exprire_date') ?>"></div>
         </div>
     </div>
     <div style="margin: 2%;">
@@ -733,32 +738,32 @@ include "intake_header.php";
                 <label class="control-label" style=" margin-bottom: 5px;">2. Physical Address Abroad </label>
                 <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
                 <div style="width: 100%;">
-                    <input type="text" maxlength="34" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    <input type="text" maxlength="34" class="form-control" name="principal_applicant_street_number" value="<?php echo showData('principal_applicant_street_number') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
             <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
                 <div style="flex: 1; margin-left: 5%;">
                     <label>
-                        <input type="radio" name="information_about_you_residence_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
+                        <input type="radio" name="principal_applicant_apt_ste_flr" value="apt" <?php echo (showData('principal_applicant_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
                     </label>
                     <label>
-                        <input type="radio" name="information_about_you_residence_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
+                        <input type="radio" name="principal_applicant_apt_ste_flr" value="ste" <?php echo (showData('principal_applicant_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
                     </label>
                     <label>
-                        <input type="radio" name="information_about_you_residence_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
+                        <input type="radio" name="principal_applicant_apt_ste_flr" value="flr" <?php echo (showData('principal_applicant_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
                     </label>
                 </div>
             </div>
             <div style="flex: 1;">
                 <label class="control-label">Number</label>
-                <input type="text" class="form-control" name="information_about_you_residence_apt_ste_flr_value" maxlength="5" value="<?php echo showData('information_about_you_residence_apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                <input type="text" class="form-control" name="principal_applicant_apt_ste_flr_value" maxlength="5" value="<?php echo showData('principal_applicant_apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
         <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                 <div style="width: 70%;">
-                    <input type="text" class="form-control" name="information_about_you_residence_city_town" maxlength="27" value="<?php echo showData('information_about_you_residence_city_town') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    <input type="text" class="form-control" name="principal_applicant_city_town" maxlength="27" value="<?php echo showData('principal_applicant_city_town') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
         </div>
@@ -766,19 +771,19 @@ include "intake_header.php";
             <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_residence_province" maxlength="20" value="<?php echo showData('information_about_you_residence_province') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    <input type="text" class="form-control" name="principal_applicant_province" maxlength="20" value="<?php echo showData('principal_applicant_province') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
             <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_residence_postal_code" maxlength="9" value="<?php echo showData('information_about_you_residence_postal_code') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    <input type="text" class="form-control" name="principal_applicant_postal_code" maxlength="9" value="<?php echo showData('principal_applicant_postal_code') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
             <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_residence_country" maxlength="37" value="<?php echo showData('information_about_you_residence_country') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    <input type="text" class="form-control" name="principal_applicant_country" maxlength="37" value="<?php echo showData('principal_applicant_country') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
         </div>
@@ -789,19 +794,19 @@ include "intake_header.php";
     <div class="form-group row">
         <label class="control-label col-md-10">3. Are you an applicant for an immigrant visa?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_criminal_offense_status") ?>
+            <?php echo createRadio("principal_applicant_immmigrant_visa_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">4. Has an immigrant petition EVER been filed for you?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_torture_genocide_status") ?>
+            <?php echo createRadio("principal_applicant_immmigrant_petiton_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">5. Have you EVER filed Form I-485, Application to Register Permanent Residence or Adjust Status?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_killing_status") ?>
+            <?php echo createRadio("principal_applicant_permanent_residence_status") ?>
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
@@ -819,87 +824,87 @@ include "intake_header.php";
     <div class="form-group row">
         <label class="control-label col-md-10">6. Have you been arrested or convicted of any criminal offense since last entering the United States?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_criminal_offense_status") ?>
+            <?php echo createRadio("principal_applicant_arrested_last_entering_us_status") ?>
         </div>
     </div>
     <div class="form-group"><label class="control-label col-md-12">Have you EVER ordered, incited, called for, committed, assisted, helped with, or otherwise participated in any of the following:</label></div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.a. Acts involving torture or genocide?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_torture_genocide_status") ?>
+            <?php echo createRadio("principal_applicant_involving_torture_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.b. Killing any person?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_killing_status") ?>
+            <?php echo createRadio("principal_applicant_kill_any_person_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.c. Intentionally and severely injuring any person?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_injury_status") ?>
+            <?php echo createRadio("principal_applicant_injur_any_person_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.d. Engaging in any kind of sexual contact or relations with any person who did not consent or was unable to consent, or was being forced or threatened?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_sexual_contact_status") ?>
+            <?php echo createRadio("principal_applicant_sexual_contact_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.e. Limiting or denying any person's ability to exercise religious beliefs?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_religious_beliefs_status") ?>
+            <?php echo createRadio("principal_applicant_religious_belief_status") ?>
         </div>
     </div>
     <div class="form-group"><label class="control-label col-md-12">Have you EVER:</label></div>
     <div class="form-group row">
         <label class="control-label col-md-10">8.a. Served in, been a member of, assisted, or participated in any military unit, paramilitary unit, police unit, self-defense unit, vigilante unit, rebel group, guerrilla group, militia, insurgent organization, or any other armed group?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_military_participation_status") ?>
+            <?php echo createRadio("principal_applicant_armed_group_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">8.b. Worked, volunteered, or otherwise served in any prison, jail, prison camp, detention facility, labor camp, or any other situation that involved detaining persons?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_prison_service_status") ?>
+            <?php echo createRadio("principal_applicant_volunteered_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">9. Have you EVER been a member of, assisted, or participated in any group, unit, or organization of any kind in which you or other persons used or threatened to use any type of weapon against any person or threatened to do so?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_weapon_use_status") ?>
+            <?php echo createRadio("principal_applicant_threatened_weapon_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">10. Have you EVER sold, provided, or transported weapons, or assisted any person in selling, providing, or transporting weapons, which you knew or believed would be used against another person?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_weapon_transport_status") ?>
+            <?php echo createRadio("principal_applicant_transported_weapon_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">11. Have you EVER received any weapons training, paramilitary training, or other military-type training?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_military_training_status") ?>
+            <?php echo createRadio("principal_applicant_military_training_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">12. Have you EVER violated the terms of the nonimmigrant status you now hold?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_nonimmigrant_status_violation") ?>
+            <?php echo createRadio("principal_applicant_violated_ninimmigrant_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">13. Are you now in removal proceedings?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_removal_proceedings_status") ?>
+            <?php echo createRadio("principal_applicant_removal_proceeding_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">14. Have you EVER been employed in the United States since last admitted or granted an extension or change of status?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_employment_status") ?>
+            <?php echo createRadio("principal_applicant_us_last_employed_status") ?>
         </div>
     </div>
     <div class="form-group"><label class="control-label col-md-12">If you answered "No" to Item Number 14., fully describe how you are supporting yourself in Part 8. Additional Information.
@@ -909,7 +914,7 @@ include "intake_header.php";
     <div class="form-group row">
         <label class="control-label col-md-10">15. Are you currently or have you EVER been a J-1 exchange visitor or a J-2 dependent of a J-1 exchange visitor?</label>
         <div class="col-md-2">
-            <?php echo createRadio("additional_info_j1_exchange_visitor_status") ?>
+            <?php echo createRadio("principal_applicant_visitor_status") ?>
         </div>
     </div>
     <div class="form-group"><label class="control-label col-md-12">If you answered "Yes" to Item Number 15., you must provide the dates you maintained status as a J-1 exchange visitor or J-2
