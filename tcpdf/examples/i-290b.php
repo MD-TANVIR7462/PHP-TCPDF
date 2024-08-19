@@ -75,9 +75,9 @@ class MyPDF extends TCPDF {
 		
 		
 		// if ($this->page == 1){
-			$barcode_image = "images/I-290B-footer-pdf417-$this->page.png";
-		// )
-        $this->Image($barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
+		// 	$barcode_image = "images/I-290B-footer-pdf417-$this->page.png";
+		// // )
+        // $this->Image($barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
 		
         // $this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 'T', 'R', 1, 0);
 		
