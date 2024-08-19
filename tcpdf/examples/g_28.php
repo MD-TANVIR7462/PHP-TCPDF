@@ -922,6 +922,7 @@ $pdf->writeHTMLCell( 82, 1, 21.6, 223.5, '',  "B",  0, false, false, 'C', true )
 $pdf->writeHTMLCell( 82, 1, 21.6, 227.5, '',  "B",  0, false, false, 'C', true );// line 9
 $pdf->TextField('aditional_inf0_name_4d', 82.5, 68.4,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),21.5, 188.5);
 $pdf->setCellHeightRatio(1.2); 
+
 //............
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>5.a.  </b> &nbsp;Page Number</div>';
