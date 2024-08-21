@@ -574,19 +574,19 @@ $pdf->SetFont('times', '', 10);
 $html = '<div><b>10.  </b>  Daytime Telephone Number</div>';
 $pdf->writeHTMLCell(90, 7, 112, 25, $html, 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('client_daytime_telephone_number', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 30);
+$pdf->TextField('client_daytime_telephone_number', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 30);
 //........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>11.  </b>  Mobile Telephone Number (if any)</div>';
 $pdf->writeHTMLCell(92, 7, 112, 38, $html, 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('client_mobile_telephone_number', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 43);
+$pdf->TextField('client_mobile_telephone_number', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 43);
 //........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>12.  </b>  Email Address (if any)</div>';
 $pdf->writeHTMLCell(90, 7, 112, 51, $html, 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('client_email_address', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 56);  
+$pdf->TextField('client_email_address', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 120, 56);  
 //........
 $pdf->SetFont('times', 'I', 12);
 $html ='<div><b>Mailing Address of Client</b></div>';
@@ -605,7 +605,7 @@ $pdf->writeHTMLCell(30, 0, 112, 90, $html, '', 0, 0, true, 'L');
 $html = '<div>Street Number and Name</div>';
 $pdf->writeHTMLCell(25, 0, 122, 90, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('client_mailing_address_street', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 92);
+$pdf->TextField('client_mailing_address_street', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 92);
 //........
 $mailing_apt = (showData('information_about_you_us_mailing_apt_ste_flr')=='apt')? "checked":"";
 $mailing_ste = (showData('information_about_you_us_mailing_apt_ste_flr')=='ste')? "checked":"";
@@ -627,14 +627,14 @@ $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(25, 0, 155, 101, "Flr.", '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('client_mailing_address_apt_ste_flr', 40, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 163, 101);
+$pdf->TextField('client_mailing_address_apt_ste_flr', 41, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 163, 101);
 //......
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>13.c.</b>&nbsp;&nbsp;&nbsp;&nbsp;City or Town';
 $pdf->writeHTMLCell(50, 0, 112, 110, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('client_mailing_address_city_or_town', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 110);
+$pdf->TextField('client_mailing_address_city_or_town', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 110);
 
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>13.d.</b>&nbsp;&nbsp;&nbsp;&nbsp;State&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>13.e.</b>&nbsp;&nbsp;ZIP Code';
@@ -647,21 +647,21 @@ foreach ($allDataCountry as $record) {
 }
 $pdf->ComboBox("client_mailing_address_state", 13.5, 7, $comboBoxOptions, array(), array(),132, 119);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('client_mailing_address_zip_code', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169.5, 119);
+$pdf->TextField('client_mailing_address_zip_code', 34.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 169.5, 119);
 
 $pdf->SetFont('Times', '', 10); // set font
 $html = '<b>13.f.</b>&nbsp;&nbsp;&nbsp;&nbsp;Province';
 $pdf->writeHTMLCell(50, 0, 112, 128, $html, '', 0, 0, true, 'L'); 
 
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('client_mailing_address_province', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 128);
+$pdf->TextField('client_mailing_address_province', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 128);
 
 $pdf->SetFont('Times', '', 10); // set font
 $html = '<b>13.g.</b> &nbsp;&nbsp;Postal Code';
 $pdf->writeHTMLCell(50, 0,  112, 137, $html, '', 0, 0, true, 'L'); 
 
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('client_mailing_address_postal_code', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 137);
+$pdf->TextField('client_mailing_address_postal_code', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 145, 137);
 //........
 $pdf->SetFont('Times', '', 10); // set font
 $html = '<b>13.h.</b> &nbsp;&nbsp;Country';
@@ -674,12 +674,12 @@ $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1); 
 $html ='<div><b>Part 4. Client\'s Consent to Representation and
 Signature</b></div>';
-$pdf->writeHTMLCell(90, 12, 113, 162, $html, 1, 1, true, false, 'L', true);
+$pdf->writeHTMLCell(91, 12, 113, 162, $html, 1, 1, true, false, 'L', true);
 //........
 $pdf->SetFont('times', 'I', 12);
 $html ='<div><b>Consent to Representation and Release of
 Information</b></div>';
-$pdf->writeHTMLCell(90, 10, 113, 178, $html, 0, 0, true, false, 'L', false);
+$pdf->writeHTMLCell(91, 10, 113, 178, $html, 0, 0, true, false, 'L', false);
 //........
 $pdf->SetFont('Times', '', 10); // set font
 $html = '<div>I have requested the representation of and consented to being
