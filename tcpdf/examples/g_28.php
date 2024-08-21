@@ -187,23 +187,19 @@ $pdf->writeHTMLCell(25, 0, 20, 110, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('representative_address_street', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 44, 112);
 
-//.........
-if(showData('information_about_you_us_mailing_apt_ste_flr')=="apt") $checked_apt = "checked"; else $checked_apt = "";
-if(showData('information_about_you_us_mailing_apt_ste_flr')=="ste") $checked_ste = "checked"; else $checked_ste = "";
-if(showData('information_about_you_us_mailing_apt_ste_flr')=="flr") $checked_flr = "checked"; else $checked_flr = "";
 //.......................
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(25, 0, 12, 121, "<b>3.b.</b>", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); // set font
-$pdf->writeHTMLCell(5, 0, 20, 120,'<input type="checkbox" name="Apt1" value="Apt1" checked="'.$checked_apt.'" />', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(5, 0, 20, 120,'<input type="checkbox" name="Apt21" value="Apt1"  />', '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 26, 121, "Apt.", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$pdf->writeHTMLCell(5, 0, 35, 120, '<input type="checkbox" name="Ste1" value="Ste1" checked="'.$checked_ste.'" />', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(5, 0, 35, 120, '<input type="checkbox" name="Ste21" value="Ste1"  />', '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 41, 121, "Ste.", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); 
-$pdf->writeHTMLCell(5, 0, 49, 120, '<input type="checkbox" name="Flr1" value="Flr1" checked="'.$checked_flr.'" />', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(5, 0, 49, 120, '<input type="checkbox" name="Flr21" value="Flr1"  />', '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); 
 $pdf->writeHTMLCell(25, 0, 55, 121, "Flr.", '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font

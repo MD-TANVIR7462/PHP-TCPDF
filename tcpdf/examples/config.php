@@ -16,28 +16,31 @@ try {
 	$e->getMessage();
 }
 
-function indexByQueryAlldata($sql)
-{
-	global $conn;
-	$data = $conn->query($sql);
-	$data->setFetchMode(PDO::FETCH_OBJ);
-	$allData = $data->fetchAll();
-	return $allData;
-}
+// function indexByQueryAlldata($sql)
+// {
+// 	global $conn;
+// 	$data = $conn->query($sql);
+// 	$data->setFetchMode(PDO::FETCH_OBJ);
+// 	$allData = $data->fetchAll();
+// 	return $allData;
+// }
 
-function indexByQuerySingleData($sql)
-{
-	global $conn;
+// function indexByQuerySingleData($sql)
+// {
+// 	global $conn;
 
-	$data = $conn->query($sql);
-	$data->setFetchMode(PDO::FETCH_OBJ);
-	$singleData = $data->fetch();
+// 	$data = $conn->query($sql);
+// 	$data->setFetchMode(PDO::FETCH_OBJ);
+// 	$singleData = $data->fetch();
 
-	return $singleData;
-}
-$allDataCountry = indexByQueryAllData("SELECT * FROM countries");
-$attorney 		= indexByQuerySingleData("SELECT * FROM attorney_info WHERE active='1' ORDER BY id LIMIT 1");
-$attorneyData 	= json_decode($attorney->note);
+// 	return $singleData;
+// }
+$allDataCountry = [];
+$attorney 		= '';
+$attorneyData 	= '';
+// $allDataCountry = indexByQueryAllData("SELECT * FROM countries");
+// $attorney 		= indexByQuerySingleData("SELECT * FROM attorney_info WHERE active='1' ORDER BY id LIMIT 1");
+// $attorneyData 	= json_decode($attorney->note);
 
 function showData($name, $arrayNo = "")
 {
