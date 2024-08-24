@@ -2514,9 +2514,7 @@ $pageHeading 		= "General Intake";
 											</div>
 											<div id="collapseEmployer1" class="panel-collapse collapse in">
 												<div class="panel-body">
-													<!--<div class="bg-info">
-									<h4><b>Employer 1</b></h4> 
-								</div>-->
+										
 													<h4><code><b>Note : </b> I-130A, I-192, I-485 </code></h4>
 													<div class="row">
 														<div class="col-md-6">
