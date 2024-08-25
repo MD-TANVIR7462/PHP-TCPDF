@@ -323,7 +323,7 @@ $pdf->writeHTMLCell(50, 4, 13, 186, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-	$comboBoxOptions[] = $record->state_code;
+    $comboBoxOptions[] = $record->state_code;
 }
 $pdf->ComboBox("about_your_mailing_state", 13, 7, $comboBoxOptions, array(), array(), 30.6, 185.5);
 $pdf->SetFont('times', '', 10);
@@ -413,7 +413,7 @@ $pdf->writeHTMLCell(50, 4, 113, 121, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-	$comboBoxOptions[] = $record->state_code;
+    $comboBoxOptions[] = $record->state_code;
 }
 $pdf->ComboBox("about_your_physical_state", 13, 7, $comboBoxOptions, array(), array(), 130, 120);
 $pdf->SetFont('times', '', 10); // set font
@@ -531,51 +531,51 @@ $html = '<div>Select <b>Item Number 1.a.</b>, <b>1.b.</b>, or <b>1.c.</b></div>'
 $pdf->writeHTMLCell(90, 7, 12, 28, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.a. </b><input type="checkbox" name="part2_1a" value="Y" checked=" " /></div>';
+$html = '<div><b>1.a.</b>&nbsp;&nbsp;<input type="checkbox" name="part2_1a" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(50, 15, 12, 34, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = 'I am the intending immigrant and also the sponsor\'s 
 spouse.';
-$pdf->writeHTMLCell(85, 7, 22, 34, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(85, 7, 24, 34, $html, '', 0, 0, true, 'L');
 
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.b. </b><input type="checkbox" name="part2_1b" value="Y" checked=" " /></div>';
+$html = '<div><b>1.b.</b>&nbsp;&nbsp;<input type="checkbox" name="part2_1b" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(50, 15, 12, 44, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = 'I am the intending immigrant and also a member of 
 the sponsor\'s household.';
-$pdf->writeHTMLCell(85, 7, 22, 44, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(85, 7, 24, 44, $html, '', 0, 0, true, 'L');
 
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.c. </b><input type="checkbox" name="part2_1c" value="Y" checked=" " /></div>';
+$html = '<div><b>1.c.</b>&nbsp;&nbsp;<input type="checkbox" name="part2_1c" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(50, 7, 12, 54, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = 'I am not the intending immigrant. I am the sponsor\'s 
 household member. I am related to the sponsor as 
 his/her: ';
-$pdf->writeHTMLCell(83, 7, 22, 54, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(83, 7, 24, 54, $html, '', 0, 0, true, 'L');
 
 //.........
-$pdf->SetFont('times', '', 11);
-$html = '<div><input type="checkbox" name="part2_1c1" value="Y" checked=" " />  &nbsp;  &nbsp;  Spouse </div>';
-$pdf->writeHTMLCell(50, 7, 22, 63, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10);
+$html = '<div><input type="checkbox" name="part2_1c1" value="Y" checked=" " />&nbsp;&nbsp;Spouse </div>';
+$pdf->writeHTMLCell(50, 7, 23, 63, $html, 0, 1, false, true, 'L', true);
 
 //.........
-$html = '<div><input type="checkbox" name="part2_1c2" value="Y" checked=" " />  &nbsp;  &nbsp;  Son or Daughter (at least 18 years of age) </div>';
-$pdf->writeHTMLCell(80, 7, 22, 69, $html, 0, 1, false, true, 'L', true);
+$html = '<div><input type="checkbox" name="part2_1c2" value="Y" checked=" " />&nbsp;&nbsp;Son or Daughter (at least 18 years of age) </div>';
+$pdf->writeHTMLCell(80, 7, 23, 69, $html, 0, 1, false, true, 'L', true);
 
 //.........
-$html = '<div><input type="checkbox" name="part2_1c3" value="Y" checked=" " />  &nbsp;  &nbsp;  Parent</div>';
-$pdf->writeHTMLCell(80, 7, 22, 75, $html, 0, 1, false, true, 'L', true);
+$html = '<div><input type="checkbox" name="part2_1c3" value="Y" checked=" " />&nbsp;&nbsp;Parent</div>';
+$pdf->writeHTMLCell(80, 7, 23, 75, $html, 0, 1, false, true, 'L', true);
 //.........
-$html = '<div><input type="checkbox" name="part2_1c4" value="Y" checked=" " />  &nbsp;  &nbsp;  Brother or Sister</div>';
-$pdf->writeHTMLCell(80, 7, 22, 81, $html, 0, 1, false, true, 'L', true);
+$html = '<div><input type="checkbox" name="part2_1c4" value="Y" checked=" " />&nbsp;&nbsp;Brother or Sister</div>';
+$pdf->writeHTMLCell(80, 7, 23, 81, $html, 0, 1, false, true, 'L', true);
 //.........
-$html = '<div><input type="checkbox" name="part2_1c5" value="Y" checked=" " />  &nbsp;  &nbsp; Other Dependent (Specify)</div>';
-$pdf->writeHTMLCell(80, 7, 22, 87, $html, 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(78, 7, 25, 93, "", 1, 1, false, true, 'L', true);
+$html = '<div><input type="checkbox" name="part2_1c5" value="Y" checked=" " />&nbsp;&nbsp;Other Dependent (Specify)</div>';
+$pdf->writeHTMLCell(80, 7, 23, 87, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(72, 7, 31, 92.8, "", 1, 1, false, true, 'L', true);
 //.............
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
@@ -589,61 +589,68 @@ $html = '<div><b>I am currently: </b></div>';
 $pdf->writeHTMLCell(90, 7, 12, 115, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1. </b><input type="checkbox" name="part3_1" value="Y" checked=" " /></div>';
+$html = '<div><b>1.&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_1" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(50, 7, 12, 120, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = 'Employed as a/an';
-$pdf->writeHTMLCell(83, 7, 22, 120, $html, '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(80, 7, 23, 125, '', 1, 0, false, 'L');
+$pdf->writeHTMLCell(83, 7, 24, 120, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('part3_1_value', 78, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 25, 125);
+$pdf->TextField('part3_2_value', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 19.8, 138);
+$pdf->TextField('part3_3_value', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 19.8, 152);
+$pdf->TextField('part3_4_value', 78, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 25, 165);
+$pdf->TextField('part3_5a_value', 78, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 25, 178);
+$pdf->TextField('part3_5b_value', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 73, 187);
+$pdf->TextField('part3_6_value', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 73, 195);
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>2.  </b>   Name of Employer Number 1 </div>';
+$html = '<div><b>2.&nbsp;&nbsp;&nbsp;&nbsp;</b>Name of Employer Number 1 </div>';
 $pdf->writeHTMLCell(90, 7, 12, 133, $html, 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(85, 7, 18, 138, '', 1, 0, false, 'L');
+// $pdf->writeHTMLCell(83, 7, 19.8, 138, '', 1, 0, false, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>3.  </b>   Name of Employer Number 2 (if applicable)</div>';
+$html = '<div><b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;Name of Employer Number 2 (if applicable)</div>';
 $pdf->writeHTMLCell(90, 7, 12, 147, $html, 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(85, 7, 18, 152, '', 1, 0, false, 'L');
+// $pdf->writeHTMLCell(83, 7, 19.8, 152, '', 1, 0, false, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>4. </b><input type="checkbox" name="part3_4" value="Y" checked=" " /></div>';
+$html = '<div><b>4.&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_4" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(50, 7, 12, 160, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = 'Self employed as a/an';
-$pdf->writeHTMLCell(83, 7, 22, 160, $html, '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(80, 7, 23, 165, '', 1, 0, false, 'L');
+$pdf->writeHTMLCell(83, 7, 24, 160, $html, '', 0, 0, true, 'L');
+// $pdf->writeHTMLCell(78, 7, 25, 165, '', 1, 0, false, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>5. </b><input type="checkbox" name="part3_5" value="Y" checked=" " /></div>';
+$html = '<div><b>5.&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_5" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(50, 7, 12, 173, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = 'Retired from (Company Name)';
-$pdf->writeHTMLCell(83, 7, 22, 173, $html, '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(80, 7, 23, 178, '', 1, 0, false, 'L');
+$pdf->writeHTMLCell(83, 7, 24, 173, $html, '', 0, 0, true, 'L');
+// $pdf->writeHTMLCell(78, 7, 25, 178, '', 1, 0, false, 'L');
 //.........
 $html = 'Since (mm/dd/yyyy)';
 $pdf->writeHTMLCell(83, 7, 42, 187, $html, '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(30, 7, 73, 187, '', 1, 0, false, 'L');
+// $pdf->writeHTMLCell(30, 7, 73, 187, '', 1, 0, false, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>6. </b><input type="checkbox" name="part3_6" value="Y" checked=" " /></div>';
+$html = '<div><b>6.&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part3_6" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(50, 7, 12, 195, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = 'Unemployed since (mm/dd/yyyy)';
-$pdf->writeHTMLCell(83, 7, 22, 195, $html, '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(30, 7, 73, 195, '', 1, 0, false, 'L');
+$pdf->writeHTMLCell(83, 7, 24, 195, $html, '', 0, 0, true, 'L');
+// $pdf->writeHTMLCell(30, 7, 73, 195, '', 1, 0, false, 'L');
 
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>7.   &nbsp;   My current individual annual income is:</b></div>';
+$html = '<div><b>7.&nbsp;&nbsp;&nbsp;&nbsp;My current individual annual income is:</b></div>';
 $pdf->writeHTMLCell(90, 7, 12, 205, $html, 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(83, 7, 68, 210, "$", 0, 0, false, 'L');
+$pdf->writeHTMLCell(83, 7, 64, 210, "$", 0, 0, false, 'L');
 //........
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('current_individual_annual_income', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 73, 210);
+$pdf->TextField('current_individual_annual_income', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 68, 210);
 //.............
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
@@ -663,38 +670,36 @@ $html = 'Have you filed a Federal income tax return for each of the
 three most recent tax years?';
 $pdf->writeHTMLCell(90, 7, 21, 232, $html, '', 0, 0, true, 'L');
 
-$pdf->SetFont('times', '', 12); // set font
+$pdf->SetFont('times', '', 10); // set font
 $html = '<div><input type="checkbox" name="part4_1" value="Y" checked=" " />   Yes   &nbsp; <input type="checkbox" name="part4_1" value="N" checked=" " /> No</div>';
 $pdf->writeHTMLCell(80, 7, 70, 237, $html, 0, 1, false, true, 'J', true);
 
 //........... page 2 left side end ....................................................................................................
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>NOTE:</b> You <b>MUST</b> attach a photocopy or transcript of 
-your Federal income tax return for only the most recent 
-tax year.</div>';
-$pdf->writeHTMLCell(80, 7, 125, 17, $html, '', 0, 0, true, 'L');
+$html = '<div><b>NOTE:</b> You <b>MUST</b> attach a photocopy or transcript of your Federal income tax return for only the most recent tax year.</div>';
+$pdf->writeHTMLCell(80, 7, 120, 17, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.b. </b><input type="checkbox" name="part4_1b" value="Y" checked=" " /></div>';
+$html = '<div><b>1.b.&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part4_1b" value="Y" checked=" " /></div>';
 $pdf->writeHTMLCell(50, 7, 112, 30, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = ' (Optional) I have attached photocopies or transcripts 
 of my Federal income tax returns for my second and 
 third most recent tax years.';
-$pdf->writeHTMLCell(83, 7, 123, 30, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(83, 7, 125, 30, $html, '', 0, 0, true, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = 'My total income (adjusted gross income on IRS Form 1040EZ) 
-as reported on my Federal income tax returns for the most 
+$html = 'My total income (adjusted gross income on IRS Form 1040EZ) <br>
+as reported on my Federal income tax returns for the most <br>
 recent three years was:';
-$pdf->writeHTMLCell(90, 7, 112, 43, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(100, 7, 112, 43, $html, '', 0, 0, true, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10); // set font
 $html = 'Tax Year   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Total Income';
-$pdf->writeHTMLCell(90, 7, 155, 60, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 152, 62, $html, '', 0, 0, true, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10);
@@ -708,19 +713,19 @@ $html = '<div><b>2.c. </b>  2nd Most Recent</div>';
 $pdf->writeHTMLCell(80, 7, 112, 81, $html, 0, 1, false, true, 'L', true);
 //........
 $html = '<div><b>$</b></div>';
-$pdf->writeHTMLCell(80, 7, 175, 67, $html, 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(80, 7, 175, 74, $html, 0, 1, false, true, 'L', true);
-$pdf->writeHTMLCell(80, 7, 175, 81, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 7, 172, 67, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 7, 172, 74, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 7, 172, 81, $html, 0, 1, false, true, 'L', true);
 //........
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('most_recent_tax_year', 23, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 150, 67);
-$pdf->TextField('most_recent_tax_year2', 23, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 150, 74);
-$pdf->TextField('most_recent_tax_year3', 23, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 150, 81);
+$pdf->TextField('most_recent_tax_year', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 150, 67);
+$pdf->TextField('most_recent_tax_year2', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 150, 74);
+$pdf->TextField('most_recent_tax_year3', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 150, 81);
 //..........
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('most_recent_total_income_year', 25, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 179, 67);
-$pdf->TextField('most_recent_total_income_year2', 25, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 179, 74);
-$pdf->TextField('most_recent_total_income_year3', 25, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 179, 81);
+$pdf->TextField('most_recent_total_income_year', 28, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 176, 67);
+$pdf->TextField('most_recent_total_income_year2', 28, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 176, 74);
+$pdf->TextField('most_recent_total_income_year3', 28, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 176, 81);
 //........
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>My assets (complete only if necessary).</b></div>';
@@ -733,10 +738,10 @@ $pdf->writeHTMLCell(90, 7, 112, 95, $html, '', 0, 0, true, 'L');
 $html = 'Enter the balance of all cash, savings, and checking 
 accounts.';
 $pdf->writeHTMLCell(80, 7, 120, 95, $html, '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(80, 7, 170, 100, "$", '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(80, 7, 163, 100, "$", '', 0, 0, true, 'L');
 //.......
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part4_3a_cash_saving_checking', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 174, 100);
+$pdf->TextField('part4_3a_cash_saving_checking', 37, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 167, 100);
 
 //........
 $pdf->SetFont('times', '', 10); // set font
@@ -746,10 +751,10 @@ $pdf->writeHTMLCell(90, 7, 112, 107, $html, '', 0, 0, true, 'L');
 $html = 'Enter the net cash value of real-estate holdings. (Net 
 value means assessed value minus mortgage debt.)';
 $pdf->writeHTMLCell(80, 7, 120, 107, $html, '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(80, 7, 170, 117, "$", '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(80, 7, 163, 117, "$", '', 0, 0, true, 'L');
 //.......
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part4_3b_enter_cash_value_realstate', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 174, 117);
+$pdf->TextField('part4_3b_enter_cash_value_realstate', 37, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 167, 117);
 
 //........
 $pdf->SetFont('times', '', 10); // set font
@@ -760,10 +765,10 @@ $html = 'Enter the cash value of all stocks, bonds, certificates of
 deposit, and other assets not listed on <b>Item Numbers 3.a.</b>
 or <b>3.b.</b>';
 $pdf->writeHTMLCell(80, 7, 120, 124, $html, '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(80, 7, 170, 133, "$", '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(80, 7, 163, 133, "$", '', 0, 0, true, 'L');
 //.......
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part4_3c_enter_stock_bond_certificates', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 174, 133);
+$pdf->TextField('part4_3c_enter_stock_bond_certificates', 37, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 167, 133);
 //.....
 
 //........
@@ -771,13 +776,13 @@ $pdf->SetFont('times', '', 10); // set font
 $html = '<b>3.d. </b> ';
 $pdf->writeHTMLCell(90, 7, 112, 140, $html, '', 0, 0, true, 'L');
 
-$html = 'Add together <b>Item Numbers 3.a., 3.b.</b>, and <b>3.c.</b> and enter 
+$html = 'Add together <b>Item Numbers 3.a., 3.b.</b>, and <b>3.c.</b> and enter <br>
 the number here.';
-$pdf->writeHTMLCell(80, 7, 120, 140, $html, '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(80, 7, 170, 145, "$", '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 120, 140, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(80, 7, 163, 145, "$", '', 0, 0, true, 'L');
 //...........
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part4_3d_add_together_enter_number', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 174, 145);
+$pdf->TextField('part4_3d_add_together_enter_number', 37, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 167, 145);
 //.............
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
@@ -802,15 +807,16 @@ $pdf->TextField('part5_the_sponsor', 90, 7, array('strokeColor' => array(64, 64,
 //.....
 $pdf->SetFont('times', '', 10);
 $html = '(Print Name)';
-$pdf->writeHTMLCell(90, 7, 112, 197, $html, '', 0, 0, true, 'C');
+$pdf->writeHTMLCell(90, 7, 112, 196, $html, '', 0, 0, true, 'C');
+$pdf->writeHTMLCell(5, 7, 201, 191, ",", '', 0, 0, true, 'C');
 //..........
 $pdf->SetFont('times', '', 10);
-$html = 'in consideration of the household member\'s promise to support 
-the following intending immigrants and to be jointly and 
-severally liable for any obligations I incur under the affidavit of 
-support, promise to complete and file an affidavit of support on 
+$html = 'in consideration of the household member\'s promise to support<br>
+the following intending immigrants and to be jointly and<br>
+severally liable for any obligations I incur under the affidavit of<br>
+support, promise to complete and file an affidavit of support on<br>
 behalf of the following named intending immigrants.';
-$pdf->writeHTMLCell(90, 7, 112, 202, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(100, 7, 112, 202, $html, '', 0, 0, true, 'L');
 //..........
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -818,7 +824,7 @@ $pdf->TextField('part5_indicate_number', 90, 7, array('strokeColor' => array(64,
 //.....
 $pdf->SetFont('times', '', 10);
 $html = '(Indicate Number) ';
-$pdf->writeHTMLCell(90, 7, 112, 233, $html, '', 0, 0, true, 'C');
+$pdf->writeHTMLCell(90, 7, 112, 231.4, $html, '', 0, 0, true, 'C');
 
 //..........page number 2 end---------------------------------------------------------------------------------------
 
@@ -2357,6 +2363,16 @@ var fields = {
     'other_info_Country':' ',
     'other_info_us_social_security':' ',
     'other_info_uscis_online_account':' ',
+
+
+
+    'part3_1_value':' ',
+    'part3_2_value':' ',
+    'part3_3_value':' ',
+    'part3_4_value':' ',
+    'part3_5a_value':' ',
+    'part3_5b_value':' ',
+    'part3_6_value':' ',
 
     'current_individual_annual_income':' ',
     'most_recent_tax_year':' ',
