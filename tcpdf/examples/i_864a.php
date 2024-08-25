@@ -850,19 +850,19 @@ $pdf->SetFont('times', '', 10);
 $html = '<div><b>1.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp;  (Last Name) </div>';
 $pdf->writeHTMLCell(90, 7, 13, 47, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_sponsor_family_last_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 49);
+$pdf->TextField('part5_sponsor_family_last_name', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 42, 49);
 //............
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>1.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp; (First Name) </div>';
 $pdf->writeHTMLCell(90, 7, 13, 56, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_sponsor_given_first_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 58);
+$pdf->TextField('part5_sponsor_given_first_name', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 42, 58);
 //............
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>1.c.  </b>  Middle Name  </div>';
 $pdf->writeHTMLCell(90, 7, 13, 67, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_sponsor_middle_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 67);
+$pdf->TextField('part5_sponsor_middle_name', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 42, 67);
 //...........
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>2.</b> &nbsp; &nbsp; Date of Birth (mm/dd/yyyy)';
@@ -876,21 +876,21 @@ $html = '<b>3.</b> &nbsp; &nbsp; Alien Registration Number (A-Number,if any)';
 $pdf->writeHTMLCell(90, 7, 13, 85, $html, '', 0, 0, true, 'L');
 //.............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_alien_reg_number', 41, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 63, 90);
+$pdf->TextField('part5_alien_reg_number', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 58, 90);
 //..............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>A-</b>';
-$pdf->writeHTMLCell(90, 7, 56, 90, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 52, 90, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>4.</b>&nbsp; &nbsp;U.S. Social Security Number (if any)';
+$html = '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U.S. Social Security Number (if any)';
 $pdf->writeHTMLCell(90, 7, 13, 97, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part5_us_social_security_number', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 58, 103);
 //..............
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>5.</b>&nbsp; &nbsp;USCIS Online Account Number (if any)';
+$html = '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USCIS Online Account Number (if any)';
 $pdf->writeHTMLCell(90, 7, 13, 110, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -901,9 +901,9 @@ $pdf->StartTransform();
 $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(100, 100, "s", '', 'L', 0, 1, 75, 36, false); // angle 1
-$pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 67, 48, true); // angle 2
-$pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 47, 50, true); // angle 2
+$pdf->MultiCell(100, 100, "s", '', 'L', 0, 1, 71, 33, false); // angle 1
+$pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 69, 48, true); // angle 2
+$pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 49, 51.5, true); // angle 2
 $pdf->StopTransform();
 //...........
 
@@ -948,7 +948,7 @@ $html = '<b>A-</b>';
 $pdf->writeHTMLCell(90, 7, 56, 173, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>9.</b>&nbsp; &nbsp;U.S. Social Security Number (if any)';
+$html = '<b>9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U.S. Social Security Number (if any)';
 $pdf->writeHTMLCell(90, 7, 13, 181, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -965,7 +965,7 @@ $pdf->StartTransform();
 $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(100, 100, "s", '', 'L', 0, 1, 75, 118, false); // angle 1
+$pdf->MultiCell(100, 100, "s", '', 'L', 0, 1, 72, 117.5, false); // angle 1
 $pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 67, 130, true); // angle 2
 $pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 48, 134, true); // angle 2
 $pdf->StopTransform();
@@ -975,13 +975,13 @@ $html = 'Intending Immigrant Number 3 <br><br>Name';
 $pdf->writeHTMLCell(90, 7, 12, 206, $html, '', 0, 0, true, 'L');
 //...........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>11.a.   </b>  Family Name  <br>  &nbsp; &nbsp; &nbsp;  &nbsp;  (Last Name) </div>';
+$html = '<div><b>11.a.   </b>  Family Name  <br>  &nbsp;&nbsp; &nbsp; &nbsp;  &nbsp;  (Last Name) </div>';
 $pdf->writeHTMLCell(90, 7, 13, 218, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_sponsor_family_last_name3', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 220);
 //............
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>11.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp; (First Name) </div>';
+$html = '<div><b>11.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; (First Name) </div>';
 $pdf->writeHTMLCell(90, 7, 13, 227, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_sponsor_given_first_name3', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 229);
@@ -993,7 +993,7 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_sponsor_middle_name3', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 238);
 //...........
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>12.</b> &nbsp; &nbsp; Date of Birth (mm/dd/yyyy)';
+$html = '<b>12.</b> &nbsp; &nbsp;&nbsp; Date of Birth (mm/dd/yyyy)';
 $pdf->writeHTMLCell(90, 7, 13, 246, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
