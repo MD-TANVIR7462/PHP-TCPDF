@@ -1699,13 +1699,13 @@ $pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>3.d.</b> &nbsp; State</div>';
 $pdf->writeHTMLCell(50, 4, 12, 67, $html, '', 0, 0, true, 'L');
 
-$html = '<select name="part7_interpreter_mailing_state" size="0.50">';
+$pdf->SetFont('courier', 'B', 10); // set font
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+    $comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
-
-$pdf->writeHTMLCell(25, 0, 29, 67, $html, '', 0, 0, true, 'L');
+$pdf->ComboBox("about_your_physical_state", 13, 7, $comboBoxOptions, array(), array(), 29, 67);
+$pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>3.e.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ZIP Code</div>';
 $pdf->writeHTMLCell(30, 3, 45, 67, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
@@ -1905,13 +1905,13 @@ $pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>3.d.</b> &nbsp; State</div>';
 $pdf->writeHTMLCell(50, 4, 113, 128, $html, '', 0, 0, true, 'L');
 
-$html = '<select name="part8_preparer_mailing_state" size="0.50">';
+$pdf->SetFont('courier', 'B', 10); // set font
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+    $comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
-
-$pdf->writeHTMLCell(25, 0, 129, 128, $html, '', 0, 0, true, 'L');
+$pdf->ComboBox("about_your_physical_state", 13, 7, $comboBoxOptions, array(), array(), 130.5, 128);
+$pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>3.e.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ZIP Code</div>';
 $pdf->writeHTMLCell(30, 3, 145, 128, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
@@ -1980,8 +1980,11 @@ $pdf->AddPage('P', 'LETTER');  // page number 7
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1);
-$html = '<div><b>Part 8. Contact Information, Declaration, and Signature of the Person Preparing this Contract, if Other Than the Sponsor or Household Member</b>(continued)</div>';
-$pdf->writeHTMLCell(90, 7, 13, 17, $html, 1, 1, true, false, 'L', true);
+$html = '<div><b>Part 8. Contact Information, Declaration, and<br>
+Signature of the Person Preparing this Contract,<br>
+if Other Than the Sponsor or Household Member</b><br>
+(continued)</div>';
+$pdf->writeHTMLCell(91.5, 7, 13, 17, $html, 1, 1, true, false, 'L', true);
 //..........
 $pdf->SetFillColor(220, 220, 220);
 $pdf->SetFont('times', 'I', 10); // set font
@@ -1989,42 +1992,43 @@ $pdf->setCellHeightRatio(1.1);
 $pdf->setCellPaddings(1, 0.5, 1, 0.5); // set cell padding
 $pdf->SetFontSize(11.6); // set font
 $html = '<div><b>Preparer\'s Statement</b></div>';
-$pdf->writeHTMLCell(90, 5, 13, 40, $html, 0, 1, true, false, 'L', true);
+$pdf->writeHTMLCell(91.5, 6.6, 13, 41, $html, 0, 1, true, false, 'L', true);
 
 //.........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>7.a. </b><input type="checkbox" name="part8_7a" value="Y" checked=" " /></div>';
-$pdf->writeHTMLCell(50, 5, 12, 46, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(50, 5, 12, 48.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
-$html = 'I am not an attorney or accredited representative but 
-have prepared this contract on behalf of the sponsor 
-and household member and with the sponsor\'s or 
-household member\'s consent.';
-$pdf->writeHTMLCell(80, 5, 24, 46, $html, '', 0, 0, true, 'L');
+$html = "I am not an attorney or accredited representative but<br>
+have prepared this contract on behalf of the sponsor<br>
+and household member and with the sponsor's or<br>
+household member's consent.
+";
+$pdf->writeHTMLCell(100, 5, 24, 48.5, $html, '', 0, 0, true, 'L');
 
 //.........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>7.b. </b><input type="checkbox" name="part8_7b" value="Y" checked=" " /></div>';
-$pdf->writeHTMLCell(50, 5, 12, 63, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(50, 5, 12, 66, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
-$html = 'I am an attorney or accredited representative and my 
-representation of the sponsor and household member 
-in this case <input type="checkbox" name="part8_7b1" value="Y" checked=" " />  extends  <input type="checkbox" name="part8_7b2" value="Y" checked=" " />  does not extend beyond 
+$html = 'I am an attorney or accredited representative and my
+representation of the sponsor and household member
+in this case <input type="checkbox" name="part8_7b1" value="Y" checked=" " />  extends  <input type="checkbox" name="part8_7b2" value="Y" checked=" " />  does not extend beyond<br>
 the preparation of this contract.';
-$pdf->writeHTMLCell(80, 5, 24, 63, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(80, 5, 24, 66, $html, '', 0, 0, true, 'L');
 
 //...............
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>NOTE:</b> If you are an attorney or accredited 
-representative, you may be obliged to submit a 
-completed Form G-28, Notice of Entry of 
-Appearance as Attorney or Accredited 
-Representative, or G-28I, Notice of Entry of 
-Appearance as Attorney In Matters Outside the 
-Geographical Confines of the United States, with this 
+$html = '<b>NOTE:</b> If you are an attorney or accredited<br>
+representative, you may be obliged to submit a<br>
+completed Form G-28, Notice of Entry of<br>
+Appearance as Attorney or Accredited<br>
+Representative, or G-28I, Notice of Entry of<br>
+Appearance as Attorney In Matters Outside the<br>
+Geographical Confines of the United States, with this<br>
 contract.';
-$pdf->writeHTMLCell(80, 5, 24, 81, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(100, 5, 24, 84.5, $html, '', 0, 0, true, 'L');
 
 //..........
 $pdf->SetFillColor(220, 220, 220);
@@ -2033,22 +2037,22 @@ $pdf->setCellHeightRatio(1.1);
 $pdf->setCellPaddings(1, 0.5, 1, 0.5); // set cell padding
 $pdf->SetFontSize(11.6); // set font
 $html = '<div><b>Preparer\'s Certification</b></div>';
-$pdf->writeHTMLCell(90, 7, 13, 112, $html, 0, 1, true, false, 'L', true);
+$pdf->writeHTMLCell(91.5, 6.6, 13, 119, $html, 0, 1, true, false, 'L', true);
 //.........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = 'By my signature, I certify, under penalty of perjury, that I 
-prepared this contract at the request of the sponsor and 
-household member. The sponsor and household member then 
-reviewed this completed contract and informed me that he or 
-she understands all of the information contained in, and 
-submitted with, his or her contract, including the <b>Sponsor\'s </b>or
-<b>Household Member\'s Declaration and Certification,</b> and that 
-all of this information is complete, true, and correct. I 
-completed this contract based only on information that the 
-sponsor and household member provided to me or authorized 
-me to obtain or use.';
-$pdf->writeHTMLCell(90, 10, 12, 122, $html, '', 0, 0, true, 'L');
+$html = "By my signature, I certify, under penalty of perjury, that I<br>
+prepared this contract at the request of the sponsor and<br>
+household member. The sponsor and household member then<br>
+reviewed this completed contract and informed me that he or<br>
+she understands all of the information contained in, and<br>
+submitted with, his or her contract, including the <b>Sponsor's</b> or<br>
+<b>Household Member's Declaration and Certification,</b> and that<br>
+all of this information is complete, true, and correct. I<br>
+completed this contract based only on information that the<br>
+sponsor and household member provided to me or authorized<br>
+me to obtain or use.";
+$pdf->writeHTMLCell(100, 10, 12, 127, $html, '', 0, 0, true, 'L');
 //.........
 
 $pdf->SetFillColor(220, 220, 220);
@@ -2057,23 +2061,23 @@ $pdf->setCellHeightRatio(1.1);
 $pdf->setCellPaddings(1, 0.5, 1, 0.5); // set cell padding
 $pdf->SetFontSize(11.6); // set font
 $html = '<div><b>Preparer\'s Signature</b></div>';
-$pdf->writeHTMLCell(90, 7, 13, 175, $html, 0, 1, true, false, 'J', true);
+$pdf->writeHTMLCell(91.5, 7, 13, 175, $html, 0, 1, true, false, 'J', true);
 //..............
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>7.a.</b>  &nbsp; &nbsp;Preparer\'s Signature';
-$pdf->writeHTMLCell(90, 7, 13, 185, $html, '', 0, 0, true, 'L');
+$html = '<b>8.a.</b>  &nbsp; &nbsp;Preparer\'s Signature';
+$pdf->writeHTMLCell(90, 6.6, 13, 183, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(80, 7, 23, 190, "", 1, 1, false, true, 'C', true);
+$pdf->writeHTMLCell(81.5, 7, 23, 188.5, "", 1, 1, false, true, 'C', true);
 //.............
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>7.b.</b>  &nbsp; &nbsp;Date of Signature (mm/dd/yyyy)';
-$pdf->writeHTMLCell(90, 7, 13, 199, $html, '', 0, 0, true, 'L');
+$html = '<b>8.b.</b>  &nbsp; &nbsp;Date of Signature (mm/dd/yyyy)';
+$pdf->writeHTMLCell(90, 7, 13, 198, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('Preparer_signature_date', 33.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 70, 199);
+$pdf->TextField('Preparer_signature_date', 31.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 73, 197.6);
 
 //............page number 7 end -------------------------------------------------------------------------------------
 
