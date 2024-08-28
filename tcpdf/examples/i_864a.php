@@ -31,7 +31,7 @@ class MyPDF extends TCPDF
     public function Footer()
     {
         // Position at 15 mm from bottom
-        $this->SetY(-20);
+        $this->SetY(-17);
 
         $header_top_border = array(
             'B' => array('width' => 0.5, 'color' => array(0, 0, 0), 'dash' => 0, 'cap' => 'butt'),
@@ -49,7 +49,7 @@ class MyPDF extends TCPDF
         // )
         $this->Image($barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
         // $this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 'T', 'R', 1, 0);
-        $this->MultiCell(61, 6, 'Page ' . $this->getAliasNumPage() . ' of ' . $this->getAliasNbPages(), 0, 'R', 0, 1, 159, 264.5, true);
+        $this->MultiCell(61, 6, 'Page ' . $this->getAliasNumPage() . ' of ' . $this->getAliasNbPages(), 0, 'R', 0, 1, 159, 267, true);
     }
 }
 
@@ -506,8 +506,13 @@ $pdf->MultiCell(10, 10, "s", '', 'L', 0, 1, 170, 170, false); // angle 1
 $pdf->MultiCell(10, 10, "s", '', 'L', 0, 1, 148, 172, false); // angle 2
 $pdf->StopTransform();
 
-//...............page number 1 end -----------------------------------------------------------------------------------------
+/********************************
+ ******** End Page No 1 **********
+ *********************************/
 
+/********************************
+ ******** Start Page No 2 ********
+ *********************************/
 // add a page
 $pdf->AddPage('P', 'LETTER');  // page number 2
 
@@ -818,8 +823,13 @@ $pdf->SetFont('times', '', 10);
 $html = '(Indicate Number) ';
 $pdf->writeHTMLCell(90, 7, 112, 231.4, $html, '', 0, 0, true, 'C');
 
-//..........page number 2 end---------------------------------------------------------------------------------------
+/********************************
+ ******** End Page No 2 **********
+ *********************************/
 
+/********************************
+ ******** Start Page No 3 ********
+ *********************************/
 // add a page
 $pdf->AddPage('P', 'LETTER');  // page number 3
 
@@ -895,7 +905,7 @@ $pdf->Rotate(30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
 $pdf->MultiCell(100, 100, "s", '', 'L', 0, 1, 71, 33, false); // angle 1
 $pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 69, 48, true); // angle 2
-$pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 49, 51.5, true); // angle 2
+$pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 49, 51, true); // angle 2
 $pdf->StopTransform();
 //...........
 
@@ -933,11 +943,11 @@ $html = '<b>8.</b> &nbsp; &nbsp; Alien Registration Number (A-Number,if any)';
 $pdf->writeHTMLCell(90, 7, 13, 168, $html, '', 0, 0, true, 'L');
 //.............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_alien_reg_number2', 41, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 63, 173);
+$pdf->TextField('part5_alien_reg_number2', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 58, 173);
 //..............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>A-</b>';
-$pdf->writeHTMLCell(90, 7, 56, 173, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 52, 174, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U.S. Social Security Number (if any)';
@@ -951,15 +961,15 @@ $html = '<b>10.</b>&nbsp; &nbsp;USCIS Online Account Number (if any)';
 $pdf->writeHTMLCell(90, 7, 13, 194, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_us_online_account_number2', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 42, 199);
+$pdf->TextField('part5_us_online_account_number2', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 42, 199.5);
 //..............
 $pdf->StartTransform();
 $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(100, 100, "s", '', 'L', 0, 1, 72, 117.5, false); // angle 1
-$pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 67, 130, true); // angle 2
-$pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 48, 134, true); // angle 2
+$pdf->MultiCell(100, 100, "s", '', 'L', 0, 1, 71.5, 117, false); // angle 1
+$pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 70, 132, true); // angle 2
+$pdf->MultiCell(10, 120, "s", '', 'L', 0, 1, 48, 135, true); // angle 2
 $pdf->StopTransform();
 //...............
 $pdf->SetFont('times', 'B', 10);
@@ -997,9 +1007,9 @@ $pdf->StartTransform();
 $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 183, 58, false); // angle 1
+$pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 180, 56.7, false); // angle 1
 $pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 178, 72, true); // angle 2
-$pdf->MultiCell(70, 10, "s", '', 'R', 0, 1, 165, 75, true); // angle 3
+$pdf->MultiCell(70, 10, "s", '', 'R', 0, 1, 167, 75, true); // angle 3
 $pdf->StopTransform();
 //..............
 $pdf->SetFont('times', '', 10); // set font
@@ -1007,11 +1017,11 @@ $html = '<b>13.</b> &nbsp; &nbsp; Alien Registration Number (A-Number,if any)';
 $pdf->writeHTMLCell(90, 7, 112, 17, $html, '', 0, 0, true, 'L');
 //.............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_alien_reg_number3', 41, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 163, 22);
+$pdf->TextField('part5_alien_reg_number3', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 158, 22);
 //..............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>A-</b>';
-$pdf->writeHTMLCell(90, 7, 156, 22, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 152, 22.5, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>14.</b>&nbsp; &nbsp;U.S. Social Security Number (if any)';
@@ -1062,11 +1072,11 @@ $html = '<b>18.</b> &nbsp; &nbsp; Alien Registration Number (A-Number,if any)';
 $pdf->writeHTMLCell(90, 7, 112, 104, $html, '', 0, 0, true, 'L');
 //.............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_alien_reg_number4', 41, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 163, 109);
+$pdf->TextField('part5_alien_reg_number4', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 158, 109);
 //..............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>A-</b>';
-$pdf->writeHTMLCell(90, 7, 156, 109, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 152, 109, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>19.</b>&nbsp; &nbsp;U.S. Social Security Number (if any)';
@@ -1087,7 +1097,7 @@ $pdf->StartTransform();
 $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 100, 55, false); // angle 1
+$pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 96, 53.5, false); // angle 1
 $pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 94, 68, true); // angle 2
 $pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 73, 72, true); // angle 3
 $pdf->StopTransform();
@@ -1126,11 +1136,11 @@ $html = '<b>23.</b> &nbsp; &nbsp; Alien Registration Number (A-Number,if any)';
 $pdf->writeHTMLCell(90, 7, 112, 190, $html, '', 0, 0, true, 'L');
 //.............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_alien_reg_number5', 41, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 163, 195);
+$pdf->TextField('part5_alien_reg_number5', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 158, 195);
 //..............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>A-</b>';
-$pdf->writeHTMLCell(90, 7, 156, 195, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 152, 195, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>24.</b>&nbsp; &nbsp;U.S. Social Security Number (if any)';
@@ -1151,7 +1161,7 @@ $pdf->StartTransform();
 $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 98, 141, false); // angle 1
+$pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 94.5, 139, false); // angle 1
 $pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 93, 153, true); // angle 2
 $pdf->MultiCell(80, 10, "s", '', 'R', 0, 1, 73, 155, true); // angle 3
 $pdf->StopTransform();
@@ -1162,26 +1172,31 @@ $pdf->setCellHeightRatio(1.1);
 $pdf->setCellPaddings(1, 0.5, 1, 0.5); // set cell padding
 $pdf->SetFontSize(11.6); // set font
 $html = '<div><b>Sponsor\'s Statement</b></div>';
-$pdf->writeHTMLCell(90, 5, 113, 227, $html, 0, 1, true, false, 'L', true);
+$pdf->writeHTMLCell(91, 5, 113, 230, $html, 0, 1, true, false, 'L', true);
 //.............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>NOTE: </b>Select the box for either <b>Item Number 26.a.</b> or <b>26.b.</b> 
 If applicable, select the box for<b> Item Number 27.</b>';
-$pdf->writeHTMLCell(90, 5, 112, 232, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 5, 112, 236, $html, '', 0, 0, true, 'L');
 //................
 
 //.........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>26.a. </b><input type="checkbox" name="part5_26a" value="Y" checked=" " /></div>';
-$pdf->writeHTMLCell(50, 5, 112, 240, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(50, 5, 112, 245, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = 'I can read and understand English, and I have read 
-and understand every question and instruction on this 
+and understand every question and instruction on this<br>
 contract and my answer to every question.';
-$pdf->writeHTMLCell(85, 5, 124, 240, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(85, 5, 125, 245, $html, '', 0, 0, true, 'L');
 
-//............page number 3 end ---------------------------------------------------------------------------
+/********************************
+ ******** End Page No 3 **********
+ *********************************/
 
+/********************************
+ ******** Start Page No 4 ********
+ *********************************/
 // add a page
 $pdf->AddPage('P', 'LETTER');  // page number 4
 //.............
@@ -1419,9 +1434,14 @@ Guideline) during the period which the affidavit of
 support is enforceable.';
 $pdf->writeHTMLCell(75, 7, 125, 180, $html, '', 0, 0, true, 'L');
 
-//.......page number 4 end -----------------------------------------------------------------------------
-// add a page
-$pdf->AddPage('P', 'LETTER');  // page number 1
+/********************************
+ ******** End Page No 4 **********
+ *********************************/
+
+/********************************
+ ******** Start Page No 5 ********
+ *********************************/
+$pdf->AddPage('P', 'LETTER');
 
 //.............
 $pdf->SetFont('times', '', 12);
@@ -1653,8 +1673,13 @@ $pdf->writeHTMLCell(90, 7, 112, 218, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part7_interpreter_business_org_name', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 223);
 
-//................ page number 5 end--------------------------------------------------------------------------------
+/********************************
+ ******** End Page No 5 **********
+ *********************************/
 
+/********************************
+ ******** Start Page No 6 ********
+ *********************************/
 // add a page
 $pdf->AddPage('P', 'LETTER');  // page number 6
 //...........
@@ -1823,10 +1848,13 @@ $pdf->writeHTMLCell(90, 7, 13, 235, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('interpreter_signature_date', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 73, 235);
+/********************************
+ ******** End Page No 5 **********
+ *********************************/
 
-//............page 6 left end ............................................................
-
-
+/********************************
+ ******** Start Page No 6 ********
+ *********************************/
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1);
@@ -1972,8 +2000,13 @@ $pdf->writeHTMLCell(90, 7, 112, 204, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part8_interpreter_email_address', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 209);
 
-//............ page number 6 end --------------------------------------------------------------------------------------
+/********************************
+ ******** End Page No 6 **********
+ *********************************/
 
+/********************************
+ ******** Start Page No 7 ********
+ *********************************/
 // add a page
 $pdf->AddPage('P', 'LETTER');  // page number 7
 //............
@@ -2078,15 +2111,12 @@ $pdf->writeHTMLCell(90, 7, 13, 198, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('Preparer_signature_date', 31.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 73, 197.6);
-
-//............page number 7 end -------------------------------------------------------------------------------------
-
 /********************************
- ******** End Page No 5 **********
+ ******** End Page No 7 **********
  *********************************/
 
 /********************************
- ******** Start Page No 6 ********
+ ******** Start Page No 8 ********
  *********************************/
 $pdf->AddPage('P', 'LETTER');
 //..........
@@ -2348,16 +2378,16 @@ $pdf->SetFont('times', '', 10);
 $html = '<div><b>7.d.</b> </div>';
 $pdf->writeHTMLCell(90, 7, 112, 183, $html, 0, 1, false, false, 'L', true);
 $pdf->setCellHeightRatio(1.8);
-$pdf->writeHTMLCell(81.6, 1, 122.6, 181.5, '',  "B",  0, false, false, 'C', true); // line 1
-$pdf->writeHTMLCell(81.6, 1, 122.6, 186, '',  "B",  0, false, false, 'C', true);   // line 2
-$pdf->writeHTMLCell(81.6, 1, 122.6, 190.5, '',  "B",  0, false, false, 'C', true); // line 3
-$pdf->writeHTMLCell(81.6, 1, 122.6, 195, '',  "B",  0, false, false, 'C', true);   // line 4 
-$pdf->writeHTMLCell(81.6, 1, 122.6, 199.5, '',  "B",  0, false, false, 'C', true); // line 5
-$pdf->writeHTMLCell(81.6, 1, 122.6, 204, '',  "B",  0, false, false, 'C', true);   // line 6
-$pdf->writeHTMLCell(81.6, 1, 122.6, 208.5, '',  "B",  0, false, false, 'C', true); // line 7
-$pdf->writeHTMLCell(81.6, 1, 122.6, 213, '',  "B",  0, false, false, 'C', true);   // line 8 
-$pdf->writeHTMLCell(81.6, 1, 122.6, 217.5, '',  "B",  0, false, false, 'C', true); // line 9
-$pdf->writeHTMLCell(81.6, 1, 122.6, 222, '',  "B",  0, false, false, 'C', true); // line 9
+$pdf->writeHTMLCell(81.6, 1, 122.6, 181.5, '',  "B",  0, false, false, 'C', true); // line 1->
+$pdf->writeHTMLCell(81.6, 1, 122.6, 186, '',  "B",  0, false, false, 'C', true);   // line 2->
+$pdf->writeHTMLCell(81.6, 1, 122.6, 190.5, '',  "B",  0, false, false, 'C', true); // line 3->
+$pdf->writeHTMLCell(81.6, 1, 122.6, 195, '',  "B",  0, false, false, 'C', true);   // line 4-> 
+$pdf->writeHTMLCell(81.6, 1, 122.6, 199.5, '',  "B",  0, false, false, 'C', true); // line 5->
+$pdf->writeHTMLCell(81.6, 1, 122.6, 204, '',  "B",  0, false, false, 'C', true);   // line 6->
+$pdf->writeHTMLCell(81.6, 1, 122.6, 208.5, '',  "B",  0, false, false, 'C', true); // line 7->
+$pdf->writeHTMLCell(81.6, 1, 122.6, 213, '',  "B",  0, false, false, 'C', true);   // line 8-> 
+$pdf->writeHTMLCell(81.6, 1, 122.6, 217.5, '',  "B",  0, false, false, 'C', true); // line 9->
+$pdf->writeHTMLCell(81.6, 1, 122.6, 222, '',  "B",  0, false, false, 'C', true);   // line 9->
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('i_864a_additional_info_name_7d', 82, 65.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_864a_additional_info_7d')), 122.5, 184);
 //..............
@@ -2368,150 +2398,150 @@ $pdf->TextField('i_864a_additional_info_name_7d', 82, 65.5, array('multiline' =>
 // 'attorney_or_according_representative':' $attorneyData->uscis_online_account_number',
 $js = "
 var fields = {
-    'attorney_state_bar_number':' ',
-    'attorney_or_according_representative':' ',
-    'info_about_you_last_name':' ',
-    'info_about_You_first_name':' ',
-    'info_about_you_middle_name':' ',
-    'about_your_mailing_care_of_name':' ',
-    'about_your_mailing_street':' ',
-    'about_your_mailing_apt_ste_flr':' ',
-    'about_your_mailing_city_town':' ',
-    'about_your_mailing_state':' ',
-    'about_your_mailing_zipcode':' ',
-    'about_your_mailing_address_province':' ',
-    'about_your_mailing_address_postal_code':' ',
-    'about_your_mailing_address_country':' ',
+    'attorney_state_bar_number':' " . showData('') . "',
+    'attorney_or_according_representative':' " . showData('') . "',
+    'info_about_you_last_name':' " . showData('') . "',
+    'info_about_You_first_name':' " . showData('') . "',
+    'info_about_you_middle_name':' " . showData('') . "',
+    'about_your_mailing_care_of_name':' " . showData('') . "',
+    'about_your_mailing_street':' " . showData('') . "',
+    'about_your_mailing_apt_ste_flr':' " . showData('') . "',
+    'about_your_mailing_city_town':' " . showData('') . "',
+    'about_your_mailing_state':' " . showData('') . "',
+    'about_your_mailing_zipcode':' " . showData('') . "',
+    'about_your_mailing_address_province':' " . showData('') . "',
+    'about_your_mailing_address_postal_code':' " . showData('') . "',
+    'about_your_mailing_address_country':' " . showData('') . "',
 
-    'about_your_physical_street_number_name':' ',
-    'about_your_physical_apt_ste_flr':' ',
-    'about_your_physical_city_town':' ',
-    'about_your_physical_state':' ',
-    'about_your_physical_zipcode':' ',
-    'about_your_physical_province':' ',
-    'about_your_physical_postal_code':' ',
-    'about_your_physical_country':' ',
+    'about_your_physical_street_number_name':' " . showData('') . "',
+    'about_your_physical_apt_ste_flr':' " . showData('') . "',
+    'about_your_physical_city_town':' " . showData('') . "',
+    'about_your_physical_state':' " . showData('') . "',
+    'about_your_physical_zipcode':' " . showData('') . "',
+    'about_your_physical_province':' " . showData('') . "',
+    'about_your_physical_postal_code':' " . showData('') . "',
+    'about_your_physical_country':' " . showData('') . "',
 
-    'other_info_date_of_birth':' ',
-    'other_info_city_or_town':' ',
-    'other_info_state_province':' ',
-    'other_info_Country':' ',
-    'other_info_us_social_security':' ',
-    'other_info_uscis_online_account':' ',
+    'other_info_date_of_birth':' " . showData('') . "',
+    'other_info_city_or_town':' " . showData('') . "',
+    'other_info_state_province':' " . showData('') . "',
+    'other_info_Country':' " . showData('') . "',
+    'other_info_us_social_security':' " . showData('') . "',
+    'other_info_uscis_online_account':' " . showData('') . "',
 
 
 
-    'part3_1_value':' ',
-    'part3_2_value':' ',
-    'part3_3_value':' ',
-    'part3_4_value':' ',
-    'part3_5a_value':' ',
-    'part3_5b_value':' ',
-    'part3_6_value':' ',
+    'part3_1_value':' " . showData('') . "',
+    'part3_2_value':' " . showData('') . "',
+    'part3_3_value':' " . showData('') . "',
+    'part3_4_value':' " . showData('') . "',
+    'part3_5a_value':' " . showData('') . "',
+    'part3_5b_value':' " . showData('') . "',
+    'part3_6_value':' " . showData('') . "',
 
-    'current_individual_annual_income':' ',
-    'most_recent_tax_year':' ',
-    'most_recent_tax_year2':' ',
-    'most_recent_tax_year3':' ',
+    'current_individual_annual_income':' " . showData('') . "',
+    'most_recent_tax_year':' " . showData('') . "',
+    'most_recent_tax_year2':' " . showData('') . "',
+    'most_recent_tax_year3':' " . showData('') . "',
 
-    'most_recent_total_income_year':' ',
-    'most_recent_total_income_year2':' ',
-    'most_recent_total_income_year3':' ',
-    'part4_3a_cash_saving_checking':' ',
-    'part4_3b_enter_cash_value_realstate':' ',
-    'part4_3c_enter_stock_bond_certificates':' ',
-    'part4_3d_add_together_enter_number':' ',
-    'part5_the_sponsor':' ',
-    'part5_indicate_number':' ',
+    'most_recent_total_income_year':' " . showData('') . "',
+    'most_recent_total_income_year2':' " . showData('') . "',
+    'most_recent_total_income_year3':' " . showData('') . "',
+    'part4_3a_cash_saving_checking':' " . showData('') . "',
+    'part4_3b_enter_cash_value_realstate':' " . showData('') . "',
+    'part4_3c_enter_stock_bond_certificates':' " . showData('') . "',
+    'part4_3d_add_together_enter_number':' " . showData('') . "',
+    'part5_the_sponsor':' " . showData('') . "',
+    'part5_indicate_number':' " . showData('') . "',
 
-    'part5_sponsor_family_last_name':' ',
-    'part5_sponsor_given_first_name':' ',
-    'part5_sponsor_middle_name':' ',
-    'part5_sponsor_date_of_birth':' ',
-    'part5_alien_reg_number':' ',
-    'part5_us_social_security_number':' ',
-    'part5_us_online_account_number':' ',
+    'part5_sponsor_family_last_name':' " . showData('') . "',
+    'part5_sponsor_given_first_name':' " . showData('') . "',
+    'part5_sponsor_middle_name':' " . showData('') . "',
+    'part5_sponsor_date_of_birth':' " . showData('') . "',
+    'part5_alien_reg_number':' " . showData('') . "',
+    'part5_us_social_security_number':' " . showData('') . "',
+    'part5_us_online_account_number':' " . showData('') . "',
 
-    'part5_sponsor_family_last_name2':' ',
-    'part5_sponsor_given_first_name2':' ',
-    'part5_sponsor_middle_name2':' ',
-    'part5_sponsor_date_of_birth2':' ',
-    'part5_alien_reg_number2':' ',
-    'part5_us_social_security_number2':' ',
-    'part5_us_online_account_number2':' ',
+    'part5_sponsor_family_last_name2':' " . showData('') . "',
+    'part5_sponsor_given_first_name2':' " . showData('') . "',
+    'part5_sponsor_middle_name2':' " . showData('') . "',
+    'part5_sponsor_date_of_birth2':' " . showData('') . "',
+    'part5_alien_reg_number2':' " . showData('') . "',
+    'part5_us_social_security_number2':' " . showData('') . "',
+    'part5_us_online_account_number2':' " . showData('') . "',
 
-    'part5_sponsor_family_last_name3':' ',
-    'part5_sponsor_given_first_name3':' ',
-    'part5_sponsor_middle_name3':' ',
-    'part5_sponsor_date_of_birth3':' ',
-    'part5_alien_reg_number3':' ',
-    'part5_us_social_security_number3':' ',
-    'part5_us_online_account_number3':' ',
+    'part5_sponsor_family_last_name3':' " . showData('') . "',
+    'part5_sponsor_given_first_name3':' " . showData('') . "',
+    'part5_sponsor_middle_name3':' " . showData('') . "',
+    'part5_sponsor_date_of_birth3':' " . showData('') . "',
+    'part5_alien_reg_number3':' " . showData('') . "',
+    'part5_us_social_security_number3':' " . showData('') . "',
+    'part5_us_online_account_number3':' " . showData('') . "',
 
-    'part5_sponsor_family_last_name4':' ',
-    'part5_sponsor_given_first_name4':' ',
-    'part5_sponsor_middle_name4':' ',
-    'part5_sponsor_date_of_birth4':' ',
-    'part5_alien_reg_number4':' ',
-    'part5_us_social_security_number4':' ',
-    'part5_us_online_account_number4':' ',
+    'part5_sponsor_family_last_name4':' " . showData('') . "',
+    'part5_sponsor_given_first_name4':' " . showData('') . "',
+    'part5_sponsor_middle_name4':' " . showData('') . "',
+    'part5_sponsor_date_of_birth4':' " . showData('') . "',
+    'part5_alien_reg_number4':' " . showData('') . "',
+    'part5_us_social_security_number4':' " . showData('') . "',
+    'part5_us_online_account_number4':' " . showData('') . "',
 
-    'part5_sponsor_family_last_name5':' ',
-    'part5_sponsor_given_first_name5':' ',
-    'part5_sponsor_middle_name5':' ',
-    'part5_sponsor_date_of_birth5':' ',
-    'part5_alien_reg_number5':' ',
-    'part5_us_social_security_number5':' ',
-    'part5_us_online_account_number5':' ',
+    'part5_sponsor_family_last_name5':' " . showData('') . "',
+    'part5_sponsor_given_first_name5':' " . showData('') . "',
+    'part5_sponsor_middle_name5':' " . showData('') . "',
+    'part5_sponsor_date_of_birth5':' " . showData('') . "',
+    'part5_alien_reg_number5':' " . showData('') . "',
+    'part5_us_social_security_number5':' " . showData('') . "',
+    'part5_us_online_account_number5':' " . showData('') . "',
 
-    'sponsor_contact_info_daytime':' ',
-    'sponsor_contact_info_mobile':' ',
-    'sponsor_contact_info_email':' ',
-    'sponsor_signature_date':' ',
+    'sponsor_contact_info_daytime':' " . showData('') . "',
+    'sponsor_contact_info_mobile':' " . showData('') . "',
+    'sponsor_contact_info_email':' " . showData('') . "',
+    'sponsor_signature_date':' " . showData('') . "',
 
-    'part6_household_member':' ',
-    'part6_inconsideration_sponsor_promise':' ',
-    'your_household_member_daytime_telephone':' ',
-    'your_household_member_mobile_telephone':' ',
-    'your_household_member_email_address':' ',
-    'your_household_member_printed_name':' ',
-    'your_household_member_signature':' ',
-    'your_household_member_date_of_signature':' ',
-    'part7_interpreter_family_last_name':' ',
-    'part7_interpreter_given_first_name':' ',
-    'part7_interpreter_business_org_name':' ',
+    'part6_household_member':' " . showData('') . "',
+    'part6_inconsideration_sponsor_promise':' " . showData('') . "',
+    'your_household_member_daytime_telephone':' " . showData('') . "',
+    'your_household_member_mobile_telephone':' " . showData('') . "',
+    'your_household_member_email_address':' " . showData('') . "',
+    'your_household_member_printed_name':' " . showData('') . "',
+    'your_household_member_signature':' " . showData('') . "',
+    'your_household_member_date_of_signature':' " . showData('') . "',
+    'part7_interpreter_family_last_name':' " . showData('') . "',
+    'part7_interpreter_given_first_name':' " . showData('') . "',
+    'part7_interpreter_business_org_name':' " . showData('') . "',
 
-    'part7_interpreter_mailing_street_number':' ',
-    'part7_interpreter_mailing_apt_ste_flr':' ',
-    'part7_interpreter_mailing_city_town':' ',
-    'part7_interpreter_mailing_state':' ',
-    'part7_interpreter_mailing_zipcode':' ',
-    'part7_interpreter_mailing_province':' ',
-    'part7_interpreter_mailing_postal_code':' ',
-    'part7_interpreter_mailing_country':' ',
+    'part7_interpreter_mailing_street_number':' " . showData('') . "',
+    'part7_interpreter_mailing_apt_ste_flr':' " . showData('') . "',
+    'part7_interpreter_mailing_city_town':' " . showData('') . "',
+    'part7_interpreter_mailing_state':' " . showData('') . "',
+    'part7_interpreter_mailing_zipcode':' " . showData('') . "',
+    'part7_interpreter_mailing_province':' " . showData('') . "',
+    'part7_interpreter_mailing_postal_code':' " . showData('') . "',
+    'part7_interpreter_mailing_country':' " . showData('') . "',
 
-    'part7_interpreter_daytime_telephone':' ',
-    'part7_interpreter_mobile_telephone':' ',
-    'part7_interpreter_email_address':' ',
-    'interpreter_certification':' ',
-    'interpreter_signature_date':' ',
+    'part7_interpreter_daytime_telephone':' " . showData('') . "',
+    'part7_interpreter_mobile_telephone':' " . showData('') . "',
+    'part7_interpreter_email_address':' " . showData('') . "',
+    'interpreter_certification':' " . showData('') . "',
+    'interpreter_signature_date':' " . showData('') . "',
 
-    'part8_preparer_family_last_name':' ',
-    'part8_preparer_given_first_name':' ',
-    'part8_preparer_business_org_name':' ',
+    'part8_preparer_family_last_name':' " . showData('') . "',
+    'part8_preparer_given_first_name':' " . showData('') . "',
+    'part8_preparer_business_org_name':' " . showData('') . "',
 
-    'part8_preparer_mailing_street_number':' ',
-    'part8_preparer_mailing_apt_ste_flr':' ',
-    'part8_preparer_mailing_city_town':' ',
-    'part8_preparer_mailing_state':' ',
-    'part8_preparer_mailing_zipcode':' ',
-    'part8_preparer_mailing_province':' ',
-    'part8_preparer_mailing_postal_code':' ',
-    'part8_preparer_mailing_country':' ',
-    'part8_interpreter_daytime_telephone':' ',
-    'part8_interpreter_mobile_telephone':' ',
-    'part8_interpreter_email_address':' ',
-    'Preparer_signature_date':' ',
+    'part8_preparer_mailing_street_number':' " . showData('') . "',
+    'part8_preparer_mailing_apt_ste_flr':' " . showData('') . "',
+    'part8_preparer_mailing_city_town':' " . showData('') . "',
+    'part8_preparer_mailing_state':' " . showData('') . "',
+    'part8_preparer_mailing_zipcode':' " . showData('') . "',
+    'part8_preparer_mailing_province':' " . showData('') . "',
+    'part8_preparer_mailing_postal_code':' " . showData('') . "',
+    'part8_preparer_mailing_country':' " . showData('') . "',
+    'part8_interpreter_daytime_telephone':' " . showData('') . "',
+    'part8_interpreter_mobile_telephone':' " . showData('') . "',
+    'part8_interpreter_email_address':' " . showData('') . "',
+    'Preparer_signature_date':' " . showData('') . "',
     
 //page 7 end.......    
     'i_864a_additional_info_family_last_name':' " . showData('i_864a_additional_info_last_name') . "',
