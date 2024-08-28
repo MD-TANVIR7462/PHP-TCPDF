@@ -294,7 +294,7 @@ $pdf->TextField('about_your_mailing_street', 56, 7, array('strokeColor' => array
 //...........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>2.c. </b>&nbsp;  <input type="checkbox" name="Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="Flr" value="Flr" checked="" /> Flr.</div>';
+$html = '<div><b>2.c. </b>&nbsp;  <input type="checkbox" name="Apt1" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste1" value="Ste" checked="" />Ste. <input type="checkbox" name="Flr1" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell(60, 0, 13, 168, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('about_your_mailing_apt_ste_flr', 44.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 59.5, 168);
@@ -385,7 +385,7 @@ $pdf->TextField('about_your_physical_street_number_name', 55, 7, array('strokeCo
 //...........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>4.b. </b>&nbsp;  <input type="checkbox" name="Apt" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste" value="Ste" checked="" /> Ste. <input type="checkbox" name="Flr" value="Flr" checked="" /> Flr.</div>';
+$html = '<div><b>4.b. </b>&nbsp;  <input type="checkbox" name="Apt2" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste2" value="Ste" checked="" /> Ste. <input type="checkbox" name="Flr2" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell(60, 0, 113, 104, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('about_your_physical_apt_ste_flr', 43.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 159.5, 103);
@@ -679,19 +679,19 @@ $pdf->writeHTMLCell(80, 7, 120, 17, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>1.b.&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part4_1b" value="Y" checked=" " /></div>';
-$pdf->writeHTMLCell(50, 7, 112, 30, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(50, 7, 112, 31, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = ' (Optional) I have attached photocopies or transcripts 
 of my Federal income tax returns for my second and 
 third most recent tax years.';
-$pdf->writeHTMLCell(83, 7, 125, 30, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(83, 7, 125, 31, $html, '', 0, 0, true, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10); // set font
 $html = 'My total income (adjusted gross income on IRS Form 1040EZ) <br>
 as reported on my Federal income tax returns for the most <br>
 recent three years was:';
-$pdf->writeHTMLCell(100, 7, 112, 43, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(100, 7, 112, 45, $html, '', 0, 0, true, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10); // set font
@@ -1707,7 +1707,7 @@ $pdf->TextField('part7_interpreter_mailing_street_number', 60, 7, array('strokeC
 //...........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>3.b. </b>&nbsp;  <input type="checkbox" name="Apt" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste" value="Ste" checked="" /> Ste. <input type="checkbox" name="Flr" value="Flr" checked="" /> Flr.</div>';
+$html = '<div><b>3.b. </b>&nbsp;  <input type="checkbox" name="Apt2" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste2" value="Ste" checked="" /> Ste. <input type="checkbox" name="Flr2" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell(60, 0, 12, 49, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part7_interpreter_mailing_apt_ste_flr', 44.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 59.5, 49);
@@ -1916,7 +1916,7 @@ $pdf->TextField('part8_preparer_mailing_street_number', 59, 7, array('strokeColo
 //...........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>3.b. </b>&nbsp;  <input type="checkbox" name="Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="Flr" value="Flr" checked="" /> Flr.</div>';
+$html = '<div><b>3.b. </b>&nbsp;  <input type="checkbox" name="Apt4" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste4" value="Ste" checked="" />Ste. <input type="checkbox" name="Flr4" value="Flr" checked="" /> Flr.</div>';
 $pdf->writeHTMLCell(60, 0, 113, 110, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part8_preparer_mailing_apt_ste_flr', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 158, 110);
