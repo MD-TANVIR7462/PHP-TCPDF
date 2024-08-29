@@ -24,6 +24,35 @@ include "intake_header.php";
         font-weight: 600;
 
     }
+
+
+    /*     
+    .section {
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .input-pair {
+        display: flex;
+        gap: 10px;
+    }
+
+    .input-pair input {
+        flex: 1;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+    }
+
+    h4 {
+        margin-top: 20px;
+    } */
 </style>
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
@@ -48,8 +77,8 @@ include "intake_header.php";
     </table> -->
 <!-- //! Replace the table into the table of fieldset............... -->
 
-<fieldset class="setpage">
-    <p style="text-align: right"><b>Page 1 of 5</b></p>
+<!-- <fieldset class="setpage">
+    <p style="text-align: right"><b>Page 1 of 8</b></p>
     <table>
         <thead>
             <tr>
@@ -287,7 +316,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">6.c. Country</label>
                 <div class="col-md-12">
-                     <input type="text" class="form-control" maxlength="12" name="other_information_about_you_country_of_birth" value="<?php echo showData('other_information_about_you_country_of_birth') ?>">
+                    <input type="text" class="form-control" maxlength="12" name="other_information_about_you_country_of_birth" value="<?php echo showData('other_information_about_you_country_of_birth') ?>">
                 </div>
             </div>
             <div class="form-group">
@@ -306,12 +335,12 @@ include "intake_header.php";
                     </div>
                 </div>
             </div>
-        
+
         </div>
     </div>
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> 
+</fieldset> -->
 
 <!-- //!uncomment this 2 lines and replace them into button section............. -->
 
@@ -322,7 +351,7 @@ include "intake_header.php";
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;"><b>Page 2 of 8</b></p>
-    <div class=" row">
+    <div class="row">
         <div class="col-md-6">
             <div class="bg-info">
                 <h4><b>Part 2. Your (the Household Member's) Relationship to the Sponsor</b></h4>
@@ -445,7 +474,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">
                     <div class="d-flexible">
-                        6.  <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?> Unemployed since (mm/dd/yyyy)
+                        6. <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?> Unemployed since (mm/dd/yyyy)
                     </div>
                 </label>
                 <div class="col-md-6 col-md-offset-6">
@@ -459,7 +488,7 @@ include "intake_header.php";
                     </div>
                 </label>
                 <div class="col-md-7 col-md-offset-5 d-flexible">
-                <b>$</b> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <b>$</b> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -467,82 +496,170 @@ include "intake_header.php";
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">1.a. Have you filed a Federal income tax return for each of the
-                three most recent tax years?</label>
+                    three most recent tax years?</label>
                 <div class="col-md-4 col-md-offset-8">
                     <?php echo createRadio("i_864a_is_current_mailing_same_as_physical") ?>
                 </div>
             </div>
         </div>
+
+
+
+
+
         <div class="col-md-6">
-            <div class="bg-info">
-                <h4><b><i>Requestor's Contact Information</i></b></h4>
-            </div>
             <div class="form-group">
-                <label class="control-label col-md-12">3. Requestor's Daytime Telephone Number</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_requestor_daytime_tel" maxlength="15" value="<?php echo showData('i_864a_requestor_daytime_tel') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">4. Requestor's Mobile Telephone Number (if any)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864a_requestor_mobile" maxlength="15" value="<?php echo showData('i_864a_requestor_mobile') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">5. Requestor's Email Address (if any)</label>
-                <div class="col-md-12">
-                    <input type="email" class="form-control  " name="i_864a_requestor_email" maxlength="34" value="<?php echo showData('i_864a_requestor_email') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Requestor's Declaration and Certification</i></b></h4>
-            </div>
-            <div class="form-group">
-                <p>Copies of any documents I have submitted are exact
-                    photocopies of unaltered, original documents, and I understand
-                    that U.S. Citizenship and Immigration Services (USCIS) or the
-                    U.S. Department of State (DOS) may require that I submit
-                    original documents to USCIS or DOS at a later date.
-                    Furthermore, I authorize the release of any information from
-                    any and all of my records that USCIS or DOS may need to
-                    determine my eligibility for the immigration benefit that I seek.
-                    I furthermore authorize release of information contained in this
-                    request, in supporting documents, and in my USCIS or DOS
-                    records, to other entities and persons where necessary for the
-                    administration and enforcement of U.S. immigration law.
-                    I certify, under penalty of perjury, that all of the information in
-                    my request and any document submitted with it were provided
-                    or authorized by me, that I reviewed and understand all of the
-                    information contained in, and submitted with, my request, and
-                    that all of this information is complete, true, and correct.
-                    In addition, I authorize the Social Security Administration
-                    (SSA) to release information about me in its records to USCIS
-                    and DOS.
+                <p><b>NOTE:</b> You <b>MUST</b> attach a photocopy or transcript of
+                    your Federal income tax return for only the most recent
+                    tax year.
                 </p>
             </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">
+                    <div class="d-flexible">
+                        <b>1.a. </b> <?php echo createCheckbox("i_864a_i_have_earned_status") ?> (Optional) I have attached photocopies or transcripts of
+                        my Federal income tax returns for my second and third most recent tax years.
+                    </div>
+                </label>
+            </div>
+            <div class="form-group">
+                <p>My total income (adjusted gross income on IRS Form 1040EZ) as reported on my Federal income tax returns for the most recent three years was: </p>
+            </div>
+
+            <div class="mx-4">
+                <div class="row" style="display: flex; align-items: center;">
+                    <div class="col-md-4">
+                        <label>
+                            <p>2.a. Most Recent </p>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <p style="text-align: center;"><b>Tax Year</b> </p>
+                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                    </div>
+                    <div class="col-md-4">
+                        <p style="text-align: center;"><b>Total Income</b></p>
+                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                    </div>
+                </div>
+                <div class="row" style="display: flex; align-items: center;">
+                    <div class="col-md-4">
+                        <label>
+                            <p>2.b. 2nd Most Recent </p>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                    </div>
+                </div>
+                <div class="row" style="display: flex; align-items: center;">
+                    <div class="col-md-4">
+                        <label>
+                            <p>2.c. 3rd Most Recent </p>
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                    </div>
+                </div>
+                <label style="margin-top: 4%;">
+                    <p>My assets (complete only if necessary).</p>
+                </label>
+                <div class="form-group">
+                    <label class="control-label ">
+                        <div class="d-flexible">
+                            <b>3.a.</b><span class="mx-5">Enter the balance of all cash, savings, and checking accounts.</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5">
+                        <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label ">
+                        <div class="d-flexible">
+                            <b>3.b.</b><span class="mx-5">Enter the net cash value of real-estate holdings. (Net value means assessed value minus mortgage debt.)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5">
+                        <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label ">
+                        <div class="d-flexible">
+                            <b>3.c.</b><span class="mx-5">Enter the cash value of all stocks, bonds, certificates of deposit, and other assets not listed on Item Numbers 3.a. or 3.b.</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5">
+                        <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label ">
+                        <div class="d-flexible">
+                            <b>3.d.</b><span class="mx-5">Add together Item Numbers 3.a., 3.b., and 3.c. and enter the number here.</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5">
+                        <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+            </div>
             <div class="bg-info">
-                <h4><b><i>Requestor's Signature</i></b></h4>
+                <h4><b>Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature</b></h4>
+            </div>
+
+            <div class="form-group">
+                <p><b>NOTE:</b> Read the Penalties section of the Form I-864A
+                    Instructions before completing this part.
+                </p>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">6.a. Requestor's Signature</label>
-                <div class="col-md-12">
-                    <input type="text" disabled class="form-control" maxlength="">
+                <label>I, THE SPONSOR,</label>
+                <div>
+                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
                 </div>
+                <p style="text-align: center;"><b>(Print Name)</b></p>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-6">6.b. Date of Signature (mm/dd/yyyy)</label>
-                <div class="col-md-6 ">
-                    <input type="date" class="form-control" name="i_864a_requestor_sign_date" value="<?php echo showData('i_864a_requestor_sign_date') ?>" />
+                <label>in consideration of the household member's promise to support
+                    the following intending immigrants and to be jointly and
+                    severally liable for any obligations I incur under the affidavit of
+                    support, promise to complete and file an affidavit of support on
+                    behalf of the following named intending immigrants. </label>
+                <div>
+                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
                 </div>
+                <p style="text-align: center;"><b>(Indicate Number)</b></p>
             </div>
-            <div class="form-group">
-                <p><b>NOTE TO ALL REQUESTORS:</b> If you do not completely
-                    fill out this request or fail to submit required documents listed
-                    in the Instructions, USCIS or DOS may deny your request. </p>
-            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- //!hellow section end div...... -->
         </div>
+
+
+
+
+
     </div>
+
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
