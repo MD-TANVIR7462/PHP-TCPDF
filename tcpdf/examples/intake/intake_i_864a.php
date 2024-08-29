@@ -48,7 +48,7 @@ include "intake_header.php";
     </table> -->
 <!-- //! Replace the table into the table of fieldset............... -->
 
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 1 of 8</b></p>
     <table>
         <thead>
@@ -311,7 +311,7 @@ include "intake_header.php";
     </div>
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 
 <!-- //!uncomment this 2 lines and replace them into button section............. -->
 
@@ -320,7 +320,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;"><b>Page 2 of 8</b></p>
     <div class="row">
         <div class="col-md-6">
@@ -505,7 +505,7 @@ include "intake_header.php";
                     </div>
                     <div class="col-md-4">
                         <p style="text-align: center;"><b>Total Income</b></p>
-                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
                     </div>
                 </div>
                 <div class="row" style="display: flex; align-items: center;">
@@ -518,7 +518,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
                     </div>
                 </div>
                 <div class="row" style="display: flex; align-items: center;">
@@ -531,7 +531,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
                     </div>
                 </div>
                 <label style="margin-top: 4%;">
@@ -544,7 +544,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5">
-                        <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -554,7 +554,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5">
-                        <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -564,7 +564,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5">
-                        <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -574,7 +574,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5">
-                        <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
                     </div>
                 </div>
             </div>
@@ -611,7 +611,7 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!-- <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" /> -->
@@ -982,36 +982,6 @@ include "intake_header.php";
                     </span>
                 </label>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
 
@@ -1019,9 +989,21 @@ include "intake_header.php";
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
-<!-- <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" /> -->
+
+<!----------------------------------------------------------------------
+-------------------------------- page 4 --------------------------------
+----------------------------------------------------------------------->
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 3 of 8</b></p>
+    <div class="bg-info">
+        <h4><b>Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature (continued)</b></h4>
+    </div>
+
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset>
+
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
 ----------------------------------------------------------------------->
@@ -1327,20 +1309,30 @@ include "intake_header.php";
                 </div>
             </label>
             <label class="from-control">
-                <div class="form-group">
-                    <div class="col-md-2">
-                        <b>7.b. </b> <?php echo createCheckbox("i_864a_i_am_an_attorney_accredited_representative_status") ?>
-                    </div>
-                    <div class="col-md-10">
-                        <p>I am an attorney or accredited representative and my
-                            representation of the sponsor and household member
-                            in this case
-                            <?php echo createCheckbox("i_864a_7b_extends_status") ?> extends <?php echo createCheckbox("i_864a_7b_does_not_extends_status") ?> does not extend beyond
-                            the preparation of this contract.
-                        </p>
-                    </div>
+                <div class="col-md-2">
+                    <b>7.b. </b> <?php echo createCheckbox("i_864a_i_am_an_attorney_accredited_representative_status") ?>
                 </div>
+                <div class="col-md-10">
+                    <p>I am an attorney or accredited representative and my
+                        representation of the sponsor and household member
+                        in this case
+                    </p>
+                </div>
+
             </label>
+            <div class="col-md-10 col-md-offset-2 ">
+                <label class="from-control">
+                    <div class="form-group">
+                        <?php echo createCheckbox("i_864a_7b_extends_status") ?> <span id="extend">extends</span>
+                    </div>
+                </label>
+                <label class="from-control">
+                    <div class="form-group">
+                        <?php echo createCheckbox("i_864a_7b_does_not_extends_status") ?> does not extend beyond the preparation of this contract.
+                    </div>
+                </label>
+            </div>
+
 
             <div class="form-group">
                 <p> <b> NOTE: </b> If you are an attorney or accredited
@@ -1400,11 +1392,7 @@ include "intake_header.php";
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
     <div class="row">
-        <div class="page_number">
-            <b>
-                <p style=" text-align: right;">Page 8 of 8</p>
-            </b>
-        </div>
+        <p style=" text-align: right;  margin-right: 25px;"><b>Page 8 of 8</b></p>
         <div class="col-md-6">
             <div class="bg-info">
                 <h4><b>Part 9. Additional Information</b> </h4>
