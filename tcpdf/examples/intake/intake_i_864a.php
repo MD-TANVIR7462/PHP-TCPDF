@@ -24,35 +24,6 @@ include "intake_header.php";
         font-weight: 600;
 
     }
-
-
-    /*     
-    .section {
-        margin-bottom: 20px;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .input-pair {
-        display: flex;
-        gap: 10px;
-    }
-
-    .input-pair input {
-        flex: 1;
-    }
-
-    .form-control {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-    }
-
-    h4 {
-        margin-top: 20px;
-    } */
 </style>
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
@@ -349,7 +320,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;"><b>Page 2 of 8</b></p>
     <div class="row">
         <div class="col-md-6">
@@ -502,11 +473,6 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
-
-
-
-
-
         <div class="col-md-6">
             <div class="form-group">
                 <p><b>NOTE:</b> You <b>MUST</b> attach a photocopy or transcript of
@@ -639,25 +605,414 @@ include "intake_header.php";
                 </div>
                 <p style="text-align: center;"><b>(Indicate Number)</b></p>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- //!hellow section end div...... -->
         </div>
+    </div>
+
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!-- <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" /> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 3 --------------------------------
+------------------------------------------------------------------------>
+<fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;"><b>Page 3 of 8</b></p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="bg-info">
+                <h4><b>Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature (continued)</b></h4>
+            </div>
+
+            <div>
+                <div class="form-group">
+                    <p><b>Intending Immigrant Number 1</b></p>
+                </div>
+                <div class="form-group">
+                    <p><b>Name</b></p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">1.a. Family Name(Last Name)</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">1.b. Given Name(First Name)</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">1.c. Middle Name</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>2.</b><span class="mx-5">Date of Birth (mm/dd/yyyy)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-6 col-md-offset-6">
+                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>3.</b><span class="mx-5">Alien Registration Number (A-Number, if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5 d-flexible">
+                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>4.</b><span class="mx-5">U.S. Social Security Number (if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5 d-flexible">
+                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>5.</b><span class="mx-5">USCIS Online Account Number (if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-8 col-md-offset-4 d-flexible">
+                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-group">
+                    <p><b>Intending Immigrant Number 2</b></p>
+                </div>
+                <div class="form-group">
+                    <p><b>Name</b></p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">6.a. Family Name(Last Name)</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">6.b. Given Name(First Name)</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">6.c. Middle Name</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>7.</b><span class="mx-5">Date of Birth (mm/dd/yyyy)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-6 col-md-offset-6">
+                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>8.</b><span class="mx-5">Alien Registration Number (A-Number, if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5 d-flexible">
+                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>9.</b><span class="mx-5">U.S. Social Security Number (if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5 d-flexible">
+                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>10.</b><span class="mx-5">USCIS Online Account Number (if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-8 col-md-offset-4 d-flexible">
+                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <p><b>Intending Immigrant Number 3</b></p>
+                </div>
+                <div class="form-group">
+                    <p><b>Name</b></p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">11.a. Family Name(Last Name)</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">11.b. Given Name(First Name)</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">11.c. Middle Name</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>12.</b><span class="mx-5">Date of Birth (mm/dd/yyyy)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-6 col-md-offset-6">
+                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="control-label col-md-12">
+                    <div class="d-flexible">
+                        <b>13.</b><span class="mx-5">Alien Registration Number (A-Number, if any)</span>
+                    </div>
+                </label>
+                <div class="col-md-7 col-md-offset-5 d-flexible">
+                    <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">
+                    <div class="d-flexible">
+                        <b>14.</b><span class="mx-5">U.S. Social Security Number (if any)</span>
+                    </div>
+                </label>
+                <div class="col-md-7 col-md-offset-5 d-flexible">
+                    <span><b>►</b></span><input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">
+                    <div class="d-flexible">
+                        <b>15.</b><span class="mx-5">USCIS Online Account Number (if any)</span>
+                    </div>
+                </label>
+                <div class="col-md-8 col-md-offset-4 d-flexible">
+                    <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                </div>
+            </div>
+
+
+            <div>
+                <div class="form-group">
+                    <p><b>Intending Immigrant Number 4</b></p>
+                </div>
+                <div class="form-group">
+                    <p><b>Name</b></p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">16.a. Family Name(Last Name)</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">16.b. Given Name(First Name)</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">16.c. Middle Name</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>17.</b><span class="mx-5">Date of Birth (mm/dd/yyyy)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-6 col-md-offset-6">
+                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>18.</b><span class="mx-5">Alien Registration Number (A-Number, if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5 d-flexible">
+                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>19.</b><span class="mx-5">U.S. Social Security Number (if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5 d-flexible">
+                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>20.</b><span class="mx-5">USCIS Online Account Number (if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-8 col-md-offset-4 d-flexible">
+                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <p><b>Intending Immigrant Number 5</b></p>
+                </div>
+                <div class="form-group">
+                    <p><b>Name</b></p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">21.a. Family Name(Last Name)</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">21.b. Given Name(First Name)</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5">21.c. Middle Name</label>
+                    <div class="col-md-7">
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>22.</b><span class="mx-5">Date of Birth (mm/dd/yyyy)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-6 col-md-offset-6">
+                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>23.</b><span class="mx-5">Alien Registration Number (A-Number, if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5 d-flexible">
+                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>24.</b><span class="mx-5">U.S. Social Security Number (if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-7 col-md-offset-5 d-flexible">
+                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        <div class="d-flexible">
+                            <b>25.</b><span class="mx-5">USCIS Online Account Number (if any)</span>
+                        </div>
+                    </label>
+                    <div class="col-md-8 col-md-offset-4 d-flexible">
+                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-info">
+                <h4><b><i>Sponsor's Statement</i></b></h4>
+            </div>
+
+            <div class="form-group">
+                <p>
+                    <b>NOTE:</b> Select the box for either <b>Item Number 26.a</b>. or <b>26.b</b>.
+                    If applicable, select the box for <b>Item Number 27</b>.
+                </p>
+
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">
+                    <span class="d-flexible">
+                        <b>26. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?>I can read and understand English, and I have read
+                        and understand every question and instruction on this
+                        contract and my answer to every question.
+                    </span>
+                </label>
+            </div>
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
     </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
