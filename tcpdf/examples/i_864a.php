@@ -1983,14 +1983,14 @@ $html = '<div><b>4.  </b> &nbsp;  Preparer\'s Daytime Telephone Number</div>';
 $pdf->writeHTMLCell(90, 7, 112, 176, $html, 0, 1, false, true, 'J', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part8_interpreter_daytime_telephone', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 182);
+$pdf->TextField('part8_preparer_daytime_telephone', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 182);
 //...............
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>5.  </b> &nbsp;   Preparer\'s Mobile Telephone Number (if any)</div>';
 $pdf->writeHTMLCell(90, 7, 112, 190, $html, 0, 1, false, true, 'J', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part8_interpreter_mobile_telephone', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 195);
+$pdf->TextField('part8_preparer_mobile_telephone', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 195);
 //...............
 
 $pdf->SetFont('times', '', 10);
@@ -1998,7 +1998,7 @@ $html = '<div><b>6.   </b>  &nbsp; Preparer\'s  Email Address (if any)</div>';
 $pdf->writeHTMLCell(90, 7, 112, 204, $html, 0, 1, false, true, 'J', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part8_interpreter_email_address', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 209);
+$pdf->TextField('part8_preparer_email_address', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 209);
 
 /********************************
  ******** End Page No 6 **********
@@ -2532,16 +2532,18 @@ var fields = {
 
     'part8_preparer_mailing_street_number':' " . showData('') . "',
     'part8_preparer_mailing_apt_ste_flr':' " . showData('') . "',
-    'part8_preparer_mailing_city_town':' " . showData('') . "',
-    'part8_preparer_mailing_state':' " . showData('') . "',
-    'part8_preparer_mailing_zipcode':' " . showData('') . "',
-    'part8_preparer_mailing_province':' " . showData('') . "',
-    'part8_preparer_mailing_postal_code':' " . showData('') . "',
-    'part8_preparer_mailing_country':' " . showData('') . "',
-    'part8_interpreter_daytime_telephone':' " . showData('') . "',
-    'part8_interpreter_mobile_telephone':' " . showData('') . "',
-    'part8_interpreter_email_address':' " . showData('') . "',
-    'Preparer_signature_date':' " . showData('') . "',
+    'part8_preparer_mailing_city_town':' " . showData('i_864a_preparer_address_city_town') . "',
+    'part8_preparer_mailing_state':' " . showData('i_864a_preparer_address_state') . "',
+    'part8_preparer_mailing_zipcode':' " . showData('i_864a_preparer_address_zip_code') . "',
+    'part8_preparer_mailing_province':' " . showData('i_864a_preparer_address_province') . "',
+    'part8_preparer_mailing_postal_code':' " . showData('i_864a_preparer_address_postal_code') . "',
+    'part8_preparer_mailing_country':' " . showData('i_864a_preparer_address_country') . "',
+    'part8_preparer_daytime_telephone':' " . showData('i_864a_preparer_daytime_tel') . "',
+    'part8_preparer_mobile_telephone':' " . showData('i_864a_preparer_mobile') . "',
+    'part8_preparer_email_address':' " . showData('i_864a_preparer_email') . "',
+
+//page 6 end...........    
+    'Preparer_signature_date':' " . showData('i_864a_preparer_sign_date') . "',
     
 //page 7 end.......    
     'i_864a_additional_info_family_last_name':' " . showData('i_864a_additional_info_last_name') . "',
