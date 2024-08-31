@@ -35,16 +35,16 @@ include "intake_header.php";
                 <h5><b>1. Reason for Filing (Please see Instructions for eligibility requirements under each provision.):</b> </h5>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12"><span style="padding-right: 2%;">A.</span><?php echo createCheckbox("") ?>General Provision. See Instructions: List of General Eligibility Requirements </label>
+                <label class="control-label col-md-12"><span style="padding-right: 2%;">A.</span><?php echo createCheckbox("information_about_you_eligibility_provision_status") ?>General Provision. See Instructions: List of General Eligibility Requirements </label>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12"><span style="padding-right: 2%;">B.</span><?php echo createCheckbox("") ?>Spouse of U.S. Citizen. See Instructions: <i>Eligibility Based on Marriage to a U.S. Citizen</i> </label>
+                <label class="control-label col-md-12"><span style="padding-right: 2%;">B.</span><?php echo createCheckbox("information_about_you_eligibility_us_citizen_status") ?>Spouse of U.S. Citizen. See Instructions: <i>Eligibility Based on Marriage to a U.S. Citizen</i> </label>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12"><span style="padding-right: 2%;">C.</span><?php echo createCheckbox("") ?>VAWA. See Instructions: <i>Eligibility for the Spouse, Former Spouse, or Child of a U.S. Citizen under the Violence Against Women Act (VAWA)</i></label>
+                <label class="control-label col-md-12"><span style="padding-right: 2%;">C.</span><?php echo createCheckbox("information_about_you_eligibility_vawa_women_act_status") ?>VAWA. See Instructions: <i>Eligibility for the Spouse, Former Spouse, or Child of a U.S. Citizen under the Violence Against Women Act (VAWA)</i></label>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12"><span style="padding-right: 2%;">D.</span><?php echo createCheckbox("") ?>Spouse of U.S. Citizen in Qualified Employment Outside the United States. See Instructions: <i>Eligibility for the Spouse of a U.S. Citizen Working for a Qualified Employer Outside the United States</i></label>
+                <label class="control-label col-md-12"><span style="padding-right: 2%;">D.</span><?php echo createCheckbox("information_about_you_eligibility_qualified_employment_status") ?>Spouse of U.S. Citizen in Qualified Employment Outside the United States. See Instructions: <i>Eligibility for the Spouse of a U.S. Citizen Working for a Qualified Employer Outside the United States</i></label>
             </div>
             <div class="form-group">
                 <p class=" col-md-12">If your residential address is outside the United States and you are filing under Immigration and Nationality Actv (INA) section 319(b), select the USCIS field office where you would like to have your naturalization interview. You can find a USCIS field office at www.uscis.gov/field-offices.</p>
@@ -53,18 +53,18 @@ include "intake_header.php";
                 <input type="text" maxlength="39" class="form-control" name=" " disabled value="<?php echo showData('') ?>" />
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12"><span style="padding-right: 2%;">E.</span><?php echo createCheckbox("") ?>Military Service During Period of Hostilities. See Instructions: <i>Eligibility and Evidence for Current and Former Members of the U.S. Armed Forces</i></label>
+                <label class="control-label col-md-12"><span style="padding-right: 2%;">E.</span><?php echo createCheckbox("information_about_you_eligibility_period_of_hostilities_status") ?>Military Service During Period of Hostilities. See Instructions: <i>Eligibility and Evidence for Current and Former Members of the U.S. Armed Forces</i></label>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12"><span style="padding-right: 2%;">F.</span><?php echo createCheckbox("") ?>At Least One Year of Honorable Military Service at Any Time. See Instructions: <i>Eligibility and Evidence for
+                <label class="control-label col-md-12"><span style="padding-right: 2%;">F.</span><?php echo createCheckbox("information_about_you_eligibility_member_us_armed_force_status") ?>At Least One Year of Honorable Military Service at Any Time. See Instructions: <i>Eligibility and Evidence for
                         Current and Former Members of the U.S. Armed Forces</i></label>
             </div>
             <div class="row" style="margin-left: 1px;">
                 <div class="form-group">
-                    <label class="control-label col-md-12"><span style="padding-right: 2%;">G.</span><?php echo createCheckbox("") ?>Other Reason for Filing Not Listed Above</label>
+                    <label class="control-label col-md-12"><span style="padding-right: 2%;">G.</span><?php echo createCheckbox("information_about_you_eligibility_reason_not_listed_status") ?>Other Reason for Filing Not Listed Above</label>
                 </div>
                 <div class="col-md-5" style="margin-left: 4%;">
-                    <input type="text" maxlength="39" class="form-control" name=" " value="<?php echo showData('') ?>" />
+                    <input type="text" maxlength="39" class="form-control" name="information_about_you_eligibility_reason_not_listed_value" value="<?php echo showData('information_about_you_eligibility_reason_not_listed_value') ?>" />
                 </div>
             </div>
 
@@ -78,20 +78,20 @@ include "intake_header.php";
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">Family Name (Last Name)</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_family_last_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_current_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">Given Name (First Name)</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_given_first_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_current_given_first_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">Middle Name (if applicable)
                     </label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="information_about_you_middle_name" maxlength="22" value="<?php echo showData('information_about_you_middle_name') ?>">
+                        <input type="text" class="form-control" name="information_about_you_current_middle_name" maxlength="22" value="<?php echo showData('information_about_you_current_middle_name') ?>">
                     </div>
                 </div>
             </div>
@@ -147,29 +147,34 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-6">3. Would you like to legally change your name?</label>
             <div class="col-md-6 ">
-                <?php echo createRadio("rd3") ?>
+                <?php echo createRadio("information_about_you_legally_change_name_status") ?>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">If you answered “Yes,” type or print the new name you would like to use:</label>
+            <label class="control-label col-md-12">If you answered “Yes,” </label>
+            <label class="control-label col-md-12">If you answered “No,” </label>
+
+            <p class="control-label col-md-12"><b>NOTE : </b>If you answered <b>“Yes,”</b> type or print the new name you would like to use:</p>
+            <p class="control-label col-md-12"><b>NOTE : </b>If you answered <b>“No,”</b> (skip to Item Number 4.)</p>
+
             <div class="row" style="margin-bottom: 20px;">
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">Family Name (Last Name)</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_7a_page_no" maxlength="35" value="<?php echo showData('i_290b_additional_info_7a_page_no') ?>">
+                        <input type="text" class="form-control" name="information_about_you_legally_change_family_last_name" maxlength="35" value="<?php echo showData('information_about_you_legally_change_family_last_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">Given Name (First Name)</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_7b_part_no" maxlength="27" value="<?php echo showData('i_290b_additional_info_7b_part_no') ?>">
+                        <input type="text" class="form-control" name="information_about_you_legally_change_given_first_name" maxlength="27" value="<?php echo showData('information_about_you_legally_change_given_first_name') ?>">
                     </div>
                 </div>
                 <div class=" col-md-4">
                     <label class="control-label " style="margin-left: 15px;">Middle Name (if applicable)
                     </label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_7c_item_no" maxlength="22" value="<?php echo showData('i_290b_additional_info_7c_item_no') ?>">
+                        <input type="text" class="form-control" name="information_about_you_legally_change_middle_name" maxlength="22" value="<?php echo showData('information_about_you_legally_change_middle_name') ?>">
                     </div>
                 </div>
             </div>
@@ -193,7 +198,7 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">6. Date of Birth (mm/dd/yyyy)</label>
             <div style="width:40%; margin-left: 3%;"">
-                <input type=" date" class="form-control" name="other_information_about_you_date_of_birth" maxlength="" value="<?php echo showData('other_information_about_you_date_of_birth') ?>">
+                <input type=" date" class="form-control" name="other_information_about_you_date_of_birth" value="<?php echo showData('other_information_about_you_date_of_birth') ?>">
             </div>
         </div>
         <div class="form-group">
@@ -204,14 +209,14 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">7. If you are a lawful permanent resident, provide the date you became a lawful permanent resident (mm/dd/yyyy)</label>
             <div style="width:40%; margin-left: 3%;"">
-                <input type=" date" class="form-control" name="i_290b_additional_info_7c_item_no" maxlength="" value="<?php echo showData('i_290b_additional_info_7c_item_no') ?>">
+                <input type=" date" class="form-control" name="information_about_you_lawful_permanent_resident_date" value="<?php echo showData('information_about_you_lawful_permanent_resident_date') ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-md-12">8. Country of Birth </label>
             <div style="width:40%; margin-left: 3%;"">
-                <input type=" text" class="form-control" name="i_290b_additional_info_7c_item_no" maxlength="41" value="<?php echo showData('i_290b_additional_info_7c_item_no') ?>">
+                <input type=" text" class="form-control" name="other_information_about_you_country_of_birth" maxlength="41" value="<?php echo showData('other_information_about_you_country_of_birth') ?>">
             </div>
         </div>
 
@@ -228,7 +233,7 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-9">10. Was one of your parents (including adoptive parents) a U.S. citizen before your 18th birthday?</label>
             <div class="col-md-3">
-                <?php echo createRadio("rd3") ?>
+                <?php echo createRadio("information_about_you_parent_citizen_before_birth_status") ?>
             </div>
         </div>
         <div class="form-group">
@@ -240,7 +245,7 @@ include "intake_header.php";
                 demonstrating your knowledge and understanding of the English language or civics requirements for
                 naturalization?</label>
             <div class="col-md-3 ">
-                <?php echo createRadio("rd3") ?>
+                <?php echo createRadio("information_about_you_civics_for_naturalization_status") ?>
             </div>
         </div>
         <div class="form-group">
@@ -256,7 +261,7 @@ include "intake_header.php";
                 demonstrating your knowledge and understanding of the English language or civics requirements for
                 naturalization?</label>
             <div class="col-md-3 ">
-                <?php echo createRadio("rd3") ?>
+                <?php echo createRadio("information_about_you_ssa_naturalizd_status") ?>
             </div>
             <p class="control-label col-md-12"><b>NOTE : </b>If you answered <b>“Yes,”</b> (Complete <b>Item Numbers 12.b. - 12.c.</b> )</p>
             <p class="control-label col-md-12"><b>NOTE : </b>(If you answered <b>“No,”</b> Go to <b>Part 3.</b> )</p>
@@ -273,7 +278,7 @@ include "intake_header.php";
                 to the SSA as required for the purpose of assigning me an SSN, issuing me an original or replacement
                 Social Security card, and updating my immigration status with the SSA.</label>
             <div class="col-md-3 ">
-                <?php echo createRadio("rd3") ?>
+                <?php echo createRadio("information_about_you_consent_for_disclosure_status") ?>
             </div>
         </div>
         <div class="form-group">
@@ -443,7 +448,7 @@ include "intake_header.php";
             <label class="control-label" style="width: 100%; margin-bottom: 5px;">Current Physical Address</label>
             <label class="control-label" style="width: 100%; margin-bottom: 5px;">In Care Of Name (if any)</label>
             <div style="width: 100%;">
-                <input type="text" class="form-control" name="care_of_name" maxlength="86" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                <input type="text" class="form-control" name="information_about_you_residence_care_of_name" maxlength="86" value="<?php echo showData('information_about_you_residence_care_of_name') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
         <div style="margin-left:1.5%; margin-right: 1.5%;">
@@ -451,42 +456,42 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
                     <div style="width: 100%;">
-                        <input type="text" maxlength="63" class="form-control" name="street_number_name" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" maxlength="63" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
                     <div style="flex: 1; margin-left: 5%;">
                         <label>
-                            <input type="radio" name="apt_ste_flr" value="apt" <?php echo (showData('apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
                         </label>
                         <label>
-                            <input type="radio" name="apt_ste_flr" value="ste" <?php echo (showData('apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
                         </label>
                         <label>
-                            <input type="radio" name="apt_ste_flr" value="flr" <?php echo (showData('apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
+                            <input type="radio" name="information_about_you_residence_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_residence_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
                         </label>
                     </div>
                 </div>
                 <div style="flex: 1;">
                     <label class="control-label">Number</label>
-                    <input type="text" class="form-control" name="apt_ste_flr_value" maxlength="5" value="<?php echo showData('apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    <input type="text" class="form-control" name="information_about_you_residence_apt_ste_flr_value" maxlength="5" value="<?php echo showData('information_about_you_residence_apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
             <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="city_town" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_residence_city_town" maxlength="63" value="<?php echo showData('information_about_you_residence_city_town') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
                     <div style="width: 100%;">
-                        <select class="form-control" name="petitioner_us_mailing_state" style="width: 100%; padding: 5px; margin-top: 3%;">
+                        <select class="form-control" name="information_about_you_residence_state" style="width: 100%; padding: 5px; margin-top: 3%;">
                             <option value=''>Select</option>
                             <?php
                             foreach ($allDataCountry as $record) {
-                                if ($record->state_code == showData('petitioner_us_mailing_state')) $selected = "selected";
+                                if ($record->state_code == showData('information_about_you_residence_state')) $selected = "selected";
                                 else $selected = "";
                                 echo "<option value='$record->state_code' $selected>$record->state_code</option>";
                             }
@@ -497,7 +502,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="zip_code" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_residence_zip_code" maxlength="5" value="<?php echo showData('information_about_you_residence_zip_code') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -505,19 +510,19 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="province" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_residence_province" maxlength="26" value="<?php echo showData('information_about_you_residence_province') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="postal_code" maxlength="9" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_residence_postal_code" maxlength="9" value="<?php echo showData('information_about_you_residence_postal_code') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="country" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_residence_country" maxlength="37" value="<?php echo showData('information_about_you_residence_country') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -525,13 +530,13 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Dates of Residence: From (mm/dd/yyyy)</label>
                     <div style="width: 100%;">
-                        <input type="date" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="date" class="form-control" name="information_about_you_residence_from_date" value="<?php echo showData('information_about_you_residence_from_date') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Dates of Residence: To (mm/dd/yyyy)</label>
                     <div style="width: 100%;">
-                        <input type="date" class="form-control" name="" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="date" class="form-control" name="information_about_you_residence_to_date" value="<?php echo showData('information_about_you_residence_to_date') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -551,39 +556,39 @@ include "intake_header.php";
                     <th>To<br>(mm/dd/yyyy)</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" maxlength="26" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="6" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                </tr>
+            <form action="process_form.php" method="POST">
+                <tbody>
+                    <tr>
+                        <td><input type="text" maxlength="26" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_street_number[]" value="<?php echo showData('information_about_you_residence_street_number', '0') ?>"></td>
+                        <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_city_town[]" value="<?php echo showData('information_about_you_residence_city_town', '0') ?>"></td>
+                        <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_state_province[]" value="<?php echo showData('information_about_you_residence_state_province', '0') ?>"></td>
+                        <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_zip_code[]" value="<?php echo showData('information_about_you_residence_zip_code', '0') ?>"></td>
+                        <td><input type="text" maxlength="6" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_country[]" value="<?php echo showData('information_about_you_residence_country', '0') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_from_date[]" value="<?php echo showData('information_about_you_residence_from_date', '0') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_to_date[]" value="<?php echo showData('information_about_you_residence_to_date', '0') ?>"></td>
+                    </tr>
 
-                <tr>
-                    <td><input type="text" maxlength="26" style="width: 100%; margin: 0;font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="6" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                </tr>
+                    <tr>
+                        <td><input type="text" maxlength="26" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_street_number[]" value="<?php echo showData('information_about_you_residence_street_number', '1') ?>"></td>
+                        <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_city_town[]" value="<?php echo showData('information_about_you_residence_city_town', '1') ?>"></td>
+                        <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_state_province[]" value="<?php echo showData('information_about_you_residence_state_province', '1') ?>"></td>
+                        <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_zip_code[]" value="<?php echo showData('information_about_you_residence_zip_code', '1') ?>"></td>
+                        <td><input type="text" maxlength="6" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_country[]" value="<?php echo showData('information_about_you_residence_country', '1') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_from_date[]" value="<?php echo showData('information_about_you_residence_from_date', '1') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_to_date[]" value="<?php echo showData('information_about_you_residence_to_date', '1') ?>"></td>
+                    </tr>
 
-                <tr>
-                    <td><input type="text" maxlength="26" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="6" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                </tr>
-
-
-            </tbody>
+                    <tr>
+                        <td><input type="text" maxlength="26" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_street_number[]" value="<?php echo showData('information_about_you_residence_street_number', '2') ?>"></td>
+                        <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_city_town[]" value="<?php echo showData('information_about_you_residence_city_town', '2') ?>"></td>
+                        <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_state_province[]" value="<?php echo showData('information_about_you_residence_state_province', '2') ?>"></td>
+                        <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_zip_code[]" value="<?php echo showData('information_about_you_residence_zip_code', '2') ?>"></td>
+                        <td><input type="text" maxlength="6" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_country[]" value="<?php echo showData('information_about_you_residence_country', '2') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_from_date[]" value="<?php echo showData('information_about_you_residence_from_date', '2') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="information_about_you_residence_to_date[]" value="<?php echo showData('information_about_you_residence_to_date', '2') ?>"></td>
+                    </tr>
+                </tbody>
+            </form>
         </table>
     </div>
 
@@ -591,7 +596,7 @@ include "intake_header.php";
     <div class="form-group">
         <label class="control-label col-md-12">2. Is your current physical address also your current mailing address?</label>
         <div class="col-md-3 col-md-offset-4">
-            <?php echo createRadio("rd3") ?>
+            <?php echo createRadio("information_about_you_residence_curren_mailing_status") ?>
         </div>
         <p class="control-label col-md-12"><b>NOTE : </b>(If you answered <b>“Yes,”</b> skip to <b>Part 5.</b> )</p>
     </div>
@@ -614,7 +619,7 @@ include "intake_header.php";
             </label>
             <label class="control-label" style="width: 100%; margin-bottom: 5px;">In Care Of Name (if any)</label>
             <div style="width: 100%;">
-                <input type="text" class="form-control" name="care_of_name" maxlength="86" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                <input type="text" class="form-control" name="information_about_you_residence_mailing_care_of_name" maxlength="86" value="<?php echo showData('information_about_you_residence_mailing_care_of_name') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
         <div style="margin-left:1.5%; margin-right: 1.5%;">
@@ -622,42 +627,42 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
                     <div style="width: 100%;">
-                        <input type="text" maxlength="63" class="form-control" name="street_number_name" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" maxlength="63" class="form-control" name="information_about_you_residence_mailing_street_number" value="<?php echo showData('information_about_you_residence_mailing_street_number') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
                     <div style="flex: 1; margin-left: 5%;">
                         <label>
-                            <input type="radio" name="apt_ste_flr" value="apt" <?php echo (showData('apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
+                            <input type="radio" name="information_about_you_residence_mailing_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_residence_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>> Apt. &nbsp;
                         </label>
                         <label>
-                            <input type="radio" name="apt_ste_flr" value="ste" <?php echo (showData('apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
+                            <input type="radio" name="information_about_you_residence_mailing_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_residence_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>> Ste. &nbsp;
                         </label>
                         <label>
-                            <input type="radio" name="apt_ste_flr" value="flr" <?php echo (showData('apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
+                            <input type="radio" name="information_about_you_residence_mailing_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_residence_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>> Flr.
                         </label>
                     </div>
                 </div>
                 <div style="flex: 1;">
                     <label class="control-label">Number</label>
-                    <input type="text" class="form-control" name="apt_ste_flr_value" maxlength="5" value="<?php echo showData('apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    <input type="text" class="form-control" name="information_about_you_residence_mailing_apt_ste_flr_value" maxlength="5" value="<?php echo showData('information_about_you_residence_mailing_apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
             <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="city_town" maxlength="63" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_residence_mailing_city_town" maxlength="63" value="<?php echo showData('information_about_you_residence_mailing_city_town') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
                     <div style="width: 100%;">
-                        <select class="form-control" name="petitioner_us_mailing_state" style="width: 100%; padding: 5px; margin-top: 3%;">
+                        <select class="form-control" name="information_about_you_residence_mailing_state" style="width: 100%; padding: 5px; margin-top: 3%;">
                             <option value=''>Select</option>
                             <?php
                             foreach ($allDataCountry as $record) {
-                                if ($record->state_code == showData('petitioner_us_mailing_state')) $selected = "selected";
+                                if ($record->state_code == showData('information_about_you_residence_mailing_state')) $selected = "selected";
                                 else $selected = "";
                                 echo "<option value='$record->state_code' $selected>$record->state_code</option>";
                             }
@@ -668,7 +673,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="zip_code" maxlength="5" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_residence_mailing_zip_code" maxlength="5" value="<?php echo showData('information_about_you_residence_mailing_zip_code') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -676,19 +681,19 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="province" maxlength="26" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_residence_mailing_province" maxlength="26" value="<?php echo showData('information_about_you_residence_mailing_province') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="postal_code" maxlength="9" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_residence_mailing_postal_code" maxlength="9" value="<?php echo showData('information_about_you_residence_mailing_postal_code') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
                 <div class="form-group" style="flex: 1; margin-bottom: 10px;">
                     <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country</label>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="country" maxlength="37" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_residence_mailing_country" maxlength="37" value="<?php echo showData('information_about_you_residence_mailing_country') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -714,13 +719,13 @@ include "intake_header.php";
     <div class="form-group">
         <label class="control-label col-md-8">2. If you are currently married, is your spouse a current member of the U.S. armed forces?</label>
         <div class="col-md-3 ">
-            <?php echo createRadio("rd3") ?>
+            <?php echo createRadio("other_information_about_you_marital_spouse_armed_force_status") ?>
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-md-8">3. How many times have you been married? (See the Specific Instructions by Item Number section of the Instructions for more information about which marriages to include.)</label>
         <div class="col-md-3 ">
-            <input type="text" class="form-control" name="postal_code" maxlength="3" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            <input type="text" class="form-control" name="other_information_about_you_marital_married_number" maxlength="3" value="<?php echo showData('other_information_about_you_marital_married_number') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
         </div>
     </div>
     <div class="form-group">
@@ -777,7 +782,7 @@ include "intake_header.php";
     <div class="form-group">
         <label class="control-label col-md-12">4.d. Is your current spouse's present physical address the same as your physical address?</label>
         <div class="col-md-5   col-md-offset-5 ">
-            <?php echo createRadio("rd3") ?>
+            <?php echo createRadio("current_spouse_physical_address_status") ?>
         </div>
         <label class="control-label col-md-12">NOTE : (If you answered “No,” provide address in Part 14. Additional Information.)</label>
     </div>
@@ -785,8 +790,8 @@ include "intake_header.php";
         <label class="control-label col-md-12">5.a. When did your current spouse become a U.S. citizen?</label>
         <div class="col-md-12 ">
             <div class="form-group">
-                <label class="control-label col-md-8" style="margin-left: 25px;"><?php echo createCheckbox("") ?>By Birth in the United States - Go to Item Number 7</label>
-                <label class="control-label col-md-8" style="margin-left: 25px;"><?php echo createCheckbox("") ?>Other - Complete Item Number 5.b.</label>
+                <label class="control-label col-md-8" style="margin-left: 25px;"><?php echo createCheckbox("current_spouse_us_citizen_by_birth_status") ?>By Birth in the United States - Go to Item Number 7</label>
+                <label class="control-label col-md-8" style="margin-left: 25px;"><?php echo createCheckbox("current_spouse_us_citizen_other_status") ?>Other - Complete Item Number 5.b.</label>
             </div>
         </div>
         <div class="form-group">
@@ -819,7 +824,7 @@ include "intake_header.php";
         <label class="control-label col-md-10">7. How many times has your current spouse been married? (See the Specific Instructions by Item
             Number section of the Instructions for more information about which marriages to include.)</label>
         <div class="col-md-2">
-            <input type="text" class="form-control" maxlength="3" name="postal_code" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            <input type="text" class="form-control" maxlength="3" name="current_spouse_married" value="<?php echo showData('current_spouse_married') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
         </div>
     </div>
     <div class="form-group">
@@ -829,7 +834,7 @@ include "intake_header.php";
     <div class="form-group">
         <label class="control-label col-md-6">8. Current Spouse's Current Employer or Company</label>
         <div class="col-md-6">
-            <input type="text" class="form-control" name="postal_code" maxlength="53" value="<?php echo showData('') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            <input type="text" class="form-control" name="current_spouse_employer_or_company" maxlength="53" value="<?php echo showData('current_spouse_employer_or_company') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
         </div>
     </div>
     <div class="form-group">
@@ -867,30 +872,26 @@ include "intake_header.php";
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" maxlength="27" style="width: 100%; margin: 0;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="17" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><?php echo createRadio("rd3") ?></td>
-
+                    <td><input type="text" maxlength="27" style="width: 100%; margin: 0;" name="child_first_falmily_name[]" value="<?php echo showData('child_first_falmily_name', '0') ?>"></td>
+                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="child_date_of_birth[]" value="<?php echo showData('child_date_of_birth', '0') ?>"></td>
+                    <td><input type="text" maxlength="17" style="width: 100%; margin: 0; font-weight: 600;" name="child_residence[]" value="<?php echo showData('child_residence', '0') ?>"></td>
+                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="child_relationship[]" value="<?php echo showData('child_relationship', '0') ?>"></td>
+                    <td><?php echo createRadio("child_support_status") ?></td>
                 </tr>
                 <tr>
-                    <td><input type="text" maxlength="27" style="width: 100%; margin: 0;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="17" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><?php echo createRadio("rd3") ?></td>
-
+                    <td><input type="text" maxlength="27" style="width: 100%; margin: 0;" name="child_first_falmily_name[]" value="<?php echo showData('child_first_falmily_name', '1') ?>"></td>
+                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="child_date_of_birth[]" value="<?php echo showData('child_date_of_birth', '1') ?>"></td>
+                    <td><input type="text" maxlength="17" style="width: 100%; margin: 0; font-weight: 600;" name="child_residence[]" value="<?php echo showData('child_residence', '1') ?>"></td>
+                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="child_relationship[]" value="<?php echo showData('child_relationship', '0') ?>"></td>
+                    <td><?php echo createRadio("child_support_status2") ?></td>
                 </tr>
                 <tr>
-                    <td><input type="text" maxlength="27" style="width: 100%; margin: 0;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="17" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="" value="<?php echo showData('') ?>"></td>
-                    <td><?php echo createRadio("rd3") ?></td>
+                    <td><input type="text" maxlength="27" style="width: 100%; margin: 0;" name="child_first_falmily_name[]" value="<?php echo showData('child_first_falmily_name', '2') ?>"></td>
+                    <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="child_date_of_birth[]" value="<?php echo showData('child_date_of_birth', '2') ?>"></td>
+                    <td><input type="text" maxlength="17" style="width: 100%; margin: 0; font-weight: 600;" name="child_residence[]" value="<?php echo showData('child_residence', '2') ?>"></td>
+                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="child_relationship[]" value="<?php echo showData('child_relationship', '0') ?>"></td>
+                    <td><?php echo createRadio("child_support_status3") ?></td>
                 </tr>
-
-
             </tbody>
         </table>
         <div class="bg-info">
@@ -924,34 +925,34 @@ include "intake_header.php";
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0;" name=""></td>
-                    <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="5" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="13" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
+                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0;" name="n_400_information_employment_and_school_name[]" value="<?php echo showData('n_400_information_employment_and_school_name', '0') ?>"></td>
+                    <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_city_town[]" value="<?php echo showData('n_400_information_employment_and_school_city_town', '0') ?>"></td>
+                    <td><input type="text" maxlength="5" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_state_province[]" value="<?php echo showData('n_400_information_employment_and_school_state_province', '0') ?>"></td>
+                    <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_zip_code[]" value="<?php echo showData('n_400_information_employment_and_school_zip_code', '0') ?>"></td>
+                    <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_country[]" value="<?php echo showData('n_400_information_employment_and_school_country', '0') ?>"></td>
+                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_from_date[]" value="<?php echo showData('n_400_information_employment_and_school_from_date', '0') ?>"></td>
+                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_to_date[]" value="<?php echo showData('n_400_information_employment_and_school_to_date', '0') ?>"></td>
+                    <td><input type="text" maxlength="13" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_occupation[]" value="<?php echo showData('n_400_information_employment_and_school_occupation', '0') ?>"></td>
                 </tr>
                 <tr>
-                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0;" name=""></td>
-                    <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="5" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="13" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
+                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0;" name="n_400_information_employment_and_school_name[]" value="<?php echo showData('n_400_information_employment_and_school_name', '1') ?>"></td>
+                    <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_city_town[]" value="<?php echo showData('n_400_information_employment_and_school_city_town', '1') ?>"></td>
+                    <td><input type="text" maxlength="5" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_state_province[]" value="<?php echo showData('n_400_information_employment_and_school_state_province', '1') ?>"></td>
+                    <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_zip_code[]" value="<?php echo showData('n_400_information_employment_and_school_zip_code', '1') ?>"></td>
+                    <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_country[]" value="<?php echo showData('n_400_information_employment_and_school_country',  '1') ?>"></td>
+                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_from_date[]" value="<?php echo showData('n_400_information_employment_and_school_from_date', '1') ?>"></td>
+                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_to_date[]" value="<?php echo showData('n_400_information_employment_and_school_to_date', '1') ?>"></td>
+                    <td><input type="text" maxlength="13" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_occupation[]" value="<?php echo showData('n_400_information_employment_and_school_occupation', '1') ?>"></td>
                 </tr>
                 <tr>
-                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0;" name=""></td>
-                    <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="5" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                    <td><input type="text" maxlength="13" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
+                    <td><input type="text" maxlength="15" style="width: 100%; margin: 0;" name="n_400_information_employment_and_school_name[]" value="<?php echo showData('n_400_information_employment_and_school_name', '2') ?>"></td>
+                    <td><input type="text" maxlength="10" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_city_town[]" value="<?php echo showData('n_400_information_employment_and_school_city_town', '2') ?>"></td>
+                    <td><input type="text" maxlength="5" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_state_province[]" value="<?php echo showData('n_400_information_employment_and_school_state_province', '2') ?>"></td>
+                    <td><input type="text" maxlength="9" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_zip_code[]" value="<?php echo showData('n_400_information_employment_and_school_zip_code', '2') ?>"></td>
+                    <td><input type="text" maxlength="8" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_country[]" value="<?php echo showData('n_400_information_employment_and_school_country',  '2') ?>"></td>
+                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_from_date[]" value="<?php echo showData('n_400_information_employment_and_school_from_date', '2') ?>"></td>
+                    <td><input type="date" maxlength="15" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_to_date[]" value="<?php echo showData('n_400_information_employment_and_school_to_date', '2') ?>"></td>
+                    <td><input type="text" maxlength="13" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_information_employment_and_school_occupation[]" value="<?php echo showData('n_400_information_employment_and_school_occupation', '2') ?>"></td>
                 </tr>
             </tbody>
         </table>
@@ -987,34 +988,34 @@ include "intake_header.php";
         </thead>
         <tbody>
             <tr>
-                <td><input type="date" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="53" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
+                <td><input type="date" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_outside_the_us_left_date[]" value="<?php echo showData('n_400_outside_the_us_left_date', '0') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_outside_the_us_return_date[]" value="<?php echo showData('n_400_outside_the_us_return_date', '0') ?>"></td>
+                <td><input type="text" maxlength="53" style="width: 100%; margin: 0;font-weight: 600;" name="[]" value="<?php echo showData('', '0') ?>"></td>
             </tr>
             <tr>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="53" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_left_date[]" value="<?php echo showData('n_400_outside_the_us_left_date', '1') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_return_date[]" value="<?php echo showData('n_400_outside_the_us_return_date', '1') ?>"></td>
+                <td><input type="text" maxlength="53" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_country_traveled[]" value="<?php echo showData('n_400_outside_the_us_country_traveled', '1') ?>"></td>
+            </tr>
+            <tr>n_400_outside_the_us_country_traveled
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_left_date[]" value="<?php echo showData('n_400_outside_the_us_left_date', '2') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_return_date[]" value="<?php echo showData('n_400_outside_the_us_return_date', '2') ?>"></td>
+                <td><input type="text" maxlength="53" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_country_traveled[]" value="<?php echo showData('n_400_outside_the_us_country_traveled', '2') ?>"></td>
             </tr>
             <tr>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="53" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_left_date[]" value="<?php echo showData('n_400_outside_the_us_left_date', '3') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_return_date[]" value="<?php echo showData('n_400_outside_the_us_return_date', '3') ?>"></td>
+                <td><input type="text" maxlength="53" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_country_traveled[]" value="<?php echo showData('n_400_outside_the_us_country_traveled', '3') ?>"></td>
             </tr>
             <tr>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="53" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_left_date[]" value="<?php echo showData('n_400_outside_the_us_left_date', '4') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_return_date[]" value="<?php echo showData('n_400_outside_the_us_return_date', '4') ?>"></td>
+                <td><input type="text" maxlength="53" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_country_traveled[]" value="<?php echo showData('n_400_outside_the_us_country_traveled', '4') ?>"></td>
             </tr>
             <tr>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="53" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-            </tr>
-            <tr>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="53" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_left_date[]" value="<?php echo showData('n_400_outside_the_us_left_date', '5') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_return_date[]" value="<?php echo showData('n_400_outside_the_us_return_date', '5') ?>"></td>
+                <td><input type="text" maxlength="53" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_outside_the_us_country_traveled[]" value="<?php echo showData('n_400_outside_the_us_country_traveled', '5') ?>"></td>
             </tr>
         </tbody>
     </table>
@@ -1031,7 +1032,7 @@ include "intake_header.php";
     <div class="form-group row">
         <label class="control-label col-md-10">1. Have you EVER claimed to be a U.S. citizen (in writing or any other way)? </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd1") ?>
+            <?php echo createRadio("additional_info_us_citizen_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1039,13 +1040,13 @@ include "intake_header.php";
             States? If you lawfully voted only in a local election where noncitizens are eligible to vote, you may
             answer “No.” </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd2") ?>
+            <?php echo createRadio("additional_info_vote_federal_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">3. Do you currently owe any overdue Federal, state, or local taxes in the United States? </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd3") ?>
+            <?php echo createRadio("additional_info_local_taxes_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1053,7 +1054,7 @@ include "intake_header.php";
             Federal, state, or local tax return or decided not to file a tax return because you considered yourself to
             be a nonresident? </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd4") ?>
+            <?php echo createRadio("additional_info_permanent_resident_status") ?>
         </div>
     </div>
     <div class="form-group row"><label class="control-label col-md-10">Have you EVER:</label></div>
@@ -1061,14 +1062,14 @@ include "intake_header.php";
         <label class="control-label col-md-10">5.a. Been a member of, involved in, or in any way associated with any Communist or totalitarian party
             anywhere in the world? </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5a") ?>
+            <?php echo createRadio("additional_info_communist_or_totalitarain_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">5.b. Advocated (supported and promoted) any of the following, or been a member of, involved in, or in any
             way associated with any group anywhere in the world that advocated any of the following: </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_advocated_status") ?>
         </div>
     </div>
     <div class="form-group" style="font-size: small; font-weight: 600;">
@@ -1096,68 +1097,68 @@ include "intake_header.php";
     <div class="form-group row">
         <label class="control-label col-md-10">6.a. Used a weapon or explosive with intent to harm another person or cause damage to property?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6a") ?>
+            <?php echo createRadio("additional_info_damage_property_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">6.b. Engaged (participated) in kidnapping, assassination, or hijacking or sabotage of an airplane, ship, vehicle, or other mode of transportation?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6b") ?>
+            <?php echo createRadio("additional_info_engaged_in_kidnapping_or_hijacking_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">6.c. Threatened, attempted (tried), conspired (planned with others), prepared, planned, advocated for, or incited (encouraged) others to commit any of the acts listed in Item Numbers 6.a. or 6.b.?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6c") ?>
+            <?php echo createRadio("additional_info_attempted_planned_status") ?>
         </div>
     </div>
     <div class="form-group row"><label class="control-label col-md-10">Have you EVER ordered, incited, called for, committed, assisted, helped with, or otherwise participated in any of the following:</label></div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.a. Torture?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7a") ?>
+            <?php echo createRadio("additional_info_torture_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.b. Genocide?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7b") ?>
+            <?php echo createRadio("additional_info_genocide_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.c. Killing or trying to kill any person?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7c") ?>
+            <?php echo createRadio("additional_info_kill_any_person_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.d. Intentionally and severely injuring or trying to injure any person?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7d") ?>
+            <?php echo createRadio("additional_info_injure_any_person_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.e. Any kind of sexual contact or activity with any person who did not consent (did not agree) or was unable to consent (could not agree), or was being forced or threatened by you or by someone else?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7e") ?>
+            <?php echo createRadio("additional_info_sexual_contact_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.f. Not letting someone practice their religion?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7f") ?>
+            <?php echo createRadio("additional_info_practice_religion_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">7.g. Causing harm or suffering to any person because of their race, religion, national origin, membership in a particular social group, or political opinion?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7g") ?>
+            <?php echo createRadio("additional_info_political_opinion_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">8.a. Have you EVER served in, been a member of, assisted (helped), or participated in any military or police unit?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd8a") ?>
+            <?php echo createRadio("additional_info_participate_in_military_police_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1165,7 +1166,7 @@ include "intake_header.php";
             group that carries weapons), for example: paramilitary unit (a group of people who act like a military
             group but are not part of the official military), self-defense unit, vigilante unit, rebel group, or guerrilla group?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd8a") ?>
+            <?php echo createRadio("additional_info_participate_in_armed_group_status") ?>
         </div>
     </div>
     <div class="form-group row"><label class="control-label col-md-10">If you answered “Yes” to Item Number 8.a. or Item Number 8.b., include the name of the country,
@@ -1176,14 +1177,14 @@ include "intake_header.php";
             prisoners are kept), detention facility, or labor camp, or have you EVER directed or participated in any
             other activity that involved detaining people?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5a") ?>
+            <?php echo createRadio("additional_info_participate_detaining_people_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">10.a. Were you EVER a part of any group, or did you EVER help any group, unit, or organization that used
             a weapon against any person, or threatened to do so? </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_help_organization_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1191,27 +1192,27 @@ include "intake_header.php";
             this group, did you ever use a weapon against another person?
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_use_weapon_against_person_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">10.c. If you answered “Yes” to Item Number 10.a., when you were part of this group, or when you helped
             this group, did you ever threaten another person that you would use a weapon against that person?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_threaten_another_person_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">11. Have you EVER sold, provided, or transported weapons, or assisted any person in selling, providing,
             or transporting weapons, which you knew or believed would be used against another person?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_transported_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">12. Have you EVER received any weapons training, paramilitary training, or other military-type training? </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_weapons_training_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1220,7 +1221,7 @@ include "intake_header.php";
             do so?
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_used_person_under_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1229,7 +1230,7 @@ include "intake_header.php";
             to combat (such as serving as a messenger or transporting supplies).
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_used_person_hostilities_status") ?>
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
@@ -1271,7 +1272,7 @@ include "intake_header.php";
             tried to commit a crime or offense for which you were NOT arrested?
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6a") ?>
+            <?php echo createRadio("additional_info_commit_a_crime_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1279,7 +1280,7 @@ include "intake_header.php";
             official (in the U.S. or elsewhere), or immigration official for any reason, or been charged with a crime
             or offense?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6b") ?>
+            <?php echo createRadio("additional_info_arrested_offense_status") ?>
         </div>
     </div>
 
@@ -1295,58 +1296,58 @@ include "intake_header.php";
                 <th>What was your sentence (if applicable)? (For example, 90 days in jail, 90 days on probation)</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody>n_400_additional_information_date_of_crime_or_offense
             <tr>
-                <td><input type="text" maxlength="20" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="14" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="17" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="10" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
+                <td><input type="text" maxlength="20" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_crime_or_offense', '0') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_date_of_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_date_of_crime_or_offense', '0') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_date_of_conviction[]" value="<?php echo showData('n_400_additional_information_date_of_conviction', '0') ?>"></td>
+                <td><input type="text" maxlength="14" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_place_of_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_place_of_crime_or_offense', '0') ?>"></td>
+                <td><input type="text" maxlength="17" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_result_of_disposition[]" value="<?php echo showData('n_400_additional_information_result_of_disposition', '0') ?>"></td>
+                <td><input type="text" maxlength="10" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_sentence[]" value="<?php echo showData('n_400_additional_information_sentence', '0') ?>"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="20" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="14" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="17" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="10" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
+                <td><input type="text" maxlength="20" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_crime_or_offense', '1') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_date_of_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_date_of_crime_or_offense', '1') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_date_of_conviction[]" value="<?php echo showData('n_400_additional_information_date_of_conviction', '1') ?>"></td>
+                <td><input type="text" maxlength="14" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_place_of_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_place_of_crime_or_offense', '1') ?>"></td>
+                <td><input type="text" maxlength="17" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_result_of_disposition[]" value="<?php echo showData('n_400_additional_information_result_of_disposition', '1') ?>"></td>
+                <td><input type="text" maxlength="10" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_sentence[]" value="<?php echo showData('n_400_additional_information_sentence', '1') ?>"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="20" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="14" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="17" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="10" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
+                <td><input type="text" maxlength="20" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_crime_or_offense', '2') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_date_of_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_date_of_crime_or_offense', '2') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_date_of_conviction[]" value="<?php echo showData('n_400_additional_information_date_of_conviction', '2') ?>"></td>
+                <td><input type="text" maxlength="14" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_place_of_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_place_of_crime_or_offense', '2') ?>"></td>
+                <td><input type="text" maxlength="17" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_result_of_disposition[]" value="<?php echo showData('n_400_additional_information_result_of_disposition', '2') ?>"></td>
+                <td><input type="text" maxlength="10" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_sentence[]" value="<?php echo showData('n_400_additional_information_sentence', '2') ?>"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="20" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="14" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="17" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="10" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
+                <td><input type="text" maxlength="20" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_crime_or_offense', '3') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_date_of_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_date_of_crime_or_offense', '3') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_date_of_conviction[]" value="<?php echo showData('n_400_additional_information_date_of_conviction', '3') ?>"></td>
+                <td><input type="text" maxlength="14" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_place_of_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_place_of_crime_or_offense', '3') ?>"></td>
+                <td><input type="text" maxlength="17" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_result_of_disposition[]" value="<?php echo showData('n_400_additional_information_result_of_disposition', '3') ?>"></td>
+                <td><input type="text" maxlength="10" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_sentence[]" value="<?php echo showData('n_400_additional_information_sentence', '3') ?>"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="20" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="14" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="17" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
-                <td><input type="text" maxlength="10" style="width: 100%; margin: 0;font-weight: 600;" name=""></td>
+                <td><input type="text" maxlength="20" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_crime_or_offense', '4') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_date_of_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_date_of_crime_or_offense', '4') ?>"></td>
+                <td><input type="date" style="width: 100%; margin: 0; font-weight: 600;" name="n_400_additional_information_date_of_conviction[]" value="<?php echo showData('n_400_additional_information_date_of_conviction', '4') ?>"></td>
+                <td><input type="text" maxlength="14" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_place_of_crime_or_offense[]" value="<?php echo showData('n_400_additional_information_place_of_crime_or_offense', '4') ?>"></td>
+                <td><input type="text" maxlength="17" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_result_of_disposition[]" value="<?php echo showData('n_400_additional_information_result_of_disposition', '4') ?>"></td>
+                <td><input type="text" maxlength="10" style="width: 100%; margin: 0;font-weight: 600;" name="n_400_additional_information_sentence[]" value="<?php echo showData('n_400_additional_information_sentence', '4') ?>"></td>
             </tr>
 
         </tbody>
     </table>
 
 
-    <div class="form-group row">
+    <div class="form-group row">n_400_additional_information_place_of_crime_or_offense
         <label class="control-label col-md-10">16. If you received a suspended sentence, were placed on probation, or were paroled, have you completed
             your suspended sentence, probation, or parole?
         </label>
         <div class="col-md-2 ">
-            <?php echo createRadio("rd6c") ?>
+            <?php echo createRadio("additional_info_probation_or_parole_status") ?>
         </div>
     </div>
     <div class="form-group row"><label class="control-label col-md-10">If you answer “Yes” to any of the questions in Item Numbers 17.a. - 19., provide an explanation in the space provided in Part 14. Additional Information. Submit evidence to support your answers.</label></div>
@@ -1369,7 +1370,7 @@ include "intake_header.php";
             prostitution, or received any proceeds or money from prostitution?
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6a") ?>
+            <?php echo createRadio("additional_info_engaged_in_prostitution_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1378,45 +1379,45 @@ include "intake_header.php";
             regulation of a U.S. state, the United States, or a foreign country?
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6b") ?>
+            <?php echo createRadio("additional_info_manufactured_foreign_country_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">17.c. Been married to more than one person at the same time? </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6c") ?>
+            <?php echo createRadio("additional_info_married_more_than_one_person_status") ?>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="control-label col-md-10">17.d. Married someone in order to obtain an immigration benefit?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7a") ?>
+            <?php echo createRadio("additional_info_immiagration_benefit_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">17.e. Helped anyone to enter, or try to enter, the United States illegally? </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7b") ?>
+            <?php echo createRadio("additional_info_us_illegally_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">17.f. Gambled illegally or received income from illegal gambling?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7c") ?>
+            <?php echo createRadio("additional_info_gambled_illegal_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">17.g. Failed to support your dependents (pay child support) or to pay alimony (court-ordered financial
             support after divorce or separation)?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7d") ?>
+            <?php echo createRadio("additional_info_pay_alimony_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">17.h. Made any misrepresentation to obtain any public benefit in the United States?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7e") ?>
+            <?php echo createRadio("additional_info_public_benefit_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1424,14 +1425,14 @@ include "intake_header.php";
             false, fraudulent, or misleading?
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7f") ?>
+            <?php echo createRadio("additional_info_fraudulent_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">19. Have you EVER lied to any U.S. Government officials to gain entry or admission into the United
             States or to gain immigration benefits while in the United States?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7g") ?>
+            <?php echo createRadio("additional_info_government_official_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1442,20 +1443,13 @@ include "intake_header.php";
     <div class="form-group row">
         <label class="control-label col-md-10">20. Have you EVER been placed in removal, rescission, or deportation proceedings?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd8a") ?>
+            <?php echo createRadio("additional_info_removal_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">21. Have you EVER been removed or deported from the United States?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5a") ?>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="control-label col-md-10">10.a. Were you EVER a part of any group, or did you EVER help any group, unit, or organization that used
-            a weapon against any person, or threatened to do so? </label>
-        <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_deported_us_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1468,13 +1462,13 @@ include "intake_header.php";
 
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_born_as_male_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">22.b. If you answered “Yes,” to Item Number 22.a., did you register for the Selective Service?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_selective_service_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1484,13 +1478,13 @@ include "intake_header.php";
         <div class=" col-md-5">
             <label class="control-label " style="margin-left: 3.5%;">Date Registered (mm/dd/yyyy)</label>
             <div class="col-md-12">
-                <input type="date" class="form-control" name="i_290b_additional_info_7a_page_no" maxlength="" value="<?php echo showData('i_290b_additional_info_7a_page_no') ?>">
+                <input type="date" class="form-control" name="additional_info_ragistration_date" maxlength="" value="<?php echo showData('additional_info_ragistration_date') ?>">
             </div>
         </div>
         <div class=" col-md-5">
             <label class="control-label " style="margin-left: 3.5%;">Selective Service Number</label>
             <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_additional_info_7a_page_no" maxlength="10" value="<?php echo showData('i_290b_additional_info_7a_page_no') ?>">
+                <input type="text" class="form-control" name="additional_info_ragistration_service_number" maxlength="10" value="<?php echo showData('additional_info_ragistration_service_number') ?>">
             </div>
         </div>
     </div>
@@ -1506,19 +1500,19 @@ include "intake_header.php";
     <div class="form-group row">
         <label class="control-label col-md-10">23. Have you EVER left the United States to avoid being drafted in the U.S. armed forces?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_avoid_armed_force_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">24. Have you EVER applied for any kind of exemption from military service in the U.S. armed forces?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_applied_exemption_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">25. Have you EVER served in the U.S. armed forces?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_served_us_armed_force_status") ?>
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
@@ -1526,8 +1520,8 @@ include "intake_header.php";
     <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
------------------------- page 10 -------------------------
---------------------------------------------------------->
+------------------------ page 10 ------------------------
+---------------  ------------------------------------------>
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 10 of 14</b></p>
     <div class="bg-info">
@@ -1538,7 +1532,7 @@ include "intake_header.php";
         <label class="control-label col-md-10">26.a. Are you currently a member of the U.S. armed forces?
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6a") ?>
+            <?php echo createRadio("additional_info_currently_member_us_armed_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1548,13 +1542,13 @@ include "intake_header.php";
             United States or to a vessel.)
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6b") ?>
+            <?php echo createRadio("additional_info_outside_us_vessel_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">26.c. If you answered “Yes,” to Item Number 26.a., are you currently stationed outside the United States? </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd6c") ?>
+            <?php echo createRadio("additional_info_currently_stationed_status") ?>
         </div>
     </div>
 
@@ -1563,7 +1557,7 @@ include "intake_header.php";
             currently residing outside of the U.S.?
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7a") ?>
+            <?php echo createRadio("additional_info_former_us_military_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1574,20 +1568,20 @@ include "intake_header.php";
             honorable, bad conduct, or dishonorable, while in the U.S. armed forces?
         </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7b") ?>
+            <?php echo createRadio("additional_info_court_martialed_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">28. Have you EVER been discharged from training or service in the U.S. armed forces because you were
             an alien?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7c") ?>
+            <?php echo createRadio("additional_info_discharged_training_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">29. Have you EVER deserted from the U.S. armed forces?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7d") ?>
+            <?php echo createRadio("additional_info_deserted_us_armed_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1598,15 +1592,18 @@ include "intake_header.php";
     <div class="form-group row">
         <label class="control-label col-md-10">30.a. Do you now have, or did you EVER have, a hereditary title or an order of nobility in any foreign country? </label>
         <div class="col-md-2">
-            <?php echo createRadio("rd7f") ?>
+            <?php echo createRadio("additional_info_hereditary_title_status") ?>
         </div>
         <label class="control-label col-md-10">(skip to Item Number 31.)</label>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">30.b. If you answered “Yes,” to Item Number 30.a., are you willing to give up any inherited titles or orders
-            of nobility, <input type="text" class="form-control" name="i_290b_additional_info_7a_page_no" maxlength="41" value="<?php echo showData('i_290b_additional_info_7a_page_no') ?>"> (list titles), that you have in a
+            of nobility, <input type="text" class="form-control" name="additional_info_inherited_title" maxlength="41" value="<?php echo showData('additional_info_inherited_title') ?>"> (list titles), that you have in a
             foreign country at your naturalization ceremony?
         </label>
+        <div class="col-md-2">
+            <?php echo createRadio("additional_info_inherited_title_status") ?>
+        </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-12">If you answer “'No” to any question except Item Number 33., see the Oath of Allegiance section of the Instructions for more information</label>
@@ -1614,13 +1611,13 @@ include "intake_header.php";
     <div class="form-group row">
         <label class="control-label col-md-10">31. Do you support the Constitution and form of Government of the United States?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd8a") ?>
+            <?php echo createRadio("additional_info_constitution_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">32. Do you understand the full Oath of Allegiance to the United States (see Part 16. Oath of Allegiance)?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5a") ?>
+            <?php echo createRadio("additional_info_allegiance_to_us_status") ?>
         </div>
     </div>
     <div class="form-group row">
@@ -1628,29 +1625,32 @@ include "intake_header.php";
             mental impairment? If you answer “Yes,” skip Item Numbers 34. - 37. and see the Legal Guardian,
             Surrogate, or Designated Representative section in the Instructions.</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_physical_or_developmental_status") ?>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="control-label col-md-10">34. Are you willing to take the full Oath of Allegiance to the United States?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_willing_allegiance_to_us_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">35. If the law requires it, are you willing to bear arms (carry weapons) on behalf of the United States?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_willing_bear_arms_status") ?>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">36. If the law requires it, are you willing to perform noncombatant services (do something that does not include fighting in a war) in the U.S. armed forces?</label>
+        <div class="col-md-2">
+            <?php echo createRadio("additional_info_noncombatant_service_status") ?>
+        </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-10">37. If the law requires it, are you willing to perform work of national importance under civilian direction (do non-military work that the U.S. Government says is important to the country)?</label>
         <div class="col-md-2">
-            <?php echo createRadio("rd5b") ?>
+            <?php echo createRadio("additional_info_importance_under_civilian_status") ?>
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />

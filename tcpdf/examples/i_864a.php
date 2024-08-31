@@ -2507,31 +2507,30 @@ var fields = {
     'your_household_member_printed_name':' " . showData('') . "',
     'your_household_member_signature':' " . showData('') . "',
     'your_household_member_date_of_signature':' " . showData('') . "',
-    'part7_interpreter_family_last_name':' " . showData('') . "',
-    'part7_interpreter_given_first_name':' " . showData('') . "',
-    'part7_interpreter_business_org_name':' " . showData('') . "',
+    'part7_interpreter_family_last_name':' " . showData('i_864a_preparer_family_last_name') . "',
+    'part7_interpreter_given_first_name':' " . showData('i_864a_preparer_given_first_name') . "',
+    'part7_interpreter_business_org_name':' " . showData('i_864a_preparer_business_name') . "',
 
-    'part7_interpreter_mailing_street_number':' " . showData('') . "',
-    'part7_interpreter_mailing_apt_ste_flr':' " . showData('') . "',
-    'part7_interpreter_mailing_city_town':' " . showData('') . "',
-    'part7_interpreter_mailing_state':' " . showData('') . "',
-    'part7_interpreter_mailing_zipcode':' " . showData('') . "',
-    'part7_interpreter_mailing_province':' " . showData('') . "',
-    'part7_interpreter_mailing_postal_code':' " . showData('') . "',
-    'part7_interpreter_mailing_country':' " . showData('') . "',
+//page 5 end............
 
-    'part7_interpreter_daytime_telephone':' " . showData('') . "',
-    'part7_interpreter_mobile_telephone':' " . showData('') . "',
-    'part7_interpreter_email_address':' " . showData('') . "',
-    'interpreter_certification':' " . showData('') . "',
-    'interpreter_signature_date':' " . showData('') . "',
-
-    'part8_preparer_family_last_name':' " . showData('') . "',
-    'part8_preparer_given_first_name':' " . showData('') . "',
-    'part8_preparer_business_org_name':' " . showData('') . "',
-
-    'part8_preparer_mailing_street_number':' " . showData('') . "',
-    'part8_preparer_mailing_apt_ste_flr':' " . showData('') . "',
+    'part7_interpreter_mailing_street_number':' " . showData('i_864a_interpreter_address_street_number') . "',
+    'part7_interpreter_mailing_apt_ste_flr':' " . showData('i_864a_interpreter_address_apt_ste_flr_value') . "',
+    'part7_interpreter_mailing_city_town':' " . showData('i_864a_interpreter_address_city_town') . "',
+    'part7_interpreter_mailing_state':' " . showData('i_864a_interpreter_address_state') . "',
+    'part7_interpreter_mailing_zipcode':' " . showData('i_864a_interpreter_address_zip_code') . "',
+    'part7_interpreter_mailing_province':' " . showData('i_864a_interpreter_address_province') . "',
+    'part7_interpreter_mailing_postal_code':' " . showData('i_864a_interpreter_address_postal_code') . "',
+    'part7_interpreter_mailing_country':' " . showData('i_864a_interpreter_address_country') . "',
+    'part7_interpreter_daytime_telephone':' " . showData('i_864a_interpreter_daytime_tel') . "',
+    'part7_interpreter_mobile_telephone':' " . showData('i_864a_interpreter_mobile') . "',
+    'part7_interpreter_email_address':' " . showData('i_864a_interpreter_email') . "',
+    'interpreter_certification':' " . showData('i_864a_interpreter_fluent_in_english') . "',
+    'interpreter_signature_date':' " . showData('i_864a_interpreter_sign_date') . "',
+    'part8_preparer_family_last_name':' " . showData('i_864a_preparer_family_last_name') . "',
+    'part8_preparer_given_first_name':' " . showData('i_864a_preparer_given_first_name') . "',
+    'part8_preparer_business_org_name':' " . showData('i_864a_preparer_business_name') . "',
+    'part8_preparer_mailing_street_number':' " . showData('i_864a_preparer_address_street_number') . "',
+    'part8_preparer_mailing_apt_ste_flr':' " . showData('i_864a_preparer_address_apt_ste_flr_value') . "',
     'part8_preparer_mailing_city_town':' " . showData('i_864a_preparer_address_city_town') . "',
     'part8_preparer_mailing_state':' " . showData('i_864a_preparer_address_state') . "',
     'part8_preparer_mailing_zipcode':' " . showData('i_864a_preparer_address_zip_code') . "',
@@ -2543,9 +2542,11 @@ var fields = {
     'part8_preparer_email_address':' " . showData('i_864a_preparer_email') . "',
 
 //page 6 end...........    
+
     'Preparer_signature_date':' " . showData('i_864a_preparer_sign_date') . "',
     
-//page 7 end.......    
+//page 7 end.......
+
     'i_864a_additional_info_family_last_name':' " . showData('i_864a_additional_info_last_name') . "',
     'i_864a_additional_info_given_first_name':' " . showData('i_864a_additional_info_first_name') . "',
     'i_864a_additional_info_middle_name':' " . showData('i_864a_additional_info_middle_name') . "',
@@ -2581,4 +2582,4 @@ $pdf->IncludeJS($js);
 
 // $pdf->lastPage();
 //Close and output PDF document
-$pdf->Output('I-864A.pdf', 'I');
+$pdf->Output('I-864a.pdf', 'I');
