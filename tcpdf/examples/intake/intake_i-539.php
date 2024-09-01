@@ -676,6 +676,7 @@ include "intake_header.php";
                 <label class="control-label">Number</label>
                 <input type="text" class="form-control" name="principal_applicant_apt_ste_flr_value" maxlength="5" value="<?php echo showData('principal_applicant_apt_ste_flr_value') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
+            
         </div>
         <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
