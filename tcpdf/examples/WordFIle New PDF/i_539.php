@@ -41,7 +41,7 @@ class MyPDF extends TCPDF
 		// Set font
 		$this->SetFont('times', '', 9);
 
-		$this->Cell(40, 6, "Form I-539    Edition    08/28/24", 0, 0, 'L');
+		$this->Cell(40, 6, "Form I-539    Edition    07/27/24", 0, 0, 'L');
 
 
 		// if ($this->page == 1){
@@ -111,7 +111,7 @@ $pdf->MultiCell(80, 15, "U.S. Citizenship and Immigration Services", 0, 'C', 0, 
 
 $pdf->SetFont('times', '', 9);	// set font
 $pdf->setCellPaddings(2, 1, 6, 0); // set cell padding
-$pdf->MultiCell(40, 5, "OMB No. 1615-0003\nExpires 03/31/2027", 0, 'C', 0, 1, 169, 18.5, true);
+$pdf->MultiCell(40, 5, "OMB No. 1615-0003\nExpires 02/28/2027", 0, 'C', 0, 1, 169, 18.5, true);
 
 $pdf->Ln(1.3);
 
@@ -652,7 +652,78 @@ $pdf->writeHTMLCell(100, 6, 130, 164, 'I am requesting the change to be effectiv
 $pdf->setCellHeightRatio(1.1); // set cell height ratio
 //..............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->ComboBox('p2_2_combobox', 92, 7, array(), array(), array(), 37, 174);
+$pdf->ComboBox('p2_2_combobox', 92, 7, array(
+	' A1 - AMBASSADOR, DIPLOMAT',
+	' A2 - OTHER DIPLOMATIC OFFICIALS',
+	' A3 - ATTENDANTS OF A-1, A-2',
+	' B1 - TEMPORARY VISITOR FOR BUSINESS',
+	' B1A - NI PERSNL-DOM SRVANT OF NI EMP',
+	' B1B - NI DOMESTIC SERVANT OF USC',
+	' B1C - NI EMPLOYED BY FOREIGN AIRLINE',
+	' B1D - NI - MISSIONARIES',
+	' B2 - TEMPORARY VISITOR FOR PLEASURE',
+	' C1 - ALIEN IN TRANSIT THROUGH U.S.',
+	' C2 - ALIEN IN TRANSIT TO UN HQ',
+	' C3 - FRN GOV OFF IN TRANSIT THRU US',
+	' C4 - TRANSIT WITHOUT A VISA',
+	' CH - PAROLEE (HUMANITARIAN-HQ AUTH)',
+	' CW1 - Principal Transitional Workers',
+	' CW2 - Dependent of CW1',
+	' E1S - Spouse of a Treaty Trader',
+	' E1Y - Child of a Treaty Trader',
+	' E2C - CNMI Investor',
+	' E2S - Spouse of a Treaty Investor',
+	' E2Y - Child of a Treaty Investor',
+	' E3S - Spouse of Australian Free Trade',
+	' E3Y - Child of Australian Free Trade',
+	' F1 - Student - Academic',
+	' F2 - Spouse-Child of F-1',
+	' G1 - Principal Rep. Foreign Govt',
+	' G2 - Other Rep Foreign Govt',
+	' G3 - Rep Non-Recognized Foreign Gov',
+	' G4 - Officer-Employee Intl. Org.',
+	' G5 - Attendants of G1, G2, G3, G4',
+	' H4 - SPS or Child of H1, H2, H3 or H2R',
+	' I - Foreign Press',
+	' J1 - Exchange Visitor - Others',
+	' J1S - EXCHANGE VISITOR = STUDENT',
+	' J2 - SPOUSE-CHILD OF J-1',
+	' J2S - SPOUSE-CHILD OF J-1S',
+	' K3 - SPOUSE OF USC',
+	' K4 - CHILD OF USC',
+	' L2S - SPOUSE OF AN L-1A OR L-1B',
+	' L2Y - CHILD OF AN L-1A OR L-1B',
+	' M1 - STUDENT - VOCATIONAL-NON-ACAD.',
+	' M2 - SPOUSE-CHILD OF M-1',
+	' N1 - PRINCIPAL REP. OF NATO MEMBER',
+	' N2 - OTHER REP. OF NATO MEMBER',
+	' N3 - CLERICAL STAFF FOR N-1, N-2',
+	' N4 - OFFICIALS OF NATO',
+	' N5 - EXPERTS EMPLOYED BY NATO',
+	' N6 - CIVILIAN COMPONENT OF NATO',
+	' N7 - ATTENDANTS OF N-1 THROUGH N-6',
+	' N8 - PARENT OF SPEC IMMIGRANT CHILD',
+	' N9 - SPOUSE-CHILD OF N8',
+	' O3 - SPOUSE-CHILD OF O-1, O-2',
+	' P4 - SPOUSE-CHILD OF P-1, P-2, P-3',
+	' R2 - SPOUSE-CHILD OF R-1',
+	' T1 - VICTIM OF SEVERE FORM OF TRAFK',
+	' T2 - SPOUSE OF T1',
+	' T3 - CHILD OF T1',
+	' T4 - PARENT OF T1',
+	' T5 - UNMARRIED UNDER 18 SIBLG T1 NI',
+	' TD - NAFTA DEPENDENT',
+	' U1 - VICTIM OF CRIMINAL ACTIVITY',
+	' U2 - SPOUSE OF U1',
+	' U3 - CHILD OF U1',
+	' U4 - PARENT OF U1',
+	' U5 - UNMARRIED UNDER 18 SIBLG U1 NI',
+	' V1 - SPOUSE OF LPR',
+	' V2 - CHILD OF LPR',
+	' V3 - CHILD OF V2',
+	' WB - VISITOR FOR BUSINESS - VWPP',
+	' WT - VISITOR FOR PLEASURE - VWP'
+), array(), array(), 37, 174);
 
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('p2_2_requesting_date', 51, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 153, 174.5);
@@ -1417,8 +1488,6 @@ $pdf->writeHTMLCell(174.5, 1, 21.2, 236.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 242.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.8, 33.2, 21, 222, '', 1, 1, false, 'L');
 //...........
-// 'attorney_state_bar_number':' $attorneyData->bar_number',
-// 'attorney_or_according_representative':' $attorneyData->uscis_online_account_number ',
 $js = "
 var fields = {
 	'attorney_state_bar_number':' $attorneyData->bar_number',
@@ -1452,7 +1521,7 @@ var fields = {
 	'p1_11_passport_travel_expiration_date':' " . showData('other_information_about_you_expiry_date_issuance_passport') . " ',
 	'p1_12_nonimmigran_status_combobox':' " . showData('i_539_nonimmigrant_status_combobox') . " ',
 	'p1_12_date_status_expires':' " . showData('i_539_nonimmigrant_status_expires_date') . " ',
-	'p2_2_combobox':' " . showData('i_539_application_type_request_to_change_info') . " ',
+	'p2_2_combobox':' " . showData('i_539_application_type_request_to_change_info_combobox') . " ',
 	'p2_2_requesting_date':' " . showData('application_type_request_to_change_info_date') . " ',
 	'p2_4_total_number_people':' " . showData('application_type_i_539a_applicant') . " ',
 	'p2_5_exchange_visitor':' " . showData('application_type_name_of_school_visitor') . " ',

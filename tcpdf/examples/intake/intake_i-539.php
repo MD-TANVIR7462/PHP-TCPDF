@@ -507,146 +507,64 @@ include "intake_header.php";
                 <label class="control-label">I am requesting to change my status or employer/information </label><br>
                 <label class="control-label">medium to:</label>
                 <div>
-                    <select class="form-control" name="i_539_application_type_request_to_change_info_combobox">
-                        <option value=''></option>
-                        <?php
-                        $values = [
-                            ' A1 - AMBASSADOR, DIPLOMAT',
-                            ' A2 - OTHER DIPLOMATIC OFFICIALS',
-                            ' A3 - ATTENDANTS OF A-1, A-2',
-                            ' B1 - TEMPORARY VISITOR FOR BUSINESS',
-                            ' B1A - NI PERSNL-DOM SRVANT OF NI EMP',
-                            ' B1B - NI DOMESTIC SERVANT OF USC',
-                            ' B1C - NI EMPLOYED BY FOREIGN AIRLINE',
-                            ' B1D - NI - MISSIONARIES',
-                            ' B2 - TEMPORARY VISITOR FOR PLEASURE',
-                            ' C1 - ALIEN IN TRANSIT THROUGH U.S.',
-                            ' C2 - ALIEN IN TRANSIT TO UN HQ',
-                            ' C3 - FRN GOV OFF IN TRANSIT THRU US',
-                            ' C4 - TRANSIT WITHOUT A VISA',
-                            ' CH - PAROLEE (HUMANITARIAN-HQ AUTH)',
-                            ' CW1 - Principal Transitional Workers',
-                            ' CW2 - Dependent of CW1',
-                            ' E1S - Spouse of a Treaty Trader',
-                            ' E1Y - Child of a Treaty Trader',
-                            ' E2C - CNMI Investor',
-                            ' E2S - Spouse of a Treaty Investor',
-                            ' E2Y - Child of a Treaty Investor',
-                            ' E3S - Spouse of Australian Free Trade',
-                            ' E3Y - Child of Australian Free Trade',
-                            ' F1 - Student - Academic',
-                            ' F2 - Spouse-Child of F-1',
-                            ' G1 - Principal Rep. Foreign Govt',
-                            ' G2 - Other Rep Foreign Govt',
-                            ' G3 - Rep Non-Recognized Foreign Gov',
-                            ' G4 - Officer-Employee Intl. Org.',
-                            ' G5 - Attendants of G1, G2, G3, G4',
-                            ' H4 - SPS or Child of H1, H2, H3 or H2R',
-                            ' I - Foreign Press',
-                            ' J1 - Exchange Visitor - Others',
-                            ' J1S - EXCHANGE VISITOR = STUDENT',
-                            ' J2 - SPOUSE-CHILD OF J-1',
-                            ' J2S - SPOUSE-CHILD OF J-1S',
-                            ' K3 - SPOUSE OF USC',
-                            ' K4 - CHILD OF USC',
-                            ' L2S - SPOUSE OF AN L-1A OR L-1B',
-                            ' L2Y - CHILD OF AN L-1A OR L-1B',
-                            ' M1 - STUDENT - VOCATIONAL-NON-ACAD.',
-                            ' M2 - SPOUSE-CHILD OF M-1',
-                            ' N1 - PRINCIPAL REP. OF NATO MEMBER',
-                            ' N2 - OTHER REP. OF NATO MEMBER',
-                            ' N3 - CLERICAL STAFF FOR N-1, N-2',
-                            ' N4 - OFFICIALS OF NATO',
-                            ' N5 - EXPERTS EMPLOYED BY NATO',
-                            ' N6 - CIVILIAN COMPONENT OF NATO',
-                            ' N7 - ATTENDANTS OF N-1 THROUGH N-6',
-                            ' N8 - PARENT OF SPEC IMMIGRANT CHILD',
-                            ' N9 - SPOUSE-CHILD OF N8',
-                            ' O3 - SPOUSE-CHILD OF O-1, O-2',
-                            ' P4 - SPOUSE-CHILD OF P-1, P-2, P-3',
-                            ' R2 - SPOUSE-CHILD OF R-1',
-                            ' T1 - VICTIM OF SEVERE FORM OF TRAFK',
-                            ' T2 - SPOUSE OF T1',
-                            ' T3 - CHILD OF T1',
-                            ' T4 - PARENT OF T1',
-                            ' T5 - UNMARRIED UNDER 18 SIBLG T1 NI',
-                            ' TD - NAFTA DEPENDENT',
-                            ' U1 - VICTIM OF CRIMINAL ACTIVITY',
-                            ' U2 - SPOUSE OF U1',
-                            ' U3 - CHILD OF U1',
-                            ' U4 - PARENT OF U1',
-                            ' U5 - UNMARRIED UNDER 18 SIBLG U1 NI',
-                            ' V1 - SPOUSE OF LPR',
-                            ' V2 - CHILD OF LPR',
-                            ' V3 - CHILD OF V2',
-                            ' WB - VISITOR FOR BUSINESS - VWPP',
-                            ' WT - VISITOR FOR PLEASURE - VWP'
-                        ];
-                        $selected_value = showData('i_539_application_type_request_to_change_info_combobox');
-                        foreach ($values as $value) {
-                            $selected = ($value == $selected_value) ? "selected" : "";
-                            echo "<option value='$value' $selected>$value</option>";
-                        }
-                        ?>
-                    </select>
-
+                    <div><input type="date" class="form-control" name="i_539_application_type_request_to_change_info" maxlength="46" value="<?php echo showData('i_539_application_type_request_to_change_info') ?>">
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <label class="control-label">I am requesting the change to be effective </label>
+                    <label class="control-label">(mm/dd/yyyy)</label>
+                    <div><input type="date" class="form-control" name="application_type_request_to_change_info_date" value="<?php echo showData('application_type_request_to_change_info_date') ?>">
+                    </div>
                 </div>
             </div>
-            <div class=" col-md-4">
-                <label class="control-label">I am requesting the change to be effective </label>
-                <label class="control-label">(mm/dd/yyyy)</label>
-                <div><input type="date" class="form-control" name="application_type_request_to_change_info_date" value="<?php echo showData('application_type_request_to_change_info_date') ?>">
+            <label class="control-label col-md-12">3. Number of people included in this application (select only one box):</label>
+            <div class="col-md-12 ">
+                <div class="form-group">
+                    <label class="control-label" style="margin-left: 30px;"><input type="radio" name="application_type_number_of_included_status" value="onlyapplicant" <?php echo (showData('application_type_number_of_included_status') == 'onlyapplicant') ? 'checked' : '' ?>> I am the only applicant</label> <br>
+                    <label class="control-label" style="margin-left: 30px;"><input type="radio" name="application_type_number_of_included_status" value="myfamily" <?php echo (showData('application_type_number_of_included_status') == 'myfamily') ? 'checked' : '' ?>> I am filing this application for myself and members of my family. </label> <br>
                 </div>
             </div>
-        </div>
-        <label class="control-label col-md-12">3. Number of people included in this application (select only one box):</label>
-        <div class="col-md-12 ">
             <div class="form-group">
-                <label class="control-label" style="margin-left: 30px;"><input type="radio" name="application_type_number_of_included_status" value="onlyapplicant" <?php echo (showData('application_type_number_of_included_status') == 'onlyapplicant') ? 'checked' : '' ?>> I am the only applicant</label> <br>
-                <label class="control-label" style="margin-left: 30px;"><input type="radio" name="application_type_number_of_included_status" value="myfamily" <?php echo (showData('application_type_number_of_included_status') == 'myfamily') ? 'checked' : '' ?>> I am filing this application for myself and members of my family. </label> <br>
+                <label class="control-label col-md-9">4. The total number of people (including me) in the application is: (Form I-539A is required for each co-applicant.)</label>
+                <div class="col-md-3">
+                    <div><input type="text" class="form-control" name="application_type_i_539a_applicant" maxlength="8" value="<?php echo showData('application_type_i_539a_applicant') ?>">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-9">4. The total number of people (including me) in the application is: (Form I-539A is required for each co-applicant.)</label>
-            <div class="col-md-3">
-                <div><input type="text" class="form-control" name="application_type_i_539a_applicant" maxlength="8" value="<?php echo showData('application_type_i_539a_applicant') ?>">
+            <div class="form-group">
+                <label class="control-label col-md-12">5. The name of the school you will attend (if applicable) as an Academic Student, Vocational Student, or Exchange Visitor</label>
+                <div class="col-md-12">
+                    <div><input type="text" class="form-control" name="application_type_name_of_school_visitor" maxlength="86" value="<?php echo showData('application_type_name_of_school_visitor') ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-8">6. Your Student and Exchange Visitor Information System (SEVIS) ID Number, if applicable</label>
+                <div class="col-md-4">
+                    <div><input type="text" class="form-control" name="application_type_sevis_id_number" maxlength="24" value="<?php echo showData('application_type_sevis_id_number') ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b>Part 3. Processing Information</b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-9">1. I/We request that my/our current or requested status be extended until (mm/dd/yyyy):</label>
+                <div class="col-md-3">
+                    <div><input type="date" class="form-control" name="processing_info_extended_date" value="<?php echo showData('processing_info_extended_date') ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-10">2. Is this application based on an extension or change of status already granted to your spouse, child, or parent?</label>
+                <div class="col-md-2">
+                    <?php echo createRadio("processing_info_granted_spouse_child_parent_status") ?>
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">5. The name of the school you will attend (if applicable) as an Academic Student, Vocational Student, or Exchange Visitor</label>
-            <div class="col-md-12">
-                <div><input type="text" class="form-control" name="application_type_name_of_school_visitor" maxlength="86" value="<?php echo showData('application_type_name_of_school_visitor') ?>">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-8">6. Your Student and Exchange Visitor Information System (SEVIS) ID Number, if applicable</label>
-            <div class="col-md-4">
-                <div><input type="text" class="form-control" name="application_type_sevis_id_number" maxlength="24" value="<?php echo showData('application_type_sevis_id_number') ?>">
-                </div>
-            </div>
-        </div>
-        <div class="bg-info">
-            <h4><b>Part 3. Processing Information</b></h4>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-9">1. I/We request that my/our current or requested status be extended until (mm/dd/yyyy):</label>
-            <div class="col-md-3">
-                <div><input type="date" class="form-control" name="processing_info_extended_date" value="<?php echo showData('processing_info_extended_date') ?>">
-                </div>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="control-label col-md-10">2. Is this application based on an extension or change of status already granted to your spouse, child, or parent?</label>
-            <div class="col-md-2">
-                <?php echo createRadio("processing_info_granted_spouse_child_parent_status") ?>
-            </div>
-        </div>
-    </div>
-    <input type="submit" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+        <input type="submit" name="previous" class="previous btn btn-default" value="Previous" />
+        <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+        <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
