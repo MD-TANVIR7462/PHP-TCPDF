@@ -1417,8 +1417,7 @@ $pdf->writeHTMLCell(174.5, 1, 21.2, 236.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 242.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.8, 33.2, 21, 222, '', 1, 1, false, 'L');
 //...........
-// 'attorney_state_bar_number':' $attorneyData->bar_number',
-// 'attorney_or_according_representative':' $attorneyData->uscis_online_account_number ',
+
 $js = "
 var fields = {
 	'attorney_state_bar_number':' $attorneyData->bar_number',
