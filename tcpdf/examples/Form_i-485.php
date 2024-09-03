@@ -5441,15 +5441,10 @@ language (for example, American Sign Language).):</div>';
 $pdf->writeHTMLCell(80, 7, 25, 167, $html, 0, 0, false, true, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
-/* $html = <<<EOD
-<textarea cols="18" rows="4" name="part_9_2a_accomodation_for_individuals">
-showData('i_485_remained_outside_united_states_during_war_nationality')
-</textarea>
-EOD;
-$pdf->writeHTMLCell(80, 15, 25, 185, $html, 0, 0, false, true, 'L', true);
- */
-
-$pdf->setCellHeightRatio(2.2);
+$pdf->setCellHeightRatio(1.8);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell(79.8, 1, 25, 171, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(79.8, 1, 25, 176.8, '',  "B",  0, false, false, 'C', true); // line 
 $pdf->TextField('part_9_2a_accomodation_for_individuals', 80, 15, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 0, 'borderStyle' => 'solid'), array('v' => showData('i_485_deaf_hard_of_hearing_language_sign')), 25, 185);
 $pdf->setCellHeightRatio(1.2);
 
@@ -5465,14 +5460,10 @@ following accommodation:</div>';
 $pdf->writeHTMLCell(78, 7, 25, 205, $html, 0, 0, false, true, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
-/* $html = <<<EOD
-<textarea cols="18" rows="4" name="part_9_2b_accomodation_for_individuals">
-
-</textarea>
-EOD;
-$pdf->writeHTMLCell(80, 15, 25, 215, $html, 0, 0, false, true, 'L', true); */
-
-$pdf->setCellHeightRatio(2.2);
+$pdf->setCellHeightRatio(1.8);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell(79.8, 1, 25, 209.8, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(79.8, 1, 25, 215, '',  "B",  0, false, false, 'C', true); // line 
 $pdf->TextField('part_9_2b_accomodation_for_individuals', 80, 15, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 0, 'borderStyle' => 'solid'), array('v' => showData('i_485_blind_low_vision_desc')), 25, 215);
 $pdf->setCellHeightRatio(1.2);
 
@@ -5490,16 +5481,11 @@ impairment and the accommodation you are
 requesting.)</div>';
 $pdf->writeHTMLCell(80, 7, 125, 16, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-
-/* $html = <<<EOD
-<textarea cols="18" rows="4" name="part_9_2c_accomodation_for_individuals">
-
-</textarea>
-EOD;
-$pdf->writeHTMLCell(80, 15, 125, 35, $html, 0, 0, false, true, 'L', true); */
-
-$pdf->setCellHeightRatio(2.2);
-$pdf->TextField('part_9_2c_accomodation_for_individuals', 80, 15, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 0, 'borderStyle' => 'solid'), array('v' => showData('i_485_another_type_of_disability_desc')), 125, 35);
+$pdf->setCellHeightRatio(1.8);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell(79.8, 1, 125, 21, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(79.8, 1, 125, 26.8, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->TextField('part_9_2c_accomodation_for_individuals', 80, 15, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 0, 'borderStyle' => 'solid'), array('v' => showData('i_485_blind_low_vision_desc')), 125, 35);
 $pdf->setCellHeightRatio(1.2);
 
 //.......
@@ -6865,7 +6851,6 @@ var fields = {
 	
 	// page 16
 	
-    'part_9_2c_accomodation_for_individuals':' " . showData('i_485_another_type_of_disability_desc') . "',
     'applicants_contact_telephone':' " . showData('i_485_applicant_daytime_tel') . "',
     'applicants_contact_mobile':' " . showData('i_485_applicant_mobile') . "',
     'applicants_contact_email':' " . showData('i_485_applicant_email') . "',
