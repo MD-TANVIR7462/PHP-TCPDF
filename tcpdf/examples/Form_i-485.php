@@ -1,5 +1,5 @@
 <?php
-// require_once('formheader.php');   //database connection file 
+
 require_once("config.php");
 //$allDataCountry = indexByQueryAllData("SELECT * FROM countries");
 
@@ -53,9 +53,6 @@ class MyPDF extends TCPDF
         $barcode_image = "images/i485/I-485-footer-pdf417-$this->page.png";
         // )
         $this->Image($barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
-
-        // $this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 'T', 'R', 1, 0);
-
 
         $this->MultiCell(61, 6, 'Page ' . $this->getAliasNumPage() . ' of ' . $this->getAliasNbPages(), 0, 'R', 0, 1, 156, 264.5, true);
     }
@@ -438,6 +435,7 @@ $pdf->writeHTMLCell(90, 7, 112, 217, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $checked_male = (showData('other_information_about_you_gender') == 'male') ? "checked" : "";
 $checked_female = (showData('other_information_about_you_gender') == 'female') ? "checked" : "";
+$pdf->SetFont('times', '', 10);
 $html = '<div><b>6.    </b> Sex   <input type="checkbox" name="gender" value="M"  checked="' . $checked_male . '" />  Male  &nbsp;  <input type="checkbox" name="gender" value="F" checked="' . $checked_female . '"/>  Female</div>';
 $pdf->writeHTMLCell(80, 10, 112, 235, $html, 0, 1, false, true, 'J', true);
 
@@ -454,16 +452,16 @@ $pdf->TextField('other_info_you_city_town_of_birth', 85, 7, array('strokeColor' 
 /********************************
  ******** Start Page No 2 ********
  *********************************/
-$pdf->AddPage('P', 'LETTER'); //page number 2
+$pdf->AddPage('P', 'LETTER'); 
 $pdf->StartTransform();
 $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(-270);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(10, 10, "t", '', 'R', 0, 0, 16, 140, false); // header angle
+$pdf->MultiCell(10, 10, "t", '', 'R', 0, 0, 15.5, 142, false); // header angle
 $pdf->StopTransform();
 $pdf->SetFont('times', '', 10);
 $html = '<div>A-Number  </div>';
-$pdf->writeHTMLCell(60, 7, 100, 0, $html, 0, 1, false, false, 'C', true);
+$pdf->writeHTMLCell(60, 7, 107, 0, $html, 0, 1, false, false, 'C', true);
 $pdf->SetFont('times', 'B', 10);
 $pdf->writeHTMLCell(60, 7, 120, 2, 'A-', 0, 1, false, false, 'C', true);
 $pdf->writeHTMLCell(51, 7, 153, 3, '' . showData('i_485_a_number') . '', 1, 1, false, true, 'C', true);
@@ -523,22 +521,22 @@ $pdf->setCellHeightRatio(1.1);
 $pdf->setCellPaddings(1, 0.5, 1, 0.5); // set cell padding
 $pdf->SetFontSize(11.6); // set font
 $html = '<div><b>U.S. Mailing Address </b></div>';
-$pdf->writeHTMLCell(90, 7, 13, 109, $html, 0, 1, true, false, 'J', true);
-$pdf->SetFont('times', 'BI', 8);
+$pdf->writeHTMLCell(90, 6.6, 13, 105, $html, 0, 1, true, false, 'J', true);
+$pdf->SetFont('times', 'BI', 7.5);
 $html = '<div><a href="https://tools.usps.com/go/ZipLookupAction_input"><b><i>(USPS ZIP Code Lookup)</i></b></a></div>';
-$pdf->writeHTMLCell(90, 7, 13, 162, $html, 0, 1, false, false, 'R', true);
+$pdf->writeHTMLCell(90, 7, 13, 161, $html, 0, 1, false, false, 'R', true);
 //...........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>12.a. </b>&nbsp; &nbsp;In Care Of Name (if any)</div>';
-$pdf->writeHTMLCell(90, 7, 12, 117, $html, 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(90, 7, 12, 114, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('info_about_you_us_mail_in_care_name', 80, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 122);
+$pdf->TextField('info_about_you_us_mail_in_care_name', 80, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 119);
 //...........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>12.b.  </b>   Street Number  &nbsp; <br>  &nbsp;  &nbsp; &nbsp;  &nbsp; and Name </div>';
-$pdf->writeHTMLCell(40, 12, 12, 129, $html, 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(40, 12, 12, 126, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('info_about_you_us_mail_street', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 46, 130.5);
+$pdf->TextField('info_about_you_us_mail_street', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 46, 127.5);
 //...........
 $mailing_apt = (showData('information_about_you_us_mailing_apt_ste_flr') == 'apt') ? "checked" : "";
 $mailing_ste = (showData('information_about_you_us_mailing_apt_ste_flr') == 'ste') ? "checked" : "";
@@ -546,38 +544,40 @@ $mailing_flr = (showData('information_about_you_us_mailing_apt_ste_flr') == 'flr
 
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>12.c. </b>&nbsp; &nbsp; <input type="checkbox" name="Apt" value="Apt" checked="' . $mailing_apt . '" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste" value="Ste" checked="' . $mailing_ste . '" />Ste. <input type="checkbox" name="Flr" value="Flr" checked="' . $mailing_flr . '" /> Flr.</div>';
-$pdf->writeHTMLCell(60, 0, 12, 139, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(60, 0, 12, 136, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('info_about_you_us_mail_apt_ste_flr', 40, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 63, 139);
+$pdf->TextField('info_about_you_us_mail_apt_ste_flr', 40, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 63, 136);
 //......
 
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>12.d.</b> &nbsp; City or Town </div>';
-$pdf->writeHTMLCell(50, 5, 12, 148, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(50, 5, 12, 145, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('info_about_you_us_mail_city_town', 55, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 48, 147.5);
+$pdf->TextField('info_about_you_us_mail_city_town', 55, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 48, 144.5);
 //............
 
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>12.e.</b> &nbsp;State</div>';
-$pdf->writeHTMLCell(50, 0, 12, 156, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(50, 0, 12, 153, $html, '', 0, 0, true, 'L');
+
 $pdf->SetFont('courier', 'B', 10);
-$html = '<select name="info_about_you_us_mail_state" size="0.25">';
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+	$comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
+$pdf->ComboBox("info_about_you_us_mail_state", 14, 7, $comboBoxOptions, array(), array(), 29.5, 153);
+
+
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(25, 0, 29.5, 156, $html, '', 0, 0, true, 'L');
 $html = '<div><b>12.f.</b>&nbsp;ZIP Code</div>';
-$pdf->writeHTMLCell(30, 7, 46, 156, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(30, 7, 46, 153, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('info_about_you_us_mail_zipcode', 32, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 156);
+$pdf->TextField('info_about_you_us_mail_zipcode', 32, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 153);
 //..........
 
 $pdf->SetFont('times', 'I', 12);
 $html = '<div><b>Alternate and/or Safe Mailing Address </b></div>';
-$pdf->writeHTMLCell(90, 7, 13, 167, $html, 0, 1, true, false, 'J', true);
+$pdf->writeHTMLCell(90, 6.6, 13, 165, $html, 0, 1, true, false, 'J', true);
 //.......
 
 $pdf->SetFont('times', '', 10);
@@ -588,7 +588,7 @@ victim (T nonimmigrant), or victim of a qualifying crime (U<br>
 nonimmigrant) and you do not want USCIS to send notices<br>
 about this application to your home, you may provide an<br>
 alternative and/or safe mailing address.</div>';
-$pdf->writeHTMLCell(100, 7, 13, 175, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 7, 13, 172, $html, 0, 1, false, true, 'L', true);
 //.........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>13.a. </b>&nbsp; &nbsp;In Care Of Name (if any)</div>';
@@ -621,14 +621,15 @@ $pdf->TextField('info_about_you_safe_mailing_city_town', 55, 7, array('strokeCol
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>13.e.</b> &nbsp;State</div>';
 $pdf->writeHTMLCell(50, 0, 12, 241, $html, '', 0, 0, true, 'L');
-
-$html = '<select name="info_about_you_safe_mailing_state" size="0.25">';
+//.........
+$pdf->SetFont('courier', 'B', 10);
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+	$comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
-
-$pdf->writeHTMLCell(25, 7, 29.5, 241, $html, '', 0, 0, true, 'L');
+$pdf->ComboBox("info_about_you_safe_mailing_state", 14, 7, $comboBoxOptions, array(), array(), 29.5, 241);
+//.......
+$pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>13.f.</b>&nbsp;ZIP Code</div>';
 $pdf->writeHTMLCell(30, 7, 46, 241, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
@@ -769,21 +770,20 @@ $pdf->TextField('info_about_you_recent_immigration_city_town', 83, 7, array('str
 //........
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div><b>23.b.  </b>  State</div>';
-$pdf->writeHTMLCell(50, 0, 112, 205, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(50, 0, 112, 206, $html, '', 0, 0, true, 'L');
 
-$html = '<select name="info_about_you_recent_immigration_state" size="0.25">';
+$pdf->SetFont('courier', 'B', 10);
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+	$comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
-
-$pdf->writeHTMLCell(25, 0, 129.5, 205, $html, '', 0, 0, true, 'L');
+$pdf->ComboBox("info_about_you_recent_immigration_state", 14, 7, $comboBoxOptions, array(), array(), 132.5, 205);
 //........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>24.  </b>  Date of Last Arrival (mm/dd/yyyy)</div>';
-$pdf->writeHTMLCell(90, 7, 112, 212, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(90, 7, 112, 215, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('info_about_you_recent_immigration_date_last_arrive', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 173, 212);
+$pdf->TextField('info_about_you_recent_immigration_date_last_arrive', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 173, 215);
 
 /********************************
  ******** End Page No 2 **********
@@ -1491,14 +1491,10 @@ $pdf->setCellPaddings(1, 1, 0, 1);
 $html = '<div><b>Part 3. Additional Information About You</b><br>(Continued)</div>';
 $pdf->writeHTMLCell(90, 7, 13, 17, $html, 1, 0, true, true, 'L', true);
 //.......
-
-
 $pdf->SetFont('times', 'I', 12);
 $html = '<div><b>Address History</b></div>';
 $pdf->writeHTMLCell(91, 7, 12.5, 31, $html, 0, 0, true, true, 'L', true);
-
 //........
-
 $pdf->SetFont('times', '', 10);
 $html = '<div>Provide physical addresses for everywhere you have lived
 during the last five years, whether inside or outside the United
@@ -1506,9 +1502,7 @@ States. Provide your current address first. If you need extra
 space to complete this section, use the space provided in
 <br><b>Part 14. Additional Information.</b></div>';
 $pdf->writeHTMLCell(90, 7, 11, 38, $html, 0, 1, false, true, 'J', true);
-
 //..........
-
 $pdf->SetFont('times', '', 10);
 $html = '<div>Physical Address 1 (current address)</div>';
 $pdf->writeHTMLCell(90, 7, 11, 59, $html, 0, 1, false, true, 'J', true);
@@ -1542,14 +1536,14 @@ $pdf->SetFont('times', '', 10); // set font
 $html = '<b>5.d.</b> &nbsp; &nbsp;State&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>5.e.</b>&nbsp;&nbsp;ZIP Code';
 $pdf->writeHTMLCell(60, 0, 11, 92, $html, '', 0, 0, true, 'L');
 
-$pdf->SetFont('courier', 'B', 10); // set font
-
-$html = '<select name="aditional_info_address_state" size="0.25">';
+$pdf->SetFont('courier', 'B', 10);
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+	$comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
-$pdf->writeHTMLCell(25, 0, 29.5, 92, $html, '', 0, 0, true, 'L');
+$pdf->ComboBox("aditional_info_address_state", 14, 7, $comboBoxOptions, array(), array(), 29.5, 92);
+
+
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('aditional_info_address_zip_code', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 69.5, 92.5);
@@ -1628,15 +1622,13 @@ $pdf->SetFont('times', '', 10); // set font
 $html = '<b>7.d.</b> &nbsp;&nbsp;State&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>7.e.</b>&nbsp;&nbsp;ZIP Code';
 $pdf->writeHTMLCell(60, 0, 12, 184, $html, '', 0, 0, true, 'L');
 
-$pdf->SetFont('courier', 'B', 10); // set font
 
-$html = '<select name="aditional_info_address2_state" size="0.25">';
+$pdf->SetFont('courier', 'B', 10);
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+	$comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
-
-$pdf->writeHTMLCell(25, 0, 29.5, 184, $html, '', 0, 0, true, 'L');
+$pdf->ComboBox("aditional_info_address2_state", 14, 7, $comboBoxOptions, array(), array(), 29.5, 184);
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('aditional_info_address2_zip_code', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 69.5, 184);
@@ -1686,15 +1678,15 @@ $pdf->TextField('aditional_info_address2_date_to', 30, 7, array('strokeColor' =>
 //.........
 
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(20, 5, 120, 3, 'A-Number', 0, 1, false, true, 'C', false);
+$pdf->writeHTMLCell(20, 5, 124, 4, 'A-Number', 0, 1, false, true, 'C', false);
 $pdf->SetFont('times', 'B', 10);
-$pdf->writeHTMLCell(60, 7, 120, 2, 'A-', 0, 1, false, false, 'C', true);
+$pdf->writeHTMLCell(60, 7, 120, 3, 'A-', 0, 1, false, false, 'C', true);
 $pdf->writeHTMLCell(51, 7, 153, 3, '' . showData('i_485_a_number') . '', 1, 1, false, true, 'C', true);
 $pdf->StartTransform();
 $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(-270);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(10, 10, "t", '', 'R', 0, 0, 10, 139, false); // header angle
+$pdf->MultiCell(10, 10, "t", '', 'R', 0, 0, 9, 139, false); // header angle
 $pdf->StopTransform();
 
 $pdf->SetFont('times', '', 10); // set font
@@ -1732,15 +1724,12 @@ $pdf->SetFont('times', '', 10); // set font
 $html = '<b>9.d.</b> &nbsp; &nbsp;State&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>9.e.</b>&nbsp;&nbsp;ZIP Code';
 $pdf->writeHTMLCell(60, 0, 113, 55, $html, '', 0, 0, true, 'L');
 
-$pdf->SetFont('courier', 'B', 10); // set font
-
-$html = '<select name="aditional_info_address3_state" size="0.25">';
+$pdf->SetFont('courier', 'B', 10);
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+	$comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
-$pdf->writeHTMLCell(25, 0, 129.5, 55, $html, '', 0, 0, true, 'L');
-
+$pdf->ComboBox("aditional_info_address3_state", 14, 7, $comboBoxOptions, array(), array(), 132, 55);
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('aditional_info_address3_zip_code', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 171, 55);
 
@@ -1850,14 +1839,15 @@ $pdf->SetFont('times', '', 10); // set font
 $html = '<b>12.d.</b>&nbsp;&nbsp;State&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>12.e.</b>&nbsp;&nbsp;ZIP Code';
 $pdf->writeHTMLCell(60, 0, 113, 195, $html, '', 0, 0, true, 'L');
 
-$pdf->SetFont('courier', 'B', 10); // set font
-
-$html = '<select name="aditional_info_employer_state" size="0.25">';
+$pdf->SetFont('courier', 'B', 10);
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+	$comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
-$pdf->writeHTMLCell(25, 0, 129.5, 195, $html, '', 0, 0, true, 'L');
+$pdf->ComboBox("aditional_info_employer_state", 14, 7, $comboBoxOptions, array(), array(), 131, 195);
+
+
+
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('aditional_info_employer_zip_code', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 170, 195);
@@ -1990,15 +1980,13 @@ $pdf->SetFont('times', '', 10); // set font
 $html = '<b>16.d.</b> &nbsp;&nbsp;State&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>16.e.</b>&nbsp;&nbsp;ZIP Code';
 $pdf->writeHTMLCell(60, 0, 12, 110, $html, '', 0, 0, true, 'L');
 
-$pdf->SetFont('courier', 'B', 10); // set font
-
-$html = '<select name="aditional_info_employer2_state" size="0.25">';
+$pdf->SetFont('courier', 'B', 10);
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+	$comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
+$pdf->ComboBox("aditional_info_employer2_state", 14, 7, $comboBoxOptions, array(), array(), 30.5, 110);
 
-$pdf->writeHTMLCell(25, 0, 29.5, 110, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('aditional_info_employer2_zip_code', 34, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 69.5, 110);
@@ -2099,15 +2087,13 @@ $pdf->SetFont('times', '', 10); // set font
 $html = '<b>20.d.</b> &nbsp;&nbsp;State&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>20.e.</b>&nbsp;&nbsp;ZIP Code';
 $pdf->writeHTMLCell(60, 0, 112, 47, $html, '', 0, 0, true, 'L');
 
-$pdf->SetFont('courier', 'B', 10); // set font
-
-$html = '<select name="aditional_info_employer3_state" size="0.25">';
+$pdf->SetFont('courier', 'B', 10);
+$comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
+	$comboBoxOptions[] = $record->state_code;
 }
-$html .= '</select>';
+$pdf->ComboBox("aditional_info_employer3_state", 14, 7, $comboBoxOptions, array(), array(), 131, 47);
 
-$pdf->writeHTMLCell(25, 0, 129.5, 47, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('aditional_info_employer3_zip_code', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(),  171.5, 47);
@@ -2235,7 +2221,7 @@ $pdf->writeHTMLCell(70, 10, 112, 207, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 9);
 $pdf->TextField('information_parent1_date_of_birth', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 167, 206);
 
-$pdf->SetFont('times', '', 11);
+$pdf->SetFont('times', '', 10);
 $checked_male2 = (showData('parent1_info_gender') == 'male') ? "checked" : "";
 $checked_female2 = (showData('parent1_info_gender') == 'female') ? "checked" : "";
 $html = '<div><b>4. </b> Sex   &nbsp; &nbsp; <input type="checkbox" name="G" value="y" checked="' . $checked_male2 . '" />Male  &nbsp; &nbsp;
@@ -2244,18 +2230,18 @@ $pdf->writeHTMLCell(90, 7, 112, 215, $html, '', 0, 0, true, 'L');
 
 //.........
 
-$pdf->SetFont('times', '', 10.5);
+$pdf->SetFont('times', '', 10);
 $html = '<div><b>5. </b>  &nbsp;  City or Town of Birth</div>';
 $pdf->writeHTMLCell(60, 10, 112, 222, $html, 0, 1, false, false, 'J', true);
-$pdf->SetFont('courier', 'B', 10.5);
+$pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('information_parent1_city_of_birth', 84, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 119, 228);
 
 //............
 
-$pdf->SetFont('times', '', 10.5);
+$pdf->SetFont('times', '', 10);
 $html = '<div><b>6.   </b>   &nbsp;  Country of Birth</div>';
 $pdf->writeHTMLCell(80, 7, 112, 236, $html, 0, 1, false, false, 'J', true);
-$pdf->SetFont('courier', 'B', 10.5);
+$pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('information_parent1_country_of_birth', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 241);
 
 //.......
@@ -3120,37 +3106,48 @@ $pdf->writeHTMLCell(90, 7, 17, 164, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>3.   </b>  Height </div>';
 $pdf->writeHTMLCell(30, 7, 12, 171, $html, 0, 0, false, true, 'J', true);
-$html = '<div><label for="selection">Feet:</label>
-<select name="biographic_info_feet" size="0.5">
-    <option value=" ">select</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-</select></div>';
+$html = '<div><label for="selection">Feet:</label></div>';
 $pdf->writeHTMLCell(40, 7, 42, 171, $html, 0, 0, false, true, 'J', true);
+$pdf->SetFont('courier', 'B', 10);
+// Define the options for the combo box
+$comboBoxOptions = [
+    ' ' => ' ', // Option to prompt user to select
+    '2' => '2',
+    '3' => '3',
+    '4' => '4',
+    '5' => '5',
+    '6' => '6',
+    '7' => '7',
+    '8' => '8',
+];
+// Generate combo box in PDF
+$pdf->ComboBox('biographic_info_feet', 10, 7, array_keys($comboBoxOptions), $comboBoxOptions, [], 51, 171);
+$pdf->SetFont('times', '', 10);
+$html1 = '<div><label for="selection">Inches:</label></div>';
+$pdf->writeHTMLCell(90, 7, 68, 171, $html1, 0, 0, false, true, 'J', true);
+// Define the options for the combo box for Inches
+$pdf->SetFont('courier', 'B', 10);
+$comboBoxOptionsInches = [
+    ' ' => ' ', // Option to prompt user to select
+    '0' => '0',
+    '1' => '1',
+    '2' => '2',
+    '3' => '3',
+    '4' => '4',
+    '5' => '5',
+    '6' => '6',
+    '7' => '7',
+    '8' => '8',
+    '9' => '9',
+    '10' => '10',
+    '11' => '11'
+];
 
-$html1 = '<div><label for="selection">Inches:</label>
-<select name="biographic_info_inches" size="0.5">
-    <option value=" ">select</option>
-    <option value="2">0</option>
-    <option value="2">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-</select></div>';
-$pdf->writeHTMLCell(90, 7, 72, 171, $html1, 0, 0, false, true, 'J', true);
+// Generate combo box in PDF
+$pdf->ComboBox('biographic_info_inches', 10, 7, array_keys($comboBoxOptionsInches), $comboBoxOptionsInches, [], 80, 171);
 
+
+$pdf->SetFont('times', '', 10);
 $html = '<div><b>4.    </b>   Weight   &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; Pounds </div>';
 $pdf->writeHTMLCell(50, 7, 12, 179, $html, 0, 0, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
@@ -4828,13 +4825,18 @@ $pdf->writeHTMLCell(190, 7, 20, 67, $html, 0, 0, false, true, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
 
-/* $html = <<<EOD
-<textarea cols="42" rows="11" name="general_eligibility_inadmisibility67">
-</textarea>
-EOD; */
-//$pdf->writeHTMLCell(180, 48, 20, 74, $html, 0, 0, false, 'L');
 
-$pdf->setCellHeightRatio(2.2);
+$pdf->setCellHeightRatio(1.8);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->writeHTMLCell(179.8, 1, 20, 71, '',  "B",  0, false, false, 'C', true); // line 1
+$pdf->writeHTMLCell(179.8, 1, 20, 75, '',  "B",  0, false, false, 'C', true); // line 2
+$pdf->writeHTMLCell(179.8, 1, 20, 79, '',  "B",  0, false, false, 'C', true); // line 3
+$pdf->writeHTMLCell(179.8, 1, 20, 83, '',  "B",  0, false, false, 'C', true); // line 4 
+$pdf->writeHTMLCell(179.8, 1, 20, 87, '',  "B",  0, false, false, 'C', true);   // line 5
+$pdf->writeHTMLCell(179.8, 1, 20, 91, '',  "B",  0, false, false, 'C', true); // line 6
+$pdf->writeHTMLCell(179.8, 1, 20, 95, '',  "B",  0, false, false, 'C', true); // line 7
+$pdf->writeHTMLCell(179.8, 1, 20, 100, '',  "B",  0, false, false, 'C', true); // line 8 
+
 $pdf->TextField('general_eligibility_inadmisibility67', 180, 50, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 0, 'borderStyle' => 'solid'), array('v' => showData('i_485_general_eligibility_list_your_certification')), 20, 74);
 $pdf->setCellHeightRatio(1.2);
 

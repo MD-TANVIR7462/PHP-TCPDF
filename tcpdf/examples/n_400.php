@@ -695,6 +695,7 @@ $pdf->TextField('p4_1_zip_code', 21, 7, array('strokeColor' => array(64, 64, 64)
 $pdf->TextField('p4_1_province', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21.7, 187.5);
 $pdf->TextField('p4_1_postal_code', 44.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 79.7, 187.5);
 $pdf->TextField('p4_1_country', 78, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 126, 187.5);
+$pdf->SetFont('courier', 'B', 10);
 $comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
 	$comboBoxOptions[] = $record->state_code;
