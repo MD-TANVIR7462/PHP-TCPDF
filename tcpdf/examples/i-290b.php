@@ -3,7 +3,7 @@
 //require_once('form_header.php');   //database connection file 
 
 require_once("config.php");
-$allDataCountry = indexByQueryAllData("SELECT * FROM countries");
+// $allDataCountry = indexByQueryAllData("SELECT * FROM countries");
 
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');

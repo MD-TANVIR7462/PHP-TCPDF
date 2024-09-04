@@ -1,7 +1,8 @@
 <?php
 
-require_once("config.php");
-//$allDataCountry = indexByQueryAllData("SELECT * FROM countries");
+require_once('formheader.php');
+// require_once("config.php");
+
 
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
@@ -6538,14 +6539,14 @@ $pdf->TextField('i_485_additional_info_name_7d', 82, 58.4, array('multiline' => 
 //..............
 
 
-// 'volag_number':' $attorneyData->volag_number',
-// 'attorney_statebar_number':' $attorneyData->bar_number',
-// 'attorney_uscis_online_number':' $attorneyData->uscis_online_account_number',
+
 
 $js = "
 var fields = {
 // page 1
-
+    'volag_number':' $attorneyData->volag_number',
+    'attorney_statebar_number':' $attorneyData->bar_number',
+    'attorney_uscis_online_number':' $attorneyData->uscis_online_account_number',
     'i_485_a_number':' " . showData('i_485_a_number') . "',	
     'info_about_you_family_lastname':' " . showData('information_about_you_family_last_name') . "',
     'info_about_you_family_firstname':' " . showData('information_about_you_given_first_name') . "',
