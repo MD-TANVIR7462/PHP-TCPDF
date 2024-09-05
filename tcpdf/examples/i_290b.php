@@ -393,258 +393,268 @@ $pdf->TextField('information_about_applicant_country', 82, 7, array('strokeColor
 /********************************
  ******** Start Page No 2 ********
  *********************************/
-
+//...........
 $pdf->AddPage('P', 'LETTER');
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
-$html = '<div><b>Part 2. Information About the Appeal or Motion  </b>(continued)</div>';
-$pdf->writeHTMLCell(90, 7, 13, 17, $html, 1, 0, true, true, 'L', true);
+$pdf->writeHTMLCell(91, 6.5, 13, 17, '<div><b>Part 2. Information About the Appeal or Motion</b></div>', 1, 0, true, true, 'L', true);
 //...........
+$pdf->setCellHeightRatio(1.2); // set cell height ratio
+$pdf->SetFont('times', '', 10);
+$html = '<div>Please indicate whether you are filing an appeal to the<br>
+Administrative Appeals Office (AAO) or a motion. You cannot<br>
+file both an appeal and a motion on a single form.<b> If you select<br>
+both an appeal and a motion, we may dismiss or reject your
+filing</b></div>';
+$pdf->writeHTMLCell(100, 5, 12, 24, $html, 0, 0, false, true, 'L', true);
+$html = '<div><b>NOTE: DO NOT use this form to file an appeal with the<br>
+Board of Immigration Appeals (BIA). You must instead use<br>
+Form EOIR-29.</b>.</div>';
+$pdf->writeHTMLCell(100, 5, 12, 48, $html, 0, 0, false, true, 'L', true);
+//........
+$pdf->writeHTMLCell(100, 5, 12, 63,'I am filing an <b>appeal</b> to the AAO.', 0, 0, false, true, 'L', true);
+//..............
 $pdf->SetFont('times', '', 10);
 if (showData('i_290b_appeal_or_motion_additional_status') == "Y") $checked = "checked";
 else $checked = "";
 $html = '<div><b>1.a. </b><input type="checkbox" name="part2_1a" value="Y" checked="' . $checked . '" /></div>';
-$pdf->writeHTMLCell(20, 7, 12, 28, $html, 0, 0, false, 'L');
-$html = '<div>I am filing an <b>appeal</b> to the AAO. My brief and/or
-additional evidence is attached. </div>';
-$pdf->writeHTMLCell(80, 7, 24, 28, $html, 0, 0, false, 'L');
+$pdf->writeHTMLCell(20, 7, 12, 69, $html, 0, 0, false, 'L');
+$html = '<div>I have attached a brief and/or additional evidence.</div>';
+$pdf->writeHTMLCell(80, 7, 24, 69, $html, 0, 0, false, 'L');
 
 //...........
 $pdf->SetFont('times', '', 10);
 if (showData('i_290b_appeal_or_motion_calendar_days_status') == "Y") $checked = "checked";
 else $checked = "";
 $html = '<div><b>1.b. </b><input type="checkbox" name="part2_1b" value="Y" checked="' . $checked . '" /></div>';
-$pdf->writeHTMLCell(20, 7, 12, 38, $html, 0, 0, false, 'L');
-$html = '<div>I am filing an <b>appeal</b> to the AAO. I will submit my
-brief and or additional evidence to the AAO within
-30 calendar days of filing the appeal. </div>';
-$pdf->writeHTMLCell(80, 7, 24, 38, $html, 0, 0, false, 'L');
+$pdf->writeHTMLCell(20, 7, 12, 75.5, $html, 0, 0, false, 'L');
+$html = '<div>I will submit a brief and/or additional evidence<br>
+directly to the AAO within 30 calendar days of filing<br>
+this appeal.</div>';
+$pdf->writeHTMLCell(80, 7, 24, 75.5, $html, 0, 0, false, 'L');
 
 //...........
 $pdf->SetFont('times', '', 10);
 if (showData('i_290b_appeal_or_motion_submitting_status') == "Y") $checked = "checked";
 else $checked = "";
 $html = '<div><b>1.c. </b><input type="checkbox" name="part2_1c" value="Y" checked="' . $checked . '" /></div>';
-$pdf->writeHTMLCell(20, 7, 12, 52, $html, 0, 0, false, 'L');
-$html = '<div>I am filing an <b>appeal</b> to the AAO. I will not b
-submitting a brief and/or additional evidence.</div>';
-$pdf->writeHTMLCell(80, 7, 24, 52, $html, 0, 0, false, 'L');
-
+$pdf->writeHTMLCell(20, 7, 12, 90, $html, 0, 0, false, 'L');
+$html = '<div>I will not be submitting any brief or additional
+evidence in support of this appeal.</div>';
+$pdf->writeHTMLCell(80, 7, 24, 90, $html, 0, 0, false, 'L');
+//..............
+$pdf->writeHTMLCell(100, 5, 12, 100,'I am filing a <b>motion</b>. ', 0, 0, false, true, 'L', true);
 
 //...........
 $pdf->SetFont('times', '', 10);
-if (showData('i_290b_appeal_or_motion_reopen_status') == "Y") $checked = "checked";
-else $checked = "";
-$html = '<div><b>1.d. </b><input type="checkbox" name="part2_1d" value="Y" checked="' . $checked . '" /></div>';
-$pdf->writeHTMLCell(20, 7, 12, 62, $html, 0, 0, false, 'L');
-$html = '<div>I am filing a <b>motion to reopen.</b> My brief and/or
-additional evidence is attached.</div>';
-$pdf->writeHTMLCell(80, 7, 24, 62, $html, 0, 0, false, 'L');
+if (showData('i_290b_appeal_or_motion_reopen_status') == "Y") $checked = "checked";else $checked = "";
+$html = '<div><b>2.a. </b><input type="checkbox" name="part2_1d" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(20, 7, 12, 106, $html, 0, 0, false, 'L');
+$html = '<div>I am filing a <b>motion to reopen.</b>  I have attached a
+brief and/or additional evidence.</div>';
+$pdf->writeHTMLCell(80, 7, 24, 106, $html, 0, 0, false, 'L');
 
 
 //...........
 $pdf->SetFont('times', '', 10);
 if (showData('i_290b_appeal_or_motion_reconsider_status') == "Y") $checked = "checked";
 else $checked = "";
-$html = '<div><b>1.e. </b><input type="checkbox" name="part2_1e" value="Y" checked="' . $checked . '" /></div>';
-$pdf->writeHTMLCell(20, 7, 12, 72, $html, 0, 0, false, 'L');
-$html = '<div>I am filing a <b>motion to reconsider.</b> My brief is
-attached.</div>';
-$pdf->writeHTMLCell(80, 7, 24, 72, $html, 0, 0, false, 'L');
+$html = '<div><b>2.b. </b><input type="checkbox" name="part2_1e" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(20, 7, 12, 116.5, $html, 0, 0, false, 'L');
+$html = '<div>I am filing a <b>motion to reconsider</b>. I have attached a<br>brief.</div>';
+$pdf->writeHTMLCell(80, 7, 24, 116.5, $html, 0, 0, false, 'L');
 
 
 //...........
 $pdf->SetFont('times', '', 10);
 if (showData('i_290b_appeal_or_motion_reopen_and_reconsider_status') == "Y") $checked = "checked";
 else $checked = "";
-$html = '<div><b>1.f. </b><input type="checkbox" name="part2_1f" value="Y" checked="' . $checked . '" /></div>';
-$pdf->writeHTMLCell(20, 7, 12, 82, $html, 0, 0, false, 'L');
-$html = '<div>I am filing a <b>motion to reopen</b> and a <b>motion to
-reconsider.</b> My brief and/or additional evidence is
-attached.</div>';
-$pdf->writeHTMLCell(80, 7, 24, 82, $html, 0, 0, false, 'L');
+$html = '<div><b>2.c. </b><input type="checkbox" name="part2_1f" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(20, 7, 12, 126, $html, 0, 0, false, 'L');
+$html = '<div>I am filing a <b>motion to reopen</b> and a <b>motion to<br>
+reconsider</b>. I have attached a brief and/or additional<br>
+evidence.</div>';
+$pdf->writeHTMLCell(80, 7, 24, 126, $html, 0, 0, false, 'L');
 
 
 //...........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>2.  </div>';
-$pdf->writeHTMLCell(20, 7, 12, 95, $html, 0, 0, false, 'L');
-$html = '<div>USCIS Form for the Application or Petition That is the
-Subject of This Appeal or Motion (for example, Form
-1-140, 1-360, 1-129, 1-485, 1-601)</div>';
-$pdf->writeHTMLCell(80, 7, 20, 95, $html, 0, 0, false, 'L');
-$pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('information_about_uscis_form', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 108);
-
-//..........
-$pdf->SetFont('times', '', 10);
 $html = '<div><b>3.  </div>';
-$pdf->writeHTMLCell(20, 7, 12, 117, $html, 0, 0, false, 'L');
-$html = '<div>Receipt Number for the Application or Petition</div>';
-$pdf->writeHTMLCell(80, 7, 20, 117, $html, 0, 0, false, 'L');
+$pdf->writeHTMLCell(20, 7, 12, 141, $html, 0, 0, false, 'L');
+$html = '<div>Immigration Form That is the Subject of This Appeal or<br>
+Motion (for example, Form I-140, I-360, I-129, I-485,<br>
+I-601, I-730, I-131) (list <b>only one</b> form number)</div>';
+$pdf->writeHTMLCell(100, 7, 20, 141, $html, 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('receipt_number_for_the_applicant', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 123);
-//..........
+$pdf->TextField('information_about_uscis_form', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 155);
 
+//..........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>4.  </div>';
-$pdf->writeHTMLCell(20, 7, 12, 131, $html, 0, 0, false, 'L');
-$html = '<div>Requested Nonimmigrant or Immigrant Classification (for
-example, H-1B, R-1, O-1, EB-1, EB-2, if applicable)</div>';
-$pdf->writeHTMLCell(90, 7, 20, 131, $html, 0, 0, false, 'L');
+$pdf->writeHTMLCell(20, 7, 12,163, $html, 0, 0, false, 'L');
+$html = '<div>Receipt Number for the Application, Petition, or Other<br>Request (list <b>only one</b> Receipt Number)</div>';
+$pdf->writeHTMLCell(80, 7, 20,163, $html, 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part2_4_request_nominigrant_example', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 141);
-//..........
+$pdf->TextField('receipt_number_for_the_applicant', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 172.5);
+// //..........
 
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>5.  </div>';
-$pdf->writeHTMLCell(20, 7, 12, 150, $html, 0, 0, false, 'L');
-$html = '<div>Date of the Adverse Decision (mm/dd/yyyy)</div>';
-$pdf->writeHTMLCell(80, 7, 20, 149, $html, 0, 0, false, 'L');
+$pdf->writeHTMLCell(20, 7, 12, 180, $html, 0, 0, false, 'L');
+$html = '<div>Requested Immigrant or Nonimmigrant Classification<br>(for example, H-1B, R-1, O-1, EB-1, EB-2, RE-2, AS-2)<br>(if applicable)</div>';
+$pdf->writeHTMLCell(90, 7, 20, 180, $html, 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part2_5_date_of_the_adverse_decision', 42, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 62, 155);
+$pdf->TextField('part2_4_request_nominigrant_example', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 194);
+// //..........
+
+$pdf->SetFont('times', '', 10);
+$html = '<div><b>6.</div>';
+$pdf->writeHTMLCell(20, 7, 12, 202, $html, 0, 0, false, 'L');
+$html = '<div>Date of the Unfavorable Decision (mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell(80, 7, 20, 202, $html, 0, 0, false, 'L');
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('part2_5_date_of_the_adverse_decision', 42, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 62, 207);
 //..........
 
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>6.  </div>';
-$pdf->writeHTMLCell(20, 7, 12, 162, $html, 0, 0, false, 'L');
-$html = '<div>Office That Issued the Adverse Decision</div>';
-$pdf->writeHTMLCell(80, 7, 20, 162, $html, 0, 0, false, 'L');
+$html = '<div><b>7.</div>';
+$pdf->writeHTMLCell(20, 7, 12, 215, $html, 0, 0, false, 'L');
+$html = '<div>Office That Issued the Unfavorable Decision</div>';
+$pdf->writeHTMLCell(80, 7, 20, 215, $html, 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->ComboBox('part2_office_that_issued_advarse_decision', 83, 7, array(
 
-    'Administrative Appeals Office  (AAO)',
-    'Humanitrian Affairs Branch  (RIH)',
-    'Agana  (AGA)',
-    'Albany  (ALB)',
-    'Albuquerque  (ABQ)',
-    'Anchorage  (ANC)',
-    'Atlanta  (ATL)',
-    'Baltimore  (BAL)',
-    'Boise  (BOI)',
-    'Boston  (BOS)',
-    'Buffalo  (BUF)',
-    'California Service Center  (WAC)',
-    'Charleston  (CHL)',
-    'Charlotte  (CLT)',
-    'Charlotte Amalie  (CHA)',
-    'Chicago  (CHI)',
-    'Chula Vista  (CVC)',
-    'Cincinnati  (CIN)',
-    'Cleveland  (CLE) ',
-    'Columbus  (CLM)',
-    'Dallas  (DAL)',
-    'Denver  (DEN)',
-    'Des Moines  (DSM)',
-    'Detroit  (DET)',
-    'El Paso  (ELP)',
-    'Fresno  (FRE)',
-    'Fort Smith AR  (FSA)',
-    'Greer Field  (GRR)',
-    'Harlingen  (HLG)',
-    'Hartford  (HAR)',
-    'Helena  (HEL)',
-    'Hialeah  (HIA)',
-    'Honolulu  (HHW)',
-    'Houston  (HOU)',
-    'Humanitrian Affairs Branch  (HAB)',
-    'Indianapolis  (INP)',
-    'International Operation  (IO)',
-    'Jacksonville  (JAC)',
-    'Kansas City  (KAN)',
-    'Kendall  (KND)',
-    'Las Vegas  (LVG)',
-    'Lawrance  (LAW)',
-    'Long Island  (LNY)',
-    'Los Angles  (LAC)',
-    'Los Angles  (LOS)',
-    'Los Angles  (SFV)',
-    'Louisville  (LOU)',
-    'Manchester  (MAN)',
-    'Memphis  (MEM)',
-    'Miami (MIA)',
-    'Milwaukee  (MIL)',
-    'Mount Laurel  (MTL)',
-    'National Benefits Center  (NBC)',
-    'Nebaraska Service Center  (LIN)',
-    'New Jersey  (NEW)',
-    'New Orleans  (NOL)',
-    'New York City  (NYC)',
-    'Norfolk  (NOR)',
-    'Oakland park  (OKL)',
-    'Oklahoma City   (OKC)',
-    'Omaha  (OMA)',
-    'Orlando  (ORL)',
-    'Philadelphia  (PHI)',
-    'Phoenix  (PHO)',
-    'Pittsburgh  (PIT)',
-    'Portland,ME   (POM)',
-    'Portland  (POO)',
-    'Providence  (PRO)',
-    'Queens  (QNS)',
-    'Raleigh-Durham  (RAL)',
-    'Refugee International Humanitrian  (RIH)',
-    'Refugee, Asylum, and International Operations  (RAIO)',
-    'Reno  (REN)',
-    'Sacramento  (SAC)',
-    'Salt Lake City  (SLC)',
-    'San Antonio  (SNA)',
-    'San Bernardino  (SBD)',
-    'San Diego  (SND)',
-    'San Francisco  (SFR)',
-    'San Jose  (SNJ)',
-    'San Juan  (SAJ)',
-    'Santa Ana  (SAA)',
-    'Seattle Field  (SEA)',
-    'Spokane  (SPO)',
-    'St. Albans  (STA)',
-    'St. Louis  (STL)',
-    'St. Paul  (SPM)',
-    'Tampa T (AM)',
-    'Texas Service Center (SRC)',
-    'Tucson TUC',
-    'Vermont Service Center  (EAC)',
-    'Washington  (WAS)',
-    'West Palm Beach  (WPB)',
-    'Yakima  (YAK)',
-    'Other'
+    '(AAO)',
+    ' Humanitrian Affairs Branch  (RIH)',
+    ' Agana  (AGA)',
+    ' Albany  (ALB)',
+    ' Albuquerque  (ABQ)',
+    ' Anchorage  (ANC)',
+    ' Atlanta  (ATL)',
+    ' Baltimore  (BAL)',
+    ' Boise  (BOI)',
+    ' Boston  (BOS)',
+    ' Buffalo  (BUF)',
+    ' California Service Center  (WAC)',
+    ' Charleston  (CHL)',
+    ' Charlotte  (CLT)',
+    ' Charlotte Amalie  (CHA)',
+    ' Chicago  (CHI)',
+    ' Chula Vista  (CVC)',
+    ' Cincinnati  (CIN)',
+    ' Cleveland  (CLE) ',
+    ' Columbus  (CLM)',
+    ' Dallas  (DAL)',
+    ' Denver  (DEN)',
+    ' Des Moines  (DSM)',
+    ' Detroit  (DET)',
+    ' El Paso  (ELP)',
+    ' Fresno  (FRE)',
+    ' Fort Smith AR  (FSA)',
+    ' Greer Field  (GRR)',
+    ' Harlingen  (HLG)',
+    ' Hartford  (HAR)',
+    ' Helena  (HEL)',
+    ' Hialeah  (HIA)',
+    ' Honolulu  (HHW)',
+    ' Houston  (HOU)',
+    ' Humanitrian Affairs Branch  (HAB)',
+    ' Indianapolis  (INP)',
+    ' International Operation  (IO)',
+    ' Jacksonville  (JAC)',
+    ' Kansas City  (KAN)',
+    ' Kendall  (KND)',
+    ' Las Vegas  (LVG)',
+    ' Lawrance  (LAW)',
+    ' Long Island  (LNY)',
+    ' Los Angles  (LAC)',
+    ' Los Angles  (LOS)',
+    ' Los Angles  (SFV)',
+    ' Louisville  (LOU)',
+    ' Manchester  (MAN)',
+    ' Memphis  (MEM)',
+    ' Miami (MIA)',
+    ' Milwaukee  (MIL)',
+    ' Mount Laurel  (MTL)',
+    ' National Benefits Center  (NBC)',
+    ' Nebaraska Service Center  (LIN)',
+    ' New Jersey  (NEW)',
+    ' New Orleans  (NOL)',
+    ' New York City  (NYC)',
+    ' Norfolk  (NOR)',
+    ' Oakland park  (OKL)',
+    ' Oklahoma City   (OKC)',
+    ' Omaha  (OMA)',
+    ' Orlando  (ORL)',
+    ' Philadelphia  (PHI)',
+    ' Phoenix  (PHO)',
+    ' Pittsburgh  (PIT)',
+    ' Portland,ME   (POM)',
+    ' Portland  (POO)',
+    ' Providence  (PRO)',
+    ' Queens  (QNS)',
+    ' Raleigh-Durham  (RAL)',
+    ' Refugee International Humanitrian  (RIH)',
+    ' Refugee, Asylum, and International Operations  (RAIO)',
+    ' Reno  (REN)',
+    ' Sacramento  (SAC)',
+    ' Salt Lake City  (SLC)',
+    ' San Antonio  (SNA)',
+    ' San Bernardino  (SBD)',
+    ' San Diego  (SND)',
+    ' San Francisco  (SFR)',
+    ' San Jose  (SNJ)',
+    ' San Juan  (SAJ)',
+    ' Santa Ana  (SAA)',
+    ' Seattle Field  (SEA)',
+    ' Spokane  (SPO)',
+    ' St. Albans  (STA)',
+    ' St. Louis  (STL)',
+    ' St. Paul  (SPM)',
+    ' Tampa T (AM)',
+    ' Texas Service Center (SRC)',
+    ' Tucson TUC',
+    ' Vermont Service Center  (EAC)',
+    ' Washington  (WAS)',
+    ' West Palm Beach  (WPB)',
+    ' Yakima  (YAK)',
+    ' Other'
 
-), array(), array(), 21, 167);
+), array(), array(), 21, 220);
 
+//!................
+// $pdf->setCellHeightRatio(1.2); // set cell height ratio
+// $pdf->SetFont('times', '', 12);
+// $pdf->SetFillColor(220, 220, 220);
+// $pdf->writeHTMLCell(91, 6.5, 13, 179, '<div><b>Part 3. Basis for the Appeal or Motion </b></div>', 1, 0, true, true, 'L', true);
+// //...........
+// $pdf->setCellHeightRatio(1.1); // set cell height ratio
+// $pdf->SetFont('times', '', 10);
+// $html = '<div>In <b>Part 7. Additional Information,</b> or on a separate sheet of<br>
+// paper, <b>you must provide a statement regarding the basis for<br>
+// the appeal or motion.</b> If you attach a separate sheet of paper,<br>
+// type or print your name and A-Number (if any) at the top of<br>
+// each sheet; indicate the <b>Page Number, Part Number</b>, and <b>Item<br>
+// Number</b> to which your answer refers; and sign and date each<br>
+// sheet.</div>';
+// $pdf->writeHTMLCell(100, 7, 12, 186.4, $html, 0, 0, false, 'L');
+// //.......
+// $pdf->SetFont('times', '', 10);
+// $html = '<div><b>Appeal:</b> Provide a statement that specifically identifies<br>
+// an erroneous conclusion of law or fact in the decision<br>
+// being appealed. <b>You must provide this information<br>
+// with your Form I-290B even if you intend to submit a<br>
+// brief later.</b></b></div>';
+// $pdf->writeHTMLCell(91, 7, 12, 216.5, $html, 0, 0, false, 'L');
+// //...........
 
-$pdf->setCellHeightRatio(1.2); // set cell height ratio
-$pdf->SetFont('times', '', 12);
-$pdf->SetFillColor(220, 220, 220);
-$html = '<div><b>Part 3. Basis for the Appeal or Motion </b></div>';
-$pdf->writeHTMLCell(91, 6.5, 13, 179, $html, 1, 0, true, true, 'L', true);
-//...........
-$pdf->setCellHeightRatio(1.1); // set cell height ratio
-$pdf->SetFont('times', '', 10);
-$html = '<div>In <b>Part 7. Additional Information,</b> or on a separate sheet of<br>
-paper, <b>you must provide a statement regarding the basis for<br>
-the appeal or motion.</b> If you attach a separate sheet of paper,<br>
-type or print your name and A-Number (if any) at the top of<br>
-each sheet; indicate the <b>Page Number, Part Number</b>, and <b>Item<br>
-Number</b> to which your answer refers; and sign and date each<br>
-sheet.</div>';
-$pdf->writeHTMLCell(100, 7, 12, 186.4, $html, 0, 0, false, 'L');
-//.......
-$pdf->SetFont('times', '', 10);
-$html = '<div><b>Appeal:</b> Provide a statement that specifically identifies<br>
-an erroneous conclusion of law or fact in the decision<br>
-being appealed. <b>You must provide this information<br>
-with your Form I-290B even if you intend to submit a<br>
-brief later.</b></b></div>';
-$pdf->writeHTMLCell(91, 7, 12, 216.5, $html, 0, 0, false, 'L');
-//...........
-
-$pdf->SetFont('times', '', 10);
-$html = '<div><b>Motion to Reopen:</b> A motion to reopen must state new facts
-and be supported by documentary evidence demonstrating
-eligibility for the requested immigration benefit at the time you
-filed the application or petition.</div>';
-$pdf->writeHTMLCell(91, 7, 12, 238, $html, 0, 0, false, 'L');
+// $pdf->SetFont('times', '', 10);
+// $html = '<div><b>Motion to Reopen:</b> A motion to reopen must state new facts
+// and be supported by documentary evidence demonstrating
+// eligibility for the requested immigration benefit at the time you
+// filed the application or petition.</div>';
+// $pdf->writeHTMLCell(91, 7, 12, 238, $html, 0, 0, false, 'L');
 //........... page 2 left end ..............................................
 
 $pdf->SetFont('times', '', 10);
@@ -1275,12 +1285,12 @@ $pdf->writeHTMLCell(90, 0, 112, 232, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part5_preparer_email_address', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 121, 237);
 /********************************
- ******** End Page No 4 **********
- *********************************/
+ ******** End Page No 4 *********
+ ********************************/
 
 /********************************
- ******** Start Page No 5 ********
- *********************************/
+ ******** Start Page No 5 *******
+ ********************************/
 $pdf->setCellPaddings(1, 1.5, 1, 1.5); // set cell padding
 $pdf->AddPage('P', 'LETTER');  // page number 5
 //.........
