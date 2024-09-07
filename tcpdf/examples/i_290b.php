@@ -672,7 +672,7 @@ $pdf->writeHTMLCell(91.9, 1, 112, 200.5, '',  "B",  0, false, false, 'C', true);
 $pdf->writeHTMLCell(91.9, 1, 112, 206.5, '',  "B",  0, false, false, 'C', true); // line 7
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_290B_additional_info_name_7d', 92, 112, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_290b_additional_info_7d')), 112, 143);
+$pdf->TextField('part_3_motion_value_combobox', 92, 112, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_290b_additional_info_7d')), 112, 143);
 
 /********************************
  ******** End Page No 2 **********
@@ -707,56 +707,78 @@ $pdf->SetFont('Times', '', 10); // set font
 $html = '<div><b>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Applicant\'s or Petitioner\'s Daytime Telephone Number</div>';
 $pdf->writeHTMLCell(90, 0, 12, 50.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_family_lastname', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 55.5);
+$pdf->TextField('part4_applicant_daytime_telephone', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 55.5);
 //................
 $pdf->SetFont('Times', '', 10); // set font
 $html = '<div><b>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Applicant\'s or Petitioner\'s Mobile Telephone Number<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(if any)</div>';
 $pdf->writeHTMLCell(90, 0, 12, 62.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_given_firstname', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 72.5);
+$pdf->TextField('part4_applicant_mobile_telephone', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 72.5);
 //..........
 $pdf->SetFont('Times', '', 10); // set font
 $html = '<div><b>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Applicant\'s or Petitioner\'s Email Address (if any)</div>';
 $pdf->writeHTMLCell(90, 0, 12, 79.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_business_org_name', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 85);
-
-//..........
+$pdf->TextField('part4_applicant_email_address', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 85);
+//........................
 $pdf->SetFont('times', 'BI', 12);
 $pdf->SetFillColor(220, 220, 220);
-$html = '<div>Interpreter\'s Contact Information</div>';
-$pdf->writeHTMLCell(91, 6, 13, 157, $html, 0, 0, true, true, 'L', true);
+$html = '<div>Applicant\'s or Petitioner\'s Certification and<br>Signature </div>';
+$pdf->writeHTMLCell(91, 6, 13, 96, $html, 0, 0, true, true, 'L', true);
+//...............
+$pdf->SetFont('Times', '', 10); // set font
+$html = '<div>I certify, under penalty of perjury, that I provided or authorized<br>
+all of the responses and information contained in and submitted<br>
+with my appeal or motion, I read and understand or, if<br>
+interpreted to me in a language in which I am fluent by the<br>
+ listed in <b>Part 5</b>., understood, all of the responses and<br>
+information contained in, and submitted with, my appeal/<br>
+motion, and that all of the responses and the information are<br>
+complete, true, and correct. Furthermore, I authorize the release<br>
+of any information from any and all of my records that USCIS<br>
+may need to determine my eligibility for an immigration request<br>
+and to other entities and persons where necessary for the<br>
+administration and enforcement of U.S. immigration law. </div>';
+$pdf->writeHTMLCell(100, 0, 12, 109, $html, '', 0, 0, true, 'L');
+//..........
+$pdf->SetFont('times', '', 10);
+$html = '<div><b>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Applicant\'s or Petitioner\'s Signature</div>';
+$pdf->writeHTMLCell(90, 7, 12, 161.5, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(82.5, 7, 21, 167, "", 1, 1, false, true, 'J', true);
+//...........
+$pdf->SetFont('times', '', 10);
+$html = '<div>Date of Signature (mm/dd/yyyy) </div>';
+$pdf->writeHTMLCell(90, 7, 20, 176, $html, 0, 1, false, true, 'J', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('part5_interpreter_signature', 34, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 70,176);
+//..............
+$pdf->SetFont('times', 'B', 12);
+$pdf->SetFillColor(220, 220, 220);
+$html = '<div>Part 5. Interpreter\'s Contact Information,<br>Certification, and Signature</div>';
+$pdf->writeHTMLCell(91, 6, 13, 188, $html, 1, 0, true, true, 'L', true);
+//..............
+$pdf->SetFont('times', 'BI', 12);
+$pdf->SetFillColor(220, 220, 220);
+$html = '<div>Interpreter\'s Full Name</div>';
+$pdf->writeHTMLCell(91, 6, 13, 204, $html, 0, 0, true, true, 'L', true);
 //...........
 $pdf->SetFont('Times', '', 10); // set font
-$html = '<div><b>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Interpreter\'s Daytime Telephone Number</div>';
-$pdf->writeHTMLCell(90, 0, 12, 164, $html, '', 0, 0, true, 'L');
+$html = '<div><b>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Interpreter\'s Family Name (Last Name)</div>';
+$pdf->writeHTMLCell(90, 0, 12, 211, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_daytime_telephone', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 169);
+$pdf->TextField('part5_interpreter_family_lastname', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 216);
 //................
 $pdf->SetFont('Times', '', 10); // set font
-$html = '<div><b>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Interpreter\'s Mobile Telephone Number (if any)</div>';
-$pdf->writeHTMLCell(90, 0, 12, 176, $html, '', 0, 0, true, 'L');
+$html = '<div>Interpreter\'s Given Name (First Name)</div>';
+$pdf->writeHTMLCell(90, 7,20, 223, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_mobile_telephone', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 181);
+$pdf->TextField('part5_interpreter_given_firstname', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 228);
 //..........
 $pdf->SetFont('Times', '', 10); // set font
-$html = '<div><b>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Interpreter\'s Email Address (if any) </div>';
-$pdf->writeHTMLCell(90, 0, 12, 188, $html, '', 0, 0, true, 'L');
+$html = '<div><b>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Interpreter\'s Business or Organization Name (if any)</div>';
+$pdf->writeHTMLCell(90, 0, 12, 235.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_email_address', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 193);
-//..........
-$pdf->SetFont('times', 'BI', 12);
-$pdf->SetFillColor(220, 220, 220);
-$html = '<div>Interpreter\'s Certification</div>';
-$pdf->writeHTMLCell(91, 6, 13, 203.5, $html, 0, 0, true, true, 'L', true);
-//.........
-$pdf->setCellHeightRatio(1.1); // set cell height ratio
-$pdf->SetFont('Times', '', 10); // set font
-$html = "<div>I certify, under penalty of perjury, that:</div>";
-$pdf->writeHTMLCell(100, 0, 12, 210, $html, '', 0, 0, true, 'L');
-$html = "<div>I am fluent in English and</div>";
-$pdf->writeHTMLCell(100, 0, 12, 216.5, $html, '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(100, 0, 102, 216.5, ',', '', 0, 0, true, 'L');
+$pdf->TextField('part5_interpreter_business_org_name', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 241);
 //..................
 
 //.....left side End......
@@ -1245,14 +1267,6 @@ var fields = {
     'part5_interpreter_family_lastname':' " . showData('i_290b_interpreter_family_last_name') . "',
     'part5_interpreter_given_firstname':' " . showData('i_290b_interpreter_given_first_name') . "',
     'part5_interpreter_business_org_name':' " . showData('i_290b_interpreter_business_name') . "',
-    'part5_interpreter_mailing_street_name':' " . showData('i_290b_interpreter_address_street_number') . "',
-    'part5_interpreter_mailing_apt_flor':' " . showData('i_290b_interpreter_address_apt_ste_flr_value') . "',
-    'part5_interpreter_mailing_city_town':' " . showData('i_290b_interpreter_address_city_town') . "',
-    'part5_interpreter_mailing_state':' " . showData('i_290b_interpreter_address_state') . "',
-    'part5_interpreter_mailing_zip_code':' " . showData('i_290b_interpreter_address_zip_code') . "',
-    'part5_interpreter_mailing_province':' " . showData('i_290b_interpreter_address_province') . "',
-    'part5_interpreter_mailing_postal_code':' " . showData('i_290b_interpreter_address_postal_code') . "',
-    'part5_interpreter_mailing_country':' " . showData('i_290b_interpreter_address_country') . "',
     'part5_interpreter_daytime_telephone':' " . showData('i_290b_interpreter_daytime_tel') . "',
     'part5_interpreter_mobile_telephone':' " . showData('i_290b_interpreter_mobile') . "',
     'part5_interpreter_email_address':' " . showData('i_290b_interpreter_email') . "',
