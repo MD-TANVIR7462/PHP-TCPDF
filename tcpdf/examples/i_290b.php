@@ -365,26 +365,6 @@ $html = '<b>6.i. </b>&nbsp;&nbsp;&nbsp;&nbsp;Country';
 $pdf->writeHTMLCell(50, 0, 111.3, 202, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('information_about_applicant_country', 82, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 121.1, 207);
-//..........
-
-// $pdf->SetFont('times', '', 12);
-// $pdf->SetFillColor(220, 220, 220);
-// $html = '<div><b>Part 2. Information About the Appeal or Motion</b></div>';
-// $pdf->writeHTMLCell(91, 7, 112, 208, $html, 1, 0, true, true, 'L', true);
-// //...........
-// $pdf->setCellHeightRatio(1.1); // set cell height ratio
-// $pdf->SetFont('times', '', 10);
-// $html = '<div>Please indicate whether you are filing an appeal to the<br>
-// Administrative Appeals Office (AAO) or a motion. You are not<br>
-// allowed to file both an appeal and a motion on a single form. <b>If<br>
-// you select more than one box, your filing may be rejected.</b></div>';
-// $pdf->writeHTMLCell(100, 5, 111, 215.7, $html, 0, 0, false, true, 'L', true);
-// $html = '<div><b>NOTE: DO NOT use this form if you are filing an appeal<br>
-// relating to a Form I-130, Petition for Alien Relative, or a<br>
-// Form I-360, Self-Petition for a Widow(er) of a U.S. Citizen.<br>
-// You must file those appeals with the Board of Immigration<br>
-// Appeals using Form EOIR-29</b>.</div>';
-// $pdf->writeHTMLCell(100, 5, 111, 234, $html, 0, 0, false, true, 'L', true);
 
 /********************************
  ******** End Page No 1 **********
@@ -703,105 +683,44 @@ $pdf->TextField('i_290B_additional_info_name_7d', 92, 112, array('multiline' => 
  *********************************/
 
 $pdf->AddPage('P', 'LETTER');
+$pdf->setCellPaddings(1, 1, 1, 1); // set cell padding
+$pdf->setCellHeightRatio(1.2);
+//.........
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
-
-
-$html = '<div><b>Part 5. Interpreter\'s Contact Information, 
-Certification, and Signature</b></div>';
-$pdf->writeHTMLCell(91, 6.5, 13, 17, $html, 1, 0, true, true, 'L', true);
+$html = '<div><b>Part 4. Applicant\'s or Petitioner\'s Contact<br>
+Information, Certification, and Signature</b></div>';
+$pdf->writeHTMLCell(91, 7, 13, 17, $html, 1, 0, true, true, 'L', true);
 //...........
-$pdf->SetFont('Times', '', 10); // set font
-$html = '<div>Provide the following information about the interpreter.</div>';
-$pdf->writeHTMLCell(90, 0, 12, 29, $html, '', 0, 0, true, 'L');
-
 $pdf->SetFont('times', 'BI', 12);
 $pdf->SetFillColor(220, 220, 220);
-$html = '<div>Interpreter\'s Full Name</div>';
-$pdf->writeHTMLCell(91, 6.5, 13, 35, $html, 0, 0, true, true, 'L', true);
+$html = '<div>Applicant\'s or Petitioner\'s Contact Information</div>';
+$pdf->writeHTMLCell(91, 6, 13, 33, $html, 0, 0, true, true, 'L', true);
+//...............
+$pdf->SetFont('Times', '', 10); // set font
+$html = '<div>Provide your daytime telephone number, mobile telephone<br>
+number (if any), and email address (if any).</div>';
+$pdf->writeHTMLCell(90, 0, 12, 41, $html, '', 0, 0, true, 'L');
+
 //...........
 $pdf->SetFont('Times', '', 10); // set font
-$html = '<div><b>1.a.&nbsp;&nbsp;&nbsp;</b>Interpreter\'s Family Name (Last Name)</div>';
-$pdf->writeHTMLCell(90, 0, 12, 42, $html, '', 0, 0, true, 'L');
+$html = '<div><b>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Applicant\'s or Petitioner\'s Daytime Telephone Number</div>';
+$pdf->writeHTMLCell(90, 0, 12, 50.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_family_lastname', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 47);
+$pdf->TextField('part5_interpreter_family_lastname', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 55.5);
 //................
 $pdf->SetFont('Times', '', 10); // set font
-$html = '<div><b>1.b.&nbsp;&nbsp;&nbsp;</b>Interpreter\'s Given Name (First Name)</div>';
-$pdf->writeHTMLCell(90, 0, 12, 55, $html, '', 0, 0, true, 'L');
+$html = '<div><b>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Applicant\'s or Petitioner\'s Mobile Telephone Number<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(if any)</div>';
+$pdf->writeHTMLCell(90, 0, 12, 62.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_given_firstname', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 60);
+$pdf->TextField('part5_interpreter_given_firstname', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 72.5);
 //..........
 $pdf->SetFont('Times', '', 10); // set font
-$html = '<div><b>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Interpreter\'s Business or Organization Name (if any)</div>';
-$pdf->writeHTMLCell(90, 0, 12, 68, $html, '', 0, 0, true, 'L');
+$html = '<div><b>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Applicant\'s or Petitioner\'s Email Address (if any)</div>';
+$pdf->writeHTMLCell(90, 0, 12, 79.5, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_business_org_name', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 73);
-//.........
-$pdf->SetFont('times', 'BI', 12);
-$pdf->SetFillColor(220, 220, 220);
-$html = '<div>Interpreter\'s Mailing Address</div>';
-$pdf->writeHTMLCell(91, 6, 13, 83, $html, 0, 0, true, true, 'L', true);
-//...........
-$pdf->SetFont('times', '', 10);
-$html = '<div><b>3.a.&nbsp;&nbsp;&nbsp;</b>Street Number  &nbsp;<br> &nbsp;  &nbsp; &nbsp;  &nbsp; and Name </div>';
-$pdf->writeHTMLCell(40, 0, 12, 90, $html, 0, 1, false, false, 'L', true);
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_interpreter_mailing_street_name', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 44, 92);
-//...........
-$pdf->SetFont('times', '', 10); // set font
-if (showData('i_290b_interpreter_address_apt_ste_flr') == "apt") $checked_apt = "checked";
-else $checked_apt = "";
-if (showData('i_290b_interpreter_address_apt_ste_flr') == "ste") $checked_ste = "checked";
-else $checked_ste = "";
-if (showData('i_290b_interpreter_address_apt_ste_flr') == "flr") $checked_flr = "checked";
-else $checked_flr = "";
-$html = '<div><b>3.b.&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="Apt" value="Apt" checked="' . $checked_apt . '" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste" value="Ste" checked="' . $checked_ste . '" />Ste. <input type="checkbox" name="Flr" value="Flr" checked="' . $checked_flr . '" /> Flr.</div>';
-$pdf->writeHTMLCell(60, 0, 12, 101, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_interpreter_mailing_apt_flor', 39, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 65, 101);
-//......
-$pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>3.c.</b> &nbsp; City or Town </div>';
-$pdf->writeHTMLCell(50, 0, 12, 110, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_interpreter_mailing_city_town', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 44, 110);
-//............
-$pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>3.d.</b>&nbsp;&nbsp;&nbsp;State</div>';
-$pdf->writeHTMLCell(50, 0, 12, 119, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$html = '<select name="part5_interpreter_mailing_state" size="0.75">';
-foreach ($allDataCountry as $record) {
-    $html .= '<option value="' . $record->state_code . '">' . $record->state_code . ' </option>';
-}
-$html .= '</select>';
-$pdf->writeHTMLCell(25, 0, 29.5, 118, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('Times', '', 10);
-$html = '<div><b>3.e.</b>&nbsp;ZIP Code</div>';
-$pdf->writeHTMLCell(30, 0, 46, 119, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_interpreter_mailing_zip_code', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 68, 119);
-//..........
-$pdf->SetFont('Times', '', 10); // set font
-$html = '<b>3.f.</b>&nbsp;&nbsp;&nbsp; Province';
-$pdf->writeHTMLCell(50, 0, 12, 128, $html, '', 0, 0, true, 'L');
-//.......
-$pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_mailing_province', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 42, 128);
-//.......
-$pdf->SetFont('Times', '', 10); // set font
-$html = '<b>3.g.</b>&nbsp;&nbsp;&nbsp;Postal Code';
-$pdf->writeHTMLCell(50, 0, 12, 137, $html, '', 0, 0, true, 'L');
-//......
-$pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_mailing_postal_code', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 42, 137);
-//........
-$pdf->SetFont('Times', '', 10); // set font
-$html = '<b>3.h.</b> &nbsp;&nbsp;Country';
-$pdf->writeHTMLCell(50, 0, 12, 143, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part5_interpreter_mailing_country', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 148);
+$pdf->TextField('part5_interpreter_business_org_name', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 85);
+
 //..........
 $pdf->SetFont('times', 'BI', 12);
 $pdf->SetFillColor(220, 220, 220);
@@ -966,8 +885,8 @@ $pdf->TextField('part5_preparer_email_address', 83, 7, array('strokeColor' => ar
 /********************************
  ******** Start Page No 4 *******
  ********************************/
-$pdf->setCellPaddings(1, 1.5, 1, 1.5); // set cell padding
 $pdf->AddPage('P', 'LETTER');  // page number 5
+$pdf->setCellPaddings(1, 1.5, 1, 1.5); // set cell padding
 //.........
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
