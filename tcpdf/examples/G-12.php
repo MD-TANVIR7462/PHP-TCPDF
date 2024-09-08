@@ -2,11 +2,14 @@
 
 //require_once('form_header.php');   //database connection file 
 
-/* require_once("config.php");
-$allDataCountry = indexByQueryAllData("SELECT * FROM countries"); */
+//  require_once("config.php");
+// $allDataCountry = indexByQueryAllData("SELECT * FROM countries");
 
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
+
+
+
 
 // Extend the TCPDF class to create custom Header and Footer
 class MyPDF extends TCPDF {
@@ -1203,106 +1206,81 @@ $pdf->writeHTMLCell(90, 50, 119, 198, $html, 0, 0, false, 'L');
 
 
 
+
+// 'attorney_statebar_number':' $attorneyData->bar_number',
+// 'attorney_uscis_online_number':' $attorneyData->uscis_online_account_number',
 $js = "
 var fields = {
-    'uscis_online_account_number':' ',
-    'your_family_lastname':' ',
-    'your_given_firstname':' ',
-    'your_middlename':' ',
-
-    'representative_address_street':' ',
-    'representative_address_apt_ste_flr':' ',
-    'representative_address_city_or_town':' ',
-    'representative_address_state':' ',
-    'representative_address_zip_code':' ',
-    'representative_address_province':' ',
-    'representative_address_postal_code':' ',
-    'representative_address_country':' ',
-
-    'representative_contact_daytime_number':' ',
-    'representative_contact_telephone_number':' ',
-    'representative_contact_email':' ',
-    'representative_fax_number':' ',
-    'part3_receipt_number':' ',
-
-    'part3_representative_family_lastname':' ',
-    'part3_representative_given_firstname':' ',
-    'part3_representative_middlename':' ',
-
-    'part3_name_of_entry':' ',
-    'part3_title_of_authorized_signatory':' ',
-    'part3_client_uscis_online_account_number':' ',
-    'part3_client_registration_number':' ',
-    'client_daytime_telephone_number':' ',
-    'client_mobile_telephone_number':' ',
-    'client_email_address':' ',
-
-    'client_mailing_address_street':' ',
-    'client_mailing_address_apt_ste_flr':' ',
-    'client_mailing_address_city_or_town':' ',
-    'client_mailing_address_state':' ',
-    'client_mailing_address_zip_code':' ',
-    'client_mailing_address_province':' ',
-    'client_mailing_address_postal_code':' ',
-    'client_mailing_address_country':' ',
-
-    'part4_client_date_of_signature':' ',
-    'part5_representative_date_of_signature':' ',
-    'part5_law_student_date_of_signature':' ',
-
-    'additional_information_2a':' ',
-    'additional_information_2b':' ',
-    'additional_information_2c':' ',
-    'additional_information_2d':' ',
-
-    'additional_information_3a':' ',
-    'additional_information_3b':' ',
-    'additional_information_3c':' ',
-    'additional_information_3d':' ',
-
-    'additional_information_4a':' ',
-    'additional_information_4b':' ',
-    'additional_information_4c':' ',
-    'additional_information_4d':' ',
-
-    'additional_information_5a':' ',
-    'additional_information_5b':' ',
-    'additional_information_5c':' ',
-    'additional_information_5d':' ',
-
-    'additional_information_6a':' ',
-    'additional_information_6b':' ',
-    'additional_information_6c':' ',
-    'additional_information_6d':' ',
-    '':' ',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    'applicant_family_lastname':' " . showData('petitioner_family_last_name') . "',
+    'applicant_given_firstname':' " . showData('petitioner_given_first_name') . "',
+    'applicant_middlename':' " . showData('petitioner_middle_name') . "',
+    'applicant_business_organization':' " . showData('i_290b_principal_immigrant_business_name') . "',
+    'applicant_info_align_reg_number':' " . showData('petitioner_alien_registration_number') . "',
+    'applicant_info_usis_online_account_number':' " . showData('petitioner_uscis_online_account_number') . "',
+    'information_about_applicant_mail_in_care_name':' " . showData('petitioner_us_mailing_care_of_name') . "',
+    'information_about_applicant_mail_street':' " . showData('petitioner_us_mailing_street_number') . "',
+    'information_about_applicant_mail_apt_ste_flr':' " . showData('petitioner_us_mailing_apt_ste_flr_value') . "',
+    'information_about_applicant_mail_city_town':' " . showData('petitioner_us_mailing_city_town') . "',
+    'information_about_applicant_mail_state':' " . showData('petitioner_us_mailing_state') . "',
+    'information_about_applicant_mail_zipcode':' " . showData('petitioner_us_mailing_zip_code') . "',
+    'information_about_applicant_province':' " . showData('petitioner_us_mailing_province') . "',
+    'information_about_applicant_postal_code':' " . showData('petitioner_us_mailing_postal_code') . "',
+    'information_about_applicant_country':' " . showData('petitioner_us_mailing_country') . "',
+//page 1 end.......    
+    'information_about_uscis_form':' " . showData('i_290b_appeal_or_motion_uscis_form_no') . "',
+    'receipt_number_for_the_applicant':' " . showData('i_290b_appeal_or_motion_receipt_number') . "',
+    'part2_4_request_nominigrant_example':' " . showData('i_290b_appeal_or_motion_nonimmigrant_or_immigrant') . "',
+    'part2_5_date_of_the_adverse_decision':' " . showData('i_290b_appeal_or_motion_adverse_decision_date') . "',
+    'part2_office_that_issued_advarse_decision':' " . showData('i_290b_appeal_or_motion_adverse_decision') . "',
+    'part4_1b_interpreter_question_and_instruction':' " . showData('i_290b_applicant_or_petitioner_interpreter_name') . "',
+    'part4_applicant_daytime_telephone':' " . showData('i_290b_applicant_or_petitioner_daytime_tel') . "',
+    'part4_applicant_mobile_telephone':' " . showData('i_290b_applicant_or_petitioner_mobile') . "',
+    'part4_applicant_email_address':' " . showData('i_290b_applicant_or_petitioner_email') . "',
+//page 2 end....
+    
+    'part5_interpreter_family_lastname':' " . showData('i_290b_interpreter_family_last_name') . "',
+    'part5_interpreter_given_firstname':' " . showData('i_290b_interpreter_given_first_name') . "',
+    'part5_interpreter_business_org_name':' " . showData('i_290b_interpreter_business_name') . "',
+    'part5_interpreter_daytime_telephone':' " . showData('i_290b_interpreter_daytime_tel') . "',
+    'part5_interpreter_mobile_telephone':' " . showData('i_290b_interpreter_mobile') . "',
+    'part5_interpreter_email_address':' " . showData('i_290b_interpreter_email') . "',
+    'part5_interpreter_certification_fluent_eng':' " . showData('i_290b_interpreter_fluent_english') . "',
+    'part5_interpreter_signature':' " . showData('i_290b_interpreter_sign_date') . "',
+    'part5_preparer_family_lastname':' " . showData('i_290b_preparer_family_last_name') . "',
+    'part5_preparer_given_firstname':' " . showData('i_290b_preparer_given_first_name') . "',
+    'part5_preparer_business_org_name':' " . showData('i_290b_preparer_business_name') . "',
+    'part5_preparer_mailing_street_name':' " . showData('i_290b_preparer_address_street_number') . "',
+    'part5_preparer_mailing_apt_flor':' " . showData('i_290b_preparer_address_apt_ste_flr_value') . "',
+    'part5_prepare_mailing_city_town':' " . showData('i_290b_preparer_address_city_town') . "',
+    'part5_preparer_mailing_state':' " . showData('i_290b_preparer_address_state') . "',
+    'part5_prepare_mailing_zip_code':' " . showData('i_290b_preparer_address_zip_code') . "',
+    'part5_prepare_mailing_province':' " . showData('i_290b_preparer_address_province') . "',
+    'part5_preparer_mailing_postal_code':' " . showData('i_290b_preparer_address_postal_code') . "',
+    'part5_preparer_mailing_country':' " . showData('i_290b_preparer_address_country') . "',
+    'part5_prepare_daytime_telephone':' " . showData('i_290b_preparer_daytime_tel') . "',
+    'part5_prepare_mobile_telephone':' " . showData('i_290b_preparer_mobile') . "',
+    'part5_preparer_email_address':' " . showData('i_290b_preparer_email') . "',
+    'part6_preparer_signature':' " . showData('i_290b_preparer_sign_date') . "',
+//page 3 end......
+    'i_290B_additional_info_family_last_name':' " . showData('i_290b_additional_info_last_name') . "',
+    'i_290B_additional_info_given_first_name':' " . showData('i_290b_additional_info_first_name') . "',
+    'i_290B_additional_info_middle_name':' " . showData('i_290b_additional_info_middle_name') . "',
+    'i_290B_additional_info_a_number':' " . showData('i_290b_additional_info_a_number') . "',
+    'i_290B_additional_info_page_number':' " . showData('i_290b_additional_info_3a_page_no') . "',
+    'i_290B_additional_info_part_number':' " . showData('i_290b_additional_info_3b_part_no') . "',
+    'i_290B_additional_info_item_number':' " . showData('i_290b_additional_info_3c_item_no') . "',
+    'i_290B_additional_info_page_number1':' " . showData('i_290b_additional_info_4a_page_no') . "',
+    'i_290B_additional_info_part_number1':' " . showData('i_290b_additional_info_4b_part_no') . "',
+    'i_290B_additional_info_item_number1':' " . showData('i_290b_additional_info_4c_item_no') . "',
+    'i_290B_additional_info_page_number2':' " . showData('i_290b_additional_info_5a_page_no') . "',
+    'i_290B_additional_info_part_number2':' " . showData('i_290b_additional_info_5b_part_no') . "',
+    'i_290B_additional_info_item_number2':' " . showData('i_290b_additional_info_5c_item_no') . "',
+    'i_290B_additional_info_page_number3':' " . showData('i_290b_additional_info_6a_page_no') . "',
+    'i_290B_additional_info_part_number3':' " . showData('i_290b_additional_info_6b_part_no') . "',
+    'i_290B_additional_info_item_number3':' " . showData('i_290b_additional_info_6c_item_no') . "',
+    'i_290B_additional_info_page_number4':' " . showData('i_290b_additional_info_7a_page_no') . "',
+    'i_290B_additional_info_part_number4':' " . showData('i_290b_additional_info_7b_part_no') . "',
+    'i_290B_additional_info_item_number4':' " . showData('i_290b_additional_info_7c_item_no') . "',    
 };
 for (var fieldName in fields) {
     if (!fields.hasOwnProperty(fieldName)) continue;

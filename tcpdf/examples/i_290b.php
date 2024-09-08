@@ -1,9 +1,10 @@
 <?php
 
 // require_once('formheader.php');   //database connection file 
-require_once('config.php'); //local db file
 require_once('tcpdf_include.php');
-
+// require_once('config.php'); //local db file
+require_once('localconfig.php'); //localconfig file...........
+    //showData()
 class MyPDF extends TCPDF
 {
     //Page header
@@ -48,6 +49,10 @@ class MyPDF extends TCPDF
 
         $this->MultiCell(61, 6, 'Page ' . $this->getAliasNumPage() . ' of ' . $this->getAliasNbPages(), 0, 'R', 0, 1, 159, 267.5, true);
     }
+
+
+
+
 }
 $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 // set document information
@@ -1319,6 +1324,5 @@ for (var fieldName in fields) {
 ";
 $pdf->IncludeJS($js);
 
-// $pdf->lastPage();
 //Close and output PDF document
 $pdf->Output('I-290b.pdf', 'I');
