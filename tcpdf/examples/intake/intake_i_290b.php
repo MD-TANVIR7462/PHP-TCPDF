@@ -7,7 +7,7 @@ include "intake_header.php";
 <!---------------------------------------------------
 ------------------- page 1 --------------------------
 ----------------------------------------------------->
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right"><b>Page 1 of 6</b></p>
     <table>
         <thead>
@@ -33,13 +33,7 @@ include "intake_header.php";
             <div class="bg-info" style="margin-top:10px;">
                 <h4><b>Part 1. Information About the Applicant or Petitioner</b></h4>
             </div>
-            <h5>If you are an individual filing this appeal or motion, complete
-                <b>Item Number 1.</b> If you are a business or organization,
-                complete <b>Item Number 2</b>.
-            </h5>
-            <div class="bg-info">
-                <h4><b><i>Part 2. Information About the Principal Immigrant</i></b></h4>
-            </div>
+
             <div class="form-group">
                 <label class="control-label col-md-5">1.a. Family Name(Last Name)</label>
                 <div class="col-md-7">
@@ -59,19 +53,25 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">2. Business or Organization (if applicable)</label>
+                <label class="control-label col-md-7">2. Date of Birth (mm/dd/yyyy)</label>
+                <div class="col-md-5">
+                    <input type="date" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3. Business or Organization Name (if applicable)</label>
                 <div class="col-md-12">
                     <input type="text" class="form-control" maxlength="30" name="i_290b_principal_immigrant_business_name" value="<?php echo showData('i_290b_principal_immigrant_business_name') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">3. Alien Registration Number (A-Number, if any)</label>
+                <label class="control-label col-md-12">4. Alien Registration Number (A-Number, if any)</label>
                 <div class="col-md-12 d-flexible col-md-6 col-md-offset-6">
                     ►A-<input type="text" class="form-control" maxlength="9" name="petitioner_alien_registration_number" value="<?php echo showData('petitioner_alien_registration_number') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">4. USCIS Online Account Number (if any)</label>
+                <label class="control-label col-md-12">5. USCIS Online Account Number (if any)</label>
                 <div class="col-md-12 d-flexible col-md-8 col-md-offset-4">
                     ►<input type="text" class="form-control " maxlength="12" name="petitioner_uscis_online_account_number" value="<?php echo showData('petitioner_uscis_online_account_number') ?>">
                 </div>
@@ -79,22 +79,22 @@ include "intake_header.php";
         </div>
         <div class="col-md-6">
             <div class="bg-info">
-                <h4><i><b>Mailing Address</b> (or Military APO/FPO Address, if applicable) </i></h4>
+                <h4><i><b>Mailing Address</b> (Safe or Alternate Address,<br>if applicable) </i></h4>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">5.a. In Care Of Name</label>
+                <label class="control-label col-md-12">6.a. In Care Of Name</label>
                 <div class="col-md-12">
                     <input type="text" class="form-control" maxlength="34" name="petitioner_us_mailing_care_of_name" value="<?php echo showData('petitioner_us_mailing_care_of_name') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">5.b. Street Number and Name</label>
+                <label class="control-label col-md-5">6.b. Street Number and Name</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" name="petitioner_us_mailing_street_number" maxlength="28" value="<?php echo showData('petitioner_us_mailing_street_number') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <div class="control-label col-md-6"><b>5.c </b> &nbsp;
+                <div class="control-label col-md-6"><b>6.c </b> &nbsp;
                     <label class="control-label">
                         <input type="radio" name="petitioner_us_mailing_apt_ste_flr" value="apt" <?php echo (showData('petitioner_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
                         Apt. &nbsp;
@@ -113,13 +113,13 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">5.d. City or Town</label>
+                <label class="control-label col-md-5">6.d. City or Town</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" name="petitioner_us_mailing_city_town" maxlength="20" value="<?php echo showData('petitioner_us_mailing_city_town') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">5.e. State</label>
+                <label class="control-label col-md-5">6.e. State</label>
                 <div class="col-md-7">
                     <select class="form-control" name="petitioner_us_mailing_state">
                         <option value=''>Select</option>
@@ -134,97 +134,100 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">5.f. ZIP Code</label>
+                <label class="control-label col-md-5">6.f. ZIP Code</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" name="petitioner_us_mailing_zip_code" maxlength="5" value="<?php echo showData('petitioner_us_mailing_zip_code') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">5.g. Province</label>
+                <label class="control-label col-md-5">6.g. Province</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" name="petitioner_us_mailing_province" maxlength="20" value="<?php echo showData('petitioner_us_mailing_province') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">5.h. Postal Code</label>
+                <label class="control-label col-md-5">6.h. Postal Code</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" name="petitioner_us_mailing_postal_code" maxlength="9" value="<?php echo showData('petitioner_us_mailing_postal_code') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">5.i. Country</label>
+                <label class="control-label col-md-12">6.i. Country</label>
                 <div class="col-md-12">
                     <input type="text" class="form-control" name="petitioner_us_mailing_country" maxlength="39" value="<?php echo showData('petitioner_us_mailing_country') ?>">
                 </div>
             </div>
-            <div class="bg-info">
-                <h4><b>Part 2. Information About the Appeal or Motion</b></h4>
-            </div>
-            <h5>Please indicate whether you are filing an appeal to the Administrative Appeals Office (AAO) or a motion. You are not
-                allowed to file both an appeal and a motion on a single form. <b>If you select more than one box, your filing may be rejected.</b><br><br><b>NOTE: DO NOT use this form if you are filing an appeal relating to a Form I-130, Petition for Alien Relative, or a
-                    Form I-360, Self-Petition for a Widow(er) of a U.S. Citizen. You must file those appeals with the Board of Immigration Appeals using Form EOIR-29.</b></h5>
         </div>
     </div>
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 2 of 6</b></p>
     <div class=" row">
     <div class="col-md-6">
         <div class="bg-info">
-            <h4><b>Part 3. Information About the Immigrants You
-                    Are Sponsoring</b> </h4>
+            <h4><b>Part 2. Information About the Appeal or Motion</b></h4>
+        </div>
+        <h5>Please indicate whether you are filing an appeal to the Administrative Appeals Office (AAO) or a motion. You cannot
+            file both an appeal and a motion on a single form. <b>If you select both an appeal and a motion, we may dismiss or reject your filing.</b><br><br>
+            <b> NOTE: DO NOT use this form to file an appeal with the Board of Immigration Appeals (BIA). You must instead use Form EOIR-29.</b>
+        </h5>
+        <div class="form-group">
+            <label class="control-label col-md-12">I am filing an appeal to the AAO.</label>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">1.a. <?php echo createCheckbox("i_290b_appeal_or_motion_additional_status") ?>I am filing an appeal to the AAO. My brief and/or additional evidence is attached.</label>
+            <label class="control-label col-md-12">1.a. <?php echo createCheckbox("i_290b_appeal_or_motion_additional_status") ?>I have attached a brief and/or additional evidence.</label>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12">1.b. <?php echo createCheckbox("i_290b_appeal_or_motion_calendar_days_status") ?>
-                I am filing an appeal to the AAO. I will submit my brief and/or additional evidence to the AAO within 30 calendar days of filing the appeal. </label>
+                I will submit a brief and/or additional evidence directly to the AAO within 30 calendar days of filing this appeal.</label>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">1.c. <?php echo createCheckbox("i_290b_appeal_or_motion_submitting_status") ?> I am filing an appeal to the AAO. I will not be submitting a brief and/or additional evidence.</label>
+            <label class="control-label col-md-12">1.c. <?php echo createCheckbox("i_290b_appeal_or_motion_submitting_status") ?> I will not be submitting any brief or additional evidence in support of this appeal.</label>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">1.d. <?php echo createCheckbox("i_290b_appeal_or_motion_reopen_status") ?>I am filing a motion to reopen. My brief and/or additional evidence is attached.</label>
+            <label class="control-label col-md-12">I am filing a motion.</label>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">1.e. <?php echo createCheckbox("i_290b_appeal_or_motion_reconsider_status") ?>I am filing a motion to reconsider. My brief is attached.</label>
+            <label class="control-label col-md-12">2.a. <?php echo createCheckbox("i_290b_appeal_or_motion_reopen_status") ?>I am filing a motion to reopen. I have attached a brief and/or additional evidence.</label>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">1.f. <?php echo createCheckbox("i_290b_appeal_or_motion_reopen_and_reconsider_status") ?>I am filing a motion to reopen and a motion to reconsider. My brief and/or additional evidence is attached</label>
+            <label class="control-label col-md-12">2.b. <?php echo createCheckbox("i_290b_appeal_or_motion_reconsider_status") ?>I am filing a motion to reconsider. I have attached a brief.</label>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">2.c. <?php echo createCheckbox("i_290b_appeal_or_motion_reopen_and_reconsider_status") ?>I am filing a motion to reopen and a motion to reconsider. I have attached a brief and/or additional evidence.</label>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-12">2. USCIS Form for the Application or Petition That is the Subject of This Appeal or Motion (for example, Form I-140, I-360, I-129, I-485, I-601)</label>
+            <label class="control-label col-md-12">3. Immigration Form That is the Subject of This Appeal or Motion (for example, Form I-140, I-360, I-129, I-485, I-601, I-730, I-131) (list only one form number)</label>
             <div class="col-md-12">
                 <input type="text" maxlength="39" class="form-control" name="i_290b_appeal_or_motion_uscis_form_no" value="<?php echo showData('i_290b_appeal_or_motion_uscis_form_no') ?>" />
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">3. Receipt Number for the Application or Petition</label>
+            <label class="control-label col-md-12">4. Receipt Number for the Application, Petition, or Other Request (list only one Receipt Number)</label>
             <div class="col-md-12">
                 <input type="text" maxlength="34" class="form-control" name="i_290b_appeal_or_motion_receipt_number" value="<?php echo showData('i_290b_appeal_or_motion_receipt_number') ?>" />
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">4. Requested Nonimmigrant or Immigrant Classification (for example, H-1B, R-1, O-1, EB-1, EB-2, if applicable)</label>
+            <label class="control-label col-md-12">5. Requested Immigrant or Nonimmigrant Classification (for example, H-1B, R-1, O-1, EB-1, EB-2, RE-2, AS-2) (if applicable)</label>
             <div class="col-md-12">
                 <input type="text" maxlength="39" class="form-control" name="i_290b_appeal_or_motion_nonimmigrant_or_immigrant" value="<?php echo showData('i_290b_appeal_or_motion_nonimmigrant_or_immigrant') ?>" />
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">5. Date of the Adverse Decision (mm/dd/yyyy)</label>
+            <label class="control-label col-md-12">6. Date of the Unfavorable Decision (mm/dd/yyyy)</label>
             <div class="col-md-6 col-md-offset-6">
                 <input type="date" class="form-control" name="i_290b_appeal_or_motion_adverse_decision_date" maxlength="38" value="<?php echo showData('i_290b_appeal_or_motion_adverse_decision_date') ?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">6. Office That Issued the Adverse Decision</label>
+            <label class="control-label col-md-12">6. Office That Issued the Unfavorable Decision</label>
             <div class="col-md-12">
                 <select class="form-control" name="i_290b_appeal_or_motion_adverse_decision">
                     <option value=''>Select</option>
@@ -334,79 +337,54 @@ include "intake_header.php";
                 </select>
             </div>
         </div>
+
+
+    </div>
+    <div class="col-md-6">
         <div class="bg-info">
-            <h4><b>Part 3. Basis for the Appeal or Motion</b> </h4>
+            <h4><b>Part 3. Basis for the Appeal or Motion </b> </h4>
         </div>
-        <h5>In <b>Part 7. Additional Information</b>, or on a separate sheet of paper, you <b>must provide a statement regarding the basis for the appeal or motion</b>. If you attach a separate sheet of paper,
-            type or print your name and A-Number (if any) at the top of each sheet; indicate the <b>Page Number, Part Number, and Item Number</b> to which your answer refers; and sign and date each sheet. <br><br>
-            <b>Appeal:</b> Provide a statement that specifically identifies an erroneous conclusion of law or fact in the decision being appealed. <b>You must provide this information with your Form I-290B even if you intend to submit a brief later.</b> <br><br>
-            <b> Motion to Reopen:</b> A motion to reopen must state new facts and be supported by documentary evidence demonstrating eligibility for the requested immigration benefit at the time you filed the application or petition.
+        <h5>
+            <b>
+                You must provide a statement regarding the basis for your
+                appeal or motion in the space provided on the next page. If
+                you need additional space to provide your explanation, use Part
+                7. Additional Information or a separate sheet of paper. <br><br>
+                Appeal: Provide a statement that specifically identifies an
+                erroneous conclusion of law or statement of fact in the decision
+                you are appealing. You MUST provide this information with
+                your Form I-290B even if you intend to submit a brief later. <br><br>
+                NOTE: Your appeal must address all grounds of
+                ineligibility identified in the unfavorable decision. If you do
+                not address an issue in a statement on this form or in a
+                supporting brief, we may deem it waived for the appeal. A
+                waived ground of ineligibility may be the sole basis for a
+                dismissed appeal. <br><br>
+                Motion to Reopen: A motion to reopen must state new facts
+                and must be supported by documentary evidence demonstrating
+                eligibility for the requested immigration benefit at the time you
+                filed the application or petition. <br><br>
+                Motion to Reconsider: A motion to reconsider must state the
+                reasons for reconsideration and must be supported by any
+                pertinent precedent decisions to establish that the decision was
+                based on an incorrect application of law or service policy, if
+                applicable. A motion to reconsider must also establish that the
+                decision was incorrect based on the evidence of record at the
+                time of the decision. <br><br>
+            </b>
         </h5>
 
-    </div>
-
-    <!-- left side -->
-
-    <div class="col-md-6">
-
-        <h5><b>Motion to Reconsider:</b> A motion to reconsider must demonstrate that the decision was based on an incorrect application of law or policy, and that the decision was incorrect based on the evidence in the case record at the time of the decision. The motion must be supported by citations to
-            appropriate statutes, regulations, precedent decisions, or statements of USCIS policy.</h5>
-        <div class="bg-info">
-            <h4><b>Part 4. Applicant's or Petitioner's Statement, Contact Information, Certification, and Signature</b></h4>
-        </div>
-        <h5><b>NOTE</b>: Read the <b>Penalties</b> section of the Form I-290B
-            Instructions before completing this part.</h5>
-        <div class="bg-info">
-            <h4><b>Section A</b></h4>
-        </div>
-        <h5>If you are filing an appeal or motion based on an <b>APPLICATION OR PETITION FILED BY AN INDIVIDUAL (NOT A BUSINESS OR ORGANIZATION),</b> complete this section:</h5>
-        <div class="bg-info">
-            <h4><b><i>Applicant's or Petitioner's Statement</i></b></h4>
-        </div>
-        <h5><b>NOTE:</b> Select the box for either <b>Item Number 1.a. or 1.b.</b> If
-            applicable, select the box for <b>Item Number 2</b>.</h5>
         <div class="form-group">
-            <label class="control-label col-md-12">1.a. <?php echo createCheckbox("i_290b_applicant_or_petitioner_english_status") ?>I can read and understand English, and I have read and understand every question and instruction on this form and my answer to every question.</label>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">1.b. <?php echo createCheckbox("i_290b_applicant_or_petitioner_interpreter_name_status") ?>The interpreter named in Part 5. has read to me every question and instruction on this form, and my answer to every question, in</label>
             <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_applicant_or_petitioner_interpreter_name" maxlength="34" value="<?php echo showData('i_290b_applicant_or_petitioner_interpreter_name') ?>">
-            </div>
-            <h5 class="control-label col-md-12"><b>a language in which I am fluent. I understood all of this information as interpreted.</b></h5>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">2. <?php echo createCheckbox("i_290b_applicant_or_petitioner_preparer_name_status") ?>At my request, the preparer named in Part 6. prepared this form for me based only upon information I provided or authorized.</label>
-        </div>
-        <div class="bg-info">
-            <h4><b><i>Applicant's or Petitioner's Contact Information</i></b></h4>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">3. Applicant's or Petitioner's Daytime Telephone Number</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_applicant_or_petitioner_daytime_tel" maxlength="10" value="<?php echo showData('i_290b_applicant_or_petitioner_daytime_tel') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">4. Applicant's or Petitioner's Mobile Telephone Number (if any)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_applicant_or_petitioner_mobile" maxlength="10" value="<?php echo showData('i_290b_applicant_or_petitioner_mobile') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">5. Applicant's or Petitioner's Email Address (if any)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_applicant_or_petitioner_email" maxlength="39" value="<?php echo showData('i_290b_applicant_or_petitioner_email') ?>">
+                <textarea class="form-control" name="i_290b_motion_reconsider_record" maxlength="600"  cols="50"  rows="10" style="height: 500px;"><?php echo showData('i_290b_motion_reconsider_record') ?></textarea>
             </div>
         </div>
     </div>
-
-    <!-- left side end div        -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ----------------------------------------------------------------------->
@@ -415,143 +393,141 @@ include "intake_header.php";
     <div class=" row mt-5 gap-4">
     <div class="col-md-6">
         <div class="bg-info">
-            <h4><b>Part 4. Applicant's or Petitioner's Statement, Contact Information, Certification, and Signature (continued)</b></h4>
+            <h4><b>Part 4. Applicant's or Petitioner's Contact Information, Certification, and Signature</b></h4>
         </div>
         <div class="bg-info">
-            <h4><b><i>Applicant's or Petitioner's Certification</i></b></h4>
+            <h4><b><i>Applicant's or Petitioner's Contact Information</i></b></h4>
         </div>
-
         <div class="form-group">
-            <label class="control-label col-md-12">Copies of any documents I have submitted are exact photocopies of unaltered, original documents, and I understand that USCIS may require that I submit original documents to USCIS at a later date. Furthermore, I authorize the release of any information from any of my records that USCIS may need to determine my
-                eligibility for the immigration benefit that I seek. <br> <br> Applicant's or Petitioner's Certification I further authorize release of information contained in this form,
-                in supporting documents, and in my USCIS records, to other entities and persons where necessary for the administration and enforcement of U.S. immigration law. <br> <br>
-                I certify, under penalty of perjury, that all of the information in my form and any document submitted with it were provided or authorized by me, that I reviewed and understand all of the information contained in, and submitted with, my form, and that all of this information is complete, true, and correct.</label>
+            <label class="control-label col-md-12">Provide your daytime telephone number, mobile telephone number (if any), and email address (if any).</label>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">1. Applicant's or Petitioner's Daytime Telephone Number</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control" name="i_290b_applicant_or_petitioner_daytime_tel" maxlength="10" value="<?php echo showData('i_290b_applicant_or_petitioner_daytime_tel') ?>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">2. Applicant's or Petitioner's Mobile Telephone Number (if any)</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control" name="i_290b_applicant_or_petitioner_mobile" maxlength="10" value="<?php echo showData('i_290b_applicant_or_petitioner_mobile') ?>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">3. Applicant's or Petitioner's Email Address (if any)</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control" name="i_290b_applicant_or_petitioner_email" maxlength="39" value="<?php echo showData('i_290b_applicant_or_petitioner_email') ?>">
+            </div>
         </div>
         <div class="bg-info">
-            <h4><b><i>Applicant's or Petitioner's Signature</i></b></h4>
+            <h4><b><i>Applicant's or Petitioner's Certification and
+                        Signature </i></b></h4>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">6.a. Applicant's or Petitioner's Signature</label>
+            <label class="control-label col-md-12">I certify, under penalty of perjury, that I provided or authorized
+                all of the responses and information contained in and submitted
+                with my appeal or motion, I read and understand or, if
+                interpreted to me in a language in which I am fluent by the
+                interpreter listed in Part 5., understood, all of the responses and
+                information contained in, and submitted with, my appeal/
+                motion, and that all of the responses and the information are
+                complete, true, and correct. Furthermore, I authorize the release
+                of any information from any and all of my records that USCIS
+                may need to determine my eligibility for an immigration request
+                and to other entities and persons where necessary for the
+                administration and enforcement of U.S. immigration law.
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">4. Applicant's or Petitioner's Signature</label>
             <div class="col-md-12">
                 <input type="text" name="" value="" maxlength="" disabled class="form-control" />
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">6.b. Date of Signature (mm/dd/yyyy)</label>
+            <label class="control-label col-md-12"> Date of Signature (mm/dd/yyyy)</label>
             <div class="col-md-7 col-md-offset-5">
                 <input type="date" class="form-control" name="i_290b_applicant_or_petitioner_sign_date" value="<?php echo showData('i_290b_applicant_or_petitioner_sign_date') ?>" />
             </div>
         </div>
         <div class="bg-info">
-            <h4><b><i>Section B</i></b></h4>
-        </div>
-        <div class="from-group">
-            If you are filing an appeal or motion based on a <b> PETITION
-                FILED BY A BUSINESS OR ORGANIZATION (NOT AN
-                INDIVIDUAL)</b>, complete this section:
+            <h4><b>Part 5. Interpreter's Contact Information, Certification, and Signature </b></h4>
         </div>
         <div class="bg-info">
-            <h4><b><i>Petitioner's Statement</i></b></h4>
-        </div>
-
-        <div class="form-group">
-            <b>NOTE:</b> Select the box for either <b>Item Number 1.a. or 1.b.</b> If
-            applicable, select the box for <b>Item Number 2</b>.
+            <h4><b><i>Interpreter's Full Name</i></b></h4>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">1.a. <?php echo createCheckbox("Petitioner_statement_english_status") ?>I can read and understand English, and I have read and understand every question and instruction on this form and my answer to every question.</label>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">1.b. <?php echo createCheckbox("Petitioner_statement_interpreter_name_status") ?>The interpreter named in Part 5. has read to me every question and instruction on this form, and my answer to every question, in</label>
+            <label class="control-label col-md-12">1. Interpreter's Family Name (Last Name)</label>
             <div class="col-md-12">
-                <input type="text" class="form-control" name="Petitioner_statement_interpreter_name" maxlength="34" value="<?php echo showData('Petitioner_statement_interpreter_name') ?>">
+                <input type="text" class="form-control  " name="i_290b_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_290b_interpreter_family_last_name') ?>">
             </div>
-            <h5 class="control-label col-md-12"><b>a language in which I am fluent. I understood all of this information as interpreted.</b></h5>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">2. <?php echo createCheckbox("Petitioner_statement_preparer_name_status") ?>At my request, the preparer named in Part 6. prepared this form for me based only upon information I provided or authorized.</label>
+            <label class="control-label col-md-12">Interpreter's Given Name (First Name)</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control  " name="i_290b_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_290b_interpreter_given_first_name') ?>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">2. Interpreter's Business or Organization Name (if any)</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control  " name="i_290b_interpreter_business_name" maxlength="30" value="<?php echo showData('i_290b_interpreter_business_name') ?>">
+            </div>
         </div>
     </div>
-    <!-- left side end -->
     <div class="col-md-6">
         <div class="bg-info">
-            <h4><b><i>Petitioner's Contact Information</i></b></h4>
+            <h4><b><i>Interpreter's Contact Information</i></b></h4>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-5">1.a. Family Name(Last Name)</label>
-            <div class="col-md-7">
-                <input type="text" maxlength="29" class="form-control" name="i_290b_petitioner_family_last_name" value="<?php echo showData('i_290b_petitioner_family_last_name') ?>" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-5">1.b. Given Name(First Name)</label>
-            <div class="col-md-7">
-                <input type="text" maxlength="29" class="form-control" name="i_290b_petitioner_given_first_name" value="<?php echo showData('i_290b_petitioner_given_first_name') ?>" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-5">1.c. Middle Name</label>
-            <div class="col-md-7">
-                <input type="text" maxlength="29" class="form-control" name="i_290b_petitioner_middle_name" value="<?php echo showData('i_290b_petitioner_middle_name') ?>" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">4. Title</label>
+            <label class="control-label col-md-12">3. Interpreter's Daytime Telephone Number</label>
             <div class="col-md-12">
-                <input type="text" maxlength="34" class="form-control" name="i_290b_petitioner_title" value="<?php echo showData('i_290b_petitioner_title') ?>" />
+                <input type="number" class="form-control  " name="i_290b_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_290b_interpreter_daytime_tel') ?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">5. Daytime Telephone Number</label>
+            <label class="control-label col-md-12">4. Interpreter's Mobile Telephone Number (if any)</label>
             <div class="col-md-12">
-                <input type="text" maxlength="10" class="form-control" name="petitioner_daytime_tel" value="<?php echo showData('petitioner_daytime_tel') ?>" />
+                <input type="number" class="form-control  " name="i_290b_interpreter_mobile" maxlength="10" value="<?php echo showData('i_290b_interpreter_mobile') ?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">6. Mobile Telephone Number (if any)</label>
+            <label class="control-label col-md-12">5. Interpreter's Email Address (if any)</label>
             <div class="col-md-12">
-                <input type="text" maxlength="10" class="form-control" name="petitioner_mobile" value="<?php echo showData('petitioner_mobile') ?>" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">7. Email Address (if any)</label>
-            <div class="col-md-12">
-                <input type="email" maxlength="39" class="form-control" name="petitioner_email" value="<?php echo showData('petitioner_email') ?>" />
+                <input type="email" class="form-control  " name="i_290b_interpreter_email" maxlength="39" value="<?php echo showData('i_290b_interpreter_email') ?>">
             </div>
         </div>
         <div class="bg-info">
-            <h4><b><i>Petitioner's Certification</i></b></h4>
+            <h4><i><b>Interpreter's Certification and Signature</b></i></h4>
         </div>
-        <div class="from-group">
-            Copies of any documents submitted are exact photocopies of unaltered, original documents, and I understand that, as the petitioner, I may be required to submit original documents to USCIS at a later date. <br><br>
-            I authorize the release of any information from my records, or from the petitioning organization's records, to USCIS or other entities and persons where necessary to determine eligibility for the immigration benefit
-            sought or where authorized by law. I recognize the authority of USCIS to conduct audits of this form using publicly available open source information. I also recognize that any supporting evidence submitted in support
-            of this form may be verified by USCIS through any means determined appropriate by USCIS, including but not limited to, on-site compliance reviews.<br><br> If filing this form on behalf of an organization, I certify that I am authorized to do so by the organization. <br><br>
-            I certify, under penalty of perjury, that I have reviewed this form, I understand all of the information contained in, and submitted with, my appeal or motion, and all of this information is complete, true, and correct. <br><br>
-        </div>
-        <div class="bg-info">
-            <h4><b><i>Petitioner's Signature</i></b></h4>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">8.a. Applicant's or Petitioner's Signature</label>
+        <p>I certify, under penalty of perjury, that I am fluent in English and</p>
+        <div style="display:flex;  align-items: center;">
             <div class="col-md-12">
-                <input type="text" name="" value="" maxlength="39" class="form-control" disabled />
+                <input type="text" class="form-control" name="i_290b_interpreter_fluent_english" maxlength="24" value="<?php echo showData('i_290b_interpreter_fluent_english') ?>">
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">8.b. Date of Signature (mm/dd/yyyy)</label>
-            <div class="col-md-7 col-md-offset-5">
-                <input type="date" class="form-control" name="i_290b_petitioner_sign_date" value="<?php echo showData('i_290b_petitioner_sign_date') ?>" />
+        <div>and I have interpreted every question on the appeal/motion, and
+            Instructions and interpreted the applicant's answers to the
+            questions in that language, and the applicant/petitioner informed
+            me that they understood every instruction, question, and answer
+            on the appeal/motion.
+        </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">6. Interpreter's Signature</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" disabled />
+                </div>
             </div>
-        </div>
-        <div>
-            <b>NOTE TO ALL APPLICANTS AND PETITIONERS: If</b>
-            you do not completely fill out this form or fail to submit
-            required documents listed in the Instructions, USCIS may
-            dismiss, deny, or reject your appeal or motion.
-        </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">Date of Signature (mm/dd/yyyy)</label>
+                <div class="col-md-7 col-md-offset-5">
+                    <input type="date" class="form-control" name="i_290b_interpreter_sign_date" value="<?php echo showData('i_290b_interpreter_sign_date') ?>" />
+                </div>
+            </div>
+
     </div>
     </div>
+ 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />

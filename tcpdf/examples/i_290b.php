@@ -251,7 +251,7 @@ $pdf->TextField('applicant_middlename', 36, 7, array('strokeColor' => array(64, 
 //......
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Business or Organization (if applicable) </div>';
+$html = '<div><b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Business or Organization Name (if applicable) </div>';
 $pdf->writeHTMLCell(90, 7, 12, 184.5, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('applicant_business_organization', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 190);
