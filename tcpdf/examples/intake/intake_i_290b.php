@@ -55,7 +55,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-7">2. Date of Birth (mm/dd/yyyy)</label>
                 <div class="col-md-5">
-                    <input type="date" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="date" class="form-control" name="petitioner_date_of_birth" value="<?php echo showData('petitioner_date_of_birth') ?>" />
                 </div>
             </div>
             <div class="form-group">

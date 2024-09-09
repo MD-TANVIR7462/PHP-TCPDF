@@ -252,7 +252,7 @@ $pdf->SetFont('times', '', 10);
 $html = '<div><b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(90, 7, 12, 177.5, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('applicant_middlename', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 68, 177);
+$pdf->TextField('applicant_date_of_birth', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 68, 177);
 //......
 
 $pdf->SetFont('times', '', 10);
@@ -677,7 +677,7 @@ $pdf->writeHTMLCell(91.9, 1, 112, 200.5, '',  "B",  0, false, false, 'C', true);
 $pdf->writeHTMLCell(91.9, 1, 112, 206.5, '',  "B",  0, false, false, 'C', true); // line 7
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part_3_motion_value_combobox', 92, 112, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_290b_additional_info_7d')), 112, 143);
+$pdf->TextField('part_3_motion_value_combobox', 92, 112, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_290b_motion_reconsider_record')), 112, 143);
 
 /********************************
  ******** End Page No 2 **********
@@ -755,7 +755,7 @@ $pdf->SetFont('times', '', 10);
 $html = '<div>Date of Signature (mm/dd/yyyy) </div>';
 $pdf->writeHTMLCell(90, 7, 20, 176, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_interpreter_signature', 34, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 70,176);
+$pdf->TextField('part4_aplicant_signature', 34, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 70,176);
 //..............
 $pdf->SetFont('times', 'B', 12);
 $pdf->SetFillColor(220, 220, 220);
@@ -1246,6 +1246,7 @@ var fields = {
     'applicant_family_lastname':' " . showData('petitioner_family_last_name') . "',
     'applicant_given_firstname':' " . showData('petitioner_given_first_name') . "',
     'applicant_middlename':' " . showData('petitioner_middle_name') . "',
+    'applicant_date_of_birth':' " . showData('petitioner_date_of_birth') . "',
     'applicant_business_organization':' " . showData('i_290b_principal_immigrant_business_name') . "',
     'applicant_info_align_reg_number':' " . showData('petitioner_alien_registration_number') . "',
     'applicant_info_usis_online_account_number':' " . showData('petitioner_uscis_online_account_number') . "',
@@ -1262,14 +1263,14 @@ var fields = {
     'information_about_uscis_form':' " . showData('i_290b_appeal_or_motion_uscis_form_no') . "',
     'receipt_number_for_the_applicant':' " . showData('i_290b_appeal_or_motion_receipt_number') . "',
     'part2_4_request_nominigrant_example':' " . showData('i_290b_appeal_or_motion_nonimmigrant_or_immigrant') . "',
-    'part2_5_date_of_the_adverse_decision':' " . showData('i_290b_appeal_or_motion_adverse_decision_date') . "',
-    'part2_office_that_issued_advarse_decision':' " . showData('i_290b_appeal_or_motion_adverse_decision') . "',
-    'part4_1b_interpreter_question_and_instruction':' " . showData('i_290b_applicant_or_petitioner_interpreter_name') . "',
+    'part2_5_date_of_the_adverse_decision':' " . showData('i_290b_appeal_or_motion_unfavorable_decision_date') . "',
+    'part2_office_that_issued_advarse_decision':' " . showData('i_290b_appeal_or_motion_unfavorable_decision') . "',
+
+//page 2 end....
     'part4_applicant_daytime_telephone':' " . showData('i_290b_applicant_or_petitioner_daytime_tel') . "',
     'part4_applicant_mobile_telephone':' " . showData('i_290b_applicant_or_petitioner_mobile') . "',
     'part4_applicant_email_address':' " . showData('i_290b_applicant_or_petitioner_email') . "',
-//page 2 end....
-    
+    'part4_aplicant_signature':' " . showData('i_290b_applicant_or_petitioner_sign_date') . "',
     'part5_interpreter_family_lastname':' " . showData('i_290b_interpreter_family_last_name') . "',
     'part5_interpreter_given_firstname':' " . showData('i_290b_interpreter_given_first_name') . "',
     'part5_interpreter_business_org_name':' " . showData('i_290b_interpreter_business_name') . "',
@@ -1281,19 +1282,12 @@ var fields = {
     'part5_preparer_family_lastname':' " . showData('i_290b_preparer_family_last_name') . "',
     'part5_preparer_given_firstname':' " . showData('i_290b_preparer_given_first_name') . "',
     'part5_preparer_business_org_name':' " . showData('i_290b_preparer_business_name') . "',
-    'part5_preparer_mailing_street_name':' " . showData('i_290b_preparer_address_street_number') . "',
-    'part5_preparer_mailing_apt_flor':' " . showData('i_290b_preparer_address_apt_ste_flr_value') . "',
-    'part5_prepare_mailing_city_town':' " . showData('i_290b_preparer_address_city_town') . "',
-    'part5_preparer_mailing_state':' " . showData('i_290b_preparer_address_state') . "',
-    'part5_prepare_mailing_zip_code':' " . showData('i_290b_preparer_address_zip_code') . "',
-    'part5_prepare_mailing_province':' " . showData('i_290b_preparer_address_province') . "',
-    'part5_preparer_mailing_postal_code':' " . showData('i_290b_preparer_address_postal_code') . "',
-    'part5_preparer_mailing_country':' " . showData('i_290b_preparer_address_country') . "',
     'part5_prepare_daytime_telephone':' " . showData('i_290b_preparer_daytime_tel') . "',
     'part5_prepare_mobile_telephone':' " . showData('i_290b_preparer_mobile') . "',
     'part5_preparer_email_address':' " . showData('i_290b_preparer_email') . "',
-    'part6_preparer_signature':' " . showData('i_290b_preparer_sign_date') . "',
 //page 3 end......
+    'part6_preparer_signature':' " . showData('i_290b_preparer_sign_date') . "',
+//page 4 end......
     'i_290B_additional_info_family_last_name':' " . showData('i_290b_additional_info_last_name') . "',
     'i_290B_additional_info_given_first_name':' " . showData('i_290b_additional_info_first_name') . "',
     'i_290B_additional_info_middle_name':' " . showData('i_290b_additional_info_middle_name') . "',
