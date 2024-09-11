@@ -294,7 +294,7 @@ include "intake_header.php";
                 <label class="control-label col-md-12">7. U.S. Social Security Number (if any)</label>
                 <div class="col-md-8 col-md-offset-4">
                     <div class="d-flexible">
-                        ► <input type="text" class="form-control" maxlength="9" name="other_information_about_you_country_of_birth" value="<?php echo showData('other_information_about_you_country_of_birth') ?>">
+                        ► <input type="text" class="form-control" maxlength="9" name="other_information_about_you_social_security_number" value="<?php echo showData('other_information_about_you_social_security_number') ?>">
                     </div>
                 </div>
             </div>
@@ -302,7 +302,7 @@ include "intake_header.php";
                 <label class="control-label col-md-12">8. USCIS Online Account Number (if any)</label>
                 <div class="col-md-10 col-md-offset-2">
                     <div class="d-flexible">
-                        ► <input type="text" class="form-control" maxlength="12" name="other_information_about_you_country_of_birth" value="<?php echo showData('other_information_about_you_country_of_birth') ?>">
+                        ► <input type="text" class="form-control" maxlength="12" name="other_information_about_you_uscis_online_account_number" value="<?php echo showData('other_information_about_you_uscis_online_account_number') ?>">
                     </div>
                 </div>
             </div>
@@ -330,7 +330,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">
                     <div class="d-flexible">
-                        <b>1.a. </b> <?php echo createCheckbox("i_864a_i_have_earned_status") ?> I am the intending immigrant and also the sponsor's spouse.
+                        <b>1.a. </b> <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> I am the intending immigrant and also the sponsor's spouse.
                     </div>
                 </label>
             </div>
@@ -338,7 +338,7 @@ include "intake_header.php";
 
                 <label class="control-label col-md-12">
                     <div class="d-flexible">
-                        <b>1.b. </b> <?php echo createCheckbox("i_864a_i_am_under_18_year_status") ?> I am the intending immigrant and also a member of the sponsor's household.
+                        <b>1.b. </b> <?php echo createCheckbox("i_864a_intending_immigrant_household_status") ?> I am the intending immigrant and also a member of the sponsor's household.
                     </div>
                 </label>
             </div>
@@ -346,36 +346,36 @@ include "intake_header.php";
 
                 <label class="control-label col-md-12">
                     <div class="d-flexible">
-                        <b>1.c. </b> <?php echo createCheckbox("i_864a_i_am_filing_an_immigrant_visa_status") ?> I am not the intending immigrant. I am the sponsor's household member. I am related to the sponsor as his/her:
+                        <b>1.c. </b> <?php echo createCheckbox("i_864a_not_a_intending_immigrant_status") ?> I am not the intending immigrant. I am the sponsor's household member. I am related to the sponsor as his/her:
                     </div>
                 </label>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-10 col-md-offset-2">
-                    <div class="d-flexible"> <?php echo createCheckbox("i_864a_i_am_filing_an_immigrant_visa_adjustment_status") ?> Spouse</div>
+                    <div class="d-flexible"> <?php echo createCheckbox("i_864a_spouse_status") ?> Spouse</div>
                 </label>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-10 col-md-offset-2">
-                    <div class="d-flexible"> <?php echo createCheckbox("i_864a_i_am_filing_an_immigrant_visa_adjustment_status") ?> Son or Daughter (at least 18 years of age)</div>
+                    <div class="d-flexible"> <?php echo createCheckbox("i_864a_son_or_daughter_status") ?> Son or Daughter (at least 18 years of age)</div>
                 </label>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-10 col-md-offset-2">
-                    <div class="d-flexible"> <?php echo createCheckbox("i_864a_i_am_filing_an_immigrant_visa_adjustment_status") ?> Parent</div>
+                    <div class="d-flexible"> <?php echo createCheckbox("i_864a_parent_status") ?> Parent</div>
                 </label>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-10 col-md-offset-2">
-                    <div class="d-flexible"> <?php echo createCheckbox("i_864a_i_am_filing_an_immigrant_visa_adjustment_status") ?> Brother or Sister</div>
+                    <div class="d-flexible"> <?php echo createCheckbox("i_864a_brother_sister_status") ?> Brother or Sister</div>
                 </label>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-10 col-md-offset-2">
-                    <div class="d-flexible"> <?php echo createCheckbox("i_864a_i_am_filing_an_immigrant_visa_adjustment_status") ?> Other Dependent (Specify)</div>
+                    <div class="d-flexible"> <?php echo createCheckbox("i_864a_other_dependent_status") ?> Other Dependent (Specify)</div>
                 </label>
                 <div class="col-md-10 col-md-offset-2">
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="29" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <input type="text" class="form-control" name="i_864a_other_dependent_value" maxlength="29" value="<?php echo showData('i_864a_other_dependent_value') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -387,11 +387,11 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">
                     <div class="d-flexible">
-                        <b>1. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?> Employed as a/an
+                        <b>1. </b> <?php echo createCheckbox("i_864a_employed_status") ?> Employed as a/an
                     </div>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <input type="text" class="form-control" name="i_864a_employed_value" maxlength="34" value="<?php echo showData('i_864a_employed_value') ?>">
                 </div>
             </div>
             <div class="form-group">
@@ -401,7 +401,7 @@ include "intake_header.php";
                     </div>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <input type="text" class="form-control" name="i_864a_employer_name1" maxlength="34" value="<?php echo showData('i_864a_employer_name1') ?>">
                 </div>
             </div>
             <div class="form-group">
@@ -411,45 +411,45 @@ include "intake_header.php";
                     </div>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <input type="text" class="form-control" name="i_864a_employer_name2" maxlength="34" value="<?php echo showData('i_864a_employer_name2') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">
                     <div class="d-flexible">
-                        <b>4. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?> Self employed as a/an
+                        <b>4. </b> <?php echo createCheckbox("i_864a_selfemployed_status") ?> Self employed as a/an
                     </div>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <input type="text" class="form-control" name="i_864a_selfemployed_value" maxlength="34" value="<?php echo showData('i_864a_selfemployed_value') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">
                     <div class="d-flexible">
-                        <b>5. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?> Retired from (Company Name)
+                        <b>5. </b> <?php echo createCheckbox("i_864a_retired_status") ?> Retired from (Company Name)
                     </div>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="34" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <input type="text" class="form-control" name="i_864a_retired_company" maxlength="34" value="<?php echo showData('i_864a_retired_company') ?>">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-md-offset-2">
                     <label class="control-label col-md-6">Since (mm/dd/yyyy)</label>
                     <div class="col-md-6">
-                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <input type="date" class="form-control" name="i_864a_retired_date" value="<?php echo showData('i_864a_retired_date') ?>">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">
                     <div class="d-flexible">
-                        6. <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?> Unemployed since (mm/dd/yyyy)
+                        6. <?php echo createCheckbox("i_864a_unemployed_status") ?> Unemployed since (mm/dd/yyyy)
                     </div>
                 </label>
                 <div class="col-md-6 col-md-offset-6">
-                    <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <input type="date" class="form-control" name="i_864a_unemployed_date" value="<?php echo showData('i_864a_unemployed_date') ?>">
                 </div>
             </div>
             <div class="form-group">
@@ -459,7 +459,7 @@ include "intake_header.php";
                     </div>
                 </label>
                 <div class="col-md-7 col-md-offset-5 d-flexible">
-                    <b>$</b> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="16" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <b>$</b> <input type="text" class="form-control" name="i_864a_individual_annual_income" maxlength="16" value="<?php echo showData('i_864a_individual_annual_income') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -469,7 +469,7 @@ include "intake_header.php";
                 <label class="control-label col-md-12">1.a. Have you filed a Federal income tax return for each of the
                     three most recent tax years?</label>
                 <div class="col-md-4 col-md-offset-8">
-                    <?php echo createRadio("i_864a_is_current_mailing_same_as_physical") ?>
+                    <?php echo createRadio("i_864a_income_tax_return_status") ?>
                 </div>
             </div>
         </div>
@@ -483,7 +483,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">
                     <div class="d-flexible">
-                        <b>1.a. </b> <?php echo createCheckbox("i_864a_i_have_earned_status") ?> (Optional) I have attached photocopies or transcripts of
+                        <b>1.b. </b> <?php echo createCheckbox("i_864a_attached_photocopies_status") ?> (Optional) I have attached photocopies or transcripts of
                         my Federal income tax returns for my second and third most recent tax years.
                     </div>
                 </label>
@@ -501,11 +501,11 @@ include "intake_header.php";
                     </div>
                     <div class="col-md-4">
                         <p style="text-align: center;"><b>Tax Year</b> </p>
-                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="4" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                        <input type="text" class="form-control" name="i_864a_tax_year1" maxlength="4" value="<?php echo showData('i_864a_tax_year1') ?>">
                     </div>
                     <div class="col-md-4">
                         <p style="text-align: center;"><b>Total Income</b></p>
-                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="13" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_total_income1" maxlength="13" value="<?php echo showData('i_864a_total_income1') ?>"></span>
                     </div>
                 </div>
                 <div class="row" style="display: flex; align-items: center;">
@@ -515,10 +515,10 @@ include "intake_header.php";
                         </label>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="4" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                        <input type="text" class="form-control" name="i_864a_tax_year2" maxlength="4" value="<?php echo showData('i_864a_tax_year2') ?>">
                     </div>
                     <div class="col-md-4">
-                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="13" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_total_income2" maxlength="13" value="<?php echo showData('i_864a_total_income2') ?>"></span>
                     </div>
                 </div>
                 <div class="row" style="display: flex; align-items: center;">
@@ -528,10 +528,10 @@ include "intake_header.php";
                         </label>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="4" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
+                        <input type="text" class="form-control" name="i_864a_tax_year3" maxlength="4" value="<?php echo showData('i_864a_tax_year3') ?>">
                     </div>
                     <div class="col-md-4">
-                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="13" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_total_income3" maxlength="13" value="<?php echo showData('i_864a_total_income3') ?>"></span>
                     </div>
                 </div>
                 <label style="margin-top: 4%;">
@@ -544,7 +544,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5">
-                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="18" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_balance_saving_accounts" maxlength="18" value="<?php echo showData('i_864a_balance_saving_accounts') ?>"></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -554,7 +554,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5">
-                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="18" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_real_estate_holdings" maxlength="18" value="<?php echo showData('i_864a_real_estate_holdings') ?>"></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -564,7 +564,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5">
-                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="18" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_cash_value_stocks" maxlength="18" value="<?php echo showData('i_864a_cash_value_stocks') ?>"></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -574,7 +574,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5">
-                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="18" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>"></span>
+                        <span class="d-flexible">$<input type="text" class="form-control" name="i_864a_add_together_item_numbers" maxlength="18" value="<?php echo showData('i_864a_add_together_item_numbers') ?>"></span>
                     </div>
                 </div>
             </div>
@@ -590,7 +590,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label>I, THE SPONSOR,</label>
                 <div>
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="42" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <input type="text" class="form-control" name="i_864a_the_sponsor_name" maxlength="42" value="<?php echo showData('i_864a_the_sponsor_name') ?>">
                 </div>
                 <p style="text-align: center;"><b>(Print Name)</b></p>
             </div>
@@ -601,7 +601,7 @@ include "intake_header.php";
                     support, promise to complete and file an affidavit of support on
                     behalf of the following named intending immigrants. </label>
                 <div>
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="42" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <input type="text" class="form-control" name="i_864a_the_sponsor_indicate_number" maxlength="42" value="<?php echo showData('i_864a_the_sponsor_indicate_number') ?>">
                 </div>
                 <p style="text-align: center;"><b>(Indicate Number)</b></p>
             </div>
@@ -636,19 +636,19 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-5">1.a. Family Name(Last Name)</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant1_family_last_name" value="<?php echo showData('i_864a_immigrant1_family_last_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5">1.b. Given Name(First Name)</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant1_given_first_name" value="<?php echo showData('i_864a_immigrant1_given_first_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5">1.c. Middle Name</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant1_middle_name" value="<?php echo showData('i_864a_immigrant1_middle_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -658,7 +658,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-6 col-md-offset-6">
-                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <input type="date" class="form-control" name="i_864a_immigrant1_date_of_birth" value="<?php echo showData('i_864a_immigrant1_date_of_birth') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -668,7 +668,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5 d-flexible">
-                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="9" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_immigrant1_alien_registration_number" maxlength="9" value="<?php echo showData('i_864a_immigrant1_alien_registration_number') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -678,7 +678,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5 d-flexible">
-                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="9" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_immigrant1_social_security_number" maxlength="9" value="<?php echo showData('i_864a_immigrant1_social_security_number') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -688,7 +688,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-8 col-md-offset-4 d-flexible">
-                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="12" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_immigrant1_online_account_number" maxlength="12" value="<?php echo showData('i_864a_immigrant1_online_account_number') ?>">
                     </div>
                 </div>
             </div>
@@ -703,19 +703,19 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-5">6.a. Family Name(Last Name)</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant2_family_last_name" value="<?php echo showData('i_864a_immigrant2_family_last_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5">6.b. Given Name(First Name)</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant2_given_first_name" value="<?php echo showData('i_864a_immigrant2_given_first_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5">6.c. Middle Name</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant2_middle_name" value="<?php echo showData('i_864a_immigrant2_middle_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -725,7 +725,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-6 col-md-offset-6">
-                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <input type="date" class="form-control" name="i_864a_immigrant2_date_of_birth" value="<?php echo showData('i_864a_immigrant2_date_of_birth') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -735,7 +735,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5 d-flexible">
-                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="9" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_immigrant2_alien_registration_number" maxlength="9" value="<?php echo showData('i_864a_immigrant2_alien_registration_number') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -745,7 +745,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5 d-flexible">
-                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="9" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_immigrant2_social_security_number" maxlength="9" value="<?php echo showData('i_864a_immigrant2_social_security_number') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -755,7 +755,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-8 col-md-offset-4 d-flexible">
-                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="12" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_immigrant2_online_account_number" maxlength="12" value="<?php echo showData('i_864a_immigrant2_online_account_number') ?>">
                     </div>
                 </div>
             </div>
@@ -769,19 +769,19 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-5">11.a. Family Name(Last Name)</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant3_family_last_name" value="<?php echo showData('i_864a_immigrant3_family_last_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5">11.b. Given Name(First Name)</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant3_given_first_name" value="<?php echo showData('i_864a_immigrant3_given_first_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5">11.c. Middle Name</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant3_middle_name" value="<?php echo showData('i_864a_immigrant3_middle_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -791,7 +791,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-6 col-md-offset-6">
-                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <input type="date" class="form-control" name="i_864a_immigrant3_date_of_birth" value="<?php echo showData('i_864a_immigrant3_date_of_birth') ?>">
                     </div>
                 </div>
             </div>
@@ -804,7 +804,7 @@ include "intake_header.php";
                     </div>
                 </label>
                 <div class="col-md-7 col-md-offset-5 d-flexible">
-                    <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="9" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_immigrant3_alien_registration_number" maxlength="9" value="<?php echo showData('i_864a_immigrant3_alien_registration_number') ?>">
                 </div>
             </div>
             <div class="form-group">
@@ -814,7 +814,7 @@ include "intake_header.php";
                     </div>
                 </label>
                 <div class="col-md-7 col-md-offset-5 d-flexible">
-                    <span><b>►</b></span><input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="9" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <span><b>►</b></span><input type="text" class="form-control" name="i_864a_immigrant3_social_security_number" maxlength="9" value="<?php echo showData('i_864a_immigrant3_social_security_number') ?>">
                 </div>
             </div>
             <div class="form-group">
@@ -824,7 +824,7 @@ include "intake_header.php";
                     </div>
                 </label>
                 <div class="col-md-8 col-md-offset-4 d-flexible">
-                    <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="12" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                    <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_immigrant3_online_account_number" maxlength="12" value="<?php echo showData('i_864a_immigrant3_online_account_number') ?>">
                 </div>
             </div>
 
@@ -839,19 +839,19 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-5">16.a. Family Name(Last Name)</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant4_family_last_name" value="<?php echo showData('i_864a_immigrant4_family_last_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5">16.b. Given Name(First Name)</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant4_given_first_name" value="<?php echo showData('i_864a_immigrant4_given_first_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5">16.c. Middle Name</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant4_middle_name" value="<?php echo showData('i_864a_immigrant4_middle_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -861,7 +861,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-6 col-md-offset-6">
-                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <input type="date" class="form-control" name="i_864a_immigrant4_date_of_birth" value="<?php echo showData('i_864a_immigrant4_date_of_birth') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -871,7 +871,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5 d-flexible">
-                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="9" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_immigrant4_alien_registration_number" maxlength="9" value="<?php echo showData('i_864a_immigrant4_alien_registration_number') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -881,7 +881,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5 d-flexible">
-                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="9" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_immigrant4_social_security_number" maxlength="9" value="<?php echo showData('i_864a_immigrant4_social_security_number') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -891,7 +891,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-8 col-md-offset-4 d-flexible">
-                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="12" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_immigrant4_online_account_number" maxlength="12" value="<?php echo showData('i_864a_immigrant4_online_account_number') ?>">
                     </div>
                 </div>
             </div>
@@ -905,19 +905,19 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-5">21.a. Family Name(Last Name)</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant5_family_last_name" value="<?php echo showData('i_864a_immigrant5_family_last_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5">21.b. Given Name(First Name)</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant5_given_first_name" value="<?php echo showData('i_864a_immigrant5_given_first_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5">21.c. Middle Name</label>
                     <div class="col-md-7">
-                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant5_middle_name" value="<?php echo showData('i_864a_immigrant5_middle_name') ?>" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -927,7 +927,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-6 col-md-offset-6">
-                        <input type="date" class="form-control" name="i_864a_the_interpreter_named_in" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <input type="date" class="form-control" name="i_864a_immigrant5_date_of_birth" value="<?php echo showData('i_864a_immigrant5_date_of_birth') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -937,7 +937,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5 d-flexible">
-                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="9" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►A</b></span> <input type="text" class="form-control" name="i_864a_immigrant5_alien_registration_number" maxlength="9" value="<?php echo showData('i_864a_immigrant5_alien_registration_number') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -947,7 +947,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-7 col-md-offset-5 d-flexible">
-                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="9" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►</b></span><input type="text" class="form-control" name="i_864a_immigrant5_social_security_number" maxlength="9" value="<?php echo showData('i_864a_immigrant5_social_security_number') ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -957,7 +957,7 @@ include "intake_header.php";
                         </div>
                     </label>
                     <div class="col-md-8 col-md-offset-4 d-flexible">
-                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="12" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>">
+                        <span><b>►</b></span> <input type="text" class="form-control" name="i_864a_immigrant5_online_account_number" maxlength="12" value="<?php echo showData('i_864a_immigrant5_online_account_number') ?>">
                     </div>
                 </div>
             </div>
@@ -1002,7 +1002,7 @@ include "intake_header.php";
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>26.a. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?> The interpreter named in Part 7. read to me every question and instruction on this contract and my answer to every question in</p>
+                    <p class="d-flexible"><b>26.a. </b> <?php echo createCheckbox("i_864a_the_interpreter_named_in_status") ?> The interpreter named in Part 7. read to me every question and instruction on this contract and my answer to every question in</p>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
                     <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="28" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>"><b>a language in which I am fluent, and I understood everything.</b>
@@ -1010,10 +1010,10 @@ include "intake_header.php";
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>27. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?> At my request, the preparer named in Part 8., </p>
+                    <p class="d-flexible"><b>27. </b> <?php echo createCheckbox("i_864a_the_preparer_named_in_status") ?> At my request, the preparer named in Part 8., </p>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="28" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>"><b>prepared this contract for me based only upon information I provided or authorized. </b>
+                    <input type="text" class="form-control" name="i_864a_the_preparer_named_in" maxlength="28" value="<?php echo showData('i_864a_the_preparer_named_in') ?>"><b>prepared this contract for me based only upon information I provided or authorized. </b>
                 </div>
             </div>
             <div class="bg-info">
@@ -1022,19 +1022,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">28. Sponsor's Daytime Telephone Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864a_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_interpreter_daytime_tel') ?>">
+                    <input type="text" class="form-control  " name="i_864a_sponsor_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_sponsor_daytime_tel') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">29. Sponsor's Mobile Telephone Number (if any)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864a_interpreter_mobile') ?>">
+                    <input type="text" class="form-control" name="i_864a_sponsor_mobile" maxlength="10" value="<?php echo showData('i_864a_sponsor_mobile') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">30. Sponsor's Email Address (if any)</label>
                 <div class="col-md-12">
-                    <input type="email" class="form-control" name="i_864a_interpreter_email" maxlength="41" value="<?php echo showData('i_864a_interpreter_email') ?>">
+                    <input type="email" class="form-control" name="i_864a_sponsor_email" maxlength="41" value="<?php echo showData('i_864a_sponsor_email') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -1073,7 +1073,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">31.b. Date of Signature (mm/dd/yyyy)</label>
                 <div class="col-md-7 col-md-offset-5">
-                    <input type="date" class="form-control" name="i_864a_interpreter_sign_date" value="<?php echo showData('i_864a_interpreter_sign_date') ?>" />
+                    <input type="date" class="form-control" name="i_864a_sponsor_sign_date" value="<?php echo showData('i_864a_sponsor_sign_date') ?>" />
                 </div>
             </div>
             <p class="form-group">

@@ -376,7 +376,7 @@ include "intake_header.php";
 
         <div class="form-group">
             <div class="col-md-12">
-                <textarea class="form-control" name="i_290b_motion_reconsider_record" maxlength="650"  cols="50"  rows="10" style="height: 500px;"><?php echo showData('i_290b_motion_reconsider_record') ?></textarea>
+                <textarea class="form-control" name="i_290b_motion_reconsider_record" maxlength="650" cols="50" rows="10" style="height: 500px;"><?php echo showData('i_290b_motion_reconsider_record') ?></textarea>
             </div>
         </div>
     </div>
@@ -647,7 +647,7 @@ include "intake_header.php";
                 complete and file with this form or attach a separate sheet of
                 paper. Type or print your name and A-Number at the top of
                 each sheet; indicate the <b>Page Number, Part Number</b>, and <b>Item
-                Number</b> to which your answer refers; and sign and date each
+                    Number</b> to which your answer refers; and sign and date each
                 sheet.
             </p>
 
