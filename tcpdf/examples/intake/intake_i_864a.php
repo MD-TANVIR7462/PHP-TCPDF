@@ -1171,7 +1171,6 @@ include "intake_header.php";
                 <b>NOTE:</b> Select the box for either Item Number 1.a. or 1.b.
                 If applicable, select the box for Item Number 2.
             </p>
-
             <div class="form-group">
                 <label class="control-label col-md-12">
                     <p class="d-flexible"><b>1.a. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status2") ?>I can read and understand English, and I have read
@@ -1277,8 +1276,7 @@ include "intake_header.php";
                 contract.
             </p>
             <div class="bg-info">
-                <h4><b>Part 7. Interpreter's Contact Information,
-                        Certification, and Signature</b> </h4>
+                <h4><b>Part 7. Interpreter's Contact Information, Certification, and Signature</b> </h4>
             </div>
             <h5><b>Provide the following information about the interpreter.</b></h5>
             <div class="bg-info">
@@ -1304,12 +1302,10 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
-
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
 ----------------------------------------------------------------------->
@@ -1332,16 +1328,13 @@ include "intake_header.php";
             <div class="form-group">
                 <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
                     <label class="control-label">
-                        <input type="radio" name="i_864a_interpreter_address_apt_ste_flr" value="apt" <?php echo (showData('i_864a_interpreter_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
+                        <input type="radio" name="i_864a_interpreter_address_apt_ste_flr" value="apt" <?php echo (showData('i_864a_interpreter_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>Apt. &nbsp;
                     </label>
                     <label class="control-label">
-                        <input type="radio" name="i_864a_interpreter_address_apt_ste_flr" value="ste" <?php echo (showData('i_864a_interpreter_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
+                        <input type="radio" name="i_864a_interpreter_address_apt_ste_flr" value="ste" <?php echo (showData('i_864a_interpreter_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>Ste. &nbsp;
                     </label>
                     <label class="control-label">
-                        <input type="radio" name="i_864a_interpreter_address_apt_ste_flr" value="flr" <?php echo (showData('i_864a_interpreter_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
+                        <input type="radio" name="i_864a_interpreter_address_apt_ste_flr" value="flr" <?php echo (showData('i_864a_interpreter_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>Flr.
                     </label>
                 </div>
                 <div class="col-md-6">
@@ -1364,8 +1357,7 @@ include "intake_header.php";
                             if ($record->state_code == showData('i_864a_interpreter_address_state')) $selected = "selected";
                             else $selected = "";
                             echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                        }
-                        ?>
+                        } ?>
                     </select>
                 </div>
             </div>

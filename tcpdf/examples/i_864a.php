@@ -1542,7 +1542,9 @@ $pdf->writeHTMLCell(90, 7, 12, 80, $html, '', 0, 0, true, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.a. </b> <input type="checkbox" name="part6_1" value="Y" checked=" " /></div>';
+if (showData('i_864a_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>1.a. </b> <input type="checkbox" name="part6_1" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 7, 12, 90, $html, 0, 1, false, true, 'L', true);
 $html = 'I can read and understand English, and I have read 
 and understand every question and instruction on this 
@@ -1551,7 +1553,9 @@ $pdf->writeHTMLCell(83, 7, 24, 90, $html, '', 0, 0, true, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.b. </b> <input type="checkbox" name="part6_1b" value="Y" checked=" " /></div>';
+if (showData('i_864a_intending_immigrant_household_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>1.b. </b> <input type="checkbox" name="part6_1b" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 7, 12, 103, $html, 0, 1, false, true, 'L', true);
 $html = 'The interpreter named in <b>Part 7</b>. read to me every 
 question and instruction on this contract and my<br>
@@ -1565,7 +1569,9 @@ $pdf->writeHTMLCell(5, 7, 101.5, 138, ",", 0, 0, false, 'L');
 //..........
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part6_2" value="Y" checked=" " /></div>';
+if (showData('i_864a_not_a_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part6_2" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 7, 12, 132, $html, 0, 1, false, true, 'L', true);
 $html = 'At my request, the preparer named in Part 8., <br><br><br>
 prepared this contract for me based only upon 
@@ -1756,7 +1762,13 @@ $pdf->TextField('part7_interpreter_mailing_street_number', 60, 7, array('strokeC
 //...........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>3.b. </b>&nbsp;  <input type="checkbox" name="Apt2" value="Apt" checked="" /> Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste2" value="Ste" checked="" /> Ste. <input type="checkbox" name="Flr2" value="Flr" checked="" /> Flr.</div>';
+if (showData('i_864a_interpreter_address_apt_ste_flr') == "apt") $checked_apt = "checked";
+else $checked_apt = "";
+if (showData('i_864a_interpreter_address_apt_ste_flr') == "ste") $checked_ste = "checked";
+else $checked_ste = "";
+if (showData('i_864a_interpreter_address_apt_ste_flr') == "flr") $checked_flr = "checked";
+else $checked_flr = "";
+$html = '<div><b>3.b. </b>&nbsp;  <input type="checkbox" name="Apt2" value="Apt" checked="' . $checked_apt . '"  /> Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste2" value="Ste" checked="' . $checked_ste . '" /> Ste. <input type="checkbox" name="Flr2" value="Flr" checked="' . $checked_flr . '" /> Flr.</div>';
 $pdf->writeHTMLCell(60, 0, 12, 49, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part7_interpreter_mailing_apt_ste_flr', 44.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 59.5, 49);
@@ -1897,13 +1909,7 @@ $pdf->writeHTMLCell(90, 7, 13, 235, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('interpreter_signature_date', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 73, 235);
-/********************************
- ******** End Page No 5 **********
- *********************************/
 
-/********************************
- ******** Start Page No 6 ********
- *********************************/
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1);
@@ -1965,7 +1971,13 @@ $pdf->TextField('part8_preparer_mailing_street_number', 59, 7, array('strokeColo
 //...........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>3.b. </b>&nbsp;  <input type="checkbox" name="Apt4" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste4" value="Ste" checked="" />Ste. <input type="checkbox" name="Flr4" value="Flr" checked="" /> Flr.</div>';
+if (showData('i_864a_preparer_address_apt_ste_flr') == "apt") $checked_apt = "checked";
+else $checked_apt = "";
+if (showData('i_864a_preparer_address_apt_ste_flr') == "ste") $checked_ste = "checked";
+else $checked_ste = "";
+if (showData('i_864a_preparer_address_apt_ste_flr') == "flr") $checked_flr = "checked";
+else $checked_flr = "";
+$html = '<div><b>3.b. </b>&nbsp;  <input type="checkbox" name="Apt4" value="Apt" checked="' . $checked_apt . '"  />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste4" value="Ste" checked="' . $checked_ste . '" />Ste. <input type="checkbox" name="Flr4" value="Flr" checked="' . $checked_flr . '"x /> Flr.</div>';
 $pdf->writeHTMLCell(60, 0, 113, 110, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part8_preparer_mailing_apt_ste_flr', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 158, 110);
@@ -2078,7 +2090,9 @@ $pdf->writeHTMLCell(91.5, 6.6, 13, 41, $html, 0, 1, true, false, 'L', true);
 
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>7.a. </b><input type="checkbox" name="part8_7a" value="Y" checked=" " /></div>';
+if (showData('i_864a_i_am_not_attorney_accredited_representative_status') == "apt") $checked = "checked";
+else $checked = "";
+$html = '<div><b>7.a. </b><input type="checkbox" name="part8_7a" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 5, 12, 48.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = "I am not an attorney or accredited representative but<br>
@@ -2090,12 +2104,18 @@ $pdf->writeHTMLCell(100, 5, 24, 48.5, $html, '', 0, 0, true, 'L');
 
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>7.b. </b><input type="checkbox" name="part8_7b" value="Y" checked=" " /></div>';
+if (showData('i_864a_i_am_an_attorney_accredited_representative_status') == "apt") $checked = "checked";
+else $checked = "";
+$html = '<div><b>7.b. </b><input type="checkbox" name="part8_7b" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 5, 12, 66, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
+if (showData('i_864a_extends_status') == "apt") $checked_extends = "checked";
+else $checked_extends = "";
+if (showData('i_864a_does_not_extends_status') == "apt") $checked_not_extends = "checked";
+else $checked_not_extends = "";
 $html = 'I am an attorney or accredited representative and my
 representation of the sponsor and household member
-in this case <input type="checkbox" name="part8_7b1" value="Y" checked=" " />  extends  <input type="checkbox" name="part8_7b2" value="Y" checked=" " />  does not extend beyond<br>
+in this case <input type="checkbox" name="part8_7b1" value="Y" checked="' . $checked_extends . '" />  extends  <input type="checkbox" name="part8_7b2" value="Y" checked="' . $checked_not_extends . '" />  does not extend beyond<br>
 the preparation of this contract.';
 $pdf->writeHTMLCell(80, 5, 24, 66, $html, '', 0, 0, true, 'L');
 
