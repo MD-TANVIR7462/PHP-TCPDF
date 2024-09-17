@@ -197,8 +197,79 @@ include "intake_header.php";
                 <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
+        <div class="col-md-12 my-4">
+            <label class="">
+                <b>18.</b>Check the box, a through c, that applies:
+            </label>
+            <br>
+            <label class="control-label">
+                <b>a.</b> <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> I have never been in Immigration Court proceedings.
+            </label><br>
+            <label class="control-label">
+                <b>b.</b> <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> I am now in Immigration Court proceedings
+            </label><br>
+            <label class="control-label">
+                <b>c.</b> <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> I am not now in Immigration Court proceedings, but I have been in the past.
+            </label>
+        </div><br>
+        <div>
+            <label class="control-label col-md-12">19. Complete 19 a through c.</label>
+            <div class="col-md-5">
+                <label class="control-label text-sm ">a. When did you last leave your country? (mm/dd/yyyy)</label>
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+            </div>
+            <div class="col-md-6">
+                <label class="control-label text-sm ">b. What is your current I-94 Number, if any?</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+        </div>
+        <div>
+            <label class="control-label col-md-12">c. List each entry into the U.S. beginning with your most recent entry. List date (mm/dd/yyyy), place, and your status for each entry. (Attach additional sheets as needed.)</label>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">Date</label>
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+            </div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">Place</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">Status</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">Date Status Expires
+                </label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">Date</label>
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+            </div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">Place</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+            <div class="col-md-4">
+                <label class="control-label text-sm ">Status</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
 
-
+            <div class="col-md-3">
+                <label class="control-label text-sm ">Date</label>
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+            </div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">Place</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">Status</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
 
 
 
