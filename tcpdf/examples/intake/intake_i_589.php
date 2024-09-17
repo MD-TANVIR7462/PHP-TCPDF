@@ -48,69 +48,69 @@ include "intake_header.php";
         <div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">1. Alien Registration Number(s) (A-Number) (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?= showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">2. U.S. Social Security Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?= showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">3. USCIS Online Account Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="34" value="<?= showData('i_539_interpreter_business_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="34" value="<?php echo showData('i_539_interpreter_business_name') ?>">
             </div>
         </div>
         <div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">4. Complete Last Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?= showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">5. First Name </label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?= showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">6. Middle Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="34" value="<?= showData('i_539_interpreter_business_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="34" value="<?php echo showData('i_539_interpreter_business_name') ?>">
             </div>
         </div>
         <div>
             <div class="col-md-8">
                 <label class="control-label text-sm ">7. What other names have you used (include maiden name and aliases)?</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?= showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
         </div>
         <div>
             <div class="col-md-8">
                 <label class="control-label text-sm ">8. Residence in the U.S. (where you physically reside) </label>
                 <label class="control-label text-sm ">Street Number and Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?= showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">Apt. Number</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?= showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">City</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?= showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">State</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?= showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Zip Code</label>
-                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="34" value="<?= showData('i_539_interpreter_business_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="34" value="<?php echo showData('i_539_interpreter_business_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Telephone Number</label>
                 <div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="3" value="<?= showData('i_539_interpreter_business_name') ?>">
+                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="3" value="<?php echo showData('i_539_interpreter_business_name') ?>">
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="34" value="<?= showData('i_539_interpreter_business_name') ?>">
+                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="34" value="<?php echo showData('i_539_interpreter_business_name') ?>">
                     </div>
                 </div>
             </div>
@@ -119,16 +119,16 @@ include "intake_header.php";
             <div class="col-md-8">
                 <label class="control-label text-sm ">8. Residence in the U.S. (where you physically reside) </label>
                 <label class="control-label text-sm ">In Care Of (if applicable):</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?= showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">Telephone Number</label>
                 <div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="3" value="<?= showData('i_539_interpreter_business_name') ?>">
+                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="3" value="<?php echo showData('i_539_interpreter_business_name') ?>">
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="34" value="<?= showData('i_539_interpreter_business_name') ?>">
+                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="34" value="<?php echo showData('i_539_interpreter_business_name') ?>">
                     </div>
                 </div>
             </div>
@@ -136,32 +136,67 @@ include "intake_header.php";
         <div>
             <div class="col-md-8">
                 <label class="control-label text-sm ">Street Number and Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?= showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">Apt. Number</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?= showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">City</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?= showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">State</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?= showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">Zip Code</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?= showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
-
-
-
-
-
+        <div class="col-md-12 my-5">
+            <label>10. Gender</label><br>
+            <input type="radio" name="biographic_info_hair_color" id="male" value="male" <?php echo (showData('biographic_info_hair_color') == 'male') ? 'checked' : '' ?>> <label for="male">Male</label><br>
+            <input type="radio" name="biographic_info_hair_color" id="female" value="female" <?php echo (showData('biographic_info_hair_color') == 'female') ? 'checked' : '' ?>> <label for="female">Female</label><br>
+        </div>
+        <div class="col-md-12">
+            <label>11. Marital Status: </label><br>
+            <input type="radio" name="biographic_info_hair_color" id="single" value="single" <?php echo (showData('biographic_info_hair_color') == 'single') ? 'checked' : '' ?>> <label for="single">Single</label><br>
+            <input type="radio" name="biographic_info_hair_color" id="married" value="married" <?php echo (showData('biographic_info_hair_color') == 'married') ? 'checked' : '' ?>> <label for="married">Married</label><br>
+            <input type="radio" name="biographic_info_hair_color" id="divorced" value="divorced" <?php echo (showData('biographic_info_hair_color') == 'divorced') ? 'checked' : '' ?>> <label for="divorced">Divorced</label><br>
+            <input type="radio" name="biographic_info_hair_color" id="widowed" value="widowed" <?php echo (showData('biographic_info_hair_color') == 'widowed') ? 'checked' : '' ?>> <label for="widowed">Widowed</label><br>
+        </div>
+        <div>
+            <div class="col-md-4">
+                <label class="control-label text-sm ">12. Date of Birth (mm/dd/yyyy)</label>
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+            </div>
+            <div class="col-md-8">
+                <label class="control-label text-sm ">13. City and Country of Birth</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+        </div>
+        <div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">14. Present Nationality (Citizenship)</label>
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+            </div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">15. Nationality at Birth</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">16. Race, Ethnic, or Tribal Group</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+            <div class="col-md-3">
+                <label class="control-label text-sm ">17. Religion</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+        </div>
 
 
 
