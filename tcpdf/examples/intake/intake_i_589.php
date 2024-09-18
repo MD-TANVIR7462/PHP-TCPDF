@@ -30,8 +30,39 @@ include "intake_header.php";
         font-weight: 600;
 
     }
+
     .text-xs {
         font-size: 12px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f4f4f4;
+    }
+
+    .table-container {
+        margin-bottom: 40px;
+    }
+
+    .highlight {
+        background-color: #f9f9f9;
     }
 </style>
 <!----------------------------------------------------------------------
@@ -315,9 +346,12 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;"><b>Page 2 of 8</b></p>
     <div class="row">
+        <div class="bg-info" style="margin-top:10px;">
+            <h4><b>Part A.II. Information About Your Spouse and Children</b></h4>
+        </div>
         <div class="col-md-12">
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
@@ -433,6 +467,9 @@ include "intake_header.php";
             </div>
         </div>
         <div class="col-md-12">
+            <label class="control-label col-md-12" style="font-size: 12px;">Your Children. List all of your children, regardless of age, location, or marital status.</label>
+        </div>
+        <div class="col-md-12">
             <div class=" col-md-12">
                 <label class="control-label" style="font-size: 12px;">
                     <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> I do not have any children. (Skip to Part A.III., Information about your background.)
@@ -444,23 +481,488 @@ include "intake_header.php";
                 </label>
             </div>
         </div>
+        <div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
+                    <input type="text" class="form-control" name="alien_registration_number" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
+                    <input type="text" class="form-control" name="passport_id_card_number" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">3. Marital Status</label>
+                    <input type="text" class="form-control" name="marital_status" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
+                    <input type="text" class="form-control" name="social_security_number" maxlength="43">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">5. Complete Last Name</label>
+                    <input type="text" class="form-control" name="complete_last_name" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">6. First Name</label>
+                    <input type="text" class="form-control" name="first_name" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">7. Middle Name</label>
+                    <input type="text" class="form-control" name="middle_name" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">8. Date of Birth (mm/dd/yyyy)</label>
+                    <input type="date" class="form-control" name="other_names_used" maxlength="43">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">9. City and Country of Birth </label>
+                    <input type="text" class="form-control" name="nationality" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">10. Nationality (Citizenship)</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">11. Race, Ethnic, or Tribal Group</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-3 ">
+                    <label class="control-label" style="font-size: smaller;">11. Gender</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="gender" id="male_12" value="male"> <label for="male_12" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="gender" id="female_12" value="female"> <label for="female_12" style="font-size: smaller;">Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-5">
+                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S. ?</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="child_in_us" id="yes_13" value="yes"> <label for="yes_13" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
+                        <input type="radio" name="child_in_us" id="no_13" value="no"> <label for="no_13" style="font-size: smaller;">No (Specify location):</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="location_if_not_in_us">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">14. Place of last entry into the U.S.</label>
+                    <input type="text" class="form-control" name="place_of_last_entry" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">15. Date of last entry into the U.S. (mm/dd/yyyy)</label>
+                    <input type="date" class="form-control" name="date_of_last_entry">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">16. I-94 Number (If any)</label>
+                    <input type="text" class="form-control" name="visa_type" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">17. Status when last admitted (Visa type, if any)</label>
+                    <input type="text" class="form-control" name="visa_type" maxlength="43">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">18. What is your child's current status?</label>
+                    <input type="text" class="form-control" name="nationality" maxlength="41" />
+                </div>
+                <div class="col-md-5">
+                    <label class="control-label" style="font-size: smaller;">19. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-4 ">
+                    <label class="control-label" style="font-size: smaller;">20. Is your child in Immigration Court proceedings?</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="gender" id="male_20" value="male"> <label for="male_20" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="gender" id="female_20" value="female"> <label for="female_20" style="font-size: smaller;">Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label class="control-label col-md-12" style="font-size: 12px;">21. If in the U.S., is this child to be included in this application? (Check the appropriate box.)</label>
+                <div class="col-md-5 col-md-offset-4">
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+        </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;"><b>Page 3 of 8</b></p>
-    <div class="row"></div>
+    <div class="row">
+        <div class="bg-info" style="margin-top:10px;">
+            <h4><b>Part A.II. Information About Your Spouse and Children (Continued)</b></h4>
+        </div>
+        <div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
+                    <input type="text" class="form-control" name="alien_registration_number" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
+                    <input type="text" class="form-control" name="passport_id_card_number" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">3. Marital Status</label>
+                    <input type="text" class="form-control" name="marital_status" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
+                    <input type="text" class="form-control" name="social_security_number" maxlength="43">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">5. Complete Last Name</label>
+                    <input type="text" class="form-control" name="complete_last_name" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">6. First Name</label>
+                    <input type="text" class="form-control" name="first_name" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">7. Middle Name</label>
+                    <input type="text" class="form-control" name="middle_name" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">8. Date of Birth (mm/dd/yyyy)</label>
+                    <input type="date" class="form-control" name="other_names_used" maxlength="43">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">9. City and Country of Birth </label>
+                    <input type="text" class="form-control" name="nationality" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">10. Nationality (Citizenship)</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">11. Race, Ethnic, or Tribal Group</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-3 ">
+                    <label class="control-label" style="font-size: smaller;">11. Gender</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="gender" id="male_12" value="male"> <label for="male_12" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="gender" id="female_12" value="female"> <label for="female_12" style="font-size: smaller;">Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-5">
+                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S. ?</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="child_in_us" id="yes_13" value="yes"> <label for="yes_13" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
+                        <input type="radio" name="child_in_us" id="no_13" value="no"> <label for="no_13" style="font-size: smaller;">No (Specify location):</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="location_if_not_in_us">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">14. Place of last entry into the U.S.</label>
+                    <input type="text" class="form-control" name="place_of_last_entry" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">15. Date of last entry into the U.S. (mm/dd/yyyy)</label>
+                    <input type="date" class="form-control" name="date_of_last_entry">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">16. I-94 Number (If any)</label>
+                    <input type="text" class="form-control" name="visa_type" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">17. Status when last admitted (Visa type, if any)</label>
+                    <input type="text" class="form-control" name="visa_type" maxlength="43">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">18. What is your child's current status?</label>
+                    <input type="text" class="form-control" name="nationality" maxlength="41" />
+                </div>
+                <div class="col-md-5">
+                    <label class="control-label" style="font-size: smaller;">19. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-4 ">
+                    <label class="control-label" style="font-size: smaller;">20. Is your child in Immigration Court proceedings?</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="gender" id="male_20" value="male"> <label for="male_20" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="gender" id="female_20" value="female"> <label for="female_20" style="font-size: smaller;">Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label class="control-label col-md-12" style="font-size: 12px;">21. If in the U.S., is this child to be included in this application? (Check the appropriate box.)</label>
+                <div class="col-md-5 col-md-offset-4">
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
+                    <input type="text" class="form-control" name="alien_registration_number" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
+                    <input type="text" class="form-control" name="passport_id_card_number" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">3. Marital Status</label>
+                    <input type="text" class="form-control" name="marital_status" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
+                    <input type="text" class="form-control" name="social_security_number" maxlength="43">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">5. Complete Last Name</label>
+                    <input type="text" class="form-control" name="complete_last_name" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">6. First Name</label>
+                    <input type="text" class="form-control" name="first_name" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">7. Middle Name</label>
+                    <input type="text" class="form-control" name="middle_name" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">8. Date of Birth (mm/dd/yyyy)</label>
+                    <input type="date" class="form-control" name="other_names_used" maxlength="43">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">9. City and Country of Birth </label>
+                    <input type="text" class="form-control" name="nationality" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">10. Nationality (Citizenship)</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">11. Race, Ethnic, or Tribal Group</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-3 ">
+                    <label class="control-label" style="font-size: smaller;">11. Gender</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="gender" id="male_12" value="male"> <label for="male_12" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="gender" id="female_12" value="female"> <label for="female_12" style="font-size: smaller;">Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-5">
+                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S. ?</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="child_in_us" id="yes_13" value="yes"> <label for="yes_13" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
+                        <input type="radio" name="child_in_us" id="no_13" value="no"> <label for="no_13" style="font-size: smaller;">No (Specify location):</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="location_if_not_in_us">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">14. Place of last entry into the U.S.</label>
+                    <input type="text" class="form-control" name="place_of_last_entry" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">15. Date of last entry into the U.S. (mm/dd/yyyy)</label>
+                    <input type="date" class="form-control" name="date_of_last_entry">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">16. I-94 Number (If any)</label>
+                    <input type="text" class="form-control" name="visa_type" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">17. Status when last admitted (Visa type, if any)</label>
+                    <input type="text" class="form-control" name="visa_type" maxlength="43">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">18. What is your child's current status?</label>
+                    <input type="text" class="form-control" name="nationality" maxlength="41" />
+                </div>
+                <div class="col-md-5">
+                    <label class="control-label" style="font-size: smaller;">19. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-4 ">
+                    <label class="control-label" style="font-size: smaller;">20. Is your child in Immigration Court proceedings?</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="gender" id="male_20" value="male"> <label for="male_20" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="gender" id="female_20" value="female"> <label for="female_20" style="font-size: smaller;">Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label class="control-label col-md-12" style="font-size: 12px;">21. If in the U.S., is this child to be included in this application? (Check the appropriate box.)</label>
+                <div class="col-md-5 col-md-offset-4">
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
+                    <input type="text" class="form-control" name="alien_registration_number" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
+                    <input type="text" class="form-control" name="passport_id_card_number" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">3. Marital Status</label>
+                    <input type="text" class="form-control" name="marital_status" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
+                    <input type="text" class="form-control" name="social_security_number" maxlength="43">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">5. Complete Last Name</label>
+                    <input type="text" class="form-control" name="complete_last_name" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">6. First Name</label>
+                    <input type="text" class="form-control" name="first_name" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">7. Middle Name</label>
+                    <input type="text" class="form-control" name="middle_name" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">8. Date of Birth (mm/dd/yyyy)</label>
+                    <input type="date" class="form-control" name="other_names_used" maxlength="43">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">9. City and Country of Birth </label>
+                    <input type="text" class="form-control" name="nationality" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">10. Nationality (Citizenship)</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">11. Race, Ethnic, or Tribal Group</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-3 ">
+                    <label class="control-label" style="font-size: smaller;">11. Gender</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="gender" id="male_12" value="male"> <label for="male_12" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="gender" id="female_12" value="female"> <label for="female_12" style="font-size: smaller;">Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-5">
+                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S. ?</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="child_in_us" id="yes_13" value="yes"> <label for="yes_13" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
+                        <input type="radio" name="child_in_us" id="no_13" value="no"> <label for="no_13" style="font-size: smaller;">No (Specify location):</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="location_if_not_in_us">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">14. Place of last entry into the U.S.</label>
+                    <input type="text" class="form-control" name="place_of_last_entry" maxlength="41" />
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">15. Date of last entry into the U.S. (mm/dd/yyyy)</label>
+                    <input type="date" class="form-control" name="date_of_last_entry">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">16. I-94 Number (If any)</label>
+                    <input type="text" class="form-control" name="visa_type" maxlength="43">
+                </div>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">17. Status when last admitted (Visa type, if any)</label>
+                    <input type="text" class="form-control" name="visa_type" maxlength="43">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">18. What is your child's current status?</label>
+                    <input type="text" class="form-control" name="nationality" maxlength="41" />
+                </div>
+                <div class="col-md-5">
+                    <label class="control-label" style="font-size: smaller;">19. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                </div>
+                <div class="col-md-4 ">
+                    <label class="control-label" style="font-size: smaller;">20. Is your child in Immigration Court proceedings?</label><br>
+                    <div class="d-flexible">
+                        <input type="radio" name="gender" id="male_20" value="male"> <label for="male_20" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="gender" id="female_20" value="female"> <label for="female_20" style="font-size: smaller;">Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label class="control-label col-md-12" style="font-size: 12px;">21. If in the U.S., is this child to be included in this application? (Check the appropriate box.)</label>
+                <div class="col-md-5 col-md-offset-4">
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
@@ -468,7 +970,34 @@ include "intake_header.php";
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 8</b></p>
     <div class="row">
-
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th>Column 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row 1, Column 1</td>
+                        <td>Row 1, Column 2</td>
+                        <td>Row 1, Column 3</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Row 2, Column 1</td>
+                        <td>Row 2, Column 2</td>
+                        <td>Row 2, Column 3</td>
+                    </tr>
+                    <tr>
+                        <td>Row 3, Column 1</td>
+                        <td>Row 3, Column 2</td>
+                        <td>Row 3, Column 3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
