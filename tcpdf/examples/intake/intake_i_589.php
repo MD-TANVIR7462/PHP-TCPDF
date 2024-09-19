@@ -312,7 +312,6 @@ include "intake_header.php";
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset> -->
-
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
@@ -571,7 +570,6 @@ include "intake_header.php";
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset> -->
-
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ------------------------------------------------------------------------>
@@ -696,7 +694,7 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
-
+        <hr style="border: 1px solid #729af8 ;" class="my-5">
         <div>
             <div class="col-md-12">
                 <div class="col-md-3">
@@ -812,6 +810,7 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
+        <hr class="my-5" style="border: 1px solid #729af8;">
         <div>
             <div class="col-md-12">
                 <div class="col-md-3">
@@ -930,15 +929,14 @@ include "intake_header.php";
     </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset> -->
-
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
 ----------------------------------------------------------------------->
-<fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 8</b></p>
+<!-- <fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 12</b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
             <h4><b>Part A.III. Information About Your Background</b></h4>
@@ -971,7 +969,6 @@ include "intake_header.php";
                         <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
                         <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
                     </tr>
-
                     <tr>
                         <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
                         <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
@@ -1095,11 +1092,6 @@ include "intake_header.php";
                         <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
                         <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
                     </tr>
-
-
-
-
-
                 </tbody>
             </table>
         </div>
@@ -1208,10 +1200,86 @@ include "intake_header.php";
                         <td><input type="checkbox" name="sibling5_deceased" id="sibling5_deceased"><label for="sibling5_deceased" style="margin-left: 5px;"> Deceased</label></td>
                         <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling5_current_location" value=""></td>
                     </tr>
-
                 </tbody>
             </table>
         </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 5 --------------------------------
+----------------------------------------------------------------------->
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 12</b></p>
+    <div class="row">
+        <div class="bg-info" style="margin-top:10px;">
+            <h4><b>Part A.III. Information About Your Background</b></h4>
+        </div>
+        <div>
+            <label class="control-label col-md-12">(NOTE: Use Form I-589 Supplement B, or attach additional sheets of paper as needed to complete your responses to the questions contained in Part B.)</label>
+            <hr class="my-5" style="border: 1px solid #729af8;">
+            <div class="col-md-12">
+                <label class="control-label text-sm ">When answering the following questions about your asylum or other protection claim (withholding of removal under 241(b)(3) of the INA or
+                    withholding of removal under the Convention Against Torture), you must provide a detailed and specific account of the basis of your claim to asylum
+                    or other protection. To the best of your ability, provide specific dates, places, and descriptions about each event or action described. You must attach
+                    documents evidencing the general conditions in the country from which you are seeking asylum or other protection and the specific facts on which
+                    you are relying to support your claim. If this documentation is unavailable or you are not providing this documentation with your application, explain
+                    why in your responses to the following questions. </label>
+                <label class="control-label text-sm ">Refer to Instructions, Part 1: Filing Instructions, Section II, "Basis of Eligibility," Parts A - D, Section V, Completing the Form," Part B, and Section
+                    VII, "Additional Evidence That You Should Submit," for more information on completing this section of the form. </label>
+                <label class="control-label text-sm ">1. Why are you applying for asylum or withholding of removal under section 241(b)(3) of the INA, or for withholding of removal under the
+                    Convention Against Torture? Check the appropriate box(es) below and then provide detailed answers to questions A and B below.</label>
+            </div>
+            <div class="col-md-12">
+                <label class="control-label">I am seeking asylum or withholding of removal based on:</label> <br>
+                <input type="radio" name="biographic_info_hair_color" id="Race" value="Race" <?php echo (showData('biographic_info_hair_color') == 'Race') ? 'checked' : '' ?>> <label for="Race">Race</label><br>
+                <input type="radio" name="biographic_info_hair_color" id="Political opinion" value="Political opinion" <?php echo (showData('biographic_info_hair_color') == 'Political opinion') ? 'checked' : '' ?>> <label for="Political opinion">Political opinion</label><br>
+                <input type="radio" name="biographic_info_hair_color" id="Religion" value="Religion" <?php echo (showData('biographic_info_hair_color') == 'Religion') ? 'checked' : '' ?>> <label for="Religion">Religion</label><br>
+                <input type="radio" name="biographic_info_hair_color" id="Membership in a particular social group" value="Membership in a particular social group" <?php echo (showData('biographic_info_hair_color') == 'Membership in a particular social group') ? 'checked' : '' ?>> <label for="Membership in a particular social group">Membership in a particular social group</label><br>
+                <input type="radio" name="biographic_info_hair_color" id="Nationality" value="Nationality" <?php echo (showData('biographic_info_hair_color') == 'Nationality') ? 'checked' : '' ?>> <label for="Nationality">Nationality</label><br>
+                <input type="radio" name="biographic_info_hair_color" id="Torture Convention" value="Torture Convention" <?php echo (showData('biographic_info_hair_color') == 'Torture Convention') ? 'checked' : '' ?>> <label for="Torture Convention">Torture Convention</label><br>
+
+            </div>
+        </div>
+        <hr class="my-5" style="border: 1px solid #729af8;">
+        <div class="col-md-12 my-5">
+            <label>A. Have you, your family, or close friends or colleagues ever experienced harm or mistreatment or threats in the past by anyone?</label><br>
+            <div>
+                <?php echo createRadio("i_485_social_security_status") ?>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label>If "Yes," explain in detail: </label><br>
+            <label>1. What happened; </label><br>
+            <label>2. When the harm or mistreatment or threats occurred; </label><br>
+            <label>3. Who caused the harm or mistreatment or threats; and </label><br>
+            <label>4. Why you believe the harm or mistreatment or threats occurred.</label><br>
+            <div class="col-md-12 my-4">
+                <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+            </div>
+        </div>
+        <hr style="border: 1px solid #729af8; margin-top: 10px;">
+        <div class="col-md-12 my-5">
+            <label>B. Do you fear harm or mistreatment if you return to your home country?</label><br>
+            <div>
+                <?php echo createRadio("i_485_social_security_status") ?>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label>If "Yes," explain in detail: </label><br>
+            <label>1. What harm or mistreatment you fear;</label><br>
+            <label>2. Who you believe would harm or mistreat you; and</label><br>
+            <label>3. Why you believe you would or could be harmed or mistreated.</label><br>
+            <div class="col-md-12">
+                <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+            </div>
+        </div>
+
+
+
+
 
 
 
@@ -1220,10 +1288,6 @@ include "intake_header.php";
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
-<!----------------------------------------------------------------------
--------------------------------- page 5 --------------------------------
------------------------------------------------------------------------>
-
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
 ----------------------------------------------------------------------->
