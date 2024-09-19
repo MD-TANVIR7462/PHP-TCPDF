@@ -34,36 +34,6 @@ include "intake_header.php";
     .text-xs {
         font-size: 12px;
     }
-
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
-
-    th,
-    td {
-        padding: 10px;
-        border: 1px solid #ccc;
-        text-align: left;
-    }
-
-    th {
-        background-color: #f4f4f4;
-    }
-
-    .table-container {
-        margin-bottom: 40px;
-    }
-
-    .highlight {
-        background-color: #f9f9f9;
-    }
 </style>
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
@@ -339,7 +309,7 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset> -->
 
@@ -970,36 +940,282 @@ include "intake_header.php";
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 8</b></p>
     <div class="row">
-        <div class="table-container">
-            <table>
+        <div class="bg-info" style="margin-top:10px;">
+            <h4><b>Part A.III. Information About Your Background</b></h4>
+        </div>
+        <div>
+            <label class="control-label col-md-12">1. List your last address where you lived before coming to the United States. If this is not the country where you fear persecution, also list the last
+                address in the country where you fear persecution. <i>(List Address, City/Town, Department, Province, or State and Country.)</i> </label>
+            <div class="col-md-12">
+                <label class="control-label text-sm ">(<b>NOTE</b>: <i>Use Form I-589 Supplement B, or additional sheets of paper, if necessary.</i>)</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <table border="1" style="width: 100%;">
                 <thead>
-                    <tr>
-                        <th>Column 1</th>
-                        <th>Column 2</th>
-                        <th>Column 3</th>
+                    <tr class="bg-info">
+                        <th>Number and Street(Provide if available)</th>
+                        <th>City/Town</th>
+                        <th>Department, Province, or State</th>
+                        <th>Country</th>
+                        <th>Date From (Mo/Yr)</th>
+                        <th>Date To (Mo/Yr)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Row 1, Column 1</td>
-                        <td>Row 1, Column 2</td>
-                        <td>Row 1, Column 3</td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
                     </tr>
-                    <tr class="highlight">
-                        <td>Row 2, Column 1</td>
-                        <td>Row 2, Column 2</td>
-                        <td>Row 2, Column 3</td>
-                    </tr>
+
                     <tr>
-                        <td>Row 3, Column 1</td>
-                        <td>Row 3, Column 2</td>
-                        <td>Row 3, Column 3</td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-    </div>
+        <div>
+            <label class="control-label col-md-12">2. Provide the following information about your residences during the past 5 years. List your present address first. </label>
+            <div class="col-md-12">
+                <label class="control-label text-sm ">(<b>NOTE</b>: <i>Use Form I-589 Supplement B, or additional sheets of paper, if necessary.</i>)</label>
+            </div>
+        </div>
+        <div class="col-md-12 ">
+            <table border="1" style="width: 100%;">
+                <thead>
+                    <tr class="bg-info">
+                        <th>Number and Street</th>
+                        <th>City/Town</th>
+                        <th>Department, Province, or State</th>
+                        <th>Country</th>
+                        <th>Date From (Mo/Yr)</th>
+                        <th>Date To (Mo/Yr)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
 
+
+
+
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <label class="control-label col-md-12">3. Provide the following information about your education, beginning with the most recent school that you attended. </label>
+            <div class="col-md-12">
+                <label class="control-label text-sm ">(<b>NOTE</b>: <i>Use Form I-589 Supplement B, or additional sheets of paper, if necessary.</i>)</label>
+            </div>
+        </div>
+        <div class="col-md-12 ">
+            <table border="1" style="width: 100%;">
+                <thead>
+                    <tr class="bg-info">
+                        <th>Name of School</th>
+                        <th>Type of School</th>
+                        <th>Location (Address)</th>
+                        <th>Attended From (Mo/Yr)</th>
+                        <th>Attended To (Mo/Yr)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <label class="control-label col-md-12">4. Provide the following information about your employment during the past 5 years. List your present employment first. </label>
+            <div class="col-md-12">
+                <label class="control-label text-sm ">(<b>NOTE</b>: <i> Use Form I-589 Supplement B, or additional sheets of paper, if necessary.</i>)</label>
+            </div>
+        </div>
+        <div class="col-md-12 ">
+            <table border="1" style="width: 100%;">
+                <thead>
+                    <tr class="bg-info">
+                        <th>Name and Address of Employer</th>
+                        <th>Your Occupation</th>
+                        <th>Dates From (Mo/Yr)</th>
+                        <th>Dates To (Mo/Yr)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="date" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <label class="control-label col-md-12">5. Provide the following information about your parents and siblings (brothers and sisters). Check the box if the person is deceased. </label>
+            <div class="col-md-12">
+                <label class="control-label text-sm ">(<b>NOTE</b>: <i> : Use Form I-589 Supplement B, or additional sheets of paper, if necessary</i>)</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <table border="1" style="width: 100%;">
+                <thead>
+                    <tr class="bg-info">
+                        <th style="width: 6%;"></th>
+                        <th style="width: 21%;">Full Name</th>
+                        <th style="width: 26%;">City/Town and Country of Birth</th>
+                        <th style="width: 10%;"></th>
+                        <th style="width: 25%;">Current Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Mother</td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="mother_birth_place" value=""></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="mother_current_location" value=""></td>
+                        <td><input type="checkbox" name="mother_deceased" id="mother_deceased"><label for="mother_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="mother_current_location" value=""></td>
+                    </tr>
+                    <tr>
+                        <td> Father</td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="father_birth_place" value=""></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="father_current_location" value=""></td>
+                        <td><input type="checkbox" name="father_deceased" id="father_deceased"><label for="father_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="father_current_location" value=""></td>
+                    </tr>
+                    <tr>
+                        <td> Sibling</td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling1_birth_place" value=""></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling1_current_location" value=""></td>
+                        <td><input type="checkbox" name="sibling1_deceased" id="sibling1_deceased"><label for="sibling1_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling1_current_location" value=""></td>
+                    </tr>
+                    <tr>
+                        <td> Sibling</td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling2_birth_place" value=""></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling2_current_location" value=""></td>
+                        <td><input type="checkbox" name="sibling2_deceased" id="sibling2_deceased"><label for="sibling2_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling2_current_location" value=""></td>
+                    </tr>
+                    <tr>
+                        <td> Sibling</td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling3_birth_place" value=""></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling3_current_location" value=""></td>
+                        <td><input type="checkbox" name="sibling3_deceased" id="sibling3_deceased"><label for="sibling3_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling3_current_location" value=""></td>
+                    </tr>
+                    <tr>
+                        <td> Sibling</td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling4_birth_place" value=""></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling4_current_location" value=""></td>
+                        <td><input type="checkbox" name="sibling4_deceased" id="sibling4_deceased"><label for="sibling4_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling4_current_location" value=""></td>
+                    </tr>
+                    <tr>
+                        <td> Sibling</td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling5_birth_place" value=""></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling5_current_location" value=""></td>
+                        <td><input type="checkbox" name="sibling5_deceased" id="sibling5_deceased"><label for="sibling5_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="sibling5_current_location" value=""></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
