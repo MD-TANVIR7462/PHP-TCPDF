@@ -1211,11 +1211,11 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
 ----------------------------------------------------------------------->
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 12</b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
-            <h4><b>Part A.III. Information About Your Background</b></h4>
+            <h4><b>Part B. Information About Your Application</b></h4>
         </div>
         <div>
             <label class="control-label col-md-12">(NOTE: Use Form I-589 Supplement B, or attach additional sheets of paper as needed to complete your responses to the questions contained in Part B.)</label>
@@ -1276,11 +1276,87 @@ include "intake_header.php";
                 <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
             </div>
         </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 6 --------------------------------
+----------------------------------------------------------------------->
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 6 of 12</b></p>
+    <div class="row">
+        <div class="bg-info" style="margin-top:10px;">
+            <h4><b>Part B. Information About Your Application (Continued)</b></h4>
+        </div>
+        <div>
+            <div class="col-md-12 my-5">
+                <label>2. Have you or your family members ever been accused, charged, arrested, detained, interrogated, convicted and sentenced, or imprisoned in any
+                    country other than the United States (including for an immigration law violation)?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>If "Yes," explain the circumstances and reasons for the action.</label><br>
+                <div class="col-md-12 my-4">
 
+                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                </div>
+            </div>
+            <hr class="my-5" style="border: 1px solid #729af8;">
+        </div>
+        <div>
+            <div class="col-md-12 my-5">
+                <label>3.A. Have you or your family members ever belonged to or been associated with any organizations or groups in your home country, such as, but not
+                    limited to, a political party, student group, labor union, religious organization, military or paramilitary group, civil patrol, guerrilla organization,
+                    ethnic group, human rights group, or the press or media?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>If "Yes," describe for each person the level of participation, any leadership or other positions held, and the length of time you or your family
+                    members were involved in each organization or activity.</label><br>
+                <div class="col-md-12 my-4">
+                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                </div>
+            </div>
+            <hr class="my-5" style="border: 1px solid #729af8;">
+        </div>
+        <div>
+            <div class="col-md-12 my-5">
+                <label>3.B. Do you or your family members continue to participate in any way in these organizations or groups?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>If "Yes," describe for each person your or your family members' current level of participation, any leadership or other positions currently held,
+                    and the length of time you or your family members have been involved in each organization or group.</label><br>
+                <div class="col-md-12 my-4">
 
+                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                </div>
+            </div>
+            <hr class="my-5" style="border: 1px solid #729af8;">
+        </div>
+        <div>
+            <div class="col-md-12 my-5">
+                <label>4. Are you afraid of being subjected to torture in your home country or any other country to which you may be returned?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>If "Yes," explain why you are afraid and describe the nature of torture you fear, by whom, and why it would be inflicted</label><br>
+                <div class="col-md-12 my-4">
 
-
-
+                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                </div>
+            </div>
+        </div>
 
 
     </div>
@@ -1288,10 +1364,6 @@ include "intake_header.php";
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
-<!----------------------------------------------------------------------
--------------------------------- page 6 --------------------------------
------------------------------------------------------------------------>
-
 
 <!----------------------------------------------------------------------
 -------------------------------- page 7 --------------------------------
