@@ -1284,7 +1284,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
 ----------------------------------------------------------------------->
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 6 of 12</b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
@@ -1363,12 +1363,155 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
-
-<!----------------------------------------------------------------------
+</fieldset> -->
+<!------------------------------------------ ----------------------------
 -------------------------------- page 7 --------------------------------
 ------------------------------------------------------------------------>
+<!-- <fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 7 of 12</b></p>
+    <div class="row">
+        <div class="bg-info" style="margin-top:10px;">
+            <h4><b>Part C. Additional Information About Your Application</b></h4>
+        </div>
+        <div>
+            <div class="col-md-12 my-5">
+                <label>(NOTE: Use Form I-589 Supplement B, or attach additional sheets of paper as needed to complete your responses to the questions contained in Part C.)</label><br>
+            </div>
+            <hr class="my-5" style="border: 1px solid #729af8;">
+            <div class="col-md-12 my-5">
+                <label>1. Have you, your spouse, your child(ren), your parents or your siblings ever applied to the U.S. Government for refugee status, asylum, or
+                    withholding of removal?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>If "Yes," explain the decision and what happened to any status you, your spouse, your child(ren), your parents, or your siblings received as a
+                    result of that decision. Indicate whether or not you were included in a parent or spouse's application. If so, include your parent or spouse's
+                    A-number in your response. If you have been denied asylum by an immigration judge or the Board of Immigration Appeals, describe any
+                    change(s) in conditions in your country or your own personal circumstances since the date of the denial that may affect your eligibility for
+                    asylum.</label><br>
+                <div class="col-md-12 my-4">
+                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                </div>
+            </div>
+            <hr class="my-5" style="border: 1px solid #729af8;">
+        </div>
+        <div>
+            <div class="col-md-12 my-5">
+                <label>2.A. After leaving the country from which you are claiming asylum, did you or your spouse or child(ren) who are now in the United States travel
+                    through or reside in any other country before entering the United States?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12 my-5">
+                <label>2.B. Have you, your spouse, your child(ren), or other family members, such as your parents or siblings, ever applied for or received any lawful status
+                    in any country other than the one from which you are now claiming asylum?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>If "Yes" to either or both questions (2A and/or 2B), provide for each person the following: the name of each country and the length of stay, the
+                    person's status while there, the reasons for leaving, whether or not the person is entitled to return for lawful residence purposes, and whether the
+                    person applied for refugee status or for asylum while there, and if not, why he or she did not do so.</label><br>
+                <div class="col-md-12 my-4">
+                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                </div>
+            </div>
+            <hr class="my-5" style="border: 1px solid #729af8;">
+        </div>
+        <div>
+            <div class="col-md-12 my-5">
+                <label>3. Have you, your spouse or your child(ren) ever ordered, incited, assisted or otherwise participated in causing harm or suffering to any person
+                    because of his or her race, religion, nationality, membership in a particular social group or belief in a particular political opinion?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>If "Yes," describe in detail each such incident and your own, your spouse's, or your child(ren)'s involvement.</label><br>
+                <div class="col-md-12 my-4">
 
+                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!------------------------------------------ ----------------------------
+-------------------------------- page 8 --------------------------------
+------------------------------------------------------------------------>
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 8 of 12</b></p>
+    <div class="row">
+        <div class="bg-info" style="margin-top:10px;">
+            <h4><b>Part C. Additional Information About Your Application (Continued)</b></h4>
+        </div>
+        <div>
+            <div class="col-md-12 my-5">
+                <label>4. After you left the country where you were harmed or fear harm, did you return to that country?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>If "Yes," describe in detail the circumstances of your visit(s) (for example, the date(s) of the trip(s), the purpose(s) of the trip(s), and the length
+                    of time you remained in that country for the visit(s).)</label><br>
+                <div class="col-md-12 my-4">
+                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                </div>
+            </div>
+            <hr class="my-5" style="border: 1px solid #729af8;">
+        </div>
+        <div>
+            <div class="col-md-12 my-5">
+                <label>5. Are you filing this application more than 1 year after your last arrival in the United States?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>If "Yes," explain why you did not file within the first year after you arrived. You must be prepared to explain at your interview or hearing why
+                    you did not file your asylum application within the first year after you arrived. For guidance in answering this question, see Instructions, Part 1:
+                    Filing Instructions, Section V. "Completing the Form," Part C.</label><br>
+                <div class="col-md-12 my-4">
+                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                </div>
+            </div>
+            <hr class="my-5" style="border: 1px solid #729af8;">
+        </div>
+        <div>
+            <div class="col-md-12 my-5">
+                <label>6. Have you or any member of your family included in the application ever committed any crime and/or been arrested, charged, convicted, or
+                    sentenced for any crimes in the United States (including for an immigration law violation)?</label><br>
+                <div>
+                    <?php echo createRadio("i_485_social_security_status") ?>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label>If "Yes," for each instance, specify in your response: what occurred and the circumstances, dates, length of sentence received, location, the
+                    duration of the detention or imprisonment, reason(s) for the detention or conviction, any formal charges that were lodged against you or your
+                    relatives included in your application, and the reason(s) for release. Attach documents referring to these incidents, if they are available, or an
+                    explanation of why documents are not available.</label><br>
+                <div class="col-md-12 my-4">
+                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="357" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 8--------------------------------
 ------------------------------------------------------------------------>
