@@ -38,8 +38,11 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
-    <p style="text-align: right"><b>Page 1 of 12</b></p>
+<fieldset class="setpage">
+    <p style="text-align: right"><b>Page 1</b></p>
+    <div class="control-label col-md-12">
+        <label class="control-label">START HERE - Type or print in black ink. See the instructions for information about eligibility and how to complete and file this application. There is no filing fee for this application.</label>
+    </div>
     <div class="control-label col-md-12">
         <label class="control-label">
             <b>NOTE: </b> <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> Check this box if you also want to apply for withholding of removal under the Convention Against Torture.
@@ -52,60 +55,60 @@ include "intake_header.php";
         <div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">1. Alien Registration Number(s) (A-Number) (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="9" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">2. U.S. Social Security Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="9" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">3. USCIS Online Account Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="34" value="<?php echo showData('i_539_interpreter_business_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="12" value="<?php echo showData('i_539_interpreter_business_name') ?>">
             </div>
         </div>
         <div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">4. Complete Last Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="42" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">5. First Name </label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="30" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">6. Middle Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="34" value="<?php echo showData('i_539_interpreter_business_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="23" value="<?php echo showData('i_539_interpreter_business_name') ?>">
             </div>
         </div>
         <div>
             <div class="col-md-8">
                 <label class="control-label text-sm ">7. What other names have you used (include maiden name and aliases)?</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="99" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
         </div>
         <div>
             <div class="col-md-8">
                 <label class="control-label text-sm ">8. Residence in the U.S. (where you physically reside) </label>
                 <label class="control-label text-sm ">Street Number and Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="64" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">Apt. Number</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="6" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">City</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="34" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">State</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="22" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Zip Code</label>
-                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="34" value="<?php echo showData('i_539_interpreter_business_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_business_name" maxlength="5" value="<?php echo showData('i_539_interpreter_business_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Telephone Number</label>
@@ -114,7 +117,7 @@ include "intake_header.php";
                         <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="3" value="<?php echo showData('i_539_interpreter_business_name') ?>">
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="34" value="<?php echo showData('i_539_interpreter_business_name') ?>">
+                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="7" value="<?php echo showData('i_539_interpreter_business_name') ?>">
                     </div>
                 </div>
             </div>
@@ -123,7 +126,7 @@ include "intake_header.php";
             <div class="col-md-8">
                 <label class="control-label text-sm ">8. Residence in the U.S. (where you physically reside) </label>
                 <label class="control-label text-sm ">In Care Of (if applicable):</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="67" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">Telephone Number</label>
@@ -132,7 +135,7 @@ include "intake_header.php";
                         <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="3" value="<?php echo showData('i_539_interpreter_business_name') ?>">
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="34" value="<?php echo showData('i_539_interpreter_business_name') ?>">
+                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="7" value="<?php echo showData('i_539_interpreter_business_name') ?>">
                     </div>
                 </div>
             </div>
@@ -140,25 +143,25 @@ include "intake_header.php";
         <div>
             <div class="col-md-8">
                 <label class="control-label text-sm ">Street Number and Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="66" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">Apt. Number</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="5" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">City</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="32" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">State</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="33" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">Zip Code</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="5" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div class="col-md-12 my-5">
@@ -176,29 +179,29 @@ include "intake_header.php";
         <div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">12. Date of Birth (mm/dd/yyyy)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-8">
                 <label class="control-label text-sm ">13. City and Country of Birth</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="68" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">14. Present Nationality (Citizenship)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="29" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">15. Nationality at Birth</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="26" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">16. Race, Ethnic, or Tribal Group</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="23" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">17. Religion</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="18" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div class="col-md-12 my-4">
@@ -220,56 +223,56 @@ include "intake_header.php";
             <label class="control-label col-md-12">19. Complete 19 a through c.</label>
             <div class="col-md-5">
                 <label class="control-label text-sm ">a. When did you last leave your country? (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name"  value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-6">
                 <label class="control-label text-sm ">b. What is your current I-94 Number, if any?</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="11" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div>
             <label class="control-label col-md-12">c. List each entry into the U.S. beginning with your most recent entry. List date (mm/dd/yyyy), place, and your status for each entry. (Attach additional sheets as needed.)</label>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Date</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name"  value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Place</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Status</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="15" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Date Status Expires
                 </label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="date" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Date</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name"  value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Place</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">Status</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="15" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
 
             <div class="col-md-3">
                 <label class="control-label text-sm ">Date</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name"  value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Place</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Status</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="15" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
             </div>
@@ -277,17 +280,17 @@ include "intake_header.php";
         <div>
             <div class="col-md-5">
                 <label class="control-label text-sm ">20. What country issued your last passport or travel document?</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="37" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">21. Passport Number</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="25" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 <label class="control-label text-sm ">Travel Document Number</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="21" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">22. Expiration Date (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="date" class="form-control" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div>
@@ -305,18 +308,18 @@ include "intake_header.php";
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">25. What other languages do you speak fluently?</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="32" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
     </div>
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
-    <p style=" text-align: right; margin-right: 15px;"><b>Page 2 of 8</b></p>
+<fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;"><b>Page 2</b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
             <h4><b>Part A.II. Information About Your Spouse and Children</b></h4>
@@ -569,12 +572,12 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
-    <p style=" text-align: right; margin-right: 15px;"><b>Page 3 of 8</b></p>
+<fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;"><b>Page 3 </b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
             <h4><b>Part A.II. Information About Your Spouse and Children (Continued)</b></h4>
@@ -931,12 +934,12 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
 ----------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 12</b></p>
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 4 </b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
             <h4><b>Part A.III. Information About Your Background</b></h4>
@@ -1205,14 +1208,14 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
 ----------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 12</b></p>
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 5</b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
             <h4><b>Part B. Information About Your Application</b></h4>
@@ -1278,14 +1281,14 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
 ----------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 6 of 12</b></p>
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 6 </b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
             <h4><b>Part B. Information About Your Application (Continued)</b></h4>
@@ -1361,14 +1364,14 @@ include "intake_header.php";
 
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!------------------------------------------ ----------------------------
 -------------------------------- page 7 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 7 of 12</b></p>
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 7 </b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
             <h4><b>Part C. Additional Information About Your Application</b></h4>
@@ -1444,14 +1447,14 @@ include "intake_header.php";
 
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!------------------------------------------ ----------------------------
 -------------------------------- page 8 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 8 of 12</b></p>
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 8</b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
             <h4><b>Part C. Additional Information About Your Application (Continued)</b></h4>
@@ -1509,29 +1512,199 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!------------------------------------------ ----------------------------
 -------------------------------- page 9 --------------------------------
 ------------------------------------------------------------------------>
-
-
-
-
-
-
-
-
-
-
-
-
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 9 </b></p>
+    <div class="row">
+        <div class="bg-info" style="margin-top:10px;">
+            <h4><b>Part D. Your Signature</b></h4>
+        </div>
+        <div>
+            <div class="col-md-12">
+                <label>I certify, under penalty of perjury under the laws of the United States of America, that this application and the evidence submitted with it are all true
+                    and correct. Title 18, United States Code, Section 1546(a), provides in part: Whoever knowingly makes under oath, or as permitted under penalty of
+                    perjury under Section 1746 of Title 28, United States Code, knowingly subscribes as true, any false statement with respect to a material fact in any
+                    application, affidavit, or other document required by the immigration laws or regulations prescribed thereunder, or knowingly presents any such
+                    application, affidavit, or other document containing any such false statement or which fails to contain any reasonable basis in law or fact - shall be
+                    fined in accordance with this title or imprisoned for up to 25 years. I certify that I am physically present in the United States or seeking admission at
+                    a Port of Entry when I execute this application. I authorize the release of any information from my immigration record that U.S. Citizenship and
+                    Immigration Services (USCIS) needs to determine eligibility for the benefit I am seeking.</label><br>
+                <hr class="my-5" style="border: 1px solid #729af8;">
+                <label>WARNING: Applicants who are in the United States unlawfully are subject to removal if their asylum or withholding claims are not
+                    granted by an asylum officer or an immigration judge. Any information provided in completing this application may be used as a basis for
+                    the institution of, or as evidence in, removal proceedings even if the application is later withdrawn. Applicants determined to have
+                    knowingly made a frivolous application for asylum will be permanently ineligible for any benefits under the Immigration and Nationality
+                    Act. You may not avoid a frivolous finding simply because someone advised you to provide false information in your asylum application. If
+                    filing with USCIS, unexcused failure to appear for an appointment to provide biometrics (such as fingerprints) and your biographical
+                    information within the time allowed may result in an asylum officer dismissing your asylum application or referring it to an immigration
+                    judge. Failure without good cause to provide DHS with biometrics or other biographical information while in removal proceedings may
+                    result in your application being found abandoned by the immigration judge. See sections 208(d)(5)(A) and 208(d)(6) of the INA and 8 CFR
+                    sections 208.10, 1208.10, 208.20, 1003.47(d) and 1208.20.</label><br>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <label class="control-label " style="font-size: 12px;">Print your complete name </label>
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+            </div>
+            <div class="col-md-6">
+                <label class="control-label " style="font-size: 12px;">Write your name in your native alphabet.</label>
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+        </div>
+        <div class="col-md-12 my-4">
+            <label>Did your spouse, parent, or child(ren) assist you in completing this application?</label><br>
+            <div>
+                <?php echo createRadio("i_485_social_security_status") ?>
+            </div>
+        </div>
+        <div class="col-md-12 ">
+            <p><b>NOTE : </b>(If "Yes," list the name and relationship.)</p><br>
+        </div>
+        <div class="col-md-12 ">
+            <div class="col-md-3">
+                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <p style="font-size: 12px; text-align: center; font-weight: 600;">(Name)</p>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <p style="font-size: 12px; text-align: center; font-weight: 600;">(Relationship)</p>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <p style="font-size: 12px; text-align: center; font-weight: 600;">(Name)</p>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <p style="font-size: 12px; text-align: center; font-weight: 600;">(Relationship)</p>
+            </div>
+        </div>
+        <div class="col-md-12 my-4">
+            <label>Did someone other than your spouse, parent, or child(ren) prepare this application?</label><br>
+            <div>
+                <?php echo createRadio("i_485_social_security_status") ?>
+            </div>
+        </div>
+        <div class="col-md-12 ">
+            <p><b>NOTE : </b>(If "Yes,"complete Part E.)</p><br>
+        </div>
+        <div class="col-md-12 my-4">
+            <label>Asylum applicants may be represented by counsel. Have you been provided with a list of
+                persons who may be available to assist you, at little or no cost, with your asylum claim?</label><br>
+            <div>
+                <?php echo createRadio("i_485_social_security_status") ?>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <label class="control-label " style="font-size: 12px;">Signature of Applicant (The person in Part. A.I.)</label>
+                <input type="text" disabled class="form-control" />
+                <p style="font-size: 12px; text-align: center; font-weight: 600;">Sign your name so it all appears within the brackets</p>
+            </div>
+            <div class="col-md-6">
+                <label class="control-label " style="font-size: 12px;">Date (mm/dd/yyyy)</label>
+                <input type="date" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            </div>
+        </div>
+    </div>
+    <div class="bg-info" style="margin-top:10px;">
+        <h4><b>Part E. Declaration of Person Preparing Form, if Other Than Applicant, Spouse, Parent, or Child</b></h4>
+    </div>
+    <div class="col-md-12">
+        <label>I declare that I have prepared this application at the request of the person named in Part D, that the responses provided are based on all information of
+            which I have knowledge, or which was provided to me by the applicant, and that the completed application was read to the applicant in his or her
+            native language or a language he or she understands for verification before he or she signed the application in my presence. I am aware that the
+            knowing placement of false information on the Form I-589 may also subject me to civil penalties under 8 U.S.C. 1324c and/or criminal penalties
+            under 18 U.S.C. 1546(a).
+        </label>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <label class="control-label " style="font-size: 12px;">Signature of Preparer</label>
+            <input type="text" disabled class="form-control" />
+        </div>
+        <div class="col-md-6">
+            <label class="control-label " style="font-size: 12px;">Print Complete Name of Preparer</label>
+            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-5">
+            <label class="control-label " style="font-size: 12px;">Daytime Telephone Number</label>
+            <div class="d-flexible">
+                <span class="col-md-4 d-flexible"> <b>(</b> <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>"> <b>)</b> </span>
+                <span class="col-md-8"><input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>"></span>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <label class="control-label " style="font-size: 12px;">Address of Preparer: Street Number and Name</label>
+            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+        </div>
+    </div>
+    <div class="col-md-12 my-5">
+        <div class="col-md-3">
+            <label class="control-label " style="font-size: 12px;">Apt. Number</label>
+            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+        </div>
+        <div class="col-md-3">
+            <label class="control-label " style="font-size: 12px;">City</label>
+            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+        </div>
+        <div class="col-md-3">
+            <label class="control-label " style="font-size: 12px;">State</label>
+            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+        </div>
+        <div class="col-md-3">
+            <label class="control-label " style="font-size: 12px;">Zip Code</label>
+            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+        </div>
+    </div>
+    <table style="border-collapse: collapse" class="my-4">
+        <thead>
+            <tr>
+                <th colspan="4" style="padding: 5px; text-align: center; " class="bg-info">To be completed by an
+                    Attorney or Accredited Representative (if any).</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 5px;">
+                    <label style="cursor: pointer;">
+                        <?php echo createCheckbox("i_539_g28_status") ?> Select this box if Form G-28 is attached.
+                    </label>
+                </td>
+                <td style="padding: 5px;">
+                    <div>
+                        <label class="control-label ">Attorney State Bar Number (if applicable)</label>
+                        <input type="text" class="form-control" disabled>
+                        <!-- <input type="text" class="form-control" value="<?php echo $attorneyData->bar_number ?>" disabled> -->
+                    </div>
+                </td>
+                <td style="padding: 5px;">
+                    <div>
+                        <label class="control-label ">Attorney or Accredited Representative USCIS Online Account Number
+                            (if any)</label>
+                        <input type="text" class="form-control" maxlength="12" disabled>
+                        <!-- <input type="text" class="form-control" value="<?php echo $attorneyData->uscis_online_account_number ?>" maxlength="12" disabled> -->
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset>
 <!------------------------------------------ ----------------------------
 -------------------------------- page 10 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 10 of 12</b></p>
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 10 </b></p>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
             <h4><b>Part F. To Be Completed at Asylum Interview, if Applicable</b></h4>
@@ -1544,7 +1717,7 @@ include "intake_header.php";
                 <p style="font-weight: 500">I swear (affirm) that I know the contents of this application that I am signing, including the attached documents and supplements, that they are
                     <label style="cursor: pointer;">
                         <?php echo createCheckbox("i_589_all_true_status") ?> all true
-                    </label> or  <label style="cursor: pointer;">
+                    </label> or <label style="cursor: pointer;">
                         <?php echo createCheckbox("i_589_not_true_status") ?> not all true
                     </label> e to the best of my knowledge and that correction(s) numbered _________ to _________
                     were made by me or at my request.
@@ -1563,7 +1736,7 @@ include "intake_header.php";
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">Date (mm/dd/yyyy)</p>
             </div>
             <div class="col-md-6">
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" disabled>
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">Write Your Name in Your Native Alphabet</p>
             </div>
             <div class="col-md-6">
@@ -1583,7 +1756,7 @@ include "intake_header.php";
                 <hr class="my-5" style="border: 1px solid #729af8;">
                 <p style="font-weight: 500">I swear (affirm) that I know the contents of this application that I am signing, including the attached documents and supplements, that they are
                     <label style="cursor: pointer;"><?php echo createCheckbox("i_589_all_true_status") ?> all true</label>
-                     or 
+                    or
                     <label style="cursor: pointer;"> <?php echo createCheckbox("i_589_not_true_status") ?> not all true</label>
                     to the best of my knowledge and that correction(s) numbered _________ to _________
                     were made by me or at my request.
@@ -1602,7 +1775,7 @@ include "intake_header.php";
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">Date (mm/dd/yyyy)</p>
             </div>
             <div class="col-md-6">
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" disabled>
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">Write Your Name in Your Native Alphabet</p>
             </div>
             <div class="col-md-6">
@@ -1612,17 +1785,15 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 
 <!----------------------------------------------------------------------
 -------------------------------- page 11 --------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;"><b>Page 11</b></p>
-
-
     <div class="row" style="border: 1px solid black; padding: 5px ;">
         <div class="col-md-12">
             <div class="col-md-6">
@@ -1630,7 +1801,7 @@ include "intake_header.php";
                 <input type="text" class="form-control" disabled>
 
             </div>
-            <div class="col-md-6">.54
+            <div class="col-md-6">
                 <label class="control-label" style="font-size: smaller;">Date</label>
                 <input type="date" class="form-control" name="passport_id_card_number" maxlength="43">
             </div>
@@ -1645,9 +1816,6 @@ include "intake_header.php";
 
             </div>
         </div>
-
-
-
     </div>
     <div class="row">
         <div class="bg-info" style="margin-top:10px;">
@@ -1886,30 +2054,74 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!----------------------------------------------------------------------
 -------------------------------- page 12--------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
     <div class="row">
+        <div class="page_number">
+            <p style="text-align:right;margin-right:20px;"><b>Page 12</b></p>
+        </div>
+        <div class="col-md-12">
+            <div class="bg-info" style="margin-top:10px;">
+                <h4><b>Additional Information About Your Claim to Asylum</b></h4>
+            </div>
+            <div class="row" style="border: 1px solid black; padding: 5px ;">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label class="control-label" style="font-size: smaller;">A-Number (If available)</label>
+                        <input type="text" class="form-control" disabled>
 
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label" style="font-size: smaller;">Date</label>
+                        <input type="date" class="form-control" name="passport_id_card_number" maxlength="43">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label" style="font-size: smaller;">Applicant's Name</label>
+                        <input type="text" class="form-control" disabled>
+
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label" style="font-size: smaller;">Applicant's Signature</label>
+                        <input type="text" class="form-control" disabled>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <h5><b>NOTE: </b><i>Use this as a continuation page for any additional information requested. Copy and complete as needed</i></h5>
+            <hr style="border: 1px solid #729af8 ;" class="my-5">
+            <div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">Part</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control"
+                            name="i_192_additional_info_5a_page_no" maxlength="2"
+                            value="<?= showData('i_192_additional_info_5a_page_no') ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">Part</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control"
+                            name="i_192_additional_info_5b_part_no" maxlength="6"
+                            value="<?= showData('i_192_additional_info_5b_part_no') ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <textarea name="i_192_additional_info_5d" class="form-control" maxlength="321" cols="30" rows="40"><?= showData('i_192_additional_info_5d') ?></textarea>
+                </div>
+            </div>
+
+        </div><!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
