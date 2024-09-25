@@ -327,48 +327,48 @@ include "intake_header.php";
         <div class="col-md-12">
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="9" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="23" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">3. Date of Birth (mm/dd/yyyy)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="9" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
 
         <div class="col-md-12">
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">5. Complete Last Name</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="29" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">6. First Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="23" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">7. Middle Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="22" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">8. Other names used (include maiden name and aliases)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="22" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div class="col-md-12 d-flexible">
             <div class="col-md-4" style="align-items: center;">
                 <label class="control-label " style="font-size: smaller;">12. Nationality (Citizenship)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="37" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-4" style="align-items: center;">
                 <label class="control-label " style="font-size: smaller;">13. Race, Ethnic, or Tribal Group</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="36" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-4" style="align-items: center;">
                 <label style="font-size: smaller;">14. Gender</label><br>
@@ -378,8 +378,6 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
-
-
         <div class="col-md-12 my-4">
             <div class="col-md-5" style="align-items: center;">
                 <label style="font-size: smaller;">15. Is this person in the U.S.?</label><br>
@@ -389,37 +387,37 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="col-md-6" style="align-items: center;">
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="50" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
 
         <div class="col-md-12">
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">16. Place of last entry into the U.S. </label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="21" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">17. Date of last entry into the U.S. (mm/dd/yyyy) </label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">18. I-94 Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="11" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">19. Status when last admitted (Visa type, if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="24" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
 
         <div class="col-md-12 my-4">
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">20. What is your spouse's current status? </label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="21" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">21. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="date" class="form-control" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">22. Is your spouse in Immigration Court proceedings?</label>
@@ -429,7 +427,7 @@ include "intake_header.php";
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">23. If previously in the U.S., date of previous arrival (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_given_first_name" maxlength="43" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="date" class="form-control" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
         <div class="col-md-12">
@@ -457,53 +455,53 @@ include "intake_header.php";
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
-                    <input type="text" class="form-control" name="alien_registration_number" maxlength="41" />
+                    <input type="text" class="form-control" name="alien_registration_number" maxlength="9" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
-                    <input type="text" class="form-control" name="passport_id_card_number" maxlength="43">
+                    <input type="text" class="form-control" name="passport_id_card_number" maxlength="20" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">3. Marital Status</label>
-                    <input type="text" class="form-control" name="marital_status" maxlength="43">
+                    <input type="text" class="form-control" name="marital_status" maxlength="24" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
-                    <input type="text" class="form-control" name="social_security_number" maxlength="43">
+                    <input type="text" class="form-control" name="social_security_number" maxlength="9" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">5. Complete Last Name</label>
-                    <input type="text" class="form-control" name="complete_last_name" maxlength="41" />
+                    <input type="text" class="form-control" name="complete_last_name" maxlength="29"  name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>"/>
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">6. First Name</label>
-                    <input type="text" class="form-control" name="first_name" maxlength="43">
+                    <input type="text" class="form-control" name="first_name" maxlength="20" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">7. Middle Name</label>
-                    <input type="text" class="form-control" name="middle_name" maxlength="43">
+                    <input type="text" class="form-control" name="middle_name" maxlength="20" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">8. Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="other_names_used" maxlength="43">
+                    <input type="date" class="form-control"  name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">9. City and Country of Birth </label>
-                    <input type="text" class="form-control" name="nationality" maxlength="41" />
+                    <input type="text" class="form-control" name="nationality" maxlength="29"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">10. Nationality (Citizenship)</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="20"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">11. Race, Ethnic, or Tribal Group</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                    <input type="text" class="form-control" name="ethnic_group" maxlength="24"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
                 <div class="col-md-3 ">
                     <label class="control-label" style="font-size: smaller;">11. Gender</label><br>
@@ -523,35 +521,35 @@ include "intake_header.php";
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" name="location_if_not_in_us">
+                    <input type="text" class="form-control" name="location_if_not_in_us" maxlength="32"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">14. Place of last entry into the U.S.</label>
-                    <input type="text" class="form-control" name="place_of_last_entry" maxlength="41" />
+                    <input type="text" class="form-control" name="place_of_last_entry" maxlength="29"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">15. Date of last entry into the U.S. (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="date_of_last_entry">
+                    <input type="date" class="form-control" name="date_of_last_entry"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">16. I-94 Number (If any)</label>
-                    <input type="text" class="form-control" name="visa_type" maxlength="43">
+                    <input type="text" class="form-control" name="visa_type" maxlength="11"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">17. Status when last admitted (Visa type, if any)</label>
-                    <input type="text" class="form-control" name="visa_type" maxlength="43">
+                    <input type="text" class="form-control" name="visa_type" maxlength="20"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">18. What is your child's current status?</label>
-                    <input type="text" class="form-control" name="nationality" maxlength="41" />
+                    <input type="text" class="form-control" name="nationality" maxlength="29"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
                 </div>
                 <div class="col-md-5">
                     <label class="control-label" style="font-size: smaller;">19. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="43">
+                    <input type="date" class="form-control" name="ethnic_group"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 </div>
                 <div class="col-md-4 ">
                     <label class="control-label" style="font-size: smaller;">20. Is your child in Immigration Court proceedings?</label><br>
