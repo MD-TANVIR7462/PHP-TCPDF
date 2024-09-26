@@ -45,7 +45,7 @@ include "intake_header.php";
     </div>
     <div class="control-label col-md-12">
         <label class="control-label">
-            <b>NOTE: </b> <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> Check this box if you also want to apply for withholding of removal under the Convention Against Torture.
+            <b>NOTE: </b> <?php echo createCheckbox("i_589_holding_of_removal_status") ?> Check this box if you also want to apply for withholding of removal under the Convention Against Torture.
         </label>
     </div>
     <div class="col-md-12">
@@ -114,10 +114,10 @@ include "intake_header.php";
                 <label class="control-label text-sm ">Telephone Number</label>
                 <div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="3" value="<?php echo showData('i_539_interpreter_business_name') ?>">
+                        <input type="text" class="form-control " name="i_589_information_about_you_phone_value1" maxlength="3" value="<?php echo showData('i_589_information_about_you_phone_value1') ?>">
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="7" value="<?php echo showData('i_539_interpreter_business_name') ?>">
+                        <input type="text" class="form-control " name="i_589_information_about_you_phone_value2" maxlength="7" value="<?php echo showData('i_589_information_about_you_phone_value2') ?>">
                     </div>
                 </div>
             </div>
@@ -132,10 +132,10 @@ include "intake_header.php";
                 <label class="control-label text-sm ">Telephone Number</label>
                 <div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="3" value="<?php echo showData('i_539_interpreter_business_name') ?>">
+                        <input type="text" class="form-control " name="i_589_information_about_you_phone2_value1" maxlength="3" value="<?php echo showData('i_589_information_about_you_phone2_value1') ?>">
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control " name="i_539_interpreter_business_name" maxlength="7" value="<?php echo showData('i_539_interpreter_business_name') ?>">
+                        <input type="text" class="form-control " name="i_589_information_about_you_phone2_value1" maxlength="7" value="<?php echo showData('i_589_information_about_you_phone2_value1') ?>">
                     </div>
                 </div>
             </div>
@@ -197,11 +197,11 @@ include "intake_header.php";
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">16. Race, Ethnic, or Tribal Group</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="23" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_information_about_you_race_ethnic" maxlength="23" value="<?php echo showData('i_589_information_about_you_race_ethnic') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">17. Religion</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="18" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_information_about_you_religion" maxlength="18" value="<?php echo showData('i_589_information_about_you_religion') ?>">
             </div>
         </div>
         <div class="col-md-12 my-4">
@@ -210,69 +210,69 @@ include "intake_header.php";
             </label>
             <br>
             <label class="control-label">
-                <b>a.</b> <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> I have never been in Immigration Court proceedings.
+                <b>a.</b> <?php echo createCheckbox("i_589_never_in_imgt_court_proceeding_status") ?> I have never been in Immigration Court proceedings.
             </label><br>
             <label class="control-label">
-                <b>b.</b> <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> I am now in Immigration Court proceedings
+                <b>b.</b> <?php echo createCheckbox("i_589_am_now_imgt_court_proceeding_status") ?> I am now in Immigration Court proceedings
             </label><br>
             <label class="control-label">
-                <b>c.</b> <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> I am not now in Immigration Court proceedings, but I have been in the past.
+                <b>c.</b> <?php echo createCheckbox("i_589_not_now_imgt_court_proceeding_status") ?> I am not now in Immigration Court proceedings, but I have been in the past.
             </label>
         </div><br>
         <div>
             <label class="control-label col-md-12">19. Complete 19 a through c.</label>
             <div class="col-md-5">
                 <label class="control-label text-sm ">a. When did you last leave your country? (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_589_last_leave_country" value="<?php echo showData('i_589_last_leave_country') ?>" />
             </div>
             <div class="col-md-6">
                 <label class="control-label text-sm ">b. What is your current I-94 Number, if any?</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="11" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_current_i94_number" maxlength="11" value="<?php echo showData('i_589_current_i94_number') ?>">
             </div>
         </div>
         <div>
             <label class="control-label col-md-12">c. List each entry into the U.S. beginning with your most recent entry. List date (mm/dd/yyyy), place, and your status for each entry. (Attach additional sheets as needed.)</label>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Date</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_589_most_recent_entry_date" value="<?php echo showData('i_589_most_recent_entry_date') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Place</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_most_recent_entry_place" maxlength="20" value="<?php echo showData('i_589_most_recent_entry_place') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Status</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="15" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_most_recent_entry_status" maxlength="15" value="<?php echo showData('i_589_most_recent_entry_status') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Date Status Expires
                 </label>
-                <input type="date" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="date" class="form-control" name="i_589_most_recent_entry_expires_date" value="<?php echo showData('i_589_most_recent_entry_expires_date') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Date</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_589_most_recent_entry_date2" value="<?php echo showData('i_589_most_recent_entry_date2') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Place</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_most_recent_entry_place2" maxlength="20" value="<?php echo showData('i_589_most_recent_entry_place2') ?>">
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">Status</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="15" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_most_recent_entry_status2" maxlength="15" value="<?php echo showData('i_589_most_recent_entry_status2') ?>">
             </div>
 
             <div class="col-md-3">
                 <label class="control-label text-sm ">Date</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_589_most_recent_entry_date3" value="<?php echo showData('i_589_most_recent_entry_date3') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Place</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_most_recent_entry_place3" maxlength="20" value="<?php echo showData('i_589_most_recent_entry_place3') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label text-sm ">Status</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="15" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_most_recent_entry_status3" maxlength="15" value="<?php echo showData('i_589_most_recent_entry_status3') ?>">
             </div>
             <div class="col-md-3">
             </div>
@@ -296,19 +296,19 @@ include "intake_header.php";
         <div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">23. What is your native language (include dialect, if applicable)?</label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="41" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_589_native_language" maxlength="41" value="<?php echo showData('i_589_native_language') ?>" />
             </div>
             <div class="col-md-4">
                 <div class="col-md-12 my-5">
                     <label>24. Are you fluent in English?</label><br>
                     <div>
-                        <?php echo createRadio("i_485_social_security_status") ?>
+                        <?php echo createRadio("i_589_fluent_in_english_status") ?>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <label class="control-label text-sm ">25. What other languages do you speak fluently?</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="32" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_fluent_other_language" maxlength="32" value="<?php echo showData('i_589_fluent_other_language') ?>">
             </div>
         </div>
     </div>
@@ -1601,7 +1601,7 @@ include "intake_header.php";
             </div>
             <div class="col-md-6">
                 <label class="control-label " style="font-size: 12px;">Date (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="date" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
             </div>
         </div>
     </div>
@@ -1725,7 +1725,7 @@ include "intake_header.php";
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">Signature of Applicant</p>
             </div>
             <div class="col-md-6">
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">Date (mm/dd/yyyy)</p>
             </div>
             <div class="col-md-6">
@@ -1764,7 +1764,7 @@ include "intake_header.php";
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">Signature of Applicant</p>
             </div>
             <div class="col-md-6">
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name"  value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">Date (mm/dd/yyyy)</p>
             </div>
             <div class="col-md-6">
@@ -2072,7 +2072,7 @@ include "intake_header.php";
                     </div>
                     <div class="col-md-6">
                         <label class="control-label" style="font-size: smaller;">Date</label>
-                        <input type="date" class="form-control" name="passport_id_card_number" >
+                        <input type="date" class="form-control" name="passport_id_card_number">
                     </div>
                     <div class="col-md-6">
                         <label class="control-label" style="font-size: smaller;">Applicant's Name</label>
