@@ -324,57 +324,77 @@ include "intake_header.php";
         <div class="bg-info" style="margin-top:10px;">
             <h4><b>Part A.II. Information About Your Spouse and Children</b></h4>
         </div>
+        <div class="control-label col-md-12">
+            <label class="control-label">
+                <?php echo createCheckbox("i_589_not_married_status") ?> I am not married. (Skip to Your Children below.)
+            </label>
+        </div>
         <div class="col-md-12">
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="9" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="current_spouse_a_number" maxlength="9" value="<?php echo showData('current_spouse_a_number') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="23" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_current_spouse_passport_id_number" maxlength="23" value="<?php echo showData('i_539_current_spouse_passport_id_number') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">3. Date of Birth (mm/dd/yyyy)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="date" class="form-control" name="current_spouse_date_of_birth" value="<?php echo showData('current_spouse_date_of_birth') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="9" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_current_spouse_social_security_number" maxlength="9" value="<?php echo showData('i_539_current_spouse_social_security_number') ?>">
             </div>
         </div>
 
         <div class="col-md-12">
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">5. Complete Last Name</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="29" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="current_spouse_family_last_name" value="<?php echo showData('current_spouse_family_last_name') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">6. First Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="23" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="current_spouse_given_first_name" maxlength="23" value="<?php echo showData('current_spouse_given_first_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">7. Middle Name</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="22" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="current_spouse_family_middle_name" maxlength="22" value="<?php echo showData('current_spouse_family_middle_name') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">8. Other names used (include maiden name and aliases)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="22" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_current_spouse_other_name" maxlength="22" value="<?php echo showData('i_539_current_spouse_other_name') ?>">
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <label class="control-label " style="font-size: smaller;">9. Date of Marriage (mm/dd/yyyy)</label>
+                <input type="date" class="form-control" name="current_spouse_date_of_marriage" value="<?php echo showData('current_spouse_date_of_marriage') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label " style="font-size: smaller;">10. Place of Marriage</label>
+                <input type="text" class="form-control" name="current_spouse_marriage_place_country" maxlength="27" value="<?php echo showData('current_spouse_marriage_place_country') ?>">
+            </div>
+            <div class="col-md-4">
+                <label class="control-label " style="font-size: smaller;">11. City and Country of Birth</label>
+                <input type="text" class="form-control" name="current_spouse_birth_place_country" maxlength="29" value="<?php echo showData('current_spouse_birth_place_country') ?>">
             </div>
         </div>
         <div class="col-md-12 d-flexible">
             <div class="col-md-4" style="align-items: center;">
                 <label class="control-label " style="font-size: smaller;">12. Nationality (Citizenship)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="37" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_589_current_spouse_nationality" maxlength="37" value="<?php echo showData('i_589_current_spouse_nationality') ?>" />
             </div>
             <div class="col-md-4" style="align-items: center;">
                 <label class="control-label " style="font-size: smaller;">13. Race, Ethnic, or Tribal Group</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="36" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_current_spouse_race_ethnic" maxlength="36" value="<?php echo showData('i_589_current_spouse_race_ethnic') ?>">
             </div>
             <div class="col-md-4" style="align-items: center;">
                 <label style="font-size: smaller;">14. Gender</label><br>
                 <div class="d-flexible">
-                    <input type="radio" name="biographic_info_hair_color" id="male" value="male" <?php echo (showData('biographic_info_hair_color') == 'male') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="male">Male</label><br>
-                    <input type="radio" name="biographic_info_hair_color" id="female" value="female" <?php echo (showData('biographic_info_hair_color') == 'female') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="female">Female</label><br>
+                    <input type="radio" name="i_589_current_spouse_gender" id="male" value="male" <?php echo (showData('i_589_current_spouse_gender') == 'male') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="male">Male</label><br>
+                    <input type="radio" name="i_589_current_spouse_gender" id="female" value="female" <?php echo (showData('i_589_current_spouse_gender') == 'female') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="female">Female</label><br>
                 </div>
             </div>
         </div>
@@ -382,8 +402,8 @@ include "intake_header.php";
             <div class="col-md-5" style="align-items: center;">
                 <label style="font-size: smaller;">15. Is this person in the U.S.?</label><br>
                 <div class="d-flexible">
-                    <input type="radio" name="biographic_info_hair_color" id="15_YES" value="male" <?php echo (showData('biographic_info_hair_color') == 'male') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="15_YES">Yes (Complete Blocks 16 to 24.)</label><br>
-                    <input type="radio" name="biographic_info_hair_color" id="15_NO" value="female" <?php echo (showData('biographic_info_hair_color') == 'female') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="15_NO">No (Specify location):</label><br>
+                    <input type="radio" name="i_589_current_spouse_in_usa" id="15_YES" value="Y" <?php echo (showData('i_589_current_spouse_in_usa') == 'Y') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="15_YES">Yes (Complete Blocks 16 to 24.)</label><br>
+                    <input type="radio" name="i_589_current_spouse_in_usa" id="15_NO" value="N" <?php echo (showData('i_589_current_spouse_in_usa') == 'N') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="15_NO">No (Specify location):</label><br>
                 </div>
             </div>
             <div class="col-md-6" style="align-items: center;">
@@ -394,175 +414,177 @@ include "intake_header.php";
         <div class="col-md-12">
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">16. Place of last entry into the U.S. </label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="21" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="date" class="form-control" name="i_589_current_spouse_place_of_last_entry" maxlength="21" value="<?php echo showData('i_589_current_spouse_place_of_last_entry') ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">17. Date of last entry into the U.S. (mm/dd/yyyy) </label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_current_spouse_date_of_last_entry" value="<?php echo showData('i_589_current_spouse_date_of_last_entry') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">18. I-94 Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="11" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_current_spouse_i94_number" maxlength="11" value="<?php echo showData('i_589_current_spouse_i94_number') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">19. Status when last admitted (Visa type, if any)</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="24" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_current_spouse_visa_type" maxlength="24" value="<?php echo showData('i_589_current_spouse_visa_type') ?>">
             </div>
         </div>
 
         <div class="col-md-12 my-4">
             <div class="col-md-3">
-                <label class="control-label " style="font-size: 12px;">20. What is your spouse's current status? </label>
-                <input type="date" class="form-control" name="i_539_interpreter_family_last_name" maxlength="21" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <label class="control-label" style="font-size: 12px;">20. What is your spouse's current status?</label>
+                <input type="text" class="form-control" name="i_589_current_spouse_current_status" value="<?php echo showData('i_589_current_spouse_current_status'); ?>" />
             </div>
             <div class="col-md-3">
-                <label class="control-label " style="font-size: 12px;">21. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <label class="control-label" style="font-size: 12px;">21. Expiration date of authorized stay, if any (mm/dd/yyyy)</label>
+                <input type="date" class="form-control" name="i_589_current_spouse_expiration_date" value="<?php echo showData('i_589_current_spouse_expiration_date'); ?>" />
             </div>
             <div class="col-md-3">
-                <label class="control-label " style="font-size: 12px;">22. Is your spouse in Immigration Court proceedings?</label>
-                <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
-                </div>
+                <label class="control-label" style="font-size: 12px;">22. Is your spouse in Immigration Court proceedings?</label>
+                <div><?php echo createRadio("i_589_current_spouse_immigration_proceedings"); ?></div>
             </div>
             <div class="col-md-3">
-                <label class="control-label " style="font-size: 12px;">23. If previously in the U.S., date of previous arrival (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <label class="control-label" style="font-size: 12px;">23. Date of previous arrival (if any) (mm/dd/yyyy)</label>
+                <input type="date" class="form-control" name="i_589_current_spouse_previous_arrival_date" value="<?php echo showData('i_589_current_spouse_previous_arrival_date'); ?>" />
             </div>
         </div>
         <div class="col-md-12">
-            <label class="control-label col-md-12" style="font-size: 12px;">24. If in the U.S., is your spouse to be included in this application? (Check the appropriate box.)</label>
+            <label class="control-label col-md-12" style="font-size: 12px;">24. Is your spouse included in this application?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_485_social_security_status") ?>
+                <?php echo createRadio("i_589_current_spouse_included_in_application"); ?>
             </div>
         </div>
         <div class="col-md-12">
             <label class="control-label col-md-12" style="font-size: 12px;">Your Children. List all of your children, regardless of age, location, or marital status.</label>
         </div>
+
         <div class="col-md-12">
-            <div class=" col-md-12">
+            <div class="col-md-12">
                 <label class="control-label" style="font-size: 12px;">
-                    <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> I do not have any children. (Skip to Part A.III., Information about your background.)
+                    <?php echo createCheckbox("i_589_no_children_status"); ?> I do not have any children. (Skip to Part A.III., Information about your background.)
                 </label>
             </div>
-            <div class=" col-md-12">
+            <div class="col-md-12">
                 <label class="control-label" style="font-size: 12px;">
-                    <?php echo createCheckbox("i_864a_intending_immigrant_status") ?> I have children
+                    <?php echo createCheckbox("i_589_have_children_status"); ?> I have children.
                 </label>
             </div>
         </div>
+
+
         <div>
             <div class="col-md-12">
                 <div class="col-md-3">
-                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
-                    <input type="text" class="form-control" name="alien_registration_number" maxlength="9" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number)</label>
+                    <input type="text" class="form-control" name="i_589_child_alien_registration_number" maxlength="9" value="<?php echo showData('i_589_child_alien_registration_number'); ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
-                    <input type="text" class="form-control" name="passport_id_card_number" maxlength="20" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_passport_id_card_number" maxlength="20" value="<?php echo showData('i_589_child_passport_id_card_number'); ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">3. Marital Status</label>
-                    <input type="text" class="form-control" name="marital_status" maxlength="24" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_marital_status" maxlength="24" value="<?php echo showData('i_589_child_marital_status'); ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
-                    <input type="text" class="form-control" name="social_security_number" maxlength="9" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_social_security_number" maxlength="9" value="<?php echo showData('i_589_child_social_security_number'); ?>" />
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">5. Complete Last Name</label>
-                    <input type="text" class="form-control" name="complete_last_name" maxlength="29" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_complete_last_name" maxlength="29" value="<?php echo showData('i_589_child_complete_last_name') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">6. First Name</label>
-                    <input type="text" class="form-control" name="first_name" maxlength="20" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_first_name" maxlength="20" value="<?php echo showData('i_589_child_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">7. Middle Name</label>
-                    <input type="text" class="form-control" name="middle_name" maxlength="20" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_middle_name" maxlength="20" value="<?php echo showData('i_589_child_middle_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">8. Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="date" class="form-control" name="i_589_child_date_of_birth" value="<?php echo showData('i_589_child_date_of_birth') ?>">
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">9. City and Country of Birth </label>
-                    <input type="text" class="form-control" name="nationality" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_city_country_of_birth" maxlength="29" value="<?php echo showData('i_589_child_city_country_of_birth') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">10. Nationality (Citizenship)</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_nationality" maxlength="20" value="<?php echo showData('i_589_child_nationality') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">11. Race, Ethnic, or Tribal Group</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="24" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_ethnic_group" maxlength="24" value="<?php echo showData('i_589_child_ethnic_group') ?>">
                 </div>
-                <div class="col-md-3 ">
-                    <label class="control-label" style="font-size: smaller;">11. Gender</label><br>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">12. Gender</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="gender" id="male_12" value="male"> <label for="male_12" style="font-size: smaller;">Male</label><br>
-                        <input type="radio" name="gender" id="female_12" value="female"> <label for="female_12" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="i_589_child_gender" id="male_12" value="male" <?php echo (showData('i_589_child_gender') == 'male') ? 'checked' : '' ?>> <label for="male_12" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="i_589_child_gender" id="female_12" value="female"> <label for="female_12" style="font-size: smaller;">Female</label>
                     </div>
                 </div>
             </div>
-
             <div class="col-md-12">
                 <div class="col-md-5">
-                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S. ?</label><br>
+                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S.?</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="child_in_us" id="yes_13" value="yes"> <label for="yes_13" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
-                        <input type="radio" name="child_in_us" id="no_13" value="no"> <label for="no_13" style="font-size: smaller;">No (Specify location):</label>
+                        <input type="radio" name="i_589_child_in_us" id="yes_13" value="Y" <?php echo (showData('i_589_child_in_us') == 'Y') ? 'checked' : '' ?>> <label for="yes_13" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
+                        <input type="radio" name="i_589_child_in_us" id="no_13" value="N" <?php echo (showData('i_589_child_in_us') == 'N') ? 'checked' : '' ?>> <label for="no_13" style="font-size: smaller;">No (Specify location):</label>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" name="location_if_not_in_us" maxlength="32" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_location_if_not_in_us" maxlength="32" value="<?php echo showData('i_589_child_location_if_not_in_us') ?>">
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">14. Place of last entry into the U.S.</label>
-                    <input type="text" class="form-control" name="place_of_last_entry" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_place_of_last_entry" maxlength="29" value="<?php echo showData('i_589_child_place_of_last_entry') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">15. Date of last entry into the U.S. (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="date_of_last_entry" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="date" class="form-control" name="i_589_child_date_of_last_entry" value="<?php echo showData('i_589_child_date_of_last_entry') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">16. I-94 Number (If any)</label>
-                    <input type="text" class="form-control" name="visa_type" maxlength="11" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_i94_number" maxlength="11" value="<?php echo showData('i_589_child_i94_number') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">17. Status when last admitted (Visa type, if any)</label>
-                    <input type="text" class="form-control" name="visa_type" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_status_when_last_admitted" maxlength="20" value="<?php echo showData('i_589_child_status_when_last_admitted') ?>">
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">18. What is your child's current status?</label>
-                    <input type="text" class="form-control" name="nationality" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_current_status" maxlength="29" value="<?php echo showData('i_589_child_current_status') ?>" />
                 </div>
                 <div class="col-md-5">
                     <label class="control-label" style="font-size: smaller;">19. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="ethnic_group" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="date" class="form-control" name="i_589_child_expiration_date_of_stay" value="<?php echo showData('i_589_child_expiration_date_of_stay') ?>">
                 </div>
-                <div class="col-md-4 ">
+                <div class="col-md-4">
                     <label class="control-label" style="font-size: smaller;">20. Is your child in Immigration Court proceedings?</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="gender" id="male_20" value="male"> <label for="male_20" style="font-size: smaller;">Male</label><br>
-                        <input type="radio" name="gender" id="female_20" value="female"> <label for="female_20" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="i_589_child_child_in_court_proceedings" id="yes_20" value="Y" <?php echo (showData('i_589_child_child_in_court_proceedings') == 'Y') ? 'checked' : '' ?>> <label for="yes_20" style="font-size: smaller;">Yes</label><br>
+                        <input type="radio" name="i_589_child_child_in_court_proceedings" id="no_20" value="N" <?php echo (showData('i_589_child_child_in_court_proceedings') == 'Y') ? 'checked' : '' ?>> <label for="no_20" style="font-size: smaller;">No</label>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <label class="control-label col-md-12" style="font-size: 12px;">21. If in the U.S., is this child to be included in this application? (Check the appropriate box.)</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_include_child_in_application") ?>
                 </div>
             </div>
         </div>
@@ -583,350 +605,363 @@ include "intake_header.php";
         <div>
             <div class="col-md-12">
                 <div class="col-md-3">
-                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
-                    <input type="text" class="form-control" name="alien_registration_number" maxlength="9" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number)</label>
+                    <input type="text" class="form-control" name="i_589_child_alien_registration_number2" maxlength="9" value="<?php echo showData('i_589_child_alien_registration_number'); ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
-                    <input type="text" class="form-control" name="passport_id_card_number" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_passport_id_card_number2" maxlength="20" value="<?php echo showData('i_589_child_passport_id_card_number'); ?>" />
                 </div>
                 <div class="col-md-3">
-                    <label class="control-label" style="font-size: smaller;">3. 3. Marital Status (Married, Single, Divorced, Widowed)</label>
-                    <input type="text" class="form-control" name="marital_status" maxlength="24" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <label class="control-label" style="font-size: smaller;">3. Marital Status</label>
+                    <input type="text" class="form-control" name="i_589_child_marital_status2" maxlength="24" value="<?php echo showData('i_589_child_marital_status'); ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
-                    <input type="text" class="form-control" name="social_security_number" maxlength="9"> value="<?php echo showData('i_539_interpreter_given_first_name') ?>"
+                    <input type="text" class="form-control" name="i_589_child_social_security_number2" maxlength="9" value="<?php echo showData('i_589_child_social_security_number'); ?>" />
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">5. Complete Last Name</label>
-                    <input type="text" class="form-control" name="complete_last_name" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_complete_last_name2" maxlength="29" value="<?php echo showData('i_589_child_complete_last_name') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">6. First Name</label>
-                    <input type="text" class="form-control" name="first_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_first_name2" maxlength="20" value="<?php echo showData('i_589_child_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">7. Middle Name</label>
-                    <input type="text" class="form-control" name="middle_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_middle_name2" maxlength="20" value="<?php echo showData('i_589_child_middle_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">8. Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="other_names_used">
+                    <input type="date" class="form-control" name="i_589_child_date_of_birth2" value="<?php echo showData('i_589_child_date_of_birth') ?>">
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">9. City and Country of Birth </label>
-                    <input type="text" class="form-control" name="nationality" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_city_country_of_birth2" maxlength="29" value="<?php echo showData('i_589_child_city_country_of_birth') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">10. Nationality (Citizenship)</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_nationality2" maxlength="20" value="<?php echo showData('i_589_child_nationality') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">11. Race, Ethnic, or Tribal Group</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="24" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_ethnic_group2" maxlength="24" value="<?php echo showData('i_589_child_ethnic_group') ?>">
                 </div>
-                <div class="col-md-3 ">
-                    <label class="control-label" style="font-size: smaller;">11. Gender</label><br>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">12. Gender</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="gender" id="male_12" value="male"> <label for="male_12" style="font-size: smaller;">Male</label><br>
-                        <input type="radio" name="gender" id="female_12" value="female"> <label for="female_12" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="i_589_child_gender2" id="male_12_2" value="male" <?php echo (showData('i_589_child_gender') == 'male') ? 'checked' : '' ?>> <label for="male_12_2" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="i_589_child_gender2" id="female_12_2" value="female"> <label for="female_12_2" style="font-size: smaller;">Female</label>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-5">
-                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S. ?</label><br>
+                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S.?</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="child_in_us" id="yes_13" value="yes"> <label for="yes_13" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
-                        <input type="radio" name="child_in_us" id="no_13" value="no"> <label for="no_13" style="font-size: smaller;">No (Specify location):</label>
+                        <input type="radio" name="i_589_child_in_us2" id="yes_13_2" value="Y" <?php echo (showData('i_589_child_in_us') == 'Y') ? 'checked' : '' ?>> <label for="yes_13_2" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
+                        <input type="radio" name="i_589_child_in_us2" id="no_13_2" value="N" <?php echo (showData('i_589_child_in_us') == 'N') ? 'checked' : '' ?>> <label for="no_13_2" style="font-size: smaller;">No (Specify location):</label>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" name="location_if_not_in_us" maxlength="32" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_location_if_not_in_us2" maxlength="32" value="<?php echo showData('i_589_child_location_if_not_in_us') ?>">
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">14. Place of last entry into the U.S.</label>
-                    <input type="text" class="form-control" name="place_of_last_entry" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_place_of_last_entry2" maxlength="29" value="<?php echo showData('i_589_child_place_of_last_entry') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">15. Date of last entry into the U.S. (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="date_of_last_entry">
+                    <input type="date" class="form-control" name="i_589_child_date_of_last_entry2" value="<?php echo showData('i_589_child_date_of_last_entry') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">16. I-94 Number (If any)</label>
-                    <input type="text" class="form-control" name="visa_type" maxlength="11" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_i94_number2" maxlength="11" value="<?php echo showData('i_589_child_i94_number') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">17. Status when last admitted (Visa type, if any)</label>
-                    <input type="text" class="form-control" name="visa_type" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_status_when_last_admitted2" maxlength="20" value="<?php echo showData('i_589_child_status_when_last_admitted') ?>">
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">18. What is your child's current status?</label>
-                    <input type="text" class="form-control" name="nationality" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_current_status2" maxlength="29" value="<?php echo showData('i_589_child_current_status') ?>" />
                 </div>
                 <div class="col-md-5">
                     <label class="control-label" style="font-size: smaller;">19. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="ethnic_group">
+                    <input type="date" class="form-control" name="i_589_child_expiration_date_of_stay2" value="<?php echo showData('i_589_child_expiration_date_of_stay') ?>">
                 </div>
-                <div class="col-md-4 ">
+                <div class="col-md-4">
                     <label class="control-label" style="font-size: smaller;">20. Is your child in Immigration Court proceedings?</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="gender" id="male_20" value="male"> <label for="male_20" style="font-size: smaller;">Male</label><br>
-                        <input type="radio" name="gender" id="female_20" value="female"> <label for="female_20" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="i_589_child_child_in_court_proceedings2" id="yes_20_2" value="yes"> <label for="yes_20_2" style="font-size: smaller;">Yes</label><br>
+                        <input type="radio" name="i_589_child_child_in_court_proceedings2" id="no_20_2" value="no"> <label for="no_20_2" style="font-size: smaller;">No</label>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <label class="control-label col-md-12" style="font-size: 12px;">21. If in the U.S., is this child to be included in this application? (Check the appropriate box.)</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_include_child_in_application2") ?>
                 </div>
             </div>
         </div>
+
         <hr style="border: 1px solid #729af8 ;" class="my-5">
         <div>
             <div class="col-md-12">
                 <div class="col-md-3">
-                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
-                    <input type="text" class="form-control" name="alien_registration_number" maxlength="9" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number)</label>
+                    <input type="text" class="form-control" name="i_589_child_alien_registration_number3" maxlength="9" value="<?php echo showData('i_589_child_alien_registration_number'); ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
-                    <input type="text" class="form-control" name="passport_id_card_number" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_passport_id_card_number3" maxlength="20" value="<?php echo showData('i_589_child_passport_id_card_number'); ?>" />
                 </div>
                 <div class="col-md-3">
-                    <label class="control-label" style="font-size: smaller;">3. 3. Marital Status (Married, Single, Divorced, Widowed)</label>
-                    <input type="text" class="form-control" name="marital_status" maxlength="24" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <label class="control-label" style="font-size: smaller;">3. Marital Status</label>
+                    <input type="text" class="form-control" name="i_589_child_marital_status3" maxlength="24" value="<?php echo showData('i_589_child_marital_status'); ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
-                    <input type="text" class="form-control" name="social_security_number" maxlength="9"> value="<?php echo showData('i_539_interpreter_given_first_name') ?>"
+                    <input type="text" class="form-control" name="i_589_child_social_security_number3" maxlength="9" value="<?php echo showData('i_589_child_social_security_number'); ?>" />
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">5. Complete Last Name</label>
-                    <input type="text" class="form-control" name="complete_last_name" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_complete_last_name3" maxlength="29" value="<?php echo showData('i_589_child_complete_last_name') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">6. First Name</label>
-                    <input type="text" class="form-control" name="first_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_first_name3" maxlength="20" value="<?php echo showData('i_589_child_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">7. Middle Name</label>
-                    <input type="text" class="form-control" name="middle_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_middle_name3" maxlength="20" value="<?php echo showData('i_589_child_middle_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">8. Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="other_names_used">
+                    <input type="date" class="form-control" name="i_589_child_date_of_birth3" value="<?php echo showData('i_589_child_date_of_birth') ?>">
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">9. City and Country of Birth </label>
-                    <input type="text" class="form-control" name="nationality" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_city_country_of_birth3" maxlength="29" value="<?php echo showData('i_589_child_city_country_of_birth') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">10. Nationality (Citizenship)</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_nationality3" maxlength="20" value="<?php echo showData('i_589_child_nationality') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">11. Race, Ethnic, or Tribal Group</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="24" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_ethnic_group3" maxlength="24" value="<?php echo showData('i_589_child_ethnic_group') ?>">
                 </div>
-                <div class="col-md-3 ">
-                    <label class="control-label" style="font-size: smaller;">11. Gender</label><br>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">12. Gender</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="gender" id="male_12" value="male"> <label for="male_12" style="font-size: smaller;">Male</label><br>
-                        <input type="radio" name="gender" id="female_12" value="female"> <label for="female_12" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="i_589_child_gender3" id="male_12_3" value="male" <?php echo (showData('i_589_child_gender') == 'male') ? 'checked' : '' ?>> <label for="male_12_3" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="i_589_child_gender3" id="female_12_3" value="female"> <label for="female_12_3" style="font-size: smaller;">Female</label>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-5">
-                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S. ?</label><br>
+                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S.?</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="child_in_us" id="yes_13" value="yes"> <label for="yes_13" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
-                        <input type="radio" name="child_in_us" id="no_13" value="no"> <label for="no_13" style="font-size: smaller;">No (Specify location):</label>
+                        <input type="radio" name="i_589_child_in_us3" id="yes_13_3" value="Y" <?php echo (showData('i_589_child_in_us') == 'Y') ? 'checked' : '' ?>> <label for="yes_13_3" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
+                        <input type="radio" name="i_589_child_in_us3" id="no_13_3" value="N" <?php echo (showData('i_589_child_in_us') == 'N') ? 'checked' : '' ?>> <label for="no_13_3" style="font-size: smaller;">No (Specify location):</label>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" name="location_if_not_in_us" maxlength="32" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_location_if_not_in_us3" maxlength="32" value="<?php echo showData('i_589_child_location_if_not_in_us') ?>">
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">14. Place of last entry into the U.S.</label>
-                    <input type="text" class="form-control" name="place_of_last_entry" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_place_of_last_entry3" maxlength="29" value="<?php echo showData('i_589_child_place_of_last_entry') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">15. Date of last entry into the U.S. (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="date_of_last_entry">
+                    <input type="date" class="form-control" name="i_589_child_date_of_last_entry3" value="<?php echo showData('i_589_child_date_of_last_entry') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">16. I-94 Number (If any)</label>
-                    <input type="text" class="form-control" name="visa_type" maxlength="11" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_i94_number3" maxlength="11" value="<?php echo showData('i_589_child_i94_number') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">17. Status when last admitted (Visa type, if any)</label>
-                    <input type="text" class="form-control" name="visa_type" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_status_when_last_admitted3" maxlength="20" value="<?php echo showData('i_589_child_status_when_last_admitted') ?>">
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">18. What is your child's current status?</label>
-                    <input type="text" class="form-control" name="nationality" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_current_status3" maxlength="29" value="<?php echo showData('i_589_child_current_status') ?>" />
                 </div>
                 <div class="col-md-5">
                     <label class="control-label" style="font-size: smaller;">19. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="ethnic_group">
+                    <input type="date" class="form-control" name="i_589_child_expiration_date_of_stay3" value="<?php echo showData('i_589_child_expiration_date_of_stay') ?>">
                 </div>
-                <div class="col-md-4 ">
+                <div class="col-md-4">
                     <label class="control-label" style="font-size: smaller;">20. Is your child in Immigration Court proceedings?</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="gender" id="male_20" value="male"> <label for="male_20" style="font-size: smaller;">Male</label><br>
-                        <input type="radio" name="gender" id="female_20" value="female"> <label for="female_20" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="i_589_child_child_in_court_proceedings3" id="yes_20_3" value="Y" <?php echo (showData('i_589_child_child_in_court_proceedings3') == 'Y') ? 'checked' : '' ?>> <label for="yes_20_3" style="font-size: smaller;">Yes</label><br>
+                        <input type="radio" name="i_589_child_child_in_court_proceedings3" id="no_20_3" value="N" <?php echo (showData('i_589_child_child_in_court_proceedings3') == 'Y') ? 'checked' : '' ?>> <label for="no_20_3" style="font-size: smaller;">No</label>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <label class="control-label col-md-12" style="font-size: 12px;">21. If in the U.S., is this child to be included in this application? (Check the appropriate box.)</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_include_child_in_application3") ?>
                 </div>
             </div>
         </div>
+
+
         <hr style="border: 1px solid #729af8 ;" class="my-5">
         <div>
             <div class="col-md-12">
                 <div class="col-md-3">
-                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number) (if any)</label>
-                    <input type="text" class="form-control" name="alien_registration_number" maxlength="9" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <label class="control-label" style="font-size: smaller;">1. Alien Registration Number (A-Number)</label>
+                    <input type="text" class="form-control" name="i_589_child_alien_registration_number4" maxlength="9" value="<?php echo showData('i_589_child_alien_registration_number'); ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
-                    <input type="text" class="form-control" name="passport_id_card_number" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_passport_id_card_number4" maxlength="20" value="<?php echo showData('i_589_child_passport_id_card_number'); ?>" />
                 </div>
                 <div class="col-md-3">
-                    <label class="control-label" style="font-size: smaller;">3. 3. Marital Status (Married, Single, Divorced, Widowed)</label>
-                    <input type="text" class="form-control" name="marital_status" maxlength="24" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <label class="control-label" style="font-size: smaller;">3. Marital Status</label>
+                    <input type="text" class="form-control" name="i_589_child_marital_status4" maxlength="24" value="<?php echo showData('i_589_child_marital_status'); ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
-                    <input type="text" class="form-control" name="social_security_number" maxlength="9"> value="<?php echo showData('i_539_interpreter_given_first_name') ?>"
+                    <input type="text" class="form-control" name="i_589_child_social_security_number4" maxlength="9" value="<?php echo showData('i_589_child_social_security_number'); ?>" />
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">5. Complete Last Name</label>
-                    <input type="text" class="form-control" name="complete_last_name" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_complete_last_name4" maxlength="29" value="<?php echo showData('i_589_child_complete_last_name') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">6. First Name</label>
-                    <input type="text" class="form-control" name="first_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_first_name4" maxlength="20" value="<?php echo showData('i_589_child_first_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">7. Middle Name</label>
-                    <input type="text" class="form-control" name="middle_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_middle_name4" maxlength="20" value="<?php echo showData('i_589_child_middle_name') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">8. Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="other_names_used">
+                    <input type="date" class="form-control" name="i_589_child_date_of_birth4" value="<?php echo showData('i_589_child_date_of_birth') ?>">
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">9. City and Country of Birth </label>
-                    <input type="text" class="form-control" name="nationality" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_city_country_of_birth4" maxlength="29" value="<?php echo showData('i_589_child_city_country_of_birth') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">10. Nationality (Citizenship)</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_nationality4" maxlength="20" value="<?php echo showData('i_589_child_nationality') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">11. Race, Ethnic, or Tribal Group</label>
-                    <input type="text" class="form-control" name="ethnic_group" maxlength="24" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_ethnic_group4" maxlength="24" value="<?php echo showData('i_589_child_ethnic_group') ?>">
                 </div>
-                <div class="col-md-3 ">
-                    <label class="control-label" style="font-size: smaller;">11. Gender</label><br>
+                <div class="col-md-3">
+                    <label class="control-label" style="font-size: smaller;">12. Gender</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="gender" id="male_12" value="male"> <label for="male_12" style="font-size: smaller;">Male</label><br>
-                        <input type="radio" name="gender" id="female_12" value="female"> <label for="female_12" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="i_589_child_gender4" id="male_12_4" value="male" <?php echo (showData('i_589_child_gender') == 'male') ? 'checked' : '' ?>> <label for="male_12_4" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="i_589_child_gender4" id="female_12_4" value="female"> <label for="female_12_4" style="font-size: smaller;">Female</label>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="col-md-5">
-                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S. ?</label><br>
+                    <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S.?</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="child_in_us" id="yes_13" value="yes"> <label for="yes_13" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
-                        <input type="radio" name="child_in_us" id="no_13" value="no"> <label for="no_13" style="font-size: smaller;">No (Specify location):</label>
+                        <input type="radio" name="i_589_child_in_us4" id="yes_13_4" value="Y" <?php echo (showData('i_589_child_in_us') == 'Y') ? 'checked' : '' ?>> <label for="yes_13_4" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label><br>
+                        <input type="radio" name="i_589_child_in_us4" id="no_13_4" value="N" <?php echo (showData('i_589_child_in_us') == 'N') ? 'checked' : '' ?>> <label for="no_13_4" style="font-size: smaller;">No (Specify location):</label>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" name="location_if_not_in_us" maxlength="32" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_location_if_not_in_us4" maxlength="32" value="<?php echo showData('i_589_child_location_if_not_in_us') ?>">
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">14. Place of last entry into the U.S.</label>
-                    <input type="text" class="form-control" name="place_of_last_entry" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_place_of_last_entry4" maxlength="29" value="<?php echo showData('i_589_child_place_of_last_entry') ?>" />
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">15. Date of last entry into the U.S. (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="date_of_last_entry">
+                    <input type="date" class="form-control" name="i_589_child_date_of_last_entry4" value="<?php echo showData('i_589_child_date_of_last_entry') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">16. I-94 Number (If any)</label>
-                    <input type="text" class="form-control" name="visa_type" maxlength="11" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_i94_number4" maxlength="11" value="<?php echo showData('i_589_child_i94_number') ?>">
                 </div>
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">17. Status when last admitted (Visa type, if any)</label>
-                    <input type="text" class="form-control" name="visa_type" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_589_child_status_when_last_admitted4" maxlength="20" value="<?php echo showData('i_589_child_status_when_last_admitted') ?>">
                 </div>
             </div>
+
             <div class="col-md-12">
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">18. What is your child's current status?</label>
-                    <input type="text" class="form-control" name="nationality" maxlength="29" value="<?php echo showData('i_539_interpreter_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_589_child_current_status4" maxlength="29" value="<?php echo showData('i_589_child_current_status') ?>" />
                 </div>
                 <div class="col-md-5">
                     <label class="control-label" style="font-size: smaller;">19. What is the expiration date of his/her authorized stay, if any? (mm/dd/yyyy)</label>
-                    <input type="date" class="form-control" name="ethnic_group">
+                    <input type="date" class="form-control" name="i_589_child_expiration_date_of_stay4" value="<?php echo showData('i_589_child_expiration_date_of_stay') ?>">
                 </div>
-                <div class="col-md-4 ">
+                <div class="col-md-4">
                     <label class="control-label" style="font-size: smaller;">20. Is your child in Immigration Court proceedings?</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="gender" id="male_20" value="male"> <label for="male_20" style="font-size: smaller;">Male</label><br>
-                        <input type="radio" name="gender" id="female_20" value="female"> <label for="female_20" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="i_589_child_child_in_court_proceedings4" id="yes_20_4" value="Y" <?php echo (showData('i_589_child_child_in_court_proceedings') == 'Y') ? 'checked' : '' ?>> <label for="yes_20_4" style="font-size: smaller;">Yes</label><br>
+                        <input type="radio" name="i_589_child_child_in_court_proceedings4" id="no_20_4" value="N" <?php echo (showData('i_589_child_child_in_court_proceedings') == 'N') ? 'checked' : '' ?>> <label for="no_20_4" style="font-size: smaller;">No</label>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-12">
                 <label class="control-label col-md-12" style="font-size: 12px;">21. If in the U.S., is this child to be included in this application? (Check the appropriate box.)</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_include_child_in_application4") ?>
                 </div>
             </div>
         </div>
+
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
