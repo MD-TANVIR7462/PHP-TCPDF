@@ -1262,20 +1262,20 @@ include "intake_header.php";
             </div>
             <div class="col-md-12">
                 <label class="control-label">I am seeking asylum or withholding of removal based on:</label> <br>
-                <input type="radio" name="biographic_info_hair_color" id="Race" value="Race" <?php echo (showData('biographic_info_hair_color') == 'Race') ? 'checked' : '' ?>> <label for="Race">Race</label><br>
-                <input type="radio" name="biographic_info_hair_color" id="Political opinion" value="Political opinion" <?php echo (showData('biographic_info_hair_color') == 'Political opinion') ? 'checked' : '' ?>> <label for="Political opinion">Political opinion</label><br>
-                <input type="radio" name="biographic_info_hair_color" id="Religion" value="Religion" <?php echo (showData('biographic_info_hair_color') == 'Religion') ? 'checked' : '' ?>> <label for="Religion">Religion</label><br>
-                <input type="radio" name="biographic_info_hair_color" id="Membership in a particular social group" value="Membership in a particular social group" <?php echo (showData('biographic_info_hair_color') == 'Membership in a particular social group') ? 'checked' : '' ?>> <label for="Membership in a particular social group">Membership in a particular social group</label><br>
-                <input type="radio" name="biographic_info_hair_color" id="Nationality" value="Nationality" <?php echo (showData('biographic_info_hair_color') == 'Nationality') ? 'checked' : '' ?>> <label for="Nationality">Nationality</label><br>
-                <input type="radio" name="biographic_info_hair_color" id="Torture Convention" value="Torture Convention" <?php echo (showData('biographic_info_hair_color') == 'Torture Convention') ? 'checked' : '' ?>> <label for="Torture Convention">Torture Convention</label><br>
-
+                <input type="radio" name="info_about_you_removal_based" id="Race" value="race" <?php echo (showData('info_about_you_removal_based') == 'race') ? 'checked' : '' ?>> <label for="Race">Race</label><br>
+                <input type="radio" name="info_about_you_removal_based" id="Political_opinion" value="political_opinion" <?php echo (showData('info_about_you_removal_based') == 'political_opinion') ? 'checked' : '' ?>> <label for="Political_opinion">Political opinion</label><br>
+                <input type="radio" name="info_about_you_removal_based" id="Religion" value="religion" <?php echo (showData('info_about_you_removal_based') == 'religion') ? 'checked' : '' ?>> <label for="Religion">Religion</label><br>
+                <input type="radio" name="info_about_you_removal_based" id="Membership_in_a_particular_social_group" value="membership_in_particular_social_group" <?php echo (showData('info_about_you_removal_based') == 'membership_in_particular_social_group') ? 'checked' : '' ?>> <label for="Membership_in_a_particular_social_group">Membership in a particular social group</label><br>
+                <input type="radio" name="info_about_you_removal_based" id="Nationality" value="nationality" <?php echo (showData('info_about_you_removal_based') == 'nationality') ? 'checked' : '' ?>> <label for="Nationality">Nationality</label><br>
+                <input type="radio" name="info_about_you_removal_based" id="Torture_Convention" value="torture_convention" <?php echo (showData('info_about_you_removal_based') == 'torture_convention') ? 'checked' : '' ?>> <label for="Torture_Convention">Torture Convention</label><br>
             </div>
+
         </div>
         <hr class="my-5" style="border: 1px solid #729af8;">
         <div class="col-md-12 my-5">
             <label>A. Have you, your family, or close friends or colleagues ever experienced harm or mistreatment or threats in the past by anyone?</label><br>
             <div>
-                <?php echo createRadio("i_485_social_security_status") ?>
+                <?php echo createRadio("i_589_harm_or_mistreatment_status") ?>
             </div>
         </div>
         <div class="col-md-12">
@@ -1285,14 +1285,14 @@ include "intake_header.php";
             <label>3. Who caused the harm or mistreatment or threats; and </label><br>
             <label>4. Why you believe the harm or mistreatment or threats occurred.</label><br>
             <div class="col-md-12 my-4">
-                <textarea class="form-control" name="i_485_additional_info_7d" maxlength="500" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                <textarea class="form-control" name="i_589_hard_mistreatment_value" maxlength="500" class="form-control" cols="30" rows="10"><?php echo showData('i_589_hard_mistreatment_value') ?></textarea>
             </div>
         </div>
         <hr style="border: 1px solid #729af8; margin-top: 10px;">
         <div class="col-md-12 my-5">
             <label>B. Do you fear harm or mistreatment if you return to your home country?</label><br>
             <div>
-                <?php echo createRadio("i_485_social_security_status") ?>
+                <?php echo createRadio("i_589_return_to_home_country_status") ?>
             </div>
         </div>
         <div class="col-md-12">
@@ -1301,7 +1301,7 @@ include "intake_header.php";
             <label>2. Who you believe would harm or mistreat you; and</label><br>
             <label>3. Why you believe you would or could be harmed or mistreated.</label><br>
             <div class="col-md-12">
-                <textarea class="form-control" name="i_485_additional_info_7d" maxlength="500" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                <textarea class="form-control" name="i_589_return_to_home_country_value" maxlength="500" class="form-control" cols="30" rows="10"><?php echo showData('i_589_return_to_home_country_value') ?></textarea>
             </div>
         </div>
     </div>
@@ -1323,14 +1323,14 @@ include "intake_header.php";
                 <label>2. Have you or your family members ever been accused, charged, arrested, detained, interrogated, convicted and sentenced, or imprisoned in any
                     country other than the United States (including for an immigration law violation)?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_accused_charged_arrested_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <label>If "Yes," explain the circumstances and reasons for the action.</label><br>
                 <div class="col-md-12 my-4">
 
-                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_589_accused_charged_arrested_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_589_accused_charged_arrested_value') ?></textarea>
                 </div>
             </div>
             <hr class="my-5" style="border: 1px solid #729af8;">
@@ -1341,14 +1341,14 @@ include "intake_header.php";
                     limited to, a political party, student group, labor union, religious organization, military or paramilitary group, civil patrol, guerrilla organization,
                     ethnic group, human rights group, or the press or media?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_associate_organization_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <label>If "Yes," describe for each person the level of participation, any leadership or other positions held, and the length of time you or your family
                     members were involved in each organization or activity.</label><br>
                 <div class="col-md-12 my-4">
-                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_589_associate_organization_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_589_associate_organization_value') ?></textarea>
                 </div>
             </div>
             <hr class="my-5" style="border: 1px solid #729af8;">
@@ -1357,15 +1357,14 @@ include "intake_header.php";
             <div class="col-md-12 my-5">
                 <label>3.B. Do you or your family members continue to participate in any way in these organizations or groups?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_family_member_participate_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <label>If "Yes," describe for each person your or your family members' current level of participation, any leadership or other positions currently held,
                     and the length of time you or your family members have been involved in each organization or group.</label><br>
                 <div class="col-md-12 my-4">
-
-                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_589_family_member_participate_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_589_family_member_participate_value') ?></textarea>
                 </div>
             </div>
             <hr class="my-5" style="border: 1px solid #729af8;">
@@ -1374,19 +1373,16 @@ include "intake_header.php";
             <div class="col-md-12 my-5">
                 <label>4. Are you afraid of being subjected to torture in your home country or any other country to which you may be returned?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_other_country_returned_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <label>If "Yes," explain why you are afraid and describe the nature of torture you fear, by whom, and why it would be inflicted</label><br>
                 <div class="col-md-12 my-4">
-
-                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_589_other_country_returned_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_589_other_country_returned_value') ?></textarea>
                 </div>
             </div>
         </div>
-
-
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
@@ -1410,7 +1406,7 @@ include "intake_header.php";
                 <label>1. Have you, your spouse, your child(ren), your parents or your siblings ever applied to the U.S. Government for refugee status, asylum, or
                     withholding of removal?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_additional_info_refugee_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
@@ -1420,7 +1416,7 @@ include "intake_header.php";
                     change(s) in conditions in your country or your own personal circumstances since the date of the denial that may affect your eligibility for
                     asylum.</label><br>
                 <div class="col-md-12 my-4">
-                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_589_additional_info_refugee_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_589_additional_info_refugee_value') ?></textarea>
                 </div>
             </div>
             <hr class="my-5" style="border: 1px solid #729af8;">
@@ -1430,14 +1426,14 @@ include "intake_header.php";
                 <label>2.A. After leaving the country from which you are claiming asylum, did you or your spouse or child(ren) who are now in the United States travel
                     through or reside in any other country before entering the United States?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_spouse_before_entering_status") ?>
                 </div>
             </div>
             <div class="col-md-12 my-5">
                 <label>2.B. Have you, your spouse, your child(ren), or other family members, such as your parents or siblings, ever applied for or received any lawful status
                     in any country other than the one from which you are now claiming asylum?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_applied_for_received_lawful_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
@@ -1445,7 +1441,7 @@ include "intake_header.php";
                     person's status while there, the reasons for leaving, whether or not the person is entitled to return for lawful residence purposes, and whether the
                     person applied for refugee status or for asylum while there, and if not, why he or she did not do so.</label><br>
                 <div class="col-md-12 my-4">
-                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_589_applied_for_received_lawful_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_589_applied_for_received_lawful_value') ?></textarea>
                 </div>
             </div>
             <hr class="my-5" style="border: 1px solid #729af8;">
@@ -1455,14 +1451,14 @@ include "intake_header.php";
                 <label>3. Have you, your spouse or your child(ren) ever ordered, incited, assisted or otherwise participated in causing harm or suffering to any person
                     because of his or her race, religion, nationality, membership in a particular social group or belief in a particular political opinion?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_485_particular_political_opinion_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <label>If "Yes," describe in detail each such incident and your own, your spouse's, or your child(ren)'s involvement.</label><br>
                 <div class="col-md-12 my-4">
 
-                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_485_particular_political_opinion_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_485_particular_political_opinion_value') ?></textarea>
                 </div>
             </div>
 
