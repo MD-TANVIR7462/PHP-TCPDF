@@ -393,8 +393,8 @@ include "intake_header.php";
             <div class="col-md-4" style="align-items: center;">
                 <label style="font-size: smaller;">14. Gender</label><br>
                 <div class="d-flexible">
-                    <input type="radio" name="i_589_current_spouse_gender" id="male" value="male" <?php echo (showData('i_589_current_spouse_gender') == 'male') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="male">Male</label><br>
-                    <input type="radio" name="i_589_current_spouse_gender" id="female" value="female" <?php echo (showData('i_589_current_spouse_gender') == 'female') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="female">Female</label><br>
+                    <input type="radio" name="i_589_current_spouse_gender" id="male_14" value="male" <?php echo (showData('i_589_current_spouse_gender') == 'male') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="male_14">Male</label><br>
+                    <input type="radio" name="i_589_current_spouse_gender" id="female_14" value="female" <?php echo (showData('i_589_current_spouse_gender') == 'female') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="female_14">Female</label><br>
                 </div>
             </div>
         </div>
@@ -987,7 +987,7 @@ include "intake_header.php";
             <table border="1" style="width: 100%;">
                 <thead>
                     <tr class="bg-info">
-                        <th>Number and Street(Provide if available)</th>
+                        <th>Number and Street (Provide if available)</th>
                         <th>City/Town</th>
                         <th>Department, Province, or State</th>
                         <th>Country</th>
@@ -997,26 +997,26 @@ include "intake_header.php";
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_number_street_1[]" value="<?php echo showData('info_about_your_background_number_street_1', '0') ?>"></td>
+                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="info_about_your_background_city_town_1[]" value="<?php echo showData('info_about_your_background_city_town_1', '0') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="info_about_your_background_province_state_1[]" value="<?php echo showData('info_about_your_background_province_state_1', '0') ?>"></td>
+                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="info_about_your_background_country_1[]" value="<?php echo showData('info_about_your_background_country_1', '0') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_from_1[]" value="<?php echo showData('info_about_your_background_date_from_1', '0') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_to_1[]" value="<?php echo showData('info_about_your_background_date_to_1', '0') ?>"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_number_street_1[]" value="<?php echo showData('info_about_your_background_number_street_1', '1') ?>"></td>
+                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="info_about_your_background_city_town_1[]" value="<?php echo showData('info_about_your_background_city_town_1', '1') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="info_about_your_background_province_state_1[]" value="<?php echo showData('info_about_your_background_province_state_1', '1') ?>"></td>
+                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="info_about_your_background_country_1[]" value="<?php echo showData('info_about_your_background_country_1', '1') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_from_1[]" value="<?php echo showData('info_about_your_background_date_from_1', '1') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_to_1[]" value="<?php echo showData('info_about_your_background_date_to_1', '1') ?>"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div>
-            <label class="control-label col-md-12">2. Provide the following information about your residences during the past 5 years. List your present address first. </label>
+            <label class="control-label col-md-12">2. Provide the following info about your residences during the past 5 years. List your present address first. </label>
             <div class="col-md-12">
                 <label class="control-label text-sm ">(<b>NOTE</b>: <i>Use Form I-589 Supplement B, or additional sheets of paper, if necessary.</i>)</label>
             </div>
@@ -1035,48 +1035,49 @@ include "intake_header.php";
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_number_street_2[]" value="<?php echo showData('info_about_your_background_number_street_2', '0') ?>"></td>
+                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="info_about_your_background_city_town_2[]" value="<?php echo showData('info_about_your_background_city_town_2', '0') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="info_about_your_background_province_state_2[]" value="<?php echo showData('info_about_your_background_province_state_2', '0') ?>"></td>
+                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="info_about_your_background_country_2[]" value="<?php echo showData('info_about_your_background_country_2', '0') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_from_2[]" value="<?php echo showData('info_about_your_background_date_from_2', '0') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_to_2[]" value="<?php echo showData('info_about_your_background_date_to_2', '0') ?>"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_number_street_2[]" value="<?php echo showData('info_about_your_background_number_street_2', '1') ?>"></td>
+                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="info_about_your_background_city_town_2[]" value="<?php echo showData('info_about_your_background_city_town_2', '1') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="info_about_your_background_province_state_2[]" value="<?php echo showData('info_about_your_background_province_state_2', '1') ?>"></td>
+                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="info_about_your_background_country_2[]" value="<?php echo showData('info_about_your_background_country_2', '1') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_from_2[]" value="<?php echo showData('info_about_your_background_date_from_2', '1') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_to_2[]" value="<?php echo showData('info_about_your_background_date_to_2', '1') ?>"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_number_street_2[]" value="<?php echo showData('info_about_your_background_number_street_2', '2') ?>"></td>
+                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="info_about_your_background_city_town_2[]" value="<?php echo showData('info_about_your_background_city_town_2', '2') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="info_about_your_background_province_state_2[]" value="<?php echo showData('info_about_your_background_province_state_2', '2') ?>"></td>
+                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="info_about_your_background_country_2[]" value="<?php echo showData('info_about_your_background_country_2', '2') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_from_2[]" value="<?php echo showData('info_about_your_background_date_from_2', '2') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_to_2[]" value="<?php echo showData('info_about_your_background_date_to_2', '2') ?>"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
-                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
-                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
-                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_number_street_2[]" value="<?php echo showData('info_about_your_background_number_street_2', '3') ?>"></td>
+                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="info_about_your_background_city_town_2[]" value="<?php echo showData('info_about_your_background_city_town_2', '3') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="info_about_your_background_province_state_2[]" value="<?php echo showData('info_about_your_background_province_state_2', '3') ?>"></td>
+                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="info_about_your_background_country_2[]" value="<?php echo showData('info_about_your_background_country_2', '3') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_from_2[]" value="<?php echo showData('info_about_your_background_date_from_2', '3') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_to_2[]" value="<?php echo showData('info_about_your_background_date_to_2', '3') ?>"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '4') ?>"></td>
-                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '4') ?>"></td>
-                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '4') ?>"></td>
-                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '4') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '4') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '4') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_number_street_2[]" value="<?php echo showData('info_about_your_background_number_street_2', '4') ?>"></td>
+                        <td><input type="text" maxlength="17" style="width: 100%; margin: 0;" name="info_about_your_background_city_town_2[]" value="<?php echo showData('info_about_your_background_city_town_2', '4') ?>"></td>
+                        <td><input type="text" maxlength="21" style="width: 100%; margin: 0;" name="info_about_your_background_province_state_2[]" value="<?php echo showData('info_about_your_background_province_state_2', '4') ?>"></td>
+                        <td><input type="text" maxlength="14" style="width: 100%; margin: 0;" name="info_about_your_background_country_2[]" value="<?php echo showData('info_about_your_background_country_2', '4') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_from_2[]" value="<?php echo showData('info_about_your_background_date_from_2', '4') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_date_to_2[]" value="<?php echo showData('info_about_your_background_date_to_2', '4') ?>"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
         <div>
             <label class="control-label col-md-12">3. Provide the following information about your education, beginning with the most recent school that you attended. </label>
             <div class="col-md-12">
@@ -1096,36 +1097,30 @@ include "intake_header.php";
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" maxlength="29" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="text" maxlength="20" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="text" maxlength="26" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" maxlength="29" style="width: 100%; margin: 0;" name="info_about_your_background_education_name_of_school_1[]" value="<?php echo showData('info_about_your_background_education_name_of_school_1', '0') ?>"></td>
+                        <td><input type="text" maxlength="20" style="width: 100%; margin: 0;" name="info_about_your_background_education_type_of_school_1[]" value="<?php echo showData('info_about_your_background_education_type_of_school_1', '0') ?>"></td>
+                        <td><input type="text" maxlength="26" style="width: 100%; margin: 0;" name="info_about_your_background_education_location_address_1[]" value="<?php echo showData('info_about_your_background_education_location_address_1', '0') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_education_attended_from_1[]" value="<?php echo showData('info_about_your_background_education_attended_from_1', '0') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_education_attended_to_1[]" value="<?php echo showData('info_about_your_background_education_attended_to_1', '0') ?>"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" maxlength="29" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="text" maxlength="20" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="text" maxlength="26" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
+                        <td><input type="text" maxlength="29" style="width: 100%; margin: 0;" name="info_about_your_background_education_name_of_school_1[]" value="<?php echo showData('info_about_your_background_education_name_of_school_1', '1') ?>"></td>
+                        <td><input type="text" maxlength="20" style="width: 100%; margin: 0;" name="info_about_your_background_education_type_of_school_1[]" value="<?php echo showData('info_about_your_background_education_type_of_school_1', '1') ?>"></td>
+                        <td><input type="text" maxlength="26" style="width: 100%; margin: 0;" name="info_about_your_background_education_location_address_1[]" value="<?php echo showData('info_about_your_background_education_location_address_1', '1') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_education_attended_from_1[]" value="<?php echo showData('info_about_your_background_education_attended_from_1', '1') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_education_attended_to_1[]" value="<?php echo showData('info_about_your_background_education_attended_to_1', '1') ?>"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" maxlength="29" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="20" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="26" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" maxlength="29" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
-                        <td><input type="text" maxlength="20" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
-                        <td><input type="text" maxlength="26" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '3') ?>"></td>
+                        <td><input type="text" maxlength="29" style="width: 100%; margin: 0;" name="info_about_your_background_education_name_of_school_1[]" value="<?php echo showData('info_about_your_background_education_name_of_school_1', '2') ?>"></td>
+                        <td><input type="text" maxlength="20" style="width: 100%; margin: 0;" name="info_about_your_background_education_type_of_school_1[]" value="<?php echo showData('info_about_your_background_education_type_of_school_1', '2') ?>"></td>
+                        <td><input type="text" maxlength="26" style="width: 100%; margin: 0;" name="info_about_your_background_education_location_address_1[]" value="<?php echo showData('info_about_your_background_education_location_address_1', '2') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_education_attended_from_1[]" value="<?php echo showData('info_about_your_background_education_attended_from_1', '2') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_education_attended_to_1[]" value="<?php echo showData('info_about_your_background_education_attended_to_1', '2') ?>"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
         <div>
             <label class="control-label col-md-12">4. Provide the following information about your employment during the past 5 years. List your present employment first. </label>
             <div class="col-md-12">
@@ -1144,26 +1139,27 @@ include "intake_header.php";
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" maxlength="50" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="text" maxlength="28" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '0') ?>"></td>
+                        <td><input type="text" maxlength="50" style="width: 100%; margin: 0;" name="info_about_your_background_employer_name_address_1[]" value="<?php echo showData('info_about_your_background_employer_name_address_1', '0') ?>"></td>
+                        <td><input type="text" maxlength="28" style="width: 100%; margin: 0;" name="info_about_your_background_employer_occupation_1[]" value="<?php echo showData('info_about_your_background_employer_occupation_1', '0') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_employer_dates_from_1[]" value="<?php echo showData('info_about_your_background_employer_dates_from_1', '0') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_employer_dates_to_1[]" value="<?php echo showData('info_about_your_background_employer_dates_to_1', '0') ?>"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" maxlength="50" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="text" maxlength="28" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '1') ?>"></td>
+                        <td><input type="text" maxlength="50" style="width: 100%; margin: 0;" name="info_about_your_background_employer_name_address_1[]" value="<?php echo showData('info_about_your_background_employer_name_address_1', '1') ?>"></td>
+                        <td><input type="text" maxlength="28" style="width: 100%; margin: 0;" name="info_about_your_background_employer_occupation_1[]" value="<?php echo showData('info_about_your_background_employer_occupation_1', '1') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_employer_dates_from_1[]" value="<?php echo showData('info_about_your_background_employer_dates_from_1', '1') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_employer_dates_to_1[]" value="<?php echo showData('info_about_your_background_employer_dates_to_1', '1') ?>"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" maxlength="50" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="28" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="date" style="width: 100%; margin: 0;" name="" value="<?php echo showData('', '2') ?>"></td>
+                        <td><input type="text" maxlength="50" style="width: 100%; margin: 0;" name="info_about_your_background_employer_name_address_1[]" value="<?php echo showData('info_about_your_background_employer_name_address_1', '2') ?>"></td>
+                        <td><input type="text" maxlength="28" style="width: 100%; margin: 0;" name="info_about_your_background_employer_occupation_1[]" value="<?php echo showData('info_about_your_background_employer_occupation_1', '2') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_employer_dates_from_1[]" value="<?php echo showData('info_about_your_background_employer_dates_from_1', '2') ?>"></td>
+                        <td><input type="date" style="width: 100%; margin: 0;" name="info_about_your_background_employer_dates_to_1[]" value="<?php echo showData('info_about_your_background_employer_dates_to_1', '2') ?>"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
         <div>
             <label class="control-label col-md-12">5. Provide the following information about your parents and siblings (brothers and sisters). Check the box if the person is deceased. </label>
             <div class="col-md-12">
@@ -1183,57 +1179,58 @@ include "intake_header.php";
                 </thead>
                 <tbody>
                     <tr>
-                        <td> Mother</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="mother_birth_place" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="mother_current_location" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="checkbox" name="mother_deceased" id="mother_deceased"><label for="mother_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="mother_current_location" value="<?php echo showData('', '2') ?>"></td>
+                        <td>Mother</td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_mother_name[]" value="<?php echo showData('info_about_your_background_mother_name', '0') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_mother_birth_place[]" value="<?php echo showData('info_about_your_background_mother_birth_place', '0') ?>"></td>
+                        <td><input type="checkbox" value="Y" name="info_about_your_background_mother_deceased" id="mother_deceased  <?php echo (showData('info_about_your_background_mother_deceased') == 'Y') ? 'checked' : '' ?>"><label for="mother_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_mother_current_location[]" value="<?php echo showData('info_about_your_background_mother_current_location', '0') ?>"></td>
                     </tr>
                     <tr>
-                        <td> Father</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="father_birth_place" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="father_current_location" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="checkbox" name="father_deceased" id="father_deceased"><label for="father_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="father_current_location" value="<?php echo showData('', '2') ?>"></td>
+                        <td>Father</td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_father_name[]" value="<?php echo showData('info_about_your_background_father_name', '1') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_father_birth_place[]" value="<?php echo showData('info_about_your_background_father_birth_place', '1') ?>"></td>
+                        <td><input type="checkbox" value="Y" name="info_about_your_background_father_deceased" id="father_deceased  <?php echo (showData('info_about_your_background_father_deceased') == 'Y') ? 'checked' : '' ?>"><label for="father_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="info_about_your_background_father_current_location[]" value="<?php echo showData('info_about_your_background_father_current_location', '1') ?>"></td>
                     </tr>
                     <tr>
-                        <td> Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="sibling1_birth_place" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="sibling1_current_location" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="checkbox" name="sibling1_deceased" id="sibling1_deceased"><label for="sibling1_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="sibling1_current_location" value="<?php echo showData('', '2') ?>"></td>
+                        <td>Sibling</td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_name[]" value="<?php echo showData('info_about_your_background_sibling1_name', '2') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_birth_place[]" value="<?php echo showData('info_about_your_background_sibling1_birth_place', '2') ?>"></td>
+                        <td><input type="checkbox" value="Y" name="info_about_your_background_sibling1_deceased" id="sibling1_deceased"> <?php echo (showData('info_about_your_background_sibling1_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling1_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_current_location[]" value="<?php echo showData('info_about_your_background_sibling1_current_location', '2') ?>"></td>
                     </tr>
                     <tr>
-                        <td> Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="sibling2_birth_place" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="sibling2_current_location" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="checkbox" name="sibling2_deceased" id="sibling2_deceased"><label for="sibling2_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="sibling2_current_location" value="<?php echo showData('', '2') ?>"></td>
+                        <td>Sibling</td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_name[]" value="<?php echo showData('info_about_your_background_sibling2_name', '3') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_birth_place[]" value="<?php echo showData('info_about_your_background_sibling2_birth_place', '3') ?>"></td>
+                        <td><input type="checkbox" value="Y" name="info_about_your_background_sibling2_deceased" id="sibling2_deceased"> <?php echo (showData('info_about_your_background_sibling2_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling2_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_current_location[]" value="<?php echo showData('info_about_your_background_sibling2_current_location', '3') ?>"></td>
                     </tr>
                     <tr>
-                        <td> Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="sibling3_birth_place" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="sibling3_current_location" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="checkbox" name="sibling3_deceased" id="sibling3_deceased"><label for="sibling3_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="sibling3_current_location" value="<?php echo showData('', '2') ?>"></td>
+                        <td>Sibling</td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_name[]" value="<?php echo showData('info_about_your_background_sibling3_name', '4') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_birth_place[]" value="<?php echo showData('info_about_your_background_sibling3_birth_place', '4') ?>"></td>
+                        <td><input type="checkbox" value="Y" name="info_about_your_background_sibling3_deceased" id="sibling3_deceased"> <?php echo (showData('info_about_your_background_sibling3_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling3_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_current_location[]" value="<?php echo showData('info_about_your_background_sibling3_current_location', '4') ?>"></td>
                     </tr>
                     <tr>
-                        <td> Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="sibling4_birth_place" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="sibling4_current_location" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="checkbox" name="sibling4_deceased" id="sibling4_deceased"><label for="sibling4_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="sibling4_current_location" value="<?php echo showData('', '2') ?>"></td>
+                        <td>Sibling</td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_name[]" value="<?php echo showData('info_about_your_background_sibling4_name', '5') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_birth_place[]" value="<?php echo showData('info_about_your_background_sibling4_birth_place', '5') ?>"></td>
+                        <td><input type="checkbox" value="Y" name="info_about_your_background_sibling4_deceased" id="sibling4_deceased"> <?php echo (showData('info_about_your_background_sibling4_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling4_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_current_location[]" value="<?php echo showData('info_about_your_background_sibling4_current_location', '5') ?>"></td>
                     </tr>
                     <tr>
-                        <td> Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="sibling5_birth_place" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="sibling5_current_location" value="<?php echo showData('', '2') ?>"></td>
-                        <td><input type="checkbox" name="sibling5_deceased" id="sibling5_deceased"><label for="sibling5_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="sibling5_current_location" value="<?php echo showData('', '2') ?>"></td>
+                        <td>Sibling</td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_name[]" value="<?php echo showData('info_about_your_background_sibling5_name', '6') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_birth_place[]" value="<?php echo showData('info_about_your_background_sibling5_birth_place', '6') ?>"></td>
+                        <td><input type="checkbox" value="Y" name="info_about_your_background_sibling5_deceased" id="sibling5_deceased"> <?php echo (showData('info_about_your_background_sibling5_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling5_deceased" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_current_location[]" value="<?php echo showData('info_about_your_background_sibling5_current_location', '6') ?>"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
