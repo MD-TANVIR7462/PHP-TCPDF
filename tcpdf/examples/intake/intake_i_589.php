@@ -1406,7 +1406,7 @@ include "intake_header.php";
                 <label>1. Have you, your spouse, your child(ren), your parents or your siblings ever applied to the U.S. Government for refugee status, asylum, or
                     withholding of removal?</label><br>
                 <div>
-                    <?php echo createRadio("i_589_additional_info_refugee_status") ?>
+                    <?php echo createRadio("i_589_refugee_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
@@ -1416,7 +1416,7 @@ include "intake_header.php";
                     change(s) in conditions in your country or your own personal circumstances since the date of the denial that may affect your eligibility for
                     asylum.</label><br>
                 <div class="col-md-12 my-4">
-                    <textarea class="form-control" name="i_589_additional_info_refugee_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_589_additional_info_refugee_value') ?></textarea>
+                    <textarea class="form-control" name="i_589_refugee_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_589_refugee_value') ?></textarea>
                 </div>
             </div>
             <hr class="my-5" style="border: 1px solid #729af8;">
@@ -1451,21 +1451,16 @@ include "intake_header.php";
                 <label>3. Have you, your spouse or your child(ren) ever ordered, incited, assisted or otherwise participated in causing harm or suffering to any person
                     because of his or her race, religion, nationality, membership in a particular social group or belief in a particular political opinion?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_particular_political_opinion_status") ?>
+                    <?php echo createRadio("i_589_particular_political_opinion_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <label>If "Yes," describe in detail each such incident and your own, your spouse's, or your child(ren)'s involvement.</label><br>
                 <div class="col-md-12 my-4">
-
-                    <textarea class="form-control" name="i_485_particular_political_opinion_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_485_particular_political_opinion_value') ?></textarea>
+                    <textarea class="form-control" name="i_589_particular_political_opinion_value" maxlength="430" class="form-control" cols="30" rows="10"><?php echo showData('i_589_particular_political_opinion_value') ?></textarea>
                 </div>
             </div>
-
         </div>
-
-
-
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
@@ -1484,14 +1479,14 @@ include "intake_header.php";
             <div class="col-md-12 my-5">
                 <label>4. After you left the country where you were harmed or fear harm, did you return to that country?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_harmed_or_fear_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <label>If "Yes," describe in detail the circumstances of your visit(s) (for example, the date(s) of the trip(s), the purpose(s) of the trip(s), and the length
                     of time you remained in that country for the visit(s).)</label><br>
                 <div class="col-md-12 my-4">
-                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="500" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_589_harmed_or_fear_value" maxlength="500" class="form-control" cols="30" rows="10"><?php echo showData('i_589_harmed_or_fear_value') ?></textarea>
                 </div>
             </div>
             <hr class="my-5" style="border: 1px solid #729af8;">
@@ -1500,7 +1495,7 @@ include "intake_header.php";
             <div class="col-md-12 my-5">
                 <label>5. Are you filing this application more than 1 year after your last arrival in the United States?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_last_arrival_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
@@ -1508,7 +1503,7 @@ include "intake_header.php";
                     you did not file your asylum application within the first year after you arrived. For guidance in answering this question, see Instructions, Part 1:
                     Filing Instructions, Section V. "Completing the Form," Part C.</label><br>
                 <div class="col-md-12 my-4">
-                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="500" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_589_last_arrival_value" maxlength="500" class="form-control" cols="30" rows="10"><?php echo showData('i_589_last_arrival_value') ?></textarea>
                 </div>
             </div>
             <hr class="my-5" style="border: 1px solid #729af8;">
@@ -1518,7 +1513,7 @@ include "intake_header.php";
                 <label>6. Have you or any member of your family included in the application ever committed any crime and/or been arrested, charged, convicted, or
                     sentenced for any crimes in the United States (including for an immigration law violation)?</label><br>
                 <div>
-                    <?php echo createRadio("i_485_social_security_status") ?>
+                    <?php echo createRadio("i_589_included_the_application_status") ?>
                 </div>
             </div>
             <div class="col-md-12">
@@ -1527,7 +1522,7 @@ include "intake_header.php";
                     relatives included in your application, and the reason(s) for release. Attach documents referring to these incidents, if they are available, or an
                     explanation of why documents are not available.</label><br>
                 <div class="col-md-12 my-4">
-                    <textarea class="form-control" name="i_485_additional_info_7d" maxlength="500" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_589_included_the_application_value" maxlength="500" class="form-control" cols="30" rows="10"><?php echo showData('i_589_included_the_application_value') ?></textarea>
                 </div>
             </div>
         </div>
@@ -1570,18 +1565,19 @@ include "intake_header.php";
         </div>
         <div class="col-md-12">
             <div class="col-md-6">
-                <label class="control-label " style="font-size: 12px;">Print your complete name </label>
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="50" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <label class="control-label" style="font-size: 12px;">Print your complete name</label>
+                <input type="text" class="form-control" name="i_589_print_complete_name" maxlength="50" value="<?php echo showData('i_589_print_complete_name') ?>" />
             </div>
             <div class="col-md-6">
-                <label class="control-label " style="font-size: 12px;">Write your name in your native alphabet.</label>
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="50" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <label class="control-label" style="font-size: 12px;">Write your name in your native alphabet.</label>
+                <input type="text" class="form-control" name="i_589_native_alphabet_name" maxlength="50" value="<?php echo showData('i_589_native_alphabet_name') ?>">
             </div>
         </div>
+
         <div class="col-md-12 my-4">
             <label>Did your spouse, parent, or child(ren) assist you in completing this application?</label><br>
             <div>
-                <?php echo createRadio("i_485_social_security_status") ?>
+                <?php echo createRadio("i_589_spouse_child_assist_status") ?>
             </div>
         </div>
         <div class="col-md-12 ">
@@ -1589,26 +1585,26 @@ include "intake_header.php";
         </div>
         <div class="col-md-12 ">
             <div class="col-md-3">
-                <input type="text" class="form-control" name="i_539_interpreter_family_last_name" maxlength="25" value="<?php echo showData('i_539_interpreter_family_last_name') ?>" />
+                <input type="text" class="form-control" name="i_539_signature_name1" maxlength="25" value="<?php echo showData('i_539_signature_name1') ?>" />
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">(Name)</p>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="25" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_signature_relationship1" maxlength="25" value="<?php echo showData('i_539_signature_relationship1') ?>">
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">(Relationship)</p>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="25" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_signature_name2" maxlength="25" value="<?php echo showData('i_539_signature_name2') ?>">
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">(Name)</p>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="25" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_539_signature_relationship2" maxlength="25" value="<?php echo showData('i_539_signature_relationship2') ?>">
                 <p style="font-size: 12px; text-align: center; font-weight: 600;">(Relationship)</p>
             </div>
         </div>
         <div class="col-md-12 my-4">
             <label>Did someone other than your spouse, parent, or child(ren) prepare this application?</label><br>
             <div>
-                <?php echo createRadio("i_485_social_security_status") ?>
+                <?php echo createRadio("i_589_someone_other_status") ?>
             </div>
         </div>
         <div class="col-md-12 ">
@@ -1618,7 +1614,7 @@ include "intake_header.php";
             <label>Asylum applicants may be represented by counsel. Have you been provided with a list of
                 persons who may be available to assist you, at little or no cost, with your asylum claim?</label><br>
             <div>
-                <?php echo createRadio("i_485_social_security_status") ?>
+                <?php echo createRadio("i_589_represented_by_counsel_status") ?>
             </div>
         </div>
         <div class="col-md-12">
@@ -1629,7 +1625,7 @@ include "intake_header.php";
             </div>
             <div class="col-md-6">
                 <label class="control-label " style="font-size: 12px;">Date (mm/dd/yyyy)</label>
-                <input type="date" class="form-control" name="i_539_interpreter_given_first_name" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="date" class="form-control" name="i_589_represented_by_counsel_date_of_signature" value="<?php echo showData('i_589_represented_by_counsel_date_of_signature') ?>">
             </div>
         </div>
     </div>
@@ -1646,45 +1642,46 @@ include "intake_header.php";
     </div>
     <div class="col-md-12">
         <div class="col-md-6">
-            <label class="control-label " style="font-size: 12px;">Signature of Preparer</label>
-            <input type="text" disabled class="form-control" />
+            <label class="control-label" style="font-size: 12px;">Signature of Person Preparing Form</label>
+            <input type="text" disabled class="form-control" name="i_589_signature_person_preparing" />
         </div>
         <div class="col-md-6">
-            <label class="control-label " style="font-size: 12px;">Print Complete Name of Preparer</label>
-            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="50" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            <label class="control-label" style="font-size: 12px;">Print Complete Name of Person Preparing Form</label>
+            <input type="text" class="form-control" name="i_589_name_person_preparing" maxlength="50" value="<?php echo showData('i_589_name_person_preparing') ?>">
         </div>
     </div>
     <div class="col-md-12">
         <div class="col-md-5">
-            <label class="control-label " style="font-size: 12px;">Daytime Telephone Number</label>
+            <label class="control-label" style="font-size: 12px;">Daytime Telephone Number</label>
             <div class="d-flexible">
-                <span class="col-md-4 d-flexible"> <b>(</b> <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="3" value="<?php echo showData('i_539_interpreter_given_first_name') ?>"> <b>)</b> </span>
-                <span class="col-md-8"><input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="7" value="<?php echo showData('i_539_interpreter_given_first_name') ?>"></span>
+                <span class="col-md-4 d-flexible"> <b>(</b> <input type="text" class="form-control" name="i_589_person_preparing_phone_area_code" maxlength="3" value="<?php echo showData('i_589_person_preparing_phone_area_code') ?>"> <b>)</b> </span>
+                <span class="col-md-8"><input type="text" class="form-control" name="i_589_person_preparing_phone_number" maxlength="7" value="<?php echo showData('i_589_person_preparing_phone_number') ?>"></span>
             </div>
         </div>
         <div class="col-md-7">
-            <label class="control-label " style="font-size: 12px;">Address of Preparer: Street Number and Name</label>
-            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="62" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            <label class="control-label" style="font-size: 12px;">Address of Person Preparing Form: Street Number and Name</label>
+            <input type="text" class="form-control" name="i_589_person_preparing_address_street" maxlength="62" value="<?php echo showData('i_589_person_preparing_address_street') ?>">
         </div>
     </div>
     <div class="col-md-12 my-5">
         <div class="col-md-3">
-            <label class="control-label " style="font-size: 12px;">Apt. Number</label>
-            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="6" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            <label class="control-label" style="font-size: 12px;">Apt. Number</label>
+            <input type="text" class="form-control" name="i_589_person_preparing_address_apartment" maxlength="6" value="<?php echo showData('i_589_person_preparing_address_apartment') ?>">
         </div>
         <div class="col-md-3">
-            <label class="control-label " style="font-size: 12px;">City</label>
-            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="44" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            <label class="control-label" style="font-size: 12px;">City</label>
+            <input type="text" class="form-control" name="i_589_person_preparing_address_city" maxlength="44" value="<?php echo showData('i_589_person_preparing_address_city') ?>">
         </div>
         <div class="col-md-3">
-            <label class="control-label " style="font-size: 12px;">State</label>
-            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="20" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            <label class="control-label" style="font-size: 12px;">State</label>
+            <input type="text" class="form-control" name="i_589_person_preparing_address_state" maxlength="20" value="<?php echo showData('i_589_person_preparing_address_state') ?>">
         </div>
         <div class="col-md-3">
-            <label class="control-label " style="font-size: 12px;">Zip Code</label>
-            <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="6" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+            <label class="control-label" style="font-size: 12px;">Zip Code</label>
+            <input type="text" class="form-control" name="i_589_person_preparing_address_zip" maxlength="6" value="<?php echo showData('i_589_person_preparing_address_zip') ?>">
         </div>
     </div>
+
     <table style="border-collapse: collapse" class="my-4">
         <thead>
             <tr>
@@ -1696,7 +1693,7 @@ include "intake_header.php";
             <tr>
                 <td style="padding: 5px;">
                     <label style="cursor: pointer;">
-                        <?php echo createCheckbox("i_539_g28_status") ?> Select this box if Form G-28 is attached.
+                        <?php echo createCheckbox("i_589_g28_status") ?> Select this box if Form G-28 is attached.
                     </label>
                 </td>
                 <td style="padding: 5px;">
