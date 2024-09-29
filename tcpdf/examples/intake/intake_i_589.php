@@ -83,7 +83,7 @@ include "intake_header.php";
         <div>
             <div class="col-md-8">
                 <label class="control-label text-sm ">7. What other names have you used (include maiden name and aliases)?</label>
-                <input type="text" class="form-control" name="i-589_information_about_you_other_names" maxlength="99" value="<?php echo showData('i-589_information_about_you_other_names') ?>" />
+                <input type="text" class="form-control" name="i_589_information_about_you_other_names" maxlength="99" value="<?php echo showData('i_589_information_about_you_other_names') ?>" />
             </div>
         </div>
         <div>
