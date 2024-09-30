@@ -1821,7 +1821,7 @@ include "intake_header.php";
             </div>
             <div class="col-md-6">
                 <label class="control-label" style="font-size: smaller;">Date</label>
-                <input type="date" class="form-control" name="passport_id_card_number" maxlength="43">
+                <input type="date" class="form-control" name="i_589_applicant_sign_date" value="<?php echo showData('i_589_applicant_sign_date'); ?>" >
             </div>
             <div class="col-md-6">
                 <label class="control-label" style="font-size: smaller;">Applicant's Name</label>
@@ -2070,9 +2070,9 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="col-md-4">
-                    <label class="control-label" style="font-size: smaller;">21. If Yes, please specify:</label>
-                    <input type="text" class="form-control" name="i_589_child_medical_condition_specify6" maxlength="29" value="<?php echo showData('i_589_child_medical_condition_specify6') ?>" />
+                <label class="control-label col-md-12" style="font-size: 12px;">21. If in the U.S., is this child to be included in this application? (Check the appropriate box.)</label>
+                <div class="col-md-5 col-md-offset-4">
+                    <?php echo createRadio("i_589_include_child_in_application6") ?>
                 </div>
             </div>
         </div>
@@ -2138,7 +2138,7 @@ include "intake_header.php";
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <textarea name="additional_info_claim_to_asylum_value" class="form-control" maxlength="1456" cols="30" rows="30"><?= showData('additional_info_claim_to_asylum_value') ?></textarea>
+                    <textarea name="additional_info_claim_to_asylum_value" class="form-control" maxlength="1456" cols="30" rows="30"><? echo showData('additional_info_claim_to_asylum_value') ?></textarea>
                 </div>
             </div>
         </div>
