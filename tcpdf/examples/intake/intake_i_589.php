@@ -1180,52 +1180,52 @@ include "intake_header.php";
                 <tbody>
                     <tr>
                         <td>Mother</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_mother_name[]" value="<?php echo showData('info_about_your_background_mother_name', '0') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_mother_birth_place[]" value="<?php echo showData('info_about_your_background_mother_birth_place', '0') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_mother_name[]" value="<?php echo showData('info_about_your_background_mother_name') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_mother_birth_place[]" value="<?php echo showData('info_about_your_background_mother_birth_place') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_mother_deceased" id="mother_deceased2"> <?php echo (showData('info_about_your_background_mother_deceased') == 'Y') ? 'checked' : '' ?><label for="mother_deceased2" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_mother_current_location[]" value="<?php echo showData('info_about_your_background_mother_current_location', '0') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_mother_current_location[]" value="<?php echo showData('info_about_your_background_mother_current_location') ?>"></td>
                     </tr>
                     <tr>
                         <td>Father</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_father_name[]" value="<?php echo showData('info_about_your_background_father_name', '1') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_father_birth_place[]" value="<?php echo showData('info_about_your_background_father_birth_place', '1') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_father_name[]" value="<?php echo showData('info_about_your_background_father_name') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_father_birth_place[]" value="<?php echo showData('info_about_your_background_father_birth_place') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_father_deceased" id="father_deceased2"> <?php echo (showData('info_about_your_background_father_deceased') == 'Y') ? 'checked' : '' ?><label for="father_deceased2" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="info_about_your_background_father_current_location[]" value="<?php echo showData('info_about_your_background_father_current_location', '1') ?>"></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="info_about_your_background_father_current_location[]" value="<?php echo showData('info_about_your_background_father_current_location') ?>"></td>
                     </tr>
                     <tr>
                         <td>Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_name[]" value="<?php echo showData('info_about_your_background_sibling1_name', '2') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_birth_place[]" value="<?php echo showData('info_about_your_background_sibling1_birth_place', '2') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_name[]" value="<?php echo showData('info_about_your_background_sibling1_name') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_birth_place[]" value="<?php echo showData('info_about_your_background_sibling1_birth_place') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_sibling1_deceased" id="sibling1_deceased"> <?php echo (showData('info_about_your_background_sibling1_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling1_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_current_location[]" value="<?php echo showData('info_about_your_background_sibling1_current_location', '2') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_current_location[]" value="<?php echo showData('info_about_your_background_sibling1_current_location') ?>"></td>
                     </tr>
                     <tr>
                         <td>Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_name[]" value="<?php echo showData('info_about_your_background_sibling2_name', '3') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_birth_place[]" value="<?php echo showData('info_about_your_background_sibling2_birth_place', '3') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_name[]" value="<?php echo showData('info_about_your_background_sibling2_name') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_birth_place[]" value="<?php echo showData('info_about_your_background_sibling2_birth_place') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_sibling2_deceased" id="sibling2_deceased"> <?php echo (showData('info_about_your_background_sibling2_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling2_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_current_location[]" value="<?php echo showData('info_about_your_background_sibling2_current_location', '3') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_current_location[]" value="<?php echo showData('info_about_your_background_sibling2_current_location') ?>"></td>
                     </tr>
                     <tr>
                         <td>Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_name[]" value="<?php echo showData('info_about_your_background_sibling3_name', '4') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_birth_place[]" value="<?php echo showData('info_about_your_background_sibling3_birth_place', '4') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_name[]" value="<?php echo showData('info_about_your_background_sibling3_name') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_birth_place[]" value="<?php echo showData('info_about_your_background_sibling3_birth_place') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_sibling3_deceased" id="sibling3_deceased"> <?php echo (showData('info_about_your_background_sibling3_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling3_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_current_location[]" value="<?php echo showData('info_about_your_background_sibling3_current_location', '4') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_current_location[]" value="<?php echo showData('info_about_your_background_sibling3_current_location') ?>"></td>
                     </tr>
                     <tr>
                         <td>Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_name[]" value="<?php echo showData('info_about_your_background_sibling4_name', '5') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_birth_place[]" value="<?php echo showData('info_about_your_background_sibling4_birth_place', '5') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_name[]" value="<?php echo showData('info_about_your_background_sibling4_name') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_birth_place[]" value="<?php echo showData('info_about_your_background_sibling4_birth_place') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_sibling4_deceased" id="sibling4_deceased"> <?php echo (showData('info_about_your_background_sibling4_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling4_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_current_location[]" value="<?php echo showData('info_about_your_background_sibling4_current_location', '5') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_current_location[]" value="<?php echo showData('info_about_your_background_sibling4_current_location') ?>"></td>
                     </tr>
                     <tr>
                         <td>Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_name[]" value="<?php echo showData('info_about_your_background_sibling5_name', '6') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_birth_place[]" value="<?php echo showData('info_about_your_background_sibling5_birth_place', '6') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_name[]" value="<?php echo showData('info_about_your_background_sibling5_name') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_birth_place[]" value="<?php echo showData('info_about_your_background_sibling5_birth_place') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_sibling5_deceased" id="sibling5_deceased"> <?php echo (showData('info_about_your_background_sibling5_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling5_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_current_location[]" value="<?php echo showData('info_about_your_background_sibling5_current_location', '6') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_current_location[]" value="<?php echo showData('info_about_your_background_sibling5_current_location') ?>"></td>
                     </tr>
                 </tbody>
             </table>
