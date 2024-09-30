@@ -312,7 +312,7 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
@@ -363,7 +363,7 @@ include "intake_header.php";
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">8. Other names used (include maiden name and aliases)</label>
-                <input type="text" class="form-control" name="i_539_current_spouse_other_name" maxlength="22" value="<?php echo showData('i_539_current_spouse_other_name') ?>">
+                <input type="text" class="form-control" name="i_589_current_spouse_other_name" maxlength="22" value="<?php echo showData('i_589_current_spouse_other_name') ?>">
             </div>
         </div>
 
@@ -407,7 +407,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="col-md-6" style="align-items: center;">
-                <input type="text" class="form-control" name="i_589_current_spouse_in_usa" maxlength="50" value="<?php echo showData('i_589_current_spouse_in_usa') ?>">
+                <input type="text" class="form-control" name="i_589_person_in_usa" maxlength="50" value="<?php echo showData('i_589_person_in_usa') ?>">
             </div>
         </div>
 
@@ -418,7 +418,7 @@ include "intake_header.php";
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">17. Date of last entry into the U.S. (mm/dd/yyyy) </label>
-                <input type="text" class="form-control" name="i_589_current_spouse_date_of_last_entry" value="<?php echo showData('i_589_current_spouse_date_of_last_entry') ?>">
+                <input type="date" class="form-control" name="i_589_current_spouse_date_of_last_entry" value="<?php echo showData('i_589_current_spouse_date_of_last_entry') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: 12px;">18. I-94 Number (if any)</label>
@@ -590,7 +590,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
@@ -898,8 +898,8 @@ include "intake_header.php";
                 <div class="col-md-3">
                     <label class="control-label" style="font-size: smaller;">12. Gender</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="i_589_child_gender4" id="male_12_4" value="male" <?php echo (showData('i_589_child_gender') == 'male') ? 'checked' : '' ?>> <label for="male_12_4" style="font-size: smaller;">Male</label4><br>
-                            <input type="radio" name="i_589_child_gender4" id="female_12_4" value="female"> <label for="female_12_4" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="i_589_child_gender4" id="male_12_4" value="male" <?php echo (showData('i_589_child_gender') == 'male') ? 'checked' : '' ?>> <label for="male_12_4" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="i_589_child_gender4" id="female_12_4" value="female"> <label for="female_12_4" style="font-size: smaller">Female</label>
                     </div>
                 </div>
             </div>
@@ -908,8 +908,8 @@ include "intake_header.php";
                 <div class="col-md-5">
                     <label class="control-label" style="font-size: smaller;">13. Is this child in the U.S.?</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="i_589_child_in_us4" id="yes_13_4" value="Y" <?php echo (showData('i_589_child_in_us') == 'Y') ? 'checked' : '' ?>> <label for="yes_13_4" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</label4><br>
-                            <input type="radio" name="i_589_child_in_us4" id="no_13_4" value="N" <?php echo (showData('i_589_child_in_us') == 'N') ? 'checked' : '' ?>> <label for="no_13_4" style="font-size: smaller;">No (Specify location4):</label>
+                        <input type="radio" name="i_589_child_in_us4" id="yes_4_13" value="Y" <?php echo (showData('i_589_child_in_us') == 'Y') ? 'checked' : '' ?>> <label for="yes_4_13" style="font-size: smaller;">Yes (Complete Blocks 14 to 21.)</labeL><br>
+                        <input type="radio" name="i_589_child_in_us4" id="no_4_13" value="N" <?php echo (showData('i_589_child_in_us') == 'N') ? 'checked' : '' ?>> <label for="no_4_13" style="font-size: smaller;">No (Specify location):</label>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -948,8 +948,7 @@ include "intake_header.php";
                 <div class="col-md-4">
                     <label class="control-label" style="font-size: smaller;">20. Is your child in Immigration Court proceedings?</label><br>
                     <div class="d-flexible">
-                        <input type="radio" name="i_589_child_child_in_court_proceedings4" id="yes_20_4" value="Y" <?php echo (showData('i_589_child_child_in_court_proceedings4') == 'Y') ? 'checked' : '' ?>> <label for="yes_20_4" style="font-size: smaller;">Yes</label4><br>
-                            <input type="radio" name="i_589_child_child_in_court_proceedings4" id="no_20_4" value="N" <?php echo (showData('i_589_child_child_in_court_proceedings4') == 'N') ? 'checked' : '' ?>> <label for="no_20_4" style="font-size: smaller;">No4</label>
+                        <?php echo createRadio("i_589_child_child_in_court_proceedings4") ?>
                     </div>
                 </div>
             </div>
@@ -964,7 +963,7 @@ include "intake_header.php";
 
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
@@ -1180,52 +1179,52 @@ include "intake_header.php";
                 <tbody>
                     <tr>
                         <td>Mother</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_mother_name[]" value="<?php echo showData('info_about_your_background_mother_name') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_mother_birth_place[]" value="<?php echo showData('info_about_your_background_mother_birth_place') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_mother_name[]" value="<?php echo showData('info_about_your_background_mother_name', '0') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_mother_birth_place[]" value="<?php echo showData('info_about_your_background_mother_birth_place', '0') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_mother_deceased" id="mother_deceased2"> <?php echo (showData('info_about_your_background_mother_deceased') == 'Y') ? 'checked' : '' ?><label for="mother_deceased2" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_mother_current_location[]" value="<?php echo showData('info_about_your_background_mother_current_location') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_mother_current_location[]" value="<?php echo showData('info_about_your_background_mother_current_location', '0') ?>"></td>
                     </tr>
                     <tr>
                         <td>Father</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_father_name[]" value="<?php echo showData('info_about_your_background_father_name') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_father_birth_place[]" value="<?php echo showData('info_about_your_background_father_birth_place') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_father_name[]" value="<?php echo showData('info_about_your_background_father_name', '1') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_father_birth_place[]" value="<?php echo showData('info_about_your_background_father_birth_place', '1') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_father_deceased" id="father_deceased2"> <?php echo (showData('info_about_your_background_father_deceased') == 'Y') ? 'checked' : '' ?><label for="father_deceased2" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="info_about_your_background_father_current_location[]" value="<?php echo showData('info_about_your_background_father_current_location') ?>"></td>
+                        <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="info_about_your_background_father_current_location[]" value="<?php echo showData('info_about_your_background_father_current_location', '1') ?>"></td>
                     </tr>
                     <tr>
                         <td>Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_name[]" value="<?php echo showData('info_about_your_background_sibling1_name') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_birth_place[]" value="<?php echo showData('info_about_your_background_sibling1_birth_place') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_name[]" value="<?php echo showData('info_about_your_background_sibling1_name', '2') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_birth_place[]" value="<?php echo showData('info_about_your_background_sibling1_birth_place', '2') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_sibling1_deceased" id="sibling1_deceased"> <?php echo (showData('info_about_your_background_sibling1_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling1_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_current_location[]" value="<?php echo showData('info_about_your_background_sibling1_current_location') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling1_current_location[]" value="<?php echo showData('info_about_your_background_sibling1_current_location', '2') ?>"></td>
                     </tr>
                     <tr>
                         <td>Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_name[]" value="<?php echo showData('info_about_your_background_sibling2_name') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_birth_place[]" value="<?php echo showData('info_about_your_background_sibling2_birth_place') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_name[]" value="<?php echo showData('info_about_your_background_sibling2_name', '3') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_birth_place[]" value="<?php echo showData('info_about_your_background_sibling2_birth_place', '3') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_sibling2_deceased" id="sibling2_deceased"> <?php echo (showData('info_about_your_background_sibling2_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling2_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_current_location[]" value="<?php echo showData('info_about_your_background_sibling2_current_location') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling2_current_location[]" value="<?php echo showData('info_about_your_background_sibling2_current_location', '3') ?>"></td>
                     </tr>
                     <tr>
                         <td>Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_name[]" value="<?php echo showData('info_about_your_background_sibling3_name') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_birth_place[]" value="<?php echo showData('info_about_your_background_sibling3_birth_place') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_name[]" value="<?php echo showData('info_about_your_background_sibling3_name', '4') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_birth_place[]" value="<?php echo showData('info_about_your_background_sibling3_birth_place', '4') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_sibling3_deceased" id="sibling3_deceased"> <?php echo (showData('info_about_your_background_sibling3_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling3_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_current_location[]" value="<?php echo showData('info_about_your_background_sibling3_current_location') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling3_current_location[]" value="<?php echo showData('info_about_your_background_sibling3_current_location', '4') ?>"></td>
                     </tr>
                     <tr>
                         <td>Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_name[]" value="<?php echo showData('info_about_your_background_sibling4_name') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_birth_place[]" value="<?php echo showData('info_about_your_background_sibling4_birth_place') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_name[]" value="<?php echo showData('info_about_your_background_sibling4_name', '5') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_birth_place[]" value="<?php echo showData('info_about_your_background_sibling4_birth_place', '5') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_sibling4_deceased" id="sibling4_deceased"> <?php echo (showData('info_about_your_background_sibling4_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling4_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_current_location[]" value="<?php echo showData('info_about_your_background_sibling4_current_location') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling4_current_location[]" value="<?php echo showData('info_about_your_background_sibling4_current_location', '5') ?>"></td>
                     </tr>
                     <tr>
                         <td>Sibling</td>
-                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_name[]" value="<?php echo showData('info_about_your_background_sibling5_name') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_birth_place[]" value="<?php echo showData('info_about_your_background_sibling5_birth_place') ?>"></td>
+                        <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_name[]" value="<?php echo showData('info_about_your_background_sibling5_name', '6') ?>"></td>
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_birth_place[]" value="<?php echo showData('info_about_your_background_sibling5_birth_place', '6') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_sibling5_deceased" id="sibling5_deceased"> <?php echo (showData('info_about_your_background_sibling5_deceased') == 'Y') ? 'checked' : '' ?><label for="sibling5_deceased" style="margin-left: 5px;"> Deceased</label></td>
-                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_current_location[]" value="<?php echo showData('info_about_your_background_sibling5_current_location') ?>"></td>
+                        <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_sibling5_current_location[]" value="<?php echo showData('info_about_your_background_sibling5_current_location', '6') ?>"></td>
                     </tr>
                 </tbody>
             </table>
@@ -1233,7 +1232,7 @@ include "intake_header.php";
 
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
@@ -1306,7 +1305,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
@@ -1385,7 +1384,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!------------------------------------------ ----------------------------
@@ -1463,7 +1462,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!------------------------------------------ ----------------------------
@@ -1528,7 +1527,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!------------------------------------------ ----------------------------
@@ -1670,7 +1669,7 @@ include "intake_header.php";
         </div>
         <div class="col-md-3">
             <label class="control-label" style="font-size: 12px;">City</label>
-            <input type="text" class="form-control" name="i_589_person_preparing_address_city" maxlength="44" value="<?php echo showData('i_589_person_preparing_address_city') ?>">
+            <input type="text" class="form-control" name="i_589_person_preparing_address_city" maxlength="32" value="<?php echo showData('i_589_person_preparing_address_city') ?>">
         </div>
         <div class="col-md-3">
             <label class="control-label" style="font-size: 12px;">State</label>
@@ -1715,7 +1714,7 @@ include "intake_header.php";
         </tbody>
     </table>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!------------------------------------------ ----------------------------
@@ -1803,7 +1802,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
@@ -1821,7 +1820,7 @@ include "intake_header.php";
             </div>
             <div class="col-md-6">
                 <label class="control-label" style="font-size: smaller;">Date</label>
-                <input type="date" class="form-control" name="i_589_applicant_sign_date" value="<?php echo showData('i_589_applicant_sign_date'); ?>" >
+                <input type="date" class="form-control" name="passport_id_card_number" maxlength="43">
             </div>
             <div class="col-md-6">
                 <label class="control-label" style="font-size: smaller;">Applicant's Name</label>
@@ -2078,7 +2077,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
@@ -2138,7 +2137,7 @@ include "intake_header.php";
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <textarea name="additional_info_claim_to_asylum_value" class="form-control" maxlength="1456" cols="30" rows="30"><? echo showData('additional_info_claim_to_asylum_value') ?></textarea>
+                    <textarea name="additional_info_claim_to_asylum_value" class="form-control" maxlength="1456" cols="30" rows="30"><?= showData('additional_info_claim_to_asylum_value') ?></textarea>
                 </div>
             </div>
         </div>

@@ -3134,7 +3134,8 @@ $pdf->TextField('i_589_aditional_info1', 190, 177, array('multiline' => true, 's
 // 'part_e_attorney_state_bar_number':' $attorneyData->bar_number',
 $js = "
 var fields = {
-   
+   'part_e_attorney_online_account_number':' $attorneyData->uscis_online_account_number ',
+   'part_e_attorney_state_bar_number':' $attorneyData->bar_number',
    'i_589_aditional_info1':' " . showData('additional_info_claim_to_asylum_value') . " ',
 
 
