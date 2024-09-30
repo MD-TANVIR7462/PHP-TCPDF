@@ -135,7 +135,7 @@ include "intake_header.php";
                         <input type="text" class="form-control " name="i_589_information_about_you_phone2_value1" maxlength="3" value="<?php echo showData('i_589_information_about_you_phone2_value1') ?>">
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control " name="i_589_information_about_you_phone2_value1" maxlength="7" value="<?php echo showData('i_589_information_about_you_phone2_value1') ?>">
+                        <input type="text" class="form-control " name="i_589_information_about_you_phone2_value2" maxlength="7" value="<?php echo showData('i_589_information_about_you_phone2_value2') ?>">
                     </div>
                 </div>
             </div>
@@ -1181,7 +1181,7 @@ include "intake_header.php";
                     <tr>
                         <td>Mother</td>
                         <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_mother_name[]" value="<?php echo showData('info_about_your_background_mother_name', '0') ?>"></td>
-                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_mother_birth_place[]" value="<?php echo showData('info_about_your_background_mother_birth_place', '0') ?>"></td>                       
+                        <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_mother_birth_place[]" value="<?php echo showData('info_about_your_background_mother_birth_place', '0') ?>"></td>
                         <td><input type="checkbox" value="Y" name="info_about_your_background_mother_deceased" id="mother_deceased2"> <?php echo (showData('info_about_your_background_mother_deceased') == 'Y') ? 'checked' : '' ?><label for="mother_deceased2" style="margin-left: 5px;"> Deceased</label></td>
                         <td><input type="text" maxlength="22" style="width: 100%; margin: 0;" name="info_about_your_background_mother_current_location[]" value="<?php echo showData('info_about_your_background_mother_current_location', '0') ?>"></td>
                     </tr>
@@ -1189,7 +1189,7 @@ include "intake_header.php";
                         <td>Father</td>
                         <td><input type="text" maxlength="23" style="width: 100%; margin: 0;" name="info_about_your_background_father_name[]" value="<?php echo showData('info_about_your_background_father_name', '1') ?>"></td>
                         <td><input type="text" maxlength="35" style="width: 100%; margin: 0;" name="info_about_your_background_father_birth_place[]" value="<?php echo showData('info_about_your_background_father_birth_place', '1') ?>"></td>
-                        <td><input type="checkbox" value="Y" name="info_about_your_background_father_deceased" id="father_deceased2">  <?php echo (showData('info_about_your_background_father_deceased') == 'Y') ? 'checked' : '' ?><label for="father_deceased2" style="margin-left: 5px;"> Deceased</label></td>
+                        <td><input type="checkbox" value="Y" name="info_about_your_background_father_deceased" id="father_deceased2"> <?php echo (showData('info_about_your_background_father_deceased') == 'Y') ? 'checked' : '' ?><label for="father_deceased2" style="margin-left: 5px;"> Deceased</label></td>
                         <td><input type="text" maxlength="33" style="width: 100%; margin: 0;" name="info_about_your_background_father_current_location[]" value="<?php echo showData('info_about_your_background_father_current_location', '1') ?>"></td>
                     </tr>
                     <tr>
