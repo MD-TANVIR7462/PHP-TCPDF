@@ -336,7 +336,7 @@ include "intake_header.php";
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">2. Passport/ID Card Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_current_spouse_passport_id_number" maxlength="23" value="<?php echo showData('i_539_current_spouse_passport_id_number') ?>">
+                <input type="text" class="form-control" name="i_589_current_spouse_passport_id_number" maxlength="23" value="<?php echo showData('i_589_current_spouse_passport_id_number') ?>">
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">3. Date of Birth (mm/dd/yyyy)</label>
@@ -344,7 +344,7 @@ include "intake_header.php";
             </div>
             <div class="col-md-3">
                 <label class="control-label " style="font-size: smaller;">4. U.S. Social Security Number (if any)</label>
-                <input type="text" class="form-control" name="i_539_current_spouse_social_security_number" maxlength="9" value="<?php echo showData('i_539_current_spouse_social_security_number') ?>">
+                <input type="text" class="form-control" name="i_589_current_spouse_social_security_number" maxlength="9" value="<?php echo showData('i_589_current_spouse_social_security_number') ?>">
             </div>
         </div>
 
@@ -402,12 +402,12 @@ include "intake_header.php";
             <div class="col-md-5" style="align-items: center;">
                 <label style="font-size: smaller;">15. Is this person in the U.S.?</label><br>
                 <div class="d-flexible">
-                    <input type="radio" name="i_589_current_spouse_in_usa" id="15_YES" value="Y" <?php echo (showData('i_589_current_spouse_in_usa') == 'Y') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="15_YES">Yes (Complete Blocks 16 to 24.)</label><br>
-                    <input type="radio" name="i_589_current_spouse_in_usa" id="15_NO" value="N" <?php echo (showData('i_589_current_spouse_in_usa') == 'N') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="15_NO">No (Specify location):</label><br>
+                    <input type="radio" name="i_589_current_spouse_in_usa_status" id="15_YES" value="Y" <?php echo (showData('i_589_current_spouse_in_usa_status') == 'Y') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="15_YES">Yes (Complete Blocks 16 to 24.)</label><br>
+                    <input type="radio" name="i_589_current_spouse_in_usa_status" id="15_NO" value="N" <?php echo (showData('i_589_current_spouse_in_usa_status') == 'N') ? 'checked' : '' ?>> <label style="font-size: smaller;" for="15_NO">No (Specify location):</label><br>
                 </div>
             </div>
             <div class="col-md-6" style="align-items: center;">
-                <input type="text" class="form-control" name="i_539_interpreter_given_first_name" maxlength="50" value="<?php echo showData('i_539_interpreter_given_first_name') ?>">
+                <input type="text" class="form-control" name="i_589_current_spouse_in_usa" maxlength="50" value="<?php echo showData('i_589_current_spouse_in_usa') ?>">
             </div>
         </div>
 

@@ -734,10 +734,14 @@ $pdf->writeHTMLCell (1, 26.3, 13, 228, "", "L", 1, false,true,'C', false);
 $pdf->writeHTMLCell (1, 21.3, 68, 233, "", "R", 1, false,true,'C', false);  
 $pdf->writeHTMLCell (1, 26.3, 202.5, 228, "", "L", 1, false,true,'C', false);  
 
-//.................. page number 1 end -----------------------------------------------------------------------------
+/******************************
+ ******** End Page No 1 ******
+ ******************************/
 
+/******************************
+ ******** Start Page No 2 ****
+ ******************************/
 
-// add a page
 $pdf->AddPage('P', 'LETTER');  // page number 2
 $pdf->SetFont('times', 'B', 12); 
 $pdf->writeHTMLCell (191, 5, 13, 17, "Part A.II. Information About Your Spouse and Children", 1, 1, true,true,'L', true); 
@@ -757,7 +761,7 @@ $html ='<div><b>1.</b> Alien Registration Number (A-Number)<br>
    <i>(if any)</i></div>';
 $pdf->writeHTMLCell(100, 4, 13, 29, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_alien_registration_number', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 14, 37);
+$pdf->TextField('a_ii_alien_registration_number', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('current_spouse_a_number')), 14, 37);
 //............
 
 $pdf->SetFont('times', '', 9);
@@ -765,45 +769,45 @@ $html ='<div><b>2.</b> Passport/ID Card Number<br>
    <i>(if any)</i></div>';
 $pdf->writeHTMLCell(100, 4, 70, 29, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_passport_idcard_number', 37, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 70, 37);
+$pdf->TextField('a_ii_passport_idcard_number', 37, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_passport_id_number')), 70, 37);
 //............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>3.</b> Date of Birth <i>(mm/dd/yyyy)</i></div>';
 $pdf->writeHTMLCell(100, 4, 108, 29, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_date_of_birth', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 108, 37);
+$pdf->TextField('a_ii_date_of_birth', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('current_spouse_date_of_birth')), 108, 37);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>4.</b> U.S. Social Security Number<br> &nbsp; &nbsp; <i>(if any)</i></div>';
 $pdf->writeHTMLCell(100, 4, 150, 29, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_social_security_number', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 150, 37);
+$pdf->TextField('a_ii_social_security_number', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_social_security_number')), 150, 37);
 //............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>5.</b> Complete Last Name</div>';
 $pdf->writeHTMLCell(100, 4, 13, 41, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_complete_last_name', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 13, 49);
+$pdf->TextField('a_ii_complete_last_name', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('current_spouse_family_last_name')), 13, 49);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>6.</b> First Name</div>';
 $pdf->writeHTMLCell(100, 4, 70, 41, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_firstname', 37, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 70, 49);
+$pdf->TextField('a_ii_firstname', 37, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('current_spouse_given_first_name')), 70, 49);
 //.........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>7.</b> Middle Name </div>';
 $pdf->writeHTMLCell(100, 4, 108, 41, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_middlename', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 108, 49);
+$pdf->TextField('a_ii_middlename', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('current_spouse_family_middle_name')), 108, 49);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>8.</b>  Other names used <i>(include <br> &nbsp; &nbsp; maiden name and aliases) </i></div>';
 $pdf->writeHTMLCell(100, 4, 150, 41, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_other_name_used_include_maiden', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 150, 49);
+$pdf->TextField('a_ii_other_name_used_include_maiden', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_current_spouse_other_name')), 150, 49);
 
 //............
 $pdf->writeHTMLCell(190, 1, 13, 31, "", "B", 1, false, false, 'L', true);
@@ -818,19 +822,19 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>9.</b> Date of Marriage <i>(mm/dd/yyyy)</i></div>';
 $pdf->writeHTMLCell(100, 4, 13, 53, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_date_of_marriage', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 13, 58);
+$pdf->TextField('a_ii_date_of_marriage', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('current_spouse_date_of_marriage')), 13, 58);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>10.</b> Place of Marriage</div>';
 $pdf->writeHTMLCell(100, 4, 70, 53, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_place_of_mariage', 50, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 70, 58);
+$pdf->TextField('a_ii_place_of_mariage', 50, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('current_spouse_marriage_place_country')), 70, 58);
 //.........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>11.</b> City and Country of Birth </div>';
 $pdf->writeHTMLCell(100, 4, 120, 53, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_city_country_birth', 82, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 121, 58);
+$pdf->TextField('a_ii_city_country_birth', 82, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('current_spouse_birth_place_country')), 121, 58);
 //............
 
 $pdf->writeHTMLCell(1, 9, 120, 54, "", "R", 1, false, true, 'L', true);
@@ -842,14 +846,14 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>12.</b>  Nationality  <i>(Citizenship)</i></div>';
 $pdf->writeHTMLCell(100, 4, 13, 62, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_nationality_citizenship', 65, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 13, 67);
+$pdf->TextField('a_ii_nationality_citizenship', 65, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_nationality')), 13, 67);
 //............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>13. </b> Race, Ethnic, or Tribal Group</div>';
 $pdf->writeHTMLCell(100, 4, 78, 62, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_race_ethnic_tribal_group', 65, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 78, 67);
+$pdf->TextField('a_ii_race_ethnic_tribal_group', 65, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_race_ethnic')), 78, 67);
 //............
 
 $pdf->SetFont('times', '', 9.7);
@@ -867,7 +871,7 @@ $html ='<div><b>15.</b>  Is this person in the U.S.?  <br>  &nbsp;  &nbsp;  &nbs
 $pdf->writeHTMLCell(100, 4, 13, 72, $html, 0, 1, false, true, 'L', true);
 //................
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_15_in_us', 98, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 105, 74.8);
+$pdf->TextField('a_15_in_us', 98, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_in_usa')), 105, 74.8);
 
 $pdf->writeHTMLCell(98, 1, 105, 75, "", "B", 1, false, true, 'L', true);
 $pdf->writeHTMLCell(190, 1, 13, 76, "", "B", 1, false, true, 'L', true);
@@ -879,28 +883,28 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>16.</b> Place of last entry into the U.S.</div>';
 $pdf->writeHTMLCell(100, 4, 13, 81, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_place_of_last_entry_us', 45, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 13, 89);
+$pdf->TextField('a_ii_place_of_last_entry_us', 45, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_place_of_last_entry')), 13, 89);
 //............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>17.</b> Date of last entry into the <br>   &nbsp;  &nbsp;   U.S. (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(100, 4, 60, 81, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_date_last_entry_us', 48, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 60, 89);
+$pdf->TextField('a_ii_date_last_entry_us', 48, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_date_of_last_entry')), 60, 89);
 //............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>18.</b> I-94 Number <i> (if any) </i></div>';
 $pdf->writeHTMLCell(100, 4, 108, 81, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_I94number_ifany', 41, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 109, 89);
+$pdf->TextField('a_ii_I94number_ifany', 41, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_i94_number')), 109, 89);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>19.</b> Status when last admitted 
 <br> &nbsp; &nbsp; <i>(Visa type, if any)</i></div>';
 $pdf->writeHTMLCell(100, 4, 150, 81, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_status_when_last_admited', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 151, 89);
+$pdf->TextField('a_ii_status_when_last_admited', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_visa_type')), 151, 89);
 //............
 
 $pdf->writeHTMLCell(1, 12, 58, 82, "", "R", 1, false, true, 'L', true); //vertical line 
@@ -915,7 +919,7 @@ $html ='<div><b>20.</b> What is your spouse\'s<br> &nbsp; &nbsp; &nbsp;
 current status?</div>';
 $pdf->writeHTMLCell(100, 4, 13, 93, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_what_is_your_spouse_current_status', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 13, 101);
+$pdf->TextField('a_ii_what_is_your_spouse_current_status', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_current_status')), 13, 101);
 //............
 
 $pdf->SetFont('times', '', 9);
@@ -923,7 +927,7 @@ $html ='<div><b>21.</b> What is the expiration date of his/her <br>&nbsp;&nbsp;&
 authorized stay, if any? (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(100, 4, 53, 93, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_authorization_expiration_date', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 53, 101);
+$pdf->TextField('a_ii_authorization_expiration_date', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_expiration_date')), 53, 101);
 //............
 
 $pdf->SetFont('times', '', 9);
@@ -937,7 +941,7 @@ $html ='<div><b>23.</b> If previously in the U.S., date of<br>&nbsp; &nbsp;
 previous arrival <i>(mm/dd/yyyy)</i></div>';
 $pdf->writeHTMLCell(100, 4, 151, 93, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_date_of_priviews_arrival', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 151, 101);
+$pdf->TextField('a_ii_date_of_priviews_arrival', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_current_spouse_previous_arrival_date')), 151, 101);
 //............
 $pdf->writeHTMLCell(1, 12, 52, 94, "", "R", 1, false, true, 'L', true); //vertical line 
 $pdf->writeHTMLCell(190, 1, 13, 100, "", "B", 1, false, true, 'L', true);
@@ -984,7 +988,7 @@ $html ='<div><b>1.</b> Alien Registration Number (A-Number)<br>
    <i>(if any)</i></div>';
 $pdf->writeHTMLCell(100, 4, 13, 144, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_alien_registration_number', 55, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 14, 152);
+$pdf->TextField('a_ii_child_alien_registration_number', 55, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_alien_registration_number')), 14, 152);
 //............
 
 $pdf->SetFont('times', '', 9);
@@ -992,20 +996,20 @@ $html ='<div><b>2.</b> Passport/ID Card Number<br>
    <i>(if any)</i></div>';
 $pdf->writeHTMLCell(100, 4, 70, 144, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_passport_idcard_number', 37, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 70, 152);
+$pdf->TextField('a_ii_child_passport_idcard_number', 37, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_passport_id_card_number')), 70, 152);
 //............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>3.</b>Marital Status <i>(Married, Single,<br> &nbsp; &nbsp; Divorced, Widowed )</i></div>';
 $pdf->writeHTMLCell(100, 4, 108, 144, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_marital_status', 45, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 108, 152);
+$pdf->TextField('a_ii_child_marital_status', 45, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_marital_status')), 108, 152);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>4.</b> U.S. Social Security Number<br> &nbsp; &nbsp; <i>(if any)</i></div>';
 $pdf->writeHTMLCell(100, 4, 155, 144, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_social_security_number', 48, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 155, 152);
+$pdf->TextField('a_ii_child_social_security_number', 48, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_social_security_number')), 155, 152);
 //............
 
 $pdf->writeHTMLCell(1, 33, 69, 145, "", "R", 1, false, true, 'L', true); //vertical line 
@@ -1019,25 +1023,25 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>5.</b> Complete Last Name</div>';
 $pdf->writeHTMLCell(100, 4, 13, 157, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_complete_last_name', 57, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 13, 162);
+$pdf->TextField('a_ii_child_complete_last_name', 57, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_complete_last_name')), 13, 162);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>6.</b> First Name</div>';
 $pdf->writeHTMLCell(100, 4, 70, 157, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_firstname', 37, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 70, 162);
+$pdf->TextField('a_ii_child_firstname', 37, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_first_name')), 70, 162);
 //.........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>7.</b> Middle Name </div>';
 $pdf->writeHTMLCell(100, 4, 108, 157, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_middlename', 45, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 108, 162);
+$pdf->TextField('a_ii_child_middlename', 45, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_middle_name')), 108, 162);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>8.</b> Date of Birth <i>(mm/dd/yyyy)</i></div>';
 $pdf->writeHTMLCell(100, 4, 155, 157, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_date_of_birth', 47, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 155, 162);
+$pdf->TextField('a_ii_child_date_of_birth', 47, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_date_of_birth')), 155, 162);
 
 $pdf->writeHTMLCell(190, 1, 13, 162, "", "B", 1, false, true, 'L', true);// horizontal line---
 
@@ -1047,19 +1051,19 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>9.</b> City and Country of Birth</div>';
 $pdf->writeHTMLCell(100, 4, 13, 167, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_city_country_birth', 56, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 13, 172);
+$pdf->TextField('a_ii_child_city_country_birth', 56, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_city_country_of_birth')), 13, 172);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>10.</b> Nationality <i>(Citizenship)</i></div>';
 $pdf->writeHTMLCell(100, 4, 70, 167, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p_a_ii_10_nationality_citizenship', 37, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 70, 172);
+$pdf->TextField('p_a_ii_10_nationality_citizenship', 37, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_nationality')), 70, 172);
 //.........
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>11.</b> Race, Ethnic, or Tribal Group</div>';
 $pdf->writeHTMLCell(100, 4, 108, 167, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_race_ethnic_tribal_group', 45, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 108, 172);
+$pdf->TextField('a_ii_child_race_ethnic_tribal_group', 45, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_ethnic_group')), 108, 172);
 //............
 $pdf->SetFont('times', '', 9.7);
 $html ='<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child_gender" value="m"/>  Male  &nbsp;  <input type="checkbox" name="child_gender" value="f"/>  Female </div>';
@@ -1073,7 +1077,7 @@ $pdf->SetFont('times', '', 9.7);
 $html ='<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us3" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us3" value="n"/> No <i>(Specify location):</i> </div>';
 $pdf->writeHTMLCell(180, 4, 13, 179, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_is_this_us', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 143, 179);
+$pdf->TextField('a_ii_child_is_this_us', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_location_if_not_in_us')), 143, 179);
 //............
 $pdf->writeHTMLCell(60, 1, 143, 179, "", "B", 1, false, true, 'L', true);// horizontal line -----
 $pdf->writeHTMLCell(190, 1, 13, 180, "", "B", 1, false, true, 'L', true);// horizontal line -----
@@ -1083,28 +1087,28 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>14.</b> Place of last entry into the U.S.</div>';
 $pdf->writeHTMLCell(100, 4, 13, 185, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_place_of_last_entry_us', 45, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 13, 193);
+$pdf->TextField('a_ii_child_place_of_last_entry_us', 45, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_place_of_last_entry')), 13, 193);
 //............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>15.</b> Date of last entry into the <br>   &nbsp;  &nbsp;   U.S. (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(100, 4, 60, 185, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_date_last_entry_us', 48, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 60, 193);
+$pdf->TextField('a_ii_child_date_last_entry_us', 48, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_date_of_last_entry')), 60, 193);
 //............
 
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>16.</b> I-94 Number <i> (if any) </i></div>';
 $pdf->writeHTMLCell(100, 4, 108, 185, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_I94number_ifany', 41, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 109, 193);
+$pdf->TextField('a_ii_child_I94number_ifany', 41, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_i94_number')), 109, 193);
 //............
 $pdf->SetFont('times', '', 9);
 $html ='<div><b>17.</b> Status when last admitted 
 <br> &nbsp; &nbsp; <i>(Visa type, if any)</i></div>';
 $pdf->writeHTMLCell(100, 4, 150, 185, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_status_when_last_admited', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 151, 193);
+$pdf->TextField('a_ii_child_status_when_last_admited', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_status_when_last_admitted')), 151, 193);
 //............
 $pdf->writeHTMLCell(1, 12, 58, 186, "", "R", 1, false, true, 'L', true); //vertical line 
 $pdf->writeHTMLCell(1, 12, 107, 186, "", "R", 1, false, true, 'L', true); //vertical line
@@ -1115,7 +1119,7 @@ $pdf->SetFont('times', '', 9);
 $html ='<div><b>18.</b> What is your child\'s current status?</div>';
 $pdf->writeHTMLCell(100, 4, 13, 197, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_current_status', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 13, 205);
+$pdf->TextField('a_ii_child_current_status', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_current_status')), 13, 205);
 //............
 
 $pdf->SetFont('times', '', 9);
@@ -1123,7 +1127,7 @@ $html ='<div><b>19.</b> What is the expiration date of his/her <br> &nbsp; &nbsp
 authorized stay, if any? <i>(mm/dd/yyyy)</i></div>';
 $pdf->writeHTMLCell(100, 4, 70, 197, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_child_what_is_expiration_date', 58, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_539_additional_info_6d')), 70, 205);
+$pdf->TextField('a_ii_child_what_is_expiration_date', 58, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_589_child_expiration_date_of_stay')), 70, 205);
 //............
 
 $pdf->SetFont('times', '', 9.7);
