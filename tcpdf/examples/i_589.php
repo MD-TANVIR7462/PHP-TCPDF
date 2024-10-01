@@ -1,8 +1,8 @@
 <?php
 
-// require_once('formheader.php');   //database connection file 
+require_once('formheader.php');   //database connection file 
 
-require_once("localconfig.php");
+// require_once("localconfig.php");
 
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
@@ -16,7 +16,7 @@ class MyPDF extends TCPDF
    {
       $this->SetY(13);
       if ($this->page > 1) {
-        
+
          $this->SetLineWidth(2); // set border width
          // $this->SetDrawColor(0,0,0); // set color for cell border
          $this->SetFillColor(255, 255, 255); // set filling color
@@ -26,11 +26,7 @@ class MyPDF extends TCPDF
          // $this->SetDrawColor(0,0,0); // set color for cell border
          $this->SetFillColor(255, 255, 255); // set filling color
          $this->MultiCell(191, 0, '', 'T', 1, 'C', 1, 12.8, 14.9, false, 'T', 'C');
-
-        
-
       }
-   
    }
 
    // Page footer
@@ -64,12 +60,12 @@ class MyPDF extends TCPDF
       }
 
       // Page number
-    if($this->page < 10){
-      $this->MultiCell(59, 10, 'Page ' . $this->getAliasNumPage(), 0, 'R', 0, 1, 152.5, 264.5, true);
-    }
-    if($this->page >= 10){
-      $this->MultiCell(59, 10, 'Page ' . $this->getAliasNumPage(), 0, 'R', 0, 1, 151.5, 264.5, true);
-    }
+      if ($this->page < 10) {
+         $this->MultiCell(59, 10, 'Page ' . $this->getAliasNumPage(), 0, 'R', 0, 1, 152.5, 264.5, true);
+      }
+      if ($this->page >= 10) {
+         $this->MultiCell(59, 10, 'Page ' . $this->getAliasNumPage(), 0, 'R', 0, 1, 151.5, 264.5, true);
+      }
       $barcode_image = "images/i589/I-589-footer-pdf417-$this->page.png";
       $this->Image($barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
 
@@ -195,10 +191,13 @@ $pdf->MultiCell(0, 0, '', 'T', 1, 'C', 1, 12.8, 29.65, false, 'T', 'C');
 // ...........
 
 $pdf->SetFont('times', 'B', 9.5);   // set font
+
 $pdf->MultiCell(190, 1, "START HERE - Type or print in black ink. See the instructions for information about eligibility and how to complete and file this application. There is no filing fee for this application.", 0, 'L', 0, 1, 12, 30, true);
 
 $pdf->SetFont('times', '', 9.5);
-$html = '<div><b>NOTE: </b>  <input type="checkbox" name="notice" value="N"/> Check this box if you also want to apply for withholding of removal under the Convention Against Torture.</div>';
+if (showData('i_589_holding_of_removal_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>NOTE: </b>  <input type="checkbox" name="notice" value="N" checked="' . $checked . '"/> Check this box if you also want to apply for withholding of removal under the Convention Against Torture.</div>';
 $pdf->writeHTMLCell(190, 1, 12, 40, $html, 0, 1, false, false, 'L', true);
 // //...........
 
@@ -406,12 +405,26 @@ $pdf->writeHTMLCell(189.6, 1, 13, 140, "", "B", 1, false, true, 'C', true);  // 
 // //...........
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>10.  </b> Gender:  <input type="checkbox" name="gender" value="male"/>    Male   <input type="checkbox" name="gender" value="female"/> Female </div>';
+if (showData('other_information_about_you_gender') == "male") $checked_male = "checked";
+else $checked_male = "";
+if (showData('other_information_about_you_gender') == "female") $checked_female = "checked";
+else $checked_female = "";
+
+$html = '<div><b>10.  </b> Gender:  <input type="checkbox" name="gender" value="male" checked="' . $checked_male . '" />    Male   <input type="checkbox" name="gender" value="female" checked="' . $checked_female . '" /> Female </div>';
 $pdf->writeHTMLCell(100, 4, 13, 145, $html, 0, 1, false, true, 'L', true);
 
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>11.  </b>  Marital Status:  <input type="checkbox" name="marital" value="single"/>    Single   <input type="checkbox" name="marital" value="married"/> Married    <input type="checkbox" name="divorced" value="divorced"/> Divorced    <input type="checkbox" name="widowed" value="widowed"/> Widowed</div>';
+if (showData('other_information_about_you_marital_status') == "single") $checked_single = "checked";
+else $checked_single = "";
+if (showData('other_information_about_you_marital_status') == "married") $checked_married = "checked";
+else $checked_married = "";
+if (showData('other_information_about_you_marital_status') == "divorced") $checked_divorce = "checked";
+else $checked_divorce = "";
+if (showData('other_information_about_you_marital_status') == "widowed") $checked_widowed = "checked";
+else $checked_widowed = "";
+
+$html = '<div><b>11.  </b>  Marital Status:  <input type="checkbox" name="marital" value="single"   checked="' . $checked_single . '"/>    Single   <input type="checkbox" name="marital" value="married" checked="' . $checked_married . '"/> Married    <input type="checkbox" name="divorced" value="divorced" checked="' . $checked_divorce . '"/> Divorced    <input type="checkbox" name="widowed" value="widowed" checked="' . $checked_widowed . '"/> Widowed</div>';
 $pdf->writeHTMLCell(120, 4, 71, 145, $html, 0, 1, false, true, 'L', true);
 // //..........
 
@@ -472,16 +485,24 @@ $html = '<div><b>18. </b><i> Check the box, a through c, that applies:</i></div>
 $pdf->writeHTMLCell(100, 4, 13, 166.5, $html, 0, 1, false, true, 'L', true);
 // //........
 $pdf->SetFont('times', '', 9.5);
-$html = '<div><b>a. </b> <input type="checkbox" name="never_been" value="a"/> I have never been in Immigration Court proceedings.</div>';
+if (showData('i_589_never_in_imgt_court_proceeding_status') == "Y") $checked_never = "checked";
+else $checked_never = "";
+if (showData('i_589_am_now_imgt_court_proceeding_status') == "Y") $checked_now = "checked";
+else $checked_now = "";
+if (showData('i_589_not_now_imgt_court_proceeding_status') == "Y") $checked_not_now = "checked";
+else $checked_not_now = "";
+
+
+$html = '<div><b>a. </b> <input type="checkbox" name="never_been" value="a" checked="' . $checked_never . '"/> I have never been in Immigration Court proceedings.</div>';
 $pdf->writeHTMLCell(100, 4, 73.5, 166.8, $html, 0, 1, false, true, 'L', true);
 // //.........
 
 $pdf->SetFont('times', '', 9.5);
-$html = '<div><b>b. </b> <input type="checkbox" name="iam_now" value="a"/> I am now in Immigration Court proceedings. </div>';
+$html = '<div><b>b. </b> <input type="checkbox" name="iam_now" value="a" checked="' . $checked_now . '"/> I am now in Immigration Court proceedings. </div>';
 $pdf->writeHTMLCell(100, 4, 17, 170.3, $html, 0, 1, false, true, 'L', true);
 // //............
 $pdf->SetFont('times', '', 9.5);
-$html = '<div><b>c. </b> <input type="checkbox" name="iam_not_now" value="a"/> I am <b>not</b> now in Immigration Court proceedings, but I have been in the past.</div>';
+$html = '<div><b>c. </b> <input type="checkbox" name="iam_not_now" value="a" checked="' . $checked_not_now . '"/> I am <b>not</b> now in Immigration Court proceedings, but I have been in the past.</div>';
 $pdf->writeHTMLCell(120, 4, 90, 170.3, $html, 0, 1, false, true, 'L', true);
 
 $pdf->writeHTMLCell(189.6, 1, 13, 170, "", "B", 1, false, true, 'C', true);  // 18 horizontal line .end
@@ -660,7 +681,12 @@ $pdf->TextField('a_i_what_is_your_native_language', 85, 5, array('strokeColor' =
 //........
 
 $pdf->SetFont('times', '', 9);
-$html = '<div><b>24. </b>Are you fluent in English? <br>  &nbsp; &nbsp; &nbsp;  <input type="checkbox" name="fluent_english" value="Y"/>  Yes    &nbsp;   <input type="checkbox" name="fluent_english" value="N"/>   No   </div>';
+if (showData('i_589_fluent_in_english_status') == "Y") $checked_Y = "checked";
+else $checked_Y = "";
+if (showData('i_589_fluent_in_english_status') == "N") $checked_N = "checked";
+else $checked_N = "";
+
+$html = '<div><b>24. </b>Are you fluent in English? <br>  &nbsp; &nbsp; &nbsp;  <input type="checkbox" name="fluent_english" value="Y" checked="' . $checked_Y . '"/>  Yes    &nbsp;   <input type="checkbox" name="fluent_english" value="N" checked="' . $checked_N . '" />   No   </div>';
 $pdf->writeHTMLCell(100, 4, 99, 222, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('times', '', 9);
@@ -725,7 +751,9 @@ $html = '<div><b>Your spouse</b></div>';
 $pdf->writeHTMLCell(60, 5, 12, 24, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 9);
-$html = '<div> <input type="checkbox" name="not_married" value="N"/>     I am not married. (Skip to <b>Your Children</b> below.)</div>';
+if (showData('i_589_not_married_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div> <input type="checkbox" name="not_married" value="Y" checked="' . $checked . '"/>     I am not married. (Skip to <b>Your Children</b> below.)</div>';
 $pdf->writeHTMLCell(100, 5, 60, 24, $html, 0, 1, false, true, 'L', true);
 
 $pdf->writeHTMLCell(190, 92, 13, 30, "", 1, 1, false, false, 'L', true); //table 1 start 
@@ -781,7 +809,7 @@ $pdf->SetFont('times', '', 9);
 $html = '<div><b>8.</b>  Other names used <i>(include <br> &nbsp; &nbsp; maiden name and aliases) </i></div>';
 $pdf->writeHTMLCell(100, 4, 150, 41, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_ii_other_name_used_include_maiden', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_current_spouse_other_name')), 150, 49);
+$pdf->TextField('a_ii_other_name_used_include_maiden', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_other_name')), 150, 49);
 
 //............
 $pdf->writeHTMLCell(190, 1, 13, 31, "", "B", 1, false, false, 'L', true);
@@ -831,7 +859,12 @@ $pdf->TextField('a_ii_race_ethnic_tribal_group', 65, 5, array('strokeColor' => a
 //............
 
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>14. </b> Gender <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="gender2" value="m"/>  &nbsp; Male  &nbsp; <input type="checkbox" name="gender2" value="f"/>  &nbsp;  Female</div>';
+if (showData('i_589_current_spouse_gender') == "male") $checked_male = "checked";
+else $checked_male = "";
+if (showData('i_589_current_spouse_gender') == "female") $checked_female = "checked";
+else $checked_female = "";
+
+$html = '<div><b>14. </b> Gender <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="gender2" value="m" checked="' . $checked_male . '"/>  &nbsp; Male  &nbsp; <input type="checkbox" name="gender2" value="f" checked="' . $checked_female . '"/>  &nbsp;  Female</div>';
 $pdf->writeHTMLCell(100, 4, 145, 62, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->writeHTMLCell(1, 9, 77, 63, "", "R", 1, false, true, 'L', true); //vertical line 
@@ -840,12 +873,16 @@ $pdf->writeHTMLCell(190, 1, 13, 67, "", "B", 1, false, true, 'L', true);
 
 //.............
 $pdf->SetFont('times', '', 9);
-$html = '<div><b>15.</b>  Is this person in the U.S.?  <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="person_us" value="y"/>  Yes <i>(Complete Blocks 16 to 24.) </i>  &nbsp; &nbsp; <input type="checkbox"
- name="person_us" value="n"/>   No <i>(Specify location)</i> :</div>';
+if (showData('i_589_current_spouse_in_usa_status') == "Y") $checked_Y = "checked";
+else $checked_Y = "";
+if (showData('i_589_current_spouse_in_usa_status') == "N") $checked_N = "checked";
+else $checked_N = "";
+
+$html = '<div><b>15.</b>  Is this person in the U.S.?  <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="person_us" value="y" checked="' . $checked_Y . '"/>  Yes <i>(Complete Blocks 16 to 24.) </i>  &nbsp; &nbsp; <input type="checkbox" name="person_us" value="n" checked="' . $checked_N . '"/>   No <i>(Specify location)</i> :</div>';
 $pdf->writeHTMLCell(100, 4, 13, 72, $html, 0, 1, false, true, 'L', true);
 //................
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_15_in_us', 98, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_in_usa')), 105, 74.8);
+$pdf->TextField('a_15_in_us', 98, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_person_in_usa')), 105, 74.8);
 
 $pdf->writeHTMLCell(98, 1, 105, 75, "", "B", 1, false, true, 'L', true);
 $pdf->writeHTMLCell(190, 1, 13, 76, "", "B", 1, false, true, 'L', true);
@@ -905,8 +942,12 @@ $pdf->TextField('a_ii_authorization_expiration_date', 55, 5, array('strokeColor'
 //............
 
 $pdf->SetFont('times', '', 9);
+if (showData('i_589_current_spouse_immigration_proceedings') == "Y") $checked_Y = "checked";
+else $checked_Y = "";
+if (showData('i_589_current_spouse_immigration_proceedings') == "N") $checked_N = "checked";
+else $checked_N = "";
 $html = '<div><b>22.</b>Is your spouse in Immigration<br> &nbsp; &nbsp;
-Court proceedings? <br> &nbsp; &nbsp;  <input type="checkbox" name="spouse" value="y"/>  Yes &nbsp; &nbsp; <input type="checkbox" name="spouse" value="n"/> No   </div>';
+Court proceedings? <br> &nbsp; &nbsp;  <input type="checkbox" name="spouse" value="y" checked="' . $checked_Y . '"/>  Yes &nbsp; &nbsp; <input type="checkbox" name="spouse" value="n" checked="' . $checked_N . '"/> No   </div>';
 $pdf->writeHTMLCell(100, 4, 107, 93, $html, 0, 1, false, true, 'L', true);
 
 //............
@@ -921,30 +962,33 @@ $pdf->writeHTMLCell(1, 12, 52, 94, "", "R", 1, false, true, 'L', true); //vertic
 $pdf->writeHTMLCell(190, 1, 13, 100, "", "B", 1, false, true, 'L', true);
 //...........
 $pdf->SetFont('times', '', 9);
+if (showData('i_589_current_spouse_immigration_proceedings') == "Y") $checked_Y = "checked";
+else $checked_Y = "";
+if (showData('i_589_current_spouse_immigration_proceedings') == "N") $checked_N = "checked";
+else $checked_N = "";
 $html = '<div><b>24.</b> If in the U.S., is your spouse to be included in this application? <i>(Check the appropriate box.)</i> </div>';
 $pdf->writeHTMLCell(180, 4, 13, 105, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 10);
-$html = '<div> <input type="checkbox" name="include" value="y"/>  Yes';
+$html = '<div> <input type="checkbox" name="include" value="y" checked="' . $checked_Y . '"/>  Yes';
 $pdf->writeHTMLCell(190, 5, 15, 110, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10);
-$html = '<div> <input type="checkbox" name="include" value="n"/> No  </div>';
+$html = '<div> <input type="checkbox" name="include" value="n" checked="' . $checked_N . '"/> No  </div>';
 $pdf->writeHTMLCell(190, 5, 15, 115, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->writeHTMLCell(190, 1, 13, 100, "", "B", 1, false, true, 'L', true); // table end --------------------
-
-
-
-
 
 //...........
 $pdf->SetFont('times', '', 9);
 $html = '<div><b>Your Children</b>. List <b>all</b> of your children, regardless of age, location, or marital status. </div>';
 $pdf->writeHTMLCell(180, 4, 13, 122, $html, 0, 1, false, true, 'L', true);
 
-$pdf->SetFont('times', '', 9.7);
-$html = '<div><input type="checkbox" name="children" value="y"/> I do not have any children.  <i>(Skip to Part A.III., Information about your background.)</i>
-<br><input type="checkbox" name="children" value="n"/> &nbsp;&nbsp;  I have children. &nbsp;  &nbsp;  &nbsp;   Total number of children:  ____________</div>';
+if (showData('i_589_no_children_status') == "Y") $checked_no = "checked";
+else $checked_no = "";
+if (showData('i_589_have_children_status') == "N") $checked_have = "checked";
+else $checked_have = "";
+$html = '<div><input type="checkbox" name="children" value="y" checked="' . $checked_no . '"/> I do not have any children.  <i>(Skip to Part A.III., Information about your background.)</i>
+<br><input type="checkbox" name="children" value="n" checked="' . $checked_have . '"/> &nbsp;&nbsp;  I have children. &nbsp;  &nbsp;  &nbsp;   Total number of children:  ____________</div>';
 $pdf->writeHTMLCell(190, 5, 15, 127, $html, 0, 1, false, true, 'L', true);
 
 //...........
@@ -1040,7 +1084,11 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child_race_ethnic_tribal_group', 45, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_child_ethnic_group')), 108, 172);
 //............
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child_gender" value="m"/>  Male  &nbsp;  <input type="checkbox" name="child_gender" value="f"/>  Female </div>';
+if (showData('i_589_child_gender') == "male") $checked_male = "checked";
+else $checked_male = "";
+if (showData('i_589_child_gender') == "female") $checked_female = "checked";
+else $checked_female = "";
+$html = '<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child_gender" value="m" checked="' . $checked_male . '"/>  Male  &nbsp;  <input type="checkbox" name="child_gender" value="f" checked="' . $checked_female . '"/>  Female </div>';
 $pdf->writeHTMLCell(100, 4, 155, 167, $html, 0, 1, false, true, 'L', true);
 
 $pdf->writeHTMLCell(190, 1, 13, 173, "", "B", 1, false, true, 'L', true); // horizontal line---
@@ -1048,7 +1096,10 @@ $pdf->writeHTMLCell(190, 1, 13, 173, "", "B", 1, false, true, 'L', true); // hor
 //............
 
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us3" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us3" value="n"/> No <i>(Specify location):</i> </div>';
+if (showData('i_589_child_location_if_not_in_us') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_child_location_if_not_in_us') == "N") $checked_N = "checked";else $checked_N = "";
+
+$html = '<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us3" value="y" checked="' . $checked_Y . '" />  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us3" value="n" checked="' . $checked_N . '"/> No <i>(Specify location):</i> </div>';
 $pdf->writeHTMLCell(180, 4, 13, 179, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child_is_this_us', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_child_location_if_not_in_us')), 143, 179);
@@ -1105,7 +1156,11 @@ $pdf->TextField('a_ii_child_what_is_expiration_date', 58, 5, array('strokeColor'
 //............
 
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding_page2" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding_page2" value="n"/> No</div>';
+if (showData('i_589_child_child_in_court_proceedings') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_child_child_in_court_proceedings') == "N") $checked_N = "checked";else $checked_N = "";
+
+
+$html = '<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding_page2" value="y" checked="' . $checked_Y . '" />  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding_page2" value="n" checked="' . $checked_N . '"/> No</div>';
 $pdf->writeHTMLCell(180, 4, 129, 197, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->writeHTMLCell(1, 12, 68, 198, "", "R", 1, false, true, 'L', true); //vertical line 
@@ -1113,15 +1168,23 @@ $pdf->writeHTMLCell(1, 12, 127, 198, "", "R", 1, false, true, 'L', true); //vert
 $pdf->writeHTMLCell(190, 1, 13, 205, "", "B", 1, false, true, 'L', true); // horizontal line---
 
 $pdf->SetFont('times', '', 9.7);
+if (showData('i_589_include_child_in_application') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_include_child_in_application') == "N") $checked_N = "checked";else $checked_N = "";
 $html = '<div><b>21. </b> If in the U.S., is this child to be included in this application? <i>(Check the appropriate box.)</i>
- <br><br> &nbsp; &nbsp; &nbsp;<input type="checkbox" name="inc_application" value="y"/>   Yes    <br><br> &nbsp; &nbsp; &nbsp;<input type="checkbox" name="inc_application" value="n"/>   No </div>';
+ <br><br> &nbsp; &nbsp; &nbsp;<input type="checkbox" name="inc_application" value="y" checked="' . $checked_Y . '"/>   Yes    <br><br> &nbsp; &nbsp; &nbsp;<input type="checkbox" name="inc_application" value="n" checked="' . $checked_N . '" />   No </div>';
 $pdf->writeHTMLCell(190, 7, 13, 210, $html, 0, 1, false, true, 'L', true);
 
 
-//..........page number 2 end -----------------------------------------------------------------------------------------
 
+/******************************
+ ******** End Page No 2 ******
+ ******************************/
+
+/******************************
+ ******** Start Page No 3 ****
+ ******************************/
 // add a page
-$pdf->AddPage('P', 'LETTER');  // page number 3
+$pdf->AddPage('P', 'LETTER'); 
 $pdf->SetFont('times', '', 12);
 $html3 = '<div><b>Part A.II. Information About Your Spouse and Children</b> (continued)</div>';
 $pdf->writeHTMLCell(190, 5, 13, 15, $html3, 1, 1, true, true, 'L', true);
@@ -1211,7 +1274,10 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child2_race_ethnic_tribal_group', 45, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_child_ethnic_group2')), 108, 49);
 //............
 $pdf->SetFont('times', '', 9);
-$html = '<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child2_gender" value="m"/>  Male  &nbsp;  <input type="checkbox" name="child2_gender" value="f"/>  Female </div>';
+if (showData('i_589_child_gender2') == "male") $checked_male = "checked";else $checked_male = "";
+if (showData('i_589_child_gender2') == "female") $checked_female = "checked";else $checked_female = "";
+
+$html = '<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child2_gender" value="m" checked="' . $checked_male . '" />  Male  &nbsp;  <input type="checkbox" name="child2_gender" value="f" checked="' . $checked_female . '" />  Female </div>';
 $pdf->writeHTMLCell(100, 4, 155, 44, $html, 0, 1, false, true, 'L', true);
 
 $pdf->writeHTMLCell(190, 1, 13, 50, "", "B", 1, false, true, 'L', true); // horizontal line---
@@ -1219,7 +1285,10 @@ $pdf->writeHTMLCell(190, 1, 13, 50, "", "B", 1, false, true, 'L', true); // hori
 //............
 
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us" value="n"/> No <i>(Specify location):</i> </div>';
+if (showData('i_589_child_in_us2') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_child_in_us2') == "N") $checked_N = "checked";else $checked_N = "";
+
+$html = '<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us" value="y" checked="' . $checked_Y . '"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us" value="n" checked="' . $checked_N . '"/> No <i>(Specify location):</i> </div>';
 $pdf->writeHTMLCell(180, 4, 13, 55.5, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child2_is_this_us', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_child_location_if_not_in_us2')), 143, 56);
@@ -1276,7 +1345,9 @@ $pdf->TextField('a_ii_child2_what_is_expiration_date', 58, 5, array('strokeColor
 //............
 
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding_page3_section1" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding_page3_section1" value="n"/> No</div>';
+if (showData('i_589_child_child_in_court_proceedings2') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_child_child_in_court_proceedings2') == "N") $checked_N = "checked";else $checked_N = "";
+$html = '<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding_page3_section1" value="y" checked="' . $checked_Y . '"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding_page3_section1" value="n" checked="' . $checked_N . '"/> No</div>';
 $pdf->writeHTMLCell(180, 4, 130, 74, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->writeHTMLCell(1, 12, 68, 75, "", "R", 1, false, true, 'L', true); //vertical line 
@@ -1284,8 +1355,10 @@ $pdf->writeHTMLCell(1, 12, 127, 75, "", "R", 1, false, true, 'L', true); //verti
 $pdf->writeHTMLCell(190, 1, 13, 82, "", "B", 1, false, true, 'L', true); // horizontal line---
 
 $pdf->SetFont('times', '', 9);
+if (showData('i_589_include_child_in_application2') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_include_child_in_application2') == "N") $checked_N = "checked";else $checked_N = "";
 $html = '<div><b>21. </b> If in the U.S., is this child to be included in this application? <i>(Check the appropriate box.)</i>
- <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl_application" value="y"/>   Yes   <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl_application" value="n"/>   No </div>';
+ <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl_application" value="y" checked="' . $checked_Y . '"/>   Yes   <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl_application" value="n" checked="' . $checked_N . '"/>   No </div>';
 $pdf->writeHTMLCell(190, 7, 13, 87, $html, 0, 1, false, true, 'L', true);
 
 //............page 3 table 1 end ------------------------------------------------------------------
@@ -1375,7 +1448,10 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_section2_child2_race_ethnic_tribal_group', 45, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_child_ethnic_group3')), 108, 127);
 //............
 $pdf->SetFont('times', '', 9);
-$html = '<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child2_gender_section2" value="m"/>  Male  &nbsp;  <input type="checkbox" name="child2_gender_section2" value="f"/>  Female </div>';
+if (showData('i_589_child_gender3') == "male") $checked_male = "checked";else $checked_male = "";
+if (showData('i_589_child_gender3') == "female") $checked_female = "checked";else $checked_female = "";
+
+$html = '<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child2_gender_section2" value="m" checked="' . $checked_male . '"/>  Male  &nbsp;  <input type="checkbox" name="child2_gender_section2" value="f" checked="' . $checked_female . '"/>  Female </div>';
 $pdf->writeHTMLCell(100, 4, 155, 122, $html, 0, 1, false, true, 'L', true);
 
 $pdf->writeHTMLCell(190, 1, 13, 128, "", "B", 1, false, true, 'L', true); // horizontal line---
@@ -1383,7 +1459,9 @@ $pdf->writeHTMLCell(190, 1, 13, 128, "", "B", 1, false, true, 'L', true); // hor
 //............
 
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us2" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us2" value="n"/> No <i>(Specify location):</i> </div>';
+if (showData('i_589_child_in_us3') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_child_in_us3') == "N") $checked_N = "checked";else $checked_N = "";
+$html = '<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child_us2" value="y" checked="' . $checked_Y . '" />  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child_us2" value="n" checked="' . $checked_N . '" /> No <i>(Specify location):</i> </div>';
 $pdf->writeHTMLCell(180, 4, 13, 134, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_section2_child2_is_this_us', 60, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_child_location_if_not_in_us3')), 143, 134);
@@ -1440,7 +1518,9 @@ $pdf->TextField('a_ii_section2_child2_what_is_expiration_date', 58, 5, array('st
 //............
 
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding_page3_section2" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding_page3_section2" value="n"/> No</div>';
+if (showData('i_589_include_child_in_application3') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_include_child_in_application3') == "N") $checked_N = "checked";else $checked_N = "";
+$html = '<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding_page3_section2" value="y" checked="' . $checked_Y . '" />  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding_page3_section2" value="n" checked="' . $checked_N . '" /> No</div>';
 $pdf->writeHTMLCell(180, 4, 129, 152, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->writeHTMLCell(1, 12, 68, 153, "", "R", 1, false, true, 'L', true); //vertical line 
@@ -1448,9 +1528,11 @@ $pdf->writeHTMLCell(1, 12, 127, 153, "", "R", 1, false, true, 'L', true); //vert
 $pdf->writeHTMLCell(190, 1, 13, 160, "", "B", 1, false, true, 'L', true); // horizontal line---
 
 $pdf->SetFont('times', '', 9);
+if (showData('i_589_child_child_in_court_proceedings3') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_child_child_in_court_proceedings3') == "N") $checked_N = "checked";else $checked_N = "";
 $html = '<div><b>21. </b> If in the U.S., is this child to be included in this application? <i>(Check the appropriate box.)</i>
- <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl_application_section2" value="y"/>   Yes    
- <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl_application_section2" value="n"/>   No </div>';
+ <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl_application_section2" value="y" checked="' . $checked_Y . '"/>   Yes    
+ <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl_application_section2" value="n" checked="' . $checked_N . '"/>   No </div>';
 $pdf->writeHTMLCell(190, 7, 13, 165, $html, 0, 1, false, true, 'L', true);
 
 //............page 3 table 2 end ----------------------------------
@@ -1541,7 +1623,9 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child3_race_ethnic_tribal_group', 45, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_child_ethnic_group4')), 108, 203);
 //............
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child3_gender" value="m"/>  Male  &nbsp;  <input type="checkbox" name="child3_gender" value="f"/>  Female </div>';
+if (showData('i_589_child_gender4') == "male") $checked_male = "checked";else $checked_male = "";
+if (showData('i_589_child_gender4') == "female") $checked_female = "checked";else $checked_female = "";
+$html = '<div><b>12.</b> Gender   <br> &nbsp; &nbsp; <input type="checkbox" name="child3_gender" value="m" checked="' . $checked_male . '"/>  Male  &nbsp;  <input type="checkbox" name="child3_gender" value="f" checked="' . $checked_female . '"/>  Female </div>';
 $pdf->writeHTMLCell(100, 4, 155, 198, $html, 0, 1, false, true, 'L', true);
 
 $pdf->writeHTMLCell(190, 1, 13, 203, "", "B", 1, false, true, 'L', true); // horizontal line---
@@ -1549,7 +1633,9 @@ $pdf->writeHTMLCell(190, 1, 13, 203, "", "B", 1, false, true, 'L', true); // hor
 //............
 
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child3_us" value="y"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child3_us" value="n"/> No <i>(Specify location):</i> </div>';
+if (showData('i_589_child_in_us4') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_child_in_us4') == "N") $checked_N = "checked";else $checked_N = "";
+$html = '<div><b>13.</b> Is this child in the U.S. ?  &nbsp; &nbsp; <input type="checkbox" name="child3_us" value="y" checked="' . $checked_Y . '"/>  Yes <i>(Complete Blocks 14 to 21.)</i>  &nbsp;  &nbsp;  <input type="checkbox" name="child3_us" value="n" checked="' . $checked_N . '"/> No <i>(Specify location):</i> </div>';
 $pdf->writeHTMLCell(180, 4, 13, 208.4, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_ii_child3_is_this_us', 60, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_child_location_if_not_in_us4')), 143, 209);
@@ -1606,7 +1692,10 @@ $pdf->TextField('a_ii_child3_what_is_expiration_date', 58, 5, array('strokeColor
 //............
 
 $pdf->SetFont('times', '', 9.7);
-$html = '<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br>&nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding3" value="y"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding3" value="n"/> No</div>';
+if (showData('i_589_child_child_in_court_proceedings4') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_child_child_in_court_proceedings4') == "N") $checked_N = "checked";else $checked_N = "";
+
+$html = '<div><b>20. </b> Is your child in Immigration Court proceedings? <br> <br>&nbsp; &nbsp; &nbsp; <input type="checkbox" name="proceding3" value="y" checked="' . $checked_Y . '"/>  Yes  &nbsp;  &nbsp;  <input type="checkbox" name="proceding3" value="n" checked="' . $checked_N . '"/> No</div>';
 $pdf->writeHTMLCell(180, 4, 129, 225, $html, 0, 1, false, true, 'L', true);
 //............
 
@@ -1615,10 +1704,13 @@ $pdf->writeHTMLCell(1, 12.5, 127, 226, "", "R", 1, false, true, 'L', true); //ve
 $pdf->writeHTMLCell(190, 1, 13, 233, "", "B", 1, false, true, 'L', true); // horizontal line---
 
 $pdf->SetFont('times', '', 9.7);
+if (showData('i_589_include_child_in_application4') == "Y") $checked_Y = "checked";else $checked_Y = "";
+if (showData('i_589_include_child_in_application4') == "N") $checked_N = "checked";else $checked_N = "";
+
 $html = '<div><b>21. </b> If in the U.S., is this child to be included in this application? <i>(Check the appropriate box.)</i>
- <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl3_application" value="y"/>   Yes    </div>';
+ <br>&nbsp;&nbsp;&nbsp;<input type="checkbox" name="incl3_application" value="y" checked="' . $checked_Y . '"/>   Yes    </div>';
 $pdf->writeHTMLCell(190, 7, 13, 239, $html, 0, 1, false, true, 'L', true);
-$html = '<div><input type="checkbox" name="incl3_application" value="n"/>&nbsp;  No </div>';
+$html = '<div><input type="checkbox" name="incl3_application" value="n" checked="' . $checked_N . '"/>&nbsp;  No </div>';
 $pdf->writeHTMLCell(190, 7, 15.5, 247, $html, 0, 1, false, true, 'L', true);
 
 //............page 3 table 3 end ----------------------------------
@@ -2560,7 +2652,7 @@ applicable)</div>';
 $pdf->writeHTMLCell(45, 20, 85, 225, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part_e_attorney_state_bar_number', 45, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_6d')), 85, 235);
+$pdf->TextField('part_e_attorney_state_bar_number', 45, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('')), 85, 235);
 
 //...............
 $pdf->SetFont('times', '', 9);
@@ -2569,7 +2661,7 @@ USCIS Online Account Number </b> (if any) </div>';
 $pdf->writeHTMLCell(60, 20, 134, 225, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part_e_attorney_online_account_number', 65, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_6d')), 134, 235);
+$pdf->TextField('part_e_attorney_online_account_number', 65, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('')), 134, 235);
 
 //...................page number 9 end -----------------
 
@@ -3081,7 +3173,7 @@ $pdf->SetFont('times', '', 9);
 $html = '<div>Date</div>';
 $pdf->writeHTMLCell(80, 7, 105, 26, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_asylum_date', 100, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_6d')), 104, 31);
+$pdf->TextField('additional_asylum_date', 100, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('additional_info_claim_to_asylum_date')), 104, 31);
 //.........
 $pdf->SetFont('times', '', 9);
 $html = '<div>Applicant\'s Name</div>';
@@ -3113,7 +3205,7 @@ $pdf->writeHTMLCell(29.5, 1, 30, 68, '', "B", 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('i_589_aditional_info1', 190, 177, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_6d')), 14, 79);
+$pdf->TextField('i_589_aditional_info1', 190, 177, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('additional_info_claim_to_asylum_value')), 14, 79);
 
 
 
@@ -3130,13 +3222,11 @@ $pdf->TextField('i_589_aditional_info1', 190, 177, array('multiline' => true, 's
 
 
 
-// 'part_e_attorney_online_account_number':' $attorneyData->uscis_online_account_number ',
-// 'part_e_attorney_state_bar_number':' $attorneyData->bar_number',
 $js = "
 var fields = {
    'part_e_attorney_online_account_number':' $attorneyData->uscis_online_account_number ',
    'part_e_attorney_state_bar_number':' $attorneyData->bar_number',
-   'i_589_aditional_info1':' " . showData('additional_info_claim_to_asylum_value') . " ',
+   'i_589_aditional_info1':' ',
 
 
 
