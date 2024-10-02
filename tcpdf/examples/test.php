@@ -14,5 +14,4 @@ if (showData('i_589_fluent_in_english_status') == "N") $checked_N = "checked";el
 checked="' . $checked_Y . '"
 checked="' . $checked_N . '"
 
-if (showData('i_589_fluent_in_english_status') == "Y") $checked = "checked";else $checked = "";
-checked="' . $checked . '"
+if (showData('i_589_fluent_in_english_status') == "Y") $checked = "checked";else $checked = ""; checked="' . $checked . '"
