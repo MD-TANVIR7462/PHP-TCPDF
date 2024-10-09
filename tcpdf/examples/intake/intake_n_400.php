@@ -298,7 +298,7 @@ include "intake_header.php";
 <fieldset class="setpage">
     <p style=" text-align: right;  margin-right: 15px;""><b>Page 3 of 14</b></p>
    
-    <div class=" col-md-12">
+  <div class=" col-md-12">
     <div class="bg-info">
         <h4><b>Part 3. Biographic Information</b></h4>
     </div>
