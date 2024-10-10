@@ -1223,51 +1223,95 @@ include "intake_header.php";
             <div class="bg-info">
                 <h4><b>Part 4. Information About Your Qualifying Relative</b></h4>
             </div>
-
-            <!-- Qualifying Relative's Full Name -->
             <div class="form-group">
-                <label>Family Name (Last Name)</label>
-                <input type="text" class="form-control" name="relative_last_name" maxlength="30" value="<?php echo showData('relative_last_name') ?>">
+                <label>Provide the following information about the qualifying relative
+                    (the U.S. citizen or Lawful Permanent Resident (LPR) spouse or
+                    parent) who would experience extreme hardship if you were
+                    refused admission to the United States.</label>
+            </div>
+            <div class="bg-info">
+                <h4><b>Your Qualifying Relative's Full Name and Relationship to You</b></h4>
             </div>
             <div class="form-group">
-                <label>Given Name (First Name)</label>
-                <input type="text" class="form-control" name="relative_first_name" maxlength="30" value="<?php echo showData('relative_first_name') ?>">
-            </div>
-            <div class="form-group">
-                <label>Middle Name</label>
-                <input type="text" class="form-control" name="relative_middle_name" maxlength="30" value="<?php echo showData('relative_middle_name') ?>">
-            </div>
-
-            <!-- Relationship to You -->
-            <div class="form-group">
-                <label>Relationship to You</label>
-                <div class="form-group">
-                    <label><b>2.a.</b> <?php echo createCheckbox("qualifying_relative_us_citizen_spouse") ?>U.S. Citizen Spouse</label>
-                </div>
-                <div class="form-group">
-                    <label><b>2.b.</b> <?php echo createCheckbox("qualifying_relative_us_citizen_parent") ?>U.S. Citizen Parent</label>
-                </div>
-                <div class="form-group">
-                    <label><b>2.c.</b> <?php echo createCheckbox("qualifying_relative_lpr_spouse") ?>LPR Spouse</label>
-                </div>
-                <div class="form-group">
-                    <label><b>2.d.</b> <?php echo createCheckbox("qualifying_relative_lpr_parent") ?>LPR Parent</label>
+                <label class="control-label col-md-5">1.a. Family Name (Last Name)</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
                 </div>
             </div>
-
-            <!-- Additional Qualifying Relatives -->
             <div class="form-group">
-                <label>Do you have more than one qualifying relative?</label>
-                <div class="form-group">
-                    <label><?php echo createCheckbox("has_more_than_one_relative") ?>Yes</label>
-                    <label><?php echo createCheckbox("has_only_one_relative") ?>No</label>
+                <label class="control-label col-md-5">1.b. Given Name (First Name)</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
                 </div>
             </div>
-
-            <!-- Additional Relative Details -->
             <div class="form-group">
-                <label>Additional Qualifying Relative's Full Name</label>
-                <input type="text" class="form-control" name="additional_relative_name" maxlength="60" value="<?php echo showData('additional_relative_name') ?>">
+                <label class="control-label col-md-5 ">1.c. Middle Name</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label><b>2.a.</b> <?php echo createCheckbox("visa_case_type_diversity_visa") ?>U.S. Citizen Spouse</label>
+            </div>
+            <div class="form-group">
+                <label><b>2.b.</b> <?php echo createCheckbox("visa_case_type_immediate_relative") ?>U.S. Citizen Parent</label>
+            </div>
+            <div class="form-group">
+                <label><b>2.c.</b> <?php echo createCheckbox("visa_case_type_family_based") ?>LPR Spouse including Derivatives</label>
+            </div>
+            <div class="form-group">
+                <label><b>2.d.</b> <?php echo createCheckbox("visa_case_type_employment_based") ?>LPR Parent</label>
+            </div>
+            <div class="bg-info">
+                <h4><b>Your Other Qualifying Relative</b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3. Do you have more than one qualifying relative (U.S. citizen or LPR spouse or parent)?</label>
+                <div class="col-md-5 col-md-offset-4">
+                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>If you answered "Yes" to Item Number 3., provide the
+                    other qualifying relative's name and your relationship to
+                    the qualifying relative in Item Numbers 4.a. - 5.d.
+                    Also provide evidence of the U.S. citizenship or LPR
+                    status of the other qualifying relative with your
+                    application. See the What Evidence Must I Submit
+                    With Form I-601A section of the Instructions.</label>
+            </div>
+            <div class="bg-info">
+                <h4><b>Additional Qualifying Relative's Full Name and  Relationship to You</b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">4.a. Family Name (Last Name)</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">4.b. Given Name (First Name)</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5 ">4.c. Middle Name</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label><b>5.a.</b> <?php echo createCheckbox("visa_case_type_diversity_visa") ?>U.S. Citizen Spouse</label>
+            </div>
+            <div class="form-group">
+                <label><b>5.b.</b> <?php echo createCheckbox("visa_case_type_immediate_relative") ?>U.S. Citizen Parent</label>
+            </div>
+            <div class="form-group">
+                <label><b>5.c.</b> <?php echo createCheckbox("visa_case_type_family_based") ?>LPR Spouse including Derivatives</label>
+            </div>
+            <div class="form-group">
+                <label><b>5.d.</b> <?php echo createCheckbox("visa_case_type_employment_based") ?>LPR Parent</label>
             </div>
         </div>
     </div>
