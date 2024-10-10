@@ -1106,109 +1106,177 @@ include "intake_header.php";
 -------------------------------- page 6--------------------
 ----------------------------------------------------------->
 <fieldset class="setpage">
-  <p class="text-right mr-3"><b>Page 7 of 9</b></p>
-  <div class="row">
-    <!-- Left column -->
-    <div class="col-md-6">
-      <div class="bg-info p-2">
-        <h4><b>Part 6. Applicant's Statement, Contact Information, Declaration, Certification, and Signature</b> (continued)</h4>
-      </div>
-      <br />
-      <p><b>I understand that USCIS will require me to appear for an appointment to take my biometrics (fingerprints, photograph, and/or signature) and, at that time, I will be required to sign an oath reaffirming that:</b></p>
-      <div class="pl-3">
-        <p><b>1.</b> I reviewed and understood all of the information contained in, and submitted with, my application.</p>
-        <p><b>2.</b> All of this information was complete, true, and correct at the time of filing.</p>
-      </div>
-      <p><b>I certify, under penalty of perjury, that all of the information in my application and any document submitted with it were provided or authorized by me, that I reviewed and understand all of the information contained in, and submitted with, my application and that all of this information is complete, true, and correct.</b></p>
-      <div class="bg-info p-2">
-        <h4><b><i>Applicant's Signature</i></b></h4>
-      </div>
-      <div class="form-group">
-        <label for="applicant-signature">6.a. Applicant's Signature</label>
-        <input type="text" class="form-control" id="applicant-signature" disabled />
-      </div>
-      <div class="form-group">
-        <label for="signature-date">6.b. Date of Signature (mm/dd/yyyy)</label>
-        <input type="date" class="form-control" id="signature-date" name="sponsor_sign_date" />
-      </div>
-      <p><b>NOTE TO ALL APPLICANTS:</b> If you do not completely fill out this application or fail to submit required documents listed in the Instructions, USCIS may deny your application.</p>
-      <div class="bg-info p-2">
-        <h4><b>Part 7. Interpreter's Contact Information, Certification, and Signature</b></h4>
-      </div>
-      <p><b>Provide the following information about the interpreter.</b></p>
-    </div>
-    <!-- Right column -->
-    <div class="col-md-6">
-      <div class="bg-info p-2">
-        <h4><b><i>Interpreter's Mailing Address</i></b></h4>
-      </div>
-      <div class="form-group">
-        <label for="street-number">3.a. Street Number and Name</label>
-        <input type="text" class="form-control" id="street-number" name="i_864_interpreter_address_street_number" />
-      </div>
-      <div class="form-group">
-        <label>3.b. Apt., Ste., or Flr.</label>
-        <div class="d-flex">
-          <div class="form-check mr-2">
-            <input class="form-check-input" type="radio" name="i_864_interpreter_address_apt_ste_flr" value="apt" />
-            <label class="form-check-label">Apt.</label>
-          </div>
-          <div class="form-check mr-2">
-            <input class="form-check-input" type="radio" name="i_864_interpreter_address_apt_ste_flr" value="ste" />
-            <label class="form-check-label">Ste.</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="i_864_interpreter_address_apt_ste_flr" value="flr" />
-            <label class="form-check-label">Flr.</label>
-          </div>
+    <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 8</b></p>
+    <div class="row">
+        <!-- Part 3. Information About Your Immigrant Visa Case -->
+        <div class="col-md-6">
+            <div class="bg-info">
+                <h4><b>Part 3. Information About Your Immigrant Visa Case</b></h4>
+            </div>
+            <p style="margin: 5px;">Provide the basis on which you are immigrating to the United States using the check boxes below. (Select <b>only one</b> box)</p>
+            <div class="form-group">
+                <label><b>1.a.</b> <?php echo createCheckbox("visa_case_type_diversity_visa") ?>Diversity Visa Program Selectee or Derivative</label>
+            </div>
+            <div class="form-group">
+                <label><b>1.b.</b> <?php echo createCheckbox("visa_case_type_immediate_relative") ?>Immediate Relative Petition (Form I-130)</label>
+            </div>
+            <div class="form-group">
+                <label><b>1.c.</b> <?php echo createCheckbox("visa_case_type_family_based") ?>Preference-Based Family Petition (Form I-130),
+                    including Derivatives</label>
+            </div>
+            <div class="form-group">
+                <label><b>1.d.</b> <?php echo createCheckbox("visa_case_type_employment_based") ?>Employment-Based Petition (Form I-140), including Derivatives</label>
+            </div>
+            <div class="form-group">
+                <label><b>1.e.</b> <?php echo createCheckbox("visa_case_type_special_immigrant") ?>Special Immigrant/Widow Petition (Form I-360), including Derivatives</label>
+            </div>
+
+            <!-- DOS DV Case Number -->
+            <div class="form-group">
+                <label>If you selected Item Number 1.a. because you are a Diversity
+                    Visa (DV) Program selectee or derivative, provide information
+                    about your (or your spouse's or parent's) DV case:</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">2.a. DOS DV Case Number (KCC Case Number)</label>
+                <div class="col-md-10 col-md-offset-2">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>DV Program Selectee's Full Name (If you are a derivative and
+                    your parent or spouse is the DV Program Selectee)</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">2.a. Family Name (Last Name)</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">2.b. Given Name (First Name)</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">2.c. Middle Name</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>If you selected Item Numbers 1.b., 1.c., 1.d., or 1.e. provide
+                    the following information about the approved immigrant visa
+                    petition (Form I-130, Form I-140, or Form I-360) that was filed
+                    on your (or your spouse's or parent's) behalf, or that you used to
+                    self-petition on your behalf, that is your basis to immigrate and
+                    the related Department of State (DOS) immigrant visa
+                    application. </label>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-12">3.a. USCIS Receipt Number</label>
+                <div class="col-md-10 col-md-offset-2">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-12">3.b. DOS Consular Case Number (NVC Case Number)</label>
+                <div class="col-md-11 col-md-offset-1">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Petitioner Name (Provide the full name of the family member or
+                    the company who petitioned for you (or your spouse or parent).)</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.c. Family Name (Last Name)</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.d. Given Name (First Name)</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.e. Middle Name</label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3.f. Company or Organization Name</label>
+                <div class="col-md-12">
+                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                </div>
+            </div>
         </div>
-        <input type="text" class="form-control mt-2" name="i_864_interpreter_address_apt_ste_flr_value" />
-      </div>
-      <div class="form-group">
-        <label for="city">3.c. City or Town</label>
-        <input type="text" class="form-control" id="city" name="i_864_interpreter_address_city_town" />
-      </div>
-      <div class="form-group">
-        <label for="state">3.d. State</label>
-        <select class="form-control" id="state" name="i_864_interpreter_address_state">
-          <option value="">Select</option>
-          <!-- State options here -->
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="zip-code">3.e. ZIP Code</label>
-        <input type="text" class="form-control" id="zip-code" name="i_864_interpreter_address_zip_code" />
-      </div>
-      <div class="form-group">
-        <label for="country">3.h. Country</label>
-        <input type="text" class="form-control" id="country" name="i_864_interpreter_address_country" />
-      </div>
-      <div class="bg-info p-2">
-        <h4><b><i>Interpreter's Contact Information</i></b></h4>
-      </div>
-      <div class="form-group">
-        <label for="daytime-tel">4. Interpreter's Daytime Telephone Number</label>
-        <input type="text" class="form-control" id="daytime-tel" name="i_864_interpreter_daytime_tel" />
-      </div>
-      <div class="form-group">
-        <label for="mobile-tel">5. Interpreter's Mobile Telephone Number (if any)</label>
-        <input type="text" class="form-control" id="mobile-tel" name="i_864_interpreter_mobile" />
-      </div>
-      <div class="form-group">
-        <label for="email">6. Interpreter's Email Address (if any)</label>
-        <input type="email" class="form-control" id="email" name="i_864_interpreter_email" />
-      </div>
+
+        <!-- Part 4. Information About Your Qualifying Relative -->
+        <div class="col-md-6">
+            <div class="bg-info">
+                <h4><b>Part 4. Information About Your Qualifying Relative</b></h4>
+            </div>
+
+            <!-- Qualifying Relative's Full Name -->
+            <div class="form-group">
+                <label>Family Name (Last Name)</label>
+                <input type="text" class="form-control" name="relative_last_name" maxlength="30" value="<?php echo showData('relative_last_name') ?>">
+            </div>
+            <div class="form-group">
+                <label>Given Name (First Name)</label>
+                <input type="text" class="form-control" name="relative_first_name" maxlength="30" value="<?php echo showData('relative_first_name') ?>">
+            </div>
+            <div class="form-group">
+                <label>Middle Name</label>
+                <input type="text" class="form-control" name="relative_middle_name" maxlength="30" value="<?php echo showData('relative_middle_name') ?>">
+            </div>
+
+            <!-- Relationship to You -->
+            <div class="form-group">
+                <label>Relationship to You</label>
+                <div class="form-group">
+                    <label><b>2.a.</b> <?php echo createCheckbox("qualifying_relative_us_citizen_spouse") ?>U.S. Citizen Spouse</label>
+                </div>
+                <div class="form-group">
+                    <label><b>2.b.</b> <?php echo createCheckbox("qualifying_relative_us_citizen_parent") ?>U.S. Citizen Parent</label>
+                </div>
+                <div class="form-group">
+                    <label><b>2.c.</b> <?php echo createCheckbox("qualifying_relative_lpr_spouse") ?>LPR Spouse</label>
+                </div>
+                <div class="form-group">
+                    <label><b>2.d.</b> <?php echo createCheckbox("qualifying_relative_lpr_parent") ?>LPR Parent</label>
+                </div>
+            </div>
+
+            <!-- Additional Qualifying Relatives -->
+            <div class="form-group">
+                <label>Do you have more than one qualifying relative?</label>
+                <div class="form-group">
+                    <label><?php echo createCheckbox("has_more_than_one_relative") ?>Yes</label>
+                    <label><?php echo createCheckbox("has_only_one_relative") ?>No</label>
+                </div>
+            </div>
+
+            <!-- Additional Relative Details -->
+            <div class="form-group">
+                <label>Additional Qualifying Relative's Full Name</label>
+                <input type="text" class="form-control" name="additional_relative_name" maxlength="60" value="<?php echo showData('additional_relative_name') ?>">
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="d-flex justify-content-between mt-4">
-    <input type="button" name="previous" class="btn btn-default" value="Previous" />
-    <input type="submit" name="submit" class="btn btn-success" value="Save" />
-    <input type="button" name="next" class="btn btn-info" value="Next" />
-  </div>
+
+    <!-- Next and Previous Buttons -->
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
-
-
-
 
 
 <!----------------------------------------------------------------------
