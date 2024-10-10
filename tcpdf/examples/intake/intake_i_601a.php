@@ -715,7 +715,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
 ----------------------------------------------------------------------->
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style=" text-align: right; margin-right: 15px;""><b>Page 4 of 5</b></p>
     <div class=" row">
     <div class="col-md-6">
@@ -849,11 +849,6 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
-
-
-
-
-
         <div class=" col-md-12">
             <div class="bg-info">
                 <h4><b>Part 2. Biographic Information</b></h4>
@@ -985,277 +980,642 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
     </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
--------------------------------- page 3 --------------------------------
+-------------------------------- page 5 --------------------------------
 ----------------------------------------------------------------------->
-<fieldset class="setpage">
-    <p style=" text-align: right;  margin-right: 15px;""><b>Page 3 of 5</b></p>
-    <div class=" row mt-5 gap-4">
-    <div class="col-md-6">
-        <div class="bg-info">
-            <h4><b>Part 4. Applicant's or Petitioner's Contact Information, Certification, and Signature</b></h4>
-        </div>
-        <div class="bg-info">
-            <h4><b><i>Applicant's or Petitioner's Contact Information</i></b></h4>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">Provide your daytime telephone number, mobile telephone number (if any), and email address (if any).</label>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">1. Applicant's or Petitioner's Daytime Telephone Number</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_applicant_or_petitioner_daytime_tel" maxlength="10" value="<?php echo showData('i_290b_applicant_or_petitioner_daytime_tel') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">2. Applicant's or Petitioner's Mobile Telephone Number (if any)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_applicant_or_petitioner_mobile" maxlength="10" value="<?php echo showData('i_290b_applicant_or_petitioner_mobile') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">3. Applicant's or Petitioner's Email Address (if any)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_applicant_or_petitioner_email" maxlength="39" value="<?php echo showData('i_290b_applicant_or_petitioner_email') ?>">
-            </div>
-        </div>
-        <div class="bg-info">
-            <h4><b><i>Applicant's or Petitioner's Certification and
-                        Signature </i></b></h4>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">I certify, under penalty of perjury, that I provided or authorized
-                all of the responses and information contained in and submitted
-                with my appeal or motion, I read and understand or, if
-                interpreted to me in a language in which I am fluent by the
-                interpreter listed in Part 5., understood, all of the responses and
-                information contained in, and submitted with, my appeal/
-                motion, and that all of the responses and the information are
-                complete, true, and correct. Furthermore, I authorize the release
-                of any information from any and all of my records that USCIS
-                may need to determine my eligibility for an immigration request
-                and to other entities and persons where necessary for the
-                administration and enforcement of U.S. immigration law.
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">4. Applicant's or Petitioner's Signature</label>
-            <div class="col-md-12">
-                <input type="text" name="" value="" maxlength="" disabled class="form-control" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12"> Date of Signature (mm/dd/yyyy)</label>
-            <div class="col-md-7 col-md-offset-5">
-                <input type="date" class="form-control" name="i_290b_applicant_or_petitioner_sign_date" value="<?php echo showData('i_290b_applicant_or_petitioner_sign_date') ?>" />
-            </div>
-        </div>
-        <div class="bg-info">
-            <h4><b>Part 5. Interpreter's Contact Information, Certification, and Signature </b></h4>
-        </div>
-        <div class="bg-info">
-            <h4><b><i>Interpreter's Full Name</i></b></h4>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">1. Interpreter's Family Name (Last Name)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control  " name="i_290b_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_290b_interpreter_family_last_name') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">Interpreter's Given Name (First Name)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control  " name="i_290b_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_290b_interpreter_given_first_name') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">2. Interpreter's Business or Organization Name (if any)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control  " name="i_290b_interpreter_business_name" maxlength="30" value="<?php echo showData('i_290b_interpreter_business_name') ?>">
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="bg-info">
-            <h4><b><i>Interpreter's Contact Information</i></b></h4>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">3. Interpreter's Daytime Telephone Number</label>
-            <div class="col-md-12">
-                <input type="number" class="form-control  " name="i_290b_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_290b_interpreter_daytime_tel') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">4. Interpreter's Mobile Telephone Number (if any)</label>
-            <div class="col-md-12">
-                <input type="number" class="form-control  " name="i_290b_interpreter_mobile" maxlength="10" value="<?php echo showData('i_290b_interpreter_mobile') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">5. Interpreter's Email Address (if any)</label>
-            <div class="col-md-12">
-                <input type="email" class="form-control  " name="i_290b_interpreter_email" maxlength="39" value="<?php echo showData('i_290b_interpreter_email') ?>">
-            </div>
-        </div>
-        <div class="bg-info">
-            <h4><i><b>Interpreter's Certification and Signature</b></i></h4>
-        </div>
-        <p>I certify, under penalty of perjury, that I am fluent in English and</p>
-        <div style="display:flex;  align-items: center;">
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_interpreter_fluent_english" maxlength="24" value="<?php echo showData('i_290b_interpreter_fluent_english') ?>">
-            </div>
-        </div>
-        <div>and I have interpreted every question on the appeal/motion, and
-            Instructions and interpreted the applicant's answers to the
-            questions in that language, and the applicant/petitioner informed
-            me that they understood every instruction, question, and answer
-            on the appeal/motion.
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">6. Interpreter's Signature</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" disabled />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">Date of Signature (mm/dd/yyyy)</label>
-            <div class="col-md-7 col-md-offset-5">
-                <input type="date" class="form-control" name="i_290b_interpreter_sign_date" value="<?php echo showData('i_290b_interpreter_sign_date') ?>" />
-            </div>
-        </div>
-
-
-        <div class="bg-info">
-            <h4><b>Part 6. Contact Information, Declaration, and
-                    Signature of the Person Preparing This Appeal/
-                    Motion, if Other Than the Applicant or
-                    Petitioner
-                </b>
-            </h4>
-        </div>
-        <div class="bg-info">
-            <h4><b><i>Preparer's Full Name</i></b> </h4>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">1. Preparer's Family Name (Last Name)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_preparer_family_last_name" maxlength="39" value="<?php echo showData('i_290b_preparer_family_last_name') ?>" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">Preparer's Given Name (First Name)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_preparer_given_first_name" maxlength="39" value="<?php echo showData('i_290b_preparer_given_first_name') ?>" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">2. Preparer's Business or Organization Name (if any)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="i_290b_preparer_business_name" maxlength="34" value="<?php echo showData('i_290b_preparer_business_name') ?>" />
-            </div>
-        </div>
-
-        <div class="bg-info">
-            <h4><b><i>Preparer's Contact Information</i></b></h4>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">3. Preparer's Daytime Telephone Number</label>
-            <div class="col-md-12">
-                <input type="number" class="form-control" name="i_290b_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_290b_preparer_daytime_tel') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">4. Preparer's Mobile Telephone Number (if any)</label>
-            <div class="col-md-12">
-                <input type="number" class="form-control" name="i_290b_preparer_mobile" maxlength="10" value="<?php echo showData('i_290b_preparer_mobile') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">5. Preparer's Email Address (if any)</label>
-            <div class="col-md-12">
-                <input type="email" class="form-control" maxlength="39" name="i_290b_preparer_email" value="<?php echo showData('i_290b_preparer_email') ?>">
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
-<!---------------------------------------------------------
--------------------------------- page 4--------------------
------------------------------------------------------------>
-<fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 5</b></p>
-    <div class="row" style>
+<!-- <fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 8</b></p>
+    <div class="row">
         <div class="col-md-6">
             <div class="bg-info">
-                <h4><b>Part 6. Contact Information, Declaration, and
-                        Signature of the Person Preparing This Appeal/
-                        Motion, if Other Than the Applicant or
-                        Petitioner (continued)
-                    </b>
-                </h4>
+                <h4><b>Part 5. Statement From Applicant</b></h4>
             </div>
+            <p class="form-group">
+                <b>
+                    In the space provided, explain in detail why you believe USCIS
+                    should approve your application for a provisional unlawful
+                    presence waiver as a matter of discretion. Provide all of the
+                    reasons you believe support your application for this waiver,
+                    including information about the extreme hardship your
+                    qualifying relatives would experience if you were refused
+                    admission to the United States. If you need extra space to
+                    complete your statement, use the space provided in <b>Part 9.
+                        Additional Information</b>
+                </b>
+            </p>
+            <textarea class="form-control" name="i_290b_additional_info_7d" maxlength="305" class="form-control" cols="30" rows="50"><?php echo showData('i_290b_additional_info_7d') ?></textarea>
+        </div>
+        <div class="col-md-6">
             <div class="bg-info">
-                <h4><b><i>Preparer's Certification and Signature </i></b></h4>
+                <h4><b>Part 6. Applicant's Statement, Contact Information, Declaration, Certification, and Signature</b></h4>
             </div>
-            <p>I certify, under penalty of perjury, that I prepared this appeal or
-                motion for the applicant or petitioner at their request and with
-                express consent and that all of the responses and information
-                contained in and submitted with the appeal or motion are
-                complete, true, and correct and reflects only information
-                provided by the applicant or petitioner. The applicant or
-                petitioner reviewed the responses and information and informed
-                me that they understand the responses and information in or
-                submitted with the appeal or motion.
+            <p class="form-group">
+                <span class="d-flexible my-5"><b>NOTE:</b> Read the Penalties section of the Form I-601A
+                    Instructions before completing this section. You must file Form
+                    I-601A while in the United States.
+                </span>
+            </p>
+            <div class="bg-info">
+                <h4><b><i>Applicant's Statement</i></b></h4>
+            </div>
+            <p class="form-group">
+                <b>NOTE:</b> Select the box for either Item Number 1.a. or 1.b. If
+                applicable, select the box for Item Number 2.
             </p>
             <div class="form-group">
-                <label class="control-label col-md-12">6. Preparer's Signature</label>
+                <label class="control-label col-md-12">
+                    <p class="d-flexible"><b>1.a. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status2") ?>I can read and understand English, and I have read
+                        and understand every question and instruction on this
+                        application and my answer to every question.</p>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">
+                    <p class="d-flexible"><b>1.b. </b> <?php echo createCheckbox("i_864a_the_interpreter_name_status") ?>The interpreter named in Part 7. read to me every
+                        question and instruction on this application and my
+                        answer to every question in </p>
+                </label>
+                <div class="col-md-11 col-md-offset-1">
+                    <input type="text" class="form-control" name="i_864a_the_interpreter_name_in2" maxlength="28" value="<?php echo showData('i_864a_the_interpreter_name_in2') ?>"><b>a language in which I am fluent, and I understood
+                        everything. </b>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">
+                    <p class="d-flexible"><b>2. </b> <?php echo createCheckbox("i_864a_the_preparer_named_in2_status") ?> At my request, the preparer named in Part 8.,</p>
+                </label>
+                <div class="col-md-11 col-md-offset-1">
+                    <input type="text" class="form-control" name="i_864a_the_preparer_named_in2" maxlength="28" value="<?php echo showData('i_864a_the_preparer_named_in2') ?>"><b>prepared this contract for me based only upon
+                        information I provided or authorized.</b>
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b><i>Applicant's Contact Information</i></b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3. Applicant's Daytime Telephone Number
+                    Number</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control  " name="i_864a_household_member_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_household_member_daytime_tel') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">4. Applicant's Mobile Telephone Number (if any)
+                    Number (if any)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="i_864a_household_member_mobile" maxlength="10" value="<?php echo showData('i_864a_household_member_mobile') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">5. Applicant's Email Address (if any)</label>
+                <div class="col-md-12">
+                    <input type="email" class="form-control" name="i_864a_household_member_email" maxlength="41" value="<?php echo showData('i_864a_household_member_email') ?>">
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b><i>Applicant's Declaration and Certification</i></b></h4>
+            </div>
+            <p class="form-group">
+                <b>
+                    Copies of any documents I have submitted are exact photocopies
+                    of unaltered, original documents, and I understand that USCIS
+                    may require that I submit original documents to USCIS at a later
+                    date. Furthermore, I authorize the release of any information
+                    from any and all of my records that USCIS may need to
+                    determine my eligibility for the immigration benefit that I seek. <br><br>
+                    I furthermore authorize release of information contained in this
+                    application, in supporting documents, and in my USCIS
+                    records, to other entities and persons where necessary for the
+                    administration and enforcement of U.S. immigration laws.
+                </b>
+            </p>
+        </div>
+
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!---------------------------------------------------------
+-------------------------------- page 6--------------------
+----------------------------------------------------------->
+<fieldset class="setpage">
+  <p class="text-right mr-3"><b>Page 7 of 9</b></p>
+  <div class="row">
+    <!-- Left column -->
+    <div class="col-md-6">
+      <div class="bg-info p-2">
+        <h4><b>Part 6. Applicant's Statement, Contact Information, Declaration, Certification, and Signature</b> (continued)</h4>
+      </div>
+      <br />
+      <p><b>I understand that USCIS will require me to appear for an appointment to take my biometrics (fingerprints, photograph, and/or signature) and, at that time, I will be required to sign an oath reaffirming that:</b></p>
+      <div class="pl-3">
+        <p><b>1.</b> I reviewed and understood all of the information contained in, and submitted with, my application.</p>
+        <p><b>2.</b> All of this information was complete, true, and correct at the time of filing.</p>
+      </div>
+      <p><b>I certify, under penalty of perjury, that all of the information in my application and any document submitted with it were provided or authorized by me, that I reviewed and understand all of the information contained in, and submitted with, my application and that all of this information is complete, true, and correct.</b></p>
+      <div class="bg-info p-2">
+        <h4><b><i>Applicant's Signature</i></b></h4>
+      </div>
+      <div class="form-group">
+        <label for="applicant-signature">6.a. Applicant's Signature</label>
+        <input type="text" class="form-control" id="applicant-signature" disabled />
+      </div>
+      <div class="form-group">
+        <label for="signature-date">6.b. Date of Signature (mm/dd/yyyy)</label>
+        <input type="date" class="form-control" id="signature-date" name="sponsor_sign_date" />
+      </div>
+      <p><b>NOTE TO ALL APPLICANTS:</b> If you do not completely fill out this application or fail to submit required documents listed in the Instructions, USCIS may deny your application.</p>
+      <div class="bg-info p-2">
+        <h4><b>Part 7. Interpreter's Contact Information, Certification, and Signature</b></h4>
+      </div>
+      <p><b>Provide the following information about the interpreter.</b></p>
+    </div>
+    <!-- Right column -->
+    <div class="col-md-6">
+      <div class="bg-info p-2">
+        <h4><b><i>Interpreter's Mailing Address</i></b></h4>
+      </div>
+      <div class="form-group">
+        <label for="street-number">3.a. Street Number and Name</label>
+        <input type="text" class="form-control" id="street-number" name="i_864_interpreter_address_street_number" />
+      </div>
+      <div class="form-group">
+        <label>3.b. Apt., Ste., or Flr.</label>
+        <div class="d-flex">
+          <div class="form-check mr-2">
+            <input class="form-check-input" type="radio" name="i_864_interpreter_address_apt_ste_flr" value="apt" />
+            <label class="form-check-label">Apt.</label>
+          </div>
+          <div class="form-check mr-2">
+            <input class="form-check-input" type="radio" name="i_864_interpreter_address_apt_ste_flr" value="ste" />
+            <label class="form-check-label">Ste.</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="i_864_interpreter_address_apt_ste_flr" value="flr" />
+            <label class="form-check-label">Flr.</label>
+          </div>
+        </div>
+        <input type="text" class="form-control mt-2" name="i_864_interpreter_address_apt_ste_flr_value" />
+      </div>
+      <div class="form-group">
+        <label for="city">3.c. City or Town</label>
+        <input type="text" class="form-control" id="city" name="i_864_interpreter_address_city_town" />
+      </div>
+      <div class="form-group">
+        <label for="state">3.d. State</label>
+        <select class="form-control" id="state" name="i_864_interpreter_address_state">
+          <option value="">Select</option>
+          <!-- State options here -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="zip-code">3.e. ZIP Code</label>
+        <input type="text" class="form-control" id="zip-code" name="i_864_interpreter_address_zip_code" />
+      </div>
+      <div class="form-group">
+        <label for="country">3.h. Country</label>
+        <input type="text" class="form-control" id="country" name="i_864_interpreter_address_country" />
+      </div>
+      <div class="bg-info p-2">
+        <h4><b><i>Interpreter's Contact Information</i></b></h4>
+      </div>
+      <div class="form-group">
+        <label for="daytime-tel">4. Interpreter's Daytime Telephone Number</label>
+        <input type="text" class="form-control" id="daytime-tel" name="i_864_interpreter_daytime_tel" />
+      </div>
+      <div class="form-group">
+        <label for="mobile-tel">5. Interpreter's Mobile Telephone Number (if any)</label>
+        <input type="text" class="form-control" id="mobile-tel" name="i_864_interpreter_mobile" />
+      </div>
+      <div class="form-group">
+        <label for="email">6. Interpreter's Email Address (if any)</label>
+        <input type="email" class="form-control" id="email" name="i_864_interpreter_email" />
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between mt-4">
+    <input type="button" name="previous" class="btn btn-default" value="Previous" />
+    <input type="submit" name="submit" class="btn btn-success" value="Save" />
+    <input type="button" name="next" class="btn btn-info" value="Next" />
+  </div>
+</fieldset>
+
+
+
+
+
+<!----------------------------------------------------------------------
+-------------------------------- page 7--------------------------------
+------------------------------------------------------------------------>
+
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 7 of 9</b></p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="bg-info">
+                <h4> <b>Part 6. Applicant's Statement, Contact
+                        Information, Declaration, Certification, and
+                        Signature</b>(continued)</h4>
+            </div><br>
+            <div class="">
+                <b>I understand that USCIS will require me to appear for an
+                    appointment to take my biometrics (fingerprints, photograph,
+                    and/or signature) and, at that time, I will be required to sign an
+                    oath reaffirming that: </b>
+            </div><br>
+            <div class="col-md-offset-2">
+                <b>1.)</b> I reviewed and understood all of the information
+                contained in, and submitted with, my application; and
+                <br><br>
+                <b>2.)</b> All of this information was complete, true, and correct
+                at the time of filing.
+            </div><br>
+            <div class="">
+                <b>I certify, under penalty of perjury, that all of the information in
+                    my application and any document submitted with it were
+                    provided or authorized by me, that I reviewed and understand
+                    all of the information contained in, and submitted with, my
+                    application and that all of this information is complete, true, and
+                    correct.</b>
+            </div><br>
+            <div class="bg-info">
+                <h4><b><i>Applicant's Signature</i></b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">6.a. Applicant's Signature</label>
+                <div class="col-md-12">
+                    <input type="text" disabled class="form-control" maxlength="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-6">6.b. Date of Signature (mm/dd/yyyy)</label>
+                <div class="col-md-6 ">
+                    <input type="date" class="form-control" name="sponsor_sign_date" value="<?php echo showData('sponsor_sign_date') ?>" />
+                </div>
+            </div>
+            <div><b>NOTE TO ALL APPLICANTS:</b> If you do not completely fill
+                out this application or fail to submit required documents listed
+                in the Instructions, USCIS may deny your application.</div> <br>
+            <div class="bg-info">
+                <h4><b>Part 7. Interpreter's Contact Information, Certification, and Signature</b></h4>
+            </div> <br>
+            <div><b>Provide the following information about the interpreter.</b></div><br>
+            <div class="bg-info">
+                <h4><b><i>Interpreter's Full Name</i></b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">1.a. Interpreter's Family Name (Last Name)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control  " name="i_864_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_864_interpreter_family_last_name') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">1.b. Interpreter's Given Name (First Name)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control  " name="i_864_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_864_interpreter_given_first_name') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">2. Interpreter's Business or Organization Name (if any)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="i_864_interpreter_business_name" maxlength="39" value="<?php echo showData('i_864_interpreter_business_name') ?>">
+                </div>
+            </div>
+
+        </div>
+        <!-- left side column end -->
+        <div class="col-md-6">
+            <div class="bg-info">
+                <h4><i><b>Interpreters's Mailing Address </b></i></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.a. Street Number and Name</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864_interpreter_address_street_number') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
+                    <label class="control-label">
+                        <input type="radio" name="i_864_interpreter_address_apt_ste_flr" value="apt" <?php echo (showData('i_864_interpreter_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                        Apt. &nbsp;
+                    </label>
+                    <label class="control-label">
+                        <input type="radio" name="i_864_interpreter_address_apt_ste_flr" value="ste" <?php echo (showData('i_864_interpreter_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                        Ste. &nbsp;
+                    </label>
+                    <label class="control-label">
+                        <input type="radio" name="i_864_interpreter_address_apt_ste_flr" value="flr" <?php echo (showData('i_864_interpreter_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                        Flr.
+                    </label>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" type="text" class="form-control" name="i_864_interpreter_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_864_interpreter_address_apt_ste_flr_value') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.c. City or Town</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_interpreter_address_city_town" maxlength="20" value="<?php echo showData('i_864_interpreter_address_city_town') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.d. State</label>
+                <div class="col-md-7">
+                    <select class="form-control" name="i_864_interpreter_address_state">
+                        <option value=''>Select</option>
+                        <?php
+                        foreach ($allDataCountry as $record) {
+                            if ($record->state_code == showData('i_864_interpreter_address_state')) $selected = "selected";
+                            else $selected = "";
+                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.e. ZIP Code</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_interpreter_address_zip_code" maxlength="5" value="<?php echo showData('i_864_interpreter_address_zip_code') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.f. Province</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_interpreter_address_province" maxlength="20" value="<?php echo showData('i_864_interpreter_address_province') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.g. Postal Code</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_interpreter_address_postal_code" maxlength="9" value="<?php echo showData('i_864_interpreter_address_postal_code') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3.h. Country</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="i_864_interpreter_address_country" maxlength="39" value="<?php echo showData('i_864_interpreter_address_country') ?>">
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b><i>Interpreter's Contact Information</i></b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">4. Interpreter's Daytime Telephone Number</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control  " name="i_864_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864_interpreter_daytime_tel') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">5. Interpreter's Mobile Telephone Number (if any)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control  " name="i_864_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864_interpreter_mobile') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">6. Interpreter's Email Address (if any)</label>
+                <div class="col-md-12">
+                    <input type="email" class="form-control  " name="i_864_interpreter_email" maxlength="38" value="<?php echo showData('i_864_interpreter_email') ?>">
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><i><b>Interpreter's Certification</b></i></h4>
+            </div>
+            <p>I certify, under penalty of perjury, that:</p>
+            <div class="form-group" style="display:flex;  align-items: center;">
+                <p>I am fluent in English and</p>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_interpreter_fluent_in_english" maxlength="23" value="<?php echo showData('i_864_interpreter_fluent_in_english') ?>">
+                </div>
+            </div>
+            <div>which is the same language specified in Part 6., Item Number
+                1.b., and I have read to this applicant in the identified language
+                every question and instruction on this application and his or her
+                answer to every question. The applicant informed me that he or
+                she understands every instruction, question, and answer on the
+                application, including the Applicant's Declaration and
+                Certification, and has verified the accuracy of every answer.</div>
+            <div class="bg-info">
+                <h4><b>Interpreter's Signature</b> </h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">7.a. Interpreter's Signature</label>
                 <div class="col-md-12">
                     <input type="text" class="form-control" disabled />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">Date of Signature (mm/dd/yyyy)</label>
+                <label class="control-label col-md-12">7.b. Date of Signature (mm/dd/yyyy)</label>
                 <div class="col-md-7 col-md-offset-5">
-                    <input type="date" class="form-control" name="i_290b_preparer_sign_date" value="<?php echo showData('i_290b_preparer_sign_date') ?>">
+                    <input type="date" class="form-control" name="i_864_interpreter_sign_date" value="<?php echo showData('i_864_interpreter_sign_date') ?>" />
                 </div>
             </div>
         </div>
-
+        <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
------------------------- page 5 -------------------------
+------------------------ page 8 -------------------------
 --------------------------------------------------------->
 <fieldset class="setpage">
-    <p style="text-align:right; margin-right:15px"><b>Page 5 of 5</b></p>
+    <p style="text-align: right; margin-right: 15px;"><b>Page 8 of 9</b></p>
     <div class="row">
         <div class="col-md-6">
             <div class="bg-info">
-                <h4><b>Part 7. Additional Information</b> </h4>
+                <h4><b>Part 8. Contact Information, Declaration, and
+                        Signature of the Person Preparing this
+                        Application, if Other Than the Applicant
+                    </b>
+                </h4>
+            </div>
+            <h5><b>Provide the following information about the preparer</b></h5>
+            <div class="bg-info">
+                <h4><b>Preparer's Full Name</b> </h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">1.a. Preparer's Family Name (Last Name)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="i_864_preparer_family_last_name" maxlength="39" value="<?php echo showData('i_864_preparer_family_last_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">1.b. Preparer's Given Name (First Name)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="i_864_preparer_given_first_name" maxlength="39" value="<?php echo showData('i_864_preparer_given_first_name') ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">2. Preparer's Business or Organization Name (if any)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="i_864_preparer_business_name" maxlength="34" value="<?php echo showData('i_864_preparer_business_name') ?>" />
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b>Preparer's Mailing Address</b> </h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.a. Street Number and Name</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_preparer_address_street_number" maxlength="25" value="<?php echo showData('i_864_preparer_address_street_number') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
+                    <input type="radio" name="i_864_preparer_address_apt_ste_flr" value="apt" <?php echo (showData('i_864_preparer_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                    Apt. &nbsp;
+                    <input type="radio" name="i_864_preparer_address_apt_ste_flr" value="ste" <?php echo (showData('i_864_preparer_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                    Ste. &nbsp;
+                    <input type="radio" name="i_864_preparer_address_apt_ste_flr" value="flr" <?php echo (showData('i_864_preparer_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                    Flr.:
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" type="text" class="form-control" name="i_864_preparer_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_864_preparer_address_apt_ste_flr_value') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.c. City or Town</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_preparer_address_city_town" maxlength="20" value="<?php echo showData('i_864_preparer_address_city_town') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.d. State</label>
+                <div class="col-md-7">
+                    <select class="form-control" name="i_864_preparer_address_state">
+                        <option style="" value=''>Select</option>
+                        <?php
+                        foreach ($allDataCountry as $record) {
+                            if ($record->state_code == showData('i_864_preparer_address_state')) $selected = "selected";
+                            else $selected = "";
+                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.e. ZIP Code</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_preparer_address_zip_code" maxlength="5" value="<?php echo showData('i_864_preparer_address_zip_code') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.f. Province</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_preparer_address_province" maxlength="20" value="<?php echo showData('i_864_preparer_address_province') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-5">3.g. Postal Code</label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_preparer_address_postal_code" maxlength="9" value="<?php echo showData('i_864_preparer_address_postal_code') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3.h. Country</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="i_864_preparer_address_country" maxlength="39" value="<?php echo showData('i_864_preparer_address_country') ?>">
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b> Preparer's Contact Information</b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">4. Preparer's Daytime Telephone Number</label>
+                <div class="col-md-12">
+                    <input type="number" class="form-control" name="i_864_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864_preparer_daytime_tel') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">5. Preparer's Mobile Telephone Number (if any)</label>
+                <div class="col-md-12">
+                    <input type="number" class="form-control" name="i_864_preparer_mobile" maxlength="10" value="<?php echo showData('i_864_preparer_mobile') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">6. Preparer's Email Address (if any)</label>
+                <div class="col-md-12">
+                    <input type="email" class="form-control" maxlength="38" name="i_864_preparer_email" value="<?php echo showData('i_864_preparer_email') ?>">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="bg-info">
+                <h4><b>Preparer's Statement</b></h4>
+            </div>
+            <div class="d-flexible" style="padding-bottom:10px;">
+                <label class="control-label col-md-12">7.a. <?php echo createCheckbox("i_864_preparer_not_attorney_status") ?> I am not an attorney or accredited representative but
+                    have prepared this application on behalf of the applicant and with the applicant's consent.</label>
+            </div>
+            <div class="d-flexible" style="padding-bottom:10px;">
+                <div>
+                    <label class="control-label col-md-12">7.b. <?php echo createCheckbox("i_864_preparer_an_attorney_status") ?>
+                        I am an attorney or accredited representative and my
+                        representation of the applicant in this case extends/
+                        does not extend beyond the preparation of this
+                        application.</label>
+                </div>
+            </div>
+            <p><b>NOTE:</b> If you are an attorney or accredited
+                representative, you may need to submit a completed
+                Form G-28, Notice of Entry of Appearance as
+                Attorney or Accredited Representative, with this
+                application.</p>
+            <div class="bg-info">
+                <h4><b>Preparer's Certification</b></h4>
+            </div>
+            <p>By my signature, I certify, under penalty of perjury, that I
+                prepared this application at the request of the applicant. The
+                applicant then reviewed this completed application and informed
+                me that he or she understands all of the information contained
+                in, and submitted with, his or her application, including the
+                <b>Applicant's Declaration and Certification</b>, and that all of this
+                information is complete, true, and correct. I completed this
+                application based only on information that the applicant
+                provided to me or authorized me to obtain or use.
+
+            </p>
+            <div class="bg-info">
+                <h4><b>Preparer's Signature</b> </h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">8.a. Preparer's Signature (sign in ink) </label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" disabled />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">8.b. Date of Signature (mm/dd/yyyy)</label>
+                <div class="col-md-7 col-md-offset-5">
+                    <input type="date" class="form-control" name="i_864_preparer_sign_date" value="<?php echo showData('i_864_preparer_sign_date') ?>">
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
+<!-------------------------------------------------------
+------------------------ page 9 -------------------------
+--------------------------------------------------------->
+<fieldset class="setpage">
+    <p style="text-align:right; margin-right:15px"><b>Page 9 of 9</b></p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="bg-info">
+                <h4><b>Part 9. Additional Information</b> </h4>
             </div>
             <p>If you need extra space to provide any additional information
                 within this form, use the space below. If you need more space
