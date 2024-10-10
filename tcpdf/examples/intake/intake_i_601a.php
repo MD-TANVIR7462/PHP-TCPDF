@@ -22,7 +22,7 @@ include "intake_header.php";
         </thead>
         <tbody>
             <tr>
-                <td style="padding: 5px"><label class="control-label"><?php echo createCheckbox("i_290b_g_28_box") ?> Fill in box if G-28 is attached to represent the applicant.</label></td>
+                <td style="padding: 5px"><label class="control-label"><?php echo createCheckbox("i_601a_g_28_box") ?> Fill in box if G-28 is attached to represent the applicant.</label></td>
                 <td style="padding: 5px">
                     <p>Attorney State Bar Number (if applicable)</p><input type="text" class="form-control" maxlength="22" style="margin-top:30px" value="<?php echo $attorneyData->bar_number ?>">
                 </td>
@@ -33,10 +33,8 @@ include "intake_header.php";
         </tbody>
     </table> -->
 
-<!-- <fieldset class="setpage">
-    <p style="text-align: right"><b>Page 1 of 5</b></p>
-
-    <h5><b>Please visit <a href="https://www.uscis.gov/administrative-appeals/appeals-of-denied-petitions-under-the-jurisdiction-of-the-administrative-appeals-office-aao-by-form">www.uscis.gov/i-290b/jurisdiction</a> for information on the immigration benefit types that are eligible for an appeal or motion using this form.</b></h5>
+<fieldset class="setpage">
+    <p style="text-align: right"><b>Page 1 of 9</b></p>
     <div class="row">
         <div class="col-md-6">
             <div class="bg-info" style="margin-top:10px;">
@@ -44,20 +42,20 @@ include "intake_header.php";
             </div>
             <h5>Provide the following information about yourself</h5>
             <div class="form-group">
-                <label class="control-label col-md-5">1. Alien Registration Number (A-Number) (if any)</label>
-                <div class="col-md-7">
+                <label class="control-label col-md-12">1. Alien Registration Number (A-Number) (if any)</label>
+                <div class="col-md-7 col-md-offset-5">
                     <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">2. U.S. Social Security Number (if any)</label>
-                <div class="col-md-7">
+                <label class="control-label col-md-12">2. U.S. Social Security Number (if any)</label>
+                <div class="col-md-7 col-md-offset-5">
                     <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">3. USCIS Online Account Number (if any)</label>
-                <div class="col-md-7">
+                <label class="control-label col-md-12">3. USCIS Online Account Number (if any)</label>
+                <div class="col-md-8 col-md-offset-4 ">
                     <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
                 </div>
             </div>
@@ -123,11 +121,6 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
-
-
-
-
-
         <div class="col-md-6">
             <div class="bg-info">
                 <h4><b><i>Your U.S. Mailing Address</i></b></h4>
@@ -191,7 +184,7 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12" style="font-size: 12px;">8. Is your current physical address the same as your mailing
+                <label class="control-label col-md-12">8. Is your current physical address the same as your mailing
                     address?</label>
                 <div class="col-md-5 col-md-offset-4">
                     <?php echo createRadio("i_589_include_child_in_application") ?>
@@ -273,27 +266,21 @@ include "intake_header.php";
                 </div>
             </div>
             <div class="form-group">
-                <label class=" col-md-5">11. ZIP Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="petitioner_us_mailing_zip_code" maxlength="5" value="<?php echo showData('petitioner_us_mailing_zip_code') ?>">
+                <label class=" col-md-12">11. Date of Birth (mm/dd/yyyy)</label>
+                <div class="col-md-7 col-md-offset-5">
+                    <input type="date" class="form-control" name="petitioner_us_mailing_zip_code" maxlength="5" value="<?php echo showData('petitioner_us_mailing_zip_code') ?>">
                 </div>
             </div>
         </div>
-
-
-
-
-
-
     </div>
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
-    <p style=" text-align: right; margin-right: 15px;""><b>Page 2 of 5</b></p>
+<fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;""><b>Page 2 of 9</b></p>
     <div class=" row">
     <div class="col-md-6">
         <div class="bg-info">
@@ -524,15 +511,15 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ----------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
-    <p style=" text-align: right; margin-right: 15px;""><b>Page 3 of 5</b></p>
+<fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;""><b>Page 3 of 9</b></p>
     <div class=" row">
     <div class="col-md-6">
-            <div class="bg-info">
+        <div class="bg-info">
             <h4><b>Part 1. Information About You (continued)</b></h4>
         </div>
         <div>
@@ -711,12 +698,12 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
 ----------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
-    <p style=" text-align: right; margin-right: 15px;""><b>Page 4 of 5</b></p>
+<fieldset class="setpage">
+    <p style=" text-align: right; margin-right: 15px;""><b>Page 4 of 9</b></p>
     <div class=" row">
     <div class="col-md-6">
         <div class="bg-info">
@@ -985,12 +972,12 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
 ----------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 8</b></p>
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 9</b></p>
     <div class="row">
         <div class="col-md-6">
             <div class="bg-info">
@@ -1030,28 +1017,28 @@ include "intake_header.php";
             </p>
             <div class="form-group">
                 <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>1.a. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status2") ?>I can read and understand English, and I have read
+                    <p class="d-flexible"><b>1.a. </b> <?php echo createCheckbox("i_601aa_i_can_read_understand_english_status2") ?>I can read and understand English, and I have read
                         and understand every question and instruction on this
                         application and my answer to every question.</p>
                 </label>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>1.b. </b> <?php echo createCheckbox("i_864a_the_interpreter_name_status") ?>The interpreter named in Part 7. read to me every
+                    <p class="d-flexible"><b>1.b. </b> <?php echo createCheckbox("i_601aa_the_interpreter_name_status") ?>The interpreter named in Part 7. read to me every
                         question and instruction on this application and my
                         answer to every question in </p>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_name_in2" maxlength="28" value="<?php echo showData('i_864a_the_interpreter_name_in2') ?>"><b>a language in which I am fluent, and I understood
+                    <input type="text" class="form-control" name="i_601aa_the_interpreter_name_in2" maxlength="28" value="<?php echo showData('i_601aa_the_interpreter_name_in2') ?>"><b>a language in which I am fluent, and I understood
                         everything. </b>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>2. </b> <?php echo createCheckbox("i_864a_the_preparer_named_in2_status") ?> At my request, the preparer named in Part 8.,</p>
+                    <p class="d-flexible"><b>2. </b> <?php echo createCheckbox("i_601aa_the_preparer_named_in2_status") ?> At my request, the preparer named in Part 8.,</p>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_864a_the_preparer_named_in2" maxlength="28" value="<?php echo showData('i_864a_the_preparer_named_in2') ?>"><b>prepared this contract for me based only upon
+                    <input type="text" class="form-control" name="i_601aa_the_preparer_named_in2" maxlength="28" value="<?php echo showData('i_601aa_the_preparer_named_in2') ?>"><b>prepared this contract for me based only upon
                         information I provided or authorized.</b>
                 </div>
             </div>
@@ -1062,20 +1049,20 @@ include "intake_header.php";
                 <label class="control-label col-md-12">3. Applicant's Daytime Telephone Number
                     Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864a_household_member_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_household_member_daytime_tel') ?>">
+                    <input type="text" class="form-control  " name="i_601aa_household_member_daytime_tel" maxlength="10" value="<?php echo showData('i_601aa_household_member_daytime_tel') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">4. Applicant's Mobile Telephone Number (if any)
                     Number (if any)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_household_member_mobile" maxlength="10" value="<?php echo showData('i_864a_household_member_mobile') ?>">
+                    <input type="text" class="form-control" name="i_601aa_household_member_mobile" maxlength="10" value="<?php echo showData('i_601aa_household_member_mobile') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">5. Applicant's Email Address (if any)</label>
                 <div class="col-md-12">
-                    <input type="email" class="form-control" name="i_864a_household_member_email" maxlength="41" value="<?php echo showData('i_864a_household_member_email') ?>">
+                    <input type="email" class="form-control" name="i_601aa_household_member_email" maxlength="41" value="<?php echo showData('i_601aa_household_member_email') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -1101,14 +1088,13 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!---------------------------------------------------------
 -------------------------------- page 6--------------------
 ----------------------------------------------------------->
 <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 8</b></p>
+    <p style="text-align: right; margin-right: 15px;"><b>Page 6 of 9</b></p>
     <div class="row">
-        <!-- Part 3. Information About Your Immigrant Visa Case -->
         <div class="col-md-6">
             <div class="bg-info">
                 <h4><b>Part 3. Information About Your Immigrant Visa Case</b></h4>
@@ -1281,7 +1267,7 @@ include "intake_header.php";
                     With Form I-601A section of the Instructions.</label>
             </div>
             <div class="bg-info">
-                <h4><b>Additional Qualifying Relative's Full Name and  Relationship to You</b></h4>
+                <h4><b>Additional Qualifying Relative's Full Name and Relationship to You</b></h4>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">4.a. Family Name (Last Name)</label>
@@ -1321,12 +1307,9 @@ include "intake_header.php";
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
-
-
 <!----------------------------------------------------------------------
 -------------------------------- page 7--------------------------------
 ------------------------------------------------------------------------>
-
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 7 of 9</b></p>
     <div class="row">
@@ -1385,19 +1368,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">1.a. Interpreter's Family Name (Last Name)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_864_interpreter_family_last_name') ?>">
+                    <input type="text" class="form-control  " name="i_601a_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_601a_interpreter_family_last_name') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">1.b. Interpreter's Given Name (First Name)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_864_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control  " name="i_601a_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_601a_interpreter_given_first_name') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">2. Interpreter's Business or Organization Name (if any)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_interpreter_business_name" maxlength="39" value="<?php echo showData('i_864_interpreter_business_name') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_business_name" maxlength="39" value="<?php echo showData('i_601a_interpreter_business_name') ?>">
                 </div>
             </div>
 
@@ -1410,42 +1393,42 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">3.a. Street Number and Name</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864_interpreter_address_street_number') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_601a_interpreter_address_street_number') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
                     <label class="control-label">
-                        <input type="radio" name="i_864_interpreter_address_apt_ste_flr" value="apt" <?php echo (showData('i_864_interpreter_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                        <input type="radio" name="i_601a_interpreter_address_apt_ste_flr" value="apt" <?php echo (showData('i_601a_interpreter_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
                         Apt. &nbsp;
                     </label>
                     <label class="control-label">
-                        <input type="radio" name="i_864_interpreter_address_apt_ste_flr" value="ste" <?php echo (showData('i_864_interpreter_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                        <input type="radio" name="i_601a_interpreter_address_apt_ste_flr" value="ste" <?php echo (showData('i_601a_interpreter_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
                         Ste. &nbsp;
                     </label>
                     <label class="control-label">
-                        <input type="radio" name="i_864_interpreter_address_apt_ste_flr" value="flr" <?php echo (showData('i_864_interpreter_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                        <input type="radio" name="i_601a_interpreter_address_apt_ste_flr" value="flr" <?php echo (showData('i_601a_interpreter_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
                         Flr.
                     </label>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" type="text" class="form-control" name="i_864_interpreter_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_864_interpreter_address_apt_ste_flr_value') ?>">
+                    <input type="text" class="form-control" type="text" class="form-control" name="i_601a_interpreter_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_601a_interpreter_address_apt_ste_flr_value') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.c. City or Town</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_city_town" maxlength="20" value="<?php echo showData('i_864_interpreter_address_city_town') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_address_city_town" maxlength="20" value="<?php echo showData('i_601a_interpreter_address_city_town') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.d. State</label>
                 <div class="col-md-7">
-                    <select class="form-control" name="i_864_interpreter_address_state">
+                    <select class="form-control" name="i_601a_interpreter_address_state">
                         <option value=''>Select</option>
                         <?php
                         foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('i_864_interpreter_address_state')) $selected = "selected";
+                            if ($record->state_code == showData('i_601a_interpreter_address_state')) $selected = "selected";
                             else $selected = "";
                             echo "<option value='$record->state_code' $selected>$record->state_code</option>";
                         }
@@ -1456,25 +1439,25 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">3.e. ZIP Code</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_zip_code" maxlength="5" value="<?php echo showData('i_864_interpreter_address_zip_code') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_address_zip_code" maxlength="5" value="<?php echo showData('i_601a_interpreter_address_zip_code') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.f. Province</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_province" maxlength="20" value="<?php echo showData('i_864_interpreter_address_province') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_address_province" maxlength="20" value="<?php echo showData('i_601a_interpreter_address_province') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.g. Postal Code</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_postal_code" maxlength="9" value="<?php echo showData('i_864_interpreter_address_postal_code') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_address_postal_code" maxlength="9" value="<?php echo showData('i_601a_interpreter_address_postal_code') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">3.h. Country</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_country" maxlength="39" value="<?php echo showData('i_864_interpreter_address_country') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_address_country" maxlength="39" value="<?php echo showData('i_601a_interpreter_address_country') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -1483,19 +1466,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">4. Interpreter's Daytime Telephone Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864_interpreter_daytime_tel') ?>">
+                    <input type="text" class="form-control  " name="i_601a_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_601a_interpreter_daytime_tel') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">5. Interpreter's Mobile Telephone Number (if any)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864_interpreter_mobile') ?>">
+                    <input type="text" class="form-control  " name="i_601a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_601a_interpreter_mobile') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">6. Interpreter's Email Address (if any)</label>
                 <div class="col-md-12">
-                    <input type="email" class="form-control  " name="i_864_interpreter_email" maxlength="38" value="<?php echo showData('i_864_interpreter_email') ?>">
+                    <input type="email" class="form-control  " name="i_601a_interpreter_email" maxlength="38" value="<?php echo showData('i_601a_interpreter_email') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -1505,7 +1488,7 @@ include "intake_header.php";
             <div class="form-group" style="display:flex;  align-items: center;">
                 <p>I am fluent in English and</p>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_fluent_in_english" maxlength="23" value="<?php echo showData('i_864_interpreter_fluent_in_english') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_fluent_in_english" maxlength="23" value="<?php echo showData('i_601a_interpreter_fluent_in_english') ?>">
                 </div>
             </div>
             <div>which is the same language specified in Part 6., Item Number
@@ -1527,7 +1510,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">7.b. Date of Signature (mm/dd/yyyy)</label>
                 <div class="col-md-7 col-md-offset-5">
-                    <input type="date" class="form-control" name="i_864_interpreter_sign_date" value="<?php echo showData('i_864_interpreter_sign_date') ?>" />
+                    <input type="date" class="form-control" name="i_601a_interpreter_sign_date" value="<?php echo showData('i_601a_interpreter_sign_date') ?>" />
                 </div>
             </div>
         </div>
@@ -1558,19 +1541,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">1.a. Preparer's Family Name (Last Name)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_preparer_family_last_name" maxlength="39" value="<?php echo showData('i_864_preparer_family_last_name') ?>" />
+                    <input type="text" class="form-control" name="i_601a_preparer_family_last_name" maxlength="39" value="<?php echo showData('i_601a_preparer_family_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">1.b. Preparer's Given Name (First Name)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_preparer_given_first_name" maxlength="39" value="<?php echo showData('i_864_preparer_given_first_name') ?>" />
+                    <input type="text" class="form-control" name="i_601a_preparer_given_first_name" maxlength="39" value="<?php echo showData('i_601a_preparer_given_first_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">2. Preparer's Business or Organization Name (if any)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_preparer_business_name" maxlength="34" value="<?php echo showData('i_864_preparer_business_name') ?>" />
+                    <input type="text" class="form-control" name="i_601a_preparer_business_name" maxlength="34" value="<?php echo showData('i_601a_preparer_business_name') ?>" />
                 </div>
             </div>
             <div class="bg-info">
@@ -1579,36 +1562,36 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">3.a. Street Number and Name</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_preparer_address_street_number" maxlength="25" value="<?php echo showData('i_864_preparer_address_street_number') ?>">
+                    <input type="text" class="form-control" name="i_601a_preparer_address_street_number" maxlength="25" value="<?php echo showData('i_601a_preparer_address_street_number') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
-                    <input type="radio" name="i_864_preparer_address_apt_ste_flr" value="apt" <?php echo (showData('i_864_preparer_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                    <input type="radio" name="i_601a_preparer_address_apt_ste_flr" value="apt" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
                     Apt. &nbsp;
-                    <input type="radio" name="i_864_preparer_address_apt_ste_flr" value="ste" <?php echo (showData('i_864_preparer_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                    <input type="radio" name="i_601a_preparer_address_apt_ste_flr" value="ste" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
                     Ste. &nbsp;
-                    <input type="radio" name="i_864_preparer_address_apt_ste_flr" value="flr" <?php echo (showData('i_864_preparer_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                    <input type="radio" name="i_601a_preparer_address_apt_ste_flr" value="flr" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
                     Flr.:
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" type="text" class="form-control" name="i_864_preparer_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_864_preparer_address_apt_ste_flr_value') ?>">
+                    <input type="text" class="form-control" type="text" class="form-control" name="i_601a_preparer_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_601a_preparer_address_apt_ste_flr_value') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.c. City or Town</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_preparer_address_city_town" maxlength="20" value="<?php echo showData('i_864_preparer_address_city_town') ?>">
+                    <input type="text" class="form-control" name="i_601a_preparer_address_city_town" maxlength="20" value="<?php echo showData('i_601a_preparer_address_city_town') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.d. State</label>
                 <div class="col-md-7">
-                    <select class="form-control" name="i_864_preparer_address_state">
+                    <select class="form-control" name="i_601a_preparer_address_state">
                         <option style="" value=''>Select</option>
                         <?php
                         foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('i_864_preparer_address_state')) $selected = "selected";
+                            if ($record->state_code == showData('i_601a_preparer_address_state')) $selected = "selected";
                             else $selected = "";
                             echo "<option value='$record->state_code' $selected>$record->state_code</option>";
                         }
@@ -1619,25 +1602,25 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">3.e. ZIP Code</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_preparer_address_zip_code" maxlength="5" value="<?php echo showData('i_864_preparer_address_zip_code') ?>">
+                    <input type="text" class="form-control" name="i_601a_preparer_address_zip_code" maxlength="5" value="<?php echo showData('i_601a_preparer_address_zip_code') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.f. Province</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_preparer_address_province" maxlength="20" value="<?php echo showData('i_864_preparer_address_province') ?>">
+                    <input type="text" class="form-control" name="i_601a_preparer_address_province" maxlength="20" value="<?php echo showData('i_601a_preparer_address_province') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.g. Postal Code</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_preparer_address_postal_code" maxlength="9" value="<?php echo showData('i_864_preparer_address_postal_code') ?>">
+                    <input type="text" class="form-control" name="i_601a_preparer_address_postal_code" maxlength="9" value="<?php echo showData('i_601a_preparer_address_postal_code') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">3.h. Country</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_preparer_address_country" maxlength="39" value="<?php echo showData('i_864_preparer_address_country') ?>">
+                    <input type="text" class="form-control" name="i_601a_preparer_address_country" maxlength="39" value="<?php echo showData('i_601a_preparer_address_country') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -1646,19 +1629,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">4. Preparer's Daytime Telephone Number</label>
                 <div class="col-md-12">
-                    <input type="number" class="form-control" name="i_864_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864_preparer_daytime_tel') ?>">
+                    <input type="number" class="form-control" name="i_601a_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_601a_preparer_daytime_tel') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">5. Preparer's Mobile Telephone Number (if any)</label>
                 <div class="col-md-12">
-                    <input type="number" class="form-control" name="i_864_preparer_mobile" maxlength="10" value="<?php echo showData('i_864_preparer_mobile') ?>">
+                    <input type="number" class="form-control" name="i_601a_preparer_mobile" maxlength="10" value="<?php echo showData('i_601a_preparer_mobile') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">6. Preparer's Email Address (if any)</label>
                 <div class="col-md-12">
-                    <input type="email" class="form-control" maxlength="38" name="i_864_preparer_email" value="<?php echo showData('i_864_preparer_email') ?>">
+                    <input type="email" class="form-control" maxlength="38" name="i_601a_preparer_email" value="<?php echo showData('i_601a_preparer_email') ?>">
                 </div>
             </div>
         </div>
@@ -1667,12 +1650,12 @@ include "intake_header.php";
                 <h4><b>Preparer's Statement</b></h4>
             </div>
             <div class="d-flexible" style="padding-bottom:10px;">
-                <label class="control-label col-md-12">7.a. <?php echo createCheckbox("i_864_preparer_not_attorney_status") ?> I am not an attorney or accredited representative but
+                <label class="control-label col-md-12">7.a. <?php echo createCheckbox("i_601a_preparer_not_attorney_status") ?> I am not an attorney or accredited representative but
                     have prepared this application on behalf of the applicant and with the applicant's consent.</label>
             </div>
             <div class="d-flexible" style="padding-bottom:10px;">
                 <div>
-                    <label class="control-label col-md-12">7.b. <?php echo createCheckbox("i_864_preparer_an_attorney_status") ?>
+                    <label class="control-label col-md-12">7.b. <?php echo createCheckbox("i_601a_preparer_an_attorney_status") ?>
                         I am an attorney or accredited representative and my
                         representation of the applicant in this case extends/
                         does not extend beyond the preparation of this
@@ -1710,7 +1693,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">8.b. Date of Signature (mm/dd/yyyy)</label>
                 <div class="col-md-7 col-md-offset-5">
-                    <input type="date" class="form-control" name="i_864_preparer_sign_date" value="<?php echo showData('i_864_preparer_sign_date') ?>">
+                    <input type="date" class="form-control" name="i_601a_preparer_sign_date" value="<?php echo showData('i_601a_preparer_sign_date') ?>">
                 </div>
             </div>
         </div>
@@ -1742,26 +1725,26 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">1.a. Family Name(Last Name) </label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" maxlength="29" name="i_290b_additional_info_last_name" value="<?php echo showData('i_290b_additional_info_last_name') ?>" />
+                    <input type="text" class="form-control" maxlength="29" name="i_601a_additional_info_last_name" value="<?php echo showData('i_601a_additional_info_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">1.b. Given Name(First Name) </label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" maxlength="29" name="i_290b_additional_info_first_name" value="<?php echo showData('i_290b_additional_info_first_name') ?>" />
+                    <input type="text" class="form-control" maxlength="29" name="i_601a_additional_info_first_name" value="<?php echo showData('i_601a_additional_info_first_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">1.c. Middle Name </label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" maxlength="29" name="i_290b_additional_info_middle_name" value="<?php echo showData('i_290b_additional_info_middle_name') ?>" />
+                    <input type="text" class="form-control" maxlength="29" name="i_601a_additional_info_middle_name" value="<?php echo showData('i_601a_additional_info_middle_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">2. A-Number (if any)</label>
                 <div class="col-md-6 col-md-offset-6">
                     <div class="d-flexible">
-                        <b>►A-</b><input type="text" maxlength="9" class="form-control" name="i_290b_additional_info_a_number" value="<?php echo showData('i_290b_additional_info_a_number') ?>">
+                        <b>►A-</b><input type="text" maxlength="9" class="form-control" name="i_601a_additional_info_a_number" value="<?php echo showData('i_601a_additional_info_a_number') ?>">
                     </div>
                 </div>
             </div>
@@ -1769,52 +1752,52 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-12">3.a. Page Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_290b_additional_info_3a_page_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_601a_additional_info_3a_page_no') ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-12">3.b. Part Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_290b_additional_info_3b_part_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_601a_additional_info_3b_part_no') ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-12">3.c. Item Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_290b_additional_info_3c_item_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_601a_additional_info_3c_item_no') ?>">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
                     <b>3.d.</b>
-                    <textarea name="i_290b_additional_info_3d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_290b_additional_info_3d') ?></textarea>
+                    <textarea name="i_601a_additional_info_3d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_601a_additional_info_3d') ?></textarea>
                 </div>
             </div>
             <div class="d-flexible">
                 <div class="form-group">
                     <label class="control-label col-md-12">4.a. Page Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_4a_page_no" maxlength="2" value="<?php echo showData('i_290b_additional_info_4a_page_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_4a_page_no" maxlength="2" value="<?php echo showData('i_601a_additional_info_4a_page_no') ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-12">4.b. Part Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_4b_part_no" maxlength="6" value="<?php echo showData('i_290b_additional_info_4b_part_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_4b_part_no" maxlength="6" value="<?php echo showData('i_601a_additional_info_4b_part_no') ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-12">4.c. Item Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_4c_item_no" maxlength="6" value="<?php echo showData('i_290b_additional_info_4c_item_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_4c_item_no" maxlength="6" value="<?php echo showData('i_601a_additional_info_4c_item_no') ?>">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
                     <b>4.d.</b>
-                    <textarea name="i_290b_additional_info_4d" maxlength="343" class="form-control" cols="30" rows="10"><?php echo showData('i_290b_additional_info_4d') ?></textarea>
+                    <textarea name="i_601a_additional_info_4d" maxlength="343" class="form-control" cols="30" rows="10"><?php echo showData('i_601a_additional_info_4d') ?></textarea>
                 </div>
             </div>
         </div>
@@ -1824,78 +1807,78 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-12">5.a. Page Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_5a_page_no" maxlength="2" value="<?php echo showData('i_290b_additional_info_5a_page_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_5a_page_no" maxlength="2" value="<?php echo showData('i_601a_additional_info_5a_page_no') ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-12">5.b. Part Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_5b_part_no" maxlength="6" value="<?php echo showData('i_290b_additional_info_5b_part_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_5b_part_no" maxlength="6" value="<?php echo showData('i_601a_additional_info_5b_part_no') ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-12">5.c. Item Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_5c_item_no" maxlength="6" value="<?php echo showData('i_290b_additional_info_5c_item_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_5c_item_no" maxlength="6" value="<?php echo showData('i_601a_additional_info_5c_item_no') ?>">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
                     <b>5.d.</b>
-                    <textarea name="i_290b_additional_info_5d" class="form-control" maxlength="305" cols="30" rows="10"><?php echo showData('i_290b_additional_info_5d') ?></textarea>
+                    <textarea name="i_601a_additional_info_5d" class="form-control" maxlength="305" cols="30" rows="10"><?php echo showData('i_601a_additional_info_5d') ?></textarea>
                 </div>
             </div>
             <div class="d-flexible">
                 <div class="form-group">
                     <label class="control-label col-md-12">6.a. Page Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_6a_page_no" maxlength="2" value="<?php echo showData('i_290b_additional_info_6a_page_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_6a_page_no" maxlength="2" value="<?php echo showData('i_601a_additional_info_6a_page_no') ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-12">6.b. Part Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_6b_part_no" maxlength="6" value="<?php echo showData('i_290b_additional_info_6b_part_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_6b_part_no" maxlength="6" value="<?php echo showData('i_601a_additional_info_6b_part_no') ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-12">6.c. Item Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_6c_item_no" maxlength="6" value="<?php echo showData('i_290b_additional_info_6c_item_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_6c_item_no" maxlength="6" value="<?php echo showData('i_601a_additional_info_6c_item_no') ?>">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
                     <b>6.d.</b>
-                    <textarea name="i_290b_additional_info_6d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_290b_additional_info_6d') ?></textarea>
+                    <textarea name="i_601a_additional_info_6d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_601a_additional_info_6d') ?></textarea>
                 </div>
             </div>
             <div class="d-flexible">
                 <div class="form-group">
                     <label class="control-label col-md-12">7.a. Page Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_7a_page_no" maxlength="2" value="<?php echo showData('i_290b_additional_info_7a_page_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_7a_page_no" maxlength="2" value="<?php echo showData('i_601a_additional_info_7a_page_no') ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-12">7.b. Part Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_7b_part_no" maxlength="6" value="<?php echo showData('i_290b_additional_info_7b_part_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_7b_part_no" maxlength="6" value="<?php echo showData('i_601a_additional_info_7b_part_no') ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-12">7.c. Item Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_290b_additional_info_7c_item_no" maxlength="6" value="<?php echo showData('i_290b_additional_info_7c_item_no') ?>">
+                        <input type="text" class="form-control" name="i_601a_additional_info_7c_item_no" maxlength="6" value="<?php echo showData('i_601a_additional_info_7c_item_no') ?>">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
                     <b>7.d.</b>
-                    <textarea class="form-control" name="i_290b_additional_info_7d" maxlength="305" class="form-control" cols="30" rows="10"><?php echo showData('i_290b_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_601a_additional_info_7d" maxlength="305" class="form-control" cols="30" rows="10"><?php echo showData('i_601a_additional_info_7d') ?></textarea>
                 </div>
             </div>
         </div>
