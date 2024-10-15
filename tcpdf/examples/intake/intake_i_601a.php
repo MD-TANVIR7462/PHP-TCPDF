@@ -570,7 +570,7 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12"><span class="mr-question">29.b.</span> USCIS Receipt Number for Your Approved Form I-212:</label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="38" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="13" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
             </div>
         </div>
         <div class="form-group">
@@ -978,122 +978,6 @@ include "intake_header.php";
     <div class="row">
         <div class="col-md-6">
             <div class="bg-info">
-                <h4><b>Part 5. Statement From Applicant</b></h4>
-            </div>
-            <p class="form-group">
-                <b>
-                    In the space provided, explain in detail why you believe USCIS
-                    should approve your application for a provisional unlawful
-                    presence waiver as a matter of discretion. Provide all of the
-                    reasons you believe support your application for this waiver,
-                    including information about the extreme hardship your
-                    qualifying relatives would experience if you were refused
-                    admission to the United States. If you need extra space to
-                    complete your statement, use the space provided in <b>Part 9.
-                        Additional Information</b>
-                </b>
-            </p>
-            <textarea class="form-control" name="i_290b_additional_info_7d" maxlength="305" class="form-control" cols="30" rows="50"><?php echo showData('i_290b_additional_info_7d') ?></textarea>
-        </div>
-        <div class="col-md-6">
-            <div class="bg-info">
-                <h4><b>Part 6. Applicant's Statement, Contact Information, Declaration, Certification, and Signature</b></h4>
-            </div>
-            <p class="form-group">
-                <span class="d-flexible my-5"><b>NOTE:</b> Read the Penalties section of the Form I-601A
-                    Instructions before completing this section. You must file Form
-                    I-601A while in the United States.
-                </span>
-            </p>
-            <div class="bg-info">
-                <h4><b><i>Applicant's Statement</i></b></h4>
-            </div>
-            <p class="form-group">
-                <b>NOTE:</b> Select the box for either Item Number 1.a. or 1.b. If
-                applicable, select the box for Item Number 2.
-            </p>
-            <div class="form-group">
-                <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>1.a. </b> <?php echo createCheckbox("i_601aa_i_can_read_understand_english_status2") ?>I can read and understand English, and I have read
-                        and understand every question and instruction on this
-                        application and my answer to every question.</p>
-                </label>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>1.b. </b> <?php echo createCheckbox("i_601aa_the_interpreter_name_status") ?>The interpreter named in Part 7. read to me every
-                        question and instruction on this application and my
-                        answer to every question in </p>
-                </label>
-                <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_601aa_the_interpreter_name_in2" maxlength="28" value="<?php echo showData('i_601aa_the_interpreter_name_in2') ?>"><b>a language in which I am fluent, and I understood
-                        everything. </b>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>2. </b> <?php echo createCheckbox("i_601aa_the_preparer_named_in2_status") ?> At my request, the preparer named in Part 8.,</p>
-                </label>
-                <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_601aa_the_preparer_named_in2" maxlength="28" value="<?php echo showData('i_601aa_the_preparer_named_in2') ?>"><b>prepared this contract for me based only upon
-                        information I provided or authorized.</b>
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Applicant's Contact Information</i></b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">3. Applicant's Daytime Telephone Number
-                    Number</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_601aa_household_member_daytime_tel" maxlength="10" value="<?php echo showData('i_601aa_household_member_daytime_tel') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">4. Applicant's Mobile Telephone Number (if any)
-                    Number (if any)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_601aa_household_member_mobile" maxlength="10" value="<?php echo showData('i_601aa_household_member_mobile') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">5. Applicant's Email Address (if any)</label>
-                <div class="col-md-12">
-                    <input type="email" class="form-control" name="i_601aa_household_member_email" maxlength="41" value="<?php echo showData('i_601aa_household_member_email') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Applicant's Declaration and Certification</i></b></h4>
-            </div>
-            <p class="form-group">
-                <b>
-                    Copies of any documents I have submitted are exact photocopies
-                    of unaltered, original documents, and I understand that USCIS
-                    may require that I submit original documents to USCIS at a later
-                    date. Furthermore, I authorize the release of any information
-                    from any and all of my records that USCIS may need to
-                    determine my eligibility for the immigration benefit that I seek. <br><br>
-                    I furthermore authorize release of information contained in this
-                    application, in supporting documents, and in my USCIS
-                    records, to other entities and persons where necessary for the
-                    administration and enforcement of U.S. immigration laws.
-                </b>
-            </p>
-        </div>
-
-    </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
-<!---------------------------------------------------------
--------------------------------- page 6--------------------
------------------------------------------------------------>
-<fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 6 of 9</b></p>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="bg-info">
                 <h4><b>Part 3. Information About Your Immigrant Visa Case</b></h4>
             </div>
             <p style="margin: 5px;">Provide the basis on which you are immigrating to the United States using the check boxes below. (Select <b>only one</b> box)</p>
@@ -1123,7 +1007,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">2.a. DOS DV Case Number (KCC Case Number)</label>
                 <div class="col-md-10 col-md-offset-2">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="14" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
@@ -1131,19 +1015,19 @@ include "intake_header.php";
                     your parent or spouse is the DV Program Selectee)</label>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">2.a. Family Name (Last Name)</label>
+                <label class="control-label col-md-5">2.b. Family Name (Last Name)</label>
                 <div class="col-md-7">
                     <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">2.b. Given Name (First Name)</label>
+                <label class="control-label col-md-5">2.c. Given Name (First Name)</label>
                 <div class="col-md-7">
                     <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5">2.c. Middle Name</label>
+                <label class="control-label col-md-5">2.d. Middle Name</label>
                 <div class="col-md-7">
                     <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
                 </div>
@@ -1161,14 +1045,14 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">3.a. USCIS Receipt Number</label>
                 <div class="col-md-10 col-md-offset-2">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="13" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-md-12">3.b. DOS Consular Case Number (NVC Case Number)</label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="13" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
@@ -1196,7 +1080,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">3.f. Company or Organization Name</label>
                 <div class="col-md-12">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="text" maxlength="34" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
                 </div>
             </div>
         </div>
@@ -1301,6 +1185,122 @@ include "intake_header.php";
 
     <!-- Next and Previous Buttons -->
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset>
+<!---------------------------------------------------------
+-------------------------------- page 6--------------------
+----------------------------------------------------------->
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 6 of 9</b></p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="bg-info">
+                <h4><b>Part 5. Statement From Applicant</b></h4>
+            </div>
+            <p class="form-group">
+                <b>
+                    In the space provided, explain in detail why you believe USCIS
+                    should approve your application for a provisional unlawful
+                    presence waiver as a matter of discretion. Provide all of the
+                    reasons you believe support your application for this waiver,
+                    including information about the extreme hardship your
+                    qualifying relatives would experience if you were refused
+                    admission to the United States. If you need extra space to
+                    complete your statement, use the space provided in <b>Part 9.
+                        Additional Information</b>
+                </b>
+            </p>
+            <textarea class="form-control" name="i_290b_additional_info_7d" maxlength="1100" class="form-control" cols="30" rows="50"><?php echo showData('i_290b_additional_info_7d') ?></textarea>
+        </div>
+        <div class="col-md-6">
+            <div class="bg-info">
+                <h4><b>Part 6. Applicant's Statement, Contact Information, Declaration, Certification, and Signature</b></h4>
+            </div>
+            <p class="form-group">
+                <span class="d-flexible my-5"><b>NOTE:</b> Read the Penalties section of the Form I-601A
+                    Instructions before completing this section. You must file Form
+                    I-601A while in the United States.
+                </span>
+            </p>
+            <div class="bg-info">
+                <h4><b><i>Applicant's Statement</i></b></h4>
+            </div>
+            <p class="form-group">
+                <b>NOTE:</b> Select the box for either Item Number 1.a. or 1.b. If
+                applicable, select the box for Item Number 2.
+            </p>
+            <div class="form-group">
+                <label class="control-label col-md-12">
+                    <p class="d-flexible"><b>1.a. </b> <?php echo createCheckbox("i_601aa_i_can_read_understand_english_status2") ?>I can read and understand English, and I have read
+                        and understand every question and instruction on this
+                        application and my answer to every question.</p>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">
+                    <p class="d-flexible"><b>1.b. </b> <?php echo createCheckbox("i_601aa_the_interpreter_name_status") ?>The interpreter named in Part 7. read to me every
+                        question and instruction on this application and my
+                        answer to every question in </p>
+                </label>
+                <div class="col-md-11 col-md-offset-1">
+                    <input type="text" class="form-control" name="i_601aa_the_interpreter_name_in2" maxlength="25" value="<?php echo showData('i_601aa_the_interpreter_name_in2') ?>"><b>a language in which I am fluent, and I understood
+                        everything. </b>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">
+                    <p class="d-flexible"><b>2. </b> <?php echo createCheckbox("i_601aa_the_preparer_named_in2_status") ?> At my request, the preparer named in Part 8.,</p>
+                </label>
+                <div class="col-md-11 col-md-offset-1">
+                    <input type="text" class="form-control" name="i_601aa_the_preparer_named_in2" maxlength="25" value="<?php echo showData('i_601aa_the_preparer_named_in2') ?>"><b>prepared this contract for me based only upon
+                        information I provided or authorized.</b>
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b><i>Applicant's Contact Information</i></b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3. Applicant's Daytime Telephone Number
+                    Number</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control  " name="i_601aa_household_member_daytime_tel" maxlength="15" value="<?php echo showData('i_601aa_household_member_daytime_tel') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">4. Applicant's Mobile Telephone Number (if any)
+                    Number (if any)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="i_601aa_household_member_mobile" maxlength="15" value="<?php echo showData('i_601aa_household_member_mobile') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">5. Applicant's Email Address (if any)</label>
+                <div class="col-md-12">
+                    <input type="email" class="form-control" name="i_601aa_household_member_email" maxlength="39" value="<?php echo showData('i_601aa_household_member_email') ?>">
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b><i>Applicant's Declaration and Certification</i></b></h4>
+            </div>
+            <p class="form-group">
+                <b>
+                    Copies of any documents I have submitted are exact photocopies
+                    of unaltered, original documents, and I understand that USCIS
+                    may require that I submit original documents to USCIS at a later
+                    date. Furthermore, I authorize the release of any information
+                    from any and all of my records that USCIS may need to
+                    determine my eligibility for the immigration benefit that I seek. <br><br>
+                    I furthermore authorize release of information contained in this
+                    application, in supporting documents, and in my USCIS
+                    records, to other entities and persons where necessary for the
+                    administration and enforcement of U.S. immigration laws.
+                </b>
+            </p>
+        </div>
+
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
@@ -1365,13 +1365,13 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">1.a. Interpreter's Family Name (Last Name)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_601a_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_601a_interpreter_family_last_name') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_601a_interpreter_family_last_name') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">1.b. Interpreter's Given Name (First Name)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_601a_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_601a_interpreter_given_first_name') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_601a_interpreter_given_first_name') ?>">
                 </div>
             </div>
             <div class="form-group">
@@ -1463,19 +1463,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">4. Interpreter's Daytime Telephone Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_601a_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_601a_interpreter_daytime_tel') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_daytime_tel" maxlength="15" value="<?php echo showData('i_601a_interpreter_daytime_tel') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">5. Interpreter's Mobile Telephone Number (if any)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_601a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_601a_interpreter_mobile') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_mobile" maxlength="15" value="<?php echo showData('i_601a_interpreter_mobile') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">6. Interpreter's Email Address (if any)</label>
                 <div class="col-md-12">
-                    <input type="email" class="form-control  " name="i_601a_interpreter_email" maxlength="38" value="<?php echo showData('i_601a_interpreter_email') ?>">
+                    <input type="email" class="form-control" name="i_601a_interpreter_email" maxlength="39" value="<?php echo showData('i_601a_interpreter_email') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -1626,19 +1626,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">4. Preparer's Daytime Telephone Number</label>
                 <div class="col-md-12">
-                    <input type="number" class="form-control" name="i_601a_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_601a_preparer_daytime_tel') ?>">
+                    <input type="number" class="form-control" name="i_601a_preparer_daytime_tel" maxlength="15" value="<?php echo showData('i_601a_preparer_daytime_tel') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">5. Preparer's Mobile Telephone Number (if any)</label>
                 <div class="col-md-12">
-                    <input type="number" class="form-control" name="i_601a_preparer_mobile" maxlength="10" value="<?php echo showData('i_601a_preparer_mobile') ?>">
+                    <input type="number" class="form-control" name="i_601a_preparer_mobile" maxlength="15" value="<?php echo showData('i_601a_preparer_mobile') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">6. Preparer's Email Address (if any)</label>
                 <div class="col-md-12">
-                    <input type="email" class="form-control" maxlength="38" name="i_601a_preparer_email" value="<?php echo showData('i_601a_preparer_email') ?>">
+                    <input type="email" class="form-control" maxlength="39" name="i_601a_preparer_email" value="<?php echo showData('i_601a_preparer_email') ?>">
                 </div>
             </div>
         </div>
@@ -1696,7 +1696,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
@@ -1768,7 +1768,7 @@ include "intake_header.php";
             <div class="form-group">
                 <div class="col-md-12">
                     <b>3.d.</b>
-                    <textarea name="i_601a_additional_info_3d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_601a_additional_info_3d') ?></textarea>
+                    <textarea  name="i_601a_additional_info_3d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_601a_additional_info_3d') ?></textarea>
                 </div>
             </div>
             <div class="d-flexible">
@@ -1823,7 +1823,7 @@ include "intake_header.php";
             <div class="form-group">
                 <div class="col-md-12">
                     <b>5.d.</b>
-                    <textarea name="i_601a_additional_info_5d" class="form-control" maxlength="305" cols="30" rows="10"><?php echo showData('i_601a_additional_info_5d') ?></textarea>
+                    <textarea name="i_601a_additional_info_5d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_601a_additional_info_5d') ?></textarea>
                 </div>
             </div>
             <div class="d-flexible">
@@ -1875,7 +1875,7 @@ include "intake_header.php";
             <div class="form-group">
                 <div class="col-md-12">
                     <b>7.d.</b>
-                    <textarea class="form-control" name="i_601a_additional_info_7d" maxlength="305" class="form-control" cols="30" rows="10"><?php echo showData('i_601a_additional_info_7d') ?></textarea>
+                    <textarea class="form-control" name="i_601a_additional_info_7d" maxlength="343" class="form-control" cols="30" rows="10"><?php echo showData('i_601a_additional_info_7d') ?></textarea>
                 </div>
             </div>
         </div>
