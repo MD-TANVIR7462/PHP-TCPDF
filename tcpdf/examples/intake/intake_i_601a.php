@@ -18,23 +18,23 @@ include "intake_header.php";
 <fieldset class="setpage">
     <p style="text-align: right"><b>Page 1 of 9</b></p>
     <table>
-            <thead>
-                <tr>
-                    <th style="padding: 5px; text-align: center;" colspan="3" class="bg-info">To be completed by an attorney or accredited representative (if any).</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 5px"><label class="control-label"><?php echo createCheckbox("i_601a_g_28_box") ?> Fill in box if G-28 is attached to represent the applicant.</label></td>
-                    <td style="padding: 5px">
-                        <p>Attorney State Bar Number (if applicable)</p><input type="text" class="form-control" maxlength="22" style="margin-top:30px" value="<?php echo $attorneyData->bar_number ?>">
-                    </td>
-                    <td style="padding: 5px">
-                        <p>Attorney or Accredited Representative USCIS Online Account Number (if any)</p><input maxlength="12" type="text" class="form-control" value="<?php echo $attorneyData->uscis_online_account_number ?>">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <thead>
+            <tr>
+                <th style="padding: 5px; text-align: center;" colspan="3" class="bg-info">To be completed by an attorney or accredited representative (if any).</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 5px"><label class="control-label"><?php echo createCheckbox("i_601a_g_28_box") ?> Fill in box if G-28 is attached to represent the applicant.</label></td>
+                <td style="padding: 5px">
+                    <p>Attorney State Bar Number (if applicable)</p><input type="text" class="form-control" maxlength="22" style="margin-top:30px" value="<?php echo $attorneyData->bar_number ?>">
+                </td>
+                <td style="padding: 5px">
+                    <p>Attorney or Accredited Representative USCIS Online Account Number (if any)</p><input maxlength="12" type="text" class="form-control" value="<?php echo $attorneyData->uscis_online_account_number ?>">
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <div class="row">
         <div class="col-md-6">
             <div class="bg-info" style="margin-top:10px;">
@@ -44,19 +44,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">1. Alien Registration Number (A-Number) (if any)</label>
                 <div class="col-md-7 col-md-offset-5">
-                    <input type="text" maxlength="9" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="9" class="form-control" name="other_information_about_you_alien_registration_number" value="<?php echo showData('other_information_about_you_alien_registration_number') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">2. U.S. Social Security Number (if any)</label>
                 <div class="col-md-7 col-md-offset-5">
-                    <input type="text" maxlength="9" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                    <input type="text" maxlength="9" class="form-control" name="other_information_about_you_social_security_number" value="<?php echo showData('other_information_about_you_social_security_number') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">3. USCIS Online Account Number (if any)</label>
                 <div class="col-md-8 col-md-offset-4 ">
-                    <input type="text" maxlength="12" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="text" maxlength="12" class="form-control" name="other_information_about_you_uscis_online_account_number" value="<?php echo showData('other_information_about_you_uscis_online_account_number') ?>" />
                 </div>
             </div>
             <div class="bg-info" style="margin-top:10px;">
@@ -65,19 +65,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">4.a. Family Name (Last Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">4.b. Given Name (First Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">4.c. Middle Name</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
                 </div>
             </div>
             <div class="bg-info" style="margin-top:10px;">
@@ -86,38 +86,38 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">5.a. Family Name (Last Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_other_family_last_name" value="<?php echo showData('information_about_you_other_family_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">5.b. Given Name (First Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_other_given_first_name" value="<?php echo showData('information_about_you_other_given_first_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">5.c. Middle Name</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_other_middle_name" value="<?php echo showData('information_about_you_other_middle_name') ?>" />
                 </div>
             </div>
             <hr style="border: 1px solid black;">
             <div class="form-group">
                 <label class="control-label col-md-5">6.a. Family Name (Last Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_other_family_last_name2" value="<?php echo showData('information_about_you_other_family_last_name2') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">6.b. Given Name (First Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_other_given_first_name2" value="<?php echo showData('information_about_you_other_given_first_name2') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">6.c. Middle Name</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_other_middle_name2" value="<?php echo showData('information_about_you_other_middle_name2') ?>" />
                 </div>
             </div>
         </div>
@@ -128,48 +128,48 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">7.a. a. In Care Of Name (if any) </label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" maxlength="34" name="petitioner_us_mailing_care_of_name" value="<?php echo showData('petitioner_us_mailing_care_of_name') ?>">
+                    <input type="text" class="form-control" maxlength="34" name="information_about_you_us_mailing_care_of_name" value="<?php echo showData('information_about_you_us_mailing_care_of_name') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">7.b. Street Number and Name</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="petitioner_us_mailing_street_number" maxlength="28" value="<?php echo showData('petitioner_us_mailing_street_number') ?>">
+                    <input type="text" class="form-control" name="information_about_you_us_mailing_street_number" maxlength="28" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="control-label col-md-6"><b>7.c </b> &nbsp;
                     <label class="control-label">
-                        <input type="radio" name="petitioner_us_mailing_apt_ste_flr" value="apt" <?php echo (showData('petitioner_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
                         Apt. &nbsp;
                     </label>
                     <label class="control-label">
-                        <input type="radio" name="petitioner_us_mailing_apt_ste_flr" value="ste" <?php echo (showData('petitioner_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
                         Ste. &nbsp;
                     </label>
                     <label class="control-label">
-                        <input type="radio" name="petitioner_us_mailing_apt_ste_flr" value="flr" <?php echo (showData('petitioner_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
                         Flr.
                     </label>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" type="text" class="form-control" name="petitioner_us_mailing_apt_ste_flr_value" maxlength="6" value="<?php echo showData('information_about_you_mailing_apt_ste_flr_value') ?>">
+                    <input type="text" class="form-control" type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value" maxlength="6" value="<?php echo showData('information_about_you_mailing_apt_ste_flr_value') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">7.d. City or Town</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="petitioner_us_mailing_city_town" maxlength="20" value="<?php echo showData('petitioner_us_mailing_city_town') ?>">
+                    <input type="text" class="form-control" name="information_about_you_home_city_town" maxlength="20" value="<?php echo showData('information_about_you_home_city_town') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">7.e. State</label>
                 <div class="col-md-7">
-                    <select class="form-control" name="petitioner_us_mailing_state">
+                    <select class="form-control" name="information_about_you_home_state">
                         <option value=''>Select</option>
                         <?php
                         foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('petitioner_us_mailing_state')) $selected = "selected";
+                            if ($record->state_code == showData('information_about_you_home_state')) $selected = "selected";
                             else $selected = "";
                             echo "<option value='$record->state_code' $selected>$record->state_code</option>";
                         }
@@ -180,14 +180,14 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">7.f. ZIP Code</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="petitioner_us_mailing_zip_code" maxlength="5" value="<?php echo showData('petitioner_us_mailing_zip_code') ?>">
+                    <input type="text" class="form-control" name="information_about_you_home_zip_code" maxlength="5" value="<?php echo showData('information_about_you_home_zip_code') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">8. Is your current physical address the same as your mailing
                     address?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("is_your_current_mailing_address_same_as_physical") ?>
                 </div>
             </div>
             <div class="col-md-12">
@@ -201,42 +201,42 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">9.a. Street Number and Name </label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" maxlength="34" name="petitioner_us_mailing_care_of_name" value="<?php echo showData('petitioner_us_mailing_care_of_name') ?>">
+                    <input type="text" class="form-control" maxlength="34" name="information_about_you_home_street_number" value="<?php echo showData('information_about_you_home_street_number') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="control-label col-md-6"><b>9.b. </b> &nbsp;
                     <label class="control-label">
-                        <input type="radio" name="petitioner_us_mailing_apt_ste_flr" value="apt" <?php echo (showData('petitioner_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_home_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
                         Apt. &nbsp;
                     </label>
                     <label class="control-label">
-                        <input type="radio" name="petitioner_us_mailing_apt_ste_flr" value="ste" <?php echo (showData('petitioner_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_home_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
                         Ste. &nbsp;
                     </label>
                     <label class="control-label">
-                        <input type="radio" name="petitioner_us_mailing_apt_ste_flr" value="flr" <?php echo (showData('petitioner_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_home_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
                         Flr.
                     </label>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" type="text" class="form-control" name="petitioner_us_mailing_apt_ste_flr_value" maxlength="6" value="<?php echo showData('information_about_you_mailing_apt_ste_flr_value') ?>">
+                    <input type="text" class="form-control" type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value" maxlength="6" value="<?php echo showData('information_about_you_mailing_apt_ste_flr_value') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">9.c. City or Town</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="petitioner_us_mailing_city_town" maxlength="20" value="<?php echo showData('petitioner_us_mailing_city_town') ?>">
+                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="20" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">9.d. State</label>
                 <div class="col-md-7">
-                    <select class="form-control" name="petitioner_us_mailing_state">
+                    <select class="form-control" name="information_about_you_us_mailing_state">
                         <option value=''>Select</option>
                         <?php
                         foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('petitioner_us_mailing_state')) $selected = "selected";
+                            if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
                             else $selected = "";
                             echo "<option value='$record->state_code' $selected>$record->state_code</option>";
                         }
@@ -247,7 +247,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">9.e. ZIP Code</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control" name="petitioner_us_mailing_zip_code" maxlength="5" value="<?php echo showData('petitioner_us_mailing_zip_code') ?>">
+                    <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -257,15 +257,15 @@ include "intake_header.php";
                 <div class="d-flexible">
                     <label class="col-md-4">10. Gender</label><br>
                     <div class="d-flexible col-md-7">
-                        <input type="radio" name="i_589_child_gender" id="male_12" value="male" <?php echo (showData('i_589_child_gender') == 'male') ? 'checked' : '' ?>> <label for="male_12" style="font-size: smaller;">Male</label><br>
-                        <input type="radio" name="i_589_child_gender" id="female_12" value="female"> <label for="female_12" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="other_information_about_you_gender" id="male_10" value="male" <?php echo (showData('other_information_about_you_gender') == 'male') ? 'checked' : '' ?>> <label for="male_12" style="font-size: smaller;">Male</label><br>
+                        <input type="radio" name="other_information_about_you_gender" id="female_10" value="female" <?php echo (showData('other_information_about_you_gender') == 'female') ? 'checked' : '' ?>> <label for="female_12" style="font-size: smaller;">Female</label>
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label class=" col-md-12">11. Date of Birth (mm/dd/yyyy)</label>
                 <div class="col-md-7 col-md-offset-5">
-                    <input type="date" class="form-control" name="petitioner_us_mailing_zip_code"  value="<?php echo showData('petitioner_us_mailing_zip_code') ?>">
+                    <input type="date" class="form-control" name="other_information_about_you_date_of_birth" value="<?php echo showData('other_information_about_you_date_of_birth') ?>">
                 </div>
             </div>
         </div>
@@ -286,43 +286,43 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">12. City or Town of Birth </label>
             <div class="col-md-12">
-                <input type="text" maxlength="39" class="form-control" name="i_290b_appeal_or_motion_uscis_form_no" value="<?php echo showData('i_290b_appeal_or_motion_uscis_form_no') ?>" />
+                <input type="text" maxlength="39" class="form-control" name="other_information_about_you_city_of_birth" value="<?php echo showData('other_information_about_you_city_of_birth') ?>" />
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12">13. Country of Birth </label>
             <div class="col-md-12">
-                <input type="text" maxlength="39" class="form-control" name="i_290b_appeal_or_motion_receipt_number" value="<?php echo showData('i_290b_appeal_or_motion_receipt_number') ?>" />
+                <input type="text" maxlength="39" class="form-control" name="other_information_about_you_country_of_birth" value="<?php echo showData('other_information_about_you_country_of_birth') ?>" />
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12">14. Country of Citizenship or Nationality</label>
             <div class="col-md-12">
-                <input type="text" maxlength="39" class="form-control" name="i_290b_appeal_or_motion_nonimmigrant_or_immigrant" value="<?php echo showData('i_290b_appeal_or_motion_nonimmigrant_or_immigrant') ?>" />
+                <input type="text" maxlength="39" class="form-control" name="other_information_about_you_country_of_citizen" value="<?php echo showData('other_information_about_you_country_of_citizen') ?>" />
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12">15.a. Mother's Family Name (Last Name) </label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="39" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="text" class="form-control" name="parent2_info_family_last_name" maxlength="39" value="<?php echo showData('parent2_info_family_last_name') ?>">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12">15.b. Mother's Given Name (Last Name) </label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="39" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="text" class="form-control" name="parent2_info_given_first_name" maxlength="39" value="<?php echo showData('parent2_info_given_first_name') ?>">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12">16.a. Father's Family Name (Last Name) </label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="39" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="text" class="form-control" name="parent1_info_family_last_name" maxlength="39" value="<?php echo showData('parent1_info_family_last_name') ?>">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12">16.b. Mother's Given Name (Last Name) </label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="39" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="text" class="form-control" name="parent1_info_given_first_name" maxlength="39" value="<?php echo showData('parent1_info_given_first_name') ?>">
             </div>
         </div>
 
@@ -332,23 +332,23 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">17. Date of Entry (On or about mm/dd/yyyy) </label>
             <div class="col-md-6 col-md-offset-6 ">
-                <input type="date" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="date" class="form-control" name="other_information_about_you_date_of_entry" value="<?php echo showData('other_information_about_you_date_of_entry') ?>">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12">18.a. Place or Port-of-Entry (Actual or approximate city or town) </label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="39" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="text" class="form-control" name="other_information_about_you_place_of_entry_city_town" maxlength="39" value="<?php echo showData('other_information_about_you_place_of_entry_city_town') ?>">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-5">18.b. State</label>
             <div class="col-md-7">
-                <select class="form-control" name="petitioner_us_mailing_state">
+                <select class="form-control" name="i_601a_information_about_you_state">
                     <option value=''>Select</option>
                     <?php
                     foreach ($allDataCountry as $record) {
-                        if ($record->state_code == showData('petitioner_us_mailing_state')) $selected = "selected";
+                        if ($record->state_code == showData('i_601a_information_about_you_state')) $selected = "selected";
                         else $selected = "";
                         echo "<option value='$record->state_code' $selected>$record->state_code</option>";
                     }
@@ -359,7 +359,7 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">19. Immigration Status (At the time of entry) </label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="39" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="text" class="form-control" name="other_information_about_you_current_nonimmigration_status" maxlength="39" value="<?php echo showData('other_information_about_you_current_nonimmigration_status') ?>">
             </div>
         </div>
         <div class="bg-info">
@@ -371,17 +371,17 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">20.a. Place or Port-of-Entry (Actual or approximate city or town)</label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="39" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="text" class="form-control" name="i_601a_place_or_port_of_entry" maxlength="39" value="<?php echo showData('i_601a_place_or_port_of_entry') ?>">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-5">20.b. State</label>
             <div class="col-md-7">
-                <select class="form-control" name="petitioner_us_mailing_state">
+                <select class="form-control" name="i_601a_previous_entry_state">
                     <option value=''>Select</option>
                     <?php
                     foreach ($allDataCountry as $record) {
-                        if ($record->state_code == showData('petitioner_us_mailing_state')) $selected = "selected";
+                        if ($record->state_code == showData('i_601a_previous_entry_state')) $selected = "selected";
                         else $selected = "";
                         echo "<option value='$record->state_code' $selected>$record->state_code</option>";
                     }
@@ -392,19 +392,19 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">21.a. From (On or about mm/dd/yyyy) </label>
             <div class="col-md-6 col-md-offset-6 ">
-                <input type="date" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="date" class="form-control" name="i_601a_previous_entry_from_date" value="<?php echo showData('i_601a_previous_entry_from_date') ?>">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12">21.b. To (On or about mm/dd/yyyy)</label>
             <div class="col-md-6 col-md-offset-6 ">
-                <input type="date" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text"  value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="date" class="form-control" name="i_601a_previous_entry_to_date" value="<?php echo showData('i_601a_previous_entry_to_date') ?>">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12">22. Immigration Status (At the time of entry)</label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="39" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="text" class="form-control" name="i_601a_previous_entry_immigration_status" maxlength="39" value="<?php echo showData('i_601a_previous_entry_immigration_status') ?>">
             </div>
         </div>
     </div>
@@ -414,17 +414,17 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">23.a. Place or Port-of-Entry (Actual or approximate city or town)</label>
                 <div class="col-md-12 ">
-                    <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="39" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                    <input type="text" class="form-control" name="i_601a_place_or_port_of_entry2" maxlength="39" value="<?php echo showData('i_601a_place_or_port_of_entry2') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">23.b. State</label>
                 <div class="col-md-7">
-                    <select class="form-control" name="petitioner_us_mailing_state">
+                    <select class="form-control" name="i_601a_previous_entry_state2">
                         <option value=''>Select</option>
                         <?php
                         foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('petitioner_us_mailing_state')) $selected = "selected";
+                            if ($record->state_code == showData('i_601a_previous_entry_state2')) $selected = "selected";
                             else $selected = "";
                             echo "<option value='$record->state_code' $selected>$record->state_code</option>";
                         }
@@ -435,25 +435,25 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">24.a. From (On or about mm/dd/yyyy) </label>
                 <div class="col-md-6 col-md-offset-6 ">
-                    <input type="date" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text"  value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                    <input type="date" class="form-control" name="i_601a_previous_entry_from_date2" value="<?php echo showData('i_601a_previous_entry_from_date2') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">24.b. To (On or about mm/dd/yyyy) </label>
                 <div class="col-md-6 col-md-offset-6 ">
-                    <input type="date" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" " value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                    <input type="date" class="form-control" name="i_601a_previous_entry_to_date2" " value=" <?php echo showData('i_601a_previous_entry_to_date2') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">25. Immigration Status (At the time of entry)</label>
                 <div class="col-md-12 ">
-                    <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="39" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                    <input type="text" class="form-control" name="i_601a_previous_entry_immigration_status2" maxlength="39" value="<?php echo showData('i_601a_previous_entry_immigration_status2') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12" style="font-size: 12px;"><span class="mr-question">26.</span> Are there other previous entries?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_other_previous_entry_status") ?>
                 </div>
             </div>
             <div class="form-group">
@@ -475,7 +475,7 @@ include "intake_header.php";
                     request for a judicial removal order under INA section
                     238(c))?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_immigration_criminal_removal_status") ?>
                 </div>
             </div>
             <div class="form-group">
@@ -485,7 +485,7 @@ include "intake_header.php";
                     28.a. or 28.b.)</b></label>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12"><span class="mr-question">28.a.</span><?php echo createCheckbox("i_290b_appeal_or_motion_additional_status") ?>I am in removal, exclusion, or deportation
+                <label class="control-label col-md-12"><span class="mr-question">28.a.</span><?php echo createCheckbox("i_601a_immigration_exclusion_status") ?>I am in removal, exclusion, or deportation
                     proceedings that are administratively closed and, at
                     the time of filing my Form I-601A, have not been
                     placed back on EOIR's calendar to continue my
@@ -1768,7 +1768,7 @@ include "intake_header.php";
             <div class="form-group">
                 <div class="col-md-12">
                     <b>3.d.</b>
-                    <textarea  name="i_601a_additional_info_3d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_601a_additional_info_3d') ?></textarea>
+                    <textarea name="i_601a_additional_info_3d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_601a_additional_info_3d') ?></textarea>
                 </div>
             </div>
             <div class="d-flexible">
