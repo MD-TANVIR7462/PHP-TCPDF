@@ -770,7 +770,7 @@ include "intake_header.php";
                 in any military unit, paramilitary unit, police unit, selfdefense unit, vigilante unit, rebel group, guerilla group,
                 militia, or insurgent organization? </label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_601a_insurgent") ?>
+                <?php echo createRadio("i_601a_insurgent_organization_status") ?>
             </div>
         </div>
         <div class="form-group">
@@ -778,7 +778,7 @@ include "intake_header.php";
                 labor camp, or any other situation that involved detaining
                 persons?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_601a_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_detention_faculty_status") ?>
             </div>
         </div>
         <div class="form-group">
@@ -787,7 +787,7 @@ include "intake_header.php";
                 kind in which you or other persons used any type of
                 weapon against any person or threatened to do so?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_601a_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_weapon_threatened_status") ?>
             </div>
         </div>
     </div>
@@ -801,7 +801,7 @@ include "intake_header.php";
                     weapons to any person who to your knowledge used them
                     against another person?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_601a_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_selling_providing_weapons_status") ?>
                 </div>
             </div>
 
@@ -809,7 +809,7 @@ include "intake_header.php";
                 <label class="control-label col-md-12" style="font-size: 12px;"><span class="mr-question">43.</span> Have you EVER received any type of military,
                     paramilitary, or weapons training?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_601a_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_military_weapons_training_status") ?>
                 </div>
             </div>
 
@@ -818,7 +818,7 @@ include "intake_header.php";
                     any person under 15 years of age to serve in or help an
                     armed force or group?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_601a_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_help_armed_force_status") ?>
                 </div>
             </div>
 
@@ -827,7 +827,7 @@ include "intake_header.php";
                     to take part in hostilities, or to help or provide services to
                     people in combat?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_601a_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_hostilities_status") ?>
                 </div>
             </div>
         </div>
