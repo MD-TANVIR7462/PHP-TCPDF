@@ -10,11 +10,9 @@ include "intake_header.php";
     }
 </style>
 
-<!---------------------------------------------------
-------------------- page 1 --------------------------
------------------------------------------------------>
-
-
+<!----------------------------------------------------------------------
+-------------------------------- page 1 --------------------------------
+------------------------------------------------------------------------>
 <fieldset class="setpage">
     <p style="text-align: right"><b>Page 1 of 9</b></p>
     <table>
@@ -257,8 +255,8 @@ include "intake_header.php";
                 <div class="d-flexible">
                     <label class="col-md-4">10. Gender</label><br>
                     <div class="d-flexible col-md-7">
-                        <input type="radio" name="other_information_about_you_gender" id="male_10" value="male" <?php echo (showData('other_information_about_you_gender') == 'male') ? 'checked' : '' ?>> <label for="male_12" style="font-size: smaller;">Male</label><br>
-                        <input type="radio" name="other_information_about_you_gender" id="female_10" value="female" <?php echo (showData('other_information_about_you_gender') == 'female') ? 'checked' : '' ?>> <label for="female_12" style="font-size: smaller;">Female</label>
+                        <input type="radio" name="other_information_about_you_gender" id="p1_male_10" value="male" <?php echo (showData('other_information_about_you_gender') == 'male') ? 'checked' : '' ?>> <label for="p1_male_10">Male</label><br>
+                        <input type="radio" name="other_information_about_you_gender" id="p1_female_10" value="female" <?php echo (showData('other_information_about_you_gender') == 'female') ? 'checked' : '' ?>> <label for="p1_female_10">Female</label>
                     </div>
                 </div>
             </div>
@@ -521,7 +519,7 @@ include "intake_header.php";
         </div>
         <div>
             <div class="form-group">
-                <label class="control-label col-md-12"><span class="mr-question">28.b.</span><?php echo createCheckbox("i_290b_appeal_or_motion_additional_status") ?>I am currently in removal, exclusion, or deportation
+                <label class="control-label col-md-12"><span class="mr-question">28.b.</span><?php echo createCheckbox("i_601a_currently_in_removal_status") ?>I am currently in removal, exclusion, or deportation
                     proceedings that are not administratively closed, or
                     in removal, exclusion, or deportation proceedings
                     that were administratively closed, but EOIR has
@@ -549,7 +547,7 @@ include "intake_header.php";
                     INA section 235, and a judicial order under INA section
                     238(c))?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_order_of_removal_status") ?>
                 </div>
             </div>
             <div class="form-group">
@@ -570,7 +568,7 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12"><span class="mr-question">29.b.</span> USCIS Receipt Number for Your Approved Form I-212:</label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="i_290b_appeal_or_motion_unfavorable_decision_text" maxlength="13" value="<?php echo showData('i_290b_appeal_or_motion_unfavorable_decision_text') ?>">
+                <input type="text" class="form-control" name="i_601a_receipt_number_approved" maxlength="13" value="<?php echo showData('i_601a_receipt_number_approved') ?>">
             </div>
         </div>
         <div class="form-group">
@@ -584,7 +582,7 @@ include "intake_header.php";
                 exclusion, or removal order against you as permitted
                 under INA section 241(a)(5)?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_dhs_server_status") ?>
             </div>
         </div>
         <div class="form-group">
@@ -593,7 +591,7 @@ include "intake_header.php";
                 deportation, exclusion, or removal order under INA
                 section 241(a)(5)?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_under_ina_section241") ?>
             </div>
         </div>
     </div>
@@ -608,7 +606,7 @@ include "intake_header.php";
                     Appeals during removal, exclusion, or deportation
                     proceedings? </label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_voluntary_departure_status") ?>
                 </div>
             </div>
             <div class="form-group">
@@ -650,14 +648,14 @@ include "intake_header.php";
                     while applying for an immigration benefit or to gain entry
                     or admission into the United States?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_immigration_benefit_us_status") ?>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-md-12" style="font-size: 12px;"><span class="mr-question">33.</span> Have you EVER been engaged in alien smuggling?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_engaged_alien_smuggling_status") ?>
                 </div>
             </div>
 
@@ -668,7 +666,7 @@ include "intake_header.php";
                     and/or any other country for any reason other than traffic
                     violations?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_arrested_by_law_enforcement_office_status") ?>
                 </div>
             </div>
 
@@ -678,7 +676,7 @@ include "intake_header.php";
                     country, and/or any other country for any crime or
                     offense?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_charged_indicted_convicted_in_us_status") ?>
                 </div>
             </div>
 
@@ -686,7 +684,7 @@ include "intake_header.php";
                 <label class="control-label col-md-12" style="font-size: 12px;"><span class="mr-question">36.</span> Have you EVER trafficked in or are you NOW trafficking
                     in any controlled substance?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_trafficking_substance_status") ?>
                 </div>
             </div>
         </div>
@@ -712,14 +710,14 @@ include "intake_header.php";
                 abetted, conspired, or colluded with others in the unlawful
                 trafficking of any controlled substance?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_unlawful_trafficking_substance_status") ?>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12"><span class="mr-question">38.</span> Are you NOW or have you EVER been engaged in
                 prostitution?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_engaged_prostitution_status") ?>
             </div>
         </div>
         <div class="form-group">
@@ -738,33 +736,33 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12"><span class="mr-question">39.a.</span> Acts involving torture or genocide?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_involving_torture_genocide_status") ?>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12"><span class="mr-question">39.b.</span>Killing any person?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_killing_any_person_status") ?>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12"><span class="mr-question">39.c.</span>Intentionally and severely injuring any person?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_intentionally_injuring_person_status") ?>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12"><span class="mr-question">39.d.</span> Engaging in any kind of sexual contact or relations with
                 any person who was being forced or threatened?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_engaging_sexual_contact_status") ?>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-12"><span class="mr-question">39.e.</span> Limiting or denying any person's ability to exercise
                 religious beliefs?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_limiting_religious_beliefs_status") ?>
             </div>
         </div>
         <div class="form-group">
@@ -772,7 +770,7 @@ include "intake_header.php";
                 in any military unit, paramilitary unit, police unit, selfdefense unit, vigilante unit, rebel group, guerilla group,
                 militia, or insurgent organization? </label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_insurgent") ?>
             </div>
         </div>
         <div class="form-group">
@@ -780,7 +778,7 @@ include "intake_header.php";
                 labor camp, or any other situation that involved detaining
                 persons?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_include_child_in_application") ?>
             </div>
         </div>
         <div class="form-group">
@@ -789,7 +787,7 @@ include "intake_header.php";
                 kind in which you or other persons used any type of
                 weapon against any person or threatened to do so?</label>
             <div class="col-md-5 col-md-offset-4">
-                <?php echo createRadio("i_589_include_child_in_application") ?>
+                <?php echo createRadio("i_601a_include_child_in_application") ?>
             </div>
         </div>
     </div>
@@ -803,7 +801,7 @@ include "intake_header.php";
                     weapons to any person who to your knowledge used them
                     against another person?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_include_child_in_application") ?>
                 </div>
             </div>
 
@@ -811,7 +809,7 @@ include "intake_header.php";
                 <label class="control-label col-md-12" style="font-size: 12px;"><span class="mr-question">43.</span> Have you EVER received any type of military,
                     paramilitary, or weapons training?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_include_child_in_application") ?>
                 </div>
             </div>
 
@@ -820,7 +818,7 @@ include "intake_header.php";
                     any person under 15 years of age to serve in or help an
                     armed force or group?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_include_child_in_application") ?>
                 </div>
             </div>
 
@@ -829,7 +827,7 @@ include "intake_header.php";
                     to take part in hostilities, or to help or provide services to
                     people in combat?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_include_child_in_application") ?>
                 </div>
             </div>
         </div>
@@ -1135,7 +1133,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">3. Do you have more than one qualifying relative (U.S. citizen or LPR spouse or parent)?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_589_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_include_child_in_application") ?>
                 </div>
             </div>
             <div class="form-group">
@@ -1211,7 +1209,7 @@ include "intake_header.php";
                         Additional Information</b>
                 </b>
             </p>
-            <textarea class="form-control" name="i_290b_additional_info_7d" maxlength="1100" class="form-control" cols="30" rows="50"><?php echo showData('i_290b_additional_info_7d') ?></textarea>
+            <textarea class="form-control" name="i_601a_additional_info_7d" maxlength="1100" class="form-control" cols="30" rows="50"><?php echo showData('i_601a_additional_info_7d') ?></textarea>
         </div>
         <div class="col-md-6">
             <div class="bg-info">
