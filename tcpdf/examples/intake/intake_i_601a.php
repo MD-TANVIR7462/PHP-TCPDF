@@ -980,20 +980,20 @@ include "intake_header.php";
             </div>
             <p style="margin: 5px;">Provide the basis on which you are immigrating to the United States using the check boxes below. (Select <b>only one</b> box)</p>
             <div class="form-group">
-                <label><b>1.a.</b> <?php echo createCheckbox("visa_case_type_diversity_visa") ?>Diversity Visa Program Selectee or Derivative</label>
+                <label><b>1.a.</b> <?php echo createCheckbox("visa_case_type_diversity_visa_status_status") ?>Diversity Visa Program Selectee or Derivative</label>
             </div>
             <div class="form-group">
-                <label><b>1.b.</b> <?php echo createCheckbox("visa_case_type_immediate_relative") ?>Immediate Relative Petition (Form I-130)</label>
+                <label><b>1.b.</b> <?php echo createCheckbox("visa_case_type_immediate_relative_status_status") ?>Immediate Relative Petition (Form I-130)</label>
             </div>
             <div class="form-group">
-                <label><b>1.c.</b> <?php echo createCheckbox("visa_case_type_family_based") ?>Preference-Based Family Petition (Form I-130),
+                <label><b>1.c.</b> <?php echo createCheckbox("visa_case_type_family_based_status_status") ?>Preference-Based Family Petition (Form I-130),
                     including Derivatives</label>
             </div>
             <div class="form-group">
-                <label><b>1.d.</b> <?php echo createCheckbox("visa_case_type_employment_based") ?>Employment-Based Petition (Form I-140), including Derivatives</label>
+                <label><b>1.d.</b> <?php echo createCheckbox("visa_case_type_employment_based_status_status") ?>Employment-Based Petition (Form I-140), including Derivatives</label>
             </div>
             <div class="form-group">
-                <label><b>1.e.</b> <?php echo createCheckbox("visa_case_type_special_immigrant") ?>Special Immigrant/Widow Petition (Form I-360), including Derivatives</label>
+                <label><b>1.e.</b> <?php echo createCheckbox("visa_case_type_special_immigrant_status_status") ?>Special Immigrant/Widow Petition (Form I-360), including Derivatives</label>
             </div>
 
             <!-- DOS DV Case Number -->
@@ -1005,7 +1005,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">2.a. DOS DV Case Number (KCC Case Number)</label>
                 <div class="col-md-10 col-md-offset-2">
-                    <input type="text" maxlength="14" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="14" class="form-control" name="i_601a_dv_case_number" value="<?php echo showData('i_601a_dv_case_number') ?>" />
                 </div>
             </div>
             <div class="form-group">
@@ -1015,19 +1015,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">2.b. Family Name (Last Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_dv_selectees_family_last_name" value="<?php echo showData('i_601a_dv_selectees_family_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">2.c. Given Name (First Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_dv_selectees_family_first_name" value="<?php echo showData('i_601a_dv_selectees_family_first_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">2.d. Middle Name</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_dv_selectees_family_middle_name" value="<?php echo showData('i_601a_dv_selectees_family_middle_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
@@ -1043,14 +1043,14 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">3.a. USCIS Receipt Number</label>
                 <div class="col-md-10 col-md-offset-2">
-                    <input type="text" maxlength="13" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="13" class="form-control" name="i_601a_uscis_receipt_number" value="<?php echo showData('i_601a_uscis_receipt_number') ?>" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-md-12">3.b. DOS Consular Case Number (NVC Case Number)</label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" maxlength="13" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="13" class="form-control" name="i_601a_consular_case_number" value="<?php echo showData('i_601a_consular_case_number') ?>" />
                 </div>
             </div>
             <div class="form-group">
@@ -1060,27 +1060,28 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">3.c. Family Name (Last Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_petitioner_last_name" value="<?php echo showData('i_601a_petitioner_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.d. Given Name (First Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_petitioner_first_name" value="<?php echo showData('i_601a_petitioner_first_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">3.e. Middle Name</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_petitioner_middle_name" value="<?php echo showData('i_601a_petitioner_middle_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">3.f. Company or Organization Name</label>
                 <div class="col-md-12">
-                    <input type="text" maxlength="34" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="text" maxlength="34" class="form-control" name="i_601a_company_name" value="<?php echo showData('i_601a_company_name') ?>" />
                 </div>
             </div>
+
         </div>
 
         <!-- Part 4. Information About Your Qualifying Relative -->
@@ -1100,40 +1101,41 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">1.a. Family Name (Last Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_relative_family_last_name" value="<?php echo showData('i_601a_relative_family_last_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">1.b. Given Name (First Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_relative_given_first_name" value="<?php echo showData('i_601a_relative_given_first_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5 ">1.c. Middle Name</label>
+                <label class="control-label col-md-5">1.c. Middle Name</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_relative_middle_name" value="<?php echo showData('i_601a_relative_middle_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
-                <label><b>2.a.</b> <?php echo createCheckbox("visa_case_type_diversity_visa") ?>U.S. Citizen Spouse</label>
+                <label><b>2.a.</b> <?php echo createCheckbox("i_601a_relative_u_s_citizen_spouse_status") ?> U.S. Citizen Spouse</label>
             </div>
             <div class="form-group">
-                <label><b>2.b.</b> <?php echo createCheckbox("visa_case_type_immediate_relative") ?>U.S. Citizen Parent</label>
+                <label><b>2.b.</b> <?php echo createCheckbox("i_601a_relative_u_s_citizen_parent_status") ?> U.S. Citizen Parent</label>
             </div>
             <div class="form-group">
-                <label><b>2.c.</b> <?php echo createCheckbox("visa_case_type_family_based") ?>LPR Spouse including Derivatives</label>
+                <label><b>2.c.</b> <?php echo createCheckbox("i_601a_relative_lpr_spouse_including_derivatives_status") ?> LPR Spouse including Derivatives</label>
             </div>
             <div class="form-group">
-                <label><b>2.d.</b> <?php echo createCheckbox("visa_case_type_employment_based") ?>LPR Parent</label>
+                <label><b>2.d.</b> <?php echo createCheckbox("i_601a_relative_lpr_parent_status") ?> LPR Parent</label>
             </div>
+
             <div class="bg-info">
                 <h4><b>Your Other Qualifying Relative</b></h4>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">3. Do you have more than one qualifying relative (U.S. citizen or LPR spouse or parent)?</label>
                 <div class="col-md-5 col-md-offset-4">
-                    <?php echo createRadio("i_601a_include_child_in_application") ?>
+                    <?php echo createRadio("i_601a_more_than_one_qualifying_relative") ?>
                 </div>
             </div>
             <div class="form-group">
@@ -1151,44 +1153,43 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-5">4.a. Family Name (Last Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_family_last_name" value="<?php echo showData('petitioner_family_last_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_additional_relative_family_name" value="<?php echo showData('i_601a_additional_relative_family_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-5">4.b. Given Name (First Name)</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_given_first_name" value="<?php echo showData('petitioner_given_first_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_additional_relative_given_name" value="<?php echo showData('i_601a_additional_relative_given_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-5 ">4.c. Middle Name</label>
+                <label class="control-label col-md-5">4.c. Middle Name</label>
                 <div class="col-md-7">
-                    <input type="text" maxlength="29" class="form-control" name="petitioner_middle_name" value="<?php echo showData('petitioner_middle_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_601a_additional_relative_middle_name" value="<?php echo showData('i_601a_additional_relative_middle_name') ?>" />
                 </div>
             </div>
             <div class="form-group">
-                <label><b>5.a.</b> <?php echo createCheckbox("visa_case_type_diversity_visa") ?>U.S. Citizen Spouse</label>
+                <label><b>5.a.</b> <?php echo createCheckbox("i_601a_additional_relative_u_s_citizen_spouse_status") ?> U.S. Citizen Spouse</label>
             </div>
             <div class="form-group">
-                <label><b>5.b.</b> <?php echo createCheckbox("visa_case_type_immediate_relative") ?>U.S. Citizen Parent</label>
+                <label><b>5.b.</b> <?php echo createCheckbox("i_601a_additional_relative_u_s_citizen_parent_status") ?> U.S. Citizen Parent</label>
             </div>
             <div class="form-group">
-                <label><b>5.c.</b> <?php echo createCheckbox("visa_case_type_family_based") ?>LPR Spouse including Derivatives</label>
+                <label><b>5.c.</b> <?php echo createCheckbox("i_601a_additional_relative_lpr_spouse_derivatives_status") ?> LPR Spouse including Derivatives</label>
             </div>
             <div class="form-group">
-                <label><b>5.d.</b> <?php echo createCheckbox("visa_case_type_employment_based") ?>LPR Parent</label>
+                <label><b>5.d.</b> <?php echo createCheckbox("i_601a_additional_relative_lpr_parent_status") ?> LPR Parent</label>
             </div>
         </div>
     </div>
-
     <!-- Next and Previous Buttons -->
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
-<!---------------------------------------------------------
--------------------------------- page 6--------------------
------------------------------------------------------------>
+<!---------------------------------------------------------------------
+-------------------------------- page 6--------------------------------
+----------------------------------------------------------------------->
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 6 of 9</b></p>
     <div class="row">
@@ -1209,7 +1210,7 @@ include "intake_header.php";
                         Additional Information</b>
                 </b>
             </p>
-            <textarea class="form-control" name="i_601a_additional_info_7d" maxlength="1100" class="form-control" cols="30" rows="50"><?php echo showData('i_601a_additional_info_7d') ?></textarea>
+            <textarea class="form-control" name="i_601a_applicant_statement" maxlength="1100" cols="30" rows="50"><?php echo showData('i_601a_applicant_statement') ?></textarea>
         </div>
         <div class="col-md-6">
             <div class="bg-info">
@@ -1230,28 +1231,28 @@ include "intake_header.php";
             </p>
             <div class="form-group">
                 <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>1.a. </b> <?php echo createCheckbox("i_601aa_i_can_read_understand_english_status2") ?>I can read and understand English, and I have read
+                    <p class="d-flexible"><b>1.a. </b> <?php echo createCheckbox("i_601a_read_understand_english_status") ?>I can read and understand English, and I have read
                         and understand every question and instruction on this
                         application and my answer to every question.</p>
                 </label>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>1.b. </b> <?php echo createCheckbox("i_601aa_the_interpreter_name_status") ?>The interpreter named in Part 7. read to me every
+                    <p class="d-flexible"><b>1.b. </b> <?php echo createCheckbox("i_601a_interpreter_helped_status") ?>The interpreter named in Part 7. read to me every
                         question and instruction on this application and my
                         answer to every question in </p>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_601aa_the_interpreter_name_in2" maxlength="25" value="<?php echo showData('i_601aa_the_interpreter_name_in2') ?>"><b>a language in which I am fluent, and I understood
-                        everything. </b>
+                    <input type="text" class="form-control" name="i_601a_interpreter_name" maxlength="25" value="<?php echo showData('i_601a_interpreter_name') ?>"><b>a language in which I am fluent, and I understood
+                        everything.</b>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>2. </b> <?php echo createCheckbox("i_601aa_the_preparer_named_in2_status") ?> At my request, the preparer named in Part 8.,</p>
+                    <p class="d-flexible"><b>2. </b> <?php echo createCheckbox("i_601a_preparer_helped_status") ?> At my request, the preparer named in Part 8.,</p>
                 </label>
                 <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_601aa_the_preparer_named_in2" maxlength="25" value="<?php echo showData('i_601aa_the_preparer_named_in2') ?>"><b>prepared this contract for me based only upon
+                    <input type="text" class="form-control" name="i_601a_preparer_name" maxlength="25" value="<?php echo showData('i_601a_preparer_name') ?>"><b>prepared this application based only on
                         information I provided or authorized.</b>
                 </div>
             </div>
@@ -1259,23 +1260,21 @@ include "intake_header.php";
                 <h4><b><i>Applicant's Contact Information</i></b></h4>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">3. Applicant's Daytime Telephone Number
-                    Number</label>
+                <label class="control-label col-md-12">3. Applicant's Daytime Telephone Number</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_601aa_household_member_daytime_tel" maxlength="15" value="<?php echo showData('i_601aa_household_member_daytime_tel') ?>">
+                    <input type="text" class="form-control" name="i_601a_applicant_daytime_phone" maxlength="15" value="<?php echo showData('i_601a_applicant_daytime_phone') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">4. Applicant's Mobile Telephone Number (if any)
-                    Number (if any)</label>
+                <label class="control-label col-md-12">4. Applicant's Mobile Telephone Number (if any)</label>
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_601aa_household_member_mobile" maxlength="15" value="<?php echo showData('i_601aa_household_member_mobile') ?>">
+                    <input type="text" class="form-control" name="i_601a_applicant_mobile_phone" maxlength="15" value="<?php echo showData('i_601a_applicant_mobile_phone') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">5. Applicant's Email Address (if any)</label>
                 <div class="col-md-12">
-                    <input type="email" class="form-control" name="i_601aa_household_member_email" maxlength="39" value="<?php echo showData('i_601aa_household_member_email') ?>">
+                    <input type="email" class="form-control" name="i_601a_applicant_email_address" maxlength="39" value="<?php echo showData('i_601a_applicant_email_address') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -1296,14 +1295,13 @@ include "intake_header.php";
                 </b>
             </p>
         </div>
-
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
--------------------------------- page 7--------------------------------
+-------------------------------- page 7---------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 7 of 9</b></p>
@@ -1347,7 +1345,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-6">6.b. Date of Signature (mm/dd/yyyy)</label>
                 <div class="col-md-6 ">
-                    <input type="date" class="form-control" name="sponsor_sign_date" value="<?php echo showData('sponsor_sign_date') ?>" />
+                    <input type="date" class="form-control" name="i_601a_Applicant_sign_date" value="<?php echo showData('i_601a_Applicant_sign_date') ?>" />
                 </div>
             </div>
             <div><b>NOTE TO ALL APPLICANTS:</b> If you do not completely fill
@@ -1515,9 +1513,9 @@ include "intake_header.php";
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
-<!-------------------------------------------------------
------------------------- page 8 -------------------------
---------------------------------------------------------->
+<!---------------------------------------------------------------------
+-------------------------------- page 8 -------------------------------
+----------------------------------------------------------------------->
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 8 of 9</b></p>
     <div class="row">
@@ -1697,9 +1695,9 @@ include "intake_header.php";
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
-<!-------------------------------------------------------
------------------------- page 9 -------------------------
---------------------------------------------------------->
+<!---------------------------------------------------------------------
+------------------------ ------ page 9 --------------------------------
+----------------------------------------------------------------------->
 <fieldset class="setpage">
     <p style="text-align:right; margin-right:15px"><b>Page 9 of 9</b></p>
     <div class="row">
