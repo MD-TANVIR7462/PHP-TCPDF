@@ -268,8 +268,8 @@ include "intake_header.php";
             </div>
         </div>
     </div>
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
@@ -504,7 +504,7 @@ include "intake_header.php";
     </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
@@ -691,7 +691,7 @@ include "intake_header.php";
     </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
@@ -965,7 +965,7 @@ include "intake_header.php";
     </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
@@ -1184,7 +1184,7 @@ include "intake_header.php";
     </div>
     <!-- Next and Previous Buttons -->
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!---------------------------------------------------------------------
@@ -1510,7 +1510,7 @@ include "intake_header.php";
         <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!---------------------------------------------------------------------
@@ -1692,7 +1692,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!---------------------------------------------------------------------
