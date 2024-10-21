@@ -2263,7 +2263,7 @@ $pdf->writeHTMLCell(90, 7, 13, 44, $html, 0, 1, true, false, 'L', true);
 //.............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.a.</b>&nbsp;&nbsp;&nbsp; Preparer\'s Family Name (Last Name)</div>';
+$html = '<div><b>1.a.</b>&nbsp;&nbsp;&nbsp;Preparer\'s Family Name (Last Name)</div>';
 $pdf->writeHTMLCell(90, 7, 12, 52, $html, 0, 1, false, true, 'J', true);
 
 $pdf->SetFont('courier', 'B', 10);
@@ -2271,7 +2271,7 @@ $pdf->TextField('preparer_full_famiy_name', 82, 7, array('strokeColor' => array(
 //...............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.b.</b>&nbsp;&nbsp;&nbsp; Preparer\'s Given Name (First Name)</div>';
+$html = '<div><b>1.b.</b>&nbsp;&nbsp;&nbsp;Preparer\'s Given Name (First Name)</div>';
 $pdf->writeHTMLCell(90, 7, 12, 65, $html, 0, 1, false, true, 'J', true);
 
 $pdf->SetFont('courier', 'B', 10);
@@ -2313,14 +2313,14 @@ $pdf->TextField('preparer_mailing_address__apt_ste_flr', 40, 7, array('strokeCol
 //.........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>3.c.</b> &nbsp;&nbsp;City or Town';
+$html = '<b>3.c.</b> &nbsp;&nbsp;&nbsp;City or Town';
 $pdf->writeHTMLCell(90, 7, 13, 126, $html, '', 0, 0, true, 'L');
 //.......
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('preparer_mailing_address_city_or_town', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(),  45, 126);
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>3.d.</b> &nbsp; &nbsp;State&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>3.e.</b>&nbsp;&nbsp;ZIP Code';
+$html = '<b>3.d.</b> &nbsp; &nbsp;State&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>3.e.</b>&nbsp;&nbsp;ZIP Code';
 $pdf->writeHTMLCell(60, 0, 13, 135, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -2336,7 +2336,7 @@ $pdf->TextField('preparer_mailing_address_zip_code', 33, 7, array('strokeColor' 
 //.........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>3.f.</b> &nbsp;&nbsp;Province';
+$html = '<b>3.f.</b> &nbsp;&nbsp;&nbsp;Province';
 $pdf->writeHTMLCell(90, 7, 13, 144, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
