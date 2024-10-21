@@ -314,7 +314,7 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">16.a. Father's Family Name (Last Name) </label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="parent1_info_family_last_name" maxlength="39" value="<?php echo showData('parent1_info_family_last_name') ?>">
+                <input type="text" class="form-control" name="c" maxlength="39" value="<?php echo showData('parent1_info_family_last_name') ?>">
             </div>
         </div>
         <div class="form-group">
@@ -336,7 +336,7 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">18.a. Place or Port-of-Entry (Actual or approximate city or town) </label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="other_information_about_you_place_of_entry_city_town" maxlength="39" value="<?php echo showData('other_information_about_you_place_of_entry_city_town') ?>">
+                <input type="text" class="form-control" name=" " maxlength="39" value="<?php echo showData('other_information_about_you_place_of_entry_city_town') ?>">
             </div>
         </div>
         <div class="form-group">

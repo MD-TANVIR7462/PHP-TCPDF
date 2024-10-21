@@ -2491,21 +2491,21 @@ $pdf->AddPage('P', 'LETTER');
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(0.5, 0.5, 0, 0.5);
-$html = '<div><b>Part 11. &nbsp;Additional Information</b><i></i></div>';
-$pdf->writeHTMLCell(91, 6, 13, 16.6, $html, 1, 1, true, false, 'L', true);
+$html = '<div><b>Part 9. &nbsp;Additional Information</b><i></i></div>';
+$pdf->writeHTMLCell(91, 6, 13, 19.6, $html, 1, 1, true, false, 'L', true);
 //...........
 $pdf->setCellPaddings(1, 1, 0, 0.9);
 
 $pdf->SetFont('times', '', 10);
 $html = '<div>If you need extra space to provide any additional information<br>
-within this affidavit, use the space below. If you need more<br>
+within this application, use the space below. If you need more<br>
 space than what is provided, you may make copies of this page<br>
-to complete and file with this affidavit or attach a separate sheet<br>
-of paper. Type or print your name and A-Number (if any) at the<br>
-top of each sheet; indicate the <b>Page Number, Part Number</b>,<br>
-and <b>Item Number</b> to which your answer refers; and sign and<br>
-date each sheet.</div>';
-$pdf->writeHTMLCell(103, 7, 12, 23, $html, 0, 1, false, true, 'L', true);
+to complete and file with this application or attach a separate<br>
+sheet of paper. Type or print your name and A-Number (if any)<br>
+at the top of each sheet; indicate the <b>Page Number, Part<br>
+Number</b>, and <b>Item Number</b> to which your answer refers; and<br>
+sign and date each sheet.</div>';
+$pdf->writeHTMLCell(103, 7, 12, 26, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->setCellHeightRatio(1.1);
 $pdf->SetFont('times', '', 10);
@@ -2540,19 +2540,19 @@ $pdf->SetFont('times', '', 10);
 $html = '<div><b>3.a.  </b> &nbsp;Page Number</div>';
 $pdf->writeHTMLCell(90, 7, 12, 101, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_name_page_number', 19.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 106);
+$pdf->TextField('additional_info_page_number', 19.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 106);
 //.............
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>3.b.</b> &nbsp;&nbsp;Part Number</div>';
 $pdf->writeHTMLCell(90, 7, 45, 101, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_name_part_number', 19.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 54, 106);
+$pdf->TextField('additional_info_part_number', 19.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 54, 106);
 //............
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>3.c.</b> &nbsp;&nbsp;Item Number</div>';
 $pdf->writeHTMLCell(90, 7, 75, 101, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_name_item_number', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 84, 106);
+$pdf->TextField('additional_info_item_number', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 84, 106);
 
 //............
 $pdf->SetFont('times', '', 10);
@@ -2581,7 +2581,7 @@ $html = '<div><b>4.a.  </b> &nbsp;Page Number</div>';
 $pdf->writeHTMLCell(90, 7, 12, 180, $html, 0, 1, false, false, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_name_page_number1', 19.5, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 185.2);
+$pdf->TextField('additional_info_page_number1', 19.5, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 185.2);
 
 //.............
 
@@ -2590,7 +2590,7 @@ $html = '<div><b>4.b.</b> &nbsp;&nbsp;Part Number</div>';
 $pdf->writeHTMLCell(90, 7, 45, 180, $html, 0, 1, false, false, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_name_part_number1', 19.5, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 54, 185.2);
+$pdf->TextField('additional_info_part_number1', 19.5, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 54, 185.2);
 
 //............
 
@@ -2599,7 +2599,7 @@ $html = '<div><b>4.c.</b> &nbsp;&nbsp;Item Number</div>';
 $pdf->writeHTMLCell(90, 7, 75, 180, $html, 0, 1, false, false, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_name_item_number1', 20, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 84, 185.2);
+$pdf->TextField('additional_info_item_number1', 20, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 84, 185.2);
 
 //............
 
@@ -2750,136 +2750,139 @@ $js = "
 var fields = {
 
 
-    'attorney_state_bar_number':' ',
-    'attorney_or_according_representative':' ',
-    'info_about_you_alien_reg':' ',
-    'info_about_you_social_security':' ',
-    'info_about_you_uscis_online':' ',
-    'your_full_name_last_name':' ',
-    'your_full_name_first_name':' ',
-    'your_full_name_middle_name':' ',
-    'your_full_name_last_name1':' ',
-    'your_full_name_first_name1':' ',
-    'your_full_name_middle_name1':' ',
-    'your_full_name_last_name2':' ',
-    'your_full_name_first_name2':' ',
-    'your_full_name_middle_name2':' ',
-    'mailing_in_care_name':' ',
-    'mailing_street_number_name':' ',
-    'mailing_apt_ste_flr':' ',
-    'mailing_city_town':' ',
-    'mailing_state':' ',
-    'mailing_zipcode':' ',
-    'physical_street_number_name':' ',
-    'physical_apt_ste_flr':' ',
-    'physical_city_town':' ',
-    'physical_state':' ',
-    'physical_zipcode':' ',
-    'information_about_you_date_of_birth':' ',
-    'information_about_you_city_town_birth':' ',
-    'information_about_you_country_birth':' ',
-    'information_about_you_country_citizenship':' ',
-    'information_about_you_mother_last_name':' ',
-    'information_about_you_mother_first_name':' ',
-    'information_about_you_father_last_name':' ',
-    'information_about_you_father_first_name':' ',
-    'information_about_you_date_entry':' ',
-    'info_about_you_state':' ',
-    'information_about_you_place_port':' ',
-    'information_about_you_immigration_status':' ',
-    'information_about_you_place_port1':' ',
-    'info_about_you_state1':' ',
-    'information_about_you_from':' ',
-    'information_about_you_to':' ',
-    'information_about_you_immigration':' ',
-    'information_about_you_place_port2':' ',
-    'info_about_you_state2':' ',
-    'information_about_you_from1':' ',
-    'information_about_you_to1':' ',
-    'information_about_you_immigration_status1':' ',
-    'info_about_you_uscis_receipt':' ',
-    'processing_info_feet':' ',
-    'processing_info_inches':' ',
-    'processing_info_pound1':' ',
-    'processing_info_pound2':' ',
-    'processing_info_pound3':' ',
-    'info_about_you_dos_dv':' ',
-    'info_about_last_name':' ',
-    'info_about_first_name':' ',
-    'info_about_middle_name':' ',
-    'info_about_uscis_receipt_number':' ',
-    'info_about_dos_consular_case':' ',
-    'info_about_last_name1':' ',
-    'info_about_first_name1':' ',
-    'info_about_middle_name1':' ',
-    'info_about_company_name':' ',
-    'info_about_last_name2':' ',
-    'info_about_first_name2':' ',
-    'info_about_middle_name2':' ',
-    'info_about_last_name3':' ',
-    'info_about_first_name3':' ',
-    'info_about_middle_name3':' ',
-    'statement_from_applicant':' ',
-    'applicant_contact_info_daytime':' ',
-    'applicant_contact_info_mobile':' ',
-    'applicant_contact_info_email':' ',
-    'applicant_date_of_signature':' ',
-    'interpreter_contact_info_family':' ',
-    'interpreter_contact_info_given':' ',
-    'interpreter_contact_info_business':' ',
-    'interpreter_mailing_address_street_name':' ',
-    'interpreter_mailing_address__apt_ste_flr':' ',
-    'interpreter_mailing_address_city_or_town':' ',
-    'interpreter_mailing_address_state':' ',
-    'interpreter_mailing_address_zip_code':' ',
-    'interpreter_mailing_address_province':' ',
-    'interpreter_mailing_address_postal_code':' ',
-    'interpreter_mailing_address_country':' ',
-    'interpreter_daytime_tele_number':' ',
-    'interpreter_mobile_number':' ',
-    'interpreter_mail_address':' ',
-    'interpreter_certification':' ',
-    'interpreter_signature_date':' ',
-    'preparer_full_famiy_name':' ',
-    'preparer_full_given_name':' ',
-    'preparer_full_business_name':' ',
-    'preparer_mailing_address_street_name':' ',
-    'preparer_mailing_address__apt_ste_flr':' ',
-    'preparer_mailing_address_city_or_town':' ',
-    'preparer_mailing_address_state':' ',
-    'preparer_mailing_address_zip_code':' ',
-    'preparer_mailing_address_province':' ',
-    'preparer_mailing_address_postal_code':' ',
-    'preparer_mailing_address_country':' ',
-    'preparer_contact_info_daytime':' ',
-    'preparer_contact_info_mobile':' ',
-    'preparer_contact_info_email':' ',
-    'peparer_date_of_signature':' ',
-    'additional_info_family_last_name':' ',
-    'additional_info_given_first_name':' ',
-    'additional_info_middle_name':' ',
-    'additional_info_page_number':' ',
-    'additional_info_part_number':' ',
-    'additional_info_item_number':' ',
-    'aditional_inf0_name_3d':' ',
-    'additional_info_page_number1':' ',
-    'additional_info_part_number1':' ',
-    'additional_info_item_number1':' ',
-    'aditional_inf0_name_4d':' ',
-    'additional_info_page_number2':' ',
-    'additional_info_part_number2':' ',
-    'additional_info_item_number2':' ',
-    'aditional_inf0_name_5d':' ',
-    'additional_info_page_number3':' ',
-    'additional_info_part_number3':' ',
-    'additional_info_item_number3':' ',
-    'aditional_inf0_name_6d':' ',
-    'additional_info_page_number4':' ',
-    'additional_info_part_number4':' ',
-    'additional_info_item_number4':' ',
-    'aditional_inf0_name_7d':' ',
-    'p9_additional_2_a_number':' ',
-    'p8_mailing_address_3h':' ',
+    'attorney_state_bar_number':' " . showData(' ') . "',
+    'attorney_or_according_representative':' " . showData(' ') . "',
+    'info_about_you_alien_reg':' " . showData('other_information_about_you_alien_registration_number') . "',
+    'info_about_you_social_security':' " . showData('other_information_about_you_social_security_number') . "',
+    'info_about_you_uscis_online':' " . showData('other_information_about_you_uscis_online_account_number') . "',
+    'your_full_name_last_name':' " . showData('information_about_you_family_last_name') . "',
+    'your_full_name_first_name':' " . showData('information_about_you_given_first_name') . "',
+    'your_full_name_middle_name':' " . showData('information_about_you_middle_name') . "',
+    'your_full_name_last_name1':' " . showData('information_about_you_other_family_last_name') . "',
+    'your_full_name_first_name1':' " . showData('information_about_you_other_given_first_name') . "',
+    'your_full_name_middle_name1':' " . showData('information_about_you_other_middle_name') . "',
+    'your_full_name_last_name2':' " . showData('information_about_you_other_family_last_name2') . "',
+    'your_full_name_first_name2':' " . showData('information_about_you_other_given_first_name2') . "',
+    'your_full_name_middle_name2':' " . showData('information_about_you_other_middle_name2') . "',
+    'mailing_in_care_name':' " . showData('information_about_you_us_mailing_care_of_name') . "',
+    'mailing_street_number_name':' " . showData('information_about_you_us_mailing_street_number') . "',
+    'mailing_apt_ste_flr':' " . showData('information_about_you_home_apt_ste_flr_value') . "',
+    'mailing_city_town':' " . showData('information_about_you_home_city_town') . "',
+    'mailing_state':' " . showData('information_about_you_home_state') . "',
+    'mailing_zipcode':' " . showData('information_about_you_home_zip_code') . "',
+    'physical_street_number_name':' " . showData('information_about_you_home_street_number') . "',
+    'physical_apt_ste_flr':' " . showData('information_about_you_home_apt_ste_flr_value') . "',
+    'physical_city_town':' " . showData('information_about_you_us_mailing_city_town') . "',
+    'physical_state':' " . showData('information_about_you_us_mailing_state') . "',
+    'physical_zipcode':' " . showData('information_about_you_us_mailing_zip_code') . "',
+    'information_about_you_date_of_birth':' " . showData('other_information_about_you_date_of_birth') . "',
+//1st page end......
+
+    'information_about_you_city_town_birth':' " . showData('other_information_about_you_city_of_birth') . "',
+    'information_about_you_country_birth':' " . showData('other_information_about_you_country_of_birth') . "',
+    'information_about_you_country_citizenship':' " . showData('other_information_about_you_country_of_citizen') . "',
+    'information_about_you_mother_last_name':' " . showData('parent2_info_family_last_name') . "',
+    'information_about_you_mother_first_name':' " . showData('parent2_info_given_first_name') . "',
+    'information_about_you_father_last_name':' " . showData('parent1_info_family_last_name') . "',
+    'information_about_you_father_first_name':' " . showData('parent1_info_given_first_name') . "',
+    'information_about_you_date_entry':' " . showData('other_information_about_you_date_of_entry') . "',
+    'information_about_you_place_port':' " . showData('other_information_about_you_place_of_entry_city_town') . "',
+    'info_about_you_state':' " . showData('i_601a_information_about_you_state') . "',
+    'information_about_you_immigration_status':' " . showData('other_information_about_you_current_nonimmigration_status') . "',
+    'information_about_you_place_port1':' " . showData('i_601a_place_or_port_of_entry') . "',
+    'info_about_you_state1':' " . showData('i_601a_previous_entry_state') . "',
+    'information_about_you_from':' " . showData('i_601a_previous_entry_from_date') . "',
+    'information_about_you_to':' " . showData('i_601a_previous_entry_to_date') . "',
+    'information_about_you_immigration':' " . showData('i_601a_previous_entry_immigration_status') . "',
+    'information_about_you_place_port2':' " . showData('i_601a_place_or_port_of_entry2') . "',
+    'info_about_you_state2':' " . showData('i_601a_previous_entry_state2') . "',
+    'information_about_you_from1':' " . showData('i_601a_previous_entry_from_date2') . "',
+    'information_about_you_to1':' " . showData('i_601a_previous_entry_to_date2') . "',
+    'information_about_you_immigration_status1':' " . showData('') . "',
+    'info_about_you_uscis_receipt':' " . showData('') . "',
+    'processing_info_feet':' " . showData('') . "',
+    'processing_info_inches':' " . showData('') . "',
+    'processing_info_pound1':' " . showData('') . "',
+    'processing_info_pound2':' " . showData('') . "',
+    'processing_info_pound3':' " . showData('') . "',
+    'info_about_you_dos_dv':' " . showData('') . "',
+    'info_about_last_name':' " . showData('') . "',
+    'info_about_first_name':' " . showData('') . "',
+    'info_about_middle_name':' " . showData('') . "',
+    'info_about_uscis_receipt_number':' " . showData('') . "',
+    'info_about_dos_consular_case':' " . showData('') . "',
+    'info_about_last_name1':' " . showData('') . "',
+    'info_about_first_name1':' " . showData('') . "',
+    'info_about_middle_name1':' " . showData('') . "',
+    'info_about_company_name':' " . showData('') . "',
+    'info_about_last_name2':' " . showData('') . "',
+    'info_about_first_name2':' " . showData('') . "',
+    'info_about_middle_name2':' " . showData('') . "',
+    'info_about_last_name3':' " . showData('') . "',
+    'info_about_first_name3':' " . showData('') . "',
+    'info_about_middle_name3':' " . showData('') . "',
+    'statement_from_applicant':' " . showData('') . "',
+    'applicant_contact_info_daytime':' " . showData('') . "',
+    'applicant_contact_info_mobile':' " . showData('') . "',
+    'applicant_contact_info_email':' " . showData('') . "',
+    'applicant_date_of_signature':' " . showData('') . "',
+    'interpreter_contact_info_family':' " . showData('') . "',
+    'interpreter_contact_info_given':' " . showData('') . "',
+    'interpreter_contact_info_business':' " . showData('') . "',
+    'interpreter_mailing_address_street_name':' " . showData('') . "',
+    'interpreter_mailing_address__apt_ste_flr':' " . showData('') . "',
+    'interpreter_mailing_address_city_or_town':' " . showData('') . "',
+    'interpreter_mailing_address_state':' " . showData('') . "',
+    'interpreter_mailing_address_zip_code':' " . showData('') . "',
+    'interpreter_mailing_address_province':' " . showData('') . "',
+    'interpreter_mailing_address_postal_code':' " . showData('') . "',
+    'interpreter_mailing_address_country':' " . showData('') . "',
+    'interpreter_daytime_tele_number':' " . showData('') . "',
+    'interpreter_mobile_number':' " . showData('') . "',
+    'interpreter_mail_address':' " . showData('') . "',
+    'interpreter_certification':' " . showData('') . "',
+    'interpreter_signature_date':' " . showData('') . "',
+    'preparer_full_famiy_name':' " . showData('') . "',
+    'preparer_full_given_name':' " . showData('') . "',
+    'preparer_full_business_name':' " . showData('') . "',
+    'preparer_mailing_address_street_name':' " . showData('') . "',
+    'preparer_mailing_address__apt_ste_flr':' " . showData('') . "',
+    'preparer_mailing_address_city_or_town':' " . showData('') . "',
+    'preparer_mailing_address_state':' " . showData('') . "',
+    'preparer_mailing_address_zip_code':' " . showData('') . "',
+    'preparer_mailing_address_province':' " . showData('') . "',
+    'preparer_mailing_address_postal_code':' " . showData('') . "',
+    'preparer_mailing_address_country':' " . showData('') . "',
+    'preparer_contact_info_daytime':' " . showData('') . "',
+    'preparer_contact_info_mobile':' " . showData('') . "',
+    'preparer_contact_info_email':' " . showData('') . "',
+    'peparer_date_of_signature':' " . showData('') . "',
+    'additional_info_family_last_name':' " . showData('') . "',
+    'additional_info_given_first_name':' " . showData('') . "',
+    'additional_info_a_number':' " . showData('') . "',
+    'additional_info_middle_name':' " . showData('') . "',
+    'additional_info_page_number':' " . showData('') . "',
+    'additional_info_part_number':' " . showData('') . "',
+    'additional_info_item_number':' " . showData('') . "',
+    'aditional_inf0_name_3d':' " . showData('') . "',
+    'additional_info_page_number1':' " . showData('') . "',
+    'additional_info_part_number1':' " . showData('') . "',
+    'additional_info_item_number1':' " . showData('') . "',
+    'aditional_inf0_name_4d':' " . showData('') . "',
+    'additional_info_page_number2':' " . showData('') . "',
+    'additional_info_part_number2':' " . showData('') . "',
+    'additional_info_item_number2':' " . showData('') . "',
+    'aditional_inf0_name_5d':' " . showData('') . "',
+    'additional_info_page_number3':' " . showData('') . "',
+    'additional_info_part_number3':' " . showData('') . "',
+    'additional_info_item_number3':' " . showData('') . "',
+    'aditional_inf0_name_6d':' " . showData('') . "',
+    'additional_info_page_number4':' " . showData('') . "',
+    'additional_info_part_number4':' " . showData('') . "',
+    'additional_info_item_number4':' " . showData('') . "',
+    'aditional_inf0_name_7d':' " . showData('') . "',
+    'p9_additional_2_a_number':' " . showData('') . "',
+    'p8_mailing_address_3h':' " . showData('') . "',
     '':' ',
     '':' ',
     '':' ',
