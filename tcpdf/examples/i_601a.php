@@ -87,11 +87,11 @@ $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-// set a barcode on the page footer
-// $pdf->setBarcode(date('Y-m-d H:i:s'));
 
-// add a page
-$pdf->AddPage('P', 'LETTER');  // page number 1
+/********************************
+ ******** Start Page No 1 ********
+ *********************************/
+$pdf->AddPage('P', 'LETTER');  
 
 // set style for barcode
 $style = array(
@@ -103,8 +103,6 @@ $style = array(
     'module_width' => 2, // width of a single module in points
     'module_height' => 1 // height of a single module in points
 );
-
-
 
 // Logo
 $logo = 'homeland_security_logo.png';
@@ -545,8 +543,13 @@ $pdf->writeHTMLCell(90, 7, 112, 242, $html, 0, 1, false, true, 'L', true);
 //.........
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('information_about_you_date_of_birth', 37, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 241);
-//............
-// add a page
+/********************************
+ ******** End Page No 1 **********
+ *********************************/
+
+/********************************
+ ******** Start Page No 2 ********
+ *********************************/
 $pdf->AddPage('P', 'LETTER');  // page number 2
 //.........
 $pdf->SetFont('times', '', 12);
@@ -826,9 +829,13 @@ $html = '<div><b>NOTE:</b> You may be eligible for a provisional
 <br>immigrant visa interview. 
 </div>';
 $pdf->writeHTMLCell(90, 7, 125, 194, $html, 0, 1, false, true, 'J', true);
-//............
+/********************************
+ ******** End Page No 2 **********
+ *********************************/
 
-// add a page
+/********************************
+ ******** Start Page No 3 ********
+ *********************************/
 $pdf->AddPage('P', 'LETTER');  // page number 3
 
 $pdf->SetFont('times', '', 12);
@@ -1103,9 +1110,13 @@ $pdf->writeHTMLCell(95, 7, 121, 221, $html, 0, 1, false, true, 'J', true);
 
 $html = '<div><input type="checkbox" name="part1_36" value="Y" checked=" " />  Yes   &nbsp; <input type="checkbox" name="part1_36" value="N" checked=" " /> No</div>';
 $pdf->writeHTMLCell(90, 7, 178, 227, $html, 0, 1, false, true, 'J', true);
-//..........
+/********************************
+ ******** End Page No 3 **********
+ *********************************/
 
-// add a page
+/********************************
+ ******** Start Page No 4 ********
+ *********************************/
 $pdf->AddPage('P', 'LETTER');  // page number 4
 
 $pdf->SetFont('times', '', 12);
@@ -1452,10 +1463,14 @@ $html = '<div>
 $pdf->writeHTMLCell(90, 7, 166, 183, $html, 0, 0, false, true, 'J', true);
 // $pdf->writeHTMLCell(90, 7, 116, 183, $html, 0, 0, false, true, 'J', true);
 
-//.......
+/********************************
+ ******** End Page No 4 **********
+ *********************************/
 
-// add a page
-$pdf->AddPage('P', 'LETTER');  // page number 1
+/********************************
+ ******** Start Page No 5 ********
+ *********************************/
+$pdf->AddPage('P', 'LETTER'); 
 //...........
 
 $pdf->SetFont('times', '', 12);
@@ -1777,9 +1792,13 @@ $pdf->writeHTMLCell(90, 7, 120.3, 224, '<input type="checkbox" name="part4_5c" v
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>5.d.  </b><input type="checkbox" name="part4_5d" value="Y" checked=" " /> LPR Parent</div>';
 $pdf->writeHTMLCell(90, 7, 113, 231, $html, 0, 1, false, true, 'J', true);
-//............
+/********************************
+ ******** End Page No 5 **********
+ *********************************/
 
-// add a page
+/********************************
+ ******** Start Page No 6 ********
+ *********************************/
 $pdf->AddPage('P', 'LETTER');  // page number 6
 
 $pdf->SetFont('times', '', 12);
@@ -1952,8 +1971,13 @@ records, to other entities and persons where necessary for the
 administration and enforcement of U.S. immigration laws.
  ';
 $pdf->writeHTMLCell(95, 7, 113, 217, $html, '', 0, 0, true, 'L');
+/********************************
+ ******** End Page No 6 **********
+ *********************************/
 
-// add a page
+/********************************
+ ******** Start Page No 7 ********
+ *********************************/
 $pdf->AddPage('P', 'LETTER');  // page number 7
 
 $pdf->SetFont('times', '', 12);
@@ -2249,10 +2273,14 @@ $pdf->writeHTMLCell(90, 7, 114, 227, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('interpreter_signature_date', 33.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 171, 226);
-//............
+/********************************
+ ******** End Page No 7 **********
+ *********************************/
 
-// add a page
-$pdf->AddPage('P', 'LETTER');  // page number 1
+/********************************
+ ******** Start Page No 8 ********
+ *********************************/
+$pdf->AddPage('P', 'LETTER'); 
 //...........
 
 $pdf->SetFont('times', '', 12);
@@ -2498,12 +2526,15 @@ $pdf->writeHTMLCell(92, 7, 112, 155, $html, 0, 1, false, true, 'J', true);
 
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('peparer_date_of_signature', 34, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 155);
-//..........
+/********************************
+ ******** End Page No 8 **********
+ *********************************/
 
-
+/********************************
+ ******** Start Page No 9 ********
+ *********************************/
 $pdf->AddPage('P', 'LETTER');
 //..........
-
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(0.5, 0.5, 0, 0.5);
@@ -2896,13 +2927,6 @@ var fields = {
     'additional_info_item_number3':' " . showData('i_601a_additional_info_6c_item_no') . "',
     'additional_info_page_number4':' " . showData('i_601a_additional_info_7a_page_no') . "',
     'additional_info_part_number4':' " . showData('i_601a_additional_info_7b_part_no') . "',
-    'additional_info_item_number4':' " . showData('i_601a_additional_info_7c_item_no') . "',
-
-
-
-
-
-
 
 };
 for (var fieldName in fields) {
@@ -2912,12 +2936,10 @@ for (var fieldName in fields) {
         field.value = fields[fieldName];
     }
 }
-
 ";
 
 
 $pdf->IncludeJS($js);
-
 // $pdf->lastPage();
 //Close and output PDF document
 $pdf->Output('I-601A.pdf', 'I');
