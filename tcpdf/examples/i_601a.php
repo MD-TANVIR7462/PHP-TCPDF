@@ -414,7 +414,13 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('mailing_street_number_name', 55, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 148, 130);
 //..........
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>7.c. </b>&nbsp;  <input type="checkbox" name="Apt" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste" value="Ste" checked="" />Ste. <input type="checkbox" name="Flr" value="Flr" checked="" /> Flr.</div>';
+if (showData('information_about_you_us_mailing_apt_ste_flr') == "apt") $checked_apt = "checked";
+else $checked_apt = "";
+if (showData('information_about_you_us_mailing_apt_ste_flr') == "ste") $checked_ste = "checked";
+else $checked_ste = "";
+if (showData('information_about_you_us_mailing_apt_ste_flr') == "flr") $checked_flr = "checked";
+else $checked_flr = "";
+$html = '<div><b>7.c. </b>&nbsp;  <input type="checkbox" name="Apt" value="Apt" checked="' . $checked_apt . '" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste" value="Ste" checked="' . $checked_ste . '" />Ste. <input type="checkbox" name="Flr" value="Flr" checked="' . $checked_flr . '" /> Flr.</div>';
 $pdf->writeHTMLCell(60, 0, 112, 139, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('mailing_apt_ste_flr', 43.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 159.5, 138);
@@ -479,7 +485,13 @@ $pdf->TextField('physical_street_number_name', 55, 7, array('strokeColor' => arr
 //..........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>9.b. </b>&nbsp;  <input type="checkbox" name="Apt1" value="Apt" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste1" value="Ste" checked="" />Ste. <input type="checkbox" name="Flr1" value="Flr" checked="" /> Flr.</div>';
+if (showData('information_about_you_home_apt_ste_flr') == "apt") $checked_apt = "checked";
+else $checked_apt = "";
+if (showData('information_about_you_home_apt_ste_flr') == "ste") $checked_ste = "checked";
+else $checked_ste = "";
+if (showData('information_about_you_home_apt_ste_flr') == "flr") $checked_flr = "checked";
+else $checked_flr = "";
+$html = '<div><b>9.b. </b>&nbsp;  <input type="checkbox" name="Apt1" value="Apt" checked="' . $checked_apt . '" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste1" value="Ste" checked="' . $checked_ste . '" />Ste. <input type="checkbox" name="Flr1" value="Flr" checked="' . $checked_flr . '" /> Flr.</div>';
 $pdf->writeHTMLCell(60, 0, 112, 201, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('physical_apt_ste_flr', 43.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 159.5, 200);
@@ -519,8 +531,12 @@ $html = '<div><b><i>Other Information</i></b></div>';
 $pdf->writeHTMLCell(90, 7, 113, 226, $html, 0, 1, true, false, 'L', true);
 //.........
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>10.  </b>   &nbsp;Gender   &nbsp; &nbsp; <input type="checkbox" name="G" value="y" checked=" " />Male  &nbsp; &nbsp;
-<input type="checkbox" name="G" value="n" checked=" " /> Female</div>';
+if (showData('other_information_about_you_gender') == "male") $checked_male = "checked";
+else $checked_male = "";
+if (showData('other_information_about_you_gender') == "female") $checked_female = "checked";
+else $checked_female = "";
+$html = '<div><b>10.  </b>   &nbsp;Gender   &nbsp; &nbsp; <input type="checkbox" name="G" value="y" checked="' . $checked_male . '" />Male  &nbsp; &nbsp;
+<input type="checkbox" name="G" value="n" checked="' . $checked_female . '" /> Female</div>';
 $pdf->writeHTMLCell(90, 7, 112, 235, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
@@ -2354,7 +2370,7 @@ $pdf->TextField('preparer_mailing_address_postal_code', 60, 7, array('strokeColo
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>3.h.</b> &nbsp;&nbsp;Country';
 $pdf->writeHTMLCell(90, 7, 13, 161, $html, '', 0, 0, true, 'L');
-$pdf->TextField('p8_mailing_address_3h', 81, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 166.4);
+$pdf->TextField('preparer_mailing_address_country', 81, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 166.4);
 
 
 
@@ -2881,8 +2897,6 @@ var fields = {
     'additional_info_page_number4':' " . showData('i_601a_additional_info_7a_page_no') . "',
     'additional_info_part_number4':' " . showData('i_601a_additional_info_7b_part_no') . "',
     'additional_info_item_number4':' " . showData('i_601a_additional_info_7c_item_no') . "',
-    'p9_additional_2_a_number':' " . showData('') . "',
-    'p8_mailing_address_3h':' " . showData('') . "',
 
 
 
