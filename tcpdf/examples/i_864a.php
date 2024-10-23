@@ -27,6 +27,8 @@ class MyPDF extends TCPDF
         }
     }
 
+
+    
     // Page footer
     public function Footer()
     {
