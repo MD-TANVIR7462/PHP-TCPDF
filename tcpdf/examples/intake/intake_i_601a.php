@@ -1,6 +1,6 @@
 <?php
 $meta_title     =   "INTAKE FOR FORM i-601A";
-$page_heading     =   " Notice of Appeal or Motion";
+$page_heading     =   "Application for Provisional Unlawful Presence Waiver";
 include "intake_header.php";
 ?>
 
@@ -314,7 +314,7 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">16.a. Father's Family Name (Last Name) </label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name="c" maxlength="39" value="<?php echo showData('parent1_info_family_last_name') ?>">
+                <input type="text" class="form-control" name="parent1_info_family_last_name" maxlength="39" value="<?php echo showData('parent1_info_family_last_name') ?>">
             </div>
         </div>
         <div class="form-group">
@@ -336,7 +336,7 @@ include "intake_header.php";
         <div class="form-group">
             <label class="control-label col-md-12">18.a. Place or Port-of-Entry (Actual or approximate city or town) </label>
             <div class="col-md-12 ">
-                <input type="text" class="form-control" name=" " maxlength="39" value="<?php echo showData('other_information_about_you_place_of_entry_city_town') ?>">
+                <input type="text" class="form-control" name="other_information_about_you_place_of_entry_city_town" maxlength="39" value="<?php echo showData('other_information_about_you_place_of_entry_city_town') ?>">
             </div>
         </div>
         <div class="form-group">
@@ -839,8 +839,14 @@ include "intake_header.php";
                 <label class="control-label col-md-12">1. Ethnicity (Select only one box)</label>
                 <div class="col-md-6 ">
                     <div class="form-group">
-                        <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("biographic_info_ethnicity") ?>Hispanic or Latino</label>
-                        <label class="control-label" style="margin-left: 30px;"><?php echo createCheckbox("biographic_info_ethnicity") ?>Not Hispanic or Latino</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="hispanic" name="biographic_info_ethnicity" value="hispanic" <?php echo (showData('biographic_info_ethnicity') == 'hispanic') ? 'checked' : '' ?>>
+                            <label for="hispanic" class="form-check-label">Hispanic or Latino</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="not_hispanic" name="biographic_info_ethnicity" value="nothispanic" <?php echo (showData('biographic_info_ethnicity') == 'nothispanic') ? 'checked' : '' ?>>
+                            <label for="not_hispanic" class="form-check-label">Not Hispanic or Latino</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1274,7 +1280,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">5. Applicant's Email Address (if any)</label>
                 <div class="col-md-12">
-                    <input type="email" class="form-control" name="i_601a_applicant_email_address" maxlength="39" value="<?php echo showData('i_601a_applicant_email_address') ?>">
+                    <input type="text" class="form-control" name="i_601a_applicant_email_address" maxlength="39" value="<?php echo showData('i_601a_applicant_email_address') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -1471,7 +1477,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">6. Interpreter's Email Address (if any)</label>
                 <div class="col-md-12">
-                    <input type="email" class="form-control" name="i_601a_interpreter_email" maxlength="39" value="<?php echo showData('i_601a_interpreter_email') ?>">
+                    <input type="text" class="form-control" name="i_601a_interpreter_email" maxlength="39" value="<?php echo showData('i_601a_interpreter_email') ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -1560,12 +1566,12 @@ include "intake_header.php";
             </div>
             <div class="form-group">
                 <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
-                    <input type="radio" name="i_601a_preparer_address_apt_ste_flr" value="apt" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                    Apt. &nbsp;
-                    <input type="radio" name="i_601a_preparer_address_apt_ste_flr" value="ste" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                    Ste. &nbsp;
-                    <input type="radio" name="i_601a_preparer_address_apt_ste_flr" value="flr" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                    Flr.:
+                    <label for="apt_7"><input type="radio" id="apt_7" name="i_601a_preparer_address_apt_ste_flr" value="apt" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                    Apt. </label>&nbsp;
+                   <label for="ste7"> <input id="ste7" type="radio" name="i_601a_preparer_address_apt_ste_flr" value="ste" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                   Ste.</label> &nbsp;
+                  <label for="flr7">  <input id="flr7" type="radio" name="i_601a_preparer_address_apt_ste_flr" value="flr" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                  Flr.</label>:
                 </div>
                 <div class="col-md-6">
                     <input type="text" class="form-control" type="text" class="form-control" name="i_601a_preparer_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_601a_preparer_address_apt_ste_flr_value') ?>">
@@ -1622,19 +1628,19 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">4. Preparer's Daytime Telephone Number</label>
                 <div class="col-md-12">
-                    <input type="number" class="form-control" name="i_601a_preparer_daytime_tel" maxlength="15" value="<?php echo showData('i_601a_preparer_daytime_tel') ?>">
+                    <input type="text" class="form-control" name="i_601a_preparer_daytime_tel" maxlength="15" value="<?php echo showData('i_601a_preparer_daytime_tel') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">5. Preparer's Mobile Telephone Number (if any)</label>
                 <div class="col-md-12">
-                    <input type="number" class="form-control" name="i_601a_preparer_mobile" maxlength="15" value="<?php echo showData('i_601a_preparer_mobile') ?>">
+                    <input type="text" class="form-control" name="i_601a_preparer_mobile" maxlength="15" value="<?php echo showData('i_601a_preparer_mobile') ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">6. Preparer's Email Address (if any)</label>
                 <div class="col-md-12">
-                    <input type="email" class="form-control" maxlength="39" name="i_601a_preparer_email" value="<?php echo showData('i_601a_preparer_email') ?>">
+                    <input type="text" class="form-control" maxlength="39" name="i_601a_preparer_email" value="<?php echo showData('i_601a_preparer_email') ?>">
                 </div>
             </div>
         </div>

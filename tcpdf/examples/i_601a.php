@@ -1378,43 +1378,49 @@ $html = '<div><b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;Ethnicity (Select <b>only one</b>
 $pdf->writeHTMLCell(90, 7, 113, 91, $html, 0, 1, false, true, 'J', true);
 //.........
 $pdf->SetFont('times', '', 10);
-if (showData('biographic_info_ethnicity') == "Y") $checked = "checked";else $checked = "";
+if (showData('biographic_info_ethnicity') == "hispanic") $checked = "checked";else $checked = "";
 $html = '<div>   <input type="checkbox" name="Latino" value="Y" checked="' . $checked . '"  />&nbsp;&nbsp;Hispanic or Latino </div>';
 $pdf->writeHTMLCell(90, 7, 118, 96, $html, 0, 1, false, true, 'J', true);
 //........
 $pdf->SetFont('times', '', 10);
-if (showData('petitioner_us_mailing_apt_ste_flr') == "Y") $checked = "checked";else $checked = "";
+if (showData('biographic_info_ethnicity') == "nothispanic") $checked = "checked";else $checked = "";
 $html = '<div>   <input type="checkbox" name="Not Hispanic" value="Y" checked="' . $checked . '"  />&nbsp;&nbsp;Not Hispanic or Latino </div>';
 $pdf->writeHTMLCell(90, 7, 118, 101, $html, 0, 1, false, true, 'J', true);
 //.........
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;Race (Select <b>all applicable</b> boxes) </div>';
 $pdf->writeHTMLCell(90, 7, 113, 108, $html, 0, 1, false, true, 'J', true);
+
 //.........
 $pdf->SetFont('times', '', 10);
-if (showData('petitioner_us_mailing_apt_ste_flr') == "Y") $checked = "checked";else $checked = "";
-$html = '<div><input type="checkbox" name="white" value="Y" checked="' . $checked . '"  />&nbsp; White</div>';
-$pdf->writeHTMLCell(90, 7, 120, 114, $html, 0, 1, false, true, 'J', true);
-//.........
-$pdf->SetFont('times', '', 10);
-if (showData('petitioner_us_mailing_apt_ste_flr') == "Y") $checked = "checked";else $checked = "";
-$html = '<div><input type="checkbox" name="Asian" value="Y" checked="' . $checked . '"  />&nbsp; Asian</div>';
-$pdf->writeHTMLCell(90, 7, 120, 119, $html, 0, 1, false, true, 'J', true);
-//.........
-$pdf->SetFont('times', '', 10);
-if (showData('petitioner_us_mailing_apt_ste_flr') == "Y") $checked = "checked";else $checked = "";
-$html = '<div><input type="checkbox" name="Black" value="Y" checked="' . $checked . '"  />&nbsp; Black or African American</div>';
-$pdf->writeHTMLCell(90, 7, 120, 124, $html, 0, 1, false, true, 'J', true);
-//.........
-$pdf->SetFont('times', '', 10);
-if (showData('petitioner_us_mailing_apt_ste_flr') == "Y") $checked = "checked";else $checked = "";
+if (showData('biographic_info_race_american_native') == "Y") $checked = "checked";else $checked = "";
 $html = '<div><input type="checkbox" name="Alaska" value="Y" checked="' . $checked . '"  />&nbsp; American Indian or Alaska Native</div>';
 $pdf->writeHTMLCell(90, 7, 120, 129, $html, 0, 1, false, true, 'J', true);
 //.........
 $pdf->SetFont('times', '', 10);
-if (showData('petitioner_us_mailing_apt_ste_flr') == "Y") $checked = "checked";else $checked = "";
+if (showData('biographic_info_race_asian') == "Y") $checked = "checked";else $checked = "";
+$html = '<div><input type="checkbox" name="Asian" value="Y" checked="' . $checked . '"  />&nbsp; Asian</div>';
+$pdf->writeHTMLCell(90, 7, 120, 119, $html, 0, 1, false, true, 'J', true);
+//.........
+$pdf->SetFont('times', '', 10);
+if (showData('biographic_info_race_black_african') == "Y") $checked = "checked";else $checked = "";
+$html = '<div><input type="checkbox" name="Black" value="Y" checked="' . $checked . '"  />&nbsp; Black or African American</div>';
+$pdf->writeHTMLCell(90, 7, 120, 124, $html, 0, 1, false, true, 'J', true);
+//.........
+$pdf->SetFont('times', '', 10);
+if (showData('biographic_info_race_american_native') == "Y") $checked = "checked";else $checked = "";
+$html = '<div><input type="checkbox" name="Alaska" value="Y" checked="' . $checked . '"  />&nbsp; American Indian or Alaska Native</div>';
+$pdf->writeHTMLCell(90, 7, 120, 129, $html, 0, 1, false, true, 'J', true);
+//.........
+$pdf->SetFont('times', '', 10);
+if (showData('biographic_info_race_native_islander') == "Y") $checked = "checked";else $checked = "";
 $html = '<div><input type="checkbox" name="Hawaiian" value="Y" checked="' . $checked . '"  />&nbsp; Native Hawaiian or Other Pacific Islander</div>';
 $pdf->writeHTMLCell(90, 7, 120, 134, $html, 0, 1, false, true, 'J', true);
+//.........
+$pdf->SetFont('times', '', 10);
+if (showData('biographic_info_race_white') == "Y") $checked = "checked";else $checked = "";
+$html = '<div><input type="checkbox" name="white" value="Y" checked="' . $checked . '"  />&nbsp; White</div>';
+$pdf->writeHTMLCell(90, 7, 120, 114, $html, 0, 1, false, true, 'J', true);
 //.......
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>3.   </b>  Height </div>';
