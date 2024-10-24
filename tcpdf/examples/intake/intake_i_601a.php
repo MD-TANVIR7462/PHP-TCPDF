@@ -986,20 +986,20 @@ include "intake_header.php";
             </div>
             <p style="margin: 5px;">Provide the basis on which you are immigrating to the United States using the check boxes below. (Select <b>only one</b> box)</p>
             <div class="form-group">
-                <label><b>1.a.</b> <?php echo createCheckbox("visa_case_type_diversity_visa_status_status") ?>Diversity Visa Program Selectee or Derivative</label>
+                <label><b>1.a.</b> <?php echo createCheckbox("visa_case_type_diversity_visa_status") ?>Diversity Visa Program Selectee or Derivative</label>
             </div>
             <div class="form-group">
-                <label><b>1.b.</b> <?php echo createCheckbox("visa_case_type_immediate_relative_status_status") ?>Immediate Relative Petition (Form I-130)</label>
+                <label><b>1.b.</b> <?php echo createCheckbox("visa_case_type_immediate_relative_status") ?>Immediate Relative Petition (Form I-130)</label>
             </div>
             <div class="form-group">
-                <label><b>1.c.</b> <?php echo createCheckbox("visa_case_type_family_based_status_status") ?>Preference-Based Family Petition (Form I-130),
+                <label><b>1.c.</b> <?php echo createCheckbox("visa_case_type_family_based_status") ?>Preference-Based Family Petition (Form I-130),
                     including Derivatives</label>
             </div>
             <div class="form-group">
-                <label><b>1.d.</b> <?php echo createCheckbox("visa_case_type_employment_based_status_status") ?>Employment-Based Petition (Form I-140), including Derivatives</label>
+                <label><b>1.d.</b> <?php echo createCheckbox("visa_case_type_employment_based_status") ?>Employment-Based Petition (Form I-140), including Derivatives</label>
             </div>
             <div class="form-group">
-                <label><b>1.e.</b> <?php echo createCheckbox("visa_case_type_special_immigrant_status_status") ?>Special Immigrant/Widow Petition (Form I-360), including Derivatives</label>
+                <label><b>1.e.</b> <?php echo createCheckbox("visa_case_type_special_immigrant_status") ?>Special Immigrant/Widow Petition (Form I-360), including Derivatives</label>
             </div>
 
             <!-- DOS DV Case Number -->
@@ -1129,7 +1129,7 @@ include "intake_header.php";
                 <label><b>2.b.</b> <?php echo createCheckbox("i_601a_relative_u_s_citizen_parent_status") ?> U.S. Citizen Parent</label>
             </div>
             <div class="form-group">
-                <label><b>2.c.</b> <?php echo createCheckbox("i_601a_relative_lpr_spouse_including_derivatives_status") ?> LPR Spouse including Derivatives</label>
+                <label><b>2.c.</b> <?php echo createCheckbox("i_601a_relative_lpr_spouse_including_derivatives_status") ?> LPR Spouse </label>
             </div>
             <div class="form-group">
                 <label><b>2.d.</b> <?php echo createCheckbox("i_601a_relative_lpr_parent_status") ?> LPR Parent</label>

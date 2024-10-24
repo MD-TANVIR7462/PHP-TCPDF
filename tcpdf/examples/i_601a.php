@@ -1574,21 +1574,21 @@ $html = '<div>
 $pdf->writeHTMLCell(90, 7, 166, 163, $html, 0, 0, false, true, 'J', true);
 //......
 $pdf->SetFont('times', '', 10);
-if (showData('biographic_info_hair_color') == "black") $checked_blade = "checked";
+if (showData('biographic_info_hair_color') == "blad") $checked_blade = "checked";
 else $checked_blade = "";
-if (showData('biographic_info_hair_color') == "blue") $checked_black = "checked";
+if (showData('biographic_info_hair_color') == "black") $checked_black = "checked";
 else $checked_black = "";
-if (showData('biographic_info_hair_color') == "brown") $checked_blond = "checked";
+if (showData('biographic_info_hair_color') == "blond") $checked_blond = "checked";
 else $checked_blond = "";
 if (showData('biographic_info_hair_color') == "gray") $checked_gray = "checked";
 else $checked_gray = "";
-if (showData('biographic_info_hair_color') == "green") $checked_red = "checked";
+if (showData('biographic_info_hair_color') == "red") $checked_red = "checked";
 else $checked_red = "";
-if (showData('biographic_info_hair_color') == "hazel") $checked_white = "checked";
+if (showData('biographic_info_hair_color') == "white") $checked_white = "checked";
 else $checked_white = "";
-if (showData('biographic_info_hair_color') == "maroon") $checked_brown = "checked";
+if (showData('biographic_info_hair_color') == "brown") $checked_brown = "checked";
 else $checked_brown = "";
-if (showData('biographic_info_hair_color') == "pink") $checked_sandy = "checked";
+if (showData('biographic_info_hair_color') == "sandy") $checked_sandy = "checked";
 else $checked_sandy = "";
 if (showData('biographic_info_hair_color') == "unknown") $checked_unknown = "checked";
 else $checked_unknown = "";
@@ -1637,17 +1637,23 @@ $pdf->writeHTMLCell(90, 7, 12, 30, $html, 0, 0, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.a.  </b><input type="checkbox" name="part3_1a" value="Y" checked=" " /> Diversity Visa Program Selectee or Derivative</div>';
+if (showData('visa_case_type_diversity_visa_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>1.a.  </b><input type="checkbox" name="part3_1a" value="Y" checked="' . $checked . '" /> Diversity Visa Program Selectee or Derivative</div>';
 $pdf->writeHTMLCell(90, 7, 12, 40, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.b.  </b><input type="checkbox" name="part3_1b" value="Y" checked=" " /> Immediate Relative Petition (Form I-130)</div>';
+if (showData('visa_case_type_immediate_relative_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>1.b.  </b><input type="checkbox" name="part3_1b" value="Y" checked="' . $checked . '" /> Immediate Relative Petition (Form I-130)</div>';
 $pdf->writeHTMLCell(90, 7, 12, 46, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.c.  </b><input type="checkbox" name="part3_1c" value="Y" checked=" " /> </div>';
+if (showData('visa_case_type_family_based_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>1.c.  </b><input type="checkbox" name="part3_1c" value="Y" checked="' . $checked . '" /> </div>';
 $pdf->writeHTMLCell(90, 7, 12, 52, $html, 0, 1, false, true, 'J', true);
 //............
 
@@ -1658,7 +1664,9 @@ $pdf->writeHTMLCell(90, 7, 24, 52, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.d.  </b><input type="checkbox" name="part3_1d" value="Y" checked=" " /> </div>';
+if (showData('visa_case_type_employment_based_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>1.d.  </b><input type="checkbox" name="part3_1d" value="Y" checked="' . $checked . '" /> </div>';
 $pdf->writeHTMLCell(90, 7, 12, 61, $html, 0, 1, false, true, 'J', true);
 //............
 
@@ -1669,7 +1677,9 @@ $pdf->writeHTMLCell(95, 7, 24, 61, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.e.  </b><input type="checkbox" name="part3_1e" value="Y" checked=" " /> </div>';
+if (showData('visa_case_type_special_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>1.e.  </b><input type="checkbox" name="part3_1e" value="Y" checked="' . $checked . '" /> </div>';
 $pdf->writeHTMLCell(90, 7, 12, 69, $html, 0, 1, false, true, 'J', true);
 //............
 $pdf->SetFont('times', '', 10);
@@ -1837,22 +1847,30 @@ $pdf->TextField('info_about_middle_name2', 61, 7, array('strokeColor' => array(6
 //..........
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>2.a.&nbsp;&nbsp;</b><input type="checkbox" name="part4_2a" value="Y" checked=" " /> U.S. Citizen Spouse</div>';
+if (showData('i_601a_relative_u_s_citizen_spouse_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>2.a.&nbsp;&nbsp;</b><input type="checkbox" name="part4_2a" value="Y" checked="' . $checked . '" /> U.S. Citizen Spouse</div>';
 $pdf->writeHTMLCell(90, 7, 113, 89, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>2.b.&nbsp;&nbsp;</b><input type="checkbox" name="part4_2b" value="Y" checked=" " /> U.S. Citizen Parent</div>';
+if (showData('i_601a_relative_u_s_citizen_parent_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>2.b.&nbsp;&nbsp;</b><input type="checkbox" name="part4_2b" value="Y" checked="' . $checked . '" /> U.S. Citizen Parent</div>';
 $pdf->writeHTMLCell(90, 7, 113, 96, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(90, 7, 113, 102, '<b>2.c.</b>', 0, 1, false, true, 'J', true);
-$pdf->writeHTMLCell(90, 7, 120.3, 102, '<input type="checkbox" name="part4_2c" value="Y" checked=" " />&nbsp;LPR Spouse', 0, 1, false, true, 'L', true);
+if (showData('i_601a_relative_lpr_spouse_status') == "Y") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(90, 7, 120.3, 102, '<input type="checkbox" name="part4_2c" value="Y" checked="' . $checked . '" />&nbsp;LPR Spouse', 0, 1, false, true, 'L', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>2.d.&nbsp;&nbsp;</b><input type="checkbox" name="part4_2d" value="Y" checked=" " /> LPR Parent</div>';
+if (showData('i_601a_relative_lpr_parent_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>2.d.&nbsp;&nbsp;</b><input type="checkbox" name="part4_2d" value="Y" checked="' . $checked . '" /> LPR Parent</div>';
 $pdf->writeHTMLCell(90, 7, 113, 108, $html, 0, 1, false, true, 'J', true);
 //............
 
