@@ -1,7 +1,7 @@
 <?php
 
-// require_once('formheader.php');   //database connection file 
-require_once("localconfig.php");
+require_once('formheader.php');   //database connection file 
+// require_once("localconfig.php");
 //$allDataCountry = indexByQueryAlldata("SELECT * FROM countries");
 
 // Include the main TCPDF library (search for installation path).
@@ -1893,8 +1893,12 @@ $html = '<div>Do you have more than one qualifying relative (U.S. citizen
 or LPR spouse or parent)?</div>';
 $pdf->writeHTMLCell(85, 7, 119, 125, $html, 0, 1, false, true, 'J', true);
 //............
+if (showData('i_601a_more_than_one_qualifying_relative') == "Y") $checked_y = "checked";
+else $checked_y = "";
+if (showData('i_601a_more_than_one_qualifying_relative') == "N") $checked_n = "checked";
+else $checked_n = "";
 
-$html = '<div><input type="checkbox" name="part4_3" value="Y" checked=" " />  Yes   &nbsp; <input type="checkbox" name="part4_3" value="N" checked=" " /> No</div>';
+$html = '<div><input type="checkbox" name="part4_3" value="Y" checked="' . $checked_y . '" />  Yes   &nbsp; <input type="checkbox" name="part4_3" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 175, 131, $html, 0, 1, false, true, 'J', true);
 //........
 
@@ -1941,23 +1945,31 @@ $pdf->TextField('info_about_middle_name3', 62, 7, array('strokeColor' => array(6
 //..........
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>5.a.  </b><input type="checkbox" name="part4_5a" value="Y" checked=" " /> U.S. Citizen Spouse</div>';
+if (showData('i_601a_additional_relative_u_s_citizen_spouse_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>5.a.  </b><input type="checkbox" name="part4_5a" value="Y" checked="' . $checked . '" /> U.S. Citizen Spouse</div>';
 $pdf->writeHTMLCell(90, 7, 113, 210, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>5.b.  </b><input type="checkbox" name="part4_5b" value="Y" checked=" " /> U.S. Citizen Parent</div>';
+if (showData('i_601a_additional_relative_u_s_citizen_parent_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>5.b.  </b><input type="checkbox" name="part4_5b" value="Y" checked="' . $checked . '" /> U.S. Citizen Parent</div>';
 $pdf->writeHTMLCell(90, 7, 113, 217, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>5.c.</b></div>';
+if (showData('i_601a_additional_relative_lpr_spouse_derivatives_status') == "Y") $checked = "checked";
+else $checked = "";
 $pdf->writeHTMLCell(90, 7, 113, 224, $html, 0, 1, false, true, 'J', true);
-$pdf->writeHTMLCell(90, 7, 120.3, 224, '<input type="checkbox" name="part4_5c" value="Y" checked=" " />&nbsp;LPR Spouse', 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(90, 7, 120.3, 224, '<input type="checkbox" name="part4_5c" value="Y" checked="' . $checked . '" />&nbsp;LPR Spouse', 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>5.d.  </b><input type="checkbox" name="part4_5d" value="Y" checked=" " /> LPR Parent</div>';
+if (showData('i_601a_additional_relative_lpr_parent_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>5.d.  </b><input type="checkbox" name="part4_5d" value="Y" checked="' . $checked . '" /> LPR Parent</div>';
 $pdf->writeHTMLCell(90, 7, 113, 231, $html, 0, 1, false, true, 'J', true);
 /********************************
  ******** End Page No 5 **********
@@ -2029,7 +2041,9 @@ $pdf->writeHTMLCell(90, 7, 112, 58, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.a.    </b> &nbsp; <input type="checkbox" name="part6_1a" value="Y" checked=" " /></div>';
+if (showData('i_601a_read_understand_english_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>1.a.    </b> &nbsp; <input type="checkbox" name="part6_1a" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 15, 112, 68, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 10); // set font
@@ -2040,7 +2054,9 @@ $pdf->writeHTMLCell(90, 7, 125, 68, $html, '', 0, 0, true, 'L');
 
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>1.b.    </b> &nbsp; <input type="checkbox" name="part6_1b" value="Y" checked=" " /></div>';
+if (showData('i_601a_interpreter_helped_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>1.b.    </b> &nbsp; <input type="checkbox" name="part6_1b" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 15, 112, 81, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 10); // set font
@@ -2063,7 +2079,9 @@ $pdf->writeHTMLCell(90, 7, 125, 101, $html, '', 0, 0, true, 'L');
 
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part6_2" value="Y" checked=" " />&nbsp;At my request, the preparer named in <b>Part 8</b>.,';
+if (showData('i_601a_preparer_helped_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part6_2" value="Y" checked="' . $checked . '" />&nbsp;At my request, the preparer named in <b>Part 8</b>.,';
 $pdf->writeHTMLCell(90, 7, 113, 110, $html, '', 0, 0, true, 'L');
 
 $pdf->writeHTMLCell(75, 7, 126, 115, '',  1,  1, false, true, 'R', true);
@@ -2297,7 +2315,13 @@ $pdf->TextField('interpreter_mailing_address_street_name', 58, 7, array('strokeC
 //........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>3.b. </b>&nbsp;  <input type="checkbox" name="APt1" value="Apt2" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="STe1" value="Ste2" checked="" />Ste. <input type="checkbox" name="FLr1" value="Flr2" checked="" /> Flr.</div>';
+if (showData('i_601a_interpreter_address_apt_ste_flr') == "apt") $checked_apt = "checked";
+else $checked_apt = "";
+if (showData('i_601a_interpreter_address_apt_ste_flr') == "ste") $checked_ste = "checked";
+else $checked_ste = "";
+if (showData('i_601a_interpreter_address_apt_ste_flr') == "flr") $checked_flr = "checked";
+else $checked_flr = "";
+$html = '<div><b>3.b. </b>&nbsp;  <input type="checkbox" name="APt1" value="Apt2" checked="' . $checked_apt . '" />Apt. &nbsp;&nbsp;<input type="checkbox" name="STe1" value="Ste2" checked="' . $checked_ste . '" />Ste. <input type="checkbox" name="FLr1" value="Flr2" checked="' . $checked_flr . '" /> Flr.</div>';
 $pdf->writeHTMLCell(90, 7, 113, 36, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -2516,7 +2540,13 @@ $pdf->TextField('preparer_mailing_address_street_name', 58, 7, array('strokeColo
 //........
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<div><b>3.b. </b>&nbsp; &nbsp; <input type="checkbox" name="Apt1" value="Apt2" checked="" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste1" value="Ste2" checked="" />Ste. <input type="checkbox" name="Flr1" value="Flr2" checked="" /> Flr.</div>';
+if (showData('i_601a_preparer_address_apt_ste_flr') == "apt") $checked_apt = "checked";
+else $checked_apt = "";
+if (showData('i_601a_preparer_address_apt_ste_flr') == "ste") $checked_ste = "checked";
+else $checked_ste = "";
+if (showData('i_601a_preparer_address_apt_ste_flr') == "flr") $checked_flr = "checked";
+else $checked_flr = "";
+$html = '<div><b>3.b. </b>&nbsp; &nbsp; <input type="checkbox" name="Apt1" value="Apt2" checked="' . $checked_apt  . '" />Apt. &nbsp;&nbsp;<input type="checkbox" name="Ste1" value="Ste2" checked="' . $checked_ste . '" />Ste. <input type="checkbox" name="Flr1" value="Flr2" checked="' . $checked_flr . '" /> Flr.</div>';
 $pdf->writeHTMLCell(90, 7, 13, 117, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -2613,7 +2643,9 @@ $pdf->writeHTMLCell(91, 7, 113, 18, $html, 0, 1, true, false, 'L', true);
 //...........
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>7.a.   </b>    <input type="checkbox" name="preparer7a" value="Y" checked=" " /></div>';
+if (showData('i_601a_preparer_not_attorney_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>7.a.   </b>    <input type="checkbox" name="preparer7a" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(90, 7, 112, 26, $html, 0, 1, false, true, 'J', true);
 $html = '<div> I am not an attorney or accredited representative but
 <br>&nbsp;have prepared this application on behalf of the
@@ -2623,7 +2655,9 @@ $pdf->writeHTMLCell(90, 7, 125, 26, $html, 0, 1, false, true, 'J', true);
 //.........
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>7.b.   </b>    <input type="checkbox" name="preparer7b" value="Y" checked=" " /></div>';
+if (showData('i_601a_preparer_an_attorney_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>7.b.   </b>    <input type="checkbox" name="preparer7b" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(90, 7, 112, 39, $html, 0, 1, false, true, 'J', true);
 $html = '<div>I am an attorney or accredited representative and my<br>
 representation of the applicant in this case extends/<br>
@@ -2631,10 +2665,6 @@ does not extend beyond the preparation of this<br>
 application.</div>';
 $pdf->writeHTMLCell(78, 7, 125, 39, $html, 0, 1, false, true, 'J', true);
 
-// $pdf->SetFont('times', '', 10);
-// $html ='<div> extends  <input type="checkbox" name="extends" value="Y" checked=" " /> does not extend  <input type="checkbox" name="dontextend" value="Y" checked=" " /> <br>&nbsp;beyond the preparation of this application.
-// </div>';
-// $pdf->writeHTMLCell(90, 7, 124, 47, $html, 0, 1, false, true, 'J', true);
 //...........
 
 $pdf->SetFont('times', '', 10);
