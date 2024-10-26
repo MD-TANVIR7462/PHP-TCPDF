@@ -208,7 +208,9 @@ representative </b> (if any)  </div>';
 $pdf->writeHTMLCell(40, 7, 12, 86, $html,  0,  1, false, true, 'C', false);
 
 $pdf->SetFont('times', '', 12);
-$html = '<div><b>  </b>   <input type="checkbox" name="attached4" value="Y" checked=" " /> </div>';
+if (showData('i_601a_g_28_box') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><b>  </b>   <input type="checkbox" name="attached4" value="Y" checked="' . $checked . '" /> </div>';
 $pdf->writeHTMLCell(40, 15, 17, 86, $html, 0, 1, false, true, 'R', true);
 
 $pdf->SetFont('times', '', 10);
@@ -810,7 +812,8 @@ $pdf->writeHTMLCell(85, 7, 120, 150, $html, 0, 1, false, true, 'J', true);
 
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>28.a.   </b> <input type="checkbox" name="part1_28a " value="Y" checked=" " /> </b></div>';
+if (showData('i_601a_immigration_exclusion_status') == "Y") $checked = "checked";else $checked = "";
+$html = '<div><b>28.a.   </b> <input type="checkbox" name="part1_28a " value="Y" checked="' . $checked . '" /> </b></div>';
 $pdf->writeHTMLCell(90, 7, 110, 172, $html, 0, 1, false, true, 'J', true);
 //............
 
@@ -1179,7 +1182,7 @@ if (showData('i_601a_unlawful_trafficking_substance_status') == "Y") $checked_y 
 else $checked_y = "";
 if (showData('i_601a_unlawful_trafficking_substance_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_37" value="Y" checked="' . $checked_y . '" />  Yes   &nbsp; <input type="checkbox" name="part1_37" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_37" value="Y" checked="' . $checked_y . '" />  Yes   &nbsp; <input type="checkbox" name="part1_37" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(90, 7, 78, 36, $html, 0, 1, false, true, 'J', true);
 //..........
 
@@ -1199,7 +1202,7 @@ if (showData('i_601a_engaged_prostitution_status') == "Y") $checked_y = "checked
 else $checked_y = "";
 if (showData('i_601a_engaged_prostitution_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_38" value="Y" checked="' . $checked_y . '" />  Yes   &nbsp; <input type="checkbox" name="part1_38" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_38" value="Y" checked="' . $checked_y . '" />  Yes   &nbsp; <input type="checkbox" name="part1_38" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(90, 7, 78, 48, $html, 0, 1, false, true, 'J', true);
 //..........
 
@@ -1230,7 +1233,7 @@ if (showData('i_601a_involving_torture_genocide_status') == "Y") $checked_y = "c
 else $checked_y = "";
 if (showData('i_601a_involving_torture_genocide_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_39a" value="Y" checked="' . $checked_y . '" />  Yes   &nbsp; <input type="checkbox" name="part1_39a" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_39a" value="Y" checked="' . $checked_y . '" />  Yes   &nbsp; <input type="checkbox" name="part1_39a" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 78, 94, $html, 0, 1, false, true, 'J', true);
 //...........
 
@@ -1243,7 +1246,7 @@ if (showData('i_601a_killing_any_person_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
 if (showData('i_601a_killing_any_person_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_39b" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_39b" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_39b" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_39b" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 78, 101, $html, 0, 1, false, true, 'J', true);
 //...........
 
@@ -1256,7 +1259,7 @@ if (showData('i_601a_intentionally_injuring_person_status') == "Y") $checked_y =
 else $checked_y = "";
 if (showData('i_601a_intentionally_injuring_person_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_39c" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_39c" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_39c" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_39c" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 78, 115, $html, 0, 1, false, true, 'J', true);
 //...........
 
@@ -1274,7 +1277,7 @@ if (showData('i_601a_engaging_sexual_contact_status') == "Y") $checked_y = "chec
 else $checked_y = "";
 if (showData('i_601a_engaging_sexual_contact_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_39d" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_39d" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_39d" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_39d" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 78, 131, $html, 0, 1, false, true, 'J', true);
 //...........
 $pdf->SetFont('times', '', 10); // set font
@@ -1290,7 +1293,7 @@ if (showData('i_601a_limiting_religious_beliefs_status') == "Y") $checked_y = "c
 else $checked_y = "";
 if (showData('i_601a_limiting_religious_beliefs_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_39e" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_39e" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_39e" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_39e" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 78, 143, $html, 0, 1, false, true, 'J', true);
 //..........
 $pdf->SetFont('times', '', 10); // set font
@@ -1311,7 +1314,7 @@ if (showData('i_601a_insurgent_organization_status') == "Y") $checked_y = "check
 else $checked_y = "";
 if (showData('i_601a_insurgent_organization_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_40a" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_40a" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_40a" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_40a" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 78, 170, $html, 0, 1, false, true, 'J', true);
 //...........
 $pdf->SetFont('times', '', 10); // set font
@@ -1328,7 +1331,7 @@ if (showData('i_601a_detention_faculty_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
 if (showData('i_601a_detention_faculty_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_40b" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_40b" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_40b" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_40b" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 78, 188, $html, 0, 1, false, true, 'J', true);
 //...........
 $pdf->SetFont('times', '', 10); // set font
@@ -1346,7 +1349,7 @@ if (showData('i_601a_weapon_threatened_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
 if (showData('i_601a_weapon_threatened_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_41" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_41" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_41" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_41" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 78, 211, $html, 0, 1, false, true, 'J', true);
 //...........
 $pdf->SetFont('times', '', 10); // set font
@@ -1365,7 +1368,7 @@ if (showData('i_601a_selling_providing_weapons_status') == "Y") $checked_y = "ch
 else $checked_y = "";
 if (showData('i_601a_selling_providing_weapons_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_42" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_42" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_42" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_42" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 178, 33, $html, 0, 1, false, true, 'J', true);
 //...........
 $pdf->SetFont('times', '', 10); // set font
@@ -1381,7 +1384,7 @@ if (showData('i_601a_military_weapons_training_status') == "Y") $checked_y = "ch
 else $checked_y = "";
 if (showData('i_601a_military_weapons_training_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_43" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_43" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_43" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_43" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 178, 45, $html, 0, 1, false, true, 'J', true);
 //...........
 $pdf->SetFont('times', '', 10); // set font
@@ -1398,7 +1401,7 @@ if (showData('i_601a_help_armed_force_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
 if (showData('i_601a_help_armed_force_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_44" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_44" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_44" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_44" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 178, 61, $html, 0, 1, false, true, 'J', true);
 //...........
 $pdf->SetFont('times', '', 10); // set font
@@ -1415,7 +1418,7 @@ if (showData('i_601a_hostilities_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
 if (showData('i_601a_hostilities_status') == "N") $checked_n = "checked";
 else $checked_n = "";
-$html = '<div><input type="checkbox" name="part1_45" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_45" value="N" checked="' . $checked_y . '" /> No</div>';
+$html = '<div><input type="checkbox" name="part1_45" value="Y" checked="' . $checked_y . '" />   Yes   &nbsp; <input type="checkbox" name="part1_45" value="N" checked="' . $checked_n . '" /> No</div>';
 $pdf->writeHTMLCell(80, 7, 178, 77, $html, 0, 1, false, true, 'J', true);
 //...........
 $pdf->SetFont('times', '', 12);
@@ -2069,13 +2072,13 @@ $pdf->writeHTMLCell(75, 7, 126, 94, '',  1,  1, false, true, 'R', true);
 
 $pdf->SetFont('times', '', 10); // set font
 $html = ',';
-$pdf->writeHTMLCell(90, 7, 201, 97, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 201, 97, $html, showData('i_601a_interpreter_name'), 0, 0, true, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10); // set font
 $html = 'a language in which I am fluent, and I understood 
 <br>everything. ';
-$pdf->writeHTMLCell(90, 7, 125, 101, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 125, 101, $html, showData('i_601a_interpreter_name'), 0, 0, true, 'L');
 
 
 $pdf->SetFont('times', '', 10); // set font
@@ -2993,8 +2996,8 @@ $pdf->TextField('i_601a_additional_info_name_7d', 82.5, 64, array('multiline' =>
 $js = "
 var fields = {
 
-    'attorney_state_bar_number':' " . showData(' ') . "',
-    'attorney_or_according_representative':' " . showData(' ') . "',
+    'attorney_state_bar_number':' $attorneyData->bar_number',
+    'attorney_or_according_representative':' $attorneyData->uscis_online_account_number',
     'info_about_you_alien_reg':' " . showData('other_information_about_you_alien_registration_number') . "',
     'info_about_you_social_security':' " . showData('other_information_about_you_social_security_number') . "',
     'info_about_you_uscis_online':' " . showData('other_information_about_you_uscis_online_account_number') . "',
