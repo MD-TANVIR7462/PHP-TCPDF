@@ -1668,6 +1668,9 @@ include "intake_header.php";
                 application.</p>
             <div class="bg-info">
                 <h4><b>Preparer's Certification</b></h4>
+
+
+                
             </div>
             <p>By my signature, I certify, under penalty of perjury, that I
                 prepared this application at the request of the applicant. The
