@@ -151,7 +151,7 @@ include "intake_header.php";
                     </label>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value" maxlength="6" value="<?php echo showData('information_about_you_mailing_apt_ste_flr_value') ?>">
+                    <input type="text" class="form-control" type="text" class="form-control" name="information_about_you_us_mailing_apt_ste_flr_value" maxlength="6" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>">
                 </div>
             </div>
             <div class="form-group">
@@ -218,7 +218,7 @@ include "intake_header.php";
                     </label>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value" maxlength="6" value="<?php echo showData('information_about_you_mailing_apt_ste_flr_value') ?>">
+                    <input type="text" class="form-control" type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value" maxlength="6" value="<?php echo showData('information_about_you_home_apt_ste_flr_value') ?>">
                 </div>
             </div>
             <div class="form-group">
@@ -1129,7 +1129,7 @@ include "intake_header.php";
                 <label><b>2.b.</b> <?php echo createCheckbox("i_601a_relative_u_s_citizen_parent_status") ?> U.S. Citizen Parent</label>
             </div>
             <div class="form-group">
-                <label><b>2.c.</b> <?php echo createCheckbox("i_601a_relative_lpr_spouse_including_derivatives_status") ?> LPR Spouse </label>
+                <label><b>2.c.</b> <?php echo createCheckbox("i_601a_relative_lpr_spouse_status") ?> LPR Spouse </label>
             </div>
             <div class="form-group">
                 <label><b>2.d.</b> <?php echo createCheckbox("i_601a_relative_lpr_parent_status") ?> LPR Parent</label>
@@ -1567,11 +1567,11 @@ include "intake_header.php";
             <div class="form-group">
                 <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
                     <label for="apt_7"><input type="radio" id="apt_7" name="i_601a_preparer_address_apt_ste_flr" value="apt" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                    Apt. </label>&nbsp;
-                   <label for="ste7"> <input id="ste7" type="radio" name="i_601a_preparer_address_apt_ste_flr" value="ste" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                   Ste.</label> &nbsp;
-                  <label for="flr7">  <input id="flr7" type="radio" name="i_601a_preparer_address_apt_ste_flr" value="flr" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                  Flr.</label>:
+                        Apt. </label>&nbsp;
+                    <label for="ste7"> <input id="ste7" type="radio" name="i_601a_preparer_address_apt_ste_flr" value="ste" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                        Ste.</label> &nbsp;
+                    <label for="flr7"> <input id="flr7" type="radio" name="i_601a_preparer_address_apt_ste_flr" value="flr" <?php echo (showData('i_601a_preparer_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                        Flr.</label>:
                 </div>
                 <div class="col-md-6">
                     <input type="text" class="form-control" type="text" class="form-control" name="i_601a_preparer_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_601a_preparer_address_apt_ste_flr_value') ?>">
@@ -1668,9 +1668,6 @@ include "intake_header.php";
                 application.</p>
             <div class="bg-info">
                 <h4><b>Preparer's Certification</b></h4>
-
-
-                
             </div>
             <p>By my signature, I certify, under penalty of perjury, that I
                 prepared this application at the request of the applicant. The

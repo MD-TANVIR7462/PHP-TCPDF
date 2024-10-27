@@ -1989,7 +1989,6 @@ $pdf->setCellPaddings(1, 1, 0, 1);
 $html = '<div><b>Part 5. Statement From Applicant</b></div>';
 $pdf->writeHTMLCell(90, 6, 13, 18, $html, 1, 1, true, false, 'L', true);
 //...........
-
 $pdf->SetFont('times', '', 10);
 $html = '<div>In the space provided, explain in detail why you believe USCIS 
 should approve your application for a provisional unlawful 
@@ -2002,16 +2001,11 @@ complete your statement, use the space provided in <b>Part 9.
 Additional Information.</b></div>';
 $pdf->writeHTMLCell(91, 7, 12, 26, $html, 0, 1, false, true, 'J', true);
 //............
-
 $pdf->SetFont('courier', 'B', 10);
-$html = <<<EOD
-<textarea cols="21" rows="51" name="statement_from_applicant">
-
-</textarea>
-EOD;
-$pdf->writeHTMLCell(90, 50, 12, 61, $html, 0, 0, false, 'L');
+$pdf->setCellHeightRatio(1.8);
+$pdf->TextField('statement_from_applicant', 91, 195, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_601a_applicant_statement')), 12, 62);
 //..............
-
+$pdf->setCellHeightRatio(1.1);
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1);
@@ -2036,13 +2030,11 @@ $pdf->SetFontSize(12); // set font
 $html = '<div><b><i>Applicant\'s Statement</i></b></div>';
 $pdf->writeHTMLCell(91, 7, 112, 50, $html, 0, 1, true, false, 'L', true);
 //.........
-
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>NOTE:</b>  Select the box for either <b>Item Number 1.a.</b> or <b>1.b.</b> If 
 applicable, select the box for <b>Item Number 2.</b></div>';
 $pdf->writeHTMLCell(90, 7, 112, 58, $html, 0, 1, false, true, 'J', true);
 //............
-
 $pdf->SetFont('times', '', 10);
 if (showData('i_601a_read_understand_english_status') == "Y") $checked = "checked";
 else $checked = "";
@@ -2054,7 +2046,6 @@ $html = 'I can read and understand English, and I have read
 and understand every question and instruction on this 
 <br>application and my answer to every question.';
 $pdf->writeHTMLCell(90, 7, 125, 68, $html, '', 0, 0, true, 'L');
-
 
 $pdf->SetFont('times', '', 10);
 if (showData('i_601a_interpreter_helped_status') == "Y") $checked = "checked";
@@ -2068,17 +2059,17 @@ $html = 'The interpreter named in <b>Part 7.</b> read to me every
 <br>answer to every question in';
 $pdf->writeHTMLCell(90, 7, 125, 81, $html, '', 0, 0, true, 'L');
 
-$pdf->writeHTMLCell(75, 7, 126, 94, '',  1,  1, false, true, 'R', true);
+$pdf->writeHTMLCell(75, 7, 126, 94, showData('i_601a_interpreter_name'),  1,  1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 10); // set font
 $html = ',';
-$pdf->writeHTMLCell(90, 7, 201, 97, $html, showData('i_601a_interpreter_name'), 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 201, 97, $html, 0, 0, 0, true, 'L');
 //.........
 
 $pdf->SetFont('times', '', 10); // set font
 $html = 'a language in which I am fluent, and I understood 
 <br>everything. ';
-$pdf->writeHTMLCell(90, 7, 125, 101, $html, showData('i_601a_interpreter_name'), 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 125, 101, $html, 0, 0, 0, true, 'L');
 
 
 $pdf->SetFont('times', '', 10); // set font
@@ -2087,7 +2078,7 @@ else $checked = "";
 $html = '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part6_2" value="Y" checked="' . $checked . '" />&nbsp;At my request, the preparer named in <b>Part 8</b>.,';
 $pdf->writeHTMLCell(90, 7, 113, 110, $html, '', 0, 0, true, 'L');
 
-$pdf->writeHTMLCell(75, 7, 126, 115, '',  1,  1, false, true, 'R', true);
+$pdf->writeHTMLCell(75, 7, 126, 115, showData('i_601a_preparer_name'),  1,  1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 10); // set font
 $html = ',';
@@ -2598,6 +2589,7 @@ $pdf->TextField('preparer_mailing_address_postal_code', 60, 7, array('strokeColo
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>3.h.</b> &nbsp;&nbsp;Country';
 $pdf->writeHTMLCell(90, 7, 13, 161, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('preparer_mailing_address_country', 81, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 166.4);
 
 
@@ -2819,7 +2811,7 @@ $pdf->writeHTMLCell(82, 1, 21.6, 140.5, '',  "B",  0, false, false, 'C', true); 
 $pdf->writeHTMLCell(82, 1, 21.6, 145.2, '',  "B",  0, false, false, 'C', true); // line 8 
 $pdf->writeHTMLCell(82, 1, 21.6, 150, '',  "B",  0, false, false, 'C', true);   // line 9
 $pdf->writeHTMLCell(82, 1, 21.6, 154, '',  "B",  0, false, false, 'C', true);   // line 10
-$pdf->TextField('i_601a_aditional_inf0_name_3d', 82.5, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_864_additional_info_3d')), 21.5, 116);
+$pdf->TextField('i_601a_aditional_inf0_name_3d', 82.5, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_601a_additional_info_3d')), 21.5, 116);
 $pdf->setCellHeightRatio(1.2);
 
 //............
@@ -2866,7 +2858,7 @@ $pdf->writeHTMLCell(82, 1, 21.6, 218, '',  "B",  0, false, false, 'C', true); //
 $pdf->writeHTMLCell(82, 1, 21.6, 223, '',  "B",  0, false, false, 'C', true); // line 8 
 $pdf->writeHTMLCell(82, 1, 21.6, 228, '',  "B",  0, false, false, 'C', true); // line 9
 $pdf->writeHTMLCell(82, 1, 21.6, 232, '',  "B",  0, false, false, 'C', true); // line 9
-$pdf->TextField('i_601a_aditional_inf0_name_4d', 82.5, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_864_additional_info_4d')), 21.5, 194);
+$pdf->TextField('i_601a_aditional_inf0_name_4d', 82.5, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_601a_additional_info_4d')), 21.5, 194);
 $pdf->setCellHeightRatio(1.2);
 //............
 
@@ -2913,7 +2905,7 @@ $pdf->writeHTMLCell(81.4, 1, 122.7, 60.6, '',  "B",  0, false, false, 'C', true)
 $pdf->writeHTMLCell(81.4, 1, 122.7, 65.1, '',  "B",  0, false, false, 'C', true); // line 9
 $pdf->writeHTMLCell(81.4, 1, 122.7, 69, '',  "B",  0, false, false, 'C', true); // line 10
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_601a_additional_info_name_5d', 82, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_864_additional_info_5d')), 122.5, 31);
+$pdf->TextField('i_601a_additional_info_name_5d', 82, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_601a_additional_info_5d')), 122.5, 31);
 $pdf->setCellHeightRatio(1.2);
 //...........
 
@@ -2953,7 +2945,7 @@ $pdf->writeHTMLCell(82, 1, 121.6, 140.5, '',  "B",  0, false, false, 'C', true);
 $pdf->writeHTMLCell(82, 1, 121.6, 145.2, '',  "B",  0, false, false, 'C', true); // line 8 
 $pdf->writeHTMLCell(82, 1, 121.6, 150, '',  "B",  0, false, false, 'C', true);   // line 9
 $pdf->writeHTMLCell(82, 1, 121.6, 154, '',  "B",  0, false, false, 'C', true);   // line 10
-$pdf->TextField('i_601a_additional_info_name_6d', 82.5, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_864_additional_info_6d')), 121.5, 116);
+$pdf->TextField('i_601a_additional_info_name_6d', 82.5, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_601a_additional_info_6d')), 121.5, 116);
 $pdf->setCellHeightRatio(1.2);
 //............
 $pdf->SetFont('times', '', 10);
@@ -2989,7 +2981,7 @@ $pdf->writeHTMLCell(82, 1, 121.6, 218, '',  "B",  0, false, false, 'C', true); /
 $pdf->writeHTMLCell(82, 1, 121.6, 223, '',  "B",  0, false, false, 'C', true); // line 8 
 $pdf->writeHTMLCell(82, 1, 121.6, 228, '',  "B",  0, false, false, 'C', true); // line 9
 $pdf->writeHTMLCell(82, 1, 121.6, 232, '',  "B",  0, false, false, 'C', true); // line 10
-$pdf->TextField('i_601a_additional_info_name_7d', 82.5, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_864_additional_info_7d')), 121.5, 194);
+$pdf->TextField('i_601a_additional_info_name_7d', 82.5, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_601a_additional_info_7d')), 121.5, 194);
 
 
 
@@ -3012,7 +3004,7 @@ var fields = {
     'your_full_name_middle_name2':' " . showData('information_about_you_other_middle_name2') . "',
     'mailing_in_care_name':' " . showData('information_about_you_us_mailing_care_of_name') . "',
     'mailing_street_number_name':' " . showData('information_about_you_us_mailing_street_number') . "',
-    'mailing_apt_ste_flr':' " . showData('information_about_you_home_apt_ste_flr_value') . "',
+    'mailing_apt_ste_flr':' " . showData('information_about_you_us_mailing_apt_ste_flr_value') . "',
     'mailing_city_town':' " . showData('information_about_you_home_city_town') . "',
     'mailing_state':' " . showData('information_about_you_home_state') . "',
     'mailing_zipcode':' " . showData('information_about_you_home_zip_code') . "',
@@ -3070,7 +3062,7 @@ var fields = {
     'info_about_first_name3':' " . showData('i_601a_additional_relative_given_name') . "',
     'info_about_middle_name3':' " . showData('i_601a_additional_relative_middle_name') . "',
 //5th page done.........
-    'statement_from_applicant':' " . showData('i_601a_applicant_statement') . "',
+    'statement_from_applicant':'',
     'applicant_contact_info_daytime':' " . showData('i_601a_applicant_daytime_phone') . "',
     'applicant_contact_info_mobile':' " . showData('i_601a_applicant_mobile_phone') . "',
     'applicant_contact_info_email':' " . showData('i_601a_applicant_email_address') . "',
@@ -3127,7 +3119,7 @@ var fields = {
     'additional_info_item_number3':' " . showData('i_601a_additional_info_6c_item_no') . "',
     'additional_info_page_number4':' " . showData('i_601a_additional_info_7a_page_no') . "',
     'additional_info_part_number4':' " . showData('i_601a_additional_info_7b_part_no') . "',
-    'additional_info_item_number4':' " . showData('i_601a_additional_info_7b_item_no') . "',
+    'additional_info_item_number4':' " . showData('i_601a_additional_info_7c_item_no') . "',
 
 };
 for (var fieldName in fields) {
