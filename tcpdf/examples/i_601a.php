@@ -3035,18 +3035,7 @@ var fields = {
     'info_about_you_state2':' " . showData('i_601a_previous_entry_state2') . "',
     'information_about_you_from1':' " . showData('i_601a_previous_entry_from_date2') . "',
     'information_about_you_to1':' " . showData('i_601a_previous_entry_to_date2') . "',
-    'information_about_you_immigration_status1':' " . showData('i_601a_previous_entry_immigration_status2') . "',
-//2nd page end.......
-    'info_about_you_uscis_receipt':' " . showData('i_601a_receipt_number_approved') . "',
-//3rd page end ......  
-    'processing_info_feet':' " . showData('biographic_info_height_feet') . "',
-    'processing_info_inches':' " . showData('biographic_info_height_inches') . "',
-    'processing_info_pound1':' " . showData('biographic_info_weight_in_pound1') . "',
-    'processing_info_pound2':' " . showData('biographic_info_weight_in_pound2') . "',
-    'processing_info_pound3':' " . showData('biographic_info_weight_in_pound3') . "',
-//4th page end........
-    'info_about_you_dos_dv':' " . showData('i_601a_dv_case_number') . "',
-    'info_about_last_name':' " . showData('i_601a_dv_selectees_family_last_name') . "',
+    'informaut_last_name':' " . showData('i_601a_dv_selectees_family_last_name') . "',
     'info_about_first_name':' " . showData('i_601a_dv_selectees_family_first_name') . "',
     'info_about_middle_name':' " . showData('i_601a_dv_selectees_family_middle_name') . "',
     'info_about_uscis_receipt_number':' " . showData('i_601a_uscis_receipt_number') . "',
@@ -3121,7 +3110,18 @@ var fields = {
     'additional_info_part_number4':' " . showData('i_601a_additional_info_7b_part_no') . "',
     'additional_info_item_number4':' " . showData('i_601a_additional_info_7c_item_no') . "',
 
-};
+};tion_about_you_immigration_status1':' " . showData('i_601a_previous_entry_immigration_status2') . "',
+//2nd page end.......
+    'info_about_you_uscis_receipt':' " . showData('i_601a_receipt_number_approved') . "',
+//3rd page end ......  
+    'processing_info_feet':' " . showData('biographic_info_height_feet') . "',
+    'processing_info_inches':' " . showData('biographic_info_height_inches') . "',
+    'processing_info_pound1':' " . showData('biographic_info_weight_in_pound1') . "',
+    'processing_info_pound2':' " . showData('biographic_info_weight_in_pound2') . "',
+    'processing_info_pound3':' " . showData('biographic_info_weight_in_pound3') . "',
+//4th page end........
+    'info_about_you_dos_dv':' " . showData('i_601a_dv_case_number') . "',
+    'info_abo
 for (var fieldName in fields) {
     if (!fields.hasOwnProperty(fieldName)) continue;
     var field = getField(fieldName);
