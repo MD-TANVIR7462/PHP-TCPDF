@@ -2594,7 +2594,60 @@ var fields = {
     'interpreter_mail_address':' " . showData('i_601a_interpreter_email') . "',
     'interpreter_certification':' " . showData('i_601a_interpreter_fluent_in_english') . "',
     'interpreter_signature_date':' " . showData('i_601a_interpreter_sign_date') . "',
+//7th page end...........
+    'preparer_full_famiy_name':' " . showData('i_601a_preparer_family_last_name') . "',
+    'preparer_full_given_name':' " . showData('i_601a_preparer_given_first_name') . "',
+    'preparer_full_business_name':' " . showData('i_601a_preparer_business_name') . "',
+    'preparer_mailing_address_street_name':' " . showData('i_601a_preparer_address_street_number') . "',
+    'preparer_mailing_address__apt_ste_flr':' " . showData('i_601a_preparer_address_apt_ste_flr_value') . "',
+    'preparer_mailing_address_city_or_town':' " . showData('i_601a_preparer_address_city_town') . "',
+    'preparer_mailing_address_state':' " . showData('i_601a_preparer_address_state') . "',
+    'preparer_mailing_address_zip_code':' " . showData('i_601a_preparer_address_zip_code') . "',
+    'preparer_mailing_address_province':' " . showData('i_601a_preparer_address_province') . "',
+    'preparer_mailing_address_postal_code':' " . showData('i_601a_preparer_address_postal_code') . "',
+    'preparer_mailing_address_country':' " . showData('i_601a_preparer_address_country') . "',
+    'preparer_contact_info_daytime':' " . showData('i_601a_preparer_daytime_tel') . "',
+    'preparer_contact_info_mobile':' " . showData('i_601a_preparer_mobile') . "',
+    'preparer_contact_info_email':' " . showData('i_601a_preparer_email') . "',
+    'peparer_date_of_signature':' " . showData('i_601a_preparer_sign_date') . "',
+//8th page end...........
+    'additional_info_family_last_name':' " . showData('i_601a_additional_info_last_name') . "',
+    'additional_info_given_first_name':' " . showData('i_601a_additional_info_first_name') . "',
+    'additional_info_middle_name':' " . showData('i_601a_additional_info_middle_name') . "',
+    'additional_info_a_number':' " . showData('i_601a_additional_info_a_number') . "',
+    'additional_info_page_number':' " . showData('i_601a_additional_info_3a_page_no') . "',
+    'additional_info_part_number':' " . showData('i_601a_additional_info_3b_part_no') . "',
+    'additional_info_item_number':' " . showData('i_601a_additional_info_3c_item_no') . "',
+    'additional_info_page_number1':' " . showData('i_601a_additional_info_4a_page_no') . "',
+    'additional_info_part_number1':' " . showData('i_601a_additional_info_4b_part_no') . "',
+    'additional_info_item_number1':' " . showData('i_601a_additional_info_4c_item_no') . "',
+    'additional_info_page_number2':' " . showData('i_601a_additional_info_5a_page_no') . "',
+    'additional_info_part_number2':' " . showData('i_601a_additional_info_5b_part_no') . "',
+    'additional_info_item_number2':' " . showData('i_601a_additional_info_5c_item_no') . "',
+    'additional_info_page_number3':' " . showData('i_601a_additional_info_6a_page_no') . "',
+    'additional_info_part_number3':' " . showData('i_601a_additional_info_6b_part_no') . "',
+    'additional_info_item_number3':' " . showData('i_601a_additional_info_6c_item_no') . "',
+    'additional_info_page_number4':' " . showData('i_601a_additional_info_7a_page_no') . "',
+    'additional_info_part_number4':' " . showData('i_601a_additional_info_7b_part_no') . "',
+    'additional_info_item_number4':' " . showData('i_601a_additional_info_7c_item_no') . "',
 
+};tion_about_you_immigration_status1':' " . showData('i_601a_previous_entry_immigration_status2') . "',
+//2nd page end.......
+    'info_about_you_uscis_receipt':' " . showData('i_601a_receipt_number_approved') . "',
+//3rd page end ......  
+    'processing_info_feet':' " . showData('biographic_info_height_feet') . "',
+    'processing_info_inches':' " . showData('biographic_info_height_inches') . "',
+    'processing_info_pound1':' " . showData('biographic_info_weight_in_pound1') . "',
+    'processing_info_pound2':' " . showData('biographic_info_weight_in_pound2') . "',
+    'processing_info_pound3':' " . showData('biographic_info_weight_in_pound3') . "',
+//4th page end........
+    'info_about_you_dos_dv':' " . showData('i_601a_dv_case_number') . "',
+    'info_abo
+for (var fieldName in fields) {
+    if (!fields.hasOwnProperty(fieldName)) continue;
+    var field = getField(fieldName);
+    if (field && field.value === '') {
+        field.value = fields[fieldName];
     }
 }
 ";
