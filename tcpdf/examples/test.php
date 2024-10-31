@@ -2506,7 +2506,141 @@ $pdf->writeHTMLCell(90, 50, 123.5, 194, $html, 0, 0, false, 'L');
 
 
 
+$js = "
+var fields = {
 
+    'info_about_you_alien_reg':' ',
+    'info_about_you_uscis_online':' ',
+    'your_full_name_last_name':' ',
+    'your_full_name_first_name':' ',
+    'your_full_name_middle_name':' ',
+    'other_names_used_last_name':' ',
+    'other_names_used_first_name':' ',
+    'other_names_used_middle_name':' ',
+    'mailing_in_care_name':' ',
+    'mailing_street_number_name':' ',
+    'mailing_apt_ste_flr':' ',
+    'mailing_city_town':' ',
+    'mailing_state':' ',
+    'mailing_zipcode':' ',
+    'mailing_province':' ',
+    'mailing_postal_code':' ',
+    'mailing_country':' ',
+    'physical_street_number_name':' ',
+    'physical_apt_ste_flr':' ',
+    'physical_city_town':' ',
+    'physical_state':' ',
+    'physical_zipcode':' ',
+    'physical_province':' ',
+    'physical_postal_code':' ',
+    'physical_country':' ',
+    'information_about_you_date_of_birth':' ',
+    'information_about_you_city_town_birth':' ',
+    'information_about_you_country_birth':' ',
+    'mother_name_first_name':' ',
+    'class_of_addmission':' ',
+    'date_of_admission':' ',
+    'information_about_you_us_social_number':' ',
+    'process_info_location':' ', 
+    'process_info_location1':' ',
+    'process_info_destination':' ',
+    'process_info_city_town':' ',
+    'processing_info_feet':' ',
+    'processing_info_inches':' ',
+    'processing_info_pound1':' ',
+    'processing_info_pound2':' ',
+    'processing_info_pound3':' ',
+    'accommodations_for_individuals_1a':' ',
+    'accommodations_for_individuals_1b':' ',
+    'accommodations_for_individuals_1c':' ',
+    'applicant_statement_1b':' ',
+    'applicant_statement_2':' ',
+    'applicant_contact_info_daytime':' ',
+    'applicant_contact_info_mobile':' ',
+    'applicant_contact_info_email':' ',
+    'applicant_date_of_signature':' ',
+    'interpreter_contact_info_family':' ',
+    'interpreter_contact_info_given':' ',
+    'interpreter_contact_info_business':' ',
+    'interpreter_mailing_address_street_name':' ',
+    'interpreter_mailing_address__apt_ste_flr':' ',
+    'interpreter_mailing_address_city_or_town':' ',
+    'interpreter_mailing_address_state':' ',
+    'interpreter_mailing_address_zip_code':' ',
+    'interpreter_mailing_address_province':' ',
+    'interpreter_mailing_address_postal_code':' ',
+    'interpreter_mailing_address_country':' ',
+    'interpreter_contact_info_daytime':' ',
+    'interpreter_contact_info_mobile':' ',
+    'interpreter_contact_info_email':' ',
+    'interpreter_certification':' ',
+    'interpreter_signature_date':' ',
+    'preparer_contact_info_family':' ',
+    'preparer_contact_info_given':' ',
+    'preparer_contact_info_business':' ',
+    'preparer_mailing_address_street_name':' ',
+    'preparer_mailing_address__apt_ste_flr':' ',
+    'preparer_mailing_address_city_or_town':' ',
+    'preparer_mailing_address_state':' ',
+    'preparer_mailing_address_zip_code':' ',
+    'preparer_mailing_address_province':' ',
+    'preparer_mailing_address_postal_code':' ',
+    'preparer_mailing_address_country':' ',
+    'preparer_contact_info_daytime':' ',
+    'preparer_contact_info_mobile':' ',
+    'preparer_contact_info_email':' ',
+    'peparer_date_of_signature':' ',
+    'additional_info_family_last_name':' ',
+    'additional_info_given_first_name':' ',
+    'additional_info_middle_name':' ',
+    'additional_info_page_number':' ',
+    'additional_info_part_number':' ',
+    'additional_info_item_number':' ',
+    'aditional_inf0_name_3d':' ',
+    'additional_info_page_number1':' ',
+    'additional_info_part_number1':' ',
+    'additional_info_item_number1':' ',
+    'aditional_inf0_name_4d':' ',
+    'additional_info_page_number2':' ',
+    'additional_info_part_number2':' ',
+    'additional_info_item_number2':' ',
+    'aditional_inf0_name_5d':' ',
+    'additional_info_page_number3':' ',
+    'additional_info_part_number3':' ',
+    'additional_info_item_number3':' ',
+    'aditional_inf0_name_6d':' ',
+    'additional_info_page_number4':' ',
+    'additional_info_part_number4':' ',
+    'additional_info_item_number4':' ',
+    'aditional_inf0_name_7d':' ',
+    '':' ',
+    '':' ',
+    '':' ',
+    '':' ',
+    '':' ',
+    '':' ',
+
+
+
+
+
+
+
+
+
+
+
+
+};
+for (var fieldName in fields) {
+    if (!fields.hasOwnProperty(fieldName)) continue;
+    var field = getField(fieldName);
+    if (field && field.value === '') {
+        field.value = fields[fieldName];
+    }
+}
+
+";
 
 
 $pdf->IncludeJS($js);
