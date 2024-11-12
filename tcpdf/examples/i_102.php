@@ -1,7 +1,7 @@
 <?php
 
-// require_once('formheader.php');   //database connection file 
-require_once("config.php");
+require_once('formheader.php');   //database connection file 
+// require_once("localconfig.php");
 
 //$allDataCountry = indexByQueryAllData("SELECT * FROM countries");
 
@@ -42,7 +42,7 @@ class MyPDF extends TCPDF {
         // Set font
         $this->SetFont('times', '', 9);
 		
-		$this->Cell(40, 6, "Form I-102 Edition 04/01/24", 0, 0, 'L');
+		$this->Cell(40, 6, "Form I-102  Edition  04/01/24", 0, 0, 'L');
 		
 		
 		// if ($this->page == 1){
@@ -86,7 +86,7 @@ $pdf->SetMargins(13.7, 15.3, 12.8, true);
 //$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+$pdf->SetAutoPageBreak(FALSE, PDF_MARGIN_BOTTOM);
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -136,7 +136,7 @@ $pdf->MultiCell(80, 15, "U.S. Citizenship and Immigration Services", 0, 'C', 0, 
 
 $pdf->SetFont('times', '', 9);	// set font
 $pdf->setCellPaddings(2, 1, 6, 0); // set cell padding
-$pdf->MultiCell(40, 5, "OMB No. 1615-0079\nExpires 02/28/2026", 0, 'C', 0, 1, 169, 18.5, true);
+$pdf->MultiCell(40, 5, "OMB No. 1615-0079\nExpires 03/31/2027", 0, 'C', 0, 1, 169, 18.5, true);
 
 $pdf->Ln(1.3);
 
@@ -2445,7 +2445,7 @@ $pdf->writeHTMLCell( 76.6, 1, 128.1, 103.5, '',  "B",  0, false, false, 'C', tru
 $pdf->writeHTMLCell( 76.6, 1, 128.1, 108.5, '',  "B",  0, false, false, 'C', true );// line 4 
 $pdf->writeHTMLCell( 76.6, 1, 128.1, 113.2, '',  "B",  0, false, false, 'C', true );// line 5
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('reason_for_application_1f', 77, 35,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),128, 129); //i_102_p2_1f_provide_explanation
+$pdf->TextField('reason_for_application_1f', 77, 35,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_102_provide_explanation')),128, 129); //i_102_p2_1f_provide_explanation
 $pdf->setCellHeightRatio(1.2); 
 //...........
 
@@ -2569,7 +2569,7 @@ $pdf->writeHTMLCell( 82.4, 1, 21.2, 56.5, '',  "B",  0, false, false, 'C', true 
 $pdf->writeHTMLCell( 82.4, 1, 21.2, 61.5, '',  "B",  0, false, false, 'C', true );// line 4 
 $pdf->writeHTMLCell( 82.4, 1, 21.2, 66.5, '',  "B",  0, false, false, 'C', true );// line 5
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('procesing_information_2b', 83, 34.5,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),21, 57,);
+$pdf->TextField('procesing_information_2b', 83, 34.5,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_102_provide_detailed_information')),21, 57,);
 $pdf->setCellHeightRatio(1.2); 
 //...........
 
@@ -2991,7 +2991,9 @@ $pdf->writeHTMLCell( 82, 1, 21.6, 132.8, '',  "B",  0, false, false, 'C', true )
 $pdf->writeHTMLCell( 82, 1, 21.6, 137.5, '',  "B",  0, false, false, 'C', true ); // line 7
 $pdf->writeHTMLCell( 82, 1, 21.6, 142.2, '',  "B",  0, false, false, 'C', true ); // line 8 
 $pdf->writeHTMLCell( 82, 1, 21.6, 147, '',  "B",  0, false, false, 'C', true );   // line 9
-$pdf->TextField('aditional_inf0_name_3d', 82.5, 66,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),21.5, 113);
+$pdf->writeHTMLCell( 82, 65.5, 21.6, 113, '',  1,  0, false, false, 'C', true );// line full Box
+
+$pdf->TextField('aditional_inf0_name_3d', 82.5, 66,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_102_additional_info_4d')),21.5, 113);
 $pdf->setCellHeightRatio(1.2); 
 
 //............
@@ -3030,16 +3032,18 @@ $pdf->writeHTMLCell(90, 7, 12, 196, $html, 0, 1, false, false, 'L', true);
 
 $pdf->setCellHeightRatio(1.8); 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->writeHTMLCell( 82, 1, 21.6, 191.1, '',  "B",  0, false, false, 'C', true );// line 1
-$pdf->writeHTMLCell( 82, 1, 21.6, 195.5, '',  "B",  0, false, false, 'C', true );// line 2
-$pdf->writeHTMLCell( 82, 1, 21.6, 199.8, '',  "B",  0, false, false, 'C', true );// line 3
-$pdf->writeHTMLCell( 82, 1, 21.6, 204.3, '',  "B",  0, false, false, 'C', true );// line 4 
-$pdf->writeHTMLCell( 82, 1, 21.6, 208.8, '',  "B",  0, false, false, 'C', true );// line 5
-$pdf->writeHTMLCell( 82, 1, 21.6, 213, '',  "B",  0, false, false, 'C', true );// line 6
-$pdf->writeHTMLCell( 82, 1, 21.6, 217.8, '',  "B",  0, false, false, 'C', true );// line 7
-$pdf->writeHTMLCell( 82, 1, 21.6, 222.6, '',  "B",  0, false, false, 'C', true );// line 8 
-$pdf->writeHTMLCell( 82, 1, 21.6, 227.1, '',  "B",  0, false, false, 'C', true );// line 9
-$pdf->TextField('aditional_inf0_name_4d', 82.5, 65,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),21.5, 195);
+$pdf->writeHTMLCell( 82, 1, 21.6, 191.6, '',  "B",  0, false, false, 'C', true );// line 1
+$pdf->writeHTMLCell( 82, 1, 21.6, 196.5, '',  "B",  0, false, false, 'C', true );// line 2
+$pdf->writeHTMLCell( 82, 1, 21.6, 200.8, '',  "B",  0, false, false, 'C', true );// line 3
+$pdf->writeHTMLCell( 82, 1, 21.6, 205.3, '',  "B",  0, false, false, 'C', true );// line 4 
+$pdf->writeHTMLCell( 82, 1, 21.6, 209.5, '',  "B",  0, false, false, 'C', true );// line 5
+$pdf->writeHTMLCell( 82, 1, 21.6, 214, '',  "B",  0, false, false, 'C', true );// line 6
+$pdf->writeHTMLCell( 82, 1, 21.6, 218.8, '',  "B",  0, false, false, 'C', true );// line 7
+$pdf->writeHTMLCell( 82, 1, 21.6, 224.6, '',  "B",  0, false, false, 'C', true );// line 8 
+// $pdf->writeHTMLCell( 82, 1, 21.6, 227.1, '',  "B",  0, false, false, 'C', true );// line 9
+$pdf->writeHTMLCell( 82, 60, 21.6, 194.4, '', 1,  0, false, false, 'C', false );// line full Box
+
+$pdf->TextField('aditional_inf0_name_4d', 82.5, 60,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_102_additional_info_4d')),21.5, 195);
 $pdf->setCellHeightRatio(1.2); 
 //............
 
@@ -3084,8 +3088,10 @@ $pdf->writeHTMLCell( 81.6, 1, 122.6, 51, '',  "B",  0, false, false, 'C', true )
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 55.8, '',  "B",  0, false, false, 'C', true );// line 7
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 60.6, '',  "B",  0, false, false, 'C', true );// line 8 
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 65.1, '',  "B",  0, false, false, 'C', true );// line 9
+$pdf->writeHTMLCell( 81.6, 65.4, 122.6, 31.5, '', 1,  0, false, false, 'C', false );// line full Box
+
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_name_5d', 82, 66,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),122.5, 31);
+$pdf->TextField('additional_info_name_5d', 82, 66,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_102_additional_info_4d')),122.5, 31);
 $pdf->setCellHeightRatio(1.2); 
 //...........
 
@@ -3129,8 +3135,9 @@ $pdf->writeHTMLCell( 81.6, 1, 122.6, 132.8, '',  "B",  0, false, false, 'C', tru
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 137.5, '',  "B",  0, false, false, 'C', true );// line 7
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 142.2, '',  "B",  0, false, false, 'C', true );// line 8 
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 147, '',  "B",  0, false, false, 'C', true );// line 9
+$pdf->writeHTMLCell( 81.6, 65.5, 122.6, 113, '',  1,  0, false, false, 'C', true );// line full Box
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_name_6d', 82, 66,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),122.5, 113);
+$pdf->TextField('additional_info_name_6d', 82, 66,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_102_additional_info_4d')),122.5, 113);
 $pdf->setCellHeightRatio(1.2); 
 //...........
 
@@ -3163,6 +3170,7 @@ $pdf->TextField('additional_info_item_number4', 20, 7, array('strokeColor' => ar
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>7.d.</b> </div>';
 $pdf->writeHTMLCell(90, 7, 112, 196, $html, 0, 1, false, false, 'L', true);
+
 $pdf->setCellHeightRatio(1.8); 
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 192.1, '',  "B",  0, false, false, 'C', true ); // line 1
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 196.5, '',  "B",  0, false, false, 'C', true ); // line 2
@@ -3170,11 +3178,13 @@ $pdf->writeHTMLCell( 81.6, 1, 122.6, 200.8, '',  "B",  0, false, false, 'C', tru
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 205.3, '',  "B",  0, false, false, 'C', true ); // line 4 
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 209.8, '',  "B",  0, false, false, 'C', true ); // line 5
 $pdf->writeHTMLCell( 81.6, 1, 122.6, 214, '',  "B",  0, false, false, 'C', true );   // line 6
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 218.8, '',  "B",  0, false, false, 'C', true ); // line 7
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 223.6, '',  "B",  0, false, false, 'C', true ); // line 8 
-$pdf->writeHTMLCell( 81.6, 1, 122.6, 228.1, '',  "B",  0, false, false, 'C', true ); // line 9
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 218.7, '',  "B",  0, false, false, 'C', true ); // line 7
+$pdf->writeHTMLCell( 81.6, 1, 122.6, 223.5, '',  "B",  0, false, false, 'C', true ); // line 8 
+// $pdf->writeHTMLCell( 81.6, 1, 122.6, 228.1, '',  "B",  0, false, false, 'C', true ); // line 9 
+$pdf->writeHTMLCell( 81.6, 60, 122.6, 195, '', 1,  0, false, false, 'C', false );// line full Box
+$pdf->setCellHeightRatio(1.8); 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_info_name_7d', 82, 65,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),122.5, 195);
+$pdf->TextField('additional_info_name_7d', 82, 60,array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array('v' => showData('i_102_additional_info_4d')),122.5, 195);
 
 //..............
 
@@ -3220,12 +3230,11 @@ var fields = {
     'entry_information_last_name':' ".showData('i_94_family_last_name')."',
     'entry_information_first_name':' ".showData('i_94_given_first_name')."',
     'entry_information_middle_name':' ".showData('i_94_middle_name')."',
-    'reason_for_application_1f':'', 
-// 'reason_for_application_1f':' ".showData('i_102_provide_explanation')."', 
+
+
     'uscis_form_number_name':' ".showData('i_102_uscis_form_number_name')."',  
 //page-2 end
-    'procesing_information_2b':' ".showData('i_102_provide_detailed_information')."', 
-    'procesing_information_2b':'',
+
 
     'applicant_contact_info_daytime':' ".showData('i_102_applicant_daytime_tel')."',
     'applicant_contact_info_mobile':' ".showData('i_102_applicant_mobile')."',
@@ -3289,4 +3298,4 @@ $pdf->IncludeJS($js);
 
 // $pdf->lastPage();
 //Close and output PDF document
-$pdf->Output('Form_I-485.pdf', 'I');
+$pdf->Output('Form_I-102.pdf', 'I');
