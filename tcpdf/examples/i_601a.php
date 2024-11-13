@@ -43,7 +43,7 @@ class MyPDF extends TCPDF
         // Set font
         $this->SetFont('times', '', 9);
 
-        $this->Cell(40, 6, "Form I-601A   Edition 04/01/24 ", 0, 0, 'L');
+        $this->Cell(40, 6, "Form I-601A   Edition   04/01/24 ", 0, 0, 'L');
 
 
         // if ($this->page == 1){
@@ -124,7 +124,7 @@ $pdf->MultiCell(80, 15, "U.S. Citizenship and Immigration Services", 0, 'C', 0, 
 
 $pdf->SetFont('times', '', 9);    // set font
 $pdf->setCellPaddings(2, 1, 6, 0); // set cell padding
-$pdf->MultiCell(40, 5, "OMB No.   1615-0123\nExpires 02/28/2026", 0, 'C', 0, 1, 169, 18.5, true);
+$pdf->MultiCell(40, 5, "OMB No.   1615-0123\nExpires 03/31/2027", 0, 'C', 0, 1, 169, 18.5, true);
 
 $pdf->Ln(1.3);
 
@@ -2984,7 +2984,6 @@ $pdf->writeHTMLCell(82, 1, 121.6, 232, '',  "B",  0, false, false, 'C', true); /
 $pdf->TextField('i_601a_additional_info_name_7d', 82.5, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_601a_additional_info_7d')), 121.5, 194);
 
 
-
 $js = "
 var fields = {
 
@@ -3035,7 +3034,18 @@ var fields = {
     'info_about_you_state2':' " . showData('i_601a_previous_entry_state2') . "',
     'information_about_you_from1':' " . showData('i_601a_previous_entry_from_date2') . "',
     'information_about_you_to1':' " . showData('i_601a_previous_entry_to_date2') . "',
-    'informaut_last_name':' " . showData('i_601a_dv_selectees_family_last_name') . "',
+    'information_about_you_immigration_status1':' " . showData('i_601a_previous_entry_immigration_status2') . "',
+//2nd page end.......
+    'info_about_you_uscis_receipt':' " . showData('i_601a_receipt_number_approved') . "',
+//3rd page end ......  
+    'processing_info_feet':' " . showData('biographic_info_height_feet') . "',
+    'processing_info_inches':' " . showData('biographic_info_height_inches') . "',
+    'processing_info_pound1':' " . showData('biographic_info_weight_in_pound1') . "',
+    'processing_info_pound2':' " . showData('biographic_info_weight_in_pound2') . "',
+    'processing_info_pound3':' " . showData('biographic_info_weight_in_pound3') . "',
+//4th page end........
+    'info_about_you_dos_dv':' " . showData('i_601a_dv_case_number') . "',
+    'info_about_last_name':' " . showData('i_601a_dv_selectees_family_last_name') . "',
     'info_about_first_name':' " . showData('i_601a_dv_selectees_family_first_name') . "',
     'info_about_middle_name':' " . showData('i_601a_dv_selectees_family_middle_name') . "',
     'info_about_uscis_receipt_number':' " . showData('i_601a_uscis_receipt_number') . "',
@@ -3110,18 +3120,7 @@ var fields = {
     'additional_info_part_number4':' " . showData('i_601a_additional_info_7b_part_no') . "',
     'additional_info_item_number4':' " . showData('i_601a_additional_info_7c_item_no') . "',
 
-};tion_about_you_immigration_status1':' " . showData('i_601a_previous_entry_immigration_status2') . "',
-//2nd page end.......
-    'info_about_you_uscis_receipt':' " . showData('i_601a_receipt_number_approved') . "',
-//3rd page end ......  
-    'processing_info_feet':' " . showData('biographic_info_height_feet') . "',
-    'processing_info_inches':' " . showData('biographic_info_height_inches') . "',
-    'processing_info_pound1':' " . showData('biographic_info_weight_in_pound1') . "',
-    'processing_info_pound2':' " . showData('biographic_info_weight_in_pound2') . "',
-    'processing_info_pound3':' " . showData('biographic_info_weight_in_pound3') . "',
-//4th page end........
-    'info_about_you_dos_dv':' " . showData('i_601a_dv_case_number') . "',
-    'info_abo
+};
 for (var fieldName in fields) {
     if (!fields.hasOwnProperty(fieldName)) continue;
     var field = getField(fieldName);
