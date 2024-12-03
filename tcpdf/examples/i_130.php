@@ -430,14 +430,14 @@ else $checked_brother = "";
 if (showData('i_130_petition_filing_for') == "child") $checked_child = "checked";
 else $checked_child = "";
 
-$pdf->SetFont('times', '', 11);
+$pdf->SetFont('times', '', 10);
 $html = '<div><input type="checkbox" name="i_130_petition_filing_for_spouse" value="spouse" checked="' . $checked_spouse . '" /></div>';
 $pdf->writeHTMLCell(90, 7, 17, 175, $html, 0, 1, false, false, 0, true);
-$pdf->writeHTMLCell(20, 5, 18.5, 173.5, 'Spouse', 0, 1, false, false, 0, true);
+$pdf->writeHTMLCell(20, 5, 21, 173.5, 'Spouse', 0, 1, false, false, 0, true);
 
 $html = '<div><input type="checkbox" name="i_130_petition_filing_for_parent" value="parent" checked="' . $checked_parent . '" /></div>';
 $pdf->writeHTMLCell(90, 7, 35, 175, $html, 0, 1, false, false, 0, true);
-$pdf->writeHTMLCell(20, 5, 36, 173.5, 'Parent', 0, 1, false, false, 0, true);
+$pdf->writeHTMLCell(20, 5, 39, 173.5, 'Parent', 0, 1, false, false, 0, true);
 
 $html = '<div><input type="checkbox" name="i_130_petition_filing_for_brother" value="brother" checked="' . $checked_brother . '" /></div>';
 $pdf->writeHTMLCell(90, 7, 52, 175, $html, 0, 1, false, false, 0, true);
@@ -445,7 +445,7 @@ $pdf->writeHTMLCell(25, 5, 57, 173.5, 'Brother/Sister', 0, 1, false, false, 0, t
 
 $html = '<div><input type="checkbox" name="i_130_petition_filing_for_child" value="child" checked="' . $checked_child . '" /></div>';
 $pdf->writeHTMLCell(90, 7, 84, 175, $html, 0, 1, false, false, 0, true);
-$pdf->writeHTMLCell(20, 5, 86, 173.5, 'Child', 0, 1, false, false, 0, true);
+$pdf->writeHTMLCell(20, 5, 89, 173.5, 'Child', 0, 1, false, false, 0, true);
 
 //..........
 
@@ -705,7 +705,7 @@ $pdf->SetFont('times', '', 10);
 $html = '<div><b>6. </b> &nbsp; &nbsp;  City/Town/Village of Birth </div>';
 $pdf->writeHTMLCell(90, 7, 12, 86, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('city_town_village_of_birth', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 91.5);
+$pdf->TextField('city_town_village_of_birth', 82, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 91.5);
 
 //............
 
@@ -713,7 +713,7 @@ $pdf->SetFont('times', '', 10);
 $html = '<div><b>7. </b>  &nbsp; &nbsp;  Country of Birth </div>';
 $pdf->writeHTMLCell(90, 7, 12, 98.5, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('country_of_birth', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 104.5);
+$pdf->TextField('country_of_birth', 82.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.5, 104.5);
 
 //............
 
@@ -721,7 +721,7 @@ $pdf->SetFont('times', '', 10);
 $html = '<div><b>8. </b>  &nbsp; &nbsp;  Date of Birth (mm/dd/yyyy) </div>';
 $pdf->writeHTMLCell(90, 7, 12, 114, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('date_of_birth', 40, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 63, 114);
+$pdf->TextField('date_of_birth', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 73, 114);
 
 //............
 
@@ -752,9 +752,9 @@ $pdf->setCellPaddings(1, 0.5, 1, 0.5); // set cell padding
 $pdf->SetFontSize(11.6); // set font
 $html = '<div><b>Mailing Address</b></div>';
 $pdf->writeHTMLCell(90, 7, 13, 132, $html, 0, 1, true, false, 'J', true);
-$pdf->SetFont('times', 'I', 9);
-$html = '<div><a href="https://tools.usps.com/go/ZipLookupAction_input">(Uses ZIP Code Lookup)</a></div>';
-$pdf->writeHTMLCell(90, 7, 13, 132, $html, 0, 1, true, false, 'R', true);
+$pdf->SetFont('times', 'B', 8.2);
+$html = '<div><a href="https://tools.usps.com/go/ZipLookupAction_input"><i>(Uses ZIP Code Lookup)</i></a></div>';
+$pdf->writeHTMLCell(90, 1, 13, 133, $html, 0, 1, true, false, 'R', true);
 
 //............
 
