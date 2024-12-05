@@ -3034,10 +3034,10 @@ $pdf->TextField('part4_49_country_issue', 82, 7, array('strokeColor' => array(64
 //.................
 
 $pdf->SetFont('times', '', 10.5);
-$html = '<div><b>50. </b>  Expiration Date for Passport or Travel Document <br>    &nbsp;   &nbsp;  &nbsp; (mm/dd/yyyy) </div>';
+$html = '<div><b>50.</b>&nbsp;&nbsp;&nbsp;Expiration Date for Passport or Travel Document <br>    &nbsp;   &nbsp;  &nbsp; (mm/dd/yyyy) </div>';
 $pdf->writeHTMLCell(92, 10, 112, 42, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part4_50_date_expire_date', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 172, 48);
+$pdf->TextField('part4_50_date_expire_date', 31, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 172, 48);
 
 //..........
 $pdf->setFillColor(220, 220, 220);
@@ -3067,10 +3067,10 @@ $pdf->TextField('part4_51a_current_employer', 80, 7, array('strokeColor' => arra
 //...........
 
 $pdf->SetFont('times', '', 10.5);
-$html = '<b>51.b.</b> &nbsp;&nbsp;Street Number<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and Name';
+$html = '<b>51.b.</b> &nbsp;&nbsp;Street Number<br>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and Name';
 $pdf->writeHTMLCell(50, 7, 112, 99, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part4_51b_street', 55, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 147, 101);
+$pdf->TextField('part4_51b_street', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 147, 101);
 //..........
 $pdf->SetFont('times', '', 10.5);
 
@@ -3085,7 +3085,7 @@ $html = '<div><b>51.c.  </b>  <input type="checkbox" name="mailing_apt_8" value=
 <input type="checkbox" name="mailing_flr_8" value="flr1" checked="' . $flrChecked . '" /> Flr.</div>';
 $pdf->writeHTMLCell(90, 7, 112, 110, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part4_51c_ste_flr', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 167, 110);
+$pdf->TextField('part4_51c_ste_flr', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 167, 110);
 //..........
 
 $pdf->SetFont('times', '', 10.5); // set font
@@ -3095,7 +3095,7 @@ $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part4_51d_city_town', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 145, 119);
 
 $pdf->SetFont('times', '', 10.5); // set font
-$html = '<b>51.e.</b> &nbsp;&nbsp;State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>51.f.</b>&nbsp;&nbsp;ZIP Code';
+$html = '<b>51.e.</b> &nbsp;&nbsp; State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>51.f.</b>&nbsp;&nbsp;ZIP Code';
 $pdf->writeHTMLCell(60, 0, 112, 128, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -3126,16 +3126,16 @@ $pdf->TextField('part4_51h_postal_code', 57.5, 7, array('strokeColor' => array(6
 
 
 $pdf->SetFont('Times', '', 10.5); // set font
-$html = '<b>51.i.</b> &nbsp;&nbsp;Country';
+$html = '<b>51.i.</b> &nbsp;&nbsp;&nbsp;Country';
 $pdf->writeHTMLCell(50, 0, 112, 153, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part4_51i_country', 81, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 121.5, 159.5);
+$pdf->TextField('part4_51i_country', 79.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 123, 159.5);
 
 
 //................
 
 $pdf->SetFont('times', '', 10.5);
-$html = '<div><b>52.    </b>   Date Employment Began (mm/dd/yyyy)</div>';
+$html = '<div><b>52.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Employment Began (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(92, 10, 112, 167, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part4_52_from_date', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 172, 173.5);
@@ -3156,21 +3156,21 @@ else $checked_yes = "";
 if (showData('additional_info_immigration_proceedings_status') == "N") $checked_no = "checked";
 else $checked_no = "";
 
-$pdf->SetFont('times', '', 10.5);
-$html = '<div><b>53. </b>  Was the beneficiary<b> EVER </b>in immigration proceedings?  <br>
+$pdf->SetFont('times', '', 10);
+$html = '<div><b>53.</b>&nbsp;&nbsp;&nbsp;&nbsp;Was the beneficiary<b> EVER </b>in immigration proceedings?  <br>
 
       &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; 
       &nbsp;   &nbsp;   &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  
       &nbsp;   &nbsp;   &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp; 
      &nbsp;   &nbsp;   &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp; 
        <input type="checkbox" name="immigration" value="Yes" checked="' . $checked_yes . '" />Yes  &nbsp; &nbsp; &nbsp; &nbsp; <input type="checkbox" name="immigration1" value="No" checked="' . $checked_no . '" />No </div>';
-$pdf->writeHTMLCell(93, 7, 112, 192, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(100, 7, 112, 192, $html, '', 0, 0, true, 'L');
 
 //...............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>54.   </b>   If you answered "Yes," select the type of proceedings and
-<br>&nbsp; &nbsp; &nbsp; &nbsp; provide the location and date of the proceedings.</div>';
+$html = '<div><b>54.   </b>   &nbsp;If you answered "Yes," select the type of proceedings and
+<br>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; provide the location and date of the proceedings.</div>';
 $pdf->writeHTMLCell(94, 7, 112, 203, $html, '', 0, 0, true, 'L');
 
 //...............
@@ -3187,10 +3187,10 @@ if (showData('additional_info_immigration_other_status') == "Y") $checked_other 
 else $checked_other = "";
 
 $html = '<div>   
-&nbsp;
+&nbsp;&nbsp;
 <input type="checkbox" name="removal" value="removal" checked="' . $checked_removal . '" /> Removal  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 <input type="checkbox" name="exclusion" value="exclution" checked="' . $checked_exclusion . '" /> Exclusion/Deportation <br> &nbsp;&nbsp; 
-<input type="checkbox" name="rescission" value="rescission" checked="' . $checked_rescission . '" /> Rescission    &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;<input type="checkbox" name="rescission" value="rescission" checked="' . $checked_rescission . '" /> Rescission    &nbsp; &nbsp; &nbsp; &nbsp;
 <input type="checkbox" name="other" value="other" checked="' . $checked_other . '" /> Other Judicial Proceedings
 </div>';
 $pdf->writeHTMLCell(90, 7, 114, 213, $html, 0, 0, false, true, 'J', true);
@@ -3198,13 +3198,13 @@ $pdf->writeHTMLCell(90, 7, 114, 213, $html, 0, 0, false, true, 'J', true);
 //..................
 
 $pdf->SetFont('times', '', 10.5); // set font
-$html = '<b>55.a.</b> &nbsp;&nbsp;City or Town';
+$html = '<b>55.a.</b>&nbsp;City or Town';
 $pdf->writeHTMLCell(50, 0, 112, 226, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part4_55a_city_town', 78, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 124, 232);
+$pdf->TextField('part4_55a_city_town', 80, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 122, 232);
 
 $pdf->SetFont('times', '', 10.5); // set font
-$html = '<b>55.b.</b> &nbsp;&nbsp;State';
+$html = '<b>55.b.</b>&nbsp;State';
 $pdf->writeHTMLCell(60, 0, 112, 240, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -3218,7 +3218,7 @@ $pdf->writeHTMLCell(25, 0, 131, 240, $html, '', 0, 0, true, 'L');
 //................
 
 $pdf->SetFont('times', '', 10.5);
-$html = '<div><b>56.    </b>   Date (mm/dd/yyyy)</div>';
+$html = '<div><b>56.    </b>   &nbsp;Date (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(92, 10, 112, 248, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part4_56_date', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 172, 248);
@@ -3243,7 +3243,7 @@ $pdf->writeHTMLCell(90, 7, 13, 17, $html, 1, 1, true, 'L');
 
 //................
 
-$pdf->setFont('Times', '', 10.5);
+$pdf->setFont('Times', '', 10);
 $html = '<div><b>If the beneficiary\'s native written language does not use
 Roman letters, type or print his or her name and foreign
 address in their native written language.</b></div>';
@@ -3251,14 +3251,14 @@ $pdf->writeHTMLCell(92, 7, 12, 29, $html, 0, 1, false, 'L');
 
 //................
 
-$pdf->SetFont('times', '', 10.5);
+$pdf->SetFont('times', '', 10);
 $html = '<div><b>57.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  (Last Name) </div>';
 $pdf->writeHTMLCell(35, 10, 12, 43, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part4_57a_lastname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 44);
 //............
 
-$pdf->SetFont('times', '', 10.5);
+$pdf->SetFont('times', '', 10);
 $html = '<div><b>57.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (First Name) </div>';
 $pdf->writeHTMLCell(35, 10, 12, 52, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
@@ -3266,8 +3266,8 @@ $pdf->TextField('part4_57b_firstname', 58, 7, array('strokeColor' => array(64, 6
 
 //.......
 
-$pdf->SetFont('times', '', 10.5);
-$html = '<div><b>57.c.  </b>  Middle Name  </div>';
+$pdf->SetFont('times', '', 10);
+$html = '<div><b>57.c.</b>&nbsp;&nbsp;&nbsp;Middle Name  </div>';
 $pdf->writeHTMLCell(35, 10, 12, 62, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part4_57c_middle', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 62);
@@ -3276,13 +3276,13 @@ $pdf->TextField('part4_57c_middle', 58, 7, array('strokeColor' => array(64, 64, 
 
 
 //...........
-$pdf->SetFont('times', '', 10.5);
-$html = '<b>58.a. </b> Street Number<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and Name';
+$pdf->SetFont('times', '', 10);
+$html = '<b>58.a.</b>&nbsp;&nbsp;&nbsp;Street Number<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and Name';
 $pdf->writeHTMLCell(50, 7, 12, 70, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part4_58a_street', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 71);
 //..........
-$pdf->SetFont('times', '', 10.5);
+$pdf->SetFont('times', '', 10);
 
 
 if (showData('beneficiary_native_address_apt_ste_flr') == "apt") $apt_checked = "checked";
@@ -3302,7 +3302,7 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part4_58b_ste_flr', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 68, 79.5);
 //..........
 
-$pdf->SetFont('times', '', 10.5); // set font
+$pdf->SetFont('times', '', 10); // set font
 $html = '<b>58.c.</b> &nbsp;&nbsp;City or Town';
 $pdf->writeHTMLCell(50, 0, 12, 88, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -3310,26 +3310,26 @@ $pdf->TextField('part4_58c_city_or_town', 57.5, 7, array('strokeColor' => array(
 
 //................
 
-$pdf->SetFont('Times', '', 10.5); // set font
-$html = '<b>58.d.</b> &nbsp;&nbsp;Province';
+$pdf->SetFont('Times', '', 10); // set font
+$html = '<b>58.d.</b>&nbsp;&nbsp;Province';
 $pdf->writeHTMLCell(50, 0, 12, 96.5, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part4_58d_province', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 96.5);
 
-$pdf->SetFont('Times', '', 10.5); // set font
-$html = '<b>58.e.</b> &nbsp;&nbsp;Postal Code';
+$pdf->SetFont('Times', '', 10); // set font
+$html = '<b>58.e.</b>&nbsp;&nbsp; Postal Code';
 $pdf->writeHTMLCell(50, 0, 12, 105, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part4_58e_postal_code', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 105);
 
 
-$pdf->SetFont('Times', '', 10.5); // set font
+$pdf->SetFont('Times', '', 10); // set font
 $html = '<b>58.f.</b> &nbsp;&nbsp;Country';
 $pdf->writeHTMLCell(50, 0, 12, 111, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part4_58f_country', 81, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21.5, 117);
+$pdf->TextField('part4_58f_country', 80, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22.5, 117);
 
 
 //.............
@@ -3341,14 +3341,14 @@ type or print, "Never lived together" in Item Number 59.a.</b></div>';
 $pdf->writeHTMLCell(93, 7, 12, 126, $html, 0, 1, false, 'L');
 
 //...........
-$pdf->SetFont('times', '', 10.5);
-$html = '<b>59.a.</b> &nbsp;&nbsp;Street Number<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and Name';
+$pdf->SetFont('times', '',10);
+$html = '<b>59.a.</b> &nbsp;&nbsp;Street Number<br>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and Name';
 $pdf->writeHTMLCell(50, 7, 12, 140, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part4_59a_street', 55, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 142);
 
 //..........
-$pdf->SetFont('times', '', 10.5);
+$pdf->SetFont('times', '',10);
 
 if (showData('beneficiary_lived_together_address_apt_ste_flr') == "apt") $apt_checked = "checked";
 else $apt_checked = "";
@@ -3390,7 +3390,7 @@ $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part4_59_zip_code', 33, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 69, 169);
 
 $pdf->SetFont('Times', '', 10); // set font
-$html = '<b>59.f.</b> &nbsp;&nbsp;Province';
+$html = '<b>59.f.</b> &nbsp;&nbsp; Province';
 $pdf->writeHTMLCell(50, 0, 12, 178, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -3404,11 +3404,11 @@ $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part4_59g_postal_code', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 187);
 
 
-$pdf->SetFont('Times', '', 10.5); // set font
+$pdf->SetFont('Times', '',10); // set font
 $html = '<b>59.h.</b> &nbsp;&nbsp;Country';
 $pdf->writeHTMLCell(50, 0, 12, 194, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('part4_59h_country', 81, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21.5, 200);
+$pdf->TextField('part4_59h_country', 79.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 200);
 
 //........
 
@@ -3441,7 +3441,7 @@ $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part4_61a_city_or_town', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 244);
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>61.b. </b> &nbsp;&nbsp;State';
+$html = '<b>61.b. </b>&nbsp;&nbsp;State';
 $pdf->writeHTMLCell(60, 0, 12, 255, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -3464,24 +3464,24 @@ $pdf->writeHTMLCell(93, 7, 112, 15, $html, 0, 1, false, 'L');
 //................
 
 
-$pdf->SetFont('times', '', 10.5); // set font
-$html = '<b>62.a.</b> &nbsp;&nbsp;City or Town';
+$pdf->SetFont('times', '',10); // set font
+$html = '<b>62.a.</b>&nbsp;&nbsp;City or Town';
 $pdf->writeHTMLCell(50, 0, 112, 29, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part4_62a_city_or_town', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 145, 29);
 
 //................
 
-$pdf->SetFont('Times', '', 10.5); // set font
-$html = '<b>62.b.</b> &nbsp;&nbsp;Province';
+$pdf->SetFont('Times', '',10); // set font
+$html = '<b>62.b.</b>&nbsp;&nbsp;Province';
 $pdf->writeHTMLCell(50, 0, 112, 38, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part4_62b_province', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 145, 38);
 
 
-$pdf->SetFont('Times', '', 10.5); // set font
-$html = '<b>62.c.</b> &nbsp;&nbsp;Country';
+$pdf->SetFont('Times', '',10); // set font
+$html = '<b>62.c.</b>&nbsp;&nbsp;Country';
 $pdf->writeHTMLCell(50, 0, 112, 45, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part4_62c_country', 81, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 121.5, 50.5);
@@ -3501,7 +3501,7 @@ $pdf->writeHTMLCell(93, 7, 112, 60, $html, 0, 1, false, 'L');
 
 
 
-//.....................................part 5 .............. part 5 .................
+//.....................................part 5 .................
 
 
 
@@ -3517,7 +3517,7 @@ $pdf->writeHTMLCell(90, 7, 113, 88, $html, 1, 1, true, 'L');
 //.............
 
 $pdf->SetFont('times', '', 10.5);
-$html = '<div><b>1.   </b> Have you <b>EVER</b> previously filed a petition for this <br>&nbsp; &nbsp; &nbsp; &nbsp; beneficiary or any other alien? 
+$html = '<div><b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> previously filed a petition for this <br>&nbsp; &nbsp; &nbsp; &nbsp; beneficiary or any other alien? 
  
  &nbsp; &nbsp; &nbsp; <input type="checkbox" name="previus" value="Yes" checked="" />Yes  &nbsp; &nbsp; &nbsp;<input type="checkbox" name="previus0" value="No" checked="" />No </div>';
 $pdf->writeHTMLCell(90, 7, 112, 97, $html, '', 0, 0, true, 'L');
@@ -3532,14 +3532,14 @@ $pdf->writeHTMLCell(93, 7, 112, 108, $html, 0, 1, false, 'L');
 //..............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>2.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  (Last Name) </div>';
+$html = '<div><b>2.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;(Last Name) </div>';
 $pdf->writeHTMLCell(35, 10, 112, 118, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_2a_lastname', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 144, 119);
 //............
 
 $pdf->SetFont('times', '', 10);
-$html = '<div><b>2.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (First Name) </div>';
+$html = '<div><b>2.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;(First Name) </div>';
 $pdf->writeHTMLCell(35, 10, 112, 127, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_2b_firstname', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 144, 128);
@@ -3562,7 +3562,7 @@ $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('part5_3a_city_or_town', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 144, 146);
 
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>3.b. </b> &nbsp;&nbsp;State';
+$html = '<b>3.b. </b>&nbsp;&nbsp;State';
 $pdf->writeHTMLCell(60, 0, 112, 155, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -3577,18 +3577,18 @@ $pdf->writeHTMLCell(25, 7, 143, 155, $html, '', 0, 0, true, 'L');
 //.............
 
 $pdf->SetFont('times', '', 10.5);
-$html = '<div><b>4. </b>  Date Filed (mm/dd/yyyy)</div>';
+$html = '<div><b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Filed (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(70, 10, 112, 164, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_4_date_filed', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 167, 164);
+$pdf->TextField('part5_4_date_filed', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 167, 164);
 
 //.........
 
 $pdf->SetFont('times', '', 10.5);
-$html = '<div><b>5. </b>&nbsp; &nbsp; Result (for example, approved, denied, withdrawn)</div>';
+$html = '<div><b>5. </b>&nbsp; &nbsp; &nbsp;Result (for example, approved, denied, withdrawn)</div>';
 $pdf->writeHTMLCell(90, 10, 112, 172, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part5_5_result', 82, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 178);
+$pdf->TextField('part5_5_result', 81, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 122, 178);
 
 //.................
 
@@ -3605,14 +3605,14 @@ $pdf->writeHTMLCell(95, 7, 112, 196, $html, 0, 1, false, 'L');
 //............
 
 $pdf->SetFont('times', '', 10.5);
-$html = '<div><b>6.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  (Last Name) </div>';
+$html = '<div><b>6.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;(Last Name) </div>';
 $pdf->writeHTMLCell(35, 10, 112, 203, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_7a_lastname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 145, 203);
 //............
 
 $pdf->SetFont('times', '', 10.5);
-$html = '<div><b>6.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (First Name) </div>';
+$html = '<div><b>6.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;(First Name) </div>';
 $pdf->writeHTMLCell(35, 10, 112, 212, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_7b_firstname', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 145, 213);
@@ -3628,7 +3628,7 @@ $pdf->TextField('part5_7c_middle', 58, 7, array('strokeColor' => array(64, 64, 6
 //..........
 
 $pdf->SetFont('times', '', 10.5);
-$html = '<div><b>7.  </b>  Relationship </div>';
+$html = '<div><b>7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Relationship </div>';
 $pdf->writeHTMLCell(35, 10, 112, 232, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('part5_7_relation', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 145, 232);
