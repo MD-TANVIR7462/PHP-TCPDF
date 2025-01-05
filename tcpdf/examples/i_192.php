@@ -2227,7 +2227,7 @@ $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $pdf->SetFontSize(11.6);
-$html = '<div><b>Part 8. Additional Information</b></div>';
+$html = '<div><b>Part 6. Additional Information</b></div>';
 $pdf->writeHTMLCell(191, 6.5, 13, 19, $html, 1, 1, true, 'L');
 //..............
 $pdf->setFont('Times', '', 10);
@@ -2246,7 +2246,7 @@ $pdf->TextField('p8_additional_info_given_name', 59, 7, array('strokeColor' => a
 $pdf->TextField('p8_additional_info_middle_name', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 145, 51);
 //..............
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(197, 5, 12, 60, '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A-Number', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 60, '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A-Number (if any)', '', 1, false, 'L');
 $pdf->setFont('Times', '', 11);
 $pdf->writeHTMLCell(197, 5, 53, 60, '<b>A-</b>', '', 1, false, 'L');
 //.....................
@@ -2274,7 +2274,7 @@ $pdf->writeHTMLCell(174.5, 1, 21.2, 82, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 89, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 95.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 101.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.8, 32.5, 21, 81, '', 1, 1, false, 'L');
+
 
 //..............
 $pdf->setFont('Times', '', 10);
@@ -2295,7 +2295,7 @@ $pdf->writeHTMLCell(174.5, 1, 21.2, 130, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 136.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 143, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 149.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.8, 32.5, 21, 129, '', 1, 1, false, 'L');
+
 //..............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 162, '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page Number', '', 1, false, 'L');
@@ -2315,7 +2315,7 @@ $pdf->writeHTMLCell(174.5, 1, 21.2, 177, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 183.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 190, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 196, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.8, 32.5, 21, 176, '', 1, 1, false, 'L');
+
 //..............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 208.5, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page Number', '', 1, false, 'L');
@@ -2334,7 +2334,7 @@ $pdf->writeHTMLCell(174.5, 1, 21.2, 223, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 229.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 236.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 242.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.8, 33.2, 21, 222, '', 1, 1, false, 'L');
+
 //...........
 // // Page 1FFF
 
