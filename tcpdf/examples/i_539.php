@@ -1,8 +1,8 @@
 <?php
 //!database connection file 
-require_once('formheader.php');
+// require_once('formheader.php');
 //!local server file
-// require_once("config.php");
+require_once("localconfig.php");
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
 
@@ -1418,10 +1418,10 @@ $pdf->writeHTMLCell(174.5, 1, 21.2, 242.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.8, 33.2, 21, 222, '', 1, 1, false, 'L');
 //...........
 
+// 'attorney_state_bar_number':' $attorneyData->bar_number',
+// 'attorney_or_according_representative':' $attorneyData->uscis_online_account_number ',
 $js = "
 var fields = {
-	'attorney_state_bar_number':' $attorneyData->bar_number',
-	'attorney_or_according_representative':' $attorneyData->uscis_online_account_number ',
 	'p1_1_legal_last_name':' " . showData('information_about_you_family_last_name') . " ',
 	'p1_1_legal_first_name':' " . showData('information_about_you_given_first_name') . " ',
 	'p1_1_legal_middle_name':' " . showData('information_about_you_middle_name') . " ',

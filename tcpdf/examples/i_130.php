@@ -1301,13 +1301,13 @@ $pdf->writeHTMLCell(70, 10, 12, 246, $html, 0, 1, false, false, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('parent1_date_of_birth', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 68, 247);
 
-$pdf->SetFont('times', '', 11);
+$pdf->SetFont('times', '', 10);
 $html = '<div><b>26. </b>&nbsp;&nbsp;&nbsp; &nbsp;Sex </div>';
 $pdf->writeHTMLCell(60, 0, 12, 257, $html, '', 0, 0, true, 'L');
 
-$pdf->SetFont('times', '', 11);
+$pdf->SetFont('times', '', 10);
 $html = '<div>
-<input type="checkbox" name="male" value="male" checked="checked" />Male  &nbsp;&nbsp;
+<input type="checkbox" name="male" value="male" checked="" />Male  &nbsp;&nbsp;
 <input type="checkbox" name="female" value="female" checked="" /> Female
 </div>';
 $pdf->writeHTMLCell(60, 0, 40, 257, $html, '', 0, 0, true, 'L');
@@ -1386,7 +1386,7 @@ $pdf->writeHTMLCell(60, 0, 112, 106, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10);
 $html = '<div>
 <input type="checkbox" name="male" value="male" checked="" />Male  &nbsp;&nbsp;
-<input type="checkbox" name="female" value="female" checked="checked" /> Female
+<input type="checkbox" name="female" value="female" checked="" /> Female
 </div>';
 $pdf->writeHTMLCell(60, 0, 140, 106, $html, '', 0, 0, true, 'L');
 //.........
@@ -4661,18 +4661,15 @@ $pdf->TextField('additional_information_7d', 82, 65, array('multiline' => true, 
 
 
 
-// // page 1
 
-// 'volag_number':' $attorneyData->volag_number',
-// 'attorney_state_bar_number':' $attorneyData->bar_number',
-// 'a_r_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
 
 
 $js = "
 var fields = {
-// 'volag_number':' $attorneyData->volag_number',
-// 'attorney_state_bar_number':' $attorneyData->bar_number',
-// 'a_r_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
+
+    'volag_number':' $attorneyData->volag_number',
+    'attorney_state_bar_number':' $attorneyData->bar_number',
+    'a_r_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
 
     'alien_registration_number':' " . showData('petitioner_alien_registration_number') . "',
     'uscis_online_account_number':' " . showData('petitioner_uscis_online_account_number') . "',
