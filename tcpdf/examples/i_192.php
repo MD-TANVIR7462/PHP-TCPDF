@@ -2266,14 +2266,14 @@ $pdf->TextField('i_192_additional_info_3a_page_no', 22, 7, array('strokeColor' =
 $pdf->TextField('i_192_additional_info_3b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 72);
 $pdf->TextField('i_192_additional_info_3c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 72);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('i_192_additional_info_3d', 175, 32.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_3da')), 21, 81);
+$pdf->TextField('i_192_additional_info_3d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_3da')), 21, 81);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
-$pdf->writeHTMLCell(174.5, 1, 21.2, 82, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 89, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 95.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 101.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 82, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 89, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 95.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 101.5, '', "B", 1, false, 'L');
 
 
 //..............
@@ -2287,14 +2287,14 @@ $pdf->TextField('i_192_additional_info_4a_page_no', 22, 7, array('strokeColor' =
 $pdf->TextField('i_192_additional_info_4b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 120);
 $pdf->TextField('i_192_additional_info_4c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 120);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('i_192_additional_info_4d', 175, 32.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_4d')), 21, 129);
+$pdf->TextField('i_192_additional_info_4d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_4d')), 21, 129);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
-$pdf->writeHTMLCell(174.5, 1, 21.2, 130, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 136.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 143, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 149.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 130, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 136.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 143, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 149.5, '', "B", 1, false, 'L');
 
 //..............
 $pdf->setFont('Times', '', 10);
@@ -2307,14 +2307,14 @@ $pdf->TextField('i_192_additional_info_5a_page_no', 22, 7, array('strokeColor' =
 $pdf->TextField('i_192_additional_info_5b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 167);
 $pdf->TextField('i_192_additional_info_5c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 167);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('i_192_additional_info_5d', 175, 32.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_5d')), 21, 176);
+$pdf->TextField('i_192_additional_info_5d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_5d')), 21, 176);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
-$pdf->writeHTMLCell(174.5, 1, 21.2, 177, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 183.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 190, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 196, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 177, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 183.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 190, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 196, '', "B", 1, false, 'L');
 
 //..............
 $pdf->setFont('Times', '', 10);
@@ -2327,13 +2327,13 @@ $pdf->TextField('i_192_additional_info_6a_page_no', 22, 7, array('strokeColor' =
 $pdf->TextField('i_192_additional_info_6b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 213);
 $pdf->TextField('i_192_additional_info_6c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71.5, 213);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('i_192_additional_info_6d', 175, 33, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_6d')), 21, 222);
+$pdf->TextField('i_192_additional_info_6d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_6d')), 21, 222);
 $pdf->setCellHeightRatio(1.2);
 //.................
-$pdf->writeHTMLCell(174.5, 1, 21.2, 223, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 229.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 236.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(174.5, 1, 21.2, 242.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 223, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 229.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 236.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 242.5, '', "B", 1, false, 'L');
 
 //...........
 // // Page 1FFF
