@@ -1,6 +1,6 @@
 <?php
-// require_once('formheader.php');      //database connection file....           
-require_once('localconfig.php');
+require_once('formheader.php');      //database connection file....           
+// require_once('localconfig.php');
 //* Include the main TCPDF library ( search for installation path ).
 require_once( 'tcpdf_include.php' );
 
@@ -2266,7 +2266,7 @@ $pdf->TextField('i_192_additional_info_3a_page_no', 22, 7, array('strokeColor' =
 $pdf->TextField('i_192_additional_info_3b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 72);
 $pdf->TextField('i_192_additional_info_3c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 72);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('i_192_additional_info_3d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_3da')), 21, 81);
+$pdf->TextField('i_192_additional_info_3d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_3d')), 21, 81);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
@@ -2278,62 +2278,62 @@ $pdf->writeHTMLCell(182, 1, 21.2, 101.5, '', "B", 1, false, 'L');
 
 //..............
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(197, 5, 12, 115, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page Number', '', 1, false, 'L');
-$pdf->writeHTMLCell(197, 5, 46, 115, 'Part Number ', '', 1, false, 'L');
-$pdf->writeHTMLCell(197, 5, 70, 115, 'Item Number', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 108, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page Number', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 46, 108, 'Part Number ', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 70, 108, 'Item Number', '', 1, false, 'L');
 //.....................
 $pdf->setFont('courier', 'B', 10);
-$pdf->TextField('i_192_additional_info_4a_page_no', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 120);
-$pdf->TextField('i_192_additional_info_4b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 120);
-$pdf->TextField('i_192_additional_info_4c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 120);
+$pdf->TextField('i_192_additional_info_4a_page_no', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 113);
+$pdf->TextField('i_192_additional_info_4b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 113);
+$pdf->TextField('i_192_additional_info_4c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 113);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('i_192_additional_info_4d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_4d')), 21, 129);
+$pdf->TextField('i_192_additional_info_4d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_4d')), 21, 122);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
-$pdf->writeHTMLCell(182, 1, 21.2, 130, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(182, 1, 21.2, 136.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(182, 1, 21.2, 143, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(182, 1, 21.2, 149.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 123, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 129.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 136, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 142.5, '', "B", 1, false, 'L');
 
 //..............
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(197, 5, 12, 162, '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page Number', '', 1, false, 'L');
-$pdf->writeHTMLCell(197, 5, 46, 162, 'Part Number ', '', 1, false, 'L');
-$pdf->writeHTMLCell(197, 5, 70, 162, 'Item Number', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 150, '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page Number', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 46, 150, 'Part Number ', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 70, 150, 'Item Number', '', 1, false, 'L');
 //.....................
 $pdf->setFont('courier', 'B', 10);
-$pdf->TextField('i_192_additional_info_5a_page_no', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 167);
-$pdf->TextField('i_192_additional_info_5b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 167);
-$pdf->TextField('i_192_additional_info_5c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 167);
+$pdf->TextField('i_192_additional_info_5a_page_no', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 155);
+$pdf->TextField('i_192_additional_info_5b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 155);
+$pdf->TextField('i_192_additional_info_5c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 155);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('i_192_additional_info_5d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_5d')), 21, 176);
+$pdf->TextField('i_192_additional_info_5d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_5d')), 21, 164);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
-$pdf->writeHTMLCell(182, 1, 21.2, 177, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(182, 1, 21.2, 183.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(182, 1, 21.2, 190, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(182, 1, 21.2, 196, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 165, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 171.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 178, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 184, '', "B", 1, false, 'L');
 
 //..............
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(197, 5, 12, 208.5, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page Number', '', 1, false, 'L');
-$pdf->writeHTMLCell(197, 5, 46, 208.5, 'Part Number ', '', 1, false, 'L');
-$pdf->writeHTMLCell(197, 5, 70, 208.5, 'Item Number', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 191.5, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page Number', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 46, 191.5, 'Part Number ', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 70, 191.5, 'Item Number', '', 1, false, 'L');
 //.....................
 $pdf->setFont('courier', 'B', 10);
-$pdf->TextField('i_192_additional_info_6a_page_no', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 213.3);
-$pdf->TextField('i_192_additional_info_6b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 213);
-$pdf->TextField('i_192_additional_info_6c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71.5, 213);
+$pdf->TextField('i_192_additional_info_6a_page_no', 22, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 196.3);
+$pdf->TextField('i_192_additional_info_6b_part_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 196);
+$pdf->TextField('i_192_additional_info_6c_item_no', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71.5, 196);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('i_192_additional_info_6d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_6d')), 21, 222);
+$pdf->TextField('i_192_additional_info_6d', 182.5, 26.1, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_192_additional_info_6d')), 21, 205.5);
 $pdf->setCellHeightRatio(1.2);
 //.................
-$pdf->writeHTMLCell(182, 1, 21.2, 223, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(182, 1, 21.2, 229.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(182, 1, 21.2, 236.5, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(182, 1, 21.2, 242.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 206, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 212.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 219.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 21.2, 225.5, '', "B", 1, false, 'L');
 
 //...........
 // // Page 1FFF
@@ -2347,7 +2347,9 @@ $js = "
 var fields = {
 
 
-
+'volag_number':' $attorneyData->volag_number',
+'attorney_state_bar_number':' $attorneyData->bar_number',
+'attorney_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
 // page 2
 
 'p2_about_you_1_last_name':' ".showData('information_about_you_family_last_name')."',
