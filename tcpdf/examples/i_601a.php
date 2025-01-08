@@ -3121,6 +3121,10 @@ var fields = {
     'additional_info_item_number4':' " . showData('i_601a_additional_info_7c_item_no') . "',
 
 };
+
+
+
+
 for (var fieldName in fields) {
     if (!fields.hasOwnProperty(fieldName)) continue;
     var field = getField(fieldName);
