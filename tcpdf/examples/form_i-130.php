@@ -15,6 +15,9 @@ class MyPDF extends TCPDF {
 	
     //Page header
 
+
+
+    
     public function Header() {
         $this->SetY(13);
 		if ($this->page > 1){
