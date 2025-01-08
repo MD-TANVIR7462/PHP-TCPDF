@@ -10,6 +10,10 @@ if(isset($_GET['clientId'])){
 	$singleData = indexByQuerySingleData("SELECT * FROM intake_form_info WHERE client_id='$clientId'");
 	$singleDataNote = json_decode($singleData->note);
 
+
+
+
+	
 	$first_name = " ".$singleDataNote->first_name;
 	$last_name = " ".$singleDataNote->last_name;
 	$middle_name = " ".$singleDataNote->middle_name;
