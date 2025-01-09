@@ -1,6 +1,6 @@
 <?php
-require_once('formheader.php');      //database connection file....           
-// require_once('localconfig.php');
+// require_once('formheader.php');      //database connection file....           
+require_once('localconfig.php');
 //* Include the main TCPDF library ( search for installation path ).
 require_once( 'tcpdf_include.php' );
 
@@ -2347,9 +2347,6 @@ $js = "
 var fields = {
 
 
-'volag_number':' $attorneyData->volag_number',
-'attorney_state_bar_number':' $attorneyData->bar_number',
-'attorney_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
 // page 2
 
 'p2_about_you_1_last_name':' ".showData('information_about_you_family_last_name')."',
