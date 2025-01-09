@@ -4661,15 +4661,13 @@ $pdf->TextField('additional_information_7d', 82, 65, array('multiline' => true, 
 
 
 
-
+// 'volag_number':' $attorneyData->volag_number',
+// 'attorney_state_bar_number':' $attorneyData->bar_number',
+// 'a_r_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
 
 
 $js = "
 var fields = {
-
-    'volag_number':' $attorneyData->volag_number',
-    'attorney_state_bar_number':' $attorneyData->bar_number',
-    'a_r_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
 
     'alien_registration_number':' " . showData('petitioner_alien_registration_number') . "',
     'uscis_online_account_number':' " . showData('petitioner_uscis_online_account_number') . "',
