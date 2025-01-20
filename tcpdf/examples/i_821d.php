@@ -2435,18 +2435,23 @@ $html ='<div><b>3.d.</b> </div>';
 $pdf->writeHTMLCell(90, 7, 12, 130, $html, 0, 1, false, false, 'L', true);
 //..........
 $pdf->setCellHeightRatio(1.8);
+$pdf->writeHTMLCell(82.4, .5, 21, 128.5, '',  "B",  0, false, false, 'C', true); // line 1
+$pdf->writeHTMLCell(82.4, .5, 21, 134.5, '',  "B",  0, false, false, 'C', true); // line 2
+$pdf->writeHTMLCell(82.4, .5, 21, 140.5, '',  "B",  0, false, false, 'C', true); // line 3 
+$pdf->writeHTMLCell(82.4, .5, 21, 146.5, '',  "B",  0, false, false, 'C', true); // line 4
+$pdf->writeHTMLCell(82.4, .5, 21, 152.5, '',  "B",  0, false, false, 'C', true); // line 5
+$pdf->writeHTMLCell(82.4, .5, 21, 158.5, '',  "B",  0, false, false, 'C', true); // line 6 
+$pdf->writeHTMLCell(82.4, .5, 21, 164.5, '',  "B",  0, false, false, 'C', true); // line 7
+$pdf->writeHTMLCell(82.4, .5, 21, 170.5, '',  "B",  0, false, false, 'C', true); // line 8
+$pdf->writeHTMLCell(82.4, .5, 21, 176.5, '',  "B",  0, false, false, 'C', true); // line 9
+$pdf->writeHTMLCell(82.4, .5, 21, 182.5, '',  "B",  0, false, false, 'C', true); // line 10
+$pdf->writeHTMLCell(82.4, .5, 21, 188.5, '',  "B",  0, false, false, 'C', true); // line 11
+$pdf->writeHTMLCell(82.4, .5, 21, 194.5, '',  "B",  0, false, false, 'C', true); // line 12
+$pdf->writeHTMLCell(82.4, .5, 21, 200.5, '',  "B",  0, false, false, 'C', true); // line 13
+$pdf->writeHTMLCell(82.4, .5, 21, 206.5, '',  "B",  0, false, false, 'C', true); // line 14
+$pdf->writeHTMLCell(82.4, .5, 21, 212.5, '',  "B",  0, false, false, 'C', true); // line 15
 $pdf->SetFont('courier', 'B', 10);
-// $pdf->writeHTMLCell(82, 1, 21.6, 120.1, '',  "B",  0, false, false, 'C', true); // line 1
-// $pdf->writeHTMLCell(82, 1, 21.6, 124.5, '',  "B",  0, false, false, 'C', true); // line 2
-// $pdf->writeHTMLCell(82, 1, 21.6, 128.8, '',  "B",  0, false, false, 'C', true); // line 3
-// $pdf->writeHTMLCell(82, 1, 21.6, 133.3, '',  "B",  0, false, false, 'C', true); // line 4 
-// $pdf->writeHTMLCell(82, 1, 21.6, 138, '',  "B",  0, false, false, 'C', true);   // line 5
-// $pdf->writeHTMLCell(82, 1, 21.6, 142.8, '',  "B",  0, false, false, 'C', true); // line 6
-// $pdf->writeHTMLCell(82, 1, 21.6, 147.5, '',  "B",  0, false, false, 'C', true); // line 7
-// $pdf->writeHTMLCell(82, 1, 21.6, 151.2, '',  "B",  0, false, false, 'C', true); // line 8 
-// $pdf->writeHTMLCell(82, 1, 21.6, 155.8, '',  "B",  0, false, false, 'C', true);   // line 9
-// $pdf->writeHTMLCell(82, 63.3, 21.5, 123.2, '', 1,  0, false, false, 'C', true); // all side border
-$pdf->TextField('additional_information_3d',82.5, 102, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_130_additional_info_3d')), 21, 130);
+$pdf->TextField('additional_information_3d',82.5, 104.3, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('')), 21, 130);
 $pdf->setCellHeightRatio(1.2);
 //.........
 
@@ -2483,18 +2488,23 @@ $pdf->writeHTMLCell(90, 7, 113, 31, $html, 0, 1, false, false, 'L', true);
 
 
 $pdf->setCellHeightRatio(1.8);
+$pdf->writeHTMLCell(82.8, .5, 122, 29.5, '',  "B",  0, false, false, 'C', true); // line 1
+$pdf->writeHTMLCell(82.8, .5, 122, 35.5, '',  "B",  0, false, false, 'C', true); // line 2
+$pdf->writeHTMLCell(82.8, .5, 122, 41.5, '',  "B",  0, false, false, 'C', true); // line 3 
+$pdf->writeHTMLCell(82.8, .5, 122, 47.5, '',  "B",  0, false, false, 'C', true); // line 4
+$pdf->writeHTMLCell(82.8, .5, 122, 53.5, '',  "B",  0, false, false, 'C', true); // line 5
+$pdf->writeHTMLCell(82.8, .5, 122, 59.5, '',  "B",  0, false, false, 'C', true); // line 6 
+$pdf->writeHTMLCell(82.8, .5, 122, 65.5, '',  "B",  0, false, false, 'C', true); // line 7
+$pdf->writeHTMLCell(82.8, .5, 122, 71.5, '',  "B",  0, false, false, 'C', true); // line 8
+$pdf->writeHTMLCell(82.8, .5, 122, 77.5, '',  "B",  0, false, false, 'C', true); // line 9
+$pdf->writeHTMLCell(82.8, .5, 122, 83.5, '',  "B",  0, false, false, 'C', true); // line 10
+$pdf->writeHTMLCell(82.8, .5, 122, 89.5, '',  "B",  0, false, false, 'C', true); // line 11
+$pdf->writeHTMLCell(82.8, .5, 122, 95.5, '',  "B",  0, false, false, 'C', true); // line 12
+$pdf->writeHTMLCell(82.8, .5, 122, 101.5, '',  "B",  0, false, false, 'C', true); // line 13
+$pdf->writeHTMLCell(82.8, .5, 122, 107.5, '',  "B",  0, false, false, 'C', true); // line 14
+$pdf->writeHTMLCell(82.8, .5, 122, 113.5, '',  "B",  0, false, false, 'C', true); // line 15
 $pdf->SetFont('courier', 'B', 10);
-// $pdf->writeHTMLCell(82, 1, 21.6, 120.1, '',  "B",  0, false, false, 'C', true); // line 1
-// $pdf->writeHTMLCell(82, 1, 21.6, 124.5, '',  "B",  0, false, false, 'C', true); // line 2
-// $pdf->writeHTMLCell(82, 1, 21.6, 128.8, '',  "B",  0, false, false, 'C', true); // line 3
-// $pdf->writeHTMLCell(82, 1, 21.6, 133.3, '',  "B",  0, false, false, 'C', true); // line 4 
-// $pdf->writeHTMLCell(82, 1, 21.6, 138, '',  "B",  0, false, false, 'C', true);   // line 5
-// $pdf->writeHTMLCell(82, 1, 21.6, 142.8, '',  "B",  0, false, false, 'C', true); // line 6
-// $pdf->writeHTMLCell(82, 1, 21.6, 147.5, '',  "B",  0, false, false, 'C', true); // line 7
-// $pdf->writeHTMLCell(82, 1, 21.6, 151.2, '',  "B",  0, false, false, 'C', true); // line 8 
-// $pdf->writeHTMLCell(82, 1, 21.6, 155.8, '',  "B",  0, false, false, 'C', true);   // line 9
-// $pdf->writeHTMLCell(82, 63.3, 21.5, 123.2, '', 1,  0, false, false, 'C', true); // all side border
-$pdf->TextField('additional_information_3d',82.5, 105, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_130_additional_info_3d')), 122, 31);
+$pdf->TextField('additional_information_3d',83, 105, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('')), 122, 31);
 $pdf->setCellHeightRatio(1.2);
 //.........
 
@@ -2529,18 +2539,21 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>5.d.</b> </div>';
 $pdf->writeHTMLCell(90, 7, 113, 157, $html, 0, 1, false, false, 'L', true);
 $pdf->setCellHeightRatio(1.8);
+$pdf->writeHTMLCell(82.4, .5, 122, 153.5, '',  "B",  0, false, false, 'C', true); // line  
+$pdf->writeHTMLCell(82.4, .5, 122, 159.5, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(82.4, .5, 122, 165.5, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(82.4, .5, 122, 171.5, '',  "B",  0, false, false, 'C', true); // line  
+$pdf->writeHTMLCell(82.4, .5, 122, 177.5, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(82.4, .5, 122, 183.5, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(82.4, .5, 122, 189.5, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(82.4, .5, 122, 195.5, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(82.4, .5, 122, 201.5, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(82.4, .5, 122, 207.5, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(82.4, .5, 122, 213.5, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(82.4, .5, 122, 219.5, '',  "B",  0, false, false, 'C', true); // line 
+$pdf->writeHTMLCell(82.4, .5, 122, 225.5, '',  "B",  0, false, false, 'C', true); // line 
 $pdf->SetFont('courier', 'B', 10);
-// $pdf->writeHTMLCell(82, 1, 21.6, 120.1, '',  "B",  0, false, false, 'C', true); // line 1
-// $pdf->writeHTMLCell(82, 1, 21.6, 124.5, '',  "B",  0, false, false, 'C', true); // line 2
-// $pdf->writeHTMLCell(82, 1, 21.6, 128.8, '',  "B",  0, false, false, 'C', true); // line 3
-// $pdf->writeHTMLCell(82, 1, 21.6, 133.3, '',  "B",  0, false, false, 'C', true); // line 4 
-// $pdf->writeHTMLCell(82, 1, 21.6, 138, '',  "B",  0, false, false, 'C', true);   // line 5
-// $pdf->writeHTMLCell(82, 1, 21.6, 142.8, '',  "B",  0, false, false, 'C', true); // line 6
-// $pdf->writeHTMLCell(82, 1, 21.6, 147.5, '',  "B",  0, false, false, 'C', true); // line 7
-// $pdf->writeHTMLCell(82, 1, 21.6, 151.2, '',  "B",  0, false, false, 'C', true); // line 8 
-// $pdf->writeHTMLCell(82, 1, 21.6, 155.8, '',  "B",  0, false, false, 'C', true);   // line 9
-// $pdf->writeHTMLCell(82, 63.3, 21.5, 123.2, '', 1,  0, false, false, 'C', true); // all side border
-$pdf->TextField('additional_information_3d',82.5, 90, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_130_additional_info_3d')), 122, 155);
+$pdf->TextField('additional_information_3d',83, 91, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_130_additional_info_3d')), 122, 155);
 $pdf->setCellHeightRatio(1.2);
 
 //.........
