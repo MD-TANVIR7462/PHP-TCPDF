@@ -1,8 +1,8 @@
 <?php
 
 // require_once('formheader.php');   //database connection file 
-require_once('localconfig.php');   //database connection file 
 // Include the main TCPDF library (search for installation path).
+require_once("localconfig.php");
 require_once('tcpdf_include.php');
 
 // Extend the TCPDF class to create custom Header and Footer
@@ -30,29 +30,10 @@ class MyPDF extends TCPDF {
 			$this->SetFillColor(255,255,255); // set filling color
 			$this->MultiCell(191, 0, '', 'T', 1, 'C', 1, 12.8, 14.9, false, 'T', 'C');
 
-            // $this->StartTransform();
-            // $this->SetFillColor(0,0,0);
-            // $this->Rotate(-270);
-            // $this->SetFont('zapfdingbats', 'B', 10);
-            // $this->MultiCell(10, 10, "t", '', 'R', 0, 0, 25, 150, false); header angle
-            // $this->StopTransform();
-
-            
-            // $this->SetFont('times', 'B', 10);
-            // $this->writeHTMLCell(60, 7, 120, 2, 'A-', 0, 1, false, false, 'C', true);
-            // $this->writeHTMLCell(51, 7, 153, 3, '', 1, 1, false, true, 'C', true);
-
+           
 			
 		}
-		// parent::Header();
 		
-        // Logo
-        /* $image_file = K_PATH_IMAGES.'logo_example.jpg';
-           $this->Image($image_file, 10, 10, 15, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false); */
-        // Set font
-        /* $this->SetFont('helvetica', 'B', 20); */
-        // Title
-        /* $this->Cell(0, 15, '<< Company Heading >>', 0, false, 'C', 0, '', 0, false, 'M', 'M'); */
     }
 
     // Page footer
@@ -74,90 +55,27 @@ class MyPDF extends TCPDF {
 		// if ($this->page == 1){
 			$barcode_image = "images/I-821d-footer-pdf417-$this->page.png";
 		// )
-        $this->Image($barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
+
+        //! should be uncomment this line before put it on live site 
+// $this->Image($barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
 		
         // $this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 'T', 'R', 1, 0);
 		
 		
 		$this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 0, 'R', 0, 1, 159, 264.5, true);
 		
-        // Page number
-		//$created_date = date("F d, Y");
-		//$this->Cell(40, 4, 'Form N-400 Edition 09/17/19');
-		
- 		// $this->write2DBarcode('N-400|09/17/19|1', 'PDF417', 20, 120, 0, 20, $style, 'N');
-		
- 		// $this->write2DBarcode('test');
-		
-        // set style for barcode
-        /* $style = array(
-            'border' => 0,
-            'vpadding' => '0',
-            'hpadding' => '0',
-			'stretch' => true,
-            'fgcolor' => array(0,0,0),
-            'bgcolor' => false, //array(255,255,255)
-            'module_width' => 22, // width of a single module in points
-            'module_height' => 2.5, // height of a single module in points
-        ); */
-        // set a barcode on the page footer
-        //$this->setBarcode(date('Y-m-d H:i:s'));
-		
-		// $this->Cell(60, 4, '1025GEJ Approved February 26, 2018    ', $single_border_top, 0, 0);
-		// $this->Cell(60, 4, '1025GEJ Approved February 26, 2018', 1, 0, 'L');
-		// $this->MultiCell(60, 4,'1025GEJ Approved February 26, 2018','T','L',1,0);
-		
-		// $this->MultiCell(60, 4,'Ex Parte Motion for Alternative Service','T','C',1,0);
-		
-        // $this->write2DBarcode('N-400|09/17/19|'.$this->getAliasNumPage(), 'PDF417', 65, 265, 95, 0, $style, '');
-		
-		
-		 
-		/* $logoX = 186; // 186mm. The logo will be displayed on the right side close to the border of the page
-		$logoFileName = "barcode_1.jpg";
-		$logoWidth = 15; // 15mm
-		$logo = $this->PageNo() . ' | '. $this->Image($logoFileName, $logoX, $this->GetY()+2, $logoWidth);
- */
-
-		// define barcode style
-		/* $style = array(
-			'position' => '',
-			'align' => '',
-			'stretch' => true,
-			'fitwidth' => false,
-			'cellfitalign' => '',
-			'border' => true,
-			'hpadding' => 'auto',
-			'vpadding' => 'auto',
-			'fgcolor' => array(0,0,128),
-			'bgcolor' => array(255,255,128),
-			'text' => true,
-			'label' => '',
-			'font' => 'helvetica',
-			'fontsize' => 12,
-			'stretchtext' => 4
-		);
-
-		// CODE 39 EXTENDED + CHECKSUM
-		// $pdf->SetLineStyle(array('width' => 1, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(255, 0, 0)));
-		// $this->write1DBarcode('tt', 'C39E+', '', '', 40, 15, 0.4, $style, '0');
-		$this->write2DBarcode('N-400|09/17/19|', 'PDF417', 65, 265, 55, 25, $style, '0'); */
-		
-        // $this->Cell(80, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 1, 0, 'R', 0, '', 0, false, 'L', 'R');
+        
         
     }
 }
 
-// create new PDF document
-// $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-// $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, false, 'ISO-8859-1', false);
 
 $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('');
-$pdf->SetTitle('Form I-821D, Consideration of differed action ... ');
+$pdf->SetTitle('Form I-821D, Consideration of Deferred Action ... ');
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING);
@@ -198,30 +116,7 @@ $style = array(
     'module_height' => 1 // height of a single module in points
 );
 
-// define barcode style
-/*$style = array(
-    'position' => '',
-    'align' => 'C',
-    'stretch' => false,
-    'fitwidth' => true,
-    'cellfitalign' => '',
-    'border' => true,
-    'hpadding' => 'auto',
-    'vpadding' => 'auto',
-    'fgcolor' => array(0,0,0),
-    'bgcolor' => false, //array(255,255,255),
-    'text' => true,
-    'font' => 'helvetica',
-    'fontsize' => 8,
-    'stretchtext' => 4
-);*/
 
-
-// $html = '<h4>PDF Example</h4><br><p>Welcome to the Jungle</p>';
-
-//$pdf->Text(50, 85, 'PDF417 (ISO/IEC 15438:2006)');
- 
-// $pdf->Ln(2);
 
 // Logo
 $logo = 'homeland_security_logo.png';
@@ -1651,22 +1546,6 @@ $pdf->Image('images/right_angle.jpg', 68, 248, 4, 4, 'JPG', '', '', true, 150, '
 
 //........page 4 right end 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>9.d.</b> &nbsp;&nbsp;Type of Discharge ';
 $pdf->writeHTMLCell(90, 7, 112, 17, $html, '', 0, 0, true, 'L');
@@ -1838,13 +1717,6 @@ $pdf->writeHTMLCell(90, 7, 120, 236, $html, '', 0, 0, true, 'L');
 $html ='<div><input type="checkbox" name="part4_7" value="Y" checked=" " />  Yes   &nbsp; <input type="checkbox" name="part4_7" value="N" checked=" " /> No</div>';
 $pdf->writeHTMLCell(90, 7, 180, 245, $html, 0, 1, false, true, 'J', true);
 //.........
-
-
-
-
-
-
-
 
 $pdf->AddPage('P', 'LETTER'); //page number 5
 
@@ -2181,24 +2053,6 @@ $pdf->writeHTMLCell(90, 7, 13, 58, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('interpreter_email', 82, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 22, 63);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $pdf->SetFillColor(220,220,220);
 $pdf->SetFont('times', 'I', 10); // set font
 $pdf->setCellHeightRatio(1.1);
@@ -2504,7 +2358,7 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.a.  </b>  Family Name <br> &nbsp; &nbsp; &nbsp; &nbsp;  <i>(Last Name)</i> </div>';
 $pdf->writeHTMLCell(90, 7, 12, 70, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('full_legal_name_family_last_name', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 70);
+$pdf->TextField('full_legal_name_family_last_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 70);
 
 //.......
 
@@ -2513,7 +2367,7 @@ $html ='<div><b>1.b.  </b>  Given Name <br> &nbsp; &nbsp; &nbsp; &nbsp; <i>(Firs
 $pdf->writeHTMLCell(90, 7, 12, 79, $html, 0, 1, false, false, 'L', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('full_legal_name_given_first_name', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 79);
+$pdf->TextField('full_legal_name_given_first_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 79);
 
 //.........
 
@@ -2521,7 +2375,7 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>1.c.  </b>  Middle Name  </div>';
 $pdf->writeHTMLCell(90, 7, 12, 89, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('full_legal_name_middle_name', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 88);
+$pdf->TextField('full_legal_name_middle_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 45, 88);
 
 //..........
 
@@ -2544,7 +2398,7 @@ $pdf->writeHTMLCell(90, 7, 51, 102, $html, 0, 1, false, false, 'L', true);
 
 // $pdf->writeHTMLCell(45, 7, 57.5, 102, '',  1,  1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('part_8_2_a_number', 45, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 57.5, 102);
+$pdf->TextField('part_8_2_a_number', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 57.5, 102);
 
 
 //............
@@ -2579,15 +2433,21 @@ $pdf->TextField('full_legal_name_item_number', 19, 7, array('strokeColor' => arr
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>3.d.</b> </div>';
 $pdf->writeHTMLCell(90, 7, 12, 130, $html, 0, 1, false, false, 'L', true);
-
+//..........
+$pdf->setCellHeightRatio(1.8);
 $pdf->SetFont('courier', 'B', 10);
-$html = <<<EOD
-<textarea cols="20" rows="28" name="full_legal_name_3d">
-
-</textarea>
-EOD;
-$pdf->writeHTMLCell(90, 50, 19, 130, $html, 0, 0, false, 'L');
-
+// $pdf->writeHTMLCell(82, 1, 21.6, 120.1, '',  "B",  0, false, false, 'C', true); // line 1
+// $pdf->writeHTMLCell(82, 1, 21.6, 124.5, '',  "B",  0, false, false, 'C', true); // line 2
+// $pdf->writeHTMLCell(82, 1, 21.6, 128.8, '',  "B",  0, false, false, 'C', true); // line 3
+// $pdf->writeHTMLCell(82, 1, 21.6, 133.3, '',  "B",  0, false, false, 'C', true); // line 4 
+// $pdf->writeHTMLCell(82, 1, 21.6, 138, '',  "B",  0, false, false, 'C', true);   // line 5
+// $pdf->writeHTMLCell(82, 1, 21.6, 142.8, '',  "B",  0, false, false, 'C', true); // line 6
+// $pdf->writeHTMLCell(82, 1, 21.6, 147.5, '',  "B",  0, false, false, 'C', true); // line 7
+// $pdf->writeHTMLCell(82, 1, 21.6, 151.2, '',  "B",  0, false, false, 'C', true); // line 8 
+// $pdf->writeHTMLCell(82, 1, 21.6, 155.8, '',  "B",  0, false, false, 'C', true);   // line 9
+// $pdf->writeHTMLCell(82, 63.3, 21.5, 123.2, '', 1,  0, false, false, 'C', true); // all side border
+$pdf->TextField('additional_information_3d',82.5, 102, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_130_additional_info_3d')), 21, 130);
+$pdf->setCellHeightRatio(1.2);
 //.........
 
 $pdf->SetFont('times', '', 10);
@@ -2621,14 +2481,21 @@ $pdf->SetFont('times', '', 10);
 $html ='<div><b>4.d.</b> </div>';
 $pdf->writeHTMLCell(90, 7, 113, 31, $html, 0, 1, false, false, 'L', true);
 
+
+$pdf->setCellHeightRatio(1.8);
 $pdf->SetFont('courier', 'B', 10);
-$html = <<<EOD
-<textarea cols="19" rows="27" name="full_legal_name_4d">
-
-</textarea>
-EOD;
-$pdf->writeHTMLCell(90, 50, 122, 31, $html, 0, 0, false, 'L');
-
+// $pdf->writeHTMLCell(82, 1, 21.6, 120.1, '',  "B",  0, false, false, 'C', true); // line 1
+// $pdf->writeHTMLCell(82, 1, 21.6, 124.5, '',  "B",  0, false, false, 'C', true); // line 2
+// $pdf->writeHTMLCell(82, 1, 21.6, 128.8, '',  "B",  0, false, false, 'C', true); // line 3
+// $pdf->writeHTMLCell(82, 1, 21.6, 133.3, '',  "B",  0, false, false, 'C', true); // line 4 
+// $pdf->writeHTMLCell(82, 1, 21.6, 138, '',  "B",  0, false, false, 'C', true);   // line 5
+// $pdf->writeHTMLCell(82, 1, 21.6, 142.8, '',  "B",  0, false, false, 'C', true); // line 6
+// $pdf->writeHTMLCell(82, 1, 21.6, 147.5, '',  "B",  0, false, false, 'C', true); // line 7
+// $pdf->writeHTMLCell(82, 1, 21.6, 151.2, '',  "B",  0, false, false, 'C', true); // line 8 
+// $pdf->writeHTMLCell(82, 1, 21.6, 155.8, '',  "B",  0, false, false, 'C', true);   // line 9
+// $pdf->writeHTMLCell(82, 63.3, 21.5, 123.2, '', 1,  0, false, false, 'C', true); // all side border
+$pdf->TextField('additional_information_3d',82.5, 105, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_130_additional_info_3d')), 122, 31);
+$pdf->setCellHeightRatio(1.2);
 //.........
 
 $pdf->SetFont('times', '', 10);
@@ -2661,22 +2528,28 @@ $pdf->TextField('full_legal_name_item_number_2', 19, 7, array('strokeColor' => a
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>5.d.</b> </div>';
 $pdf->writeHTMLCell(90, 7, 113, 157, $html, 0, 1, false, false, 'L', true);
-
+$pdf->setCellHeightRatio(1.8);
 $pdf->SetFont('courier', 'B', 10);
-$html = <<<EOD
-<textarea cols="19" rows="25" name="full_legal_name_5d">
-
-</textarea>
-EOD;
-$pdf->writeHTMLCell(90, 50, 122, 155, $html, 0, 0, false, 'L');
+// $pdf->writeHTMLCell(82, 1, 21.6, 120.1, '',  "B",  0, false, false, 'C', true); // line 1
+// $pdf->writeHTMLCell(82, 1, 21.6, 124.5, '',  "B",  0, false, false, 'C', true); // line 2
+// $pdf->writeHTMLCell(82, 1, 21.6, 128.8, '',  "B",  0, false, false, 'C', true); // line 3
+// $pdf->writeHTMLCell(82, 1, 21.6, 133.3, '',  "B",  0, false, false, 'C', true); // line 4 
+// $pdf->writeHTMLCell(82, 1, 21.6, 138, '',  "B",  0, false, false, 'C', true);   // line 5
+// $pdf->writeHTMLCell(82, 1, 21.6, 142.8, '',  "B",  0, false, false, 'C', true); // line 6
+// $pdf->writeHTMLCell(82, 1, 21.6, 147.5, '',  "B",  0, false, false, 'C', true); // line 7
+// $pdf->writeHTMLCell(82, 1, 21.6, 151.2, '',  "B",  0, false, false, 'C', true); // line 8 
+// $pdf->writeHTMLCell(82, 1, 21.6, 155.8, '',  "B",  0, false, false, 'C', true);   // line 9
+// $pdf->writeHTMLCell(82, 63.3, 21.5, 123.2, '', 1,  0, false, false, 'C', true); // all side border
+$pdf->TextField('additional_information_3d',82.5, 90, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_130_additional_info_3d')), 122, 155);
+$pdf->setCellHeightRatio(1.2);
 
 //.........
 
 
-
+        //! should be uncomment this line before put it on live site 
+// 'atorney_state_bar_number':' $attorneyData->bar_number',
 $js = "
 var fields = {
-    'atorney_state_bar_number':' $attorneyData->bar_number',
     'p1_2_date':' ',
     'information_about_you_last_name':' ',
     'information_about_you_first_name':' ',

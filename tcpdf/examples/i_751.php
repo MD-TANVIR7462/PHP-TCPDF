@@ -3131,8 +3131,6 @@ $pdf->writeHTMLCell(82, 1, 21.6, 151.2, '',  "B",  0, false, false, 'C', true); 
 $pdf->writeHTMLCell(82, 1, 21.6, 155.8, '',  "B",  0, false, false, 'C', true);   // line 9
 $pdf->writeHTMLCell(82, 63.3, 21.5, 123.2, '', 1,  0, false, false, 'C', true); // all side border
 $pdf->TextField('additional_information_3d', 82.5, 63.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_130_additional_info_3d')), 21.5, 123);
-
-
 $pdf->setCellHeightRatio(1.2);
 
 //............
