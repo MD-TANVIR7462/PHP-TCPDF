@@ -744,35 +744,35 @@ $pdf->writeHTMLCell(90, 7, 114, 18, $html, 0, 1, true, false, 'L', true);
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>Section A.</b> (To be used <b>only</b> by a lawful permanent resident or 
 a permanent resident in commuter status.)</div>';
-$pdf->writeHTMLCell(90, 7, 113, 28, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(90, 7, 112, 28, $html, 0, 1, false, true, 'J', true);
 //............
 $part2_2a = (showData('i_90_application_reason_2a_status')=='Y')? 'checked':'';
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>2.a.    </b> <input type="checkbox" name="part2_2a" value="Y" checked="'.$part2_2a.'" />&nbsp;My previous card has been lost, stolen, or destroyed.</div>';
-$pdf->writeHTMLCell(90, 7, 113, 39, $html, 0, 1, false, true, 'J', true);
+$html ='<div><b>2.a.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part2_2a" value="Y" checked="'.$part2_2a.'" />&nbsp;&nbsp;My previous card has been lost, stolen, or destroyed.</div>';
+$pdf->writeHTMLCell(100, 7, 112, 39, $html, 0, 1, false, true, 'J', true);
 //............
 
 $part2_2b = (showData('i_90_application_reason_2b_status')=='Y')? 'checked':'';
 
-$pdf->SetFont('times', '', 10);
-$html ='<div><b>2.b.    </b> <input type="checkbox" name="part2_2b" value="Y" checked="'.$part2_2b.'" /> &nbsp;My previous card was issued but never received. </div>';
-$pdf->writeHTMLCell(90, 7, 113, 45, $html, 0, 1, false, true, 'J', true);
+$pdf->SetFont('times', '', 9.7);
+$html ='<div><b>2.b.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part2_2b" value="Y" checked="'.$part2_2b.'" />&nbsp;&nbsp;My previous card was issued but never received. </div>';
+$pdf->writeHTMLCell(100, 7, 112, 45, $html, 0, 1, false, true, 'J', true);
 //............
 
 
 $part2_2c = (showData('i_90_application_reason_2c_status')=='Y')? 'checked':'';
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>2.c.    </b> <input type="checkbox" name="part2_2c" value="Y" checked="'.$part2_2c.'" /> &nbsp;My existing card has been mutilated.  </div>';
-$pdf->writeHTMLCell(90, 7, 113, 51, $html, 0, 1, false, true, 'J', true);
+$html ='<div><b>2.c.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part2_2c" value="Y" checked="'.$part2_2c.'" />&nbsp;&nbsp;My existing card has been mutilated.  </div>';
+$pdf->writeHTMLCell(100, 7, 112, 51, $html, 0, 1, false, true, 'J', true);
 //............
 
 $part2_2d = (showData('i_90_application_reason_2d_status')=='Y')? 'checked':'';
 
-$pdf->SetFont('times', '', 10);
-$html ='<div><b>2.d.    </b> <input type="checkbox" name="part2_2d" value="Y" checked="'.$part2_2d.'" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 57, $html, 0, 1, false, true, 'J', true);
+$pdf->SetFont('times', '', 9.7);
+$html ='<div><b>2.d.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part2_2d" value="Y" checked="'.$part2_2d.'" /> </div>';
+$pdf->writeHTMLCell(100, 7, 112, 57, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
@@ -780,40 +780,40 @@ $html ='<div>My existing card has incorrect data because of
 <br>Department of Homeland Security (DHS) error. 
 <br>(Attach your existing card with incorrect data along 
 <br>with this application.)  </div>';
-$pdf->writeHTMLCell(90, 7, 126.5, 57, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 127, 57, $html, 0, 1, false, true, 'J', true);
 //............
 
 $part2_2e = (showData('i_90_application_reason_2e_status')=='Y')? 'checked':'';
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>2.e.    </b> <input type="checkbox" name="part2_2e" value="Y" checked="'.$part2_2e.'" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 74, $html, 0, 1, false, true, 'J', true);
+$html ='<div><b>2.e.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part2_2e" value="Y" checked="'.$part2_2e.'" /> </div>';
+$pdf->writeHTMLCell(100, 7, 112, 74, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
 $html ='<div>My name or other biographic information has been 
 <br>legally changed since issuance of my existing card. </div>';
-$pdf->writeHTMLCell(90, 7, 126.5, 74, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 127, 74, $html, 0, 1, false, true, 'J', true);
 //............
 
 $part2_2f = (showData('i_90_application_reason_2f_status')=='Y')? 'checked':'';
 
-$pdf->SetFont('times', '', 10);
-$html ='<div><b>2.f.    </b> <input type="checkbox" name="part2_2f" value="Y" checked="'.$part2_2f.'" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 83, $html, 0, 1, false, true, 'J', true);
+$pdf->SetFont('times', '', 10.2);
+$html ='<div><b>2.f.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part2_2f" value="Y" checked="'.$part2_2f.'" /> </div>';
+$pdf->writeHTMLCell(100, 7, 112, 83, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
 $html ='<div>My existing card has already expired or will expire 
 <br>within six months.  </div>';
-$pdf->writeHTMLCell(90, 7, 126.5, 83, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 127, 83, $html, 0, 1, false, true, 'J', true);
 //............
 
 $part2_2g1 = (showData('i_90_application_reason_2g1_status')=='Y')? 'checked':'';
 
-$pdf->SetFont('times', '', 10);
+$pdf->SetFont('times', '', 9.7);
 $html ='<div><b>2.g.1.  </b><input type="checkbox" name="part2_2g1" value="Y" checked="'.$part2_2g1.'" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 92, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 112, 92, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
@@ -821,13 +821,13 @@ $html ='<div>I have reached my 14th birthday and am registering
 <br>as required. My existing card will expire AFTER my 
 <br>16th birthday. (See <b>NOTE</b> below for additional 
 <br>information.)  </div>';
-$pdf->writeHTMLCell(90, 7, 129, 92, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 127, 92, $html, 0, 1, false, true, 'J', true);
 //............
 $part2_2g2 = (showData('i_90_application_reason_2g2_status')=='Y')? 'checked':'';
 
-$pdf->SetFont('times', '', 10);
+$pdf->SetFont('times', '', 9.7);
 $html ='<div><b>2.g.2.  </b><input type="checkbox" name="part2_2g2" value="Y" checked="'.$part2_2g2.'" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 111, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 112, 111, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
@@ -835,7 +835,7 @@ $html ='<div>I have reached my 14th birthday and am registering
 <br>as required. My existing card will expire BEFORE my 
 <br>16th birthday. (See <b>NOTE</b> below for additional 
 <br>information.)  </div>';
-$pdf->writeHTMLCell(90, 7, 129, 111, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 127, 111, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
@@ -843,72 +843,72 @@ $html ='<div><b>NOTE:</b> If you are filing this application before your
 <br>14th birthday, or more than 30 days after your 14th 
 <br>birthday, you must select reason <b>2.j.</b> However, if 
 <br>your card has expired, you must select reason <b>2.f.</b> </div>';
-$pdf->writeHTMLCell(90, 7, 129, 130, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 127, 130, $html, 0, 1, false, true, 'J', true);
 //............
 $part2_2h1 = (showData('i_90_application_reason_2h1_status')=='Y')? 'checked':'';
 
-$pdf->SetFont('times', '', 10);
-$html ='<div><b>2.h.1.  </b><input type="checkbox" name="part2_2h1" value="Y" checked="'.$part2_2h1.'" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 150, $html, 0, 1, false, true, 'J', true);
+$pdf->SetFont('times', '', 9.7);
+$html ='<div><b>2.h.1.&nbsp;&nbsp;</b><input type="checkbox" name="part2_2h1" value="Y" checked="'.$part2_2h1.'" /> </div>';
+$pdf->writeHTMLCell(100, 7, 112, 150, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
 $html ='<div>I am a permanent resident who is taking up commuter 
 <br>status. </div>';
-$pdf->writeHTMLCell(90, 7, 129, 150, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(100, 7, 127, 150, $html, 0, 1, false, true, 'J', true);
 //............
 $part2_2h1a = (showData('i_90_application_reason_2h1a_status')=='Y')? 'checked':'';
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>2.h.1.a  </b><input type="checkbox" name="part2_2h1a" value="Y" checked="'.$part2_2h1a.'" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 161, $html, 0, 1, false, true, 'J', true);
+$html ='<div><b>2.h.1.a  </b></div>';
+$pdf->writeHTMLCell(100, 7, 112, 161, $html, 0, 1, false, true, 'J', true);
 //............
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', '', 9.7);
 $html ='<div><b>My Port-of-Entry (POE) into the United States will be</b>:
 <br>City or Town and State </div>';
-$pdf->writeHTMLCell(88, 7, 131, 161, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(88, 7, 127, 161, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(74, 7, 131, 172, ''.showData('i_90_application_reason_city_town_state').'', 1, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(76, 7, 129, 172, ''.showData('i_90_application_reason_city_town_state').'', 1, 1, false, true, 'L', true);
 //.............
 $part2_2h2 = (showData('i_90_application_reason_2h2_status')=='Y')? 'checked':'';
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>2.h.2.  </b><input type="checkbox" name="part2_2h2" value="Y" checked="'.$part2_2h2.'" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 182, $html, 0, 1, false, true, 'J', true);
+$html ='<div><b>2.h.2.&nbsp;&nbsp;</b><input type="checkbox" name="part2_2h2" value="Y" checked="'.$part2_2h2.'" /> </div>';
+$pdf->writeHTMLCell(100, 7, 112, 182, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
 $html ='<div>I am a commuter who is taking up actual residence in 
 <br>the United States. </div>';
-$pdf->writeHTMLCell(88, 7, 130, 182, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(88, 7, 127, 182, $html, 0, 1, false, true, 'J', true);
 //............
 
 $part2_2i = (showData('i_90_application_reason_2i_status')=='Y')? 'checked':'';
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>2.i.  </b><input type="checkbox" name="part2_2i" value="Y" checked="'.$part2_2i.'" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 192, $html, 0, 1, false, true, 'J', true);
+$html ='<div><b>2.i.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part2_2i" value="Y" checked="'.$part2_2i.'" /> </div>';
+$pdf->writeHTMLCell(100, 7, 112, 192, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
 $html ='<div>I have been automatically converted to lawful 
 <br>permanent resident status. </div>';
-$pdf->writeHTMLCell(88, 7, 130, 192, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(88, 7, 127, 192, $html, 0, 1, false, true, 'J', true);
 //............
 
 $part2_2j = (showData('i_90_application_reason_2j_status')=='Y')? 'checked':'';
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>2.j.  </b><input type="checkbox" name="part2_2j" value="Y" checked="'.$part2_2j.'" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 203, $html, 0, 1, false, true, 'J', true);
+$html ='<div><b>2.j.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="checkbox" name="part2_2j" value="Y" checked="'.$part2_2j.'" /> </div>';
+$pdf->writeHTMLCell(100, 7, 112, 203, $html, 0, 1, false, true, 'J', true);
 //............
 
 $pdf->SetFont('times', '', 10);
 $html ='<div>I have a prior edition of the Alien Registration Card, 
 <br>or I am applying to replace my current Permanent 
 <br>Resident Card for a reason that is not specified above.</div>';
-$pdf->writeHTMLCell(88, 7, 130, 203, $html, 0, 1, false, true, 'J', true);
+$pdf->writeHTMLCell(88, 7, 127, 203, $html, 0, 1, false, true, 'J', true);
 //............
 
 
