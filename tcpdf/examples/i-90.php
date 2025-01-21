@@ -1249,150 +1249,153 @@ $bio_eye_unk    = (showData('biographic_info_eye_color') == 'unknown') ? "checke
 
 
 $pdf->SetFont('times', '', 10);
-$html = '<div>   
-&nbsp; &nbsp;&nbsp;
-<input type="checkbox" name="black" value="black" checked="' . $bio_eye_black . '"/> Black 
-&nbsp;  &nbsp;  &nbsp;&nbsp;
-<input type="checkbox" name="blue" value="blue" checked="' . $bio_eye_blue . '"/> Blue 
-&nbsp; &nbsp; &nbsp;&nbsp;
-<input type="checkbox" name="brown" value="brown" checked="' . $bio_eye_brown . '"/> Brown <br>
+// $html = '<div>   
+// &nbsp; &nbsp;&nbsp;
+// <input type="checkbox" name="black" value="black" checked="' . $bio_eye_black . '"/> Black 
+// &nbsp;  &nbsp;  &nbsp;&nbsp;
+// <input type="checkbox" name="blue" value="blue" checked="' . $bio_eye_blue . '"/> Blue 
+// &nbsp; &nbsp; &nbsp;&nbsp;
+// <input type="checkbox" name="brown" value="brown" checked="' . $bio_eye_brown . '"/> Brown <br>
 
-&nbsp; &nbsp; &nbsp; 
-<input type="checkbox" name="gray " value="gray" checked="' . $bio_eye_gray . '"/>  Gray
-&nbsp; &nbsp; &nbsp; &nbsp;
-<input type="checkbox" name="green " value="green" checked="' . $bio_eye_green . '"/> Green 
-&nbsp; &nbsp; 
-<input type="checkbox" name="hazel " value="hazel" checked="' . $bio_eye_hazel . '"/> Hazel <br>
+// &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="gray " value="gray" checked="' . $bio_eye_gray . '"/>  Gray&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="green " value="green" checked="' . $bio_eye_green . '"/> Green 
+// &nbsp; &nbsp; 
+// <input type="checkbox" name="hazel " value="hazel" checked="' . $bio_eye_hazel . '"/> Hazel <br>
 
-&nbsp; &nbsp; &nbsp; 
-<input type="checkbox" name="maroon" value="maroon" checked="' . $bio_eye_maroon . '"/> Maroon 
-&nbsp; &nbsp;
-<input type="checkbox" name="pink" value="pink" checked="' . $bio_eye_pink . '"/> Pink 
-&nbsp;  &nbsp;  &nbsp; 
-<input type="checkbox" name="unknown" value="unknown" checked="' . $bio_eye_unk . '" /> Unknown/Other 
+// &nbsp; &nbsp; &nbsp; 
+// <input type="checkbox" name="maroon" value="maroon" checked="' . $bio_eye_maroon . '"/> Maroon 
+// &nbsp; &nbsp;
+// <input type="checkbox" name="pink" value="pink" checked="' . $bio_eye_pink . '"/> Pink 
+// &nbsp;  &nbsp;  &nbsp; 
+// <input type="checkbox" name="unknown" value="unknown" checked="' . $bio_eye_unk . '" /> Unknown/Other 
 
- </div>';
-$pdf->writeHTMLCell(90, 7, 113, 99, $html, 0, 0, false, true, 'J', true);
+//  </div>';
+
+$html = '<div><input type="checkbox" name="black" value="black" checked="' . $bio_eye_black . '"/> Black<br><br><input type="checkbox" name="gray " value="gray" checked="' . $bio_eye_gray . '"/>  Gray<br><br><input type="checkbox" name="maroon" value="maroon" checked="' . $bio_eye_maroon . '"/> Maroon<br></div>';
+$pdf->writeHTMLCell(90, 7, 119, 99, $html, 0, 0, false, true, 'J', true);
+$html = '<div><input type="checkbox" name="blue" value="blue" checked="' . $bio_eye_blue . '"/> Blue<br><br><input type="checkbox" name="green " value="green" checked="' . $bio_eye_green . '"/> Green<br><br><input type="checkbox" name="maroon" value="maroon" checked="' . $bio_eye_maroon . '"/> Maroon<br></div>';
+$pdf->writeHTMLCell(90, 7, 119, 99, $html, 0, 0, false, true, 'J', true);
+$html = '<div><input type="checkbox" name="black" value="black" checked="' . $bio_eye_black . '"/> Black<br><br><input type="checkbox" name="gray " value="gray" checked="' . $bio_eye_gray . '"/>  Gray<br><br><input type="checkbox" name="maroon" value="maroon" checked="' . $bio_eye_maroon . '"/> Maroon<br></div>';
+$pdf->writeHTMLCell(90, 7, 119, 99, $html, 0, 0, false, true, 'J', true);
 //......
-$pdf->SetFont('times', '', 10);
-$html = '<div><b>11.    </b>  Hair Color (Select <b>only one</b> box )  </div>';
-$pdf->writeHTMLCell(90, 7, 113, 113, $html, 0, 0, false, true, 'J', true);
+// $pdf->SetFont('times', '', 10);
+// $html = '<div><b>11.    </b>  Hair Color (Select <b>only one</b> box )  </div>';
+// $pdf->writeHTMLCell(90, 7, 113, 113, $html, 0, 0, false, true, 'J', true);
 
 
-$bio_hair_bald      = (showData('biographic_info_hair_color') == 'bald') ? "checked" : "";
-$bio_hair_black     = (showData('biographic_info_hair_color') == 'black') ? "checked" : "";
-$bio_hair_blond     = (showData('biographic_info_hair_color') == 'blond') ? "checked" : "";
-$bio_hair_brown     = (showData('biographic_info_hair_color') == 'brown') ? "checked" : "";
-$bio_hair_gray      = (showData('biographic_info_hair_color') == 'gray') ? "checked" : "";
-$bio_hair_red       = (showData('biographic_info_hair_color') == 'red') ? "checked" : "";
-$bio_hair_sandy     = (showData('biographic_info_hair_color') == 'sandy') ? "checked" : "";
-$bio_hair_white     = (showData('biographic_info_hair_color') == 'white') ? "checked" : "";
-$bio_hair_unk       = (showData('biographic_info_hair_color') == 'unknown') ? "checked" : "";
+// $bio_hair_bald      = (showData('biographic_info_hair_color') == 'bald') ? "checked" : "";
+// $bio_hair_black     = (showData('biographic_info_hair_color') == 'black') ? "checked" : "";
+// $bio_hair_blond     = (showData('biographic_info_hair_color') == 'blond') ? "checked" : "";
+// $bio_hair_brown     = (showData('biographic_info_hair_color') == 'brown') ? "checked" : "";
+// $bio_hair_gray      = (showData('biographic_info_hair_color') == 'gray') ? "checked" : "";
+// $bio_hair_red       = (showData('biographic_info_hair_color') == 'red') ? "checked" : "";
+// $bio_hair_sandy     = (showData('biographic_info_hair_color') == 'sandy') ? "checked" : "";
+// $bio_hair_white     = (showData('biographic_info_hair_color') == 'white') ? "checked" : "";
+// $bio_hair_unk       = (showData('biographic_info_hair_color') == 'unknown') ? "checked" : "";
 
 
-$html = '<div>   
-&nbsp;
-<input type="checkbox" name="blad" value="blad" checked="' . $bio_hair_bald . '"/> Blad(No hair) 
-&nbsp;&nbsp;
-<input type="checkbox" name="black1" value="black" checked="' . $bio_hair_black . '"/> Black
-&nbsp; &nbsp; &nbsp;&nbsp;
-<input type="checkbox" name="blond" value="blond" checked="' . $bio_hair_blond . '"/> Blond <br>
- &nbsp; 
-<input type="checkbox" name="Brown1 " value="Brown" checked="' . $bio_hair_brown . '"/> Brown 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   &nbsp; 
-<input type="checkbox" name="gray1 " value="gray" checked="' . $bio_hair_gray . '"/> Gray 
- &nbsp; &nbsp; &nbsp; &nbsp; 
-<input type="checkbox" name="red " value="red" checked="' . $bio_hair_red . '"/> Red <br>
-&nbsp; 
-<input type="checkbox" name=" sandy" value=" sandy" checked="' . $bio_hair_sandy . '"/> Sandy  
-&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; 
-<input type="checkbox" name="white" value="white" checked="' . $bio_hair_white . '"/>  White
-&nbsp;  &nbsp;  &nbsp; 
-<input type="checkbox" name="unknown1" value="unknown" checked="' . $bio_hair_unk . '"/> Unknown/Other 
+// $html = '<div>   
+// &nbsp;
+// <input type="checkbox" name="blad" value="blad" checked="' . $bio_hair_bald . '"/> Blad(No hair) 
+// &nbsp;&nbsp;
+// <input type="checkbox" name="black1" value="black" checked="' . $bio_hair_black . '"/> Black
+// &nbsp; &nbsp; &nbsp;&nbsp;
+// <input type="checkbox" name="blond" value="blond" checked="' . $bio_hair_blond . '"/> Blond <br>
+//  &nbsp; 
+// <input type="checkbox" name="Brown1 " value="Brown" checked="' . $bio_hair_brown . '"/> Brown 
+// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   &nbsp; 
+// <input type="checkbox" name="gray1 " value="gray" checked="' . $bio_hair_gray . '"/> Gray 
+//  &nbsp; &nbsp; &nbsp; &nbsp; 
+// <input type="checkbox" name="red " value="red" checked="' . $bio_hair_red . '"/> Red <br>
+// &nbsp; 
+// <input type="checkbox" name=" sandy" value=" sandy" checked="' . $bio_hair_sandy . '"/> Sandy  
+// &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; 
+// <input type="checkbox" name="white" value="white" checked="' . $bio_hair_white . '"/>  White
+// &nbsp;  &nbsp;  &nbsp; 
+// <input type="checkbox" name="unknown1" value="unknown" checked="' . $bio_hair_unk . '"/> Unknown/Other 
 
- </div>';
-$pdf->writeHTMLCell(90, 7, 116, 119, $html, 0, 0, false, true, 'J', true);
+//  </div>';
+// $pdf->writeHTMLCell(90, 7, 116, 119, $html, 0, 0, false, true, 'J', true);
 
-//............
+// //............
 
-$pdf->SetFont('times', '', 12);
-$pdf->SetFillColor(220, 220, 220);
-$pdf->setCellPaddings(1, 1, 0, 1);
-$html = '<div><b>Part 4. Accommodations for Individuals with 
-Disabilities and/or Impairments</b> (Read the 
-information in the Form I-90 Instructions before 
-completing this part.)</div>';
-$pdf->writeHTMLCell(90, 6, 114, 137, $html, 1, 1, true, false, 'L', true);
-//...........
+// $pdf->SetFont('times', '', 12);
+// $pdf->SetFillColor(220, 220, 220);
+// $pdf->setCellPaddings(1, 1, 0, 1);
+// $html = '<div><b>Part 4. Accommodations for Individuals with 
+// Disabilities and/or Impairments</b> (Read the 
+// information in the Form I-90 Instructions before 
+// completing this part.)</div>';
+// $pdf->writeHTMLCell(90, 6, 114, 137, $html, 1, 1, true, false, 'L', true);
+// //...........
 
-$pdf->SetFont('times', '', 10);
-$html = '<div><b>NOTE:</b> If you need extra space to complete this section, use 
-the space provided in <b>Part 8. Additional Information.</b>
+// $pdf->SetFont('times', '', 10);
+// $html = '<div><b>NOTE:</b> If you need extra space to complete this section, use 
+// the space provided in <b>Part 8. Additional Information.</b>
 
-</div>';
-$pdf->writeHTMLCell(85, 7, 113, 160, $html, 0, 1, false, true, 'J', true);
-//............
+// </div>';
+// $pdf->writeHTMLCell(85, 7, 113, 160, $html, 0, 1, false, true, 'J', true);
+// //............
 
-$pdf->SetFont('times', '', 10);
-$html = '<div><b>1.</b>
+// $pdf->SetFont('times', '', 10);
+// $html = '<div><b>1.</b>
 
-</div>';
-$pdf->writeHTMLCell(85, 7, 113, 171, $html, 0, 1, false, true, 'J', true);
-//............
+// </div>';
+// $pdf->writeHTMLCell(85, 7, 113, 171, $html, 0, 1, false, true, 'J', true);
+// //............
 
-$pdf->SetFont('times', '', 10);
-$html = '<div>Are you requesting an accommodation because of your 
-disabilities and/or impairments? 
+// $pdf->SetFont('times', '', 10);
+// $html = '<div>Are you requesting an accommodation because of your 
+// disabilities and/or impairments? 
 
-</div>';
-$pdf->writeHTMLCell(80, 7, 120, 171, $html, 0, 1, false, true, 'J', true);
-//............
+// </div>';
+// $pdf->writeHTMLCell(80, 7, 120, 171, $html, 0, 1, false, true, 'J', true);
+// //............
 
-$part4_1y = (showData('i_90_accomodation_1_requesting_status') == 'Y') ? 'checked' : '';
-$part4_1n = (showData('i_90_accomodation_1_requesting_status') == 'N') ? 'checked' : '';
+// $part4_1y = (showData('i_90_accomodation_1_requesting_status') == 'Y') ? 'checked' : '';
+// $part4_1n = (showData('i_90_accomodation_1_requesting_status') == 'N') ? 'checked' : '';
 
 
-$html = '<div>
-<input type="checkbox" name="part4_1" value="Y" checked="' . $part4_1y . '"/>  Yes   &nbsp; 
-<input type="checkbox" name="part4_1" value="N" checked="' . $part4_1n . '" /> No</div>';
+// $html = '<div>
+// <input type="checkbox" name="part4_1" value="Y" checked="' . $part4_1y . '"/>  Yes   &nbsp; 
+// <input type="checkbox" name="part4_1" value="N" checked="' . $part4_1n . '" /> No</div>';
 
-$pdf->writeHTMLCell(90, 7, 178, 177, $html, 0, 1, false, true, 'J', true);
-//..........
+// $pdf->writeHTMLCell(90, 7, 178, 177, $html, 0, 1, false, true, 'J', true);
+// //..........
 
-$pdf->SetFont('times', '', 10);
-$html = '<div>If you answered "Yes," select any applicable boxes: 
+// $pdf->SetFont('times', '', 10);
+// $html = '<div>If you answered "Yes," select any applicable boxes: 
 
-</div>';
-$pdf->writeHTMLCell(80, 7, 114, 185, $html, 0, 1, false, true, 'J', true);
-//............
+// </div>';
+// $pdf->writeHTMLCell(80, 7, 114, 185, $html, 0, 1, false, true, 'J', true);
+// //............
 
-$part4_1a = (showData('i_90_accomodation_1a_deaf_hard_status') == 'Y') ? 'checked' : '';
-$pdf->SetFont('times', '', 10);
-$html = '<div><b>1.a.    </b> <input type="checkbox" name="part2_1a" value="Y" checked="' . $part4_1a . '" /> </div>';
-$pdf->writeHTMLCell(90, 7, 113, 192, $html, 0, 1, false, true, 'J', true);
-//............
+// $part4_1a = (showData('i_90_accomodation_1a_deaf_hard_status') == 'Y') ? 'checked' : '';
+// $pdf->SetFont('times', '', 10);
+// $html = '<div><b>1.a.    </b> <input type="checkbox" name="part2_1a" value="Y" checked="' . $part4_1a . '" /> </div>';
+// $pdf->writeHTMLCell(90, 7, 113, 192, $html, 0, 1, false, true, 'J', true);
+// //............
 
-$pdf->SetFont('times', '', 10);
-$html = '<div>I am deaf or hard of hearing and request the 
-<br>following accommodation (If you are requesting a 
-<br>sign-language interpreter, indicate for which 
-<br>language (for example, American Sign Language): 
+// $pdf->SetFont('times', '', 10);
+// $html = '<div>I am deaf or hard of hearing and request the 
+// <br>following accommodation (If you are requesting a 
+// <br>sign-language interpreter, indicate for which 
+// <br>language (for example, American Sign Language): 
 
-</div>';
-$pdf->writeHTMLCell(80, 7, 126, 192, $html, 0, 1, false, true, 'J', true);
-//............
+// </div>';
+// $pdf->writeHTMLCell(80, 7, 126, 192, $html, 0, 1, false, true, 'J', true);
+// //............
 
-$pdf->SetFont('courier', 'B', 10);
-/* $html = <<<EOD
-<textarea cols="18" rows="7" name="accommodations_for_individuals_1a">
+// $pdf->SetFont('courier', 'B', 10);
+// /* $html = <<<EOD
+// <textarea cols="18" rows="7" name="accommodations_for_individuals_1a">
 
-</textarea>
-EOD;
-$pdf->writeHTMLCell(90, 50, 126, 208, $html, 0, 0, false, 'L'); */
+// </textarea>
+// EOD;
+// $pdf->writeHTMLCell(90, 50, 126, 208, $html, 0, 0, false, 'L'); */
 
-$pdf->setCellHeightRatio(1.8);
-$pdf->TextField('accommodations_for_individuals_1a', 77, 40, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 0, 'borderStyle' => 'solid'), array('v' => showData('i_90_accomodation_1a_deaf_hard_text_value')), 126, 210);
-$pdf->setCellHeightRatio(1.2);
+// $pdf->setCellHeightRatio(1.8);
+// $pdf->TextField('accommodations_for_individuals_1a', 77, 40, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 0, 'borderStyle' => 'solid'), array('v' => showData('i_90_accomodation_1a_deaf_hard_text_value')), 126, 210);
+// $pdf->setCellHeightRatio(1.2);
 
 //.........
 
