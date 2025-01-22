@@ -1,6 +1,6 @@
 <?php
-require_once('formheader.php');
-// require_once('localconfig.php');
+// require_once('formheader.php');
+require_once('localconfig.php');
 
 //* Include the main TCPDF library ( search for installation path ).
 require_once('tcpdf_include.php');
@@ -16,19 +16,10 @@ class MyPDF extends TCPDF
         $this->SetY(13);
         if ($this->page > 1) {
             $this->SetLineWidth(2.1);
-            //* set border width
-            //* $this->SetDrawColor( 0, 0, 0 );
-            //* set color for cell border
             $this->SetFillColor(255, 255, 255);
-            //* set filling color
             $this->MultiCell(188.5, 0, '', 'T', 1, 'C', 1, '', 6.5, false, 'T', 'C');
-
             $this->SetLineWidth(0.1);
-            //* set border width
-            //* $this->SetDrawColor( 0, 0, 0 );
-            //* set color for cell border
             $this->SetFillColor(255, 255, 255);
-            //* set filling color
             $this->MultiCell(190.3, 0, '', 'T', 1, 'C', 1, 12.8, 8.5, false, 'T', 'C');
         }
     }
@@ -128,14 +119,14 @@ $pdf->SetFont('times', '', 9);
 //* set font
 $pdf->setCellPaddings(2, 1, 6, 0);
 //* set cell padding
-$pdf->MultiCell(40, 5, 'OMB No. 1615-0116 Expires: 02/28/2026', 0, 'C', 0, 1, 169, 15.5, true);
+$pdf->MultiCell(40, 5, 'OMB No. 1615-0116 Expires: 03/31/2027', 0, 'C', 0, 1, 169, 15.5, true);
 
 $pdf->Ln(1.3);
 
 $top_border = array(
     'T' => array('width' => 2, 'color' => array(0, 0, 0), 'dash' => 0, 'cap' => 'square'),
 );
-$pdf->Cell(188.5, 0, '', $top_border, 1, 1);
+$pdf->Cell(190, 4, '', $top_border, 1, 1);
 //*........
 $pdf->setCellPaddings(1, 1, 0, 1);
 //* set cell padding
@@ -147,7 +138,7 @@ $pdf->SetFillColor(255, 255, 255);
 //* set filling color
 $pdf->setCellHeightRatio(1.1);
 //* set cell height ratio
-$pdf->MultiCell(0, 0, '', 'T', 1, 'C', 1, 12.8, 27.80, false, 'T', 'C'); // Single Line
+$pdf->MultiCell(191.7, 1, '', 'T', 1, 'C', 1, 11.9, 27.80, false, 'T', 'C'); // Single Line
 
 $pdf->SetFillColor(220, 220, 220);
 $pdf->SetFont('times', 'B', 11);
@@ -1032,16 +1023,17 @@ $pdf->writeHTMLCell(183.5, 7, 18.4, 26.7, $html, 0, 1, false, 'L');
 // $pdf->setCellHeightRatio( 1 );
 $pdf->setFont('courier', 'B', 10);
 $pdf->setCellHeightRatio(1.95);
-$pdf->setCellHeightRatio(1.8);
+$pdf->setCellHeightRatio(1.7);
 $pdf->TextField('part6_1_input', 184.5, 56, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 0, 'borderStyle' => 'solid'), array('v' => showData('financial_hardship_incur_expenses')), 18.7, 50.4);
 $pdf->setCellHeightRatio(1.2);
 $pdf->writeHTMLCell(184.2, 1, 18.8, 51, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(184.2, 1, 18.8, 58, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(184.2, 1, 18.8, 65, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(184.2, 1, 18.8, 72, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(184.2, 1, 18.8, 79, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(184.2, 1, 18.8, 86, '', "B", 1, false, 'L');
-$pdf->writeHTMLCell(184.2, 1, 18.8, 93, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(184.2, 1, 18.8, 64, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(184.2, 1, 18.8, 70, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(184.2, 1, 18.8, 76, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(184.2, 1, 18.8, 82, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(184.2, 1, 18.8, 88, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(184.2, 1, 18.8, 94, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(184.2, 1, 18.8, 100, '', "B", 1, false, 'L');
 //...........
 
@@ -1218,7 +1210,7 @@ $pdf->writeHTMLCell(79, 1, 118, 199, '',  "B",  0, false, false, 'C', true);
 $pdf->writeHTMLCell(79, 1, 118, 204, '',  "B",  0, false, false, 'C', true);
 
 $pdf->setCellHeightRatio(1.8);
-
+$pdf->setFont('courier', 'B', 10);
 $pdf->TextField('i_912_part_6_financial_hardship_chkbox_other', 80, 26, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 0, 'borderStyle' => 'solid'), array('v' => showData('i_912_part_6_financial_hardship_chkbox_other')), 118, 190);
 
 /********************************
@@ -1918,11 +1910,7 @@ $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $pdf->SetFontSize(11.6);
 $html = '<div><b>Part 11. Additional Information </b></div>';
-$pdf->writeHTMLCell(138, 6.5, 13, 19, $html, 1, 1, true, 'L');
-//............
-$pdf->setFont('Times', '', 12);
-$pdf->writeHTMLCell(20, 0, 153, 19, '<b>A-</b>', 0, 1, false, 'L');
-$pdf->writeHTMLCell(45, 6.5, 159, 19, showData('other_information_about_you_alien_registration_number'), 1, 1, false, 'L');
+$pdf->writeHTMLCell(190, 6.5, 13, 19, $html, 1, 1, true, 'L');
 //..............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 27, 'If you need extra space to provide any additional information within this application, use the space below. If you need more space<br>
