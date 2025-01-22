@@ -1,7 +1,7 @@
 <?php
 
-// require_once('formheader.php');   //database connection file 
-require_once("localconfig.php");
+require_once('formheader.php');   //database connection file 
+// require_once("localconfig.php");
 
 //$allDataCountry = indexByQueryAlldata("SELECT * FROM countries");
 
