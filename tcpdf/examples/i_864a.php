@@ -490,9 +490,27 @@ $pdf->writeHTMLCell(90, 7, 138, 36, $html, '', 0, 0, true, 'L');
 $pdf->Image('images/right_angle.jpg', 146.5, 43, 3.3, 3.3);
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('about_your_mailing_address_country', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 150, 41.6);
+//.........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(90, 7,13, 48.5, '<b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Alien Registration Number (A-Number) (if any) ', '', 0, 0, true, 'L');
 
-
-
+$pdf->writeHTMLCell(90, 7, 28, 54, '<b>A-</b>', '', 0, 0, true, 'L');
+$pdf->Image('images/right_angle.jpg', 21.5, 56, 3.3, 3.3);
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('about_your_mailing_address_postal_code', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34, 54);
+//.............
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USCIS Online Account Number (if any)';
+$pdf->writeHTMLCell(90, 7, 94, 48.5, $html, '', 0, 0, true, 'L');
+//.............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->Image('images/right_angle.jpg', 102, 56, 3.3, 3.3);
+$pdf->TextField('about_your_mailing_address_country', 69, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 107, 54);
+//...........
+$pdf->SetFont('times', '', 12); // set font
+$html = "<div><b>Part 2. Your (the Household Member's) Relationship to the Sponsor</b></div>";
+$pdf->writeHTMLCell(191,6.7, 13, 67, $html, 1, 1, true, false, 'L', true);
+//.............
 
 
 
