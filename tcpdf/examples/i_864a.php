@@ -1898,9 +1898,9 @@ $pdf->writeHTMLCell(197, 5, 12, 120, '<b>2.</b>', '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 20, 120, "Preparer's Business or Organization Name", '', 1, false, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p7_Preparer_family_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 112);
-$pdf->TextField('p7_Preparer_given_name', 89, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 112);
-$pdf->TextField('p7_Preparer_business_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21,125);
+$pdf->TextField('Preparer_family_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 112);
+$pdf->TextField('Preparer_given_name', 89, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 112);
+$pdf->TextField('Preparer_business_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21,125);
 //...............
 $pdf->setFont('Times', '', 11.6);
 $html = '<div><b><i>Preparer\'s Contact Information </i></b></div>';
@@ -1917,9 +1917,9 @@ $pdf->writeHTMLCell(197, 5, 12, 157, '<b>5.</b>', '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 20, 157, "Preparer's Email Address (if any) ", '', 1, false, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p7_Preparer_daytime', 87, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 149);
-$pdf->TextField('p7_Preparer_mobile', 83, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 121, 149);
-$pdf->TextField('p7_Preparer_email', 87, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 162);
+$pdf->TextField('Preparer_daytime', 87, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 149);
+$pdf->TextField('Preparer_mobile', 83, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 121, 149);
+$pdf->TextField('Preparer_email', 87, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 162);
 
 //........................
 $pdf->setFont('Times', '', 11.6);
@@ -1938,7 +1938,7 @@ $pdf->writeHTMLCell(197, 5, 155,198, "Date of Signature (mm/dd/yyyy)", '', 1, fa
 //.............
 $pdf->writeHTMLCell(133, 6.4, 21, 203, "", 1, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p7_Preparer_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 203);
+$pdf->TextField('Preparer_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 203);
 //.....................
 $pdf->SetFont('zapfdingbats', '', 22);  // symbol font
 $pdf->writeHTMLCell(82, 7, 12, 70, TCPDF_FONTS::unichr(225), 0, 0, false, 'L'); //.............
@@ -2203,7 +2203,15 @@ var fields = {
     'part8_preparer_mobile_telephone':' " . showData('i_864a_preparer_mobile') . "',
     'part8_preparer_email_address':' " . showData('i_864a_preparer_email') . "',
 //page 6 end...........    
-    'Preparer_signature_date':' " . showData('i_864a_preparer_sign_date') . "',
+    'Interpreter_fluent_english':' " . showData('') . "',
+    'Interpreter_sign_date':' " . showData('') . "',
+    'Preparer_family_name':' " . showData('i_864a_preparer_family_last_name') . " ',
+	'Preparer_given_name':' " . showData('i_864a_preparer_family_given_first_name') . " ',
+	'Preparer_business_name':' " . showData('i_864a_preparer_business_name') . " ',
+	'Preparer_daytime':' " . showData('i_864a_preparer_daytime_tel') . " ',
+	'Preparer_mobile':' " . showData('i_864a_preparer_mobile') . " ',
+	'Preparer_email':' " . showData('i_864a_preparer_email') . " ',
+	'Preparer_signature_date':' " . showData('i_864a_preparer_sign_date') . " ',
 //page 7 end.......
 	'i_864a_additional_info_family_name':' " . showData('i_864a_additional_info_last_name') . " ',
 	'i_864a_additional_info_given_name':' " . showData('i_864a_additional_info_first_name') . " ',
