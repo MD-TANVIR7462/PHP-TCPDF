@@ -246,8 +246,7 @@ $html = '<div><b>To be completed by an Attorney or Accredited Representative</b>
 $pdf->writeHTMLCell(40, 7, 15, 95, $html,  0,  1, false, true, 'L', false);
 
 $pdf->SetFont('times', '', 14);
-if (showData('i_539_g28_status') == "Y") $g_28 = "checked";
-else $g_28 = "";
+if (showData('i_539_g28_status') == "Y") $g_28 = "checked";else $g_28 = "";
 $html = '<div><b>  </b>   <input type="checkbox" name="attached4" value="Y" checked="' . $g_28 . '" /> </div>';
 $pdf->writeHTMLCell(40, 15, 20, 89, $html, 0, 1, false, true, 'R', true);
 
@@ -1417,11 +1416,11 @@ $pdf->writeHTMLCell(174.5, 1, 21.2, 236.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.5, 1, 21.2, 242.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(174.8, 33.2, 21, 222, '', 1, 1, false, 'L');
 //...........
-
 // 'attorney_state_bar_number':' $attorneyData->bar_number',
 // 'attorney_or_according_representative':' $attorneyData->uscis_online_account_number ',
 $js = "
 var fields = {
+
 	'p1_1_legal_last_name':' " . showData('information_about_you_family_last_name') . " ',
 	'p1_1_legal_first_name':' " . showData('information_about_you_given_first_name') . " ',
 	'p1_1_legal_middle_name':' " . showData('information_about_you_middle_name') . " ',
