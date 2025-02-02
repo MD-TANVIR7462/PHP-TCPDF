@@ -1921,28 +1921,28 @@ $pdf->TextField('p7_Preparer_daytime', 87, 6.6, array('strokeColor' => array(64,
 $pdf->TextField('p7_Preparer_mobile', 83, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 121, 149);
 $pdf->TextField('p7_Preparer_email', 87, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 162);
 
-// //........................
-// $pdf->setFont('Times', '', 11.6);
-// $html = '<div><b><i>Preparer\'s Certification and Signature</i></b></div>';
-// $pdf->writeHTMLCell(191, 6.5, 13, 104.6, $html, '', 1, true, 'L');
-// //.........
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(197, 5, 12, 112, 'I certify, under penalty of perjury, that I prepared this application for the applicant at their request and with express consent and that<br>
-// all of the responses and information contained in and submitted with the application are complete, true, and correct and reflects only<br>
-// information provided by the applicant. The applicant reviewed the responses and information and informed me that they understand<br>
-// the responses and information in or submitted with the application.', '', 1, false, 'L');
-// //..............
-// $pdf->writeHTMLCell(197, 5, 12, 130.5, '<b>6.</b>', '', 1, false, 'L');
-// $pdf->writeHTMLCell(197, 5, 20, 130.5, "Preparer's Signature", '', 1, false, 'L');
-// $pdf->writeHTMLCell(197, 5, 155, 130.5, "Date of Signature (mm/dd/yyyy)", '', 1, false, 'L');
-// //.............
-// $pdf->writeHTMLCell(133, 6.4, 21, 135.6, "", 1, 1, false, 'L');
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('p7_Preparer_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 135.5);
-// //.....................
-// $pdf->SetFont('zapfdingbats', '', 22);  // symbol font
-// $pdf->writeHTMLCell(82, 7, 12, 133.5, TCPDF_FONTS::unichr(225), 0, 0, false, 'L'); //.............
-// $pdf->writeHTMLCell(82, 7, 12, 133.5, TCPDF_FONTS::unichr(225), 0, 0, false, 'L'); //.............
+//........................
+$pdf->setFont('Times', '', 11.6);
+$html = '<div><b><i>Preparer\'s Certification and Signature</i></b></div>';
+$pdf->writeHTMLCell(191, 6.5, 13, 173, $html, '', 1, true, 'L');
+//.........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 180, 'I certify, under penalty of perjury, that I prepared this contract for the sponsor and household member at their request and with express<br>
+consent and that all of the responses and information contained in and submitted with the contract are complete, true, and correct and<br>
+reflects only information provided by the sponsor and household member. The sponsor and household member reviewed the<br>
+responses and information and informed me that they understand the responses and information in or submitted with the contract.', '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 12, 198, '<b>6.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 198, "Preparer's Signature", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 155,198, "Date of Signature (mm/dd/yyyy)", '', 1, false, 'L');
+//.............
+$pdf->writeHTMLCell(133, 6.4, 21, 203, "", 1, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Preparer_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 203);
+//.....................
+$pdf->SetFont('zapfdingbats', '', 22);  // symbol font
+$pdf->writeHTMLCell(82, 7, 12, 70, TCPDF_FONTS::unichr(225), 0, 0, false, 'L'); //.............
+$pdf->writeHTMLCell(82, 7, 12, 201, TCPDF_FONTS::unichr(225), 0, 0, false, 'L'); //.............
 /********************************
  ******** End Page No 7 **********
  *********************************/
