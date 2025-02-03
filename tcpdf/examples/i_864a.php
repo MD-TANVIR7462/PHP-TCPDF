@@ -667,11 +667,43 @@ $pdf->writeHTMLCell(195, 7, 12, 41, 'My total income (adjusted gross income on I
 years was:', '', 0, 0, true, 'L');
 
 
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('about_your_mailing_address_province', 45, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 41.6);
-// //.............
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(90, 7,70, 36, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Birth', '', 0, 0, true, 'L');
+//.............
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(90, 7,52, 51, 'Tax Year', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7,77, 51, 'Total Income', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7,12, 56, '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Most Recent', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7,20, 63, '2nd Most Recent', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7,20, 70, '3rd Most Recent', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7,72, 57, '$', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7,72, 64, '$', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7,72, 71, '$', '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('about_your_mailing_address_province', 19, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 50, 56.3);
+$pdf->TextField('about_your_mailing_address_province', 19, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 50, 63.2);
+$pdf->TextField('about_your_mailing_address_province', 19, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 50, 70);
+$pdf->TextField('about_your_mailing_address_province', 29, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 75, 56.3);
+$pdf->TextField('about_your_mailing_address_province', 29, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 75, 63.2);
+$pdf->TextField('about_your_mailing_address_province', 29, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 75, 70);
+//.......
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 12, 78, '<b>My assets (complete only if necessary).</b>', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(190, 7,12, 85, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the balance of all cash, savings, and checking accounts. ', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(190, 7,12, 92, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the net cash value of real-estate holdings. (Net value means assessed value minus mortgage<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debt.) $  ', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(190, 7,12, 103, '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the cash value of all stocks, bonds, certificates of deposit, and other assets not listed on<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Item Numbers 3. - 4.</b> ', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(190, 7,12, 114, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add together <b>Item Numbers 3. - 5.</b> and enter the number here.', '', 0, 0, true, 'L');
+//........
+$pdf->writeHTMLCell(90, 7,161, 85, '$', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7,161, 94, '$', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7,161, 104, '$', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7,161, 114, '$', '', 0, 0, true, 'L');
+//.................
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('about_your_mailing_address_province', 39, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 165, 85);
+$pdf->TextField('about_your_mailing_address_province', 39, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 165, 94);
+$pdf->TextField('about_your_mailing_address_province', 39, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 165, 104);
+$pdf->TextField('about_your_mailing_address_province', 39, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 165, 114);
 
 // $pdf->SetFont('courier', 'B', 10); // set font
 // $pdf->TextField('about_your_mailing_address_postal_code', 58, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 78, 41.6);
@@ -2192,14 +2224,7 @@ var fields = {
     'part6_household_member':' " . showData('i_864a_the_household_member_print_name') . "',
     'part6_inconsideration_sponsor_promise':' " . showData('i_864a_the_consideration_of_sponsor') . "',
 //page 4 end.............
-    'your_household_member_daytime_telephone':' " . showData('i_864a_household_member_daytime_tel') . "',
-    'your_household_member_mobile_telephone':' " . showData('i_864a_household_member_mobile') . "',
-    'your_household_member_email_address':' " . showData('i_864a_household_member_email') . "',
-    'your_household_member_printed_name':' " . showData('i_864a_household_member_printed_name') . "',
-    'your_household_member_date_of_signature':' " . showData('i_864a_household_member_sign_date') . "',
-    'part7_interpreter_family_last_name':' " . showData('i_864a_preparer_family_last_name') . "',
-    'part7_interpreter_given_first_name':' " . showData('i_864a_preparer_given_first_name') . "',
-    'part7_interpreter_business_org_name':' " . showData('i_864a_preparer_business_name') . "',
+
 //page 5 end............
     'part7_interpreter_mailing_street_number':' " . showData('i_864a_interpreter_address_street_number') . "',
     'part7_interpreter_mailing_apt_ste_flr':' " . showData('i_864a_interpreter_address_apt_ste_flr_value') . "',
