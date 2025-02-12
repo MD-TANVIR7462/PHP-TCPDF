@@ -28,18 +28,17 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
-
 <fieldset class="setpage">
     <p style="text-align: right"><b>Page 1 of 8</b></p>
     <table>
         <thead>
             <tr>
-                <th style="padding: 5px; text-align: center;" colspan="3" class="bg-info">To be completed by an attorney or accredited representative (if any).</th>
+                <th style="padding: 5px; text-align: center;" colspan="3" class="bg-info">For Government Use Only</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="padding: 5px"><label class="control-label"><?php echo createCheckbox("i_864a_g_28_checkbox") ?> FSelect this box if Form G-28 or G-28I is attached</label></td>
+                <td style="padding: 5px"><label class="control-label"><?php echo createCheckbox("i_864a_g_28_checkbox") ?> Select this box if Form G-28 or G-28I is attached.</label></td>
                 <td style="padding: 5px">
                     <p>Attorney State Bar Number (if applicable)</p><input type="text" class="form-control" maxlength="22" style="margin-top:30px" value="<?php echo $attorneyData->bar_number ?>" disabled>
                 </td>
@@ -49,248 +48,232 @@ include "intake_header.php";
             </tr>
         </tbody>
     </table>
-    <div class="row">
-        <div class="col-md-6">
+    <div class="row ">
+        <div class="col-md-12">
             <div class="bg-info" style="margin-top:10px;">
                 <h4><b>Part 1. Information About You (the Household Member)</b></h4>
             </div>
             <div class="bg-info">
                 <h4><b><i>Full Name </i></b></h4>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">1.a. Family Name(Last Name)</label>
-                <div class="col-md-7">
+          <div class="form-group">
+          <div class="col-md-4">
+                <label class="control-label ">1. Family Name(Last Name)</label>
+           
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-                </div>
+         
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">1.b. Given Name(First Name)</label>
-                <div class="col-md-7">
+            <div class="col-md-4">
+                <label class="control-label ">Given Name(First Name)</label>
+           
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-                </div>
+          
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">1.c. Middle Name</label>
-                <div class="col-md-7">
+            <div class="col-md-4">
+                <label class="control-label ">Middle Name</label>
+              
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+          
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom: 10px;">
+          <div class="bg-info">
+                <h4><b><i>Mailing Address </i></b></h4>
+            </div>
+        <label class="control-label" style="width: 100%; margin-bottom: 5px;">In Care Of Name (if any)</label>
+        <div style="width: 100%;">
+            <input type="text" class="form-control" name="information_about_you_us_mailing_care_of_name" maxlength="34"
+                value="<?php echo showData('information_about_you_us_mailing_care_of_name') ?>"
+                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+        </div>
+    </div>
+    <div style="margin:0px 2% 0px 2%;">
+        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
+                <div style="width: 100%;">
+                    <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
+                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
-            <div class="bg-info">
-                <h4><b><i>Mailing Address</i></b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">2.a. In Care Of Name</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" maxlength="34" name="information_about_you_us_mailing_care_of_name" value="<?php echo showData('information_about_you_us_mailing_care_of_name') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">2.b. Street Number and Name</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_street_number" maxlength="25" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="control-label col-md-6"><b>2.c </b> &nbsp;
-                    <label class="control-label">
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+            <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                <div style="flex: 1; margin-left: 5%;">
+                    <label>
+                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="apt"
+                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
                         Apt. &nbsp;
                     </label>
-                    <label class="control-label">
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                    <label>
+                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="ste"
+                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
                         Ste. &nbsp;
                     </label>
-                    <label class="control-label">
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                    <label>
+                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="flr"
+                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
                         Flr.
                     </label>
                 </div>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" class="form-control" name="information_about_you_us_mailing_apt_ste_flr_value" maxlength="6" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>">
-                </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">2.d. City or Town</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="20" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">2.e. State</label>
-                <div class="col-md-7">
-                    <select class="form-control" name="information_about_you_us_mailing_state">
-                        <option value=''>Select</option>
-                        <?php
-                        foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
-                            else $selected = "";
-                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">2.f. ZIP Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">2.g. Province</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_province" maxlength="20" value="<?php echo showData('information_about_you_us_mailing_province') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">2.h. Postal Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_postal_code" maxlength="9" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">2.i. Country</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_country" maxlength="39" value="<?php echo showData('information_about_you_us_mailing_country') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">3. Is your current mailing address the same as your physical address?</label>
-                <div class="col-md-4 col-md-offset-8">
-                    <?php echo createRadio("i_864a_is_current_mailing_same_as_physical") ?>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">If you answered "No" to <b>Item Number 3.</b>, provide your physical address.</label>
+            <div style="flex: 1;">
+                <label class="control-label">Number</label>
+                <input type="text" class="form-control" name="information_about_you_us_mailing_apt_ste_flr_value"
+                    maxlength="5" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>"
+                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="bg-info">
-                <h4><b>Physical Address</b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">4.a. Street Number and Name</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="information_about_you_home_street_number" maxlength="25" value="<?php echo showData('information_about_you_home_street_number') ?>">
+        <div class="row"
+            style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                <div style="width: 100%;">
+                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="28" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
+                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
-            <div class="form-group">
-                <div class="control-label col-md-6"><b>4.b. </b> &nbsp;
-                    <label class="control-label">
-                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="apt" <?php echo (showData('information_about_you_home_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
-                    </label>
-                    <label class="control-label">
-                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="ste" <?php echo (showData('information_about_you_home_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
-                    </label>
-                    <label class="control-label">
-                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="flr" <?php echo (showData('information_about_you_home_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
-                    </label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" class="form-control" name="information_about_you_home_apt_ste_flr_value" maxlength="6" value="<?php echo showData('information_about_you_home_apt_ste_flr_value') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">4.c. City or Town</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="information_about_you_home_city_town" maxlength="20" value="<?php echo showData('information_about_you_home_city_town') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">4.d. State</label>
-                <div class="col-md-7">
-                    <select class="form-control" name="information_about_you_home_state">
+            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                <div style="width: 100%;">
+                    <select class="form-control" name="information_about_you_us_mailing_state"
+                        style="width: 100%; padding: 5px; margin-top: 3%;">
                         <option value=''>Select</option>
                         <?php
-                        foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('information_about_you_home_state')) $selected = "selected";
-                            else $selected = "";
-                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                        }
-                        ?>
+foreach ($allDataCountry as $record)
+{
+    if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
+    else $selected = "";
+    echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+}
+?>
                     </select>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">4.e. ZIP Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="information_about_you_home_zip_code" maxlength="5" value="<?php echo showData('information_about_you_home_zip_code') ?>">
+            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
+                <div class='d-flexible'>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code') ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">4.f. Province</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="information_about_you_home_province" maxlength="20" value="<?php echo showData('information_about_you_home_province') ?>">
-                </div>
+        </div>     
+
+<div class="row">
+<div class="col-md-4" >
+                <label class="control-label ">Province</label>
+           
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+         
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">4.g. Postal Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="information_about_you_home_postal_code" maxlength="9" value="<?php echo showData('information_about_you_home_postal_code') ?>">
-                </div>
+            <div class="col-md-4">
+                <label class="control-label ">Postal Code</label>
+           
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+          
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">4.h. Country</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="information_about_you_home_country" maxlength="39" value="<?php echo showData('information_about_you_home_country') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Other Information</i></b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-6">5. Date of Birth (mm/dd/yyyy)</label>
-                <div class="col-md-6 ">
-                    <input type="date" class="form-control" name="other_information_about_you_date_of_birth" value="<?php echo showData('other_information_about_you_date_of_birth') ?>" />
-                </div>
-            </div>
-            <label class="my-5 text-bold mx-5">Place of Birth </label>
-            <div class="form-group">
-                <label class="control-label col-md-12">6.a. City or Town</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="other_information_about_you_city_of_birth" maxlength="36" value="<?php echo showData('other_information_about_you_city_of_birth') ?>">
-                </div>
-            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Middle Name</label>
+              
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+    </div>
+</div>
 
 
-            <div class="form-group">
-                <label class="control-label col-md-12">6.b. State or Province</label>
-                <div class="col-md-12">
-                    <div class="d-flexible">
-                        <input type="text" class="form-control" maxlength="20" name="other_information_about_you_province_of_birth" value="<?php echo showData('other_information_about_you_province_of_birth') ?>">
+    <div>
+        <label class=" col-md-6">3. Is your current mailing address the same as your physical address?
+        </label>
+        <div class="col-md-2">
+            <?php echo createRadio("is_your_current_mailing_address_same_as_physical") ?>
+        </div>
+    </div>
+    <div class="form-group" style="margin-bottom: 10px;">
+        <label class="control-label" style="width: 100%; margin-bottom: 5px;">If you answered "No" to Item Number 3., provide your physical address.</label>
+    </div>
+    <div class="form-group" style="margin-bottom: 10px;">
+    <div class="bg-info">
+                <h4><b><i>Physical Address 
+                </i></b></h4>
+            </div>
+    </div>
+    <div style="margin:0px 2% 0px 2%;">
+        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
+                <div style="width: 100%;">
+                    <input type="text" maxlength="34" class="form-control" name="information_about_you_home_street_number" value="<?php echo showData('information_about_you_home_street_number') ?>"
+                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                <div style="flex: 1; margin-left: 5%;">
+                    <label>
+                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="apt"
+                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                        Apt. &nbsp;
+                    </label>
+                    <label>
+                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="ste"
+                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                        Ste. &nbsp;
+                    </label>
+                    <label>
+                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="flr"
+                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                        Flr.
+                    </label>
+                </div>
+            </div>
+            <div style="flex: 1;">
+                <label class="control-label">Number</label>
+                <input type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value"
+                    maxlength="5" value="<?php echo showData('information_about_you_home_apt_ste_flr_value') ?>"
+                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            </div>
+        </div>
+        <div class="row"
+            style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                <div style="width: 100%;">
+                    <input type="text" class="form-control" name="information_about_you_home_city_town" maxlength="28" value="<?php echo showData('information_about_you_home_city_town') ?>"
+                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                <div style="width: 100%;">
+                    <select class="form-control" name="information_about_you_home_state"
+                        style="width: 100%; padding: 5px; margin-top: 3%;">
+                        <option value=''>Select</option>
+                        <?php
+foreach ($allDataCountry as $record)
+{
+    if ($record->state_code == showData('information_about_you_home_state')) $selected = "selected";
+    else $selected = "";
+    echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+}
+?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
+                <div class='d-flexible'>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="information_about_you_home_zip_code" maxlength="5" value="<?php echo showData('information_about_you_home_zip_code') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">6.c. Country</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" maxlength="38" name="other_information_about_you_country_of_birth" value="<?php echo showData('other_information_about_you_country_of_birth') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">7. U.S. Social Security Number (if any)</label>
-                <div class="col-md-8 col-md-offset-4">
-                    <div class="d-flexible">
-                        ► <input type="text" class="form-control" maxlength="9" name="other_information_about_you_social_security_number" value="<?php echo showData('other_information_about_you_social_security_number') ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">8. USCIS Online Account Number (if any)</label>
-                <div class="col-md-10 col-md-offset-2">
-                    <div class="d-flexible">
-                        ► <input type="text" class="form-control" maxlength="12" name="other_information_about_you_uscis_online_account_number" value="<?php echo showData('other_information_about_you_uscis_online_account_number') ?>">
-                    </div>
-                </div>
-            </div>
+            
+
+
+
 
         </div>
     </div>
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -584,8 +567,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -959,8 +942,8 @@ include "intake_header.php";
     </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1132,8 +1115,8 @@ include "intake_header.php";
     </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
@@ -1303,8 +1286,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
@@ -1568,8 +1551,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1675,8 +1658,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 8--------------------------------
@@ -1859,7 +1842,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 
