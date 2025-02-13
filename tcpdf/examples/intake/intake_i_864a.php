@@ -648,7 +648,7 @@ foreach ($allDataCountry as $record)
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
 ----------------------------------------------------------------------->
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 8</b></p>
 <div class="row">
 <div class="bg-info" style="margin-top:10px;"><h4><b>Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature (continued)</b></h4></div>
@@ -756,54 +756,85 @@ foreach ($allDataCountry as $record)
   <label class="control-label mx-4" >NOTE TO ALL SPONSORS: If you do not completely fill out this contract or fail to submit required documents listed in the
   Instructions, USCIS may deny your contract.</label>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
 ----------------------------------------------------------------------->
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 8</b></p>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="bg-info">
-                <h4><b>Part 6. Your (the Household Member's) Promise, Statement, Contact Information, Declaration, Certification, and Signature (continued)</b></h4>
+                <h4><b>Part 6. Your (the Household Member's) Promise, Statement, Contact Information, Declaration, Certification, and Signature</b></h4>
             </div>
-            <p class="form-group">
+            <div class="form-group">
+                <span class="d-flexible my-5">
+                    <span>
+                  <b>NOTE:</b> Read the Penalties section of the Form I-864A Instructions before completing this par
+                    </span>
+                </span>
+<div class="row">
+    <p class="col-md-3 my-4"><b>I, THE HOUSEHOLD MEMBER</b></p>
+    <p class="col-md-3"> <input type="text"  maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" /></p>
+    <p class="col-md-5 my-4"><b>, in consideration of the sponsor's promise to complete</b></p>
+    <p class="col-md-7 my-4"><b>and file an affidavit of support on behalf of the above named intending immigrants</b></p>
+    <p class="col-md-2"> <input type="text"  maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" /></p>
+    <p class="col-md-3 my-4"><b>(Print number of intending</b></p>
+    <p class="col-md-12 my-4"><b>immigrants noted in Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature.)</b></p>
+</div>
+    
+
+
+
+                <span class="d-flexible my-5"><b>A.</b>
+                    <span>
+                    Promise to provide any and all financial support necessary to assist the sponsor in maintaining the sponsored immigrants at or
+above the minimum income provided for in the Immigration and Naturalization Act (INA) section 213A(a)(1)(A) (not less than
+125 percent of the Federal Poverty Guidelines) during the period in which the affidavit of support is enforceable;
+                    </span>
+                </span>
+                <span class="d-flexible my-5"><b>B.</b>
+                    <span>
+                    Agree to be jointly and severally liable for payment of any and all obligations owed by the sponsor under the affidavit of support
+to the sponsored immigrants, to any agency of the Federal Government, to any agency of a state or local government, or to any
+other private entity that provides means-tested public benefits;
+                    </span>
+                </span>
+                <span class="d-flexible my-5"><b>C.</b>
+                    <span>
+                    Certify under penalty under the laws of the United States that the Federal income tax returns submitted in support of the contract
+                    are true copies or unaltered tax transcripts filed with the Internal Revenue Service;
+                    </span>
+                </span>
+                <span class="d-flexible my-5"><b>D.</b>
+                    <span>
+                    Consideration where the household member is also the sponsored immigrant: I understand that if I am the sponsored immigrant
+and a member of the sponsor's household that this promise relates only to my promise to be jointly and severally liable for any obligation
+owed by the sponsor under the affidavit of support to any of my dependents, to any agency of the Federal Government, to any agency of
+a state or local government, or to any other private entity that provides means-tested public benefits and to provide any and all financial
+support necessary to assist the sponsor in maintaining any of my dependents at or above the minimum income provided for in INA
+section 213A(a)(1)(A) (not less than 125 percent of the Federal Poverty Guideline) during the period which the affidavit of support is
+enforceable.
+                    </span>
+                </span>
                 <span class="d-flexible my-5"><b>E.</b>
                     <span>
-                        I understand that, if I am related to the sponsored
-                        immigrant or the sponsor by marriage, the
-                        termination of the marriage (by divorce, dissolution,
-                        annulment, or other legal process) will not relieve
-                        me of my obligations under this Form I-864A.
+                    I understand that, if I am related to the sponsored immigrant or the sponsor by marriage, the termination of the marriage (by
+                    divorce, dissolution, annulment, or other legal process) will not relieve me of my obligations under this Form I-864A.
                     </span>
                 </span>
                 <span class="d-flexible my-5"><b>F.</b>
                     <span>
-                        I authorize the Social Security Administration to
-                        release information about me in its records to the
-                        Department of State and U.S. Citizenship and
-                        Immigration Services (USCIS).
+                    I authorize the Social Security Administration to release information about me in its records to the Department of State and U.S.
+                    Citizenship and Immigration Services (USCIS).
                     </span>
                 </span>
-            </p>
+            </div>
             <div class="bg-info">
                 <h4><b><i>Your (the Household Member's) Statement</i></b></h4>
             </div>
@@ -841,105 +872,30 @@ foreach ($allDataCountry as $record)
             <div class="bg-info">
                 <h4><b><i>Your (the Household Member's) Contact Information</i></b></h4>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">3. Your (the Household Member's) Daytime Telephone
+           <div class="row">
+           <div class="col-md-6">
+                <label class="control-label ">3. Your (the Household Member's) Daytime Telephone
                     Number</label>
-                <div class="col-md-12">
+                <div >
                     <input type="text" class="form-control  " name="i_864a_household_member_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_household_member_daytime_tel') ?>">
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">4. Your (the Household Member's) Mobile Telephone
+            <div class="col-md-6">
+                <label class="control-label ">4. Your (the Household Member's) Mobile Telephone
                     Number (if any)</label>
-                <div class="col-md-12">
+                <div >
                     <input type="text" class="form-control" name="i_864a_household_member_mobile" maxlength="10" value="<?php echo showData('i_864a_household_member_mobile') ?>">
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">5. Your (the Household Member's) Email Address (if any)</label>
-                <div class="col-md-12">
+            <div class="col-md-6">
+                <label class="control-label ">5. Your (the Household Member's) Email Address (if any)</label>
+                <div >
                     <input type="email" class="form-control" name="i_864a_household_member_email" maxlength="41" value="<?php echo showData('i_864a_household_member_email') ?>">
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
+           </div>
 
-            <div class="bg-info">
-                <h4><b><i>Your (the Household Member's) Declaration and
-                            Certification</i></b></h4>
-            </div>
-            <p class="form-group">
-                <b>
-                    Copies of any documents I have submitted are exact
-                    photocopies of unaltered, original documents, and I understand
-                    that USCIS or DOS may require that I submit original
-                    documents to USCIS or DOS at a later date. Furthermore, I
-                    authorize the release of any information from any and all of my
-                    records that USCIS or DOS may need to determine my
-                    eligibility for the immigration benefit that I seek. <br><br>
-                    I furthermore authorize release of information contained in this
-                    contract, in supporting documents, and in my USCIS or DOS
-                    records, to other entities and persons where necessary for the
-                    administration and enforcement of U.S. immigration law.<br><br>
-                    I certify, under penalty of perjury, that all of the information in
-                    my contract and any document submitted with it were provided
-                    or authorized by me, that I reviewed and understand all of the
-                    information contained in, and submitted with, my contract and
-                    that all of this information is complete, true, and correct.
-                </b>
-            </p>
-            <div class="bg-info">
-                <h4><b><i>Your (the Household Member's) Signature</i></b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">6.a. Your (the Household Member's) Printed Name</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_household_member_printed_name" value="<?php echo showData('i_864a_household_member_printed_name') ?>" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">6.b. Your (the Household Member's) Signature</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" disabled />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">6.c. Date of Signature (mm/dd/yyyy)</label>
-                <div class="col-md-7 col-md-offset-5">
-                    <input type="date" class="form-control" name="i_864a_household_member_sign_date" value="<?php echo showData('i_864a_household_member_sign_date') ?>" />
-                </div>
-            </div>
-            <p class="form-group">
-                <b>NOTE TO ALL HOUSEHOLD MEMBERS:</b>If you do not
-                completely fill out this contract or fail to submit required
-                documents listed in the Instructions, USCIS may deny your
-                contract.
-            </p>
-            <div class="bg-info">
-                <h4><b>Part 7. Interpreter's Contact Information, Certification, and Signature</b> </h4>
-            </div>
-            <h5><b>Provide the following information about the interpreter.</b></h5>
-            <div class="bg-info">
-                <h4><b>Interpreter's Full Name</b> </h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">1.a. Interpreter's Family Name (Last Name)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_864a_interpreter_family_last_name') ?>" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">1.b. Interpreter's Given Name (First Name)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_864a_interpreter_given_first_name') ?>" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">2. Interpreter's Business or Organization Name (if any)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_interpreter_business_name" maxlength="39" value="<?php echo showData('i_864a_interpreter_business_name') ?>" />
-                </div>
-            </div>
+        
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
