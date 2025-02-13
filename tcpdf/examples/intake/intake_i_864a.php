@@ -465,7 +465,7 @@ foreach ($allDataCountry as $record)
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right"><b>Page 3 of 8</b></p>
     <div class="row ">
         <div class="col-md-12">
@@ -644,174 +644,132 @@ foreach ($allDataCountry as $record)
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
 ----------------------------------------------------------------------->
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 8</b></p>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="bg-info">
-                <h4><b>Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature (continued)</b></h4>
+<div class="row">
+<div class="bg-info" style="margin-top:10px;"><h4><b>Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature (continued)</b></h4></div>
+<div class="form-group"><label class="control-label ">4. Intending Immigrant Number 4</label></div>
+          <div class="form-group">
+          <div class="col-md-4">
+                <label class="control-label ">Family Name (Last Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-label ">Given Name (First Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Middle Name (if applicable)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="col-md-4">
+                <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
+                    <input type="date" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">USCIS Online Account Number (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+          </div>
+          <div class="bg-info" style="margin-top:10px;"><h4><b><i>Sponsor's Statement</i></b></h4></div>
+          <div class="form-group">
                 <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>26.b. </b> <?php echo createCheckbox("i_864a_the_interpreter_named_in_status") ?> The interpreter named in Part 7. read to me every question and instruction on this contract and my answer to every question in</p>
+                    <span class="d-flexible">
+                        <b>5.a. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?>I can read and understand English, I and have read and understand every question and instruction on this contract and my
+                        answer to every question
+                    </span>
                 </label>
-                <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_864a_the_interpreter_named_in" maxlength="28" value="<?php echo showData('i_864a_the_interpreter_named_in') ?>"><b>a language in which I am fluent, and I understood everything.</b>
-                </div>
+            </div>
+
+          <div class="form-group">
+                <label class="control-label ">
+                    <span class="d-flexible col-md-12">
+                        <b>5.b. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?>The interpreter named in Part 7. read to me every question and instruction on this contract and my answer to every 
+                    </span>    
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">
-                    <p class="d-flexible"><b>27. </b> <?php echo createCheckbox("i_864a_the_preparer_named_in_status") ?> At my request, the preparer named in Part 8., </p>
-                </label>
-                <div class="col-md-11 col-md-offset-1">
-                    <input type="text" class="form-control" name="i_864a_the_preparer_named_in" maxlength="28" value="<?php echo showData('i_864a_the_preparer_named_in') ?>"><b>prepared this contract for me based only upon information I provided or authorized. </b>
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Sponsor's Contact Information</i></b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">28. Sponsor's Daytime Telephone Number</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864a_sponsor_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_sponsor_daytime_tel') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">29. Sponsor's Mobile Telephone Number (if any)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_sponsor_mobile" maxlength="10" value="<?php echo showData('i_864a_sponsor_mobile') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">30. Sponsor's Email Address (if any)</label>
-                <div class="col-md-12">
-                    <input type="email" class="form-control" name="i_864a_sponsor_email" maxlength="41" value="<?php echo showData('i_864a_sponsor_email') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Sponsor's Declaration and Certification</i></b></h4>
-            </div>
-            <p class="form-group">
-                <b>
-                    Copies of any documents I have submitted are exact
-                    photocopies of unaltered, original documents, and I understand
-                    that U.S. Citizenship and Immigration Services (USCIS) or the
-                    U.S. Department of State (DOS) may require that I submit
-                    original documents to USCIS or DOS at a later date.
-                    Furthermore, I authorize the release of any information from
-                    any and all of my records that USCIS or DOS may need to
-                    determine my eligibility for the immigration benefit that I seek. <br><br>
-                    I furthermore authorize release of information contained in this
-                    contract, in supporting documents, and in my USCIS or DOS
-                    records, to other entities and persons where necessary for the
-                    administration and enforcement of U.S. immigration law. <br><br>
-                    I certify, under penalty of perjury, that all of the information in
-                    my contract and any document submitted with it were provided
-                    or authorized by me, that I reviewed and understand all of the
-                    information contained in, and submitted with, my contract and
-                    that all of this information is complete, true, and correct.
-                </b>
-            </p>
-            <div class="bg-info">
-                <h4><b><i>Sponsor's Signature</i></b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">31.a. Sponsor's Signature</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" disabled />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">31.b. Date of Signature (mm/dd/yyyy)</label>
-                <div class="col-md-7 col-md-offset-5">
-                    <input type="date" class="form-control" name="i_864a_sponsor_sign_date" value="<?php echo showData('i_864a_sponsor_sign_date') ?>" />
-                </div>
-            </div>
-            <p class="form-group">
-                <b> NOTE TO ALL SPONSORS:</b>If you do not completely fill out this contract or fail to submit required documents listed in the Instructions, USCIS may deny your contract.
-            </p>
+          <div class="col-md-2"> <label class="control-label ">question in</label></div>
+          <div class="col-md-4"> <input type="text" maxlength="29" class="form-control " name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" /></div>
+          <div class="col-md-6"> <label class="control-label ">, a language in which I am fluent, and I understood everything. </label></div>
         </div>
-        <div class="col-md-6">
-            <div class="bg-info">
-                <h4><b>Part 6. Your (the Household Member's) Promise, Statement, Contact Information, Declaration, Certification, and Signature</b></h4>
-            </div>
-            <p class="form-group">
-                <b> NOTE:</b>Read the <b>Penalties</b> section of the Form I-864A Instructions before completing this part.
-            </p>
+
             <div class="form-group">
-                <label>I, THE HOUSEHOLD MEMBER, </label>
-                <div>
-                    <input type="text" class="form-control" name="i_864a_the_household_member_print_name" maxlength="42" value="<?php echo showData('i_864a_the_household_member_print_name') ?>">
-                </div>
-                <p style="text-align: center;"><b>(Print Name)</b></p>
+                <div class="col-md-5"> <label class="control-label "><b>6. </b> <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?>At my request, the preparer named in Part 8.,</label></div>
+                    <div class="col-md-4"> <input type="text" maxlength="29" class="form-control " name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" /></div>
+                 <div class="col-md-3"> <label class="control-label ">, prepared this contract for</label></div>
             </div>
+
+
             <div class="form-group">
-                <label>in consideration of the sponsor's promise to complete and file an affidavit of support on behalf of the above named intending immigrants.</label>
-                <div>
-                    <input type="text" class="form-control" name="i_864a_the_consideration_of_sponsor" maxlength="42" value="<?php echo showData('i_864a_the_consideration_of_sponsor') ?>">
-                </div>
-                <label>(Print number of intending immigrants noted in Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification and Signature.)</label>
-            </div>
-            <p class="form-group">
-                <span class="d-flexible my-5"><b>A.</b>
-                    <span>
-                        Promise to provide any and all financial support
-                        necessary to assist the sponsor in maintaining the
-                        sponsored immigrants at or above the minimum
-                        income provided for in the Immigration and
-                        Naturalization Act (INA) section 213A(a)(1)(A)
-                        (not less than 125 percent of the Federal Poverty
-                        Guidelines) during the period in which the affidavit
-                        of support is enforceable;
-                    </span>
-                </span>
-                <span class="d-flexible my-5"><b>B.</b>
-                    <span>
-                        Agree to be jointly and severally liable for payment
-                        of any and all obligations owed by the sponsor
-                        under the affidavit of support to the sponsored
-                        immigrants, to any agency of the Federal
-                        Government, to any agency of a state or local
-                        government, or to any other private entity that
-                        provides means-tested public benefits;
-                    </span>
-                </span>
-                <span class="d-flexible my-5"><b>C.</b>
-                    <span>
-                        Certify under penalty under the laws of the United
-                        States that the Federal income tax returns submitted
-                        in support of the contract are true copies or
-                        unaltered tax transcripts filed with the Internal
-                        Revenue Service;
-                    </span>
-                </span>
-                <span class="d-flexible my-5"><b>D.</b>
-                    <span>
-                        <b> Consideration where the household member is also
-                            the sponsored immigrant:</b> I understand that if I am
-                        the sponsored immigrant and a member of the sponsor's
-                        household that this promise relates only to my promise
-                        to be jointly and severally liable for any obligation
-                        owed by the sponsor under the affidavit of support to
-                        any of my dependents, to any agency of the Federal
-                        Government, to any agency of a state or local
-                        government, or to any other private entity that provides
-                        means-tested public benefits and to provide any and all
-                        financial support necessary to assist the sponsor in
-                        maintaining any of my dependents at or above the
-                        minimum income provided for in INA section 213A(a)
-                        (1)(A) (not less than 125 percent of the Federal Poverty
-                        Guideline) during the period which the affidavit of
-                        support is enforceable.
-                    </span>
-                </span>
-            </p>
+          <div class="col-md-12"> <label class="control-label ">me based only upon information I provided or authorized.</label></div>
         </div>
+
+        <div class="bg-info" style="margin-top:10px;"><h4><b><i>Sponsor's Contact Information</i></b></h4></div>
+
+        <div class="form-group">
+          <div class="col-md-6">
+                <label class="control-label ">7. Sponsor's Daytime Telephone Number</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            </div>
+            <div class="col-md-6">
+                <label class="control-label ">8. Sponsor's Mobile Telephone Number (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-6">
+                <label class="control-label ">9. Sponsor's Email Address (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+          </div>
+
+          <div class="bg-info " style="margin-top:10px;"><h4><b><i>Sponsor's Declaration and Certification</i></b></h4></div>
+          <label class="control-label mx-4">Copies of any documents I have submitted are exact photocopies of unaltered, original documents, and I understand that U.S.
+            Citizenship and Immigration Services (USCIS) or the U.S. Department of State (DOS) may require that I submit original documents
+            to USCIS or DOS at a later date. Furthermore, I authorize the release of any information from any and all of my records that USCIS
+            or DOS may need to determine my eligibility for the immigration benefit that I seek.
+            I furthermore authorize release of information contained in this contract, in supporting documents, and in my USCIS or DOS records,
+            to other entities and persons where necessary for the administration and enforcement of U.S. immigration law.
+            I certify, under penalty of perjury, that all of the information in my contract and any document submitted with it were provided or
+            authorized by me, that I reviewed and understand all of the information contained in, and submitted with, my contract and that all of
+            this information is complete, true, and correct</label>
+
+            <div class="bg-info" style="margin-top:10px;"><h4><b><i>Sponsor's Signature</i></b></h4></div>
+<div class="form-group">
+  <div class="col-md-8">
+        <label class="control-label ">10. Sponsor's Signature</label>
+            <input type="text" readonly  maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
     </div>
+    <div class="col-md-4">
+        <label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
+            <input type="date"  maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+    </div>
+  </div>
+  <label class="control-label mx-4" >NOTE TO ALL SPONSORS: If you do not completely fill out this contract or fail to submit required documents listed in the
+  Instructions, USCIS may deny your contract.</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
