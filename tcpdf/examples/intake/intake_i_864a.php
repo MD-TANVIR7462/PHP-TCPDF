@@ -35,7 +35,7 @@ display: flex;
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
 
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 1 of 8</b></p>
     <table>
         <thead>
@@ -282,11 +282,11 @@ foreach ($allDataCountry as $record)
     </div>
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 2 of 8</b></p>
     <div class="row ">
         <div class="col-md-12">
@@ -460,12 +460,12 @@ foreach ($allDataCountry as $record)
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 3 of 8</b></p>
     <div class="row ">
         <div class="col-md-12">
@@ -644,11 +644,11 @@ foreach ($allDataCountry as $record)
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
 ----------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 8</b></p>
 <div class="row">
 <div class="bg-info" style="margin-top:10px;"><h4><b>Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature (continued)</b></h4></div>
@@ -761,11 +761,11 @@ foreach ($allDataCountry as $record)
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
 ----------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 8</b></p>
     <div class="row">
         <div class="col-md-12">
@@ -901,10 +901,113 @@ enforceable.
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
 ----------------------------------------------------------------------->
+<fieldset class="setpage">
+    <p style=" text-align: right;  margin-right: 15px;"><b>Page 7 of 8</b></p>
+    <div class=" row mt-5 gap-4">
+        <div class="col-md-12">
+            <div class="bg-info">
+                <h4><b>Part 6. Your (the Household Member's) Promise, Statement, Contact Information, Declaration,
+                Certification, and Signature (continued)</b></h4>
+            </div>
+            <div class="bg-info">
+                <h4><i><b>Your (the Household Member's) Declaration and Certification</b></i></h4>
+            </div>
+            <div class="form-group" style="display:flex;  align-items: center;">
+       
+            </div>
+            <div>Copies of any documents I have submitted are exact photocopies of unaltered, original documents, and I understand that USCIS or
+DOS may require that I submit original documents to USCIS or DOS at a later date. Furthermore, I authorize the release of any
+information from any and all of my records that USCIS or DOS may need to determine my eligibility for the immigration benefit that
+I seek. <br><br>
+I furthermore authorize release of information contained in this contract, in supporting documents, and in my USCIS or DOS records,
+to other entities and persons where necessary for the administration and enforcement of U.S. immigration law. <br><br>
+I certify, under penalty of perjury, that all of the information in my contract and any document submitted with it were provided or
+authorized by me, that I reviewed and understand all of the information contained in, and submitted with, my contract and that all of
+this information is complete, true, and correct. </div>
+            <div class="bg-info">
+                <h4><b>Your (the Household Member's) Signature</b> </h4>
+            </div>
+            <div class="form-group">
+               <p> <label class="control-label col-md-8">6. Your (the Household Member's) Printed Name</label></p>
+            <div class="col-md-8">
+            <input type="text" class="form-control" name="i_864a_interpreter_sign_date" value="<?php echo showData('i_864a_interpreter_sign_date') ?>" />
+            </div>               
+             <label class="control-label col-md-8">7. Your (the Household Member's) Signature </label>
+                <label class="control-label col-md-4">Date of Signature (mm/dd/yyyy)</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" disabled />
+                </div>
+                <div class="col-md-4">
+                    <input type="date" class="form-control" name="i_864a_interpreter_sign_date" value="<?php echo showData('i_864a_interpreter_sign_date') ?>" />
+                </div>
+            </div>
+            <div><b>NOTE TO ALL HOUSEHOLD MEMBERS:</b> If you do not completely fill out this contract or fail to submit required documents
+            listed in the Instructions, USCIS may deny your contract. </div>
+        </div>
+        <div class="col-md-12">
+            <div class="bg-info">
+                <h4><b>Part 7. Interpreter's Contact Information, Certification, and Signature</b> </h4>
+            </div>
+           
+<div>
+    <div class="bg-info">
+                <h4><b>Interpreter's Full Name</b></h4>
+            </div>
+    <div class="row">
+          
+                <div class="col-md-6">
+                    <label class="control-label">1. Interpreter's Family Name (Last Name)</label>
+                    <input type="text" class="form-control" name="i_864a_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_interpreter_daytime_tel') ?>">
+                </div>
+    
+                <div class="col-md-6">
+                    <label class="control-label">Interpreter's Given Name (First Name)</label>
+                    <input type="text" class="form-control" name="i_864a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864a_interpreter_mobile') ?>">
+                </div>
+                <div class="col-md-6">
+                    <label class="control-label">2. Interpreter's Business or Organization Name (if any)</label>
+                    <input type="text" class="form-control" name="i_864a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864a_interpreter_mobile') ?>">
+                </div>
+          
+           
+    </div>
+</div>
+<div>
+    <div class="bg-info">
+                <h4><b> Interpreter's Contact Information</b></h4>
+            </div>
+            <div class="row">
+          
+          <div class="col-md-6">
+              <label class="control-label">3. Interpreter's Daytime Telephone Number</label>
+              <input type="text" class="form-control" name="i_864a_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_interpreter_daytime_tel') ?>">
+          </div>
+
+          <div class="col-md-6">
+              <label class="control-label">4. Interpreter's Mobile Telephone Number (if any)</label>
+              <input type="text" class="form-control" name="i_864a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864a_interpreter_mobile') ?>">
+          </div>
+          <div class="col-md-6">
+              <label class="control-label">5. Interpreter's Email Address (if any)</label>
+              <input type="text" class="form-control" name="i_864a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864a_interpreter_mobile') ?>">
+          </div>
+
+</div>
+</div>
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset>
+
+<!----------------------------------------------------------------------
+-------------------------------- page 7 --------------------------------
+------------------------------------------------------------------------>
 <fieldset class="setpage">
     <p style=" text-align: right;  margin-right: 15px;"><b>Page 7 of 8</b></p>
     <div class=" row mt-5 gap-4">
@@ -921,15 +1024,9 @@ enforceable.
                     <input type="text" class="form-control" name="i_864a_interpreter_fluent_in_english" maxlength="20" value="<?php echo showData('i_864a_interpreter_fluent_in_english') ?>">
                 </div>
             </div>
-            <div>which is the same language specified in <b>Part 5., Item
-                    Number 26.b. or Part 6., Item Number 1.b.</b>, and I have read
-                to this sponsor or household member in the identified language
-                every question and instruction on this contract and his or her
-                answer to every question. The sponsor or household member
-                informed me that he or she understands every instruction,
-                question, and answer on the contract, including the <b>Sponsor's
-                    or Household Member's Declaration and Certification</b>, and
-                has verified the accuracy of every answer.</div>
+            <div>,and I have interpreted every question on the contract and instructions and interpreted the sponsor's or household member's answers to the questions in that
+language and the sponsor or household member informed me that he or she understood every instruction, question, and answer on the
+contract.</div>
             <div class="bg-info">
                 <h4><b>Interpreter's Signature</b> </h4>
             </div>
@@ -1021,120 +1118,13 @@ responses and information and informed me that they understand the responses and
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
-
-<!----------------------------------------------------------------------
--------------------------------- page 7 --------------------------------
------------------------------------------------------------------------->
-<fieldset class="setpage">
-    <div class="row">
-        <p style=" text-align: right;  margin-right: 25px;"><b>Page 7 of 8</b></p>
-        <div class=" col-md-6">
-            <div class="bg-info">
-                <h4><b>Part 8. Contact Information, Declaration, and
-                        Signature of the Person Preparing this Contract,
-                        if Other Than the Sponsor or Household Member </b> (continued)
-                </h4>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Preparer's Statement</i></b></h4>
-            </div>
-            <label class="from-control">
-                <div class="form-group">
-                    <div class="col-md-2">
-                        <b>7.a. </b> <?php echo createCheckbox("i_864a_i_am_not_attorney_accredited_representative_status") ?>
-                    </div>
-                    <div class="col-md-10">
-                        <p>I am not an attorney or accredited representative but
-                            have prepared this contract on behalf of the sponsor
-                            and household member and with the sponsor's or
-                            household member's consent.
-                        </p>
-                    </div>
-                </div>
-            </label>
-            <label class="from-control">
-                <div class="col-md-2">
-                    <b>7.b. </b> <?php echo createCheckbox("i_864a_i_am_an_attorney_accredited_representative_status") ?>
-                </div>
-                <div class="col-md-10">
-                    <p>I am an attorney or accredited representative and my
-                        representation of the sponsor and household member
-                        in this case
-                    </p>
-                </div>
-
-            </label>
-            <div class="col-md-10 col-md-offset-2 ">
-                <label class="from-control">
-                    <div class="form-group">
-                        <?php echo createCheckbox("i_864a_extends_status") ?> <span id="extend">extends</span>
-                    </div>
-                </label>
-                <label class="from-control">
-                    <div class="form-group">
-                        <?php echo createCheckbox("i_864a_does_not_extends_status") ?> does not extend beyond the preparation of this contract.
-                    </div>
-                </label>
-            </div>
-
-
-            <div class="form-group">
-                <p> <b> NOTE: </b> If you are an attorney or accredited
-                    representative, you may be obliged to submit a
-                    completed Form G-28, Notice of Entry of
-                    Appearance as Attorney or Accredited
-                    Representative, or G-28I, Notice of Entry of
-                    Appearance as Attorney In Matters Outside the
-                    Geographical Confines of the United States, with this
-                    contract.</p>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Preparer's Certification</i></b></h4>
-            </div>
-            <div class="form-group">
-                <p> By my signature, I certify, under penalty of perjury, that I
-                    prepared this contract at the request of the sponsor and
-                    household member. The sponsor and household member then
-                    reviewed this completed contract and informed me that he or
-                    she understands all of the information contained in, and
-                    submitted with, his or her contract, including the <b>Sponsor's</b> or
-                    <b> Household Member's Declaration and Certification</b>, and that
-                    all of this information is complete, true, and correct. I
-                    completed this contract based only on information that the
-                    sponsor and household member provided to me or authorized
-                    me to obtain or use.
-                </p>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Preparer's Signature</i></b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">8.a. Preparer's Signature</label>
-                <div class="col-md-12">
-                    <input type="text" disabled class="form-control" maxlength="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-6">8.b. Date of Signature (mm/dd/yyyy)</label>
-                <div class="col-md-6 ">
-                    <input type="date" class="form-control" name="i_864a_preparer_sign_date" value="<?php echo showData('i_864a_preparer_sign_date') ?>" />
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 ">
-        </div>
-    </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 8--------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
     <div class="row">
         <p style=" text-align: right;  margin-right: 25px;"><b>Page 8 of 8</b></p>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="bg-info">
                 <h4><b>Part 9. Additional Information</b> </h4>
             </div>
@@ -1147,165 +1137,102 @@ responses and information and informed me that they understand the responses and
                 and <b>Item Number</b> to which your answer refers; and sign and
                 date each sheet.
             </p>
-            <div class="form-group">
-                <label class="control-label col-md-5">1.a. Family Name(Last Name) </label>
-                <div class="col-md-7">
+           
+                <div class="col-md-4">
+                    <label class="control-label">1. Family Name(Last Name) </label>
                     <input type="text" class="form-control" maxlength="29" name="i_864a_additional_info_last_name" value="<?php echo showData('i_864a_additional_info_last_name') ?>" />
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">1.b. Given Name(First Name) </label>
-                <div class="col-md-7">
+         
+      
+            <div class="col-md-4">
+                <label class="control-label">Given Name(First Name) </label>
                     <input type="text" class="form-control" maxlength="29" name="i_864a_additional_info_first_name" value="<?php echo showData('i_864a_additional_info_first_name') ?>" />
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">1.c. Middle Name </label>
-                <div class="col-md-7">
+      
+            
+                <div class="col-md-4">
+                <label class="control-label">Middle Name </label>
                     <input type="text" class="form-control" maxlength="29" name="i_864a_additional_info_middle_name" value="<?php echo showData('i_864a_additional_info_middle_name') ?>" />
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">2. A-Number (if any)</label>
-                <div class="col-md-6 col-md-offset-6">
-                    <div class="d-flexible">
-                        <b>A-</b><input type="text" maxlength="9" class="form-control" name="i_864a_additional_info_a_number" value="<?php echo showData('i_864a_additional_info_a_number') ?>">
-                    </div>
+                <div class="col-md-4">
+                <label class="control-label">2. A-Number (if any) ► A- </label>
+                    <input type="text" class="form-control" maxlength="29" name="i_864a_additional_info_middle_name" value="<?php echo showData('i_864a_additional_info_middle_name') ?>" />
                 </div>
-            </div>
-            <div class="d-flexible">
-                <div class="form-group">
-                    <label class="control-label col-md-12">3.a. Page Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_3a_page_no') ?>">
-                    </div>
+       
+            
+        <div class="col-md-12">
+            <div class="row">
+         
+                <div class="form-group col-md-3">
+                    <label class="control-label ">3. Page Number</label>
+                     <input type="text" class="form-control" name="i_864a_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_3a_page_no') ?>">
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">3.b. Part Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3b_part_no') ?>">
-                    </div>
+                <div class="form-group col-md-3">
+                          <label class="control-label ">Part Number</label>
+                             <input type="text" class="form-control" name="i_864a_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3b_part_no') ?>">  
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">3.c. Item Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3c_item_no') ?>">
-                    </div>
+                <div class="form-group col-md-3">
+                                <label class="control-label ">Item Number</label>
+                                <input type="text" class="form-control" name="i_864a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3c_item_no') ?>">
                 </div>
-            </div>
-            <div class="form-group">
                 <div class="col-md-12">
-                    <b>3.d.</b>
-                    <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
+                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
                 </div>
-            </div>
-            <div class="d-flexible">
-                <div class="form-group">
-                    <label class="control-label col-md-12">4.a. Page Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_4a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_4a_page_no') ?>">
-                    </div>
+         
+                <div class="form-group col-md-3">
+                    <label class="control-label ">4. Page Number</label>
+                     <input type="text" class="form-control" name="i_864a_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_3a_page_no') ?>">
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">4.b. Part Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_4b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_4b_part_no') ?>">
-                    </div>
+                <div class="form-group col-md-3">
+                          <label class="control-label ">Part Number</label>
+                             <input type="text" class="form-control" name="i_864a_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3b_part_no') ?>">  
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">4.c. Item Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_4c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_4c_item_no') ?>">
-                    </div>
+                <div class="form-group col-md-3">
+                                <label class="control-label ">Item Number</label>
+                                <input type="text" class="form-control" name="i_864a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3c_item_no') ?>">
                 </div>
-            </div>
-            <div class="form-group">
                 <div class="col-md-12">
-                    <b>4.d.</b>
-                    <textarea name="i_864a_additional_info_4d" maxlength="342" class="form-control" cols="30" rows="10"><?php echo showData('i_864a_additional_info_4d') ?></textarea>
+                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
                 </div>
+         
+                <div class="form-group col-md-3">
+                    <label class="control-label ">5. Page Number</label>
+                     <input type="text" class="form-control" name="i_864a_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_3a_page_no') ?>">
+                </div>
+                <div class="form-group col-md-3">
+                          <label class="control-label ">Part Number</label>
+                             <input type="text" class="form-control" name="i_864a_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3b_part_no') ?>">  
+                </div>
+                <div class="form-group col-md-3">
+                                <label class="control-label ">Item Number</label>
+                                <input type="text" class="form-control" name="i_864a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3c_item_no') ?>">
+                </div>
+                <div class="col-md-12">
+                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
+                </div>
+         
+                <div class="form-group col-md-3">
+                    <label class="control-label ">6. Page Number</label>
+                     <input type="text" class="form-control" name="i_864a_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_3a_page_no') ?>">
+                </div>
+                <div class="form-group col-md-3">
+                          <label class="control-label ">Part Number</label>
+                             <input type="text" class="form-control" name="i_864a_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3b_part_no') ?>">  
+                </div>
+                <div class="form-group col-md-3">
+                                <label class="control-label ">Item Number</label>
+                                <input type="text" class="form-control" name="i_864a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3c_item_no') ?>">
+                </div>
+                <div class="col-md-12">
+                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
+                </div>
+
+
+
             </div>
         </div>
-        <!-- left side column end -->
-        <div class="col-md-6">
-            <div class="d-flexible">
-                <div class="form-group">
-                    <label class="control-label col-md-12">5.a. Page Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_5a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_5a_page_no') ?>">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">5.b. Part Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_5b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_5b_part_no') ?>">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">5.c. Item Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_5c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_5c_item_no') ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <b>5.d.</b>
-                    <textarea name="i_864a_additional_info_5d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_5d') ?></textarea>
-                </div>
-            </div>
-            <div class="d-flexible">
-                <div class="form-group">
-                    <label class="control-label col-md-12">6.a. Page Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_6a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_6a_page_no') ?>">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">6.b. Part Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_6b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_6b_part_no') ?>">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">6.c. Item Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_6c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_6c_item_no') ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <b>6.d.</b>
-                    <textarea name="i_864a_additional_info_6d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_6d') ?></textarea>
-                </div>
-            </div>
-            <div class="d-flexible">
-                <div class="form-group">
-                    <label class="control-label col-md-12">7.a. Page Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_7a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_7a_page_no') ?>">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">7.b. Part Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_7b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_7b_part_no') ?>">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">7.c. Item Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864a_additional_info_7c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_7c_item_no') ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <b>7.d.</b>
-                    <textarea class="form-control" name="i_864a_additional_info_7d" maxlength="342" class="form-control" cols="30" rows="10"><?php echo showData('i_864a_additional_info_7d') ?></textarea>
-                </div>
-            </div>
+
+            
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
