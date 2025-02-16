@@ -955,47 +955,47 @@ enforceable.
     <div class="bg-info">
                 <h4><b>Preparer's Full Name</b></h4>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">1. Preparer's Family Name (Last Name)</label>
-                <div class="col-md-12">
+    <div class="row">
+          
+                <div class="col-md-6">
+                    <label class="control-label">1. Preparer's Family Name (Last Name)</label>
                     <input type="text" class="form-control" name="i_864a_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_preparer_daytime_tel') ?>">
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">Preparer's Given Name (First Name)</label>
-                <div class="col-md-12">
+    
+                <div class="col-md-6">
+                    <label class="control-label">Preparer's Given Name (First Name)</label>
                     <input type="text" class="form-control" name="i_864a_preparer_mobile" maxlength="10" value="<?php echo showData('i_864a_preparer_mobile') ?>">
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">2. Preparer's Business or Organization Name (if any)</label>
-                <div class="col-md-12">
-                    <input type="email" class="form-control" maxlength="41" name="i_864a_preparer_email" value="<?php echo showData('i_864a_preparer_email') ?>">
+                <div class="col-md-6">
+                    <label class="control-label">2. Preparer's Business or Organization Name (if any)</label>
+                    <input type="text" class="form-control" name="i_864a_preparer_mobile" maxlength="10" value="<?php echo showData('i_864a_preparer_mobile') ?>">
                 </div>
-            </div>
+          
+           
+    </div>
 </div>
 <div>
     <div class="bg-info">
                 <h4><b> Preparer's Contact Information</b></h4>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">3. Preparer's Daytime Telephone Number</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_preparer_daytime_tel') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">4. Preparer's Mobile Telephone Number (if any)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_preparer_mobile" maxlength="10" value="<?php echo showData('i_864a_preparer_mobile') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">5. Preparer's Email Address (if any)</label>
-                <div class="col-md-12">
-                    <input type="email" class="form-control" maxlength="41" name="i_864a_preparer_email" value="<?php echo showData('i_864a_preparer_email') ?>">
-                </div>
-            </div>
+            <div class="row">
+          
+          <div class="col-md-6">
+              <label class="control-label">3. Preparer's Daytime Telephone Number</label>
+              <input type="text" class="form-control" name="i_864a_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_preparer_daytime_tel') ?>">
+          </div>
+
+          <div class="col-md-6">
+              <label class="control-label">4. Preparer's Mobile Telephone Number (if any)</label>
+              <input type="text" class="form-control" name="i_864a_preparer_mobile" maxlength="10" value="<?php echo showData('i_864a_preparer_mobile') ?>">
+          </div>
+          <div class="col-md-6">
+              <label class="control-label">5. Preparer's Email Address (if any)</label>
+              <input type="text" class="form-control" name="i_864a_preparer_mobile" maxlength="10" value="<?php echo showData('i_864a_preparer_mobile') ?>">
+          </div>
+    
+     
+</div>
 </div>
 <div class="bg-info">
                 <h4><b> Preparer's Certification and Signature</b></h4>
