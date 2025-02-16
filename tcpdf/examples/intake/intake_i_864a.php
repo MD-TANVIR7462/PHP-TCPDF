@@ -765,7 +765,7 @@ foreach ($allDataCountry as $record)
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
 ----------------------------------------------------------------------->
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 5 of 8</b></p>
     <div class="row">
         <div class="col-md-12">
@@ -901,114 +901,23 @@ enforceable.
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
 ----------------------------------------------------------------------->
 <fieldset class="setpage">
-    <p style=" text-align: right;  margin-right: 15px;"><b>Page 6 of 8</b></p>
+    <p style=" text-align: right;  margin-right: 15px;"><b>Page 7 of 8</b></p>
     <div class=" row mt-5 gap-4">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="bg-info">
                 <h4><b>Part 7. Interpreter's Contact Information, Certification, and Signature (continued)</b></h4>
             </div>
             <div class="bg-info">
-                <h4><i><b>Interpreters's Mailing Address </b></i></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.a. Street Number and Name</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864a_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864a_interpreter_address_street_number') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
-                    <label class="control-label">
-                        <input type="radio" name="i_864a_interpreter_address_apt_ste_flr" value="apt" <?php echo (showData('i_864a_interpreter_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>Apt. &nbsp;
-                    </label>
-                    <label class="control-label">
-                        <input type="radio" name="i_864a_interpreter_address_apt_ste_flr" value="ste" <?php echo (showData('i_864a_interpreter_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>Ste. &nbsp;
-                    </label>
-                    <label class="control-label">
-                        <input type="radio" name="i_864a_interpreter_address_apt_ste_flr" value="flr" <?php echo (showData('i_864a_interpreter_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>Flr.
-                    </label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" type="text" class="form-control" name="i_864a_interpreter_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_864a_interpreter_address_apt_ste_flr_value') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.c. City or Town</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864a_interpreter_address_city_town" maxlength="20" value="<?php echo showData('i_864a_interpreter_address_city_town') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.d. State</label>
-                <div class="col-md-7">
-                    <select class="form-control" name="i_864a_interpreter_address_state">
-                        <option value=''>Select</option>
-                        <?php
-                        foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('i_864a_interpreter_address_state')) $selected = "selected";
-                            else $selected = "";
-                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                        } ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.e. ZIP Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864a_interpreter_address_zip_code" maxlength="5" value="<?php echo showData('i_864a_interpreter_address_zip_code') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.f. Province</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864a_interpreter_address_province" maxlength="20" value="<?php echo showData('i_864a_interpreter_address_province') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.g. Postal Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864a_interpreter_address_postal_code" maxlength="9" value="<?php echo showData('i_864a_interpreter_address_postal_code') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">3.h. Country</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_interpreter_address_country" maxlength="34" value="<?php echo showData('i_864a_interpreter_address_country') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Interpreter's Contact Information</i></b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">4. Interpreter's Daytime Telephone Number</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864a_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_interpreter_daytime_tel') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">5. Interpreter's Mobile Telephone Number (if any)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864a_interpreter_mobile') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">6. Interpreter's Email Address (if any)</label>
-                <div class="col-md-12">
-                    <input type="email" class="form-control" name="i_864a_interpreter_email" maxlength="41" value="<?php echo showData('i_864a_interpreter_email') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
                 <h4><i><b>Interpreter's Certification</b></i></h4>
             </div>
-            <p>I certify, under penalty of perjury, that:</p>
             <div class="form-group" style="display:flex;  align-items: center;">
-                <p>I am fluent in English and</p>
-                <div class="col-md-7">
+                <p>I certify, under penalty of perjury, that: that I am fluent in English and</p>
+                <div class="col-md-5">
                     <input type="text" class="form-control" name="i_864a_interpreter_fluent_in_english" maxlength="20" value="<?php echo showData('i_864a_interpreter_fluent_in_english') ?>">
                 </div>
             </div>
@@ -1025,142 +934,87 @@ enforceable.
                 <h4><b>Interpreter's Signature</b> </h4>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">7.a. Interpreter's Signature</label>
-                <div class="col-md-12">
+                <label class="control-label col-md-8">6. Interpreter's Signature</label>
+                <label class="control-label col-md-4">Date of Signature (mm/dd/yyyy)</label>
+                <div class="col-md-8">
                     <input type="text" class="form-control" disabled />
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">7.b. Date of Signature (mm/dd/yyyy)</label>
-                <div class="col-md-7 col-md-offset-5">
+                <div class="col-md-4">
                     <input type="date" class="form-control" name="i_864a_interpreter_sign_date" value="<?php echo showData('i_864a_interpreter_sign_date') ?>" />
                 </div>
             </div>
+         
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="bg-info">
-                <h4><b>Part 8. Contact Information, Declaration, and
-                        Signature of the Person Preparing this Contract,
-                        if Other Than the Sponsor or Household Member</b> </h4>
+                <h4><b>Part 8. Contact Information, Declaration, and Signature of the Person Preparing this Contract, if Other
+                Than the Sponsor or Household Member</b> </h4>
             </div>
-            <h5><b>Provide the following information about the preparer</b></h5>
-            <div class="bg-info">
-                <h4><b>Preparer's Full Name</b> </h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">1.a. Preparer's Family Name (Last Name)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_preparer_family_last_name" maxlength="39" value="<?php echo showData('i_864a_preparer_family_last_name') ?>" />
-                </div>
+           
+<div>
+    <div class="bg-info">
+                <h4><b>Preparer's Full Name</b></h4>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">1.b. Preparer's Given Name (First Name)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_preparer_given_first_name" maxlength="39" value="<?php echo showData('i_864a_preparer_given_first_name') ?>" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">2. Preparer's Business or Organization Name (if any)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_preparer_business_name" maxlength="39" value="<?php echo showData('i_864a_preparer_business_name') ?>" />
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Preparer's Mailing Address</i></b> </h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.a. Street Number and Name</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864a_preparer_address_street_number" maxlength="25" value="<?php echo showData('i_864a_preparer_address_street_number') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="control-label col-md-6 d-flexible"><b>3.b. </b> &nbsp;
-                    <label class="control-label ">
-                        <input type="radio" name="i_864a_preparer_address_apt_ste_flr" value="apt" <?php echo (showData('i_864a_preparer_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
-                    </label>
-                    <label class="control-label ">
-                        <input type="radio" name="i_864a_preparer_address_apt_ste_flr" value="ste" <?php echo (showData('i_864a_preparer_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
-
-                    </label>
-                    <label class="control-label ">
-
-                        <input type="radio" name="i_864a_preparer_address_apt_ste_flr" value="flr" <?php echo (showData('i_864a_preparer_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
-                    </label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" type="text" class="form-control" name="i_864a_preparer_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_864a_preparer_address_apt_ste_flr_value') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.c. City or Town</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864a_preparer_address_city_town" maxlength="20" value="<?php echo showData('i_864a_preparer_address_city_town') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.d. State</label>
-                <div class="col-md-7">
-                    <select class="form-control" name="i_864a_preparer_address_state">
-                        <option style="" value=''>Select</option>
-                        <?php
-                        foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('i_864a_preparer_address_state')) $selected = "selected";
-                            else $selected = "";
-                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.e. ZIP Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864a_preparer_address_zip_code" maxlength="5" value="<?php echo showData('i_864a_preparer_address_zip_code') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.f. Province</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864a_preparer_address_province" maxlength="20" value="<?php echo showData('i_864a_preparer_address_province') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.g. Postal Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864a_preparer_address_postal_code" maxlength="9" value="<?php echo showData('i_864a_preparer_address_postal_code') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">3.h. Country</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864a_preparer_address_country" maxlength="34" value="<?php echo showData('i_864a_preparer_address_country') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b> Preparer's Contact Information</b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">4. Preparer's Daytime Telephone Number</label>
+                <label class="control-label col-md-12">1. Preparer's Family Name (Last Name)</label>
                 <div class="col-md-12">
                     <input type="text" class="form-control" name="i_864a_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_preparer_daytime_tel') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">5. Preparer's Mobile Telephone Number (if any)</label>
+                <label class="control-label col-md-12">Preparer's Given Name (First Name)</label>
                 <div class="col-md-12">
                     <input type="text" class="form-control" name="i_864a_preparer_mobile" maxlength="10" value="<?php echo showData('i_864a_preparer_mobile') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">6. Preparer's Email Address (if any)</label>
+                <label class="control-label col-md-12">2. Preparer's Business or Organization Name (if any)</label>
                 <div class="col-md-12">
                     <input type="email" class="form-control" maxlength="41" name="i_864a_preparer_email" value="<?php echo showData('i_864a_preparer_email') ?>">
                 </div>
             </div>
+</div>
+<div>
+    <div class="bg-info">
+                <h4><b> Preparer's Contact Information</b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3. Preparer's Daytime Telephone Number</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="i_864a_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_preparer_daytime_tel') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">4. Preparer's Mobile Telephone Number (if any)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="i_864a_preparer_mobile" maxlength="10" value="<?php echo showData('i_864a_preparer_mobile') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">5. Preparer's Email Address (if any)</label>
+                <div class="col-md-12">
+                    <input type="email" class="form-control" maxlength="41" name="i_864a_preparer_email" value="<?php echo showData('i_864a_preparer_email') ?>">
+                </div>
+            </div>
+</div>
+<div class="bg-info">
+                <h4><b> Preparer's Certification and Signature</b></h4>
+            </div>
+            <p class="control-label">I certify, under penalty of perjury, that I prepared this contract for the sponsor and household member at their request and with express
+consent and that all of the responses and information contained in and submitted with the contract are complete, true, and correct and
+reflects only information provided by the sponsor and household member. The sponsor and household member reviewed the
+responses and information and informed me that they understand the responses and information in or submitted with the contract.</p>
+<div class="form-group">
+                <label class="control-label col-md-8">6.  Preparer's Signature</label>
+                <label class="control-label col-md-4">Date of Signature (mm/dd/yyyy)</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" disabled />
+                </div>
+                <div class="col-md-4">
+                    <input type="date" class="form-control" name="i_864a_interpreter_sign_date" value="<?php echo showData('i_864a_interpreter_sign_date') ?>" />
+                </div>
+            </div>
+
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
