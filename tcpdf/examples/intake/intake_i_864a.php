@@ -1056,16 +1056,16 @@ contract.</div>
           
                 <div class="col-md-6">
                     <label class="control-label">1. Preparer's Family Name (Last Name)</label>
-                    <input type="text" class="form-control" name="i_864a_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_preparer_daytime_tel') ?>">
+                    <input type="text" class="form-control" name="i_864a_preparer_last_name" maxlength="10" value="<?php echo showData('i_864a_preparer_last_name') ?>">
                 </div>
     
                 <div class="col-md-6">
                     <label class="control-label">Preparer's Given Name (First Name)</label>
-                    <input type="text" class="form-control" name="i_864a_preparer_mobile" maxlength="10" value="<?php echo showData('i_864a_preparer_mobile') ?>">
+                    <input type="text" class="form-control" name="i_864a_preparer_first_name" maxlength="10" value="<?php echo showData('i_864a_preparer_first_name') ?>">
                 </div>
                 <div class="col-md-6">
                     <label class="control-label">2. Preparer's Business or Organization Name (if any)</label>
-                    <input type="text" class="form-control" name="i_864a_preparer_mobile" maxlength="10" value="<?php echo showData('i_864a_preparer_mobile') ?>">
+                    <input type="text" class="form-control" name="i_864a_preparer_business_organization_name" maxlength="10" value="<?php echo showData('i_864a_preparer_business_organization_name') ?>">
                 </div>
           
            
@@ -1088,7 +1088,7 @@ contract.</div>
           </div>
           <div class="col-md-6">
               <label class="control-label">5. Preparer's Email Address (if any)</label>
-              <input type="text" class="form-control" name="i_864a_preparer_mobile" maxlength="10" value="<?php echo showData('i_864a_preparer_mobile') ?>">
+              <input type="text" class="form-control" name="i_864a_email_address" maxlength="38" value="<?php echo showData('i_864a_email_address') ?>">
           </div>
     
      
@@ -1108,7 +1108,7 @@ responses and information and informed me that they understand the responses and
                     <input type="text" class="form-control" disabled />
                 </div>
                 <div class="col-md-4">
-                    <input type="date" class="form-control" name="i_864a_interpreter_sign_date" value="<?php echo showData('i_864a_interpreter_sign_date') ?>" />
+                    <input type="date" class="form-control" name="i_864a_preparer_sign_date" value="<?php echo showData('i_864a_preparer_sign_date') ?>" />
                 </div>
             </div>
 
@@ -1156,7 +1156,7 @@ responses and information and informed me that they understand the responses and
                 </div>
                 <div class="col-md-4">
                 <label class="control-label">2. A-Number (if any) ► A- </label>
-                    <input type="text" class="form-control" maxlength="29" name="i_864a_additional_info_middle_name" value="<?php echo showData('i_864a_additional_info_middle_name') ?>" />
+                    <input type="text" class="form-control" maxlength="9" name="i_864a_additional_info_middle_name" value="<?php echo showData('i_864a_additional_info_middle_name') ?>" />
                 </div>
        
             
@@ -1176,55 +1176,55 @@ responses and information and informed me that they understand the responses and
                                 <input type="text" class="form-control" name="i_864a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3c_item_no') ?>">
                 </div>
                 <div class="col-md-12">
-                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
+                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="442" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
                 </div>
          
                 <div class="form-group col-md-3">
                     <label class="control-label ">4. Page Number</label>
-                     <input type="text" class="form-control" name="i_864a_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_3a_page_no') ?>">
+                     <input type="text" class="form-control" name="i_864a_additional_info_4a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_4a_page_no') ?>">
                 </div>
                 <div class="form-group col-md-3">
                           <label class="control-label ">Part Number</label>
-                             <input type="text" class="form-control" name="i_864a_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3b_part_no') ?>">  
+                             <input type="text" class="form-control" name="i_864a_additional_info_4b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_4b_part_no') ?>">  
                 </div>
                 <div class="form-group col-md-3">
                                 <label class="control-label ">Item Number</label>
-                                <input type="text" class="form-control" name="i_864a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3c_item_no') ?>">
+                                <input type="text" class="form-control" name="i_864a_additional_info_4c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_4c_item_no') ?>">
                 </div>
                 <div class="col-md-12">
-                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
+                               <textarea name="i_864a_additional_info_4d" class="form-control" maxlength="442" cols="30" rows="10"><?php echo showData('i_864a_additional_info_4d') ?></textarea>
                 </div>
          
                 <div class="form-group col-md-3">
                     <label class="control-label ">5. Page Number</label>
-                     <input type="text" class="form-control" name="i_864a_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_3a_page_no') ?>">
+                     <input type="text" class="form-control" name="i_864a_additional_info_5a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_5a_page_no') ?>">
                 </div>
                 <div class="form-group col-md-3">
                           <label class="control-label ">Part Number</label>
-                             <input type="text" class="form-control" name="i_864a_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3b_part_no') ?>">  
+                             <input type="text" class="form-control" name="i_864a_additional_info_5b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_5b_part_no') ?>">  
                 </div>
                 <div class="form-group col-md-3">
                                 <label class="control-label ">Item Number</label>
-                                <input type="text" class="form-control" name="i_864a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3c_item_no') ?>">
+                                <input type="text" class="form-control" name="i_864a_additional_info_5c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_5c_item_no') ?>">
                 </div>
                 <div class="col-md-12">
-                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
+                               <textarea name="i_864a_additional_info_5d" class="form-control" maxlength="442" cols="30" rows="10"><?php echo showData('i_864a_additional_info_5d') ?></textarea>
                 </div>
          
                 <div class="form-group col-md-3">
                     <label class="control-label ">6. Page Number</label>
-                     <input type="text" class="form-control" name="i_864a_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_3a_page_no') ?>">
+                     <input type="text" class="form-control" name="i_864a_additional_info_6a_page_no" maxlength="2" value="<?php echo showData('i_864a_additional_info_6a_page_no') ?>">
                 </div>
                 <div class="form-group col-md-3">
                           <label class="control-label ">Part Number</label>
-                             <input type="text" class="form-control" name="i_864a_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3b_part_no') ?>">  
+                             <input type="text" class="form-control" name="i_864a_additional_info_6b_part_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_6b_part_no') ?>">  
                 </div>
                 <div class="form-group col-md-3">
                                 <label class="control-label ">Item Number</label>
-                                <input type="text" class="form-control" name="i_864a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3c_item_no') ?>">
+                                <input type="text" class="form-control" name="i_864a_additional_info_6c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_6c_item_no') ?>">
                 </div>
                 <div class="col-md-12">
-                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="342" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
+                               <textarea name="i_864a_additional_info_6d" class="form-control" maxlength="442" cols="30" rows="10"><?php echo showData('i_864a_additional_info_6d') ?></textarea>
                 </div>
 
 
