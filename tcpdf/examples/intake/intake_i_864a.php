@@ -778,31 +778,27 @@ foreach ($allDataCountry as $record)
                   <b>NOTE:</b> Read the Penalties section of the Form I-864A Instructions before completing this par
                     </span>
                 </span>
-<div class="row">
-    <p class="col-md-3 my-4"><b>I, THE HOUSEHOLD MEMBER</b></p>
-    <p class="col-md-3"> <input type="text"  maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" /></p>
-    <p class="col-md-5 my-4"><b>, in consideration of the sponsor's promise to complete</b></p>
-    <p class="col-md-7 my-4"><b>and file an affidavit of support on behalf of the above named intending immigrants</b></p>
-    <p class="col-md-2"> <input type="text"  maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" /></p>
-    <p class="col-md-3 my-4"><b>(Print number of intending</b></p>
-    <p class="col-md-12 my-4"><b>immigrants noted in Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature.)</b></p>
-</div>
-    
-
-
-
+                    <div class="row">
+                        <p class="col-md-3 my-4"><b>I, THE HOUSEHOLD MEMBER</b></p>
+                        <p class="col-md-3"> <input type="text"  maxlength="29" class="form-control" name="i_864a_household_member_consideration" value="<?php echo showData('i_864a_household_member_consideration') ?>" /></p>
+                        <p class="col-md-5 my-4"><b>, in consideration of the sponsor's promise to complete</b></p>
+                        <p class="col-md-7 my-4"><b>and file an affidavit of support on behalf of the above named intending immigrants</b></p>
+                        <p class="col-md-2"> <input type="text"  maxlength="29" class="form-control" name="i_864a_intending_immigrants" value="<?php echo showData('i_864a_intending_immigrants') ?>" /></p>
+                        <p class="col-md-3 my-4"><b>(Print number of intending</b></p>
+                        <p class="col-md-12 my-4"><b>immigrants noted in Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature.)</b></p>
+                    </div>
                 <span class="d-flexible my-5"><b>A.</b>
                     <span>
                     Promise to provide any and all financial support necessary to assist the sponsor in maintaining the sponsored immigrants at or
-above the minimum income provided for in the Immigration and Naturalization Act (INA) section 213A(a)(1)(A) (not less than
-125 percent of the Federal Poverty Guidelines) during the period in which the affidavit of support is enforceable;
+                    above the minimum income provided for in the Immigration and Naturalization Act (INA) section 213A(a)(1)(A) (not less than
+                    125 percent of the Federal Poverty Guidelines) during the period in which the affidavit of support is enforceable;
                     </span>
                 </span>
                 <span class="d-flexible my-5"><b>B.</b>
                     <span>
                     Agree to be jointly and severally liable for payment of any and all obligations owed by the sponsor under the affidavit of support
-to the sponsored immigrants, to any agency of the Federal Government, to any agency of a state or local government, or to any
-other private entity that provides means-tested public benefits;
+                    to the sponsored immigrants, to any agency of the Federal Government, to any agency of a state or local government, or to any
+                    other private entity that provides means-tested public benefits;
                     </span>
                 </span>
                 <span class="d-flexible my-5"><b>C.</b>
@@ -934,7 +930,7 @@ this information is complete, true, and correct. </div>
             <div class="form-group">
                <p> <label class="control-label col-md-8">6. Your (the Household Member's) Printed Name</label></p>
             <div class="col-md-8">
-            <input type="text" class="form-control" name="i_864a_interpreter_sign_date" value="<?php echo showData('i_864a_interpreter_sign_date') ?>" />
+            <input type="text" class="form-control" name="i_864a_household_member_printed_name" value="<?php echo showData('i_864a_household_member_printed_name') ?>" />
             </div>               
              <label class="control-label col-md-8">7. Your (the Household Member's) Signature </label>
                 <label class="control-label col-md-4">Date of Signature (mm/dd/yyyy)</label>
@@ -961,16 +957,16 @@ this information is complete, true, and correct. </div>
           
                 <div class="col-md-6">
                     <label class="control-label">1. Interpreter's Family Name (Last Name)</label>
-                    <input type="text" class="form-control" name="i_864a_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864a_interpreter_daytime_tel') ?>">
+                    <input type="text" class="form-control" name="i_864a_interpreter_last_name" maxlength="10" value="<?php echo showData('i_864a_interpreter_last_name') ?>">
                 </div>
     
                 <div class="col-md-6">
                     <label class="control-label">Interpreter's Given Name (First Name)</label>
-                    <input type="text" class="form-control" name="i_864a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864a_interpreter_mobile') ?>">
+                    <input type="text" class="form-control" name="i_864a_interpreter_first_name" maxlength="10" value="<?php echo showData('i_864a_interpreter_first_name') ?>">
                 </div>
                 <div class="col-md-6">
                     <label class="control-label">2. Interpreter's Business or Organization Name (if any)</label>
-                    <input type="text" class="form-control" name="i_864a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864a_interpreter_mobile') ?>">
+                    <input type="text" class="form-control" name="i_864a_interpreter_business_organization_name" maxlength="10" value="<?php echo showData('i_864a_interpreter_business_organization_name') ?>">
                 </div>
           
            
@@ -993,7 +989,7 @@ this information is complete, true, and correct. </div>
           </div>
           <div class="col-md-6">
               <label class="control-label">5. Interpreter's Email Address (if any)</label>
-              <input type="text" class="form-control" name="i_864a_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864a_interpreter_mobile') ?>">
+              <input type="text" class="form-control" name="i_864a_interpreter_email_address" maxlength="38" value="<?php echo showData('i_864a_interpreter_email_address') ?>">
           </div>
 
 </div>
