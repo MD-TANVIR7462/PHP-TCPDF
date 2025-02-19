@@ -512,8 +512,11 @@ i_864a_immigrant5_alien_registration_number
 i_864a_immigrant5_social_security_number
 i_864a_immigrant5_online_account_number
 
-
-
+// new 864a 
+i_864a_sponsor_daytime_tel
+i_864a_sponsor_mobile
+i_864a_sponsor_email
+i_864a_sponsor_sign_date
 
 
 
