@@ -31,6 +31,8 @@ display: flex;
 
     }
 </style>
+
+
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
@@ -164,27 +166,29 @@ foreach ($allDataCountry as $record)
 <div class="col-md-4" >
                 <label class="control-label ">Province</label>
            
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
          
             </div>
             <div class="col-md-3">
                 <label class="control-label ">Postal Code</label>
            
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
           
             </div>
             <div class="col-md-5">
                 <label class="control-label ">Country</label>
-  <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+  <input type="text" maxlength="29" class="form-control" name="information_about_you_us_mailing_country" value="<?php echo showData('information_about_you_us_mailing_country') ?>" />
     </div>
-</div>
+ </div>
     <div >
-        <label class=" col-md-6 my-4">3. Is your current mailing address the same as your physical address?
-        </label>
-        <div class="col-md-2">
-            <?php echo createRadio("is_your_current_mailing_address_same_as_physical") ?>
-        </div>
+        <label class=" col-md-6 my-4">3. Is your current mailing address the same as your physical address?</label>
+        <div class="col-md-2 my-4">
+             <input type="radio" class="form-check-input " id="mailing_address_yes" name="is_your_current_mailing_address_same_as_physical"  value="Y" <?php echo showData('is_your_current_mailing_address_same_as_physical') == "Y" ? "checked" : ""; ?> />
+                <label for="mailing_address_yes" class="mx-4"> Yes</label>
+             <input type="radio" class="form-check-input" id="mailing_address_no" name="is_your_current_mailing_address_same_as_physical"  value="N" <?php echo showData('is_your_current_mailing_address_same_as_physical') == "N" ? "checked" : ""; ?> />
+        <label for="mailing_address_no"> No</label>
     </div>
+  </div>
     <div class="form-group" style="margin-bottom: 10px;">
         <label class="control-label" style="width: 100%; margin-bottom: 5px;">If you answered "No" to Item Number 3., provide your physical address.</label>
     </div>
@@ -194,12 +198,105 @@ foreach ($allDataCountry as $record)
                 </i></b></h4>
             </div>
     </div>
-    <div style="margin:0px 2% 0px 2%;">
+    
+<!-- Dynamic Mail address and Physical Address From start -->
+
+<!-- Mailing Address Form -->
+<div style="margin:0px 2% 0px 2%;" id="mailingAddressForm">
+<h4 style="font-size: 16px; color:#0096FF; text-align: center; margin-top: 20px; font-family: Arial, sans-serif;">
+    Since your mailing and physical addresses are the same, there is no need to fill out this section. You may proceed to the next page.
+</h4>
+
         <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
                 <div style="width: 100%;">
-                    <input type="text" maxlength="34" class="form-control" name="information_about_you_home_street_number" value="<?php echo showData('information_about_you_home_street_number') ?>"
+                    <input type="text" maxlength="34" class="form-control" name ="" readonly value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
+                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                <div style="flex: 1; margin-left: 5%;">
+                    <label>
+                        <input type="radio" name="test"  value="apt"
+                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                        Apt. &nbsp;
+                    </label>
+                    <label>
+                        <input type="radio" name="test"  value="ste"
+                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                        Ste. &nbsp;
+                    </label>
+                    <label>
+                        <input type="radio" name="test"  value="flr"
+                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                        Flr.
+                    </label>
+                </div>
+            </div>
+            <div style="flex: 1;">
+                <label class="control-label">Number</label>
+                <input type="text" class="form-control" name="" readonly
+                    maxlength="5" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value'); ?>"
+                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+            </div>
+        </div>
+        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                <div style="width: 100%;">
+                    <input type="text" class="form-control" name="" readonly maxlength="28" value="<?php echo showData('information_about_you_us_mailing_city_town'); ?>"
+                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                <div style="width: 100%;">
+                    <select class="form-control" name="" readonly
+                        style="width: 100%; padding: 5px; margin-top: 3%;">
+                        <option value=''>Select</option>
+                        <?php
+                        foreach ($allDataCountry as $record) {
+                            if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
+                            else $selected = "";
+                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
+                <div class='d-flexible'>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="" readonly maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="control-label">Province</label>
+                <input type="text" maxlength="29" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_province'); ?>" />
+            </div>
+            <div class="col-md-3">
+                <label class="control-label">Postal Code</label>
+                <input type="text" maxlength="29" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_postal_code'); ?>" />
+            </div>
+            <div class="col-md-5">
+                <label class="control-label">Country</label>
+                <input type="text" maxlength="29" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_country'); ?>" />
+            </div>
+        </div>
+    </div>
+
+<!-- Physical Address Form -->
+<div id="physicalAddressForm"  style="margin:0px 2% 0px 2%;">
+        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
+                <div style="width: 100%;">
+                    <input type="text" maxlength="34" class="form-control" name="information_about_you_home_street_number" value="<?php echo showData('information_about_you_home_street_number'); ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
@@ -225,16 +322,15 @@ foreach ($allDataCountry as $record)
             <div style="flex: 1;">
                 <label class="control-label">Number</label>
                 <input type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value"
-                    maxlength="5" value="<?php echo showData('information_about_you_home_apt_ste_flr_value') ?>"
+                    maxlength="5" value="<?php echo showData('information_about_you_home_apt_ste_flr_value'); ?>"
                     style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
-        <div class="row"
-            style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_home_city_town" maxlength="28" value="<?php echo showData('information_about_you_home_city_town') ?>"
+                    <input type="text" class="form-control" name="information_about_you_home_city_town" maxlength="28" value="<?php echo showData('information_about_you_home_city_town'); ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
@@ -245,13 +341,12 @@ foreach ($allDataCountry as $record)
                         style="width: 100%; padding: 5px; margin-top: 3%;">
                         <option value=''>Select</option>
                         <?php
-foreach ($allDataCountry as $record)
-{
-    if ($record->state_code == showData('information_about_you_home_state')) $selected = "selected";
-    else $selected = "";
-    echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-}
-?>
+                        foreach ($allDataCountry as $record) {
+                            if ($record->state_code == showData('information_about_you_home_state')) $selected = "selected";
+                            else $selected = "";
+                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                        }
+                        ?>
                     </select>
                 </div>
             </div>
@@ -259,29 +354,33 @@ foreach ($allDataCountry as $record)
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
                 <div class='d-flexible'>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="information_about_you_home_zip_code" maxlength="5" value="<?php echo showData('information_about_you_home_zip_code') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="information_about_you_home_zip_code" maxlength="5" value="<?php echo showData('information_about_you_home_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-<div class="col-md-4" >
-                <label class="control-label ">Province</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            <div class="col-md-4">
+                <label class="control-label">Province</label>
+                <input type="text" maxlength="29" class="form-control" name="information_about_you_home_province" value="<?php echo showData('information_about_you_home_province'); ?>" />
             </div>
             <div class="col-md-3">
-                <label class="control-label ">Postal Code</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                <label class="control-label">Postal Code</label>
+                <input type="text" maxlength="29" class="form-control" name="information_about_you_home_postal_code" value="<?php echo showData('information_about_you_home_postal_code'); ?>" />
             </div>
             <div class="col-md-5">
-                <label class="control-label ">Country</label>
-                      <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                <label class="control-label">Country</label>
+                <input type="text" maxlength="29" class="form-control" name="information_about_you_home_country" value="<?php echo showData('information_about_you_home_country'); ?>" />
+            </div>
+        </div>
     </div>
+<!-- Dynamic Mail address and Physical Address From End -->
+
 </div>
 </div>
     </div>
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
@@ -386,7 +485,7 @@ foreach ($allDataCountry as $record)
                     <span class="d-flexible">
                         <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?>Other Dependent (Specify)
                     </span>
-                    <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>" />
+                    <input type="text" maxlength="34" class="form-control" name="" value="<?php echo showData('') ?>" />
                 </label>
             </div>
          <div class="form-group" style="margin-bottom: 5px;">
@@ -402,7 +501,7 @@ foreach ($allDataCountry as $record)
                        1. <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?>Name of Employer Number 2 (if applicable)
                     </label>
                     </span>
-                    <input type="text" maxlength="34" class="form-control col-md-4 " name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>" />
+                    <input type="text" maxlength="34" class="form-control col-md-4 " name="" value="<?php echo showData('') ?>" />
             </div>
 
             <div class="form-group d-flexible">
@@ -411,7 +510,7 @@ foreach ($allDataCountry as $record)
                        2. Name of Employer Number 2 (if applicable)
                     </label>
                     </span>
-                    <input type="text" maxlength="34" class="form-control col-md-4 " name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>" />
+                    <input type="text" maxlength="34" class="form-control col-md-4 " name="" value="<?php echo showData('') ?>" />
             </div>
 
          <div class="form-group d-flexible">
@@ -420,7 +519,7 @@ foreach ($allDataCountry as $record)
                        3. Name of Employer Number 2 (if applicable)
                     </label>
                     </span>
-                    <input type="text" maxlength="34" class="form-control col-md-4 " name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>" />
+                    <input type="text" maxlength="34" class="form-control col-md-4 " name="" value="<?php echo showData('') ?>" />
             </div>
          <div class="form-group d-flexible">
              <span class="col-md-6 ">
@@ -428,7 +527,7 @@ foreach ($allDataCountry as $record)
                        4. <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?>Name of Employer Number 2 (if applicable)
                     </label>
                     </span>
-                    <input type="text" maxlength="34" class="form-control col-md-4 " name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>" />
+                    <input type="text" maxlength="34" class="form-control col-md-4 " name="" value="<?php echo showData('') ?>" />
             </div>
          <div class="form-group d-flexible">
              <span class="col-md-6 ">
@@ -436,7 +535,7 @@ foreach ($allDataCountry as $record)
                        5. <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?>Name of Employer Number 2 (if applicable)
                     </label>
                     </span>
-                    <input type="text" maxlength="34" class="form-control col-md-4 " name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>" />
+                    <input type="text" maxlength="34" class="form-control col-md-4 " name="" value="<?php echo showData('') ?>" />
             </div>
          <div class="form-group d-flexible">
              <span class="col-md-6 ">
@@ -444,7 +543,7 @@ foreach ($allDataCountry as $record)
                        6. <?php echo createCheckbox("i_864a_i_can_read_understand_english_status") ?>Name of Employer Number 2 (if applicable)
                     </label>
                     </span>
-                    <input type="text" maxlength="34" class="form-control col-md-4 " name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>" />
+                    <input type="text" maxlength="34" class="form-control col-md-4 " name="" value="<?php echo showData('') ?>" />
             </div>
          <div class="form-group d-flexible">
              <span class="col-md-6 ">
@@ -452,7 +551,7 @@ foreach ($allDataCountry as $record)
                        7. Name of Employer Number 2 (if applicable)
                     </label>
                     </span>
-                    <input type="text" maxlength="34" class="form-control col-md-4 " name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>" />
+                    <input type="text" maxlength="34" class="form-control col-md-4 " name="" value="<?php echo showData('') ?>" />
             </div>
     </div>
 </div>
@@ -719,15 +818,15 @@ foreach ($allDataCountry as $record)
         <div class="form-group">
           <div class="col-md-6">
                 <label class="control-label ">7. Sponsor's Daytime Telephone Number</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_864a_household_member_daytime_tel" value="<?php echo showData('i_864a_household_member_daytime_tel') ?>" />
             </div>
             <div class="col-md-6">
                 <label class="control-label ">8. Sponsor's Mobile Telephone Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_864a_household_member_mobile" value="<?php echo showData('i_864a_household_member_mobile') ?>" />
             </div>
             <div class="col-md-6">
                 <label class="control-label ">9. Sponsor's Email Address (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_864a_household_member_email" value="<?php echo showData('i_864a_household_member_email') ?>" />
             </div>
           </div>
 
@@ -746,11 +845,11 @@ foreach ($allDataCountry as $record)
 <div class="form-group">
   <div class="col-md-8">
         <label class="control-label ">10. Sponsor's Signature</label>
-            <input type="text" readonly  maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            <input type="text" readonly  maxlength="29" class="form-control" name="" value="" />
     </div>
     <div class="col-md-4">
         <label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
-            <input type="date"  maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            <input type="date"  maxlength="29" class="form-control" name="i_864a_household_member_daytime_tel" value="<?php echo showData('i_864a_household_member_daytime_tel') ?>" />
     </div>
   </div>
   <label class="control-label mx-4" >NOTE TO ALL SPONSORS: If you do not completely fill out this contract or fail to submit required documents listed in the
@@ -810,12 +909,12 @@ foreach ($allDataCountry as $record)
                 <span class="d-flexible my-5"><b>D.</b>
                     <span>
                     Consideration where the household member is also the sponsored immigrant: I understand that if I am the sponsored immigrant
-and a member of the sponsor's household that this promise relates only to my promise to be jointly and severally liable for any obligation
-owed by the sponsor under the affidavit of support to any of my dependents, to any agency of the Federal Government, to any agency of
-a state or local government, or to any other private entity that provides means-tested public benefits and to provide any and all financial
-support necessary to assist the sponsor in maintaining any of my dependents at or above the minimum income provided for in INA
-section 213A(a)(1)(A) (not less than 125 percent of the Federal Poverty Guideline) during the period which the affidavit of support is
-enforceable.
+                    and a member of the sponsor's household that this promise relates only to my promise to be jointly and severally liable for any obligation
+                    owed by the sponsor under the affidavit of support to any of my dependents, to any agency of the Federal Government, to any agency of
+                    a state or local government, or to any other private entity that provides means-tested public benefits and to provide any and all financial
+                    support necessary to assist the sponsor in maintaining any of my dependents at or above the minimum income provided for in INA
+                    section 213A(a)(1)(A) (not less than 125 percent of the Federal Poverty Guideline) during the period which the affidavit of support is
+                    enforceable.
                     </span>
                 </span>
                 <span class="d-flexible my-5"><b>E.</b>
@@ -916,14 +1015,14 @@ enforceable.
        
             </div>
             <div>Copies of any documents I have submitted are exact photocopies of unaltered, original documents, and I understand that USCIS or
-DOS may require that I submit original documents to USCIS or DOS at a later date. Furthermore, I authorize the release of any
-information from any and all of my records that USCIS or DOS may need to determine my eligibility for the immigration benefit that
-I seek. <br><br>
-I furthermore authorize release of information contained in this contract, in supporting documents, and in my USCIS or DOS records,
-to other entities and persons where necessary for the administration and enforcement of U.S. immigration law. <br><br>
-I certify, under penalty of perjury, that all of the information in my contract and any document submitted with it were provided or
-authorized by me, that I reviewed and understand all of the information contained in, and submitted with, my contract and that all of
-this information is complete, true, and correct. </div>
+                DOS may require that I submit original documents to USCIS or DOS at a later date. Furthermore, I authorize the release of any
+                information from any and all of my records that USCIS or DOS may need to determine my eligibility for the immigration benefit that
+                I seek. <br><br>
+                I furthermore authorize release of information contained in this contract, in supporting documents, and in my USCIS or DOS records,
+                to other entities and persons where necessary for the administration and enforcement of U.S. immigration law. <br><br>
+                I certify, under penalty of perjury, that all of the information in my contract and any document submitted with it were provided or
+                authorized by me, that I reviewed and understand all of the information contained in, and submitted with, my contract and that all of
+                this information is complete, true, and correct. </div>
             <div class="bg-info">
                 <h4><b>Your (the Household Member's) Signature</b> </h4>
             </div>
@@ -1235,5 +1334,29 @@ responses and information and informed me that they understand the responses and
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const yesRadio = document.getElementById("mailing_address_yes");
+        const noRadio = document.getElementById("mailing_address_no");
+        const mailingAddressForm = document.getElementById("mailingAddressForm");
+        const physicalAddressForm = document.getElementById("physicalAddressForm");
 
+        function toggleAddressForms() {
+            if (yesRadio.checked) {
+                mailingAddressForm.style.display = "block";
+                physicalAddressForm.style.display = "none";
+            } else {
+                mailingAddressForm.style.display = "none";
+                physicalAddressForm.style.display = "block";
+            }
+        }
+
+        // Initial check on page load
+        toggleAddressForms();
+
+        // Add event listeners
+        yesRadio.addEventListener("change", toggleAddressForms);
+        noRadio.addEventListener("change", toggleAddressForms);
+    });
+</script>
 <?php include "intake_footer.php" ?>
