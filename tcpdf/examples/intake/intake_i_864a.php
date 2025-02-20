@@ -37,7 +37,7 @@ display: flex;
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
 
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 1 of 8</b></p>
     <table>
         <thead>
@@ -378,11 +378,11 @@ foreach ($allDataCountry as $record)
     </div>
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 2 of 8</b></p>
     <div class="row ">
         <div class="col-md-12">
@@ -559,12 +559,12 @@ foreach ($allDataCountry as $record)
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 3 of 8</b></p>
     <div class="row ">
         <div class="col-md-12">
@@ -744,11 +744,11 @@ foreach ($allDataCountry as $record)
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
 ----------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 4 of 8</b></p>
     <div class="row">
     <div class="bg-info" style="margin-top:10px;"><h4><b>Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature (continued)</b></h4></div>
@@ -861,7 +861,7 @@ foreach ($allDataCountry as $record)
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
 ----------------------------------------------------------------------->
