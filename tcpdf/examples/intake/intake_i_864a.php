@@ -121,7 +121,7 @@ display: flex;
             <div style="flex: 1;">
                 <label class="control-label">Number</label>
                 <input type="text" class="form-control" name="information_about_you_us_mailing_apt_ste_flr_value"
-                    maxlength="5" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>"
+                    maxlength="6" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>"
                     style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
@@ -130,7 +130,7 @@ display: flex;
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="28" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
+                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="20" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
@@ -166,18 +166,18 @@ foreach ($allDataCountry as $record)
 <div class="col-md-4" >
                 <label class="control-label ">Province</label>
            
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
+                    <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
          
             </div>
             <div class="col-md-3">
                 <label class="control-label ">Postal Code</label>
            
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
+                    <input type="text" maxlength="9" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
           
             </div>
             <div class="col-md-5">
                 <label class="control-label ">Country</label>
-  <input type="text" maxlength="29" class="form-control" name="information_about_you_us_mailing_country" value="<?php echo showData('information_about_you_us_mailing_country') ?>" />
+  <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_country" value="<?php echo showData('information_about_you_us_mailing_country') ?>" />
     </div>
  </div>
     <div >
@@ -234,7 +234,7 @@ foreach ($allDataCountry as $record)
             <div style="flex: 1;">
                 <label class="control-label">Number</label>
                 <input type="text" class="form-control" name="" readonly
-                    maxlength="5" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value'); ?>"
+                    maxlength="6" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value'); ?>"
                     style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
@@ -242,7 +242,7 @@ foreach ($allDataCountry as $record)
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="" readonly maxlength="28" value="<?php echo showData('information_about_you_us_mailing_city_town'); ?>"
+                    <input type="text" class="form-control" name="" readonly maxlength="20" value="<?php echo showData('information_about_you_us_mailing_city_town'); ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
@@ -274,15 +274,15 @@ foreach ($allDataCountry as $record)
         <div class="row">
             <div class="col-md-4">
                 <label class="control-label">Province</label>
-                <input type="text" maxlength="29" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_province'); ?>" />
+                <input type="text" maxlength="20" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_province'); ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label">Postal Code</label>
-                <input type="text" maxlength="29" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_postal_code'); ?>" />
+                <input type="text" maxlength="9" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_postal_code'); ?>" />
             </div>
             <div class="col-md-5">
                 <label class="control-label">Country</label>
-                <input type="text" maxlength="29" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_country'); ?>" />
+                <input type="text" maxlength="34" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_country'); ?>" />
             </div>
         </div>
     </div>
@@ -319,7 +319,7 @@ foreach ($allDataCountry as $record)
             <div style="flex: 1;">
                 <label class="control-label">Number</label>
                 <input type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value"
-                    maxlength="5" value="<?php echo showData('information_about_you_home_apt_ste_flr_value'); ?>"
+                    maxlength="6" value="<?php echo showData('information_about_you_home_apt_ste_flr_value'); ?>"
                     style="width: 100%; padding: 5px; margin-bottom: 5px;" />
             </div>
         </div>
@@ -327,7 +327,7 @@ foreach ($allDataCountry as $record)
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_home_city_town" maxlength="28" value="<?php echo showData('information_about_you_home_city_town'); ?>"
+                    <input type="text" class="form-control" name="information_about_you_home_city_town" maxlength="20" value="<?php echo showData('information_about_you_home_city_town'); ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
@@ -359,15 +359,15 @@ foreach ($allDataCountry as $record)
         <div class="row">
             <div class="col-md-4">
                 <label class="control-label">Province</label>
-                <input type="text" maxlength="29" class="form-control" name="information_about_you_home_province" value="<?php echo showData('information_about_you_home_province'); ?>" />
+                <input type="text" maxlength="20" class="form-control" name="information_about_you_home_province" value="<?php echo showData('information_about_you_home_province'); ?>" />
             </div>
             <div class="col-md-3">
                 <label class="control-label">Postal Code</label>
-                <input type="text" maxlength="29" class="form-control" name="information_about_you_home_postal_code" value="<?php echo showData('information_about_you_home_postal_code'); ?>" />
+                <input type="text" maxlength="9" class="form-control" name="information_about_you_home_postal_code" value="<?php echo showData('information_about_you_home_postal_code'); ?>" />
             </div>
             <div class="col-md-5">
                 <label class="control-label">Country</label>
-                <input type="text" maxlength="29" class="form-control" name="information_about_you_home_country" value="<?php echo showData('information_about_you_home_country'); ?>" />
+                <input type="text" maxlength="34" class="form-control" name="information_about_you_home_country" value="<?php echo showData('information_about_you_home_country'); ?>" />
             </div>
         </div>
     </div>
@@ -395,7 +395,7 @@ foreach ($allDataCountry as $record)
           <div class="form-group">
           <div class="col-md-4">
                 <label class="control-label ">5. Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" maxlength="29" class="form-control" name="other_information_about_you_date_of_birth" value="<?php echo showData('other_information_about_you_date_of_birth') ?>" />
+                    <input type="date"  class="form-control" name="other_information_about_you_date_of_birth" value="<?php echo showData('other_information_about_you_date_of_birth') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">6. Country of Birth</label>
@@ -403,17 +403,17 @@ foreach ($allDataCountry as $record)
             </div>
             <div class="col-md-4">
                 <label class="control-label ">7. U.S. Social Security Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="other_information_about_you_social_security_number" value="<?php echo showData('other_information_about_you_social_security_number') ?>" />
+                    <input type="text" maxlength="9" class="form-control" name="other_information_about_you_social_security_number" value="<?php echo showData('other_information_about_you_social_security_number') ?>" />
             </div>
           </div>
           <div class="form-group">
           <div class="col-md-5">
                 <label class="control-label ">8. Alien Registration Number (A-Number) (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="other_information_about_you_alien_registration_number" value="<?php echo showData('other_information_about_you_alien_registration_number') ?>" />
+                    <input type="text" maxlength="9" class="form-control" name="other_information_about_you_alien_registration_number" value="<?php echo showData('other_information_about_you_alien_registration_number') ?>" />
             </div>
             <div class="col-md-5">
                 <label class="control-label ">9.  USCIS Online Account Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="other_information_about_you_uscis_online_account_number" value="<?php echo showData('other_information_about_you_uscis_online_account_number') ?>" />
+                    <input type="text" maxlength="12" class="form-control" name="other_information_about_you_uscis_online_account_number" value="<?php echo showData('other_information_about_you_uscis_online_account_number') ?>" />
             </div>
           </div>
           <div class="form-group" style="margin-bottom: 10px;">
@@ -482,7 +482,7 @@ foreach ($allDataCountry as $record)
                     <span class="d-flexible">
                         <?php echo createCheckbox("i_864a_i_am_other_immigrant_status") ?>Other Dependent (Specify)
                     </span>
-                    <input type="text" maxlength="34" class="form-control" name="i_864a_i_am_other_immigrant_value" value="<?php echo showData('i_864a_i_am_other_immigrant_value') ?>" />
+                    <input type="text" maxlength="28" class="form-control" name="i_864a_i_am_other_immigrant_value" value="<?php echo showData('i_864a_i_am_other_immigrant_value') ?>" />
                 </label>
             </div>
          <div class="form-group" style="margin-bottom: 5px;">
@@ -535,7 +535,7 @@ foreach ($allDataCountry as $record)
 
                     </label>
                     </span>
-                    <input type="date" maxlength="34" class="form-control col-md-4 " name="i_864a_retired_since_date_value" value="<?php echo showData('i_864a_retired_since_date_value') ?>" />
+                    <input type="date"  class="form-control col-md-4 " name="i_864a_retired_since_date_value" value="<?php echo showData('i_864a_retired_since_date_value') ?>" />
             </div>
          <div class="form-group d-flexible">
              <span class="col-md-6 ">
@@ -543,7 +543,7 @@ foreach ($allDataCountry as $record)
                        6. <?php echo createCheckbox("i_864a_unemployed_since_status") ?>Unemployed Since (mm/dd/yyyy)
                     </label>
                     </span>
-                    <input type="date" maxlength="34" class="form-control col-md-4 " name="i_864a_unemployed_since_value" value="<?php echo showData('i_864a_unemployed_since_value') ?>" />
+                    <input type="date"  class="form-control col-md-4 " name="i_864a_unemployed_since_value" value="<?php echo showData('i_864a_unemployed_since_value') ?>" />
             </div>
          <div class="form-group d-flexible">
              <span class="col-md-6 ">
@@ -551,7 +551,7 @@ foreach ($allDataCountry as $record)
                        7.  My current individual annual income is: 
                     </label>
                     </span>
-                    <input type="text" maxlength="34" class="form-control col-md-4 " name="i_864a_individual_income_value" value="<?php echo showData('i_864a_individual_income_value') ?>" />
+                    <input type="text" maxlength="15" class="form-control col-md-4 " name="i_864a_individual_income_value" value="<?php echo showData('i_864a_individual_income_value') ?>" />
             </div>
     </div>
 </div>
@@ -585,52 +585,52 @@ foreach ($allDataCountry as $record)
                 <label class="control-label col-md-2 my-1">2. Most Recent</label>
                 <div class="form-group">
                     <label class="control-label col-md-2 my-1">Tax Year</label>
-                    <div class="col-md-2"><input type="text" maxlength="29" class="form-control" name="i_864a_most_recent_tax_year" value="<?php echo showData('i_864a_most_recent_tax_year') ?>" /></div>
+                    <div class="col-md-2"><input type="text" maxlength="4" class="form-control" name="i_864a_most_recent_tax_year" value="<?php echo showData('i_864a_most_recent_tax_year') ?>" /></div>
                     <label class="control-label col-md-2 my-1">Total Income</label>
-                    <div class="col-md-2"><input type="text" maxlength="29" class="form-control" name="i_864a_most_recent_total_income" value="<?php echo showData('i_864a_most_recent_total_income') ?>" /></div>
+                    <div class="col-md-2"><input type="text" maxlength="13" class="form-control" name="i_864a_most_recent_total_income" value="<?php echo showData('i_864a_most_recent_total_income') ?>" /></div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2 my-1">2nd Most Recent</label>
                 <div class="form-group">
                     <label class="control-label col-md-2 my-1">Tax Year</label>
-                    <div class="col-md-2"><input type="text" maxlength="29" class="form-control" name="i_864a_second_most_recent_tax_year" value="<?php echo showData('i_864a_second_most_recent_tax_year') ?>" /></div>
+                    <div class="col-md-2"><input type="text" maxlength="4" class="form-control" name="i_864a_second_most_recent_tax_year" value="<?php echo showData('i_864a_second_most_recent_tax_year') ?>" /></div>
                     <label class="control-label col-md-2 my-1">Total Income</label>
-                    <div class="col-md-2"><input type="text" maxlength="29" class="form-control" name="i_864a_second_most_recent_total_income" value="<?php echo showData('i_864a_second_most_recent_total_income') ?>" /></div>
+                    <div class="col-md-2"><input type="text" maxlength="13" class="form-control" name="i_864a_second_most_recent_total_income" value="<?php echo showData('i_864a_second_most_recent_total_income') ?>" /></div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2 my-1">3rd Most Recent</label>
                 <div class="form-group">
                     <label class="control-label col-md-2 my-1">Tax Year</label>
-                    <div class="col-md-2"><input type="text" maxlength="29" class="form-control" name="i_864a_third_most_recent_tax_year" value="<?php echo showData('i_864a_third_most_recent_tax_year') ?>" /></div>
+                    <div class="col-md-2"><input type="text" maxlength="4" class="form-control" name="i_864a_third_most_recent_tax_year" value="<?php echo showData('i_864a_third_most_recent_tax_year') ?>" /></div>
                     <label class="control-label col-md-2 my-1">Total Income</label>
-                    <div class="col-md-2"><input type="text" maxlength="29" class="form-control" name="i_864a_third_most_recent_total_income" value="<?php echo showData('i_864a_third_most_recent_total_income') ?>" /></div>
+                    <div class="col-md-2"><input type="text" maxlength="13" class="form-control" name="i_864a_third_most_recent_total_income" value="<?php echo showData('i_864a_third_most_recent_total_income') ?>" /></div>
                 </div>
             </div>
             <div class="form-group"><label class="control-label col-md-12">My assets (complete only if necessary).</label></div>
             <div class="form-group">
                 <label class="control-label col-md-8 my-1">3. Enter the balance of all cash, savings, and checking accounts.</label>
                 <div class="form-group">
-                    <div class="col-md-4"><input type="text" maxlength="29" class="form-control" name="i_864a_cash_savings_checking_balance" value="<?php echo showData('i_864a_cash_savings_checking_balance') ?>" /></div>
+                    <div class="col-md-4"><input type="text" maxlength="17" class="form-control" name="i_864a_cash_savings_checking_balance" value="<?php echo showData('i_864a_cash_savings_checking_balance') ?>" /></div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-8 my-1">4. Enter the net cash value of real-estate holdings. (Net value means assessed value minus mortgage debt.) $</label>
                 <div class="form-group">
-                    <div class="col-md-4"><input type="text" maxlength="29" class="form-control" name="i_864a_real_estate_net_value" value="<?php echo showData('i_864a_real_estate_net_value') ?>" /></div>
+                    <div class="col-md-4"><input type="text" maxlength="17" class="form-control" name="i_864a_real_estate_net_value" value="<?php echo showData('i_864a_real_estate_net_value') ?>" /></div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-8 my-1">5. Enter the cash value of all stocks, bonds, certificates of deposit, and other assets not listed on Item Numbers 3. - 4.</label>
                 <div class="form-group">
-                    <div class="col-md-4"><input type="text" maxlength="29" class="form-control" name="i_864a_stocks_bonds_value" value="<?php echo showData('i_864a_stocks_bonds_value') ?>" /></div>
+                    <div class="col-md-4"><input type="text" maxlength="17" class="form-control" name="i_864a_stocks_bonds_value" value="<?php echo showData('i_864a_stocks_bonds_value') ?>" /></div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-8 my-1">6. Add together Item Numbers 3. - 5. and enter the number here.</label>
                 <div class="form-group">
-                    <div class="col-md-4"><input type="text" maxlength="29" class="form-control" name="i_864a_add_together" value="<?php echo showData('i_864a_add_together') ?>" /></div>
+                    <div class="col-md-4"><input type="text" maxlength="17" class="form-control" name="i_864a_add_together" value="<?php echo showData('i_864a_add_together') ?>" /></div>
                 </div>
             </div>
 
@@ -641,40 +641,40 @@ foreach ($allDataCountry as $record)
             <label class="control-label ">NOTE: Read the Penalties section of the Form I-864A Instructions before completing this part. </label>
             <div class="form-group">
           <div class="col-md-2"> <label class="control-label ">I, THE SPONSOR,</label></div>
-          <div class="col-md-4"> <input type="text" maxlength="29" class="form-control " name="i_864a_the_sponsor" value="<?php echo showData('i_864a_the_sponsor') ?>" /></div>
+          <div class="col-md-4"> <input type="text" maxlength="39" class="form-control " name="i_864a_the_sponsor" value="<?php echo showData('i_864a_the_sponsor') ?>" /></div>
           <div class="col-md-6"> <label class="control-label ">,in consideration of the household member's promise</label></div>
           <div class="col-md-12"> <label class="control-label ">to support the following intending immigrants and to be jointly and severally liable for any obligations I incur under the affidavit</label></div>
           <div class="col-md-12"> <label class="control-label ">of support, promise to complete and file an affidavit of support on behalf of the following named intending immigrants.</label></div>
-          <div class="col-md-4"> <input type="text" maxlength="29" class="form-control " name="i_864a_the_sponsor_intending_immigrants" value="<?php echo showData('i_864a_the_sponsor_intending_immigrants') ?>" /></div>
+          <div class="col-md-4"> <input type="text" maxlength="10" class="form-control " name="i_864a_the_sponsor_intending_immigrants" value="<?php echo showData('i_864a_the_sponsor_intending_immigrants') ?>" /></div>
         </div>
 
         <div class="form-group"><label class="control-label ">1. Intending Immigrant Number 1</label></div>
           <div class="form-group">
           <div class="col-md-4">
                 <label class="control-label ">Family Name (Last Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant1_last_name" value="<?php echo showData('i_864a_immigrant1_last_name') ?>" />
+                    <input type="text" maxlength="28" class="form-control" name="i_864a_immigrant1_last_name" value="<?php echo showData('i_864a_immigrant1_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Given Name (First Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant1_first_name" value="<?php echo showData('i_864a_immigrant1_first_name') ?>" />
+                    <input type="text" maxlength="18" class="form-control" name="i_864a_immigrant1_first_name" value="<?php echo showData('i_864a_immigrant1_first_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Middle Name (if applicable)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant1_middle_name" value="<?php echo showData('i_864a_immigrant1_middle_name') ?>" />
+                    <input type="text" maxlength="18" class="form-control" name="i_864a_immigrant1_middle_name" value="<?php echo showData('i_864a_immigrant1_middle_name') ?>" />
             </div>
           </div>
           <div class="form-group">
           <div class="col-md-4">
                 <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" maxlength="29" class="form-control" name="i_864a_immigrant1_date_of_birth" value="<?php echo showData('i_864a_immigrant1_date_of_birth') ?>" />
+                    <input type="date"  class="form-control" name="i_864a_immigrant1_date_of_birth" value="<?php echo showData('i_864a_immigrant1_date_of_birth') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant1_alien_registration_number" value="<?php echo showData('i_864a_immigrant1_alien_registration_number') ?>" />
+                    <input type="text" maxlength="9" class="form-control" name="i_864a_immigrant1_alien_registration_number" value="<?php echo showData('i_864a_immigrant1_alien_registration_number') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">USCIS Online Account Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant1_uscis_online_number" value="<?php echo showData('i_864a_immigrant1_uscis_online_number') ?>" />
+                    <input type="text" maxlength="12" class="form-control" name="i_864a_immigrant1_uscis_online_number" value="<?php echo showData('i_864a_immigrant1_uscis_online_number') ?>" />
             </div>
           </div>
 
@@ -684,58 +684,58 @@ foreach ($allDataCountry as $record)
           <div class="form-group">
           <div class="col-md-4">
                 <label class="control-label ">Family Name (Last Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant2_last_name" value="<?php echo showData('i_864a_immigrant2_last_name') ?>" />
+                    <input type="text" maxlength="28" class="form-control" name="i_864a_immigrant2_last_name" value="<?php echo showData('i_864a_immigrant2_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Given Name (First Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant2_first_name" value="<?php echo showData('i_864a_immigrant2_first_name') ?>" />
+                    <input type="text" maxlength="18" class="form-control" name="i_864a_immigrant2_first_name" value="<?php echo showData('i_864a_immigrant2_first_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Middle Name (if applicable)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant2_middle_name" value="<?php echo showData('i_864a_immigrant2_middle_name') ?>" />
+                    <input type="text" maxlength="18" class="form-control" name="i_864a_immigrant2_middle_name" value="<?php echo showData('i_864a_immigrant2_middle_name') ?>" />
             </div>
           </div>
           <div class="form-group">
           <div class="col-md-4">
                 <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" maxlength="29" class="form-control" name="i_864a_immigrant2_date_of_birth" value="<?php echo showData('i_864a_immigrant2_date_of_birth') ?>" />
+                    <input type="date" class="form-control" name="i_864a_immigrant2_date_of_birth" value="<?php echo showData('i_864a_immigrant2_date_of_birth') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant2_alien_registration_number" value="<?php echo showData('i_864a_immigrant2_alien_registration_number') ?>" />
+                    <input type="text" maxlength="9" class="form-control" name="i_864a_immigrant2_alien_registration_number" value="<?php echo showData('i_864a_immigrant2_alien_registration_number') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">USCIS Online Account Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant2_uscis_online_number" value="<?php echo showData('i_864a_immigrant2_uscis_online_number') ?>" />
+                    <input type="text" maxlength="12" class="form-control" name="i_864a_immigrant2_uscis_online_number" value="<?php echo showData('i_864a_immigrant2_uscis_online_number') ?>" />
             </div>
           </div>
         <div class="form-group"><label class="control-label ">3. Intending Immigrant Number 3</label></div>
           <div class="form-group">
           <div class="col-md-4">
                 <label class="control-label ">Family Name (Last Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant3_last_name" value="<?php echo showData('i_864a_immigrant3_last_name') ?>" />
+                    <input type="text" maxlength="28" class="form-control" name="i_864a_immigrant3_last_name" value="<?php echo showData('i_864a_immigrant3_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Given Name (First Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant3_first_name" value="<?php echo showData('i_864a_immigrant3_first_name') ?>" />
+                    <input type="text" maxlength="18" class="form-control" name="i_864a_immigrant3_first_name" value="<?php echo showData('i_864a_immigrant3_first_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Middle Name (if applicable)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant3_middle_name" value="<?php echo showData('i_864a_immigrant3_middle_name') ?>" />
+                    <input type="text" maxlength="18" class="form-control" name="i_864a_immigrant3_middle_name" value="<?php echo showData('i_864a_immigrant3_middle_name') ?>" />
             </div>
           </div>
           <div class="form-group">
           <div class="col-md-4">
                 <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" maxlength="29" class="form-control" name="i_864a_immigrant3_date_of_birth" value="<?php echo showData('i_864a_immigrant3_date_of_birth') ?>" />
+                    <input type="date"  class="form-control" name="i_864a_immigrant3_date_of_birth" value="<?php echo showData('i_864a_immigrant3_date_of_birth') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant3_alien_registration_number" value="<?php echo showData('i_864a_immigrant3_alien_registration_number') ?>" />
+                    <input type="text" maxlength="9" class="form-control" name="i_864a_immigrant3_alien_registration_number" value="<?php echo showData('i_864a_immigrant3_alien_registration_number') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">USCIS Online Account Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant3_uscis_online_number" value="<?php echo showData('i_864a_immigrant3_uscis_online_number') ?>" />
+                    <input type="text" maxlength="12" class="form-control" name="i_864a_immigrant3_uscis_online_number" value="<?php echo showData('i_864a_immigrant3_uscis_online_number') ?>" />
             </div>
           </div>
 </div>
@@ -756,29 +756,29 @@ foreach ($allDataCountry as $record)
           <div class="form-group">
           <div class="col-md-4">
                 <label class="control-label ">Family Name (Last Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant4_last_name" value="<?php echo showData('i_864a_immigrant4_last_name') ?>" />
+                    <input type="text" maxlength="28" class="form-control" name="i_864a_immigrant4_last_name" value="<?php echo showData('i_864a_immigrant4_last_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Given Name (First Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant4_first_name" value="<?php echo showData('i_864a_immigrant4_first_name') ?>" />
+                    <input type="text" maxlength="18" class="form-control" name="i_864a_immigrant4_first_name" value="<?php echo showData('i_864a_immigrant4_first_name') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Middle Name (if applicable)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant4_middle_name" value="<?php echo showData('i_864a_immigrant4_middle_name') ?>" />
+                    <input type="text" maxlength="18" class="form-control" name="i_864a_immigrant4_middle_name" value="<?php echo showData('i_864a_immigrant4_middle_name') ?>" />
             </div>
           </div>
           <div class="form-group">
           <div class="col-md-4">
                 <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" maxlength="29" class="form-control" name="i_864a_immigrant4_date_of_birth" value="<?php echo showData('i_864a_immigrant4_date_of_birth') ?>" />
+                    <input type="date" class="form-control" name="i_864a_immigrant4_date_of_birth" value="<?php echo showData('i_864a_immigrant4_date_of_birth') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant4_alien_registration_number" value="<?php echo showData('i_864a_immigrant4_alien_registration_number') ?>" />
+                    <input type="text" maxlength="9" class="form-control" name="i_864a_immigrant4_alien_registration_number" value="<?php echo showData('i_864a_immigrant4_alien_registration_number') ?>" />
             </div>
             <div class="col-md-4">
                 <label class="control-label ">USCIS Online Account Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_immigrant4_uscis_online_number" value="<?php echo showData('i_864a_immigrant4_uscis_online_number') ?>" />
+                    <input type="text" maxlength="12" class="form-control" name="i_864a_immigrant4_uscis_online_number" value="<?php echo showData('i_864a_immigrant4_uscis_online_number') ?>" />
             </div>
           </div>
           <div class="bg-info" style="margin-top:10px;"><h4><b><i>Sponsor's Statement</i></b></h4></div>
@@ -799,13 +799,13 @@ foreach ($allDataCountry as $record)
             </div>
             <div class="form-group">
           <div class="col-md-2"> <label class="control-label ">question in</label></div>
-          <div class="col-md-4"> <input type="text" maxlength="29" class="form-control " name="i_864a_interpreter_language_value" value="<?php echo showData('i_864a_interpreter_language_value') ?>" /></div>
+          <div class="col-md-4"> <input type="text" maxlength="28" class="form-control " name="i_864a_interpreter_language_value" value="<?php echo showData('i_864a_interpreter_language_value') ?>" /></div>
           <div class="col-md-6"> <label class="control-label ">, a language in which I am fluent, and I understood everything. </label></div>
         </div>
 
             <div class="form-group">
                 <div class="col-md-5"> <label class="control-label "><b>6. </b> <?php echo createCheckbox("i_864a_inpreparer_request_status") ?>At my request, the preparer named in Part 8.,</label></div>
-                    <div class="col-md-4"> <input type="text" maxlength="29" class="form-control " name="i_864a_inpreparer_request_value" value="<?php echo showData('i_864a_inpreparer_request_value') ?>" /></div>
+                    <div class="col-md-4"> <input type="text" maxlength="28" class="form-control " name="i_864a_inpreparer_request_value" value="<?php echo showData('i_864a_inpreparer_request_value') ?>" /></div>
                  <div class="col-md-3"> <label class="control-label ">, prepared this contract for</label></div>
             </div>
 
@@ -819,15 +819,15 @@ foreach ($allDataCountry as $record)
         <div class="form-group">
           <div class="col-md-6">
                 <label class="control-label ">7. Sponsor's Daytime Telephone Number</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_sponsor_daytime_tel" value="<?php echo showData('i_864a_sponsor_daytime_tel') ?>" />
+                    <input type="text" maxlength="10" class="form-control" name="i_864a_sponsor_daytime_tel" value="<?php echo showData('i_864a_sponsor_daytime_tel') ?>" />
             </div>
             <div class="col-md-6">
                 <label class="control-label ">8. Sponsor's Mobile Telephone Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_sponsor_mobile" value="<?php echo showData('i_864a_sponsor_mobile') ?>" />
+                    <input type="text" maxlength="10" class="form-control" name="i_864a_sponsor_mobile" value="<?php echo showData('i_864a_sponsor_mobile') ?>" />
             </div>
             <div class="col-md-6">
                 <label class="control-label ">9. Sponsor's Email Address (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_864a_sponsor_email" value="<?php echo showData('i_864a_sponsor_email') ?>" />
+                    <input type="text" maxlength="38" class="form-control" name="i_864a_sponsor_email" value="<?php echo showData('i_864a_sponsor_email') ?>" />
             </div>
           </div>
 
@@ -846,11 +846,11 @@ foreach ($allDataCountry as $record)
  <div class="form-group">
   <div class="col-md-8">
         <label class="control-label ">10. Sponsor's Signature</label>
-            <input type="text" readonly  maxlength="29" class="form-control" name="" value="" />
+            <input type="text" readonly   class="form-control" name="" value="" />
     </div>
     <div class="col-md-4">
         <label class="control-label ">Date of Signature (mm/dd/yyyy)</label>
-            <input type="date"  maxlength="29" class="form-control" name="i_864a_sponsor_sign_date" value="<?php echo showData('i_864a_sponsor_sign_date') ?>" />
+            <input type="date" class="form-control" name="i_864a_sponsor_sign_date" value="<?php echo showData('i_864a_sponsor_sign_date') ?>" />
     </div>
   </div>
   <label class="control-label mx-4" >NOTE TO ALL SPONSORS: If you do not completely fill out this contract or fail to submit required documents listed in the
@@ -883,7 +883,7 @@ foreach ($allDataCountry as $record)
                         <p class="col-md-3"> <input type="text"  maxlength="29" class="form-control" name="i_864a_household_member_consideration" value="<?php echo showData('i_864a_household_member_consideration') ?>" /></p>
                         <p class="col-md-5 my-4"><b>, in consideration of the sponsor's promise to complete</b></p>
                         <p class="col-md-7 my-4"><b>and file an affidavit of support on behalf of the above named intending immigrants</b></p>
-                        <p class="col-md-2"> <input type="text"  maxlength="29" class="form-control" name="i_864a_intending_immigrants_noted" value="<?php echo showData('i_864a_intending_immigrants_noted') ?>" /></p>
+                        <p class="col-md-2"> <input type="text"  maxlength="14" class="form-control" name="i_864a_intending_immigrants_noted" value="<?php echo showData('i_864a_intending_immigrants_noted') ?>" /></p>
                         <p class="col-md-3 my-4"><b>(Print number of intending</b></p>
                         <p class="col-md-12 my-4"><b>immigrants noted in Part 5. Sponsor's Promise, Statement, Contact Information, Declaration, Certification, and Signature.)</b></p>
                     </div>
@@ -986,7 +986,7 @@ foreach ($allDataCountry as $record)
             <div class="col-md-6">
                 <label class="control-label ">5. Your (the Household Member's) Email Address (if any)</label>
                 <div >
-                    <input type="text" class="form-control" name="i_864a_household_member_email" maxlength="41" value="<?php echo showData('i_864a_household_member_email') ?>">
+                    <input type="text" class="form-control" name="i_864a_household_member_email" maxlength="38" value="<?php echo showData('i_864a_household_member_email') ?>">
                 </div>
             </div>
            </div>
@@ -1030,7 +1030,7 @@ foreach ($allDataCountry as $record)
             <div class="form-group">
                <p> <label class="control-label col-md-8">6. Your (the Household Member's) Printed Name</label></p>
             <div class="col-md-8">
-            <input type="text" class="form-control" name="i_864a_household_member_printed_name" value="<?php echo showData('i_864a_household_member_printed_name') ?>" />
+            <input type="text" maxlength="60" class="form-control" name="i_864a_household_member_printed_name" value="<?php echo showData('i_864a_household_member_printed_name') ?>" />
             </div>               
              <label class="control-label col-md-8">7. Your (the Household Member's) Signature </label>
                 <label class="control-label col-md-4">Date of Signature (mm/dd/yyyy)</label>
@@ -1057,16 +1057,16 @@ foreach ($allDataCountry as $record)
           
                 <div class="col-md-6">
                     <label class="control-label">1. Interpreter's Family Name (Last Name)</label>
-                    <input type="text" class="form-control" name="i_864a_interpreter_last_name" maxlength="10" value="<?php echo showData('i_864a_interpreter_last_name') ?>">
+                    <input type="text" class="form-control" name="i_864a_interpreter_last_name" maxlength="30" value="<?php echo showData('i_864a_interpreter_last_name') ?>">
                 </div>
     
                 <div class="col-md-6">
                     <label class="control-label">Interpreter's Given Name (First Name)</label>
-                    <input type="text" class="form-control" name="i_864a_interpreter_first_name" maxlength="10" value="<?php echo showData('i_864a_interpreter_first_name') ?>">
+                    <input type="text" class="form-control" name="i_864a_interpreter_first_name" maxlength="18" value="<?php echo showData('i_864a_interpreter_first_name') ?>">
                 </div>
                 <div class="col-md-6">
                     <label class="control-label">2. Interpreter's Business or Organization Name (if any)</label>
-                    <input type="text" class="form-control" name="i_864a_interpreter_business_organization_name" maxlength="10" value="<?php echo showData('i_864a_interpreter_business_organization_name') ?>">
+                    <input type="text" class="form-control" name="i_864a_interpreter_business_organization_name" maxlength="34" value="<?php echo showData('i_864a_interpreter_business_organization_name') ?>">
                 </div>
           
            
@@ -1152,16 +1152,16 @@ foreach ($allDataCountry as $record)
           
                 <div class="col-md-6">
                     <label class="control-label">1. Preparer's Family Name (Last Name)</label>
-                    <input type="text" class="form-control" name="i_864a_preparer_last_name" maxlength="10" value="<?php echo showData('i_864a_preparer_last_name') ?>">
+                    <input type="text" class="form-control" name="i_864a_preparer_last_name" maxlength="30" value="<?php echo showData('i_864a_preparer_last_name') ?>">
                 </div>
     
                 <div class="col-md-6">
                     <label class="control-label">Preparer's Given Name (First Name)</label>
-                    <input type="text" class="form-control" name="i_864a_preparer_first_name" maxlength="10" value="<?php echo showData('i_864a_preparer_first_name') ?>">
+                    <input type="text" class="form-control" name="i_864a_preparer_first_name" maxlength="18" value="<?php echo showData('i_864a_preparer_first_name') ?>">
                 </div>
                 <div class="col-md-6">
                     <label class="control-label">2. Preparer's Business or Organization Name (if any)</label>
-                    <input type="text" class="form-control" name="i_864a_preparer_business_organization_name" maxlength="10" value="<?php echo showData('i_864a_preparer_business_organization_name') ?>">
+                    <input type="text" class="form-control" name="i_864a_preparer_business_organization_name" maxlength="34" value="<?php echo showData('i_864a_preparer_business_organization_name') ?>">
                 </div>
           
            
@@ -1242,13 +1242,13 @@ foreach ($allDataCountry as $record)
       
             <div class="col-md-4">
                 <label class="control-label">Given Name(First Name) </label>
-                    <input type="text" class="form-control" maxlength="29" name="i_864a_additional_info_first_name" value="<?php echo showData('i_864a_additional_info_first_name') ?>" />
+                    <input type="text" class="form-control" maxlength="27" name="i_864a_additional_info_first_name" value="<?php echo showData('i_864a_additional_info_first_name') ?>" />
                 </div>
       
             
                 <div class="col-md-4">
                 <label class="control-label">Middle Name </label>
-                    <input type="text" class="form-control" maxlength="29" name="i_864a_additional_info_middle_name" value="<?php echo showData('i_864a_additional_info_middle_name') ?>" />
+                    <input type="text" class="form-control" maxlength="27" name="i_864a_additional_info_middle_name" value="<?php echo showData('i_864a_additional_info_middle_name') ?>" />
                 </div>
                 <div class="col-md-4">
                 <label class="control-label">2. A-Number (if any) ► A- </label>
@@ -1272,7 +1272,7 @@ foreach ($allDataCountry as $record)
                                 <input type="text" class="form-control" name="i_864a_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_3c_item_no') ?>">
                 </div>
                 <div class="col-md-12">
-                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="442" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
+                               <textarea name="i_864a_additional_info_3d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864a_additional_info_3d') ?></textarea>
                 </div>
          
                 <div class="form-group col-md-3">
@@ -1288,7 +1288,7 @@ foreach ($allDataCountry as $record)
                                 <input type="text" class="form-control" name="i_864a_additional_info_4c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_4c_item_no') ?>">
                 </div>
                 <div class="col-md-12">
-                               <textarea name="i_864a_additional_info_4d" class="form-control" maxlength="442" cols="30" rows="10"><?php echo showData('i_864a_additional_info_4d') ?></textarea>
+                               <textarea name="i_864a_additional_info_4d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864a_additional_info_4d') ?></textarea>
                 </div>
          
                 <div class="form-group col-md-3">
@@ -1304,7 +1304,7 @@ foreach ($allDataCountry as $record)
                                 <input type="text" class="form-control" name="i_864a_additional_info_5c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_5c_item_no') ?>">
                 </div>
                 <div class="col-md-12">
-                               <textarea name="i_864a_additional_info_5d" class="form-control" maxlength="442" cols="30" rows="10"><?php echo showData('i_864a_additional_info_5d') ?></textarea>
+                               <textarea name="i_864a_additional_info_5d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864a_additional_info_5d') ?></textarea>
                 </div>
          
                 <div class="form-group col-md-3">
@@ -1320,7 +1320,7 @@ foreach ($allDataCountry as $record)
                                 <input type="text" class="form-control" name="i_864a_additional_info_6c_item_no" maxlength="6" value="<?php echo showData('i_864a_additional_info_6c_item_no') ?>">
                 </div>
                 <div class="col-md-12">
-                               <textarea name="i_864a_additional_info_6d" class="form-control" maxlength="442" cols="30" rows="10"><?php echo showData('i_864a_additional_info_6d') ?></textarea>
+                               <textarea name="i_864a_additional_info_6d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864a_additional_info_6d') ?></textarea>
                 </div>
 
 
