@@ -179,7 +179,9 @@ $pdf->SetFont('times', '', 10);
 $html = '<div><b>To be completed by an attorney or accredited representative</b> (if any).  </div>';
 $pdf->writeHTMLCell(40, 7, 15, 65, $html,  0,  1, false, true, 'L', false);
 $pdf->SetFont('times', '', 14);
-$html = '<div><input type="checkbox" name="attached4" value="Y" checked=" " /> </div>';
+if (showData('i_864a_g_28_checkbox') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox" name="attached4" value="Y" checked="' . $checked . '"  /> </div>';
 $pdf->writeHTMLCell(40, 15, 20.5, 62.5, $html, 0, 1, false, true, 'R', true);
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>Select this box if<br>Form G-28 or<br>G-28I is attached.</b></div>';
@@ -334,9 +336,9 @@ $pdf->writeHTMLCell(90, 7, 13, 185, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); // set font
 $html = 'Is your current mailing address the same as your physical address? ';
 $pdf->writeHTMLCell(120, 7, 21.4, 185, $html, '', 0, 0, true, 'L');
-if (showData('i_864a_is_current_mailing_same_as_physical') == "Y") $checked_y = "checked";
+if (showData('is_your_current_mailing_address_same_as_physical') == "Y") $checked_y = "checked";
 else $checked_y = "";
-if (showData('i_864a_is_current_mailing_same_as_physical') == "Y") $checked_N = "checked";
+if (showData('is_your_current_mailing_address_same_as_physical') == "N") $checked_N = "checked";
 else $checked_N = "";
 $pdf->writeHTMLCell(120, 7, 178, 186, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); // set font
@@ -365,12 +367,23 @@ $pdf->writeHTMLCell(90, 7, 13, 207, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('about_your_mailing_street2', 119.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 213);
 //...........
-if (showData('information_about_you_us_mailing_apt_ste_flr') == "apt") $checked_apt = "checked";
-else $checked_apt = "";
-if (showData('information_about_you_us_mailing_apt_ste_flr') == "ste") $checked_ste = "checked";
-else $checked_ste = "";
-if (showData('information_about_you_us_mailing_apt_ste_flr') == "flr") $checked_flr = "checked";
-else $checked_flr = "";
+$isMailingAndPhysical = (showData('is_your_current_mailing_address_same_as_physical') == "Y") ? true : false;
+if($isMailingAndPhysical){
+    if (showData('information_about_you_us_mailing_apt_ste_flr') == "apt") $checked_apt = "checked";
+    else $checked_apt = "";
+    if (showData('information_about_you_us_mailing_apt_ste_flr') == "ste") $checked_ste = "checked";
+    else $checked_ste = "";
+    if (showData('information_about_you_us_mailing_apt_ste_flr') == "flr") $checked_flr = "checked";
+    else $checked_flr = "";
+}
+else{
+    if (showData('information_about_you_home_apt_ste_flr') == "apt") $checked_apt = "checked";
+    else $checked_apt = "";
+    if (showData('information_about_you_home_apt_ste_flr') == "ste") $checked_ste = "checked";
+    else $checked_ste = "";
+    if (showData('information_about_you_home_apt_ste_flr') == "flr") $checked_flr = "checked";
+    else $checked_flr = ""; 
+}
 $pdf->SetFont('times', '', 14); // set font
 $html = '<div><input type="checkbox" name="Apt2" value="Apt" checked="' . $checked_apt . '" />&nbsp;<input type="checkbox" name="Ste2" value="Ste" checked="' . $checked_ste . '"  /> <input type="checkbox" name="Flr2" value="Flr" checked="' . $checked_flr . '" /></div>';
 $pdf->writeHTMLCell(50, 0, 144, 214, $html, '', 0, 0, true, 'L');
@@ -484,7 +497,7 @@ $pdf->writeHTMLCell(90, 7, 12, 74, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(50, 15, 12, 80, '<b>1.</b>', 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('i_864a_intending_immigrant_status') == "Y") $checked = "checked";
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
 else $checked = "";
 $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 15, 20, 79, $html, 0, 1, false, true, 'L', true);
@@ -494,7 +507,7 @@ spouse.';
 $pdf->writeHTMLCell(90, 7, 27, 80, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
-if (showData('i_864a_intending_immigrant_household_status') == "Y") $checked = "checked";
+if (showData('i_864a_intending_immigrant_sponsor_household_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 15, 12, 87,'<b>2.</b>' , 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
@@ -505,7 +518,7 @@ $html = 'I am the intending immigrant and also a member of the sponsor\'s househ
 $pdf->writeHTMLCell(120, 7, 27, 87, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
-if (showData('i_864a_not_a_intending_immigrant_status') == "Y") $checked = "checked";
+if (showData('i_864a_i_am_not_immigrant_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 15, 12, 94,'<b>3.</b>' , 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
@@ -516,14 +529,17 @@ $html = "I am <b>not</b> the intending immigrant. I am the sponsor's household m
 $pdf->writeHTMLCell(190, 7, 27, 94, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', "", 14);
-if (showData('i_864a_spouse_status') == "Y") $checked = "checked";
-else $checked = "";
+if (showData('i_864a_i_am_spouse_immigrant_status') == "Y") $checked_1 = "checked";else $checked_1 = "";
+if (showData('i_864a_i_am_son_or_daughter_immigrant_status') == "Y") $checked_2 = "checked";else $checked_2 = "";
+if (showData('i_864a_i_am_parent_immigrant_status') == "Y") $checked_3 = "checked";else $checked_3 = "";
+if (showData('i_864a_i_am_brother_sister_immigrant_status') == "Y") $checked_4 = "checked";else $checked_4 = "";
+if (showData('i_864a_i_am_other_immigrant_status') == "Y") $checked_5 = "checked";else $checked_5 = "";
 $html = '<div>
-<input type="checkbox"  name="part2_3a_status" value="Y" checked="' . $checked . '" /><br>
-<input type="checkbox"  name="part2_3b_status" value="Y" checked="' . $checked . '" /><br>
-<input type="checkbox"  name="part2_3c_status" value="Y" checked="' . $checked . '" /><br>
-<input type="checkbox"  name="part2_3d_status" value="Y" checked="' . $checked . '" /><br>
-<input type="checkbox"  name="part2_3e_status" value="Y" checked="' . $checked . '" /><br>
+<input type="checkbox"  name="part2_3a_status" value="Y" checked="' . $checked_1 . '" /><br>
+<input type="checkbox"  name="part2_3b_status" value="Y" checked="' . $checked_2 . '" /><br>
+<input type="checkbox"  name="part2_3c_status" value="Y" checked="' . $checked_3 . '" /><br>
+<input type="checkbox"  name="part2_3d_status" value="Y" checked="' . $checked_4 . '" /><br>
+<input type="checkbox"  name="part2_3e_status" value="Y" checked="' . $checked_5 . '" /><br>
 </div>';
 $pdf->writeHTMLCell(50, 7, 26, 100, $html, 0, 1, false, true, 'L', true);
 //......
@@ -548,7 +564,7 @@ $html = '<div><b>I am currently: </b></div>';
 $pdf->writeHTMLCell(90, 7, 12, 147, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
-if (showData('') == "Y") $checked = "checked";
+if (showData('i_864a_employed_as_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 7, 12, 153, '<b>1.</b>', 0, 1, false, true, 'L', true);
 $html = '<div><input type="checkbox"  name="part3_1" value="Y" checked="' . $checked . '" /></div>';
@@ -577,7 +593,7 @@ $html = '<div>Name of Employer Number 2 (if applicable)</div>';
 $pdf->writeHTMLCell(90, 7, 21, 169, $html, 0, 1, false, true, 'L', true);
 //.........
 $pdf->SetFont('times', '', 10);
-if (showData('') == "Y") $checked = "checked";
+if (showData('i_864a_self_employed_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 7, 12, 177, '<b>4.</b>', 0, 1, false, true, 'L', true);
 $html = '<div><input type="checkbox"  name="part3_4" value="Y" checked="' . $checked . '" /></div>';
@@ -588,7 +604,7 @@ $html = 'Self employed as a/an';
 $pdf->writeHTMLCell(83, 7, 27, 177, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
-if (showData('') == "Y") $checked = "checked";
+if (showData('i_864a_retired_since_date_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 7, 12, 185, '<b>5.</b>', 0, 1, false, true, 'L', true);
 $html = '<div><input type="checkbox"  name="part3_5" value="Y" checked="' . $checked . '" /></div>';
@@ -599,14 +615,14 @@ $html = 'Retired Since (mm/dd/yyyy)';
 $pdf->writeHTMLCell(83, 7, 27, 185, $html, '', 0, 0, true, 'L');
 //.........
 $pdf->SetFont('times', '', 10);
-if (showData('') == "Y") $checked = "checked";
+if (showData('i_864a_unemployed_since_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 7, 12, 193, '<b>6.</b>', 0, 1, false, true, 'L', true);
 $html = '<div><input type="checkbox"  name="part3_6" value="Y" checked="' . $checked . '" /></div>';
 $pdf->SetFont('times', '', 14);
 $pdf->writeHTMLCell(50, 7, 20, 192, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
-$html = 'Retired Since (mm/dd/yyyy)';
+$html = 'Unemployed Since (mm/dd/yyyy)';
 $pdf->writeHTMLCell(83, 7, 27, 193, $html, '', 0, 0, true, 'L');
 //..........
 $pdf->SetFont('times', '', 10);
@@ -631,9 +647,9 @@ $pdf->writeHTMLCell(191, 6, 13, 17, $html, 1, 1, true, false, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(190, 7, 12, 26, '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you filed a Federal income tax return for each of the three most recent tax years?', '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); // set font
-if (showData('') == "Y") $checked_y = "checked";
+if (showData('i_864a_three_most_recent_tax_years_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
-if (showData('') == "Y") $checked_N = "checked";
+if (showData('i_864a_three_most_recent_tax_years_status') == "N") $checked_N = "checked";
 else $checked_N = "";
 $pdf->writeHTMLCell(120, 7, 178, 26, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); // set font
@@ -808,7 +824,7 @@ $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(191, 6, 12, 71, "<b>NOTE:</b> Select the box for either <b>Item Number 5.a</b>. or <b>5.b</b>. If applicable, select the box for <b>Item Number 6</b>", 0, 1, false, false, 'L', true);
 //...........
 $pdf->SetFont('times', '', 10);
-if (showData('') == "Y") $checked = "checked";
+if (showData('i_864a_i_can_read_understand_english_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 7, 12, 77, '<b>5.a.</b>', 0, 1, false, true, 'L', true);
 $html = '<div><input type="checkbox"  name="part5_5a" value="Y" checked="' . $checked . '" /></div>';
@@ -820,7 +836,7 @@ answer to every question.';
 $pdf->writeHTMLCell(191, 7, 27, 77, $html, '', 0, 0, true, 'L');
 //...........
 $pdf->SetFont('times', '', 10);
-if (showData('') == "Y") $checked = "checked";
+if (showData('i_864a_interpreter_named_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 7, 12, 88, '<b>5.b.</b>', 0, 1, false, true, 'L', true);
 $html = '<div><input type="checkbox"  name="part5_5b" value="Y" checked="' . $checked . '" /></div>';
@@ -835,7 +851,7 @@ $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('p5_5b_value', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 45, 94);
 //...........
 $pdf->SetFont('times', '', 10);
-if (showData('') == "Y") $checked = "checked";
+if (showData('i_864a_inpreparer_request_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 7, 12, 101, '<b>6.</b>', 0, 1, false, true, 'L', true);
 $html = '<div><input type="checkbox"  name="part5_6" value="Y" checked="' . $checked . '" /></div>';
@@ -1006,7 +1022,7 @@ $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(191, 6, 12, 165, "<b>NOTE:</b> Select the box for either <b>Item Number 1.a</b>. or <b>1.b</b>. If applicable, select the box for <b>Item Number 2</b>", 0, 1, false, false, 'L', true);
 //...........
 $pdf->SetFont('times', '', 10);
-if (showData('') == "Y") $checked = "checked";
+if (showData('i_864a_i_can_read_understand_english_status2') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 7, 12, 171, '<b>1.a.</b>', 0, 1, false, true, 'L', true);
 $html = '<div><input type="checkbox"  name="part6_1a" value="Y" checked="' . $checked . '" /></div>';
@@ -1018,7 +1034,7 @@ answer to every question.';
 $pdf->writeHTMLCell(191, 7, 27, 171, $html, '', 0, 0, true, 'L');
 //...........
 $pdf->SetFont('times', '', 10);
-if (showData('') == "Y") $checked = "checked";
+if (showData('i_864a_the_interpreter_name_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 7, 12, 182, '<b>1.b.</b>', 0, 1, false, true, 'L', true);
 $html = '<div><input type="checkbox"  name="part6_1b" value="Y" checked="' . $checked . '" /></div>';
@@ -1032,7 +1048,7 @@ $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('p6_1b_value', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 28, 188);
 //...........
 $pdf->SetFont('times', '', 10);
-if (showData('') == "Y") $checked = "checked";
+if (showData('i_864a_the_preparer_named_in2_status') == "Y") $checked = "checked";
 else $checked = "";
 $pdf->writeHTMLCell(50, 7, 12, 196, '<b>2.</b>', 0, 1, false, true, 'L', true);
 $html = '<div><input type="checkbox"  name="part6_2" value="Y" checked="' . $checked . '" /></div>';
@@ -1404,122 +1420,127 @@ $pdf->writeHTMLCell(182.5, 1, 21.2, 236.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(182.5, 1, 21.2, 242.5, '', "B", 1, false, 'L');
 $pdf->writeHTMLCell(182.8, 33.2, 21, 222, '', 'B', 1, false, 'L');
 
+$isMailingAndPhysical = (showData('is_your_current_mailing_address_same_as_physical') == "Y") ? true : false;
+$physical_street = $isMailingAndPhysical ? 'information_about_you_us_mailing_street_number': 'information_about_you_home_street_number';
+$physical_number = $isMailingAndPhysical ? 'information_about_you_us_mailing_apt_ste_flr_value': 'information_about_you_home_apt_ste_flr_value';
+$physical_city_town = $isMailingAndPhysical ? 'information_about_you_us_mailing_city_town': 'information_about_you_home_city_town';
+$physical_state = $isMailingAndPhysical ? 'information_about_you_us_mailing_state': 'information_about_you_home_state';
+$physical_zip_code = $isMailingAndPhysical ? 'information_about_you_us_mailing_zip_code': 'information_about_you_home_zip_code';
+$physical_province = $isMailingAndPhysical ? 'information_about_you_us_mailing_province': 'information_about_you_home_province';
+$physical_postal_code = $isMailingAndPhysical ? 'information_about_you_us_mailing_postal_code': 'information_about_you_home_postal_code';
+$physical_country = $isMailingAndPhysical ? 'information_about_you_us_mailing_country': 'information_about_you_home_country';
 
-
-// 'attorney_state_bar_number':' $attorneyData->bar_number',
-// 'attorney_or_according_representative':' $attorneyData->uscis_online_account_number',
 $js = "
 var fields = {
    'attorney_state_bar_number':' $attorneyData->bar_number',
    'attorney_or_according_representative':' $attorneyData->uscis_online_account_number',
-    'info_about_you_last_name':' " . showData('') . "',
-    'info_about_You_first_name':' " . showData('') . "',
-    'info_about_you_middle_name':' " . showData('') . "',
-    'about_your_mailing_care_of_name':' " . showData('') . "',
-    'about_your_mailing_street':' " . showData('') . "',
-    'about_your_mailing_street2':' " . showData('') . "',
-    'about_your_mailing_apt_ste_flr':' " . showData('') . "',
-    'about_your_mailing_apt_ste_flr2':' " . showData('') . "',
-    'about_your_mailing_city_town':' " . showData('') . "',
-    'about_your_mailing_city_town2':' " . showData('') . "',
-    'about_your_mailing_state':' " . showData('') . "',
-    'about_your_mailing_state2':' " . showData('') . "',
-    'about_your_mailing_zipcode':' " . showData('') . "',
-    'about_your_mailing_zipcode2':' " . showData('') . "',
-    'about_your_mailing_address_province':' " . showData('') . "',
-    'about_your_mailing_address_province2':' " . showData('') . "',
-    'about_your_mailing_address_postal_code':' " . showData('') . "',
-    'about_your_mailing_address_postal_code2':' " . showData('') . "',
-    'about_your_mailing_address_country':' " . showData('') . "',
-    'about_your_mailing_address_country2':' " . showData('') . "',
+    'info_about_you_last_name':' " . showData('information_about_you_family_last_name') . "',
+    'info_about_You_first_name':' " . showData('information_about_you_given_first_name') . "',
+    'info_about_you_middle_name':' " . showData('information_about_you_middle_name') . "',
+    'about_your_mailing_care_of_name':' " . showData('information_about_you_us_mailing_care_of_name') . "',
+    'about_your_mailing_street':' " . showData('information_about_you_us_mailing_street_number') . "',
+    'about_your_mailing_apt_ste_flr':' " . showData('information_about_you_us_mailing_apt_ste_flr_value') . "',
+    'about_your_mailing_city_town':' " . showData('information_about_you_us_mailing_city_town') . "',
+    'about_your_mailing_state':' " . showData('information_about_you_us_mailing_state') . "',
+    'about_your_mailing_zipcode':' " . showData('information_about_you_us_mailing_zip_code') . "',
+    'about_your_mailing_address_province':' " . showData('information_about_you_us_mailing_province') . "',
+    'about_your_mailing_address_postal_code':' " . showData('information_about_you_us_mailing_postal_code') . "',
+    'about_your_mailing_address_country':' " . showData('information_about_you_us_mailing_country') . "',
+    'about_your_mailing_street2':' " . showData($physical_street) . "',
+    'about_your_mailing_apt_ste_flr2':' " . showData($physical_number) . "',
+    'about_your_mailing_city_town2':' " . showData($physical_city_town) . "',
+    'about_your_mailing_state2':' " . showData($physical_state) . "',
+    'about_your_mailing_zipcode2':' " . showData($physical_zip_code) . "',
+    'about_your_mailing_address_province2':' " . showData($physical_province) . "',
+    'about_your_mailing_address_postal_code2':' " . showData($physical_postal_code) . "',
+    'about_your_mailing_address_country2':' " . showData($physical_country) . "',
 //page 1 end........
-    'p2_other_info_dob':' " . showData('') . "',
-    'p2_other_info_cob':' " . showData('') . "',
-    'p2_other_info_uscis_number':' " . showData('') . "',
-    'p2_other_info_a_number':' " . showData('') . "',
-    'p2_other_info_uscis_online_number':' " . showData('') . "',
-    'p2_Other_Dependent_Specify':' " . showData('') . "',
-    'p3_1_value':' " . showData('') . "',
-    'p3_2_value':' " . showData('') . "',
-    'p3_3_value':' " . showData('') . "',
-    'p3_4_value':' " . showData('') . "',
-    'p3_5_value':' " . showData('') . "',
-    'p3_6_value':' " . showData('') . "',
-    'p3_7_value':' " . showData('') . "',
+    'p2_other_info_dob':' " . showData('other_information_about_you_date_of_birth') . "',
+    'p2_other_info_cob':' " . showData('other_information_about_you_country_of_birth') . "',
+    'p2_other_info_uscis_number':' " . showData('other_information_about_you_social_security_number') . "',
+    'p2_other_info_a_number':' " . showData('other_information_about_you_alien_registration_number') . "',
+    'p2_other_info_uscis_online_number':' " . showData('other_information_about_you_uscis_online_account_number') . "',
+    'p2_Other_Dependent_Specify':' " . showData('i_864a_i_am_other_immigrant_value') . "',
+    'p3_1_value':' " . showData('i_864a_employed_as_value') . "',
+    'p3_2_value':' " . showData('i_864a_name_of_employer1_value') . "',
+    'p3_3_value':' " . showData('i_864a_name_of_employer2_value') . "',
+    'p3_4_value':' " . showData('i_864a_self_employed_value') . "',
+    'p3_5_value':' " . showData('i_864a_retired_since_date_value') . "',
+    'p3_6_value':' " . showData('i_864a_unemployed_since_value') . "',
+    'p3_7_value':' " . showData('i_864a_individual_income_value') . "',
 //page 2 end........
-    'p4_2_tax1':' " . showData('') . "',
-    'p4_2_tax2':' " . showData('') . "',
-    'p4_2_tax3':' " . showData('') . "',
-    'p4_2_income1':' " . showData('') . "',
-    'p4_2_income2':' " . showData('') . "',
-    'p4_2_income3':' " . showData('') . "',
-    'p4_my_assets_3':' " . showData('') . "',
-    'p4_my_assets_4':' " . showData('') . "',
-    'p4_my_assets_5':' " . showData('') . "',
-    'p4_my_assets_6':' " . showData('') . "',
-    'p5_sponsor_info':' " . showData('') . "',
-    'p5_sponsor_immigrant':' " . showData('') . "',
+    'p4_2_tax1':' " . showData('i_864a_most_recent_tax_year') . "',
+    'p4_2_tax2':' " . showData('i_864a_second_most_recent_tax_year') . "',
+    'p4_2_tax3':' " . showData('i_864a_third_most_recent_tax_year') . "',
+    'p4_2_income1':' " . showData('i_864a_most_recent_total_income') . "',
+    'p4_2_income2':' " . showData('i_864a_second_most_recent_total_income') . "',
+    'p4_2_income3':' " . showData('i_864a_third_most_recent_total_income') . "',
+    'p4_my_assets_3':' " . showData('i_864a_cash_savings_checking_balance') . "',
+    'p4_my_assets_4':' " . showData('i_864a_real_estate_net_value') . "',
+    'p4_my_assets_5':' " . showData('i_864a_stocks_bonds_value') . "',
+    'p4_my_assets_6':' " . showData('i_864a_add_together') . "',
+    'p5_sponsor_info':' " . showData('i_864a_the_sponsor') . "',
+    'p5_sponsor_immigrant':' " . showData('i_864a_the_sponsor_intending_immigrants') . "',
 
-    'p5_1_last_name':' " . showData('') . "',
-    'p5_1_first_name':' " . showData('') . "',
-    'p5_1_middle_name':' " . showData('') . "',
-    'p5_1_dob_name':' " . showData('') . "',
-    'p5_1_a_number':' " . showData('') . "',
-    'p5_1_uscis_number':' " . showData('') . "',
+    'p5_1_last_name':' " . showData('i_864a_immigrant1_last_name') . "',
+    'p5_1_first_name':' " . showData('i_864a_immigrant1_first_name') . "',
+    'p5_1_middle_name':' " . showData('i_864a_immigrant1_middle_name') . "',
+    'p5_1_dob_name':' " . showData('i_864a_immigrant1_date_of_birth') . "',
+    'p5_1_a_number':' " . showData('i_864a_immigrant1_alien_registration_number') . "',
+    'p5_1_uscis_number':' " . showData('i_864a_immigrant1_uscis_online_number') . "',
 
-    'p5_2_last_name':' " . showData('') . "',
-    'p5_2_first_name':' " . showData('') . "',
-    'p5_2_middle_name':' " . showData('') . "',
-    'p5_2_dob_name':' " . showData('') . "',
-    'p5_2_a_number':' " . showData('') . "',
-    'p5_2_uscis_number':' " . showData('') . "',
+    'p5_2_last_name':'  " . showData('i_864a_immigrant2_last_name') . "',
+    'p5_2_first_name':'  " . showData('i_864a_immigrant2_first_name') . "',
+    'p5_2_middle_name':'  " . showData('i_864a_immigrant2_middle_name') . "',
+    'p5_2_dob_name':'  " . showData('i_864a_immigrant2_date_of_birth') . "',
+    'p5_2_a_number':'  " . showData('i_864a_immigrant2_alien_registration_number') . "',
+    'p5_2_uscis_number':'  " . showData('i_864a_immigrant2_uscis_online_number') . "',
 
-    'p5_3_last_name':' " . showData('') . "',
-    'p5_3_first_name':' " . showData('') . "',
-    'p5_3_middle_name':' " . showData('') . "',
-    'p5_3_dob_name':' " . showData('') . "',
-    'p5_3_a_number':' " . showData('') . "',
-    'p5_3_uscis_number':' " . showData('') . "',
+    'p5_3_last_name':'  " . showData('i_864a_immigrant3_last_name') . "',
+    'p5_3_first_name':'  " . showData('i_864a_immigrant3_first_name') . "',
+    'p5_3_middle_name':'  " . showData('i_864a_immigrant3_middle_name') . "',
+    'p5_3_dob_name':'  " . showData('i_864a_immigrant3_date_of_birth') . "',
+    'p5_3_a_number':'  " . showData('i_864a_immigrant3_alien_registration_number') . "',
+    'p5_3_uscis_number':'  " . showData('i_864a_immigrant3_uscis_online_number') . "',
 //page 3 end........
-    'p5_4_last_name':' " . showData('') . "',
-    'p5_4_first_name':' " . showData('') . "',
-    'p5_4_middle_name':' " . showData('') . "',
-    'p5_4_dob_name':' " . showData('') . "',
-    'p5_4_a_number':' " . showData('') . "',
-    'p5_4_uscis_number':' " . showData('') . "',
+    'p5_4_last_name':'  " . showData('i_864a_immigrant4_last_name') . "',
+    'p5_4_first_name':'  " . showData('i_864a_immigrant4_first_name') . "',
+    'p5_4_middle_name':'  " . showData('i_864a_immigrant4_middle_name') . "',
+    'p5_4_dob_name':'  " . showData('i_864a_immigrant4_date_of_birth') . "',
+    'p5_4_a_number':'  " . showData('i_864a_immigrant4_alien_registration_number') . "',
+    'p5_4_uscis_number':'  " . showData('i_864a_immigrant4_uscis_online_number') . "',
 
-    'p5_5b_value':' " . showData('') . "',
-    'p5_6_value':' " . showData('') . "',
-    'p5_7_value':' " . showData('') . "',
-    'p5_8_value':' " . showData('') . "',
-    'p5_9_value':' " . showData('') . "',
-    'p5_10_value':' " . showData('') . "',
+    'p5_5b_value':' " . showData('i_864a_interpreter_language_value') . "',
+    'p5_6_value':' " . showData('i_864a_inpreparer_request_value') . "',
+    'p5_7_value':' " . showData('i_864a_sponsor_daytime_tel') . "',
+    'p5_8_value':' " . showData('i_864a_sponsor_mobile') . "',
+    'p5_9_value':' " . showData('i_864a_sponsor_email') . "',
+    'p5_10_value':' " . showData('i_864a_sponsor_sign_date') . "',
 //page 4 end.............
 
-    'p6_household_value1':' " . showData('') . "',
-    'p6_household_value2':' " . showData('') . "',
-    'p6_1b_value':' " . showData('') . "',
-    'p6_2_value':' " . showData('') . "',
-    'p6_3_value':' " . showData('') . "',
-    'p6_4_value':' " . showData('') . "',
-    'p6_5_value':' " . showData('') . "',
+    'p6_household_value1':' " . showData('i_864a_household_member_consideration') . "',
+    'p6_household_value2':' " . showData('i_864a_intending_immigrants_noted') . "',
+    'p6_1b_value':' " . showData('i_864a_the_interpreter_name_in2') . "',
+    'p6_2_value':' " . showData('i_864a_the_preparer_named_in2') . "',
+    'p6_3_value':' " . showData('i_864a_household_member_daytime_tel') . "',
+    'p6_4_value':' " . showData('i_864a_household_member_mobile') . "',
+    'p6_5_value':' " . showData('i_864a_household_member_email') . "',
 
 //page 5 end............
-    'P6_6_value':' " . showData('') . "',
-    'P6_7_value':' " . showData('') . "',
-    'Interpreter_family_name':' " . showData('i_864a_preparer_family_last_name') . " ',
-	'Interpreter_given_name':' " . showData('i_864a_preparer_family_given_first_name') . " ',
-	'Interpreter_business_name':' " . showData('i_864a_preparer_business_name') . " ',
-	'Interpreter_daytime':' " . showData('i_864a_preparer_daytime_tel') . " ',
-	'Interpreter_mobile':' " . showData('i_864a_preparer_mobile') . " ',
-	'Interpreter_email':' " . showData('i_864a_preparer_email') . " ',
+    'P6_6_value':' " . showData('i_864a_household_member_printed_name') . "',
+    'P6_7_value':' " . showData('i_864a_interpreter_sign_date') . "',
+    'Interpreter_family_name':' " . showData('i_864a_interpreter_last_name') . " ',
+	'Interpreter_given_name':' " . showData('i_864a_interpreter_first_name') . " ',
+	'Interpreter_business_name':' " . showData('i_864a_interpreter_business_organization_name') . " ',
+	'Interpreter_daytime':' " . showData('i_864a_interpreter_daytime_tel') . " ',
+	'Interpreter_mobile':' " . showData('i_864a_interpreter_mobile') . " ',
+	'Interpreter_email':' " . showData('i_864a_interpreter_email_address') . " ',
 //page 6 end...........    
-    'Interpreter_fluent_english':' " . showData('') . " ',
-    'Interpreter_sign_date':' " . showData('i_864a_preparer_sign_date') . " ',
-
-    'Preparer_family_name':' " . showData('i_864a_preparer_family_last_name') . " ',
-	'Preparer_given_name':' " . showData('i_864a_preparer_family_given_first_name') . " ',
-	'Preparer_business_name':' " . showData('i_864a_preparer_business_name') . " ',
+    'Interpreter_fluent_english':' " . showData('i_864a_interpreter_fluent_in_english') . " ',
+    'Interpreter_sign_date':' " . showData('i_864a_interpreter_sign_date') . " ',
+    'Preparer_family_name':' " . showData('i_864a_preparer_last_name') . " ',
+	'Preparer_given_name':' " . showData('i_864a_preparer_first_name') . " ',
+	'Preparer_business_name':' " . showData('i_864a_preparer_business_organization_name') . " ',
 	'Preparer_daytime':' " . showData('i_864a_preparer_daytime_tel') . " ',
 	'Preparer_mobile':' " . showData('i_864a_preparer_mobile') . " ',
 	'Preparer_email':' " . showData('i_864a_preparer_email') . " ',

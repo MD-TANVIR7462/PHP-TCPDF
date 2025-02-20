@@ -376,8 +376,8 @@ foreach ($allDataCountry as $record)
 </div>
 </div>
     </div>
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
@@ -557,8 +557,8 @@ foreach ($allDataCountry as $record)
 </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -742,8 +742,8 @@ foreach ($allDataCountry as $record)
 </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
@@ -859,8 +859,8 @@ foreach ($allDataCountry as $record)
   </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5 --------------------------------
@@ -995,8 +995,8 @@ foreach ($allDataCountry as $record)
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6 --------------------------------
@@ -1097,8 +1097,8 @@ foreach ($allDataCountry as $record)
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1211,8 +1211,8 @@ foreach ($allDataCountry as $record)
             </div>
         </div>
         <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-        <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
-        <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+        <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+        <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
     <!----------------------------------------------------------------------
     -------------------------------- page 8--------------------------------
@@ -1332,7 +1332,7 @@ foreach ($allDataCountry as $record)
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <script>
