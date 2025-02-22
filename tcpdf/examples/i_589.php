@@ -620,8 +620,8 @@ $html = '<div>Status</div>';
 $pdf->writeHTMLCell(100, 4, 105, 189, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_status1', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_most_recent_entry_status')), 115, 191);
-$pdf->writeHTMLCell(25, 1, 115, 190, "", "B", 1, false, true, 'C', true);  // 19 horizontal line .end
+$pdf->TextField('a_i_status1', 25, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_most_recent_entry_status')), 115,208);
+$pdf->writeHTMLCell(25, 1, 115, 208.4, "", "B", 1, false, true, 'C', true);  // 19 horizontal line .end
 
 //.........
 $pdf->SetFont('times', '', 9);
@@ -629,8 +629,8 @@ $html = '<div>Status</div>';
 $pdf->writeHTMLCell(100, 4, 105, 197, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_status2', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_most_recent_entry_status2')), 115, 198);
-$pdf->writeHTMLCell(25, 1, 115, 197, "", "B", 1, false, true, 'C', true);  // 19 horizontal line .end
+$pdf->TextField('a_i_status2', 25, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_most_recent_entry_status2')), 115, 215);
+$pdf->writeHTMLCell(25, 1, 115, 215.4, "", "B", 1, false, true, 'C', true);  // 19 horizontal line .end
 // //...........
 
 $pdf->SetFont('times', '', 9);
@@ -638,8 +638,8 @@ $html = '<div>Status</div>';
 $pdf->writeHTMLCell(100, 4, 105, 204, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_status3', 25, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_most_recent_entry_status3')), 115, 205);
-$pdf->writeHTMLCell(25, 1, 115, 204, "", "B", 1, false, true, 'C', true);  // 19 horizontal line .end
+$pdf->TextField('a_i_status3', 25, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_most_recent_entry_status3')), 115,222);
+$pdf->writeHTMLCell(25, 1, 115, 222.4, "", "B", 1, false, true, 'C', true);  // 19 horizontal line .end
 
 //...........................
 $pdf->SetFont('times', '', 9);
@@ -650,48 +650,48 @@ $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_date_status_expired', 30, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_most_recent_entry_expires_date')), 170, 191);
 $pdf->writeHTMLCell(30, 1, 170, 190, "", "B", 1, false, true, 'C', true);  // 19 horizontal line .end
 //........
-$pdf->writeHTMLCell(189.6, 1, 13, 205, "", "B", 1, false, true, 'C', true);
+$pdf->writeHTMLCell(189.6, 1, 13, 224, "", "B", 1, false, true, 'C', true);
 // //.........
 
 
 $pdf->SetFont('times', '', 9);
 $html = '<div><b>20. </b> What country issued your last passport or travel<br> &nbsp; &nbsp; &nbsp;
 document?</div>';
-$pdf->writeHTMLCell(80, 4, 13, 210, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 4, 13, 229, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_what_country_issued', 71, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_94_imgt_country_issuance_passport')), 13, 218);
+$pdf->TextField('a_i_what_country_issued', 71, 6.2, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_94_imgt_country_issuance_passport')), 13, 236.6);
 //........
 
 $pdf->SetFont('times', '', 9);
 $html = '<div><b>21. </b> Passport Number</div>';
-$pdf->writeHTMLCell(80, 4, 85, 210, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 4, 85, 230, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_passport_number', 54, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('other_information_about_you_passport_number')), 115, 211.3);
+$pdf->TextField('a_i_passport_number', 54, 6.3, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('other_information_about_you_passport_number')), 115, 229.9);
 // //........
 
 
 $pdf->SetFont('times', '', 9);
 $html = '<div>Travel Document Number</div>';
-$pdf->writeHTMLCell(80, 4, 85, 217, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 4, 85, 236, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_travel_document_number', 47, 5.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('other_information_about_you_travel_document_number')), 122, 217.2);
+$pdf->TextField('a_i_travel_document_number', 47, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('other_information_about_you_travel_document_number')), 122, 236.4);
 //........
 $pdf->SetFont('times', '', 9);
 $html = '<div><b>22. </b> Expiration Date <br>  &nbsp; &nbsp; &nbsp;
 (mm/dd/yyyy)</div>';
-$pdf->writeHTMLCell(80, 4, 170, 210, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 4, 170, 229, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_expiration_date', 33.4, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('other_information_about_you_expiry_date_issuance_passport')), 169, 218);
+$pdf->TextField('a_i_expiration_date', 33.4, 6.2, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('other_information_about_you_expiry_date_issuance_passport')), 169, 236.6);
 //........
 $pdf->writeHTMLCell(189.6, 1, 13, 237, "", "B", 1, false, true, 'C', true); // horizontal line 
 
-$pdf->writeHTMLCell(1, 12, 83, 210.8, "", "R", 1, false, true, 'C', false);  //verticale line | .
-$pdf->writeHTMLCell(1, 12, 168, 210.8, "", "R", 1, false, true, 'C', false);  //verticale line | .
-$pdf->writeHTMLCell(85, 1, 84, 211.6, "", "B", 1, false, true, 'C', true); // horizontal line 2
+$pdf->writeHTMLCell(1, 13, 83, 230, "", "R", 1, false, true, 'C', false);  //verticale line | .
+$pdf->writeHTMLCell(1, 13, 168, 230, "", "R", 1, false, true, 'C', false);  //verticale line | .
+$pdf->writeHTMLCell(85, 1, 84, 230.3, "", "B", 1, false, true, 'C', true); // horizontal line 2
 
 //.................
 
