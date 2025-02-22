@@ -2,7 +2,7 @@
 
 // require_once('formheader.php');   //database connection file 
 
-require_once("localconfig.php");
+require_once("localconfig.php");//local db file -->
 
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
@@ -72,7 +72,9 @@ class MyPDF extends TCPDF
    }
 }
 
-
+// create new PDF document
+// $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+// $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, false, 'ISO-8859-1', false);
 
 $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
@@ -94,6 +96,8 @@ $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 // set margins
 // $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 $pdf->SetMargins(13.7, 15.3, 12.8, true);
+//$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+//$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
@@ -101,7 +105,8 @@ $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-
+// set a barcode on the page footer
+// $pdf->setBarcode(date('Y-m-d H:i:s'));
 
 // add a page
 $pdf->AddPage('P', 'LETTER');  // page number 1
@@ -119,39 +124,81 @@ $style = array(
 
 
 
-// !Logo
-$pdf->SetFont('times', 'B', 9);   // set font
-$pdf->MultiCell(80, 1, "Department of Homeland Security", 0, 'L', 0, 1, 12, 8, true);
+//!old header 
 
-$pdf->SetFont('times', '', 9);   // set font
-$pdf->MultiCell(80, 1, "U.S. Citizenship and Immigration Services", 0, 'L', 0, 1, 12, 12, true);
+// $pdf->SetFont('times', 'B', 9);   // set font
+// $pdf->MultiCell(80, 1, "Department of Homeland Security", 0, 'L', 0, 1, 12, 8, true);
 
-$pdf->SetFont('times', 'B', 9);   // set font
-$pdf->MultiCell(80, 1, "U.S. Department of Justice", 0, 'L', 0, 1, 12, 18, true);
+// $pdf->SetFont('times', '', 9);   // set font
+// $pdf->MultiCell(80, 1, "U.S. Citizenship and Immigration Services", 0, 'L', 0, 1, 12, 12, true);
 
-$pdf->SetFont('times', '', 9);   // set font
-$pdf->MultiCell(80, 1, "Executive Office for Immigration Review", 0, 'L', 0, 1, 12, 22, true);
+// $pdf->SetFont('times', 'B', 9);   // set font
+// $pdf->MultiCell(80, 1, "U.S. Department of Justice", 0, 'L', 0, 1, 12, 18, true);
 
-
-
-
-$pdf->SetFont('times', '', 9);   // set font
-$pdf->MultiCell(80, 1, "OMB No. 1615-0067; Expires 06/30/2026", 0, 'R', 0, 1, 124, 8, true);
+// $pdf->SetFont('times', '', 9);   // set font
+// $pdf->MultiCell(80, 1, "Executive Office for Immigration Review", 0, 'L', 0, 1, 12, 22, true);
 
 
 
 
+// $pdf->SetFont('times', '', 9);   // set font
+// $pdf->MultiCell(80, 1, "OMB No. 1615-0067; Expires 06/30/2026", 0, 'R', 0, 1, 124, 8, true);
 
-$pdf->SetFont('times', 'B', 14);   // set font
+
+
+
+
+// $pdf->SetFont('times', 'B', 14);   // set font
+// $pdf->setCellPaddings(2, 1, 6, 0); // set cell padding
+// $pdf->MultiCell(80, 1, "I-589, Application for Asylum and for Withholding of Removal", 0, 'R', 0, 1, 129, 13, true);
+
+// $pdf->Ln(1.3);
+
+// $top_border = array(
+//    'T' => array('width' => 2, 'color' => array(0, 0, 0), 'dash' => 0, 'cap' => 'square'),
+// );
+// $pdf->Cell(188.5, 0, '', $top_border, 1, 1);
+
+
+// $pdf->setCellPaddings(1, 1, 0, 1); // set cell padding
+// $pdf->SetLineWidth(0.1); // set border width
+// $pdf->SetDrawColor(0, 0, 0); // set color for cell border
+// $pdf->SetFillColor(255, 255, 255); // set filling color
+// $pdf->setCellHeightRatio(1.1); // set cell height ratio
+// $pdf->MultiCell(0, 0, '', 'T', 1, 'C', 1, 12.8, 29.65, false, 'T', 'C');
+//!old header 
+
+// Logo
+$logo = 'homeland_security_logo.png';
+$pdf->Image($logo, 12, 12, 19, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+
+$pdf->Cell(25, 5, '', 0, 0);
+$pdf->SetFont('times', 'B', 13.5);    // set font
+$pdf->MultiCell(120, 15, "Application for Asylum and for
+Withholding of Removal ", 0, 'C', 0, 1, 48, 5, true);
+
+$pdf->SetFont('times', 'B', 10.5); // set font
+$pdf->setCellPaddings(2, 4, 6, 0); // set cell padding
+$pdf->MultiCell(30, 5, "USCIS\nForm I-589", 0, 'C', 0, 1, 174.5, 6, true);
+
+$pdf->SetFont('times', 'B', 10.6);    // set font
+$pdf->MultiCell(80, 15, "Department of Homeland Security", 0, 'C', 0, 1, 67, 15, true);
+
+$pdf->SetFont('times', '', 10.8);    // set font
+$pdf->MultiCell(80, 15, "U.S. Citizenship and Immigration Services", 0, 'C', 0, 1, 67, 20, true);
+
+$pdf->SetFont('times', '', 9);    // set font
 $pdf->setCellPaddings(2, 1, 6, 0); // set cell padding
-$pdf->MultiCell(80, 1, "I-589, Application for Asylum and for Withholding of Removal", 0, 'R', 0, 1, 129, 13, true);
+$pdf->MultiCell(40, 5, "OMB No. 1615-0067\nExpires 09/30/2027", 0, 'C', 0, 1, 169, 18.5, true);
 
-$pdf->Ln(1.3);
+$pdf->Ln(3.2); // 5mm নিচে সরানো
 
 $top_border = array(
-   'T' => array('width' => 2, 'color' => array(0, 0, 0), 'dash' => 0, 'cap' => 'square'),
+    'T' => array('width' => 2, 'color' => array(0, 0, 0), 'dash' => 0, 'cap' => 'square'),
 );
+
 $pdf->Cell(188.5, 0, '', $top_border, 1, 1);
+
 
 
 $pdf->setCellPaddings(1, 1, 0, 1); // set cell padding
@@ -159,18 +206,22 @@ $pdf->SetLineWidth(0.1); // set border width
 $pdf->SetDrawColor(0, 0, 0); // set color for cell border
 $pdf->SetFillColor(255, 255, 255); // set filling color
 $pdf->setCellHeightRatio(1.1); // set cell height ratio
-$pdf->MultiCell(0, 0, '', 'T', 1, 'C', 1, 12.8, 29.65, false, 'T', 'C');
+$pdf->MultiCell(0, 0, '', 'T', 1, 'C', 1, 12.8, 32.65, false, 'T', 'C');
+
+
+
+
 // ...........
 
 $pdf->SetFont('times', 'B', 9.5);   // set font
 
-$pdf->MultiCell(190, 1, "START HERE - Type or print in black ink. See the instructions for information about eligibility and how to complete and file this application. There is no filing fee for this application.", 0, 'L', 0, 1, 12, 30, true);
+$pdf->MultiCell(190, 1, "START HERE - Type or print in black ink. See the instructions for information about eligibility and how to complete and file this application. There is no filing fee for this application.", 0, 'L', 0, 1, 12, 33, true);
 
 $pdf->SetFont('times', '', 9.5);
 if (showData('i_589_holding_of_removal_status') == "Y") $checked = "checked";
 else $checked = "";
 $html = '<div><b>NOTE: </b>  <input type="checkbox" name="notice" value="N" checked="' . $checked . '"/> Check this box if you also want to apply for withholding of removal under the Convention Against Torture.</div>';
-$pdf->writeHTMLCell(190, 1, 12, 40, $html, 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(190, 1, 12, 42.5, $html, 0, 1, false, false, 'L', true);
 // //...........
 
 $pdf->SetFillColor(220, 220, 220);
@@ -396,7 +447,7 @@ else $checked_divorce = "";
 if (showData('other_information_about_you_marital_status') == "widowed") $checked_widowed = "checked";
 else $checked_widowed = "";
 
-$html = '<div><b>11.  </b>  Marital Status:  <input type="checkbox" name="marital" value="single"   checked="' . $checked_single . '"/>    Single   <input type="checkbox" name="marital" value="married" checked="' . $checked_married . '"/> Married    <input type="checkbox" name="divorced" value="divorced" checked="' . $checked_divorce . '"/> Divorced    <input type="checkbox" name="widowed" value="widowed" checked="' . $checked_widowed . '"/> Widowed</div>';
+$html = '<div><b>11.  </b>  Marital Status:&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="marital" value="single"   checked="' . $checked_single . '"/>&nbsp;&nbsp;&nbsp;&nbsp;Single&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="marital" value="married" checked="' . $checked_married . '"/>&nbsp;&nbsp;&nbsp;&nbsp;Married&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="divorced" value="divorced" checked="' . $checked_divorce . '"/>&nbsp;&nbsp;&nbsp;&nbsp;Divorced&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="widowed" value="widowed" checked="' . $checked_widowed . '"/>&nbsp;&nbsp;&nbsp;&nbsp;Widowed</div>';
 $pdf->writeHTMLCell(120, 4, 71, 145, $html, 0, 1, false, true, 'L', true);
 // //..........
 
@@ -636,7 +687,7 @@ $pdf->writeHTMLCell(80, 4, 170, 210, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('a_i_expiration_date', 33.4, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('other_information_about_you_expiry_date_issuance_passport')), 169, 218);
 //........
-$pdf->writeHTMLCell(189.6, 1, 13, 217, "", "B", 1, false, true, 'C', true); // horizontal line 
+$pdf->writeHTMLCell(189.6, 1, 13, 237, "", "B", 1, false, true, 'C', true); // horizontal line 
 
 $pdf->writeHTMLCell(1, 12, 83, 210.8, "", "R", 1, false, true, 'C', false);  //verticale line | .
 $pdf->writeHTMLCell(1, 12, 168, 210.8, "", "R", 1, false, true, 'C', false);  //verticale line | .
@@ -646,10 +697,10 @@ $pdf->writeHTMLCell(85, 1, 84, 211.6, "", "B", 1, false, true, 'C', true); // ho
 
 $pdf->SetFont('times', '', 9);
 $html = '<div><b>23. </b> What is your native language <i>(include dialect, if applicable)?</i></div>';
-$pdf->writeHTMLCell(110, 4, 13, 222, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(110, 4, 13, 242, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_what_is_your_native_language', 86, 5.7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_native_language')), 13, 227);
+$pdf->TextField('a_i_what_is_your_native_language', 86, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_native_language')), 13, 248.2);
 //........
 
 $pdf->SetFont('times', '', 9);
@@ -659,52 +710,55 @@ if (showData('i_589_fluent_in_english_status') == "N") $checked_N = "checked";
 else $checked_N = "";
 
 $html = '<div><b>24. </b>Are you fluent in English? <br>  &nbsp; &nbsp; &nbsp;  <input type="checkbox" name="fluent_english" value="Y" checked="' . $checked_Y . '"/>  Yes    &nbsp;   <input type="checkbox" name="fluent_english" value="N" checked="' . $checked_N . '" />   No   </div>';
-$pdf->writeHTMLCell(100, 4, 99, 222, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 99, 242.2, $html, 0, 1, false, true, 'L', true);
 //............
 $pdf->SetFont('times', '', 9);
 $html = '<div><b>25.</b>What other languages do you speak fluently?</div>';
-$pdf->writeHTMLCell(100, 4, 140, 222, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 4, 140, 242, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('a_i_what_other_language_speak_fluently', 62.8, 5.7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_fluent_other_language')), 140, 227);
+$pdf->TextField('a_i_what_other_language_speak_fluently', 62.8,6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_fluent_other_language')), 139.8, 248.2);
 //............
-$pdf->writeHTMLCell(189.6, 1, 13, 227, "", "B", 1, false, true, 'C', true); // horizontal line 
-$pdf->writeHTMLCell(1, 10, 98, 223, "", "R", 1, false, true, 'C', false);  //verticale line | .
-$pdf->writeHTMLCell(1, 10, 139, 223, "", "R", 1, false, true, 'C', false);  //verticale line | .
-//..................
-
-$pdf->SetFont('times', '', 9);
-$html = '<div><b>For EOIR use only.</b></div>';
-$pdf->writeHTMLCell(60, 3, 30, 232, $html, 0, 1, false, true, 'L', true);
-
-$pdf->SetFont('times', '', 9);
-$html = '<div><b>For USCIS use only.</b></div>';
-$pdf->writeHTMLCell(15, 1, 70, 232, $html, 0, 1, false, true, 'C', true);
-
-$html = '<div><b>Action:</b></div>';
-$pdf->writeHTMLCell(50, 1, 70, 232, $html, 0, 1, false, true, 'C', true);
-
-$html = '<div><b>Decision:</b></div>';
-$pdf->writeHTMLCell(50, 1, 130, 232, $html, 0, 1, false, true, 'C', true);
-
-//.............
-$html = '<div>Interview Date: _____________________</div>';
-$pdf->writeHTMLCell(100, 1, 90, 236, $html, 0, 1, false, true, 'L', true);
-
-$html = '<div>Approval Date: ____________________</div>';
-$pdf->writeHTMLCell(100, 1, 148, 236, $html, 0, 1, false, true, 'L', true);
-
-$html = '<div>Asylum Officer ID No.: ______________</div>';
-$pdf->writeHTMLCell(100, 1, 90, 242, $html, 0, 1, false, true, 'L', true);
-
-$html = '<div>Denial Date: ______________________</div>';
-$pdf->writeHTMLCell(100, 1, 148, 242, $html, 0, 1, false, true, 'L', true);
-
-$html = '<div>Referral Date: _____________________</div>';
-$pdf->writeHTMLCell(100, 1, 148, 248, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(1, 11, 98, 243.3, "", "R", 1, false, true, 'C', false);  //verticale line | .
+$pdf->writeHTMLCell(1, 11, 138.8, 243.3, "", "R", 1, false, true, 'C', false);  //verticale line | .
 
 $pdf->writeHTMLCell(1, 26.3, 13, 228, "", "L", 1, false, true, 'C', false);
-$pdf->writeHTMLCell(1, 21.3, 68, 233, "", "R", 1, false, true, 'C', false);
 $pdf->writeHTMLCell(1, 26.3, 202.5, 228, "", "L", 1, false, true, 'C', false);
+
+//..................
+
+// $pdf->SetFont('times', '', 9);
+// $html = '<div><b>For EOIR use only.</b></div>';
+// $pdf->writeHTMLCell(60, 3, 30, 232, $html, 0, 1, false, true, 'L', true);
+
+// $pdf->SetFont('times', '', 9);
+// $html = '<div><b>For USCIS use only.</b></div>';
+// $pdf->writeHTMLCell(15, 1, 70, 232, $html, 0, 1, false, true, 'C', true);
+
+// $html = '<div><b>Action:</b></div>';
+// $pdf->writeHTMLCell(50, 1, 70, 232, $html, 0, 1, false, true, 'C', true);
+
+// $html = '<div><b>Decision:</b></div>';
+// $pdf->writeHTMLCell(50, 1, 130, 232, $html, 0, 1, false, true, 'C', true);
+
+// //.............
+// $html = '<div>Interview Date: _____________________</div>';
+// $pdf->writeHTMLCell(100, 1, 90, 236, $html, 0, 1, false, true, 'L', true);
+
+// $html = '<div>Approval Date: ____________________</div>';
+// $pdf->writeHTMLCell(100, 1, 148, 236, $html, 0, 1, false, true, 'L', true);
+
+// $html = '<div>Asylum Officer ID No.: ______________</div>';
+// $pdf->writeHTMLCell(100, 1, 90, 242, $html, 0, 1, false, true, 'L', true);
+
+// $html = '<div>Denial Date: ______________________</div>';
+// $pdf->writeHTMLCell(100, 1, 148, 242, $html, 0, 1, false, true, 'L', true);
+
+// $html = '<div>Referral Date: _____________________</div>';
+// $pdf->writeHTMLCell(100, 1, 148, 248, $html, 0, 1, false, true, 'L', true);
+
+// $pdf->writeHTMLCell(1, 26.3, 13, 228, "", "L", 1, false, true, 'C', false);
+// $pdf->writeHTMLCell(1, 21.3, 68, 233, "", "R", 1, false, true, 'C', false);
+// $pdf->writeHTMLCell(1, 26.3, 202.5, 228, "", "L", 1, false, true, 'C', false);
 
 /******************************
  ******** End Page No 1 ******
@@ -2570,7 +2624,7 @@ $pdf->SetFont('times', '', 9);
 $html = '<div>Write your name in your native alphabet.</div>';
 $pdf->writeHTMLCell(70, 7, 105, 98, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('partd_write_your_name_alphabet', 97.7, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_native_alphabet_name')), 104, 103);
+$pdf->TextField('partd_write_your_name_alphabet', 97.9, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_native_alphabet_name')), 104, 103);
 //............
 $pdf->SetFont('times', '', 9);
 if (showData('i_589_spouse_child_assist_status') == "Y") $checked_Y = "checked";
@@ -3367,10 +3421,10 @@ $pdf->TextField('i_589_aditional_info1', 190, 177, array('multiline' => true, 's
 
 
 
+// 'part_e_attorney_online_account_number':' $attorneyData->uscis_online_account_number ',
+// 'part_e_attorney_state_bar_number':' $attorneyData->bar_number',
 $js = "
 var fields = {
-'part_e_attorney_online_account_number':' $attorneyData->uscis_online_account_number ',
-'part_e_attorney_state_bar_number':' $attorneyData->bar_number',
    'i_589_aditional_info1':' ',
 
 
