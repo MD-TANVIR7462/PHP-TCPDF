@@ -867,143 +867,143 @@ $pdf->TextField('a_ii_city_country_birth', 82, 5, array('strokeColor' => array(6
 //............
 
 $pdf->writeHTMLCell(1, 9, 120, 79, "", "R", 1, false, true, 'L', true);
-// //.............
+//.............
 $pdf->writeHTMLCell(190, 1, 13, 82, "", "B", 1, false, true, 'L', true);
 
 
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>12.</b>  Nationality  <i>(Citizenship)</i></div>';
-// $pdf->writeHTMLCell(100, 4, 13, 62, $html, 0, 1, false, true, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('a_ii_nationality_citizenship', 65, 5.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_nationality')), 13, 67);
-// //............
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>12.</b>  Nationality  <i>(Citizenship)</i></div>';
+$pdf->writeHTMLCell(100, 4, 13, 87, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_ii_nationality_citizenship', 65, 5.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_nationality')), 13, 92);
+//............
 
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>13. </b> Race, Ethnic, or Tribal Group</div>';
-// $pdf->writeHTMLCell(100, 4, 78, 62, $html, 0, 1, false, true, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('a_ii_race_ethnic_tribal_group', 66, 5.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_race_ethnic')), 78, 67);
-// //............
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>13. </b> Race, Ethnic, or Tribal Group</div>';
+$pdf->writeHTMLCell(100, 4, 78, 87, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_ii_race_ethnic_tribal_group', 66, 5.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_race_ethnic')), 78, 92);
+//............
 
-// $pdf->SetFont('times', '', 9.7);
-// if (showData('i_589_current_spouse_gender') == "male") $checked_male = "checked";
-// else $checked_male = "";
-// if (showData('i_589_current_spouse_gender') == "female") $checked_female = "checked";
-// else $checked_female = "";
+$pdf->SetFont('times', '', 9.7);
+if (showData('i_589_current_spouse_gender') == "male") $checked_male = "checked";
+else $checked_male = "";
+if (showData('i_589_current_spouse_gender') == "female") $checked_female = "checked";
+else $checked_female = "";
 
-// $html = '<div><b>14. </b> Gender <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="gender2" value="m" checked="' . $checked_male . '"/>  &nbsp; Male  &nbsp; <input type="checkbox" name="gender2" value="f" checked="' . $checked_female . '"/>  &nbsp;  Female</div>';
-// $pdf->writeHTMLCell(100, 4, 145, 62, $html, 0, 1, false, true, 'L', true);
-// //............
-// $pdf->writeHTMLCell(1, 9, 77, 63, "", "R", 1, false, true, 'L', true); //vertical line 
-// $pdf->writeHTMLCell(1, 9, 143, 63, "", "R", 1, false, true, 'L', true); //vertical line 
-// $pdf->writeHTMLCell(190, 1, 13, 67, "", "B", 1, false, true, 'L', true);
+$html = '<div><b>14. </b> Gender <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="gender2" value="m" checked="' . $checked_male . '"/>  &nbsp; Male  &nbsp; <input type="checkbox" name="gender2" value="f" checked="' . $checked_female . '"/>  &nbsp;  Female</div>';
+$pdf->writeHTMLCell(100, 4, 145, 87, $html, 0, 1, false, true, 'L', true);
+//............
+$pdf->writeHTMLCell(1, 9, 77, 88, "", "R", 1, false, true, 'L', true); //vertical line 
+$pdf->writeHTMLCell(1, 9, 143, 88, "", "R", 1, false, true, 'L', true); //vertical line 
+$pdf->writeHTMLCell(190, 1, 13,92, "", "B", 1, false, true, 'L', true);
 
-// //.............
-// $pdf->SetFont('times', '', 9);
-// if (showData('i_589_current_spouse_in_usa_status') == "Y") $checked_Y = "checked";
-// else $checked_Y = "";
-// if (showData('i_589_current_spouse_in_usa_status') == "N") $checked_N = "checked";
-// else $checked_N = "";
+//.............
+$pdf->SetFont('times', '', 9);
+if (showData('i_589_current_spouse_in_usa_status') == "Y") $checked_Y = "checked";
+else $checked_Y = "";
+if (showData('i_589_current_spouse_in_usa_status') == "N") $checked_N = "checked";
+else $checked_N = "";
 
-// $html = '<div><b>15.</b>  Is this person in the U.S.?  <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="person_us" value="y" checked="' . $checked_Y . '"/>  Yes <i>(Complete Blocks 16 to 24.) </i>  &nbsp; &nbsp; <input type="checkbox" name="person_us" value="n" checked="' . $checked_N . '"/>   No <i>(Specify location)</i> :</div>';
-// $pdf->writeHTMLCell(100, 4, 13, 72, $html, 0, 1, false, true, 'L', true);
-// //................
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('a_15_in_us', 98, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_person_in_usa')), 105, 74.8);
+$html = '<div><b>15.</b>  Is this person in the U.S.?  <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="checkbox" name="person_us" value="y" checked="' . $checked_Y . '"/>  Yes <i>(Complete Blocks 16 to 24.) </i>  &nbsp; &nbsp; <input type="checkbox" name="person_us" value="n" checked="' . $checked_N . '"/>   No <i>(Specify location)</i> :</div>';
+$pdf->writeHTMLCell(100, 4, 13, 97, $html, 0, 1, false, true, 'L', true);
+//................
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_15_in_us', 98, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_person_in_usa')), 105, 99.8);
 
-// $pdf->writeHTMLCell(98, 1, 105, 75, "", "B", 1, false, true, 'L', true);
-// $pdf->writeHTMLCell(190, 1, 13, 76, "", "B", 1, false, true, 'L', true);
-// //............
+$pdf->writeHTMLCell(98, 1, 105, 100, "", "B", 1, false, true, 'L', true);
+$pdf->writeHTMLCell(190, 1, 13, 101, "", "B", 1, false, true, 'L', true);
+//............
 
 
+//..........//............
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>16.</b> Place of last entry into the U.S.</div>';
+$pdf->writeHTMLCell(100, 4, 13, 106, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_ii_place_of_last_entry_us', 46, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_place_of_last_entry')), 13, 114);
+//............
+
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>17.</b> Date of last entry into the <br>   &nbsp;  &nbsp;   U.S. (mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell(100, 4, 60, 106, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_ii_date_last_entry_us', 49, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_date_of_last_entry')), 59, 114);
+//............
+
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>18.</b> I-94 Number <i> (if any) </i></div>';
+$pdf->writeHTMLCell(100, 4, 108, 106, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_ii_I94number_ifany', 43, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_i94_number')), 108, 114);
+//............
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>19.</b> Status when last admitted 
+<br> &nbsp; &nbsp; <i>(Visa type, if any)</i></div>';
+$pdf->writeHTMLCell(100, 4, 150, 106, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_ii_status_when_last_admited', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_visa_type')), 151, 114);
+//............
+
+$pdf->writeHTMLCell(1, 12, 58, 107, "", "R", 1, false, true, 'L', true); //vertical line 
+$pdf->writeHTMLCell(1, 26, 107, 107, "", "R", 1, false, true, 'L', true); //vertical line 
+$pdf->writeHTMLCell(1, 26, 150, 107, "", "R", 1, false, true, 'L', true); //vertical line 
+$pdf->writeHTMLCell(190, 1, 13, 113, "", "B", 1, false, true, 'L', true);
 // //..........//............
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>16.</b> Place of last entry into the U.S.</div>';
-// $pdf->writeHTMLCell(100, 4, 13, 81, $html, 0, 1, false, true, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('a_ii_place_of_last_entry_us', 46, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_place_of_last_entry')), 13, 89);
-// //............
-
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>17.</b> Date of last entry into the <br>   &nbsp;  &nbsp;   U.S. (mm/dd/yyyy)</div>';
-// $pdf->writeHTMLCell(100, 4, 60, 81, $html, 0, 1, false, true, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('a_ii_date_last_entry_us', 49, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_date_of_last_entry')), 59, 89);
-// //............
-
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>18.</b> I-94 Number <i> (if any) </i></div>';
-// $pdf->writeHTMLCell(100, 4, 108, 81, $html, 0, 1, false, true, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('a_ii_I94number_ifany', 43, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_i94_number')), 108, 89);
-// //............
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>19.</b> Status when last admitted 
-// <br> &nbsp; &nbsp; <i>(Visa type, if any)</i></div>';
-// $pdf->writeHTMLCell(100, 4, 150, 81, $html, 0, 1, false, true, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('a_ii_status_when_last_admited', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_visa_type')), 151, 89);
-// //............
-
-// $pdf->writeHTMLCell(1, 12, 58, 82, "", "R", 1, false, true, 'L', true); //vertical line 
-// $pdf->writeHTMLCell(1, 24, 107, 82, "", "R", 1, false, true, 'L', true); //vertical line 
-// $pdf->writeHTMLCell(1, 24, 150, 82, "", "R", 1, false, true, 'L', true); //vertical line 
-// $pdf->writeHTMLCell(190, 1, 13, 88, "", "B", 1, false, true, 'L', true);
-// //..........//............
 
 
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>20.</b> What is your spouse\'s<br> &nbsp; &nbsp; &nbsp;
-// current status?</div>';
-// $pdf->writeHTMLCell(100, 4, 13, 93, $html, 0, 1, false, true, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('a_ii_what_is_your_spouse_current_status', 40, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_current_status')), 13, 101);
-// //............
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>20.</b> What is your spouse\'s<br> &nbsp; &nbsp; &nbsp;
+current status?</div>';
+$pdf->writeHTMLCell(100, 4, 13, 118, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_ii_what_is_your_spouse_current_status', 40, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_current_status')), 13, 127);
+//............
 
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>21.</b> What is the expiration date of his/her <br>&nbsp;&nbsp;&nbsp;
-// authorized stay, if any? (mm/dd/yyyy)</div>';
-// $pdf->writeHTMLCell(100, 4, 53, 93, $html, 0, 1, false, true, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('a_ii_authorization_expiration_date', 55, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_expiration_date')), 53, 101);
-// //............
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>21.</b> What is the expiration date of his/her <br>&nbsp;&nbsp;&nbsp;
+authorized stay, if any? (mm/dd/yyyy)</div>';
+$pdf->writeHTMLCell(100, 4, 53, 118, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_ii_authorization_expiration_date', 55, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_expiration_date')), 53, 127);
+//............
 
-// $pdf->SetFont('times', '', 9);
-// if (showData('i_589_current_spouse_immigration_proceedings') == "Y") $checked_Y = "checked";
-// else $checked_Y = "";
-// if (showData('i_589_current_spouse_immigration_proceedings') == "N") $checked_N = "checked";
-// else $checked_N = "";
-// $html = '<div><b>22.</b>Is your spouse in Immigration<br> &nbsp; &nbsp;
-// Court proceedings? <br> &nbsp; &nbsp;  <input type="checkbox" name="spouse" value="y" checked="' . $checked_Y . '"/>  Yes &nbsp; &nbsp; <input type="checkbox" name="spouse" value="n" checked="' . $checked_N . '"/> No   </div>';
-// $pdf->writeHTMLCell(100, 4, 107, 93, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 9);
+if (showData('i_589_current_spouse_immigration_proceedings') == "Y") $checked_Y = "checked";
+else $checked_Y = "";
+if (showData('i_589_current_spouse_immigration_proceedings') == "N") $checked_N = "checked";
+else $checked_N = "";
+$html = '<div><b>22.</b>Is your spouse in Immigration<br> &nbsp; &nbsp;
+Court proceedings? <br> &nbsp; &nbsp;  <input type="checkbox" name="spouse" value="y" checked="' . $checked_Y . '"/>  Yes &nbsp; &nbsp; <input type="checkbox" name="spouse" value="n" checked="' . $checked_N . '"/> No   </div>';
+$pdf->writeHTMLCell(100, 4, 107.3, 118, $html, 0, 1, false, true, 'L', true);
 
+//............
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>23.</b> If previously in the U.S., date of<br>&nbsp; &nbsp; 
+previous arrival <i>(mm/dd/yyyy)</i></div>';
+$pdf->writeHTMLCell(100, 4, 151, 118, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('a_ii_date_of_priviews_arrival', 52, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_previous_arrival_date')), 151, 127);
 // //............
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>23.</b> If previously in the U.S., date of<br>&nbsp; &nbsp; 
-// previous arrival <i>(mm/dd/yyyy)</i></div>';
-// $pdf->writeHTMLCell(100, 4, 151, 93, $html, 0, 1, false, true, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('a_ii_date_of_priviews_arrival', 52, 5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_current_spouse_previous_arrival_date')), 151, 101);
-// //............
-// $pdf->writeHTMLCell(1, 12, 52, 94, "", "R", 1, false, true, 'L', true); //vertical line 
-// $pdf->writeHTMLCell(190, 1, 13, 100, "", "B", 1, false, true, 'L', true);
+$pdf->writeHTMLCell(1, 14, 52, 119, "", "R", 1, false, true, 'L', true); //vertical line 
+$pdf->writeHTMLCell(190, 1, 13, 127, "", "B", 1, false, true, 'L', true);
 // //...........
-// $pdf->SetFont('times', '', 9);
-// if (showData('i_589_current_spouse_immigration_proceedings') == "Y") $checked_Y = "checked";
-// else $checked_Y = "";
-// if (showData('i_589_current_spouse_immigration_proceedings') == "N") $checked_N = "checked";
-// else $checked_N = "";
-// $html = '<div><b>24.</b> If in the U.S., is your spouse to be included in this application? <i>(Check the appropriate box.)</i> </div>';
-// $pdf->writeHTMLCell(180, 4, 13, 105, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 9);
+if (showData('i_589_current_spouse_immigration_proceedings') == "Y") $checked_Y = "checked";
+else $checked_Y = "";
+if (showData('i_589_current_spouse_immigration_proceedings') == "N") $checked_N = "checked";
+else $checked_N = "";
+$html = '<div><b>24.</b> If in the U.S., is your spouse to be included in this application? <i>(Check the appropriate box.)</i> </div>';
+$pdf->writeHTMLCell(180, 4, 13, 132, $html, 0, 1, false, true, 'L', true);
 
-// $pdf->SetFont('times', '', 10);
-// $html = '<div> <input type="checkbox" name="include" value="y" checked="' . $checked_Y . '"/>  Yes';
-// $pdf->writeHTMLCell(190, 5, 15, 110, $html, 0, 1, false, true, 'L', true);
-// $pdf->SetFont('times', '', 10);
-// $html = '<div> <input type="checkbox" name="include" value="n" checked="' . $checked_N . '"/> No  </div>';
-// $pdf->writeHTMLCell(190, 5, 15, 115, $html, 0, 1, false, true, 'L', true);
-// //............
-// $pdf->writeHTMLCell(190, 1, 13, 100, "", "B", 1, false, true, 'L', true); // table end --------------------
+$pdf->SetFont('times', '', 10);
+$html = '<div> <input type="checkbox" name="include" value="y" checked="' . $checked_Y . '"/>  Yes';
+$pdf->writeHTMLCell(190, 5, 15, 136, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10);
+$html = '<div> <input type="checkbox" name="include" value="n" checked="' . $checked_N . '"/> No  </div>';
+$pdf->writeHTMLCell(190, 5, 15, 141, $html, 0, 1, false, true, 'L', true);
+//............
+// $pdf->writeHTMLCell(190, 1, 13, 125, "", "B", 1, false, true, 'L', true); // table end --------------------
 
 //...........
 $pdf->SetFont('times', '', 9);
