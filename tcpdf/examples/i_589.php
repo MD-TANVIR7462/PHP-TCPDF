@@ -727,39 +727,6 @@ $pdf->writeHTMLCell(1, 26.3, 202.5, 228, "", "L", 1, false, true, 'C', false);
 
 //..................
 
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>For EOIR use only.</b></div>';
-// $pdf->writeHTMLCell(60, 3, 30, 232, $html, 0, 1, false, true, 'L', true);
-
-// $pdf->SetFont('times', '', 9);
-// $html = '<div><b>For USCIS use only.</b></div>';
-// $pdf->writeHTMLCell(15, 1, 70, 232, $html, 0, 1, false, true, 'C', true);
-
-// $html = '<div><b>Action:</b></div>';
-// $pdf->writeHTMLCell(50, 1, 70, 232, $html, 0, 1, false, true, 'C', true);
-
-// $html = '<div><b>Decision:</b></div>';
-// $pdf->writeHTMLCell(50, 1, 130, 232, $html, 0, 1, false, true, 'C', true);
-
-// //.............
-// $html = '<div>Interview Date: _____________________</div>';
-// $pdf->writeHTMLCell(100, 1, 90, 236, $html, 0, 1, false, true, 'L', true);
-
-// $html = '<div>Approval Date: ____________________</div>';
-// $pdf->writeHTMLCell(100, 1, 148, 236, $html, 0, 1, false, true, 'L', true);
-
-// $html = '<div>Asylum Officer ID No.: ______________</div>';
-// $pdf->writeHTMLCell(100, 1, 90, 242, $html, 0, 1, false, true, 'L', true);
-
-// $html = '<div>Denial Date: ______________________</div>';
-// $pdf->writeHTMLCell(100, 1, 148, 242, $html, 0, 1, false, true, 'L', true);
-
-// $html = '<div>Referral Date: _____________________</div>';
-// $pdf->writeHTMLCell(100, 1, 148, 248, $html, 0, 1, false, true, 'L', true);
-
-// $pdf->writeHTMLCell(1, 26.3, 13, 228, "", "L", 1, false, true, 'C', false);
-// $pdf->writeHTMLCell(1, 21.3, 68, 233, "", "R", 1, false, true, 'C', false);
-// $pdf->writeHTMLCell(1, 26.3, 202.5, 228, "", "L", 1, false, true, 'C', false);
 
 /******************************
  ******** End Page No 1 ******
@@ -769,19 +736,61 @@ $pdf->writeHTMLCell(1, 26.3, 202.5, 228, "", "L", 1, false, true, 'C', false);
  ******** Start Page No 2 ****
  ******************************/
 
+
+
+ 
 $pdf->AddPage('P', 'LETTER');  // page number 2
 $pdf->SetFont('times', 'B', 12);
 $pdf->writeHTMLCell(191, 5, 13, 17, "Part A.II. Information About Your Spouse and Children", 1, 1, true, true, 'L', true);
 
+
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>For EOIR use only.</b></div>';
+$pdf->writeHTMLCell(60, 3, 30, 26, $html, 0, 1, false, true, 'L', true);
+
+$pdf->SetFont('times', '', 9);
+$html = '<div><b>For USCIS use only.</b></div>';
+$pdf->writeHTMLCell(15, 1, 70, 26, $html, 0, 1, false, true, 'C', true);
+
+$html = '<div><b>Action:</b></div>';
+$pdf->writeHTMLCell(50, 1, 70, 26, $html, 0, 1, false, true, 'C', true);
+
+$html = '<div><b>Decision:</b></div>';
+$pdf->writeHTMLCell(50, 1, 130, 26, $html, 0, 1, false, true, 'C', true);
+
+//.............
+$html = '<div>Interview Date: _____________________</div>';
+$pdf->writeHTMLCell(100, 1, 90,31, $html, 0, 1, false, true, 'L', true);
+
+$html = '<div>Approval Date: ____________________</div>';
+$pdf->writeHTMLCell(100, 1, 148,31, $html, 0, 1, false, true, 'L', true);
+
+$html = '<div>Asylum Officer ID No.: ______________</div>';
+$pdf->writeHTMLCell(100, 1, 90,37, $html, 0, 1, false, true, 'L', true);
+
+$html = '<div>Denial Date: ______________________</div>';
+$pdf->writeHTMLCell(100, 1, 148,37, $html, 0, 1, false, true, 'L', true);
+
+$html = '<div>Referral Date: _____________________</div>';
+$pdf->writeHTMLCell(100, 1, 148, 44, $html, 0, 1, false, true, 'L', true);
+
+$pdf->writeHTMLCell(190,1, 13, 27, "", "T", 1, false, true, 'C', false);
+$pdf->writeHTMLCell(190,1, 13, 46, "", "B", 1, false, true, 'C', false);
+$pdf->writeHTMLCell(190,1, 13, 43.4, "", "B", 1, false, true, 'C', false);
+$pdf->writeHTMLCell(1, 22.2, 13, 27, "", "L", 1, false, true, 'C', false);
+$pdf->writeHTMLCell(1, 22.2, 68,27, "", "R", 1, false, true, 'C', false);
+$pdf->writeHTMLCell(1, 22.2, 203, 27, "", "L", 1, false, true, 'C', false);
+// !.........
+
 $pdf->SetFont('times', '', 9);
 $html = '<div><b>Your spouse</b></div>';
-$pdf->writeHTMLCell(60, 5, 12, 24, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(60, 5, 12, 49, $html, 0, 1, false, true, 'L', true);
 
 $pdf->SetFont('times', '', 9);
 if (showData('i_589_not_married_status') == "Y") $checked = "checked";
 else $checked = "";
 $html = '<div> <input type="checkbox" name="not_married" value="Y" checked="' . $checked . '"/>     I am not married. (Skip to <b>Your Children</b> below.)</div>';
-$pdf->writeHTMLCell(100, 5, 60, 24, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(100, 5, 60, 49, $html, 0, 1, false, true, 'L', true);
 
 $pdf->writeHTMLCell(190, 92, 13, 55, "", 1, 1, false, false, 'L', true); //table 1 start 
 //..........//............
