@@ -1,0 +1,74 @@
+[
+    {
+        "id": "12345",
+        "name": "MD TAJUL ISLAM TANVIR",
+        "email": "tanvir@example.com",
+        "phone": "+8801712345678",
+        "address": {
+          "street": "123 Main Street",
+          "city": "Dhaka",
+          "state": "Dhaka",
+          "postalCode": "1205",
+          "country": "Bangladesh"
+        },
+        "blv":[ {
+          "street": "123 Main Street",
+          "city": "Dhaka",
+          "state": "Dhaka",
+          "postalCode": "1205",
+          "country": "Bangladesh"
+        },
+      {
+          "street": "123 Main Street",
+          "city": "Dhaka",
+          "state": "Dhaka",
+          "postalCode": "1205",
+          "country": "Bangladesh"
+        }],
+        "dateOfBirth": "1998-05-12",
+        "gender": "Male",
+        "role": "User",
+        "isActive": true,
+        "createdAt": "2025-02-23T12:00:00Z",
+        "updatedAt": "2025-02-23T12:00:00Z"
+      },
+      {
+        "id": "12345",
+        "name": "MD TAJUL ISLAM TANVIR",
+        "email": "tanvir@example.com",
+        "phone": "+8801712345678",
+        "address": {
+          "street": "123 Main Street",
+          "city": "Dhaka",
+          "state": "Dhaka",
+          "postalCode": "1205",
+          "country": "Bangladesh"
+        },
+        "dateOfBirth": "1998-05-12",
+        "gender": "Male",
+        "role": "User",
+        "isActive": true,
+        "createdAt": "2025-02-23T12:00:00Z",
+        "updatedAt": "2025-02-23T12:00:00Z"
+      },
+      {
+        "id": "12345",
+        "name": "MD TAJUL ISLAM TANVIR",
+        "email": "tanvir@example.com",
+        "phone": "+8801712345678",
+        "address": {
+          "street": "123 Main Street",
+          "city": "Dhaka",
+          "state": "Dhaka",
+          "postalCode": "1205",
+          "country": "Bangladesh"
+        },
+        "dateOfBirth": "1998-05-12",
+        "gender": "Male",
+        "role": "User",
+        "isActive": true,
+        "createdAt": "2025-02-23T12:00:00Z",
+        "updatedAt": "2025-02-23T12:00:00Z"
+      }
+]
+  
