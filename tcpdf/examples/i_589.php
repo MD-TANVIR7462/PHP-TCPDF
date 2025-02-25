@@ -1,8 +1,8 @@
 <?php
 
-// require_once('formheader.php');   //database connection file 
+// require_once('formheader.php'); //database connection file 
 
-require_once("localconfig.php");//local db file -->
+require_once("localconfig.php"); //local db file -->
 
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
@@ -15,7 +15,7 @@ class MyPDF extends TCPDF
    public function Header()
    {
       $this->SetY(13);
-      if ($this->page > 1) {
+      if ($this->page > 1 && $this->page<11) {
 
          $this->SetLineWidth(2); // set border width
          // $this->SetDrawColor(0,0,0); // set color for cell border
@@ -2193,7 +2193,7 @@ $html3 = '<div><b>Part B. Information About Your Application</b></div>';
 $pdf->writeHTMLCell(191, 5, 13, 17, $html3, 1, 1, true, true, 'L', true);
 //...........
 
-$pdf->SetFont('times', '', 9);
+$pdf->SetFont('times', 'I', 9);
 $html = '<div><b>NOTE:</b> Use Form I-589 Supplement B, or attach additional sheets of paper as needed to complete your responses to the questions contained in 
 Part B.)</div>';
 $pdf->writeHTMLCell(188, 7, 13, 23, $html, 0, 1, false, true, 'L', true);
@@ -2423,7 +2423,7 @@ $pdf->writeHTMLCell(182, 33, 19, 220, showData('i_589_other_country_returned_val
  ******** Start Page No 7*****
  ******************************/
 $pdf->AddPage('P', 'LETTER');  // page number 7
-$pdf->SetFont('times', '', 10);
+$pdf->SetFont('times', '', 12);
 $html3 = '<div><b>Part C. Additional Information About Your Application</b></div>';
 $pdf->writeHTMLCell(191, 5, 13, 17, $html3, 1, 1, true, true, 'L', true);
 //.............
@@ -2521,7 +2521,7 @@ $pdf->writeHTMLCell(182, 35, 19, 210, showData('i_589_particular_political_opini
  ******** Start Page No 8*****
  ******************************/
 $pdf->AddPage('P', 'LETTER');  // page number 8
-$pdf->SetFont('times', '', 10);
+$pdf->SetFont('times', '', 12);
 $html3 = '<div><b>Part C. Additional Information About Your Application</b>(continued)</div>';
 $pdf->writeHTMLCell(191, 5, 13, 17, $html3, 1, 1, true, true, 'L', true);
 //.............
@@ -2598,7 +2598,7 @@ $pdf->writeHTMLCell(182, 45, 19, 208, showData('i_589_included_the_application_v
  ******** Start Page No 9*****
  ******************************/
 $pdf->AddPage('P', 'LETTER');  // page number 9
-$pdf->SetFont('times', '', 10);
+$pdf->SetFont('times', '', 12);
 $html3 = '<div><b>Part D. Your Signature</b></div>';
 $pdf->writeHTMLCell(191, 5, 13, 17, $html3, 1, 1, true, true, 'L', true);
 //.............
@@ -2941,7 +2941,7 @@ $pdf->writeHTMLCell(80, 7, 110, 185, $html, "T", 1, false, true, 'C', true);
  ******************************/
 $pdf->AddPage('P', 'LETTER');  // page number 11
 
-$pdf->SetFont('times', 'B', 13);
+$pdf->SetFont('times', 'B', 12);
 $html = '<div>Supplement A, Form I-589</div>';
 $pdf->writeHTMLCell(80, 7, 137, 5, $html, 0, 1, false, true, 'C', true);
 
@@ -3370,74 +3370,95 @@ $pdf->writeHTMLCell(190, 7, 18, 213, $html, 0, 1, false, true, 'L', true);
  ******** Start Page No 12*****
  ******************************/
 $pdf->AddPage('P', 'LETTER');
+$logo = 'homeland_security_logo.png';
+$pdf->Image($logo, 12, 12, 19, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 
-$pdf->SetFont('times', 'B', 13);
-$html = '<div>Supplement B, Form I-589</div>';
-$pdf->writeHTMLCell(80, 7, 137, 5, $html, 0, 1, false, true, 'C', true);
+$pdf->Cell(25, 5, '', 0, 0);
+$pdf->SetFont('times', 'B', 13.5);    // set font
+$pdf->MultiCell(120, 15, "Application for Asylum and for
+Withholding of Removal ", 0, 'C', 0, 1, 48, 5, true);
 
+$pdf->SetFont('times', 'B', 10.5); // set font
+$pdf->setCellPaddings(2, 4, 6, 0); // set cell padding
+$pdf->MultiCell(30, 5, "USCIS\nForm I-589", 0, 'C', 0, 1, 174.5, 6, true);
+
+$pdf->SetFont('times', 'B', 10.6);    // set font
+$pdf->MultiCell(80, 15, "Department of Homeland Security", 0, 'C', 0, 1, 67, 15, true);
+
+$pdf->SetFont('times', '', 10.8);    // set font
+$pdf->MultiCell(80, 15, "U.S. Citizenship and Immigration Services", 0, 'C', 0, 1, 67, 20, true);
+
+$pdf->SetFont('times', '', 9);    // set font
+$pdf->setCellPaddings(2, 1, 6, 0); // set cell padding
+$pdf->MultiCell(40, 5, "OMB No. 1615-0067\nExpires 09/30/2027", 0, 'C', 0, 1, 169, 18.5, true);
+
+$pdf->Ln(3.2); // 5mm নিচে সরানো
+
+$top_border = array(
+    'T' => array('width' => 2, 'color' => array(0, 0, 0), 'dash' => 0, 'cap' => 'square'),
+);
+
+$pdf->Cell(188.5, 0, '', $top_border, 1, 1);
+
+
+
+$pdf->setCellPaddings(1, 1, 0, 1); // set cell padding
+$pdf->SetLineWidth(0.1); // set border width
+$pdf->SetDrawColor(0, 0, 0); // set color for cell border
+$pdf->SetFillColor(255, 255, 255); // set filling color
+$pdf->setCellHeightRatio(1.1); // set cell height ratio
+$pdf->MultiCell(0, 0, '', 'T', 1, 'C', 1, 12.8, 32.65, false, 'T', 'C');
+
+//.............
+$pdf->SetFillColor(220, 220, 220);
 $pdf->SetFont('times', '', 12);
 $html3 = '<div><b>Additional Information About Your Claim to Asylum</b></div>';
-$pdf->writeHTMLCell(191, 5, 13, 17, $html3, 1, 1, true, true, 'L', true);
-//...............
-$pdf->writeHTMLCell(191, 20, 13, 27, "", 1, 1, false, true, 'C', true);
-$pdf->writeHTMLCell(191, 1, 13, 30, "", "B", 1, false, true, 'C', true); //......horizontal line ---------------
-$pdf->writeHTMLCell(1, 20, 103, 27, "", "R", 1, false, true, 'C', true); //......horizontal line ---------------
-//.........
+$pdf->writeHTMLCell(191, 5, 13, 36.2, $html3, 1, 1, true, true, 'L', true);
+//.............
+$pdf->writeHTMLCell(191, 20, 13, 45, "", 1, 1, false, true, 'C', true);
+$pdf->writeHTMLCell(191, 1, 13, 48, "", "B", 1, false, true, 'C', true); //......horizontal line ---------------
+$pdf->writeHTMLCell(1, 20, 103, 45, "", "R", 1, false, true, 'C', true); //......horizontal line ---------------
+//.............
 $pdf->SetFont('times', '', 9);
 $html = '<div>A-Number <i>(If available)</i></div>';
-$pdf->writeHTMLCell(80, 7, 13, 26, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 7, 13, 44, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 9);
 $html = '<div>Date</div>';
-$pdf->writeHTMLCell(80, 7, 105, 26, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 7, 105, 44, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_asylum_date', 100, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('additional_info_claim_to_asylum_date')), 104, 31);
-//.........
+$pdf->TextField('additional_asylum_date', 100, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('additional_info_claim_to_asylum_date')), 104, 49);
+//.............
 $pdf->SetFont('times', '', 9);
 $html = '<div>Applicant\'s Name</div>';
-$pdf->writeHTMLCell(80, 7, 13, 36, $html, 0, 1, false, true, 'L', true);
-//.........
+$pdf->writeHTMLCell(80, 7, 13, 54, $html, 0, 1, false, true, 'L', true);
+//.............
 $pdf->SetFont('times', '', 9);
 $html = '<div>Applicant\'s Signature</div>';
-$pdf->writeHTMLCell(80, 7, 104, 36, $html, 0, 1, false, true, 'L', true);
-//.........
+$pdf->writeHTMLCell(80, 7, 104, 54, $html, 0, 1, false, true, 'L', true);
+//.............
 $pdf->SetFont('times', '', 9);
 $html = '<div><b>NOTE:</b> <i>Use this as a continuation page for any additional information requested. Copy and complete as needed.</i></div>';
-$pdf->writeHTMLCell(180, 7, 13, 50, $html, 0, 1, false, true, 'L', true);
-//.........
-$pdf->writeHTMLCell(190, 7, 13, 52, "", "B", 1, false, true, 'L', true);
+$pdf->writeHTMLCell(180, 7, 13, 68, $html, 0, 1, false, true, 'L', true);
+//.............
+$pdf->writeHTMLCell(190, 7, 13, 67, "", "B", 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 9);
 $html = '<div><b>Part</b></div>';
-$pdf->writeHTMLCell(180, 7, 13, 60, $html, 0, 1, false, true, 'L', true);
-//.........
+$pdf->writeHTMLCell(180, 7, 13, 75, $html, 0, 1, false, true, 'L', true);
+//..............
 $pdf->SetFont('times', '', 9);
 $html = '<div><b>Question</b></div>';
-$pdf->writeHTMLCell(180, 7, 13, 68, $html, 0, 1, false, true, 'L', true);
-//.........
+$pdf->writeHTMLCell(180, 7, 13, 83, $html, 0, 1, false, true, 'L', true);
+//.............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('additional_asylum_part', 30, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('additional_info_claim_to_asylum_part')), 30, 60);
-$pdf->writeHTMLCell(29.5, 1, 30, 60, '', "B", 1, false, true, 'L', true);
-$pdf->TextField('additional_asylum_question', 30, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('additional_info_claim_to_asylum_question')), 30, 68);
-$pdf->writeHTMLCell(29.5, 1, 30, 68, '', "B", 1, false, true, 'L', true);
+$pdf->TextField('additional_asylum_part', 30, 5.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('additional_info_claim_to_asylum_part')), 30, 76.5);
+$pdf->writeHTMLCell(29.5, 1, 30, 76, '', "B", 1, false, true, 'L', true);
+$pdf->TextField('additional_asylum_question', 30, 5.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('additional_info_claim_to_asylum_question')), 30, 83.4);
+$pdf->writeHTMLCell(29.5, 1, 30, 83, '', "B", 1, false, true, 'L', true);
 
-//............
+//.............
 $pdf->SetFont('courier', 'B', 10);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('i_589_aditional_info1', 190, 177, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('additional_info_claim_to_asylum_value')), 14, 79);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$pdf->TextField('i_589_aditional_info1', 190, 170, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('additional_info_claim_to_asylum_value')), 14, 91.2);
 
 // 'part_e_attorney_online_account_number':' $attorneyData->uscis_online_account_number ',
 // 'part_e_attorney_state_bar_number':' $attorneyData->bar_number',
