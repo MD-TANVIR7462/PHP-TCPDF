@@ -218,3 +218,17 @@
 "WI - WITHOUT INSPECTION "
 "WT - VISITOR FOR PLEASURE - VWPP "
 "X - EOIR "
+
+
+
+
+'other_info_country_of_domicile':' " . showData('sponsor_family_member1_family_last_name') . " ',
+'other_info_date_of_birth':' " . showData('sponsor_family_member1_given_first_name') . " ',
+'other_info_country_of_birth':' " . showData('sponsor_family_member1_middle_name') . " ',
+'other_info_us_social_number':' " . showData('sponsor_family_member1_relationship') . " ',
+'about_your_mailing_state2':' " . showData('sponsor_family_member1_date_of_birth') . " ',
+'about_your_mailing_zipcode2':' " . showData('sponsor_family_member1_a_number') . " ',
+'about_your_mailing_address_province2':' " . showData('sponsor_family_member1_uscis_online_account_number') . " ',
+'about_your_mailing_address_postal_code2':' " . showData('sponsor_family_member1_uscis_online_account_number') . " ',
+'about_your_mailing_address_country2':' " . showData('sponsor_family_member1_uscis_online_account_number') . " ',
+
