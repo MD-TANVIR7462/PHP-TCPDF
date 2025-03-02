@@ -730,23 +730,69 @@ $pdf->writeHTMLCell(50, 7, 172, 225, $html, 0, 1, false, true, 'J', true);
 
 
 //  ********************************
-//  ******** End Page No 6 **********
+//  ******** End Page No 8 **********
 //  *********************************/
 
 //  ********************************
-//  ******** Start Page No 7 ********
+//  ******** Start Page No 9 ********
 //  *********************************/
 
-//  $pdf->AddPage('P', 'LETTER');
+$pdf->AddPage('P', 'LETTER'); // page number 8
+$pdf->SetFont('times', '', 12);
+$pdf->setCellPaddings(1, 1, 0, 1);
+$html = '<div><b>Part 8. Sponsor\'s Contract, Contact Information, Certification, and Signature </b>(continued)</div>';
+$pdf->writeHTMLCell(190, 7, 13, 17, $html, 1, 1, true, true, 'L', true);
 
-//  $pdf->SetFont('times', '', 12);
-//  $pdf->setCellPaddings(1, 1, 0, 1);
-//  $html = '<div><b>Part 8. Sponsor\'s Contract, Statement, Contact
-//  Information, Declaration, Certification, and
-//  Signature</b>(continued)</div>';
-//  $pdf->writeHTMLCell(90, 7, 13, 17, $html, 1, 1, true, true, 'L', true);
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 25, "<b>What Other Consequences Are There?</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 31, "If an intending immigrant becomes a lawful permanent resident in the United States based on a Form I-864 that you have signed, then,<br>
+until your obligations under Form I-864 terminate, the U.S. Government may consider (deem) your income and assets as available to<br>
+that person, in determining whether he or she is eligible for certain Federal means-tested public benefits and also for state or local<br>
+means-tested public benefits, if the state or local government's rules provide for consideration (deeming) of your income and assets as<br>
+available to the person.", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 53.5, "This provision does <b>not</b> apply to public benefits specified in section 403(c) of the Welfare Reform Act such as emergency Medicaid,<br>
+short-term, non-cash emergency relief; services provided under the National School Lunch and Child Nutrition Acts; immunizations<br>
+and testing and treatment for communicable diseases; and means-tested programs under the Elementary and Secondary Education Act.", '', 1, false, 'L');
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 70, "<b>What If I Do Not Fulfill My Obligations?</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 76, "If you do not provide sufficient support to the person who becomes a lawful permanent resident based on a Form I-864 that you<br>
+signed, that person may sue you for this support.", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 86.5, "If a Federal, state, local, or private agency provided any covered means-tested public benefit to the person who becomes a lawful<br>
+permanent resident based on a Form I-864 that you signed, the agency may ask you to reimburse them for the amount of the benefits<br>
+they provided. If you do not make the reimbursement, the agency may sue you for the amount that the agency believes you owe.", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 101.5, "If you are sued, and the court enters a judgment against you, the person or agency that sued you may use any legally permitted<br>
+procedures for enforcing or collecting the judgment. You may also be required to pay the costs of collection, including attorney fees.", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 112.5, "If you do not file a properly completed Form I-865 within 30 days of any change of address, USCIS may impose a civil fine for your<br>
+failing to do so.", '', 1, false, 'L');
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 125, "<b>When Will These Obligations End?</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 131, "Your obligations under a Form I-864 that you signed will end if the person who becomes a lawful permanent resident based on that<br>
+affidavit:", '', 1, false, 'L');
+//...............
+$pdf->writeHTMLCell(197, 5, 22, 141, "<b>A.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 141, "Becomes a U.S. citizen;", '', 1, false, 'L');
+//.........
+$pdf->writeHTMLCell(197, 5, 22, 148.5, "<b>B.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 148.5, "Has worked, or can receive credit for, 40 quarters of coverage under the Social Security Act;", '', 1, false, 'L');
+//.........
+$pdf->writeHTMLCell(197, 5, 22, 155.5, "<b>C.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 155.5, "No longer has lawful permanent resident status and has departed the United States;", '', 1, false, 'L');
+//.........
+$pdf->writeHTMLCell(197, 5, 22, 162.5, "<b>D.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 162.5, "Is subject to removal, but applies for and obtains, in removal proceedings, a new grant of adjustment of status,<br>
+based on a new affidavit of support, if one is required; or", '', 1, false, 'L');
+//.........
+$pdf->writeHTMLCell(197, 5, 22, 172.5, "<b>E.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 172.5, "Dies.", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 182.5, "<b>NOTE</b>: Divorce does not terminate your obligations under Form I-864.", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 190.5, "Your obligations under a Form I-864 that you signed also end if you die. Therefore, if you die, your estate is not required to take<br>
+responsibility for the person's support after your death. However, your estate may owe any support that you accumulated before you<br>
+died", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 204.5, "<b>NOTE</b>: : Select the box for either <b>Item A.</b> or <b>B</b>. in <b>Item Number 1</b>. If applicable, select the box for <b>Item Number 2</b>.", '', 1, false, 'L');
 
-
+//.........
 
 //  ********************************
 //  ******** End Page No 9 **********
@@ -758,7 +804,6 @@ $pdf->writeHTMLCell(50, 7, 172, 225, $html, 0, 1, false, true, 'J', true);
 
 
 $pdf->AddPage('P', 'LETTER'); // page number 8
-
 $pdf->SetFont('times', '', 12);
 $pdf->setCellPaddings(1, 1, 0, 1);
 $html = '<div><b>Part 8. Sponsor\'s Contract, Contact Information, Certification, and Signature </b>(continued)</div>';
@@ -813,19 +858,69 @@ $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('about_your_mailing_address_province2', 72.6, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(),94, 73);
 //...............
 
-//..........
-$pdf->SetFont('times', '', 10); // set font
-$pdf->writeHTMLCell(90, 7, 12, 200, "<b>10</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sponsor's A-Number (if any) ", '', 0, 0, true, 'L');
-
-$pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('about_your_mailing_address_province2', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 31, 205);
-
-
-
 //...............
+$pdf->setFont('Times', '', 11.6);
+$html = '<div><b><i>Sponsor\'s Contact Information </i></b></div>';
+$pdf->writeHTMLCell(191, 6.5, 13, 86.7, $html, '', 1, true, 'L');
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 94, '<b>3.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 94, "Sponsor's Daytime Telephone Number ", '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 115, 94, '<b>4.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 123, 94, "Sponsor's Mobile Telephone Number (if any) ", '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 12, 106, '<b>5.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 106, "Sponsor's Email Address (if any) ", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p12_Sponsor_daytime', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 99.5);
+$pdf->TextField('p12_Sponsor_mobile', 80, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 124, 99.5);
+$pdf->TextField('p12_Sponsor_email', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 111.5);
+
+//........................
+$pdf->setFont('Times', '', 11.6);
+$pdf->writeHTMLCell(191, 6.5, 13, 121, '<div><b><i>Sponsor\'s Declaration and Certification </i></b></div>', '', 1, true, 'L');
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 128, "Copies of any documents I have submitted are exact photocopies of unaltered, original documents, and I understand that USCIS or the<br>
+U.S. Department of State (DOS) may require that I submit original documents to USCIS or DOS at a later date. Furthermore, I<br>
+authorize the release of any information from any of my records that USCIS or DOS may need to determine my eligibility for the<br>
+immigration benefit I seek.", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 146.5, "I furthermore authorize release of information contained in this affidavit, in supporting documents, and in my USCIS or DOS records<br>
+to other entities and persons where necessary for the administration and enforcement of U.S. immigration law.", '', 1, false, 'L');
+//...............
+$pdf->writeHTMLCell(197, 5, 12, 157, "I certify, under penalty of perjury, that all of the information in my affidavit and any document submitted with it were provided or<br>
+authorized by me, that I reviewed and understand all of the information contained in, and submitted with, my affidavit, and that all of<br>
+this information is complete, true, and correct. ", '', 1, false, 'L');
+//...............
+$pdf->writeHTMLCell(197, 5, 22, 171, "<b>A.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 171, "I know the contents of this affidavit of support that I signed;", '', 1, false, 'L');
+//.........
+$pdf->writeHTMLCell(197, 5, 22, 178.5, "<b>B.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 178.5, "I have read and I understand each of the obligations described in Part 8., and I agree, freely and without any mental<br>
+reservation or purpose of evasion, to accept each of those obligations in order to make it possible for the immigrant<br>
+indicated in <b>Part 3</b>. to become a lawful permanent resident of the United States;", '', 1, false, 'L');
+//.........
+$pdf->writeHTMLCell(197, 5, 22, 193.5, "<b>C.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 193.5, "I agree to submit to the personal jurisdiction of any Federal or state court that has subject matter jurisdiction of a lawsuit<br>
+against me to enforce my obligations under this Form I-864EZ;
+", '', 1, false, 'L');
+//.........
+$pdf->writeHTMLCell(197, 5, 22, 203.5, "<b>D.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 203.5, "Each of the Federal income tax returns submitted in support of this affidavit are true copies, or are unaltered tax<br>
+transcripts, of the tax returns I filed with the IRS;", '', 1, false, 'L');
+//.........
+$pdf->writeHTMLCell(197, 5, 22, 213.5, "<b>E.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 213.5, "I understand that, if I am related to the sponsored immigrant by marriage, the termination of the marriage (by divorce,<br>
+dissolution, annulment, or other legal process) will not relieve me of my obligations under this Form I-864EZ; and", '', 1, false, 'L');
+//.........
+$pdf->writeHTMLCell(197, 5, 22, 224.5, "<b>F.</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 32, 224.5, "I authorize the Social Security Administration to release information about me in its records to the USCIS and DOS.", '', 1, false, 'L');
+//.........
+
 $pdf->SetFont('times', '', 12);
 $html = '<div><b><i>Sponsor\'s Signature</i></b></div>';
-$pdf->writeHTMLCell(191, 6.5, 13, 234, $html, '', 1, true, 'L');
+$pdf->writeHTMLCell(191, 6.5, 13, 235, $html, '', 1, true, 'L');
 //..............
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 242, '<b>6.</b>', '', 1, false, 'L');
