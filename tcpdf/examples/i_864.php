@@ -43,7 +43,7 @@ class MyPDF extends TCPDF
         // Set font
         $this->SetFont('times', '', 9);
 
-        $this->Cell(40, 6, "Form I-864   Edition   12/08/21  E", 0, 0, 'L');
+        $this->Cell(40, 6, "Form I-864   Edition   10/17/24 ", 0, 0, 'L');
 
 
         // if ($this->page == 1){
@@ -107,7 +107,7 @@ $style = array(
 
 // Logo
 $logo = 'homeland_security_logo.png';
-$pdf->Image($logo, 12, 11, 16, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+$pdf->Image($logo, 12, 10, 19, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 
 $pdf->Cell(25, 5, '', 0, 0);
 $pdf->SetFont('times', 'B', 14);    // set font
@@ -125,7 +125,7 @@ $pdf->MultiCell(80, 15, "U.S. Citizenship and Immigration Services", 0, 'C', 0, 
 
 $pdf->SetFont('times', '', 9);    // set font
 $pdf->setCellPaddings(2, 1, 6, 0); // set cell padding
-$pdf->MultiCell(40, 5, "OMB No. 1615-0075\nExpires 01/31/2026", 0, 'C', 0, 1, 169, 18.5, true);
+$pdf->MultiCell(40, 5, "OMB No. 1615-0075\nExpires 10/31/2027", 0, 'C', 0, 1, 169, 18.5, true);
 
 $pdf->Ln(1.3);
 
@@ -704,9 +704,9 @@ $pdf->writeHTMLCell(60, 1, 84, 30, '<div>Given Name (First Name)</div>', 0, 0, f
 $pdf->writeHTMLCell(60, 1, 146, 30, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
 //................
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('information_about_principal_last_tname', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22.8,35);
-$pdf->TextField('information_about_principal_first_name', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 84,35);
-$pdf->TextField('information_about_principal_middle_name', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 146,35);
+$pdf->TextField('i_864_info_about_principal_last_tname', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22.8,35);
+$pdf->TextField('i_864_info_about_principal_first_name', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 84,35);
+$pdf->TextField('i_864_info_about_principal_middle_name', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 146,35);
 
 //..........
 $pdf->SetFont('times', '', 10);
@@ -714,14 +714,14 @@ $pdf->writeHTMLCell(90, 7, 13, 43, "<b>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb
 $html = '<div>In Care Of Name (if any)   </div>';
 $pdf->writeHTMLCell(90, 7, 22, 48, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('about_your_mailing_care_of_name',181, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 55);
+$pdf->TextField('i_864_info_about_principal_care_name',181, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 55);
 //........
 
 $pdf->SetFont('times', '', 10);
 $html = '<div>Street Number and Name</div>';
 $pdf->writeHTMLCell(90, 7, 22,61, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('about_your_mailing_street', 119.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 68);
+$pdf->TextField('i_864_info_about_principal_street_number', 119.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 68);
 // ...........
 if (showData('information_about_you_us_mailing_apt_ste_flr') == "apt") $checked_apt = "checked";
 else $checked_apt = "";
@@ -736,13 +736,13 @@ $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(50, 0, 144.2, 62.5, "Apt.&nbsp;&nbsp;Ste.&nbsp;&nbsp;Flr", '', 0, 0, true, 'L');
 $pdf->writeHTMLCell(50, 0, 167, 62.5, "Number", '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('about_your_mailing_apt_ste_flr', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 68);
+$pdf->TextField('i_864_info_about_principal_apt_ste_number', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 68);
 //...........
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div>City or Town </div>';
 $pdf->writeHTMLCell(50, 5, 22, 75, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('about_your_mailing_city_town', 119.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 80);
+$pdf->TextField('i_864_info_about_principal_city_town', 119.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 80);
 //............
 
 $pdf->SetFont('times', '', 10); // set font
@@ -755,29 +755,29 @@ $comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
     $comboBoxOptions[] = $record->state_code;
 }
-$pdf->ComboBox("about_your_mailing_state", 22, 7, $comboBoxOptions, array(), array(), 144.2, 80);
+$pdf->ComboBox("i_864_info_about_principal_state", 22, 7, $comboBoxOptions, array(), array(), 144.2, 80);
 $pdf->SetFont('times', '', 10);
 $html = '<div>ZIP Code</div>';
 $pdf->writeHTMLCell(30, 3, 168, 75, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('about_your_mailing_zipcode', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 80);
+$pdf->TextField('i_864_info_about_principal_zip_code', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 80);
 //..............
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(90, 7, 22, 87, 'Province', '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('about_your_mailing_address_province', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 92);
+$pdf->TextField('i_864_info_about_principal_province', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 92);
 //.............
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(90, 7,88, 87, 'Postal Code', '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('about_your_mailing_address_postal_code', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 88, 92);
+$pdf->TextField('i_864_info_about_principal_postal_code', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 88, 92);
 //.............
 $pdf->SetFont('times', '', 10); // set font
 $html = 'Country';
 $pdf->writeHTMLCell(90, 7, 124, 87, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('about_your_mailing_address_country', 79, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 125, 92);
+$pdf->TextField('i_864_info_about_principal_country', 79, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 125, 92);
 //..............
 
 
@@ -790,27 +790,27 @@ $pdf->SetFont('times', '', 10); // set font
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(90, 7, 12, 108, '<b>3</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Citizenship or Nationality', '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('other_info_country_of_domicile', 69, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 113);
+$pdf->TextField('i_864_information_about_principal_nationality', 69, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 113);
 //.............
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(90, 7,95, 108, '<b>4</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)', '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('other_info_date_of_birth', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 105, 113);
+$pdf->TextField('i_864_info_about_principal_date_of_birth', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 105, 113);
 ///.............
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(90, 7, 12, 121, '<b>5</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alien Registration Number (A-Number) (if any)', '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('other_info_country_of_domicile', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 126.5);
+$pdf->TextField('i_864_info_about_principal_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 126.5);
 //.............
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(90, 7,95, 121, '<b>6</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USCIS Online Account Number (if any)', '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('other_info_date_of_birth', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 109, 126.5);
+$pdf->TextField('i_864_info_about_principal_uscis_online_number', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 109, 126.5);
 ///.............
 $pdf->SetFont('times', '', 10); // set font
-$pdf->writeHTMLCell(90, 7, 12, 134, '<b>7</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Citizenship or Nationality', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(90, 7, 12, 134, '<b>7</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Daytime Telephone Number', '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('other_info_country_of_domicile', 69, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 139);
+$pdf->TextField('i_864_info_about_principal_telephone_number', 69, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 139);
 //........
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
@@ -862,9 +862,9 @@ $pdf->writeHTMLCell(90, 7, 19,206,  'Family Name (Last Name)', '', 0, 0, true, '
 $pdf->writeHTMLCell(90, 7, 91.5,206,  'Given Name (First Name)', '', 0, 0, true, 'L');
 $pdf->writeHTMLCell(90, 7, 154,206,  'Middle Name (if applicable)', '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('family1_last_name', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 211.2);
-$pdf->TextField('family1_first_name', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 211.2);
-$pdf->TextField('family1_middle_name', 49, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 155, 211.2);
+$pdf->TextField('i_864_member1_last_name', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 211.2);
+$pdf->TextField('i_864_member1_first_name', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 211.2);
+$pdf->TextField('i_864_member1_middle_name', 49, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 155, 211.2);
 //............
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(90, 7, 19,218.5,  'Relationship to Principal Immigrant', '', 0, 0, true, 'L');
@@ -874,10 +874,10 @@ $pdf->writeHTMLCell(90, 7, 19,232.7,  'USCIS Online Account Number (if any)', ''
 $pdf->Image('images/right_angle.jpg', 137,225.5, 3.3, 3.3);
 $pdf->Image('images/right_angle.jpg', 20,239.4, 3.3, 3.3);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('family1_relationship', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 224);
-$pdf->TextField('family1_dob', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 224);
-$pdf->TextField('family1_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 141, 224);
-$pdf->TextField('family1_uscis_number', 54, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 24, 238);
+$pdf->TextField('i_864_member1_relationship_to_immigrant', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 224);
+$pdf->TextField('i_864_member1_date_of_birth', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 224);
+$pdf->TextField('i_864_member1_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 141, 224);
+$pdf->TextField('i_864_member1_uscis_account_number', 54, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 24, 238);
 
 // ********************************
 //  ******** End Page No 3 **********
@@ -901,9 +901,9 @@ $pdf->TextField('family1_uscis_number', 54, 7, array('strokeColor' => array(64, 
  $pdf->writeHTMLCell(90, 7, 91.5,31,  'Given Name (First Name)', '', 0, 0, true, 'L');
  $pdf->writeHTMLCell(90, 7, 154,31,  'Middle Name (if applicable)', '', 0, 0, true, 'L');
  $pdf->SetFont('courier', 'B', 10); // set font
- $pdf->TextField('family2_last_name', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 37.2);
- $pdf->TextField('family2_first_name', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 37.2);
- $pdf->TextField('family2_middle_name', 49, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 155, 37.2);
+ $pdf->TextField('i_864_member2_last_name', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 37.2);
+ $pdf->TextField('i_864_member2_first_name', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 37.2);
+ $pdf->TextField('i_864_member2_middle_name', 49, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 155, 37.2);
  //............
  $pdf->SetFont('times', '', 10); // set font
  $pdf->writeHTMLCell(90, 7, 19,44.5,  'Relationship to Principal Immigrant', '', 0, 0, true, 'L');
@@ -913,10 +913,10 @@ $pdf->TextField('family1_uscis_number', 54, 7, array('strokeColor' => array(64, 
  $pdf->Image('images/right_angle.jpg', 137,51.6, 3.3, 3.3);
  $pdf->Image('images/right_angle.jpg', 20,63, 3.3, 3.3);
  $pdf->SetFont('courier', 'B', 10); // set font
- $pdf->TextField('family2_relationship', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 50);
- $pdf->TextField('family2_dob', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 50);
- $pdf->TextField('family2_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 141, 50);
- $pdf->TextField('family2_uscis_number', 54, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 24, 62);
+ $pdf->TextField('i_864_member2_relationship_to_immigrant', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 50);
+ $pdf->TextField('i_864_member2_date_of_birth', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 50);
+ $pdf->TextField('i_864_member2_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 141, 50);
+ $pdf->TextField('i_864_member2_uscis_account_number', 54, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 24, 62);
 //  //.............
  $pdf->SetFont('times', '', 10); // set font
  $html = '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Family Member 3</b>';
@@ -925,9 +925,9 @@ $pdf->TextField('family1_uscis_number', 54, 7, array('strokeColor' => array(64, 
  $pdf->writeHTMLCell(90, 7, 91.5,77,  'Given Name (First Name)', '', 0, 0, true, 'L');
  $pdf->writeHTMLCell(90, 7, 154,77,  'Middle Name (if applicable)', '', 0, 0, true, 'L');
  $pdf->SetFont('courier', 'B', 10); // set font
- $pdf->TextField('family3_last_name', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 82.2);
- $pdf->TextField('family3_first_name', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 82.2);
- $pdf->TextField('family3_middle_name', 49, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 155, 82.2);
+ $pdf->TextField('i_864_member3_last_name', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 82.2);
+ $pdf->TextField('i_864_member3_first_name', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 82.2);
+ $pdf->TextField('i_864_member3_middle_name', 49, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 155, 82.2);
  //............
  $pdf->SetFont('times', '', 10); // set font
  $pdf->writeHTMLCell(90, 7, 19,89.5,  'Relationship to Principal Immigrant', '', 0, 0, true, 'L');
@@ -937,10 +937,10 @@ $pdf->TextField('family1_uscis_number', 54, 7, array('strokeColor' => array(64, 
  $pdf->Image('images/right_angle.jpg', 137,96.6, 3.3, 3.3);
  $pdf->Image('images/right_angle.jpg', 20,108, 3.3, 3.3);
  $pdf->SetFont('courier', 'B', 10); // set font
- $pdf->TextField('family3_relationship', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 95);
- $pdf->TextField('family3_dob', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 95);
- $pdf->TextField('family3_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 141, 95);
- $pdf->TextField('family3_uscis_number', 54, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 24, 107);
+ $pdf->TextField('i_864_member3_relationship_to_immigrant', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 95);
+ $pdf->TextField('i_864_member3_date_of_birth', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 95);
+ $pdf->TextField('i_864_member3_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 141, 95);
+ $pdf->TextField('i_864_member3_uscis_account_number', 54, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 24, 107);
  //.............
  $pdf->SetFont('times', '', 10); // set font
  $html = '<b>7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Family Member 4</b>';
@@ -949,9 +949,9 @@ $pdf->TextField('family1_uscis_number', 54, 7, array('strokeColor' => array(64, 
  $pdf->writeHTMLCell(90, 7, 91.5,121,  'Given Name (First Name)', '', 0, 0, true, 'L');
  $pdf->writeHTMLCell(90, 7, 154,121,  'Middle Name (if applicable)', '', 0, 0, true, 'L');
  $pdf->SetFont('courier', 'B', 10); // set font
- $pdf->TextField('family4_last_name', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 126.2);
- $pdf->TextField('family4_first_name', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 126.2);
- $pdf->TextField('family4_middle_name', 49, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 155, 126.2);
+ $pdf->TextField('i_864_member4_last_name', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 126.2);
+ $pdf->TextField('i_864_member4_first_name', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 126.2);
+ $pdf->TextField('i_864_member4_middle_name', 49, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 155, 126.2);
  //............
  $pdf->SetFont('times', '', 10); // set font
  $pdf->writeHTMLCell(90, 7, 19,133.5,  'Relationship to Principal Immigrant', '', 0, 0, true, 'L');
@@ -961,10 +961,10 @@ $pdf->TextField('family1_uscis_number', 54, 7, array('strokeColor' => array(64, 
  $pdf->Image('images/right_angle.jpg', 137,140, 3.3, 3.3);
  $pdf->Image('images/right_angle.jpg', 20,152, 3.3, 3.3);
  $pdf->SetFont('courier', 'B', 10); // set font
- $pdf->TextField('family4_relationship', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 139);
- $pdf->TextField('family4_dob', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 139);
- $pdf->TextField('family4_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 141, 139);
- $pdf->TextField('family4_uscis_number', 54, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 24, 151);
+ $pdf->TextField('i_864_member4_relationship_to_immigrant', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 139);
+ $pdf->TextField('i_864_member4_date_of_birth', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 139);
+ $pdf->TextField('i_864_member4_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 141, 139);
+ $pdf->TextField('i_864_member4_uscis_account_number', 54, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 24, 151);
  $pdf->SetFont('times', '', 10); // set font
  $pdf->writeHTMLCell(190, 7, 12,159,  'If you need additional space, use the space provided in <b>Part 11. Additional Information.</b>', '', 0, 0, true, 'L');
 
@@ -2073,47 +2073,61 @@ var fields = {
 
 //page 2 end....... 
 
-    'information_about_principal_last_tname':' " . showData('sponsor_family_member1_relationship') . " ',
-    'information_about_principal_first_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'information_about_principal_middle_name':' " . showData('sponsor_family_member1_relationship') . " ',
+    'i_864_info_about_principal_last_tname':' " . showData('sponsor_family_member1_relationship') . " ',
+    'i_864_info_about_principal_first_name':' " . showData('sponsor_family_member1_relationship') . " ',
+    'i_864_info_about_principal_middle_name':' " . showData('sponsor_family_member1_relationship') . " ',
+    'i_864_info_about_principal_care_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_street_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_apt_ste_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_city_town':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_state':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_zip_code':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_province':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_postal_code':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_country':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_information_about_principal_nationality':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_date_of_birth':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_a_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_uscis_online_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_info_about_principal_telephone_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
 
-    'family1_last_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family1_first_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family1_middle_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family1_relationship':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family1_dob':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family1_a_number':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family1_uscis_number':' " . showData('sponsor_family_member1_relationship') . " ',
+    'i_864_member1_last_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member1_first_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member1_middle_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member1_relationship_to_immigrant':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member1_date_of_birth':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member1_a_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member1_uscis_account_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+
 
 //page 3 end....... 
 
-    'family2_last_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family2_first_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family2_middle_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family2_relationship':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family2_dob':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family2_a_number':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family2_uscis_number':' " . showData('sponsor_family_member1_relationship') . " ',
 
-    'family3_last_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family3_first_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family3_middle_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family3_relationship':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family3_dob':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family3_a_number':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family3_uscis_number':' " . showData('sponsor_family_member1_relationship') . " ',
+    'i_864_member2_last_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member2_first_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member2_middle_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member2_relationship_to_immigrant':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member2_date_of_birth':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member2_a_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member2_uscis_account_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    
+    'i_864_member3_last_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member3_first_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member3_middle_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member3_relationship_to_immigrant':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member3_date_of_birth':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member3_a_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member3_uscis_account_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    
+    'i_864_member4_last_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member4_first_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member4_middle_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member4_relationship_to_immigrant':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member4_date_of_birth':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member4_a_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'i_864_member4_uscis_account_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
 
-    'family4_last_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family4_first_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family4_middle_name':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family4_relationship':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family4_dob':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family4_a_number':' " . showData('sponsor_family_member1_relationship') . " ',
-    'family4_uscis_number':' " . showData('sponsor_family_member1_relationship') . " ',
-
-
-
-
+//page 4 end....... 
 
 
 
