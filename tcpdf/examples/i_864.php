@@ -1001,7 +1001,7 @@ you listed in <b>Part 11. Additional Information</b>. Do not count the principal
 family members entering more than six months after the principal immigrant. ", '', 1, false, 'L');
 //...........
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 60);
+$pdf->TextField('sponsor_household_1', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 60);
 //..............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 78, "<b>Persons NOT sponsored in this affidavit:</b>", '', 1, false, 'L');
@@ -1018,13 +1018,13 @@ $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 94, "<b>3.</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 94, 'If you are currently married, enter "1" for your spouse. (<b>NOTE</b>: Enter “0” if you already counted your spouse in<br><b>Item Number 1</b>.)', '', 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 94);
+$pdf->TextField('sponsor_household_3', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 94);
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 105, "<b>4.</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 105, 'If you have dependent children, enter the number here. (<b>NOTE</b>: Enter “0” if you already counted your dependent<br>children in<b>Item Number 1</b>.)', '', 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 105); 
+$pdf->TextField('sponsor_household_4', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 105); 
 //...........
 
 $pdf->setFont('Times', '', 10);
@@ -1032,7 +1032,7 @@ $pdf->writeHTMLCell(197, 5, 12, 115, "<b>5.</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 115, 'If you have any other dependents, enter the number here. (<b>NOTE</b>: : Enter “0” if you already counted your other <br>
 dependents in <b>Item Number 1</b>.)', '', 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 116); 
+$pdf->TextField('sponsor_household_4', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 116); 
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 125, "<b>6.</b>", '', 1, false, 'L');
@@ -1040,7 +1040,7 @@ $pdf->writeHTMLCell(197, 5, 21, 125, 'If you have sponsored any other persons on
 and you are still obligated to support, enter the number here. (<b>NOTE:</b> Enter “0” if you already counted these<br>
 persons in <b>Item Number 1.</b>)', '', 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 127); 
+$pdf->TextField('sponsor_household_6', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 127); 
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 139, "<b>7.</b>", '', 1, false, 'L');
@@ -1048,7 +1048,7 @@ $pdf->writeHTMLCell(197, 5, 21, 139, 'If you have siblings, parents, or adult ch
 with yours by submitting Form I-864A, enter the number here. ( (<b>NOTE:</b> Enter “0” if you already counted these <br>
 persons in <b>Item Number 1.</b>)', '', 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 141); 
+$pdf->TextField('sponsor_household_7', 15, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 189, 141); 
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 154, "<b>8.</b>", '', 1, false, 'L');
@@ -1081,13 +1081,13 @@ $pdf->SetFont('times', '', 10); // set font
 $html = 'Employed as a/an';
 $pdf->writeHTMLCell(83, 7, 27, 189, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p3_1_value', 100, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 103, 188);
-$pdf->TextField('p3_2_value', 100, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 103, 196);
-$pdf->TextField('p3_3_value', 100, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 103, 204.4);
-$pdf->TextField('p3_4_value', 100, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 103, 213);
-$pdf->TextField('p3_5_value', 35, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 221);
-$pdf->TextField('p3_6_value', 35, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 229);
-$pdf->TextField('p3_7_value', 35, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 237);
+$pdf->TextField('sponsor_employment_1', 100, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 103, 188);
+$pdf->TextField('sponsor_employment_2', 100, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 103, 196);
+$pdf->TextField('sponsor_employment_3', 100, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 103, 204.4);
+$pdf->TextField('sponsor_employment_4', 100, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 103, 213);
+$pdf->TextField('sponsor_employment_5', 35, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 221);
+$pdf->TextField('sponsor_employment_6', 35, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 229);
+$pdf->TextField('sponsor_employment_7', 35, 6.5, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 237);
 // //.........
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(90, 7, 12, 197, '<b>2.</b>', 0, 1, false, true, 'L', true);
@@ -1169,9 +1169,9 @@ $pdf->writeHTMLCell(197, 5, 113, 52, "Relationship", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 66, "<b>Current Income</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 56, 66, "$", '', 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 57);
-$pdf->TextField('sponsor_interpreter_name', 90.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 114, 57);
-$pdf->TextField('sponsor_interpreter_name', 40.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 60,66);
+$pdf->TextField('person_1_1', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 57);
+$pdf->TextField('person_1_2', 90.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 114, 57);
+$pdf->TextField('person_1_3', 40.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 60,66);
 //..............
 
 $pdf->setFont('Times', '', 10);
@@ -1182,9 +1182,9 @@ $pdf->writeHTMLCell(197, 5, 113, 80, "Relationship", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 94, "<b>Current Income</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 56, 94, "$", '', 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 85);
-$pdf->TextField('sponsor_interpreter_name', 90.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 114, 85);
-$pdf->TextField('sponsor_interpreter_name', 40.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 60,94);
+$pdf->TextField('person_2_1', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 85);
+$pdf->TextField('person_2_2', 90.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 114, 85);
+$pdf->TextField('person_2_3', 40.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 60,94);
 //..............
 
 $pdf->setFont('Times', '', 10);
@@ -1195,9 +1195,9 @@ $pdf->writeHTMLCell(197, 5, 113, 108, "Relationship", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 122, "<b>Current Income</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 56, 122, "$", '', 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 113);
-$pdf->TextField('sponsor_interpreter_name', 90.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 114, 113);
-$pdf->TextField('sponsor_interpreter_name', 40.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 60,122);
+$pdf->TextField('person_3_1', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 113);
+$pdf->TextField('person_3_2', 90.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 114, 113);
+$pdf->TextField('person_3_3', 40.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 60,122);
 //..............
 
 $pdf->setFont('Times', '', 10);
@@ -1208,9 +1208,9 @@ $pdf->writeHTMLCell(197, 5, 113, 136, "Relationship", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 150, "<b>Current Income</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 56, 150, "$", '', 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 141);
-$pdf->TextField('sponsor_interpreter_name', 90.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 114, 141);
-$pdf->TextField('sponsor_interpreter_name', 40.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 60,150);
+$pdf->TextField('person_4_1', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 141);
+$pdf->TextField('person_4_2', 90.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 114, 141);
+$pdf->TextField('person_4_3', 40.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 60,150);
 //..............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 21, 158, "If you need additional space, use the space provided in  <b>Part 11. Additional Information</b>", '', 1, false, 'L');
@@ -1224,7 +1224,7 @@ $pdf->writeHTMLCell(197, 5, 21, 171.5, "<b>My Current Annual Household Income</b
 the total will be compared to Federal Poverty Guidelines on Form I-864P.)", '', 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 165,173, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 173);
+$pdf->TextField('part_6_12',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 173);
 //............
 $pdf->SetFont('times', '', 10);
 if (showData('i_864_affidavit_support_sponsor_status') == "Y") $checked = "checked";
@@ -1252,7 +1252,7 @@ $html = '<div>intending immigrant and has no accompanying dependents.</div>';
 $pdf->writeHTMLCell(180, 1, 26, 198, $html, 0, 0, false, true, 'L', true); 
 //....................
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 112, 198);
+$pdf->TextField('part_6_14', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 112, 198);
 
 
 
@@ -1322,12 +1322,12 @@ $pdf->writeHTMLCell(90, 7,72, 57, '$', '', 0, 0, true, 'L');
 $pdf->writeHTMLCell(90, 7,72, 64, '$', '', 0, 0, true, 'L');
 $pdf->writeHTMLCell(90, 7,72, 71, '$', '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p4_2_tax1', 19, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 50, 56.3);
-$pdf->TextField('p4_2_tax2', 19, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 50, 63.2);
-$pdf->TextField('p4_2_tax3', 19, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 50, 70);
-$pdf->TextField('p4_2_income1', 29, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 75, 56.3);
-$pdf->TextField('p4_2_income2', 29, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 75, 63.2);
-$pdf->TextField('p4_2_income3', 29, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 75, 70);
+$pdf->TextField('p6_16_tax1', 19, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 50, 56.3);
+$pdf->TextField('p6_16_tax2', 19, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 50, 63.2);
+$pdf->TextField('p6_16_tax3', 19, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 50, 70);
+$pdf->TextField('p6_16_income1', 29, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 75, 56.3);
+$pdf->TextField('p6_16_income2', 29, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 75, 63.2);
+$pdf->TextField('p6_16_income3', 29, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 75, 70);
 //.........
 $pdf->SetFont('times', '', 10);
 if (showData('i_864_affidavit_support_sponsor_status') == "Y") $checked = "checked";
@@ -1404,14 +1404,14 @@ $pdf->writeHTMLCell(197, 5, 12, 155, "<b>1.</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 155, "Enter the balance of all cash, savings, and checking accounts. ", '', 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 162,155, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',38, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 155);
+$pdf->TextField('p_7_1',38, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 155);
 //..........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 164, "<b>2.</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 164, "Enter the net cash value of real-estate holdings. (Net value means assessed value minus mortgage<br>debt.) $ ", '', 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 162,164, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',38, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 164);
+$pdf->TextField('p_7_2',38, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 164);
 // //..........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 175, "<b>3.</b>", '', 1, false, 'L');
@@ -1419,14 +1419,14 @@ $pdf->writeHTMLCell(197, 5, 21, 175, "Enter the net cash value of all stocks, bo
 already included in  or<b>Item Number 1.</b>. or <b>Item Number 2</b>.", '', 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 162,175, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',38, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 175);
+$pdf->TextField('p_7_3',38, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 175);
 // //..........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 187, "<b>4.</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 187, "Add together<b> Item Numbers 1. - 3</b>. and enter the number here.", '', 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 162,187, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',38, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 187);
+$pdf->TextField('p_7_4',38, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 187);
 //............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 195, "<b>Assets of your household members</b> (if applicable)", '', 1, false, 'L');
@@ -1438,7 +1438,7 @@ $pdf->writeHTMLCell(197, 5, 21, 207, "Add together the household members' assets
 $pdf->writeHTMLCell(90, 7, 146,208, '<b>TOTAL:</b>', 0, 1, false, true, 'L', true);
 $pdf->writeHTMLCell(90, 7, 162,208, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',38, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 208);
+$pdf->TextField('p_7_5',38, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 166, 208);
 
 
 
@@ -1468,7 +1468,7 @@ $pdf->writeHTMLCell(197, 5, 12, 42, "<b>6.</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 21, 42, "Enter the balance of the principal immigrant's savings and checking accounts.", '', 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 165,42, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 42);
+$pdf->TextField('p_7_6',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 42);
 //..........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 48.8, "<b>7.</b>", '', 1, false, 'L');
@@ -1476,7 +1476,7 @@ $pdf->writeHTMLCell(197, 5, 21, 48.8, "Enter the net cash value of all the princ
 investment value minus mortgage debt.)", '', 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 165,48.8, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 48.8);
+$pdf->TextField('p_7_7',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 48.8);
 //..........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 12, 60, "<b>8.</b>", '', 1, false, 'L');
@@ -1484,7 +1484,7 @@ $pdf->writeHTMLCell(197, 5, 21, 60, "Enter the current cash value of the princip
 other assets not included in <b>Item Number 7</b>. or <b>Item Number 7</b>.", '', 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 165,60, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 60);
+$pdf->TextField('p_7_8',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 60);
 
 //..........
 $pdf->setFont('Times', '', 10);
@@ -1493,7 +1493,7 @@ $pdf->writeHTMLCell(197, 5, 21, 71, "Add together <b>Item Numbers 6. - 8.</b> an
 $pdf->writeHTMLCell(197, 5, 12, 80, "<b>Total Value of Assets</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 165,71, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 71);
+$pdf->TextField('p_7_9',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 71);
 
 //..........
 $pdf->setFont('Times', '', 10);
@@ -1502,7 +1502,7 @@ $pdf->writeHTMLCell(197, 5, 21, 86, "Add together <b>Item Numbers 4., 5.</b> and
 $pdf->writeHTMLCell(197, 5, 150, 86, "<b>TOTAL:</b>", '', 1, false, 'L');
 $pdf->writeHTMLCell(90, 7, 165,86, '$', 0, 1, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 86);
+$pdf->TextField('p_7_10',35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 169, 86);
 //...........
 $pdf->SetFont('times', '', 12);
 $pdf->setCellPaddings(1, 1, 0, 1);
@@ -1657,7 +1657,7 @@ $html = '<div><input type="checkbox" name="us_citizen" value="Y" checked="' . $c
 $pdf->writeHTMLCell(90, 0, 27, 52.5, $html, '', 0, 0, true, 'L');
 //...........
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_interpreter_name', 72.6, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 52, 59);
+$pdf->TextField('p9_1_b', 72.6, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 52, 59);
 
 //...............
 $pdf->SetFont('times', '', 10); // set font
@@ -1672,7 +1672,7 @@ $html = '<div><input type="checkbox" name="us_citizen" value="Y" checked="' . $c
 $pdf->writeHTMLCell(90, 0, 19, 72.5, $html, '', 0, 0, true, 'L');
 //...........
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('sponsor_preparer_name', 72.6, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(),94, 73);
+$pdf->TextField('p9_2', 72.6, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(),94, 73);
 //...............
 
 //...............
@@ -1748,7 +1748,7 @@ Instructions, USCIS or DOS may deny your request.", '', 1, false, 'L');
 //.............
 $pdf->writeHTMLCell(133, 7, 21, 248, "", 1, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p8_sponsor_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 248);
+$pdf->TextField('p8_Sponsor_signature', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 248);
 //.............
 $pdf->SetFont('zapfdingbats', '', 22);  // symbol font
 $pdf->writeHTMLCell(82, 7, 12, 245.5, TCPDF_FONTS::unichr(225), 0, 0, false, 'L');
@@ -2036,8 +2036,6 @@ var fields = {
     'information_about_you_first_name':' " . showData('information_about_you_given_first_name') . " ',
     'information_about_you_middle_name':' " . showData('information_about_you_middle_name') . " ',
 
-   
-
     'other_information_cityzen_or_nationality':' " . showData('other_information_about_you_country_of_citizen') . " ',
     'other_information_date_of_birth':' " . showData('other_information_about_you_date_of_birth') . " ',
     'other_information_alien_number':' " . showData('other_information_about_you_alien_registration_number') . " ',
@@ -2099,9 +2097,7 @@ var fields = {
     'i_864_member1_a_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
     'i_864_member1_uscis_account_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
 
-
 //page 3 end....... 
-
 
     'i_864_member2_last_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
     'i_864_member2_first_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
@@ -2129,18 +2125,75 @@ var fields = {
 
 //page 4 end....... 
 
+    'sponsor_household_1':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_household_3':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_household_4':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_household_5':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_household_6':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_household_7':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_employment_1':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_employment_2':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_employment_3':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_employment_4':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_employment_5':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_employment_6':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'sponsor_employment_7':' " . showData('sponsor_family_member1_family_last_name') . " ',
+
+//page 5 end....... 
+    'person_1_1':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'person_1_2':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'person_1_3':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    
+    'person_2_1':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'person_2_2':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'person_2_3':' " . showData('sponsor_family_member1_family_last_name') . " ',
+
+    'person_3_1':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'person_3_2':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'person_3_3':' " . showData('sponsor_family_member1_family_last_name') . " ',
+
+    'person_4_1':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'person_4_2':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'person_4_3':' " . showData('sponsor_family_member1_family_last_name') . " ',
+
+    'part_6_12':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'part_6_14':' " . showData('sponsor_family_member1_family_last_name') . " ',
+
+//page 6 end....... 
+
+    'p6_16_tax1':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p6_16_tax2':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p6_16_tax3':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    
+    'p6_16_income1':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p6_16_income2':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p6_16_income3':' " . showData('sponsor_family_member1_family_last_name') . " ',
+
+    'p_7_1':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p_7_2':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p_7_3':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p_7_4':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p_7_5':' " . showData('sponsor_family_member1_family_last_name') . " ',
 
 
+//page 7 end....... 
 
+    'p_7_6':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p_7_7':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p_7_8':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p_7_9':' " . showData('sponsor_family_member1_family_last_name') . " ',
+    'p_7_10':' " . showData('sponsor_family_member1_family_last_name') . " ',
 
-'sponsor_interpreter_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'sponsor_preparer_name':' " . showData('sponsor_family_member1_given_first_name') . " ',
-'p8_Sponsor_daytime':' " . showData('sponsor_family_member1_middle_name') . " ',
-'p8_Sponsor_mobile':' " . showData('sponsor_family_member1_relationship') . " ',
-'p8_Sponsor_email':' " . showData('sponsor_family_member1_date_of_birth') . " ',
-'p8_sponsor_signature_date':' " . showData('sponsor_family_member1_date_of_birth') . " ',
+//page 8 end....... 
+	'p9_1_b':' " . showData('n_400_interpreter_family_last_name') . "', 
+	'p9_2':' " . showData('n_400_interpreter_given_first_name') . "', 
+	'p8_Sponsor_daytime':' " . showData('n_400_interpreter_business_name') . "', 
+	'p8_Sponsor_mobile':' " . showData('n_400_interpreter_daytime_tel') . "', 
+	'p8_Sponsor_email':' " . showData('n_400_interpreter_mobile') . "', 
+	'p8_Sponsor_signature':' " . showData('n_400_interpreter_mobile') . "', 
 
 //page 10 end.......    
+
 	'p12_interpreter_family_name':' " . showData('n_400_interpreter_family_last_name') . "', 
 	'p12_interpreter_given_name':' " . showData('n_400_interpreter_given_first_name') . "', 
 	'p12_interpreter_business_name':' " . showData('n_400_interpreter_business_name') . "', 
@@ -2174,8 +2227,7 @@ var fields = {
 	'i_864a_additional_info_6a':' " . showData('i_864a_additional_info_6a_page_no') . " ',
 	'i_864a_additional_info_6b':' " . showData('i_864a_additional_info_6b_part_no') . " ',
 	'i_864a_additional_info_6c':' " . showData('i_864a_additional_info_6c_item_no') . " ',
-
-//page 12 end.........   
+ 
 };
 
 for (var fieldName in fields) {
