@@ -484,7 +484,7 @@ foreach ($allDataCountry as $record)
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ----------------------------------------------------------------------->
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right"><b>Page 2 of 12</b></p>
     <div class="row ">
         <div class="col-md-12">
@@ -645,18 +645,215 @@ foreach ($allDataCountry as $record)
     </div>
    
 </div>
+
+
+<div class="bg-info">
+                <h4><b>Part 4. Information About the Immigrants You Are Sponsoring</b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">1. I am sponsoring the principal immigrant named in Part 3. </label>
+                <div class="col-md-2  "><?php echo createRadio("sponsor_employment_federal_income_tax_status") ?> </div>
+                <b class="col-md-10 my-4">, I am sponsoring family members in Part 4. as the second joint sponsor or I am sponsoring family members
+                who are immigrating more than six months after the principal immigrant.</b>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">2. <?php echo createCheckbox("sponsor_employment_accompanying_dependents_status") ?>I am sponsoring the following family members immigrating at the same time or within six months of the principal
+immigrant named in Part 3. (List family members in Item Numbers 4. - 7. Do not include any relative listed on a separate
+visa petition.)</label>
+                
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3. <?php echo createCheckbox("sponsor_employment_completed_form_i864_status") ?>I am sponsoring the following family members who are immigrating more than six months after the principal immigrant. (List
+                family members in Item Numbers 4. - 7.)</label>
+            </div>
+
+           
+
+
+         <div>
+              <label class="control-label col-md-12">4. Family Member 1</label>
+            <div class="col-md-4">
+                <label class="control-label ">Family Name(Last Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Given Name(First Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Middle Name (if applicable)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Relationship to Principal Immigrant</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
+                    <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">USCIS Online Account Number (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+          
+        </div>
+
+
+
+
+
+
 </div>
     </div>
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
+------------------------------------------------------------------------>
+<!-- <fieldset class="setpage">
+    <p style="text-align: right"><b>Page 4 of 12</b></p>
+    <div class="row ">
+        <div class="col-md-12">
+<div class="bg-info">
+                <h4><b>Part 4. Information About the Immigrants You Are Sponsoring </b>(continued)</h4>
+            </div>
+            
+           
+
+
+         <div>
+              <label class="control-label col-md-12">5. Family Member 2</label>
+            <div class="col-md-4">
+                <label class="control-label ">Family Name(Last Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Given Name(First Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Middle Name (if applicable)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Relationship to Principal Immigrant</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
+                    <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">USCIS Online Account Number (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+          
+        </div>
+
+
+         <div>
+              <label class="control-label col-md-12">6. Family Member 3</label>
+            <div class="col-md-4">
+                <label class="control-label ">Family Name(Last Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Given Name(First Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Middle Name (if applicable)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Relationship to Principal Immigrant</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
+                    <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">USCIS Online Account Number (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+          
+        </div>
+
+
+         <div>
+              <label class="control-label col-md-12">7. Family Member 4</label>
+            <div class="col-md-4">
+                <label class="control-label ">Family Name(Last Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Given Name(First Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Middle Name (if applicable)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Relationship to Principal Immigrant</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
+                    <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+            <div class="col-md-4">
+                <label class="control-label ">USCIS Online Account Number (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+            </div>
+            <div class="col-md-12">
+                <label class="control-label ">If you need additional space, use the space provided in Part 11. Additional Information</label>
+            </div>
+          
+        </div>
+
+
+      
+
+
+
+
+
+
+</div>
+    </div>
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+
+
+
+<!----------------------------------------------------------------------
+-------------------------------- page 4  old--------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
     <div class="row">
         <p style=" text-align: right;  margin-right: 25px;"><b>Page 4 of 10</b></p>
-        <div class=" col-md-6">
+        <div class=" col-md-12">
         <div class="bg-info">
             <h4><b>Part 5. Sponsor's Household Size</b>
             </h4>
@@ -744,9 +941,6 @@ foreach ($allDataCountry as $record)
                 <input type="text" class="form-control" name="sponsor_employment_occupation" maxlength="38" value="<?php echo showData('sponsor_employment_occupation') ?>">
             </div>
         </div>
-    </div>
-    <!-- left side column end -->
-    <div class="col-md-6 ">
         <div class="form-group">
             <label class="control-label col-md-12">5. <?php echo createCheckbox("sponsor_employment_retired_date_status") ?>Retired Since (mm/dd/yyyy)</label>
             <div class="col-md-7 col-md-offset-5">
@@ -765,7 +959,11 @@ foreach ($allDataCountry as $record)
                 <input type="text" class="form-control" name="sponsor_employment_current_annual_income" maxlength="14" value="<?php echo showData('sponsor_employment_current_annual_income') ?>">
             </div>
         </div>
-        <h5>
+    </div>
+    <!-- left side column end -->
+    <!-- <div class="col-md-6 "> -->
+
+        <!-- <h5>
             <b>Income you are using from any other person who was counted in your household size,</b> including, in certain
             conditions, the intending immigrant. (See Form I-864 Instructions.) Please indicate name, relationship, and income.
         </h5>
@@ -844,12 +1042,12 @@ foreach ($allDataCountry as $record)
             <div class="col-md-6 d-flexible">
                 $<input type="text" class="form-control  " name="sponsor_household_person4_current_income" maxlength="16" value="<?php echo showData('sponsor_household_person4_current_income') ?>">
             </div>
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5--------------------------------
@@ -1029,8 +1227,8 @@ foreach ($allDataCountry as $record)
         <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6--------------------------------
@@ -1176,8 +1374,8 @@ foreach ($allDataCountry as $record)
         <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 7--------------------------------
@@ -1324,8 +1522,8 @@ foreach ($allDataCountry as $record)
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 8--------------------------------
@@ -1534,8 +1732,8 @@ foreach ($allDataCountry as $record)
         <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
 ------------------------ page 9 -------------------------
@@ -1717,8 +1915,8 @@ foreach ($allDataCountry as $record)
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
 ------------------------ page 10 -------------------------
@@ -1907,7 +2105,7 @@ foreach ($allDataCountry as $record)
         <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <script>
