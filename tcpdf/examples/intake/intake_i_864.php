@@ -188,13 +188,13 @@ display: flex;
                         style="width: 100%; padding: 5px; margin-top: 3%;">
                         <option value=''>Select</option>
                         <?php
-foreach ($allDataCountry as $record)
-{
+ foreach ($allDataCountry as $record)
+ {
     if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
     else $selected = "";
     echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-}
-?>
+ }
+ ?>
                     </select>
                 </div>
             </div>
@@ -209,8 +209,8 @@ foreach ($allDataCountry as $record)
             </div>
         </div>     
 
-<div class="row">
-<div class="col-md-4 "  >
+ <div class="row">
+ <div class="col-md-4 "  >
                 <label class="">Province</label>
            
                     <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
@@ -243,10 +243,10 @@ foreach ($allDataCountry as $record)
     <label class="control-label col-md-12" style=" margin-bottom: 5px;">4. Sponsor's Physical Address (if different from the address above) </label>
 
 
-<div style="margin:0px 2% 0px 2%;" id="mailingAddressForm">
-<h4 style="font-size: 16px; color:#0096FF; text-align: center; margin-top: 20px; font-family: Arial, sans-serif;">
+ <div style="margin:0px 2% 0px 2%;" id="mailingAddressForm">
+  <h4 style="font-size: 16px; color:#0096FF; text-align: center; margin-top: 20px; font-family: Arial, sans-serif;">
     Since your mailing and physical addresses are the same, there is no need to fill out this section. You may proceed to the next page.
-</h4>
+  </h4>
 
         <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
@@ -332,7 +332,7 @@ foreach ($allDataCountry as $record)
     </div>
 
 
-<div id="physicalAddressForm"  style="margin:0px 2% 0px 2%;">
+ <div id="physicalAddressForm"  style="margin:0px 2% 0px 2%;">
         <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
             <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                 <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
@@ -475,17 +475,18 @@ foreach ($allDataCountry as $record)
             <label class="control-label col-md-8">12. I am currently on active duty in the United States Armed Forces or U.S. Coast Guard.</label>
             <div class="col-md-4 "><?php echo createRadio("sponsor_is_your_current_mailing_address_same_as_physical") ?> </div>
         </div>
-</div>
-</div>
+ </div>
+ </div>
     </div>
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ----------------------------------------------------------------------->
 <!-- <fieldset class="setpage">
-    <p style="text-align: right"><b>Page 2 of 12</b></p>
+    <p style="text-align: right"><b>Page 3 of 12</b></p>
     <div class="row ">
         <div class="col-md-12">
             <div class="bg-info" style="margin-top:10px;">
@@ -565,13 +566,13 @@ foreach ($allDataCountry as $record)
                         style="width: 100%; padding: 5px; margin-top: 3%;">
                         <option value=''>Select</option>
                         <?php
-foreach ($allDataCountry as $record)
-{
+ foreach ($allDataCountry as $record)
+ {
     if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
     else $selected = "";
     echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-}
-?>
+    }
+    ?>
                     </select>
                 </div>
             </div>
@@ -586,8 +587,8 @@ foreach ($allDataCountry as $record)
             </div>
         </div>     
 
-<div class="row">
-<div class="col-md-4 "  >
+    <div class="row">
+    <div class="col-md-4 "  >
                 <label class="">Province</label>
            
                     <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
@@ -644,10 +645,10 @@ foreach ($allDataCountry as $record)
             </div>
     </div>
    
-</div>
+ </div>
 
 
-<div class="bg-info">
+ <div class="bg-info">
                 <h4><b>Part 4. Information About the Immigrants You Are Sponsoring</b></h4>
             </div>
             <div class="form-group">
@@ -658,8 +659,8 @@ foreach ($allDataCountry as $record)
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">2. <?php echo createCheckbox("sponsor_employment_accompanying_dependents_status") ?>I am sponsoring the following family members immigrating at the same time or within six months of the principal
-immigrant named in Part 3. (List family members in Item Numbers 4. - 7. Do not include any relative listed on a separate
-visa petition.)</label>
+    immigrant named in Part 3. (List family members in Item Numbers 4. - 7. Do not include any relative listed on a separate
+    visa petition.)</label>
                 
             </div>
             <div class="form-group">
@@ -708,9 +709,10 @@ visa petition.)</label>
 
 
 
-</div>
+ </div>
     </div>
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset> -->
 <!----------------------------------------------------------------------
@@ -720,7 +722,7 @@ visa petition.)</label>
     <p style="text-align: right"><b>Page 4 of 12</b></p>
     <div class="row ">
         <div class="col-md-12">
-<div class="bg-info">
+  <div class="bg-info">
                 <h4><b>Part 4. Information About the Immigrants You Are Sponsoring </b>(continued)</h4>
             </div>
             
@@ -839,29 +841,30 @@ visa petition.)</label>
 
 
 
-</div>
+ </div>
     </div>
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset> -->
-
-
-
 <!----------------------------------------------------------------------
--------------------------------- page 4  old--------------------------------
+-------------------------------- page 5  --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <div class="row">
-        <p style=" text-align: right;  margin-right: 25px;"><b>Page 4 of 10</b></p>
+        <p style=" text-align: right;  margin-right: 25px;"><b>Page 5 of 12</b></p>
         <div class=" col-md-12">
         <div class="bg-info">
             <h4><b>Part 5. Sponsor's Household Size</b>
             </h4>
         </div>
-        <h5 style="margin-left:17px;"><b>NOTE:</b> Do not count any member of your household more than once.</h5>
+        <h5 style="margin-left:17px;"><b>NOTE:</b> Do not count any member of your household more than once</h5>
         <h5 style="margin-left:17px;"><b>Persons you are sponsoring in this affidavit:</b></h5>
         <div class="form-group">
-            <label class="control-label col-md-12">1.Provide the number you entered in Part 3., Item Number 29.</label>
+            <label class="control-label col-md-12">1.Enter the total number of immigrants you are sponsoring on this affidavit which includes the principal immigrant
+    listed in Part 3., any immigrants listed in Part 4., Item Numbers 4. - 7. and, any additional sponsored immigrants
+    you listed in Part 11. Additional Information. Do not count the principal immigrant if you are only sponsoring
+    family members entering more than six months after the principal immigrant. </label>
             <div class="col-md-4 col-md-offset-8">
                 <input type="text" class="form-control" name="sponsor_household_size_provide_the_number" maxlength="5" value="<?php echo showData('sponsor_household_size_provide_the_number') ?>">
             </div>
@@ -874,41 +877,47 @@ visa petition.)</label>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">3. If you are currently married, enter "1" for your spouse.</label>
+            <label class="control-label col-md-12">3. If you are currently married, enter "1" for your spouse. (NOTE: Enter “0” if you already counted your spouse in
+            Item Number 1.)</label>
             <div class="col-md-4 col-md-offset-8">
                 <input type="text" class="form-control" name="sponsor_household_size_currently_married" maxlength="5" value="<?php echo showData('sponsor_household_size_currently_married') ?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">4. If you have dependent children, enter the number here.</label>
+            <label class="control-label col-md-12">4. If you have dependent children, enter the number here. (NOTE: Enter “0” if you already counted your dependent
+            children in Item Number 1.)</label>
             <div class="col-md-4 col-md-offset-8">
                 <input type="text" class="form-control" name="sponsor_household_size_dependent_children" maxlength="5" value="<?php echo showData('sponsor_household_size_dependent_children') ?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">5. If you have any other dependents, enter the number here.</label>
+            <label class="control-label col-md-12">5. If you have any other dependents, enter the number here. (NOTE: Enter “0” if you already counted your other
+            dependents in Item Number 1.)</label>
             <div class="col-md-4 col-md-offset-8">
                 <input type="text" class="form-control" name="sponsor_household_size_other_dependents" maxlength="5" value="<?php echo showData('sponsor_household_size_other_dependents') ?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">6. If you have sponsored any other persons on Form I-864 or Form I-864EZ who are now lawful permanent residents, enter the number here.</label>
+            <label class="control-label col-md-12">6. If you have sponsored any other persons on Form I-864 or Form I-864EZ who are now lawful permanent residents
+    and you are still obligated to support, enter the number here. (NOTE: Enter “0” if you already counted these
+    persons in Item Number 1.)</label>
             <div class="col-md-4 col-md-offset-8">
                 <input type="text" class="form-control" name="sponsor_household_size_sponsored_i864" maxlength="5" value="<?php echo showData('sponsor_household_size_sponsored_i864') ?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">7. <b>OPTIONAL:</b> If you have siblings, parents, or adult children with the same principal residence who are
-                combining their income with yours by submitting Form I-864A, enter the number here.</label>
+            <label class="control-label col-md-12">7. If you have siblings, parents, or adult children with the same principal residence who are combining their income
+    with yours by submitting Form I-864A, enter the number here. (NOTE: Enter “0” if you already counted these
+    persons in Item Number 1.)</label>
             <div class="col-md-4 col-md-offset-8">
                 <input type="text" class="form-control" name="sponsor_household_size_siblings" maxlength="5" value="<?php echo showData('sponsor_household_size_siblings') ?>">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">8. Add together Part 5., Item Numbers 1. - 7. and enter the number here. </label>
+            <label class="control-label col-md-12">8. Add together Part 5., Item Numbers 1. - 7. and enter the number here.  </label>
             <div class="row">
-                <div class="col-md-8 d-flexible col-md-offset-4">
-                    <span>Household Size:</span><input type="text" class="form-control" value=" 1 " disabled>
+                <div class="col-md-6 col-md-offset-6 d-flexible ">
+                    <div class="col-md-4 "><b>Household Size:</b></div><input type="text" class="form-control col-md-6 " value=" 1 " disabled>
                 </div>
             </div>
         </div>
@@ -959,163 +968,173 @@ visa petition.)</label>
                 <input type="text" class="form-control" name="sponsor_employment_current_annual_income" maxlength="14" value="<?php echo showData('sponsor_employment_current_annual_income') ?>">
             </div>
         </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">Income you are using from any other person who was counted in your household size, including, in certain conditions, the
+            intending immigrant. (See Form I-864 Instructions.) Please indicate name, relationship, and income.</label>
+        </div>
     </div>
-    <!-- left side column end -->
-    <!-- <div class="col-md-6 "> -->
-
-        <!-- <h5>
-            <b>Income you are using from any other person who was counted in your household size,</b> including, in certain
-            conditions, the intending immigrant. (See Form I-864 Instructions.) Please indicate name, relationship, and income.
-        </h5>
-        <h5 style="margin-left:17px;"><b>Person 1</b></h5>
-        <div class="form-group">
-            <label class="control-label col-md-12">8.Name</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="sponsor_household_person1_name" maxlength="38" value="<?php echo showData('sponsor_household_person1_name') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">9. Relationship </label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="sponsor_household_person1_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person1_relationship') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-6">10. Current Income </label>
-            <div class="col-md-6 d-flexible">
-                $<input type="text" class="form-control" name="sponsor_household_person1_current_income" maxlength="16" value="<?php echo showData('sponsor_household_person1_current_income') ?>">
-            </div>
-        </div>
-        <h5 style="margin-left:17px;"><b>Person 2</b></h5>
-        <div class="form-group">
-            <label class="control-label col-md-12">11. Name </label>
-            <div class="col-md-12">
-                <input type="text" class="form-control  " name="sponsor_household_person2_name" maxlength="38" value="<?php echo showData('sponsor_household_person2_name') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">12. Relationship </label>
-            <div class="col-md-12">
-                <input type="text" class="form-control  " name="sponsor_household_person2_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person2_relationship') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-6">13. Current Income </label>
-            <div class="col-md-6 d-flexible">
-                $<input type="text" class="form-control  " name="sponsor_household_person2_current_income" maxlength="16" value="<?php echo showData('sponsor_household_person2_current_income') ?>">
-            </div>
-        </div>
-        <h5 style="margin-left:17px;"><b>Person 3</b></h5>
-        <div class="form-group">
-            <label class="control-label col-md-12">14. Name </label>
-            <div class="col-md-12">
-                <input type="text" class="form-control  " name="sponsor_household_person3_name" maxlength="38" value="<?php echo showData('sponsor_household_person3_name') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">15. Relationship </label>
-            <div class="col-md-12">
-                <input type="text" class="form-control  " name="sponsor_household_person3_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person3_relationship') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-6">16. Current Income </label>
-            <div class="col-md-6 d-flexible">
-                $<input type="text" class="form-control  " name="sponsor_household_person3_current_income" maxlength="16" value="<?php echo showData('sponsor_household_person3_current_income') ?>">
-            </div>
-        </div>
-        <h5 style="margin-left:17px;"><b>Person 4</b></h5>
-        <div class="form-group">
-            <label class="control-label col-md-12">17. Name </label>
-            <div class="col-md-12">
-                <input type="text" class="form-control  " name="sponsor_household_person4_name" maxlength="38" value="<?php echo showData('sponsor_household_person4_name') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">18. Relationship </label>
-            <div class="col-md-12">
-                <input type="text" class="form-control  " name="sponsor_household_person4_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person4_relationship') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-6">19. Current Income </label>
-            <div class="col-md-6 d-flexible">
-                $<input type="text" class="form-control  " name="sponsor_household_person4_current_income" maxlength="16" value="<?php echo showData('sponsor_household_person4_current_income') ?>">
-            </div>
-        </div> -->
-    <!-- </div> -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
--------------------------------- page 5--------------------------------
+-------------------------------- page 6  --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <div class="row">
-        <p style=" text-align: right; margin-right: 15px;"><b>Page 5 of 10</b></p>
-        <div class="col-md-6">
-            <!-- <div class="bg-info">
-                <h4><b>For USCIS Use Only</b></h4>
+        <p style=" text-align: right;  margin-right: 25px;"><b>Page 6 of 12</b></p>
+ 
+       <div class="bg-info">
+            <h4><b>Part 6. Sponsor's Employment and Income (continued) </b>
+            </h4>
+        </div>
+
+    <h5 style="margin-left:17px;"><b>8. Person 1</b></h5>
+      <div class="d-flexible">
+       <div class="form-group col-md-6" >
+            <label class="control-label ">Name</label>
+            <div >
+                <input type="text" class="form-control" name="sponsor_household_person1_name" maxlength="38" value="<?php echo showData('sponsor_household_person1_name') ?>">
             </div>
-            <h5 style="margin-left:17px;"><b>Household Size</b></h5>
-            <div class="row">
-                <div class="col-md-5">
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 1</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 2</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 3</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 4</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 5</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 6</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 7</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 8</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 9</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> others______</label>
-                </div>
-            </div> -->
-            <div class="bg-info">
-                <h4><b>Part 6. Sponsor's Employment and Income </b>(continued)</h4>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label ">Relationship </label>
+            <div class="">
+                <input type="text" class="form-control" name="sponsor_household_person1_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person1_relationship') ?>">
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">20. <b>My Current Annual Household Income </b>(Total all lines from <b>part 6. Item Numbers 7., 10., 13., 16.</b>, and <b>19</b>.; the total will be compared to Federal Poverty Guidelines on Form I-864P.)</label>
-                <div class="col-md-6 col-md-offset-6">
+        </div>
+      </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Current Income </label>
+            <div class="col-md-3 d-flexible">
+                $<input type="text" class="form-control" name="sponsor_household_person1_current_income" maxlength="16" value="<?php echo showData('sponsor_household_person1_current_income') ?>">
+            </div>
+        </div>
+
+    <h5 style="margin-left:17px;"><b>9. Person 2</b></h5>
+      <div class="d-flexible">
+       <div class="form-group col-md-6" >
+            <label class="control-label ">Name</label>
+            <div >
+                <input type="text" class="form-control" name="sponsor_household_person2_name" maxlength="38" value="<?php echo showData('sponsor_household_person2_name') ?>">
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label ">Relationship </label>
+            <div class="">
+                <input type="text" class="form-control" name="sponsor_household_person2_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person2_relationship') ?>">
+            </div>
+        </div>
+      </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Current Income </label>
+            <div class="col-md-3 d-flexible">
+                $<input type="text" class="form-control" name="sponsor_household_person2_current_income" maxlength="16" value="<?php echo showData('sponsor_household_person2_current_income') ?>">
+            </div>
+        </div>
+
+    <h5 style="margin-left:17px;"><b>10. Person 3</b></h5>
+      <div class="d-flexible">
+       <div class="form-group col-md-6" >
+            <label class="control-label ">Name</label>
+            <div >
+                <input type="text" class="form-control" name="sponsor_household_person3_name" maxlength="38" value="<?php echo showData('sponsor_household_person3_name') ?>">
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label ">Relationship </label>
+            <div class="">
+                <input type="text" class="form-control" name="sponsor_household_person3_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person3_relationship') ?>">
+            </div>
+        </div>
+      </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Current Income </label>
+            <div class="col-md-3 d-flexible">
+                $<input type="text" class="form-control" name="sponsor_household_person3_current_income" maxlength="16" value="<?php echo showData('sponsor_household_person3_current_income') ?>">
+            </div>
+        </div>
+
+    <h5 style="margin-left:17px;"><b>11. Person 4</b></h5>
+      <div class="d-flexible">
+       <div class="form-group col-md-6" >
+            <label class="control-label ">Name</label>
+            <div >
+                <input type="text" class="form-control" name="sponsor_household_person4_name" maxlength="38" value="<?php echo showData('sponsor_household_person4_name') ?>">
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label ">Relationship </label>
+            <div class="">
+                <input type="text" class="form-control" name="sponsor_household_person4_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person4_relationship') ?>">
+            </div>
+        </div>
+      </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Current Income </label>
+            <div class="col-md-3 d-flexible">
+                $<input type="text" class="form-control" name="sponsor_household_person4_current_income" maxlength="16" value="<?php echo showData('sponsor_household_person4_current_income') ?>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">If you need additional space, use the space provided in Part 11. Additional Information  </label>
+            <label class="control-label col-md-12">Remarks </label>
+        </div>
+
+        <div class="form-group">
+                <label class="control-label col-md-12">12. My Current Annual Household Income $ (Total all lines from Part 6. Item Numbers 7. - 11.; the total will be compared to Federal Poverty Guidelines on Form I-864P.) </label>
+                <div class="col-md-4 col-md-offset-8">
                     <input type="text" class="form-control" name="sponsor_employment_current_household_income" maxlength="16" value="<?php echo showData('sponsor_employment_current_household_income') ?>">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">21. <?php echo createCheckbox("sponsor_employment_completed_form_i864_status") ?>The people listed in Item Numbers 8., 11.. 14.. and 17. have completed Form I-864A. I am filing along with this affidavit all necessary Form I-864 As completed by these people.</label>
+                <label class="control-label col-md-12">13. <?php echo createCheckbox("sponsor_employment_completed_form_i864_status") ?>The people listed in Item Numbers 8. - 11. have completed Form I-864A. I am filing along with this affidavit all necessary
+                Form I-864As completed by these people.</label>
 
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">22. <?php echo createCheckbox("sponsor_employment_accompanying_dependents_status") ?>One or more of the people listed in Item Numbers 8.,
-                    11., 14., and 17. do not need to complete Form I-864A
-                    because he or she is the intending immigrant and has no
-                    accompanying dependents.
-                    <br>
-                    Name</label>
-                <div class="col-md-12 ">
+                <label class="control-label col-md-12">14. <?php echo createCheckbox("sponsor_employment_accompanying_dependents_status") ?>One or more of the people listed in Item Numbers 8. - 11. do not need to complete Form I-864A because he or she is the intending immigrant and has no accompanying dependents </label>
+                <div class="col-md-6 col-md-offset-6 ">
                     <input type="text" class="form-control" name="sponsor_employment_accompanying_dependents" maxlength="36" value="<?php echo showData('sponsor_employment_accompanying_dependents') ?>">
                 </div>
             </div>
-            <div style="margin-left:17px">
-                <b>Federal Income Tax Return Information
-                </b>
+            <div class="bg-info">
+            <h4><b>Federal Income Tax Return Information</b>
+            </h4>
+        </div>
+            <div class="form-group">
+                <label class="col-md-12">15. Have you filed a Federal income tax return for each of the three most recent tax years?</label>
+                <div class="col-md-4 col-md-offset-6 "><?php echo createRadio("sponsor_employment_federal_income_tax_status") ?> </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">23.a. Have you filed a Federal income tax return for each of the three most recent tax years? </label>
-                <div class="col-md-4 col-md-offset-8 "><?php echo createRadio("sponsor_employment_federal_income_tax_status") ?> </div>
+                <div class="col-md-12 ">NOTE: You MUST attach a photocopy or transcript of your Federal income tax return for only the most recent tax year and
+                complete Item Number 16.a. If you believe additional returns may help you to establish your ability to maintain sufficient income,
+                you may submit transcripts or photocopies of your Federal individual income tax returns for the three most recent years and complete
+                Item Numbers 16.a. - 16.c.
+               </div>
+                <div class="col-md-12 my-4">Type or print the most recent tax year and your total income for that most recent tax year. If the amount was zero, type or print “zero”
+                or if you were not required to file a Federal income tax return type or print “N/A” for not applicable. Type or print “N/A” for not
+                applicable for Item Numbers 16.b. - 16.c. if you do are not submitting any additional tax returns.
+               </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-12 "><b>NOTE:</b> You <b>MUST</b> attach a photocopy or transcript of your Federal income tax return for only the most recent tax year.</div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 7--------------------------------
+------------------------------------------------------------------------>
+<!-- <fieldset class="setpage">
+    <div class="row">
+        <p style=" text-align: right; margin-right: 15px;"><b>Page 7 of 12</b></p>
+        <div class="col-md-12">
+          
+            <div class="bg-info">
+                <h4><b>Part 6. Sponsor's Employment and Income </b>(continued)</h4>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">23.b. <?php echo createCheckbox("sponsor_employment_photocopies_or_transcripts_status") ?>(Optional) I have attached photocopies or transcripts
-                    of my Federal income tax returns for my second and third most recent tax years.</label>
-                <div class="col-md-12 ">
-                    <input type="text" class="form-control  " name="sponsor_employment_photocopies_or_transcripts" maxlength="39" value="<?php echo showData('sponsor_employment_photocopies_or_transcripts') ?>">
-                </div>
-            </div>
+            
             <p style="margin-left: 17px;">My total income (adjusted gross income on Internal Revenue Service (IRS) Form 1040EZ) as reported on my Federal income tax returns for the most recent three years was: </p>
             <div class="d-flexible row" style="margin-left: 37%;">
                 <div class="col-md-6"><b>Tax Year</b></div>
@@ -1143,21 +1162,17 @@ visa petition.)</label>
                 <label class="control-label col-md-12">25. <?php echo createCheckbox("sponsor_employment_irs_required_level") ?>I was not required to file a Federal income tax return
                     as my income was below the IRS required level and I have attached evidence to support this.</label>
             </div>
-        </div>
-        <!-- left side column end -->
-        <div class="col-md-6">
+    
             <div class="bg-info">
-                <h4><b>Part 7. Use of Assets to Supplement Income</b>(Optional)</h4>
+                <h4><b>Part 7. Use of Assets to Supplement Income</b>(if Applicable)</h4>
             </div>
             <div class="form-group">
-                If your income, or the total income for you and your household.from <b>Part 6., Item Numbers 20</b>. or <b>24.a. - 24.c.</b>, exceeds the
+                If your income, or the total income for you and your household.from <b>Part 6., Item Numbers 12</b>. or <b>16</b>, exceeds the
                 Federal Poverty Guidelines for your household size, <b>YOU ARE NOT REQUIRED</b> to complete this <b>Part 7</b>. Skip to <b>Part 8.</b>
-                <br>
-                <br>
-                <b>Your Assets (Optional)</b>
+                <b>Your Assets (if applicable)</b>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">1. Enter the balance of all savings and checking accounts.</label>
+                <label class="control-label col-md-12">1. Enter the balance of all cash, savings, and checking accounts. </label>
                 <div class="col-md-6  col-md-offset-6 d-flexible">
                     $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_saving_accounts" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_saving_accounts') ?>">
                 </div>
@@ -1165,7 +1180,8 @@ visa petition.)</label>
 
 
             <div class="form-group">
-                <label class="control-label col-md-12">2. Enter the net cash value of real-estate holdings. (Net value means current assessed value minus mortgage debt.)</label>
+                <label class="control-label col-md-12">2. Enter the net cash value of real-estate holdings. (Net value means assessed value minus mortgage
+                debt.) $ </label>
                 <div class="col-md-6  col-md-offset-6 d-flexible">
                     $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_real_estate_holdings" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_real_estate_holdings') ?>">
                 </div>
@@ -1173,88 +1189,40 @@ visa petition.)</label>
 
 
             <div class="form-group">
-                <label class="control-label col-md-12">3. Enter the net cash value of all stocks, bonds, certificates of deposit, and any other assets not already included in Item Number 1. or Item Number 2.</span></label>
+                <label class="control-label col-md-12">3. Enter the net cash value of all stocks, bonds, certificates of deposit, and any other assets not already included in Item Number 1. or Item Number 2. </span></label>
                 <div class="col-md-6  col-md-offset-6 d-flexible">
                     $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_stocks_bonds_certificates" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_stocks_bonds_certificates') ?>">
                 </div>
             </div>
 
+            <div class="form-group">
+                <label class="control-label col-md-12">4. Add together Item Numbers 1. - 3. and enter the number here.  </span></label>
+                <div class="col-md-6  col-md-offset-6 d-flexible">
+                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_stocks_bonds_certificates" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_stocks_bonds_certificates') ?>">
+                </div>
+            </div>
+            <div class="mx-4"><b>Assets of your household members (if applicable)</b><br><br><b>Your household members who are combining their income with yours, report their assets on Form I-864A Part 4., in Item Number 6</b></div>
 
             <div class="form-group">
-                <label class="control-label col-md-12">4. Add together Item Numbers 1. - 3. and enter the number here</b>.</label>
+                <label class="control-label col-md-12">5. Add together the household members' assets reported on all the Form I-864A
+                Part 4., Item Number 6. and enter the number here.  </b>.</label>
                 <div class="col-md-8  col-md-offset-4 d-flexible">
                     <div style="font-size: larger;"><b>TOTAL</b></div>:$<input type="text" class="form-control  " name="sponsor_assets_of_supplement_add_together1" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together1') ?>">
                 </div>
             </div>
-            <div class="col-md-offset-1"><b>Assets from Form I-864A. Part 4., Item Number 3.d., for:</b></div>
-
-            <div class="form-group">
-                <label class="control-label col-md-12">5.a. Name of Relative.</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control  " name="sponsor_assets_of_supplement_name_of_relative" maxlength="38" value="<?php echo showData('sponsor_assets_of_supplement_name_of_relative') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">5.b. Your household member's assets from Form I-864A (optional).</label>
-                <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_household_member" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_household_member') ?>">
-                </div>
-            </div>
-
-            <div style="margin-left: 17px;"><b>Assets of the principal sponsored immigrant</b> (optional).</div><br>
-            <div style="margin-left: 17px;">The principal sponsored immigrant is the person listed in <b>Part 2., Item Numbers 1.a. - 1.c. </b>Only include the assets if the
-                principal immigrant is being sponsored by this affidavit of support.</div>
-
-            <div class="form-group">
-                <label class="control-label col-md-12">6. Enter the balance of the principal immigrant's savings and checking accounts.</label>
-                <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_immigrant_saving" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_immigrant_saving') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">7. Enter the net cash value of all the principal immigrant's real estate holdings. (Net value means investment value minus mortgage debt.)</label>
-                <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_immigrant_real_estate_holdings" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_immigrant_real_estate_holdings') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">8. Enter the current cash value of the principal immigrant's stocks, bonds, certificates of deposit, and other assets not included in <b>Item Number 6</b>. or <b>Item Number 7.</b></label>
-                <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_immigrant_stocks_bonds_certificates" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_immigrant_stocks_bonds_certificates') ?>">
-                </div>
-            </div>
-        </div>
-        <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
--------------------------------- page 6--------------------------------
+-------------------------------- page 8--------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 6 of 10</b></p>
     <div class="row">
         <div class="col-md-6">
-            <!-- <div class="bg-info">
-                <h4><b>For USCIS Use Only</b></h4>
-            </div>
-            <h5 style="margin-left:17px;"><b>Household Size</b></h5>
-            <div class="row">
-                <div class="col-md-5">
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 1</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 2</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 3</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 4</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 5</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 6</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 7</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 8</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> 9</label>
-                    <label class="control-label"><span style="margin-left:17px;"><?php echo createCheckbox("") ?> </span> others______</label>
-                </div>
-            </div> -->
+           
             <div class="bg-info">
                 <h4><b>Part 7. Use of Assets to Supplement Income</b> (Optional) (continued)</h4>
             </div>
@@ -1310,7 +1278,6 @@ visa petition.)</label>
             </div>
 
         </div>
-        <!-- left side column end -->
         <div class="col-md-6">
             <div style="margin-left: 17px;">
                 <b> What If I Choose Not to Sign Form I-864?</b>
@@ -1371,16 +1338,15 @@ visa petition.)</label>
                 that you signed, that person may sue you for this support.
             </div>
         </div>
-        <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
--------------------------------- page 7--------------------------------
+-------------------------------- page 9--------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 7 of 10</b></p>
     <div class="row">
         <div class="col-md-6">
@@ -1445,7 +1411,6 @@ visa petition.)</label>
                 <label class="control-label col-md-12">1.a. <?php echo createCheckbox("sponsor_statement_english_status") ?>I can read and understand English, and I have read and understand every question and instruction on this affidavit and my answer to every question. </label>
             </div>
         </div>
-        <!-- left side column end -->
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label col-md-12">1.b. <?php echo createCheckbox("sponsor_statement_interpreter_named_status") ?>The interpreter named in Part 9. read to me every question and instruction on this affidavit and my answer to every question in</label>
@@ -1524,9 +1489,9 @@ visa petition.)</label>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
--------------------------------- page 8--------------------------------
+-------------------------------- page 10 -------------------------------
 ------------------------------------------------------------------------>
 
 <fieldset class="setpage">
