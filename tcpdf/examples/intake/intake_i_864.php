@@ -21,11 +21,13 @@ include "intake_header.php";
     }
 
     .my-1 {
-        margin: 6px 0  0 0 ;
+        margin: 6px 0 0 0;
     }
-.d-flex{
-display: flex;
-}
+
+    .d-flex {
+        display: flex;
+    }
+
     .text-bold {
         font-weight: 600;
 
@@ -34,7 +36,7 @@ display: flex;
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 1 of 12</b></p>
     <table>
         <thead>
@@ -49,7 +51,7 @@ display: flex;
                     <p>Attorney State Bar Number (if applicable)</p><input type="text" class="form-control" maxlength="22" style="margin-top:30px" value="<?php echo $attorneyData->bar_number ?>" disabled>
                 </td>
                 <td style="padding: 5px">
-                    <p>Attorney or Accredited Representative USCIS Online Account Number (if any)</p><input maxlength="12" type="text" class="form-control" value="<?php echo $attorneyData->uscis_online_account_number?>" disabled>
+                    <p>Attorney or Accredited Representative USCIS Online Account Number (if any)</p><input maxlength="12" type="text" class="form-control" value="<?php echo $attorneyData->uscis_online_account_number ?>" disabled>
                 </td>
             </tr>
         </tbody>
@@ -71,7 +73,7 @@ display: flex;
                 <div class="col-md-11"><input type="text" class="form-control" maxlength="36" name="i_864_affidavit_support_alien" value="<?php echo showData('i_864_affidavit_support_alien') ?>"></div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">1.c. <?php echo createCheckbox("i_864_affidavit_support_ownership_status")?>
+                <label class="control-label col-md-12">1.c. <?php echo createCheckbox("i_864_affidavit_support_ownership_status") ?>
                     I have an ownership interest of at least 5 percent in</label>
                 <div class="col-md-11"><input type="text" class="form-control" maxlength="36" name="i_864_affidavit_support_ownership_value1" value="<?php echo showData('i_864_affidavit_support_ownership_value1') ?>"></div>
                 <h5 class="col-md-12"><b>which filed an alien worker petition on behalf of the
@@ -95,916 +97,892 @@ display: flex;
             <div class="bg-info">
                 <h4><b>Part 2. Information About You (Sponsor)</b></h4>
             </div>
-          <div class="form-group">
-          <label class="control-label col-md-12">1. . Sponsor's Full Legal Name (Do not provide a nickname)</label>
-          <div class="col-md-4">
-                <label class="control-label ">Family Name(Last Name)</label>
+            <div class="form-group">
+                <label class="control-label col-md-12">1. . Sponsor's Full Legal Name (Do not provide a nickname)</label>
+                <div class="col-md-4">
+                    <label class="control-label ">Family Name(Last Name)</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Given Name(First Name)</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Given Name(First Name)</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Middle Name</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Middle Name</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                </div>
             </div>
-          </div>
         </div>
-        
-
     </div>
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
--------------------------------- page 2 --------------------------------
------------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
+   -------------------------------- page 2 --------------------------------
+   ------------------------------------------------------------------------>
+
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 2 of 12</b></p>
     <div class="row ">
         <div class="col-md-12">
             <div class="bg-info" style="margin-top:10px;">
                 <h4><b>Part 2. Information About You (Sponsor) (continued)</b></h4>
             </div>
-           
-          <div>
-          <label  style="width: 100%; padding: 5px; margin-bottom: 5px; margin-left: 15px;" >2. Sponsor's Current Mailing Address</label>
-        <label class="control-label"  style="width: 100%; padding: 5px; margin-bottom: 5px; margin-left: 15px;">In Care Of Name (if any)</label>
-        <div >
-            <input type="text" class="form-control" name="information_about_you_us_mailing_care_of_name" maxlength="34"
-                value="<?php echo showData('information_about_you_us_mailing_care_of_name') ?>"
-                style="width: 98%; padding: 5px; margin-bottom: 5px; margin-left: 15px;  " />
-        </div>
-    </div>
-    <div style="margin:0px 2% 0px 2%;">
-        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
-                <div style="width: 100%;">
-                    <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+
+            <div>
+                <label style="width: 100%; padding: 5px; margin-bottom: 5px; margin-left: 15px;">2. Sponsor's Current Mailing Address</label>
+                <label class="control-label" style="width: 100%; padding: 5px; margin-bottom: 5px; margin-left: 15px;">In Care Of Name (if any)</label>
+                <div>
+                    <input type="text" class="form-control" name="information_about_you_us_mailing_care_of_name" maxlength="34"
+                        value="<?php echo showData('information_about_you_us_mailing_care_of_name') ?>"
+                        style="width: 98%; padding: 5px; margin-bottom: 5px; margin-left: 15px;  " />
                 </div>
             </div>
-            <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
-                <div style="flex: 1; margin-left: 5%;">
-                    <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="apt"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="ste"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="flr"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
-                    </label>
-                </div>
-            </div>
-            <div style="flex: 1;">
-                <label class="control-label">Number</label>
-                <input type="text" class="form-control" name="information_about_you_us_mailing_apt_ste_flr_value"
-                    maxlength="6" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>"
-                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-            </div>
-        </div>
-        <div class="row"
-            style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
-                <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="20" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
-                <div style="width: 100%;">
-                    <select class="form-control" name="information_about_you_us_mailing_state"
-                        style="width: 100%; padding: 5px; margin-top: 3%;">
-                        <option value=''>Select</option>
-                        <?php
- foreach ($allDataCountry as $record)
- {
-    if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
-    else $selected = "";
-    echo "<option value='$record->state_code' $selected>$record->state_code</option>";
- }
- ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
-                <div class='d-flexible'>
-                    <div style="width: 100%;">
-                        <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code') ?>"
+            <div style="margin:0px 2% 0px 2%;">
+                <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                    <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                        <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
+                        <div style="width: 100%;">
+                            <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                        <div style="flex: 1; margin-left: 5%;">
+                            <label>
+                                <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="apt"
+                                    <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                                Apt. &nbsp;
+                            </label>
+                            <label>
+                                <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="ste"
+                                    <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                                Ste. &nbsp;
+                            </label>
+                            <label>
+                                <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="flr"
+                                    <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                                Flr.
+                            </label>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <label class="control-label">Number</label>
+                        <input type="text" class="form-control" name="information_about_you_us_mailing_apt_ste_flr_value"
+                            maxlength="6" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>"
                             style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
-            </div>
-        </div>     
-
- <div class="row">
- <div class="col-md-4 "  >
-                <label class="">Province</label>
-           
-                    <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
-         
-            </div>
-            <div class="col-md-3">
-                <label class="control-label ">Postal Code</label>
-           
-                    <input type="text" maxlength="9" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
-          
-            </div>
-            <div class="col-md-5">
-                <label class="control-label ">Country</label>
-  <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_country" value="<?php echo showData('information_about_you_us_mailing_country') ?>" />
-    </div>
- </div>
-    <div >
-        <label class=" col-md-6 my-4">3. Is your current mailing address the same as your physical address?</label>
-        <div class="col-md-2 my-4">
-             <input type="radio" class="form-check-input " id="mailing_address_yes" name="is_your_current_mailing_address_same_as_physical"  value="Y" <?php echo showData('is_your_current_mailing_address_same_as_physical') == "Y" ? "checked" : ""; ?> />
-                <label for="mailing_address_yes" class="mx-4"> Yes</label>
-             <input type="radio" class="form-check-input" id="mailing_address_no" name="is_your_current_mailing_address_same_as_physical"  value="N" <?php echo showData('is_your_current_mailing_address_same_as_physical') == "N" ? "checked" : ""; ?> />
-        <label for="mailing_address_no"> No</label>
-    </div>
-  </div>
-    <div class="form-group" style="margin-bottom: 10px;">
-        <label class="control-label" style="width: 100%; margin-bottom: 5px;">If you answered "No" to Item Number 3., provide your physical address in Item Number 4.</label>
-    </div>
-   
-    <label class="control-label col-md-12" style=" margin-bottom: 5px;">4. Sponsor's Physical Address (if different from the address above) </label>
-
-
- <div style="margin:0px 2% 0px 2%;" id="mailingAddressForm">
-  <h4 style="font-size: 16px; color:#0096FF; text-align: center; margin-top: 20px; font-family: Arial, sans-serif;">
-    Since your mailing and physical addresses are the same, there is no need to fill out this section. You may proceed to the next page.
-  </h4>
-
-        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
-                <div style="width: 100%;">
-                    <input type="text" maxlength="34" class="form-control" name ="" readonly value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
-                <div style="flex: 1; margin-left: 5%;">
-                    <label>
-                        <input type="radio" name="test"  value="apt"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="test"  value="ste"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="test"  value="flr"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
-                    </label>
-                </div>
-            </div>
-            <div style="flex: 1;">
-                <label class="control-label">Number</label>
-                <input type="text" class="form-control" name="" readonly
-                    maxlength="6" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value'); ?>"
-                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-            </div>
-        </div>
-        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
-                <div style="width: 100%;">
-                    <input type="text" class="form-control" name="" readonly maxlength="20" value="<?php echo showData('information_about_you_us_mailing_city_town'); ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
-                <div style="width: 100%;">
-                    <select class="form-control" name="" readonly
-                        style="width: 100%; padding: 5px; margin-top: 3%;">
-                        <option value=''>Select</option>
-                        <?php
-                        foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
-                            else $selected = "";
-                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
-                <div class='d-flexible'>
-                    <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" readonly maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                <div class="row"
+                    style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                    <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="20" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                        <div style="width: 100%;">
+                            <select class="form-control" name="information_about_you_us_mailing_state"
+                                style="width: 100%; padding: 5px; margin-top: 3%;">
+                                <option value=''>Select</option>
+                                <?php
+                                foreach ($allDataCountry as $record) {
+                                    if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
+                                    else $selected = "";
+                                    echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
+                        <div class='d-flexible'>
+                            <div style="width: 100%;">
+                                <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code') ?>"
+                                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label class="control-label">Province</label>
-                <input type="text" maxlength="20" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_province'); ?>" />
-            </div>
-            <div class="col-md-3">
-                <label class="control-label">Postal Code</label>
-                <input type="text" maxlength="9" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_postal_code'); ?>" />
-            </div>
-            <div class="col-md-5">
-                <label class="control-label">Country</label>
-                <input type="text" maxlength="34" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_country'); ?>" />
-            </div>
-        </div>
-    </div>
 
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <label class="">Province</label>
 
- <div id="physicalAddressForm"  style="margin:0px 2% 0px 2%;">
-        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
-                <div style="width: 100%;">
-                    <input type="text" maxlength="34" class="form-control" name="information_about_you_home_street_number" value="<?php echo showData('information_about_you_home_street_number'); ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
-                <div style="flex: 1; margin-left: 5%;">
-                    <label>
-                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="apt"
-                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="ste"
-                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="flr"
-                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
-                    </label>
-                </div>
-            </div>
-            <div style="flex: 1;">
-                <label class="control-label">Number</label>
-                <input type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value"
-                    maxlength="6" value="<?php echo showData('information_about_you_home_apt_ste_flr_value'); ?>"
-                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-            </div>
-        </div>
-        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
-                <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_home_city_town" maxlength="20" value="<?php echo showData('information_about_you_home_city_town'); ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
-                <div style="width: 100%;">
-                    <select class="form-control" name="information_about_you_home_state"
-                        style="width: 100%; padding: 5px; margin-top: 3%;">
-                        <option value=''>Select</option>
-                        <?php
-                        foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('information_about_you_home_state')) $selected = "selected";
-                            else $selected = "";
-                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
-                <div class='d-flexible'>
-                    <div style="width: 100%;">
-                        <input type="text" class="form-control" name="information_about_you_home_zip_code" maxlength="5" value="<?php echo showData('information_about_you_home_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
+
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label ">Postal Code</label>
+
+                        <input type="text" maxlength="9" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
+
+                    </div>
+                    <div class="col-md-5">
+                        <label class="control-label ">Country</label>
+                        <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_country" value="<?php echo showData('information_about_you_us_mailing_country') ?>" />
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label class="control-label">Province</label>
-                <input type="text" maxlength="20" class="form-control" name="information_about_you_home_province" value="<?php echo showData('information_about_you_home_province'); ?>" />
-            </div>
-            <div class="col-md-3">
-                <label class="control-label">Postal Code</label>
-                <input type="text" maxlength="9" class="form-control" name="information_about_you_home_postal_code" value="<?php echo showData('information_about_you_home_postal_code'); ?>" />
-            </div>
-            <div class="col-md-5">
-                <label class="control-label">Country</label>
-                <input type="text" maxlength="34" class="form-control" name="information_about_you_home_country" value="<?php echo showData('information_about_you_home_country'); ?>" />
-            </div>
-        </div>
-    </div>
+                <div>
+                    <label class=" col-md-6 my-4">3. Is your current mailing address the same as your physical address?</label>
+                    <div class="col-md-2 my-4">
+                        <input type="radio" class="form-check-input " id="mailing_address_yes" name="is_your_current_mailing_address_same_as_physical" value="Y" <?php echo showData('is_your_current_mailing_address_same_as_physical') == "Y" ? "checked" : ""; ?> />
+                        <label for="mailing_address_yes" class="mx-4"> Yes</label>
+                        <input type="radio" class="form-check-input" id="mailing_address_no" name="is_your_current_mailing_address_same_as_physical" value="N" <?php echo showData('is_your_current_mailing_address_same_as_physical') == "N" ? "checked" : ""; ?> />
+                        <label for="mailing_address_no"> No</label>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">If you answered "No" to Item Number 3., provide your physical address in Item Number 4.</label>
+                </div>
 
-       <div class="my-4">
-          <label class="control-label col-md-12">Other Information</label>
-          <div class="col-md-4">
-                <label class="control-label ">5. Country of Domicile</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">6. Date of Birth (mm/dd/yyyy)</label>
-                    <input type="date" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">7. Country of Birth </label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">8. U.S. Social Security Number (Required) </label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                <label class="control-label col-md-12" style=" margin-bottom: 5px;">4. Sponsor's Physical Address (if different from the address above) </label>
+
+
+                <div style="margin:0px 2% 0px 2%;" id="mailingAddressForm">
+                    <h4 style="font-size: 16px; color:#0096FF; text-align: center; margin-top: 20px; font-family: Arial, sans-serif;">
+                        Since your mailing and physical addresses are the same, there is no need to fill out this section. You may proceed to the next page.
+                    </h4>
+
+                    <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                        <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                            <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
+                            <div style="width: 100%;">
+                                <input type="text" maxlength="34" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
+                                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                            <div style="flex: 1; margin-left: 5%;">
+                                <label>
+                                    <input type="radio" name="test" value="apt"
+                                        <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                                    Apt. &nbsp;
+                                </label>
+                                <label>
+                                    <input type="radio" name="test" value="ste"
+                                        <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                                    Ste. &nbsp;
+                                </label>
+                                <label>
+                                    <input type="radio" name="test" value="flr"
+                                        <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                                    Flr.
+                                </label>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <label class="control-label">Number</label>
+                            <input type="text" class="form-control" name="" readonly
+                                maxlength="6" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value'); ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                    <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                        <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                            <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                            <div style="width: 100%;">
+                                <input type="text" class="form-control" name="" readonly maxlength="20" value="<?php echo showData('information_about_you_us_mailing_city_town'); ?>"
+                                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                            <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                            <div style="width: 100%;">
+                                <select class="form-control" name="" readonly
+                                    style="width: 100%; padding: 5px; margin-top: 3%;">
+                                    <option value=''>Select</option>
+                                    <?php
+                                    foreach ($allDataCountry as $record) {
+                                        if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
+                                        else $selected = "";
+                                        echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                            <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
+                            <div class='d-flexible'>
+                                <div style="width: 100%;">
+                                    <input type="text" class="form-control" name="" readonly maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="control-label">Province</label>
+                            <input type="text" maxlength="20" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_province'); ?>" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="control-label">Postal Code</label>
+                            <input type="text" maxlength="9" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_postal_code'); ?>" />
+                        </div>
+                        <div class="col-md-5">
+                            <label class="control-label">Country</label>
+                            <input type="text" maxlength="34" class="form-control" name="" readonly value="<?php echo showData('information_about_you_us_mailing_country'); ?>" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="physicalAddressForm" style="margin:0px 2% 0px 2%;">
+                    <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                        <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                            <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
+                            <div style="width: 100%;">
+                                <input type="text" maxlength="34" class="form-control" name="information_about_you_home_street_number" value="<?php echo showData('information_about_you_home_street_number'); ?>"
+                                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                            <div style="flex: 1; margin-left: 5%;">
+                                <label>
+                                    <input type="radio" name="information_about_you_home_apt_ste_flr" value="apt"
+                                        <?php echo (showData('information_about_you_home_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                                    Apt. &nbsp;
+                                </label>
+                                <label>
+                                    <input type="radio" name="information_about_you_home_apt_ste_flr" value="ste"
+                                        <?php echo (showData('information_about_you_home_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                                    Ste. &nbsp;
+                                </label>
+                                <label>
+                                    <input type="radio" name="information_about_you_home_apt_ste_flr" value="flr"
+                                        <?php echo (showData('information_about_you_home_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                                    Flr.
+                                </label>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <label class="control-label">Number</label>
+                            <input type="text" class="form-control" name="information_about_you_home_apt_ste_flr_value"
+                                maxlength="6" value="<?php echo showData('information_about_you_home_apt_ste_flr_value'); ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                    <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                        <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                            <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                            <div style="width: 100%;">
+                                <input type="text" class="form-control" name="information_about_you_home_city_town" maxlength="20" value="<?php echo showData('information_about_you_home_city_town'); ?>"
+                                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                            <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                            <div style="width: 100%;">
+                                <select class="form-control" name="information_about_you_home_state"
+                                    style="width: 100%; padding: 5px; margin-top: 3%;">
+                                    <option value=''>Select</option>
+                                    <?php
+                                    foreach ($allDataCountry as $record) {
+                                        if ($record->state_code == showData('information_about_you_home_state')) $selected = "selected";
+                                        else $selected = "";
+                                        echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                            <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
+                            <div class='d-flexible'>
+                                <div style="width: 100%;">
+                                    <input type="text" class="form-control" name="information_about_you_home_zip_code" maxlength="5" value="<?php echo showData('information_about_you_home_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="control-label">Province</label>
+                            <input type="text" maxlength="20" class="form-control" name="information_about_you_home_province" value="<?php echo showData('information_about_you_home_province'); ?>" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="control-label">Postal Code</label>
+                            <input type="text" maxlength="9" class="form-control" name="information_about_you_home_postal_code" value="<?php echo showData('information_about_you_home_postal_code'); ?>" />
+                        </div>
+                        <div class="col-md-5">
+                            <label class="control-label">Country</label>
+                            <input type="text" maxlength="34" class="form-control" name="information_about_you_home_country" value="<?php echo showData('information_about_you_home_country'); ?>" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4">
+                    <label class="control-label col-md-12">Other Information</label>
+                    <div class="col-md-4">
+                        <label class="control-label ">5. Country of Domicile</label>
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">6. Date of Birth (mm/dd/yyyy)</label>
+                        <input type="date" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">7. Country of Birth </label>
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">8. U.S. Social Security Number (Required) </label>
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                    </div>
+                </div>
+                <div class='my-4'>
+                    <label class="control-label" style=" margin-bottom: 5px;">9. Immigration Status</label>
+                    <div class="form-group">
+                        <label class="control-label col-md-12">
+                            <span class="d-flexible">
+                                <b>1. </b> <?php echo createCheckbox("i_864a_i_am_intending_immigrant_status") ?>I am a U.S. citizen.
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-12">
+                            <span class="d-flexible">
+                                <b>2. </b> <?php echo createCheckbox("i_864a_intending_immigrant_sponsor_household_status") ?>I am a U.S. national.
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-12">
+                            <span class="d-flexible">
+                                <b>3. </b> <?php echo createCheckbox("i_864a_i_am_not_immigrant_status") ?>I am a lawful permanent resident.
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="my-4">
+                    <div class="col-md-4">
+                        <label class="control-label ">10. Sponsor's A-Number (if any)</label>
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">11. USCIS Online Account Number (if any)</label>
+                        <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                    </div>
+                    <label class="control-label ">Military Service (To be completed by petitioner sponsors only.)</label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-8">12. I am currently on active duty in the United States Armed Forces or U.S. Coast Guard.</label>
+                    <div class="col-md-4 "><?php echo createRadio("sponsor_is_your_current_mailing_address_same_as_physical") ?> </div>
+                </div>
             </div>
         </div>
-        <div class='my-4'> 
-        <label class="control-label" style=" margin-bottom: 5px;">9. Immigration Status</label>
-            <div class="form-group">
-                <label class="control-label col-md-12">
-                    <span class="d-flexible">
-                        <b>1. </b> <?php echo createCheckbox("i_864a_i_am_intending_immigrant_status") ?>I am a U.S. citizen.
-                    </span>
-                </label>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">
-                    <span class="d-flexible">
-                        <b>2. </b> <?php echo createCheckbox("i_864a_intending_immigrant_sponsor_household_status") ?>I am a U.S. national.
-                    </span>
-                </label>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">
-                    <span class="d-flexible">
-                        <b>3. </b> <?php echo createCheckbox("i_864a_i_am_not_immigrant_status") ?>I am a lawful permanent resident. 
-                    </span>
-                </label>
-            </div>
-        </div>
-        
-       <div class="my-4">
-           <div class="col-md-4">
-                <label class="control-label ">10. Sponsor's A-Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">11. USCIS Online Account Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <label class="control-label ">Military Service (To be completed by petitioner sponsors only.)</label>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-8">12. I am currently on active duty in the United States Armed Forces or U.S. Coast Guard.</label>
-            <div class="col-md-4 "><?php echo createRadio("sponsor_is_your_current_mailing_address_same_as_physical") ?> </div>
-        </div>
- </div>
- </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
--------------------------------- page 3 --------------------------------
------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+  -------------------------------- page 3 --------------------------------
+  ----------------------------------------------------------------------->
+<fieldset class="setpage">
     <p style="text-align: right"><b>Page 3 of 12</b></p>
     <div class="row ">
         <div class="col-md-12">
             <div class="bg-info" style="margin-top:10px;">
                 <h4><b>Part 2. Information About You (Sponsor) (continued)</b></h4>
             </div>
-           
-          <div>
-              <label class="control-label col-md-12">1. Principal Immigrant's Full Legal Name (Do not provide a nickname)</label>
-          <div class="col-md-4">
-                <label class="control-label ">Family Name(Last Name)</label>
+
+            <div>
+                <label class="control-label col-md-12">1. Principal Immigrant's Full Legal Name (Do not provide a nickname)</label>
+                <div class="col-md-4">
+                    <label class="control-label ">Family Name(Last Name)</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Given Name(First Name)</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Given Name(First Name)</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Middle Name</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Middle Name</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-          <label  style="width: 100%; padding: 5px; margin-bottom: 5px; margin-left: 15px;" >2. Current Mailing Address</label>
-        <label class="control-label"  style="width: 100%; padding: 5px; margin-bottom: 5px; margin-left: 15px;">In Care Of Name (if any)</label>
-        <div >
-            <input type="text" class="form-control" name="information_about_you_us_mailing_care_of_name" maxlength="34"
-                value="<?php echo showData('information_about_you_us_mailing_care_of_name') ?>"
-                style="width: 98%; padding: 5px; margin-bottom: 5px; margin-left: 15px;  " />
-        </div>
-    </div>
-    <div style="margin:0px 2% 0px 2%;">
-        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
-                <div style="width: 100%;">
-                    <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+                <label style="width: 100%; padding: 5px; margin-bottom: 5px; margin-left: 15px;">2. Current Mailing Address</label>
+                <label class="control-label" style="width: 100%; padding: 5px; margin-bottom: 5px; margin-left: 15px;">In Care Of Name (if any)</label>
+                <div>
+                    <input type="text" class="form-control" name="information_about_you_us_mailing_care_of_name" maxlength="34"
+                        value="<?php echo showData('information_about_you_us_mailing_care_of_name') ?>"
+                        style="width: 98%; padding: 5px; margin-bottom: 5px; margin-left: 15px;  " />
                 </div>
             </div>
-            <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
-                <div style="flex: 1; margin-left: 5%;">
-                    <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="apt"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="ste"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="flr"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
-                    </label>
-                </div>
-            </div>
-            <div style="flex: 1;">
-                <label class="control-label">Number</label>
-                <input type="text" class="form-control" name="information_about_you_us_mailing_apt_ste_flr_value"
-                    maxlength="6" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>"
-                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-            </div>
-        </div>
-        <div class="row"
-            style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
-                <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="20" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
-                <div style="width: 100%;">
-                    <select class="form-control" name="information_about_you_us_mailing_state"
-                        style="width: 100%; padding: 5px; margin-top: 3%;">
-                        <option value=''>Select</option>
-                        <?php
- foreach ($allDataCountry as $record)
- {
-    if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
-    else $selected = "";
-    echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-    }
-    ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
-                <div class='d-flexible'>
-                    <div style="width: 100%;">
-                        <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code') ?>"
+            <div style="margin:0px 2% 0px 2%;">
+                <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                    <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                        <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
+                        <div style="width: 100%;">
+                            <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                        <div style="flex: 1; margin-left: 5%;">
+                            <label>
+                                <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="apt"
+                                    <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                                Apt. &nbsp;
+                            </label>
+                            <label>
+                                <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="ste"
+                                    <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                                Ste. &nbsp;
+                            </label>
+                            <label>
+                                <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="flr"
+                                    <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                                Flr.
+                            </label>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <label class="control-label">Number</label>
+                        <input type="text" class="form-control" name="information_about_you_us_mailing_apt_ste_flr_value"
+                            maxlength="6" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>"
                             style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
-            </div>
-        </div>     
+                <div class="row"
+                    style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                    <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="20" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                        <div style="width: 100%;">
+                            <select class="form-control" name="information_about_you_us_mailing_state"
+                                style="width: 100%; padding: 5px; margin-top: 3%;">
+                                <option value=''>Select</option>
+                                <?php
+                                foreach ($allDataCountry as $record) {
+                                    if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
+                                    else $selected = "";
+                                    echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
+                        <div class='d-flexible'>
+                            <div style="width: 100%;">
+                                <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code') ?>"
+                                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="row">
-    <div class="col-md-4 "  >
-                <label class="">Province</label>
-           
-                    <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
-         
-            </div>
-            <div class="col-md-3">
-                <label class="control-label ">Postal Code</label>
-           
-                    <input type="text" maxlength="9" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
-          
-            </div>
-            <div class="col-md-5">
-                <label class="control-label ">Country</label>
-  <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_country" value="<?php echo showData('information_about_you_us_mailing_country') ?>" />
-    </div>
- </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <label class="">Province</label>
 
- 
-    <div class="form-group" style="margin-bottom: 10px;">
-        <label class="control-label" style="width: 100%; margin-bottom: 5px;">Other Information</label>
-    </div>
-    <div class="row">
-    <div class="col-md-5 "  >
-                <label class="">3. Country of Citizenship or Nationality</label>
-           
-                    <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
-         
-            </div>
-            <div class="col-md-3">
-                <label class="control-label ">4. Date of Birth (mm/dd/yyyy)</label>
-           
-                    <input type="date" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
-          
-            </div>
-    </div>
-    <div class="row">
-    <div class="col-md-5 "  >
-                <label class="">5. Alien Registration Number (A-Number) (if any) </label>
-           
-                    <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
-         
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">6. USCIS Online Account Number (if any)</label>
-           
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
-          
-            </div>
-            <div class="col-md-5">
-                <label class="control-label ">7. Daytime Telephone Number</label>
-           
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
-          
-            </div>
-    </div>
-   
- </div>
+                        <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
+
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label ">Postal Code</label>
+
+                        <input type="text" maxlength="9" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
+
+                    </div>
+                    <div class="col-md-5">
+                        <label class="control-label ">Country</label>
+                        <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_country" value="<?php echo showData('information_about_you_us_mailing_country') ?>" />
+                    </div>
+                </div>
 
 
- <div class="bg-info">
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Other Information</label>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 ">
+                        <label class="">3. Country of Citizenship or Nationality</label>
+
+                        <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
+
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label ">4. Date of Birth (mm/dd/yyyy)</label>
+
+                        <input type="date" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 ">
+                        <label class="">5. Alien Registration Number (A-Number) (if any) </label>
+
+                        <input type="text" maxlength="20" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
+
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">6. USCIS Online Account Number (if any)</label>
+
+                        <input type="text" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
+
+                    </div>
+                    <div class="col-md-5">
+                        <label class="control-label ">7. Daytime Telephone Number</label>
+
+                        <input type="text" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="bg-info">
                 <h4><b>Part 4. Information About the Immigrants You Are Sponsoring</b></h4>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">1. I am sponsoring the principal immigrant named in Part 3. </label>
                 <div class="col-md-2  "><?php echo createRadio("sponsor_employment_federal_income_tax_status") ?> </div>
                 <b class="col-md-10 my-4">, I am sponsoring family members in Part 4. as the second joint sponsor or I am sponsoring family members
-                who are immigrating more than six months after the principal immigrant.</b>
+                    who are immigrating more than six months after the principal immigrant.</b>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">2. <?php echo createCheckbox("sponsor_employment_accompanying_dependents_status") ?>I am sponsoring the following family members immigrating at the same time or within six months of the principal
-    immigrant named in Part 3. (List family members in Item Numbers 4. - 7. Do not include any relative listed on a separate
-    visa petition.)</label>
-                
+                    immigrant named in Part 3. (List family members in Item Numbers 4. - 7. Do not include any relative listed on a separate
+                    visa petition.)</label>
+
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">3. <?php echo createCheckbox("sponsor_employment_completed_form_i864_status") ?>I am sponsoring the following family members who are immigrating more than six months after the principal immigrant. (List
-                family members in Item Numbers 4. - 7.)</label>
+                    family members in Item Numbers 4. - 7.)</label>
             </div>
 
-           
 
 
-         <div>
-              <label class="control-label col-md-12">4. Family Member 1</label>
-            <div class="col-md-4">
-                <label class="control-label ">Family Name(Last Name)</label>
+
+            <div>
+                <label class="control-label col-md-12">4. Family Member 1</label>
+                <div class="col-md-4">
+                    <label class="control-label ">Family Name(Last Name)</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Given Name(First Name)</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Given Name(First Name)</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Middle Name (if applicable)</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Middle Name (if applicable)</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Relationship to Principal Immigrant</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Relationship to Principal Immigrant</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
                     <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">USCIS Online Account Number (if any)</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">USCIS Online Account Number (if any)</label>
                     <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-          
-        </div>
-
-
-
-
-
-
- </div>
-    </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
-<!----------------------------------------------------------------------
--------------------------------- page 4 --------------------------------
------------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
-    <p style="text-align: right"><b>Page 4 of 12</b></p>
-    <div class="row ">
-        <div class="col-md-12">
-  <div class="bg-info">
-                <h4><b>Part 4. Information About the Immigrants You Are Sponsoring </b>(continued)</h4>
-            </div>
-            
-           
-
-
-         <div>
-              <label class="control-label col-md-12">5. Family Member 2</label>
-            <div class="col-md-4">
-                <label class="control-label ">Family Name(Last Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Given Name(First Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Middle Name (if applicable)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Relationship to Principal Immigrant</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">USCIS Online Account Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-          
-        </div>
-
-
-         <div>
-              <label class="control-label col-md-12">6. Family Member 3</label>
-            <div class="col-md-4">
-                <label class="control-label ">Family Name(Last Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Given Name(First Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Middle Name (if applicable)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Relationship to Principal Immigrant</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">USCIS Online Account Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-          
-        </div>
-
-
-         <div>
-              <label class="control-label col-md-12">7. Family Member 4</label>
-            <div class="col-md-4">
-                <label class="control-label ">Family Name(Last Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Given Name(First Name)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Middle Name (if applicable)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Relationship to Principal Immigrant</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-            <div class="col-md-4">
-                <label class="control-label ">USCIS Online Account Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
-            </div>
-            <div class="col-md-12">
-                <label class="control-label ">If you need additional space, use the space provided in Part 11. Additional Information</label>
-            </div>
-          
-        </div>
-
-
-      
-
-
-
-
-
-
- </div>
-    </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
-<!----------------------------------------------------------------------
--------------------------------- page 5  --------------------------------
------------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
-    <div class="row">
-        <p style=" text-align: right;  margin-right: 25px;"><b>Page 5 of 12</b></p>
-        <div class=" col-md-12">
-        <div class="bg-info">
-            <h4><b>Part 5. Sponsor's Household Size</b>
-            </h4>
-        </div>
-        <h5 style="margin-left:17px;"><b>NOTE:</b> Do not count any member of your household more than once</h5>
-        <h5 style="margin-left:17px;"><b>Persons you are sponsoring in this affidavit:</b></h5>
-        <div class="form-group">
-            <label class="control-label col-md-12">1.Enter the total number of immigrants you are sponsoring on this affidavit which includes the principal immigrant
-    listed in Part 3., any immigrants listed in Part 4., Item Numbers 4. - 7. and, any additional sponsored immigrants
-    you listed in Part 11. Additional Information. Do not count the principal immigrant if you are only sponsoring
-    family members entering more than six months after the principal immigrant. </label>
-            <div class="col-md-4 col-md-offset-8">
-                <input type="text" class="form-control" name="sponsor_household_size_provide_the_number" maxlength="5" value="<?php echo showData('sponsor_household_size_provide_the_number') ?>">
-            </div>
-        </div>
-        <h5 style="margin-left:17px;"><b>Persons NOT sponsored in this affidavit:</b></h5>
-        <div class="form-group">
-            <label class="control-label col-md-12">2. Yourself</label>
-            <div class="col-md-4 col-md-offset-8">
-                <input type="text" class="form-control" name="" maxlength="5" value="        1" disabled>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">3. If you are currently married, enter "1" for your spouse. (NOTE: Enter “0” if you already counted your spouse in
-            Item Number 1.)</label>
-            <div class="col-md-4 col-md-offset-8">
-                <input type="text" class="form-control" name="sponsor_household_size_currently_married" maxlength="5" value="<?php echo showData('sponsor_household_size_currently_married') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">4. If you have dependent children, enter the number here. (NOTE: Enter “0” if you already counted your dependent
-            children in Item Number 1.)</label>
-            <div class="col-md-4 col-md-offset-8">
-                <input type="text" class="form-control" name="sponsor_household_size_dependent_children" maxlength="5" value="<?php echo showData('sponsor_household_size_dependent_children') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">5. If you have any other dependents, enter the number here. (NOTE: Enter “0” if you already counted your other
-            dependents in Item Number 1.)</label>
-            <div class="col-md-4 col-md-offset-8">
-                <input type="text" class="form-control" name="sponsor_household_size_other_dependents" maxlength="5" value="<?php echo showData('sponsor_household_size_other_dependents') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">6. If you have sponsored any other persons on Form I-864 or Form I-864EZ who are now lawful permanent residents
-    and you are still obligated to support, enter the number here. (NOTE: Enter “0” if you already counted these
-    persons in Item Number 1.)</label>
-            <div class="col-md-4 col-md-offset-8">
-                <input type="text" class="form-control" name="sponsor_household_size_sponsored_i864" maxlength="5" value="<?php echo showData('sponsor_household_size_sponsored_i864') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">7. If you have siblings, parents, or adult children with the same principal residence who are combining their income
-    with yours by submitting Form I-864A, enter the number here. (NOTE: Enter “0” if you already counted these
-    persons in Item Number 1.)</label>
-            <div class="col-md-4 col-md-offset-8">
-                <input type="text" class="form-control" name="sponsor_household_size_siblings" maxlength="5" value="<?php echo showData('sponsor_household_size_siblings') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">8. Add together Part 5., Item Numbers 1. - 7. and enter the number here.  </label>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-6 d-flexible ">
-                    <div class="col-md-4 "><b>Household Size:</b></div><input type="text" class="form-control col-md-6 " value=" 1 " disabled>
                 </div>
             </div>
         </div>
-        <div class="bg-info">
-            <h4><b>Part 6. Sponsor's Employment and Income </b>
-            </h4>
-        </div>
-        <h5 style="margin-left:17px;"><b>I am currently:</b></h5>
-        <div class="form-group">
-            <label class="control-label col-md-12">1. <?php echo createCheckbox("sponsor_employment_as_an_status") ?>Employed as a/an</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="sponsor_employment_as_an" maxlength="38" value="<?php echo showData('sponsor_employment_as_an') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">2. Name of Employer 1 </label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="sponsor_employment_name_of_employer1" maxlength="38" value="<?php echo showData('sponsor_employment_name_of_employer1') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">3. Name of Employer 2 (if applicable)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="sponsor_employment_name_of_employer2" maxlength="38" value="<?php echo showData('sponsor_employment_name_of_employer2') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">4. <?php echo createCheckbox("sponsor_employment_occupation_status") ?>Self-Employed as a/an (Occupation)</label>
-            <div class="col-md-12">
-                <input type="text" class="form-control" name="sponsor_employment_occupation" maxlength="38" value="<?php echo showData('sponsor_employment_occupation') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">5. <?php echo createCheckbox("sponsor_employment_retired_date_status") ?>Retired Since (mm/dd/yyyy)</label>
-            <div class="col-md-7 col-md-offset-5">
-                <input type="date" class="form-control" name="sponsor_employment_retired_date" value="<?php echo showData('sponsor_employment_retired_date') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">6. <?php echo createCheckbox("sponsor_employment_unemployed_date_status") ?>Unemployed Since (mm/dd/yyyy)</label>
-            <div class="col-md-7 col-md-offset-5">
-                <input type="date" class="form-control" name="sponsor_employment_unemployed_date" value="<?php echo showData('sponsor_employment_unemployed_date') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">7. My current individual annual income is:</label>
-            <div class="col-md-7 col-md-offset-5">
-                <input type="text" class="form-control" name="sponsor_employment_current_annual_income" maxlength="14" value="<?php echo showData('sponsor_employment_current_annual_income') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">Income you are using from any other person who was counted in your household size, including, in certain conditions, the
-            intending immigrant. (See Form I-864 Instructions.) Please indicate name, relationship, and income.</label>
-        </div>
-    </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
+<!----------------------------------------------------------------------
+-------------------------------- page 4 --------------------------------
+------------------------------------------------------------------------>
+<fieldset class="setpage">
+    <p style="text-align: right"><b>Page 4 of 12</b></p>
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="bg-info">
+                <h4><b>Part 4. Information About the Immigrants You Are Sponsoring </b>(continued)</h4>
+            </div>
+            <div>
+                <label class="control-label col-md-12">5. Family Member 2</label>
+                <div class="col-md-4">
+                    <label class="control-label ">Family Name(Last Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Given Name(First Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Middle Name (if applicable)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Relationship to Principal Immigrant</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
+                    <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">USCIS Online Account Number (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                </div>
+
+            </div>
+            <div>
+                <label class="control-label col-md-12">6. Family Member 3</label>
+                <div class="col-md-4">
+                    <label class="control-label ">Family Name(Last Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Given Name(First Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Middle Name (if applicable)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Relationship to Principal Immigrant</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
+                    <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">USCIS Online Account Number (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                </div>
+
+            </div>
+
+
+            <div>
+                <label class="control-label col-md-12">7. Family Member 4</label>
+                <div class="col-md-4">
+                    <label class="control-label ">Family Name(Last Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Given Name(First Name)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Middle Name (if applicable)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Relationship to Principal Immigrant</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_family_last_name" value="<?php echo showData('information_about_you_family_last_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
+                    <input type="dater " maxlength="29" class="form-control" name="information_about_you_given_first_name" value="<?php echo showData('information_about_you_given_first_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label ">USCIS Online Account Number (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="information_about_you_middle_name" value="<?php echo showData('information_about_you_middle_name') ?>" />
+                </div>
+                <div class="col-md-12">
+                    <label class="control-label ">If you need additional space, use the space provided in Part 11. Additional Information</label>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset>
+<!----------------------------------------------------------------------
+-------------------------------- page 5  --------------------------------
+------------------------------------------------------------------------>
+<fieldset class="setpage">
+    <div class="row">
+        <p style=" text-align: right;  margin-right: 25px;"><b>Page 5 of 12</b></p>
+        <div class=" col-md-12">
+            <div class="bg-info">
+                <h4><b>Part 5. Sponsor's Household Size</b>
+                </h4>
+            </div>
+            <h5 style="margin-left:17px;"><b>NOTE:</b> Do not count any member of your household more than once</h5>
+            <h5 style="margin-left:17px;"><b>Persons you are sponsoring in this affidavit:</b></h5>
+            <div class="form-group">
+                <label class="control-label col-md-12">1.Enter the total number of immigrants you are sponsoring on this affidavit which includes the principal immigrant
+                    listed in Part 3., any immigrants listed in Part 4., Item Numbers 4. - 7. and, any additional sponsored immigrants
+                    you listed in Part 11. Additional Information. Do not count the principal immigrant if you are only sponsoring
+                    family members entering more than six months after the principal immigrant. </label>
+                <div class="col-md-4 col-md-offset-8">
+                    <input type="text" class="form-control" name="sponsor_household_size_provide_the_number" maxlength="5" value="<?php echo showData('sponsor_household_size_provide_the_number') ?>">
+                </div>
+            </div>
+            <h5 style="margin-left:17px;"><b>Persons NOT sponsored in this affidavit:</b></h5>
+            <div class="form-group">
+                <label class="control-label col-md-12">2. Yourself</label>
+                <div class="col-md-4 col-md-offset-8">
+                    <input type="text" class="form-control" name="" maxlength="5" value="        1" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3. If you are currently married, enter "1" for your spouse. (NOTE: Enter “0” if you already counted your spouse in
+                    Item Number 1.)</label>
+                <div class="col-md-4 col-md-offset-8">
+                    <input type="text" class="form-control" name="sponsor_household_size_currently_married" maxlength="5" value="<?php echo showData('sponsor_household_size_currently_married') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">4. If you have dependent children, enter the number here. (NOTE: Enter “0” if you already counted your dependent
+                    children in Item Number 1.)</label>
+                <div class="col-md-4 col-md-offset-8">
+                    <input type="text" class="form-control" name="sponsor_household_size_dependent_children" maxlength="5" value="<?php echo showData('sponsor_household_size_dependent_children') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">5. If you have any other dependents, enter the number here. (NOTE: Enter “0” if you already counted your other
+                    dependents in Item Number 1.)</label>
+                <div class="col-md-4 col-md-offset-8">
+                    <input type="text" class="form-control" name="sponsor_household_size_other_dependents" maxlength="5" value="<?php echo showData('sponsor_household_size_other_dependents') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">6. If you have sponsored any other persons on Form I-864 or Form I-864EZ who are now lawful permanent residents
+                    and you are still obligated to support, enter the number here. (NOTE: Enter “0” if you already counted these
+                    persons in Item Number 1.)</label>
+                <div class="col-md-4 col-md-offset-8">
+                    <input type="text" class="form-control" name="sponsor_household_size_sponsored_i864" maxlength="5" value="<?php echo showData('sponsor_household_size_sponsored_i864') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">7. If you have siblings, parents, or adult children with the same principal residence who are combining their income
+                    with yours by submitting Form I-864A, enter the number here. (NOTE: Enter “0” if you already counted these
+                    persons in Item Number 1.)</label>
+                <div class="col-md-4 col-md-offset-8">
+                    <input type="text" class="form-control" name="sponsor_household_size_siblings" maxlength="5" value="<?php echo showData('sponsor_household_size_siblings') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">8. Add together Part 5., Item Numbers 1. - 7. and enter the number here. </label>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-6 d-flexible ">
+                        <div class="col-md-4 "><b>Household Size:</b></div><input type="text" class="form-control col-md-6 " value=" 1 " disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b>Part 6. Sponsor's Employment and Income </b>
+                </h4>
+            </div>
+            <h5 style="margin-left:17px;"><b>I am currently:</b></h5>
+            <div class="form-group">
+                <label class="control-label col-md-12">1. <?php echo createCheckbox("sponsor_employment_as_an_status") ?>Employed as a/an</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="sponsor_employment_as_an" maxlength="38" value="<?php echo showData('sponsor_employment_as_an') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">2. Name of Employer 1 </label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="sponsor_employment_name_of_employer1" maxlength="38" value="<?php echo showData('sponsor_employment_name_of_employer1') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">3. Name of Employer 2 (if applicable)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="sponsor_employment_name_of_employer2" maxlength="38" value="<?php echo showData('sponsor_employment_name_of_employer2') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">4. <?php echo createCheckbox("sponsor_employment_occupation_status") ?>Self-Employed as a/an (Occupation)</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="sponsor_employment_occupation" maxlength="38" value="<?php echo showData('sponsor_employment_occupation') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">5. <?php echo createCheckbox("sponsor_employment_retired_date_status") ?>Retired Since (mm/dd/yyyy)</label>
+                <div class="col-md-7 col-md-offset-5">
+                    <input type="date" class="form-control" name="sponsor_employment_retired_date" value="<?php echo showData('sponsor_employment_retired_date') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">6. <?php echo createCheckbox("sponsor_employment_unemployed_date_status") ?>Unemployed Since (mm/dd/yyyy)</label>
+                <div class="col-md-7 col-md-offset-5">
+                    <input type="date" class="form-control" name="sponsor_employment_unemployed_date" value="<?php echo showData('sponsor_employment_unemployed_date') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">7. My current individual annual income is:</label>
+                <div class="col-md-7 col-md-offset-5">
+                    <input type="text" class="form-control" name="sponsor_employment_current_annual_income" maxlength="14" value="<?php echo showData('sponsor_employment_current_annual_income') ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">Income you are using from any other person who was counted in your household size, including, in certain conditions, the
+                    intending immigrant. (See Form I-864 Instructions.) Please indicate name, relationship, and income.</label>
+            </div>
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6  --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <div class="row">
         <p style=" text-align: right;  margin-right: 25px;"><b>Page 6 of 12</b></p>
- 
-       <div class="bg-info">
+
+        <div class="bg-info">
             <h4><b>Part 6. Sponsor's Employment and Income (continued) </b>
             </h4>
         </div>
 
-    <h5 style="margin-left:17px;"><b>8. Person 1</b></h5>
-      <div class="d-flexible">
-       <div class="form-group col-md-6" >
-            <label class="control-label ">Name</label>
-            <div >
-                <input type="text" class="form-control" name="sponsor_household_person1_name" maxlength="38" value="<?php echo showData('sponsor_household_person1_name') ?>">
+        <h5 style="margin-left:17px;"><b>8. Person 1</b></h5>
+        <div class="d-flexible">
+            <div class="form-group col-md-6">
+                <label class="control-label ">Name</label>
+                <div>
+                    <input type="text" class="form-control" name="sponsor_household_person1_name" maxlength="38" value="<?php echo showData('sponsor_household_person1_name') ?>">
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label ">Relationship </label>
+                <div class="">
+                    <input type="text" class="form-control" name="sponsor_household_person1_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person1_relationship') ?>">
+                </div>
             </div>
         </div>
-        <div class="form-group col-md-6">
-            <label class="control-label ">Relationship </label>
-            <div class="">
-                <input type="text" class="form-control" name="sponsor_household_person1_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person1_relationship') ?>">
-            </div>
-        </div>
-      </div>
         <div class="form-group">
             <label class="control-label col-md-2">Current Income </label>
             <div class="col-md-3 d-flexible">
@@ -1012,21 +990,21 @@ display: flex;
             </div>
         </div>
 
-    <h5 style="margin-left:17px;"><b>9. Person 2</b></h5>
-      <div class="d-flexible">
-       <div class="form-group col-md-6" >
-            <label class="control-label ">Name</label>
-            <div >
-                <input type="text" class="form-control" name="sponsor_household_person2_name" maxlength="38" value="<?php echo showData('sponsor_household_person2_name') ?>">
+        <h5 style="margin-left:17px;"><b>9. Person 2</b></h5>
+        <div class="d-flexible">
+            <div class="form-group col-md-6">
+                <label class="control-label ">Name</label>
+                <div>
+                    <input type="text" class="form-control" name="sponsor_household_person2_name" maxlength="38" value="<?php echo showData('sponsor_household_person2_name') ?>">
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label ">Relationship </label>
+                <div class="">
+                    <input type="text" class="form-control" name="sponsor_household_person2_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person2_relationship') ?>">
+                </div>
             </div>
         </div>
-        <div class="form-group col-md-6">
-            <label class="control-label ">Relationship </label>
-            <div class="">
-                <input type="text" class="form-control" name="sponsor_household_person2_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person2_relationship') ?>">
-            </div>
-        </div>
-      </div>
         <div class="form-group">
             <label class="control-label col-md-2">Current Income </label>
             <div class="col-md-3 d-flexible">
@@ -1034,21 +1012,21 @@ display: flex;
             </div>
         </div>
 
-    <h5 style="margin-left:17px;"><b>10. Person 3</b></h5>
-      <div class="d-flexible">
-       <div class="form-group col-md-6" >
-            <label class="control-label ">Name</label>
-            <div >
-                <input type="text" class="form-control" name="sponsor_household_person3_name" maxlength="38" value="<?php echo showData('sponsor_household_person3_name') ?>">
+        <h5 style="margin-left:17px;"><b>10. Person 3</b></h5>
+        <div class="d-flexible">
+            <div class="form-group col-md-6">
+                <label class="control-label ">Name</label>
+                <div>
+                    <input type="text" class="form-control" name="sponsor_household_person3_name" maxlength="38" value="<?php echo showData('sponsor_household_person3_name') ?>">
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label ">Relationship </label>
+                <div class="">
+                    <input type="text" class="form-control" name="sponsor_household_person3_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person3_relationship') ?>">
+                </div>
             </div>
         </div>
-        <div class="form-group col-md-6">
-            <label class="control-label ">Relationship </label>
-            <div class="">
-                <input type="text" class="form-control" name="sponsor_household_person3_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person3_relationship') ?>">
-            </div>
-        </div>
-      </div>
         <div class="form-group">
             <label class="control-label col-md-2">Current Income </label>
             <div class="col-md-3 d-flexible">
@@ -1056,21 +1034,21 @@ display: flex;
             </div>
         </div>
 
-    <h5 style="margin-left:17px;"><b>11. Person 4</b></h5>
-      <div class="d-flexible">
-       <div class="form-group col-md-6" >
-            <label class="control-label ">Name</label>
-            <div >
-                <input type="text" class="form-control" name="sponsor_household_person4_name" maxlength="38" value="<?php echo showData('sponsor_household_person4_name') ?>">
+        <h5 style="margin-left:17px;"><b>11. Person 4</b></h5>
+        <div class="d-flexible">
+            <div class="form-group col-md-6">
+                <label class="control-label ">Name</label>
+                <div>
+                    <input type="text" class="form-control" name="sponsor_household_person4_name" maxlength="38" value="<?php echo showData('sponsor_household_person4_name') ?>">
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label ">Relationship </label>
+                <div class="">
+                    <input type="text" class="form-control" name="sponsor_household_person4_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person4_relationship') ?>">
+                </div>
             </div>
         </div>
-        <div class="form-group col-md-6">
-            <label class="control-label ">Relationship </label>
-            <div class="">
-                <input type="text" class="form-control" name="sponsor_household_person4_relationship" maxlength="38" value="<?php echo showData('sponsor_household_person4_relationship') ?>">
-            </div>
-        </div>
-      </div>
         <div class="form-group">
             <label class="control-label col-md-2">Current Income </label>
             <div class="col-md-3 d-flexible">
@@ -1078,63 +1056,63 @@ display: flex;
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-md-12">If you need additional space, use the space provided in Part 11. Additional Information  </label>
+            <label class="control-label col-md-12">If you need additional space, use the space provided in Part 11. Additional Information </label>
             <label class="control-label col-md-12">Remarks </label>
         </div>
 
         <div class="form-group">
-                <label class="control-label col-md-12">12. My Current Annual Household Income $ (Total all lines from Part 6. Item Numbers 7. - 11.; the total will be compared to Federal Poverty Guidelines on Form I-864P.) </label>
-                <div class="col-md-4 col-md-offset-8">
-                    <input type="text" class="form-control" name="sponsor_employment_current_household_income" maxlength="16" value="<?php echo showData('sponsor_employment_current_household_income') ?>">
-                </div>
+            <label class="control-label col-md-12">12. My Current Annual Household Income $ (Total all lines from Part 6. Item Numbers 7. - 11.; the total will be compared to Federal Poverty Guidelines on Form I-864P.) </label>
+            <div class="col-md-4 col-md-offset-8">
+                <input type="text" class="form-control" name="sponsor_employment_current_household_income" maxlength="16" value="<?php echo showData('sponsor_employment_current_household_income') ?>">
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">13. <?php echo createCheckbox("sponsor_employment_completed_form_i864_status") ?>The people listed in Item Numbers 8. - 11. have completed Form I-864A. I am filing along with this affidavit all necessary
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">13. <?php echo createCheckbox("sponsor_employment_completed_form_i864_status") ?>The people listed in Item Numbers 8. - 11. have completed Form I-864A. I am filing along with this affidavit all necessary
                 Form I-864As completed by these people.</label>
 
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-12">14. <?php echo createCheckbox("sponsor_employment_accompanying_dependents_status") ?>One or more of the people listed in Item Numbers 8. - 11. do not need to complete Form I-864A because he or she is the intending immigrant and has no accompanying dependents </label>
+            <div class="col-md-6 col-md-offset-6 ">
+                <input type="text" class="form-control" name="sponsor_employment_accompanying_dependents" maxlength="36" value="<?php echo showData('sponsor_employment_accompanying_dependents') ?>">
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">14. <?php echo createCheckbox("sponsor_employment_accompanying_dependents_status") ?>One or more of the people listed in Item Numbers 8. - 11. do not need to complete Form I-864A because he or she is the intending immigrant and has no accompanying dependents </label>
-                <div class="col-md-6 col-md-offset-6 ">
-                    <input type="text" class="form-control" name="sponsor_employment_accompanying_dependents" maxlength="36" value="<?php echo showData('sponsor_employment_accompanying_dependents') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
+        </div>
+        <div class="bg-info">
             <h4><b>Federal Income Tax Return Information</b>
             </h4>
         </div>
-            <div class="form-group">
-                <label class="col-md-12">15. Have you filed a Federal income tax return for each of the three most recent tax years?</label>
-                <div class="col-md-4 col-md-offset-6 "><?php echo createRadio("sponsor_employment_federal_income_tax_status") ?> </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12 ">NOTE: You MUST attach a photocopy or transcript of your Federal income tax return for only the most recent tax year and
+        <div class="form-group">
+            <label class="col-md-12">15. Have you filed a Federal income tax return for each of the three most recent tax years?</label>
+            <div class="col-md-4 col-md-offset-6 "><?php echo createRadio("sponsor_employment_federal_income_tax_status") ?> </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12 ">NOTE: You MUST attach a photocopy or transcript of your Federal income tax return for only the most recent tax year and
                 complete Item Number 16.a. If you believe additional returns may help you to establish your ability to maintain sufficient income,
                 you may submit transcripts or photocopies of your Federal individual income tax returns for the three most recent years and complete
                 Item Numbers 16.a. - 16.c.
-               </div>
-                <div class="col-md-12 my-4">Type or print the most recent tax year and your total income for that most recent tax year. If the amount was zero, type or print “zero”
+            </div>
+            <div class="col-md-12 my-4">Type or print the most recent tax year and your total income for that most recent tax year. If the amount was zero, type or print “zero”
                 or if you were not required to file a Federal income tax return type or print “N/A” for not applicable. Type or print “N/A” for not
                 applicable for Item Numbers 16.b. - 16.c. if you do are not submitting any additional tax returns.
-               </div>
             </div>
+        </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 7--------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
     <div class="row">
         <p style=" text-align: right; margin-right: 15px;"><b>Page 7 of 12</b></p>
         <div class="col-md-12">
-          
+
             <div class="bg-info">
                 <h4><b>Part 6. Sponsor's Employment and Income </b>(continued)</h4>
             </div>
-            
+
             <p style="margin-left: 17px;">My total income (adjusted gross income on Internal Revenue Service (IRS) Form 1040EZ) as reported on my Federal income tax returns for the most recent three years was: </p>
             <div class="d-flexible row" style="margin-left: 37%;">
                 <div class="col-md-6"><b>Tax Year</b></div>
@@ -1162,7 +1140,7 @@ display: flex;
                 <label class="control-label col-md-12">25. <?php echo createCheckbox("sponsor_employment_irs_required_level") ?>I was not required to file a Federal income tax return
                     as my income was below the IRS required level and I have attached evidence to support this.</label>
             </div>
-    
+
             <div class="bg-info">
                 <h4><b>Part 7. Use of Assets to Supplement Income</b>(if Applicable)</h4>
             </div>
@@ -1181,7 +1159,7 @@ display: flex;
 
             <div class="form-group">
                 <label class="control-label col-md-12">2. Enter the net cash value of real-estate holdings. (Net value means assessed value minus mortgage
-                debt.) $ </label>
+                    debt.) $ </label>
                 <div class="col-md-6  col-md-offset-6 d-flexible">
                     $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_real_estate_holdings" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_real_estate_holdings') ?>">
                 </div>
@@ -1196,7 +1174,7 @@ display: flex;
             </div>
 
             <div class="form-group">
-                <label class="control-label col-md-12">4. Add together Item Numbers 1. - 3. and enter the number here.  </span></label>
+                <label class="control-label col-md-12">4. Add together Item Numbers 1. - 3. and enter the number here. </span></label>
                 <div class="col-md-6  col-md-offset-6 d-flexible">
                     $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_stocks_bonds_certificates" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_stocks_bonds_certificates') ?>">
                 </div>
@@ -1205,111 +1183,133 @@ display: flex;
 
             <div class="form-group">
                 <label class="control-label col-md-12">5. Add together the household members' assets reported on all the Form I-864A
-                Part 4., Item Number 6. and enter the number here.  </b>.</label>
+                    Part 4., Item Number 6. and enter the number here. .</label>
                 <div class="col-md-8  col-md-offset-4 d-flexible">
                     <div style="font-size: larger;"><b>TOTAL</b></div>:$<input type="text" class="form-control  " name="sponsor_assets_of_supplement_add_together1" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together1') ?>">
                 </div>
             </div>
+        </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 8--------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 6 of 10</b></p>
+    <p style="text-align: right; margin-right: 15px;"><b>Page 8 of 12</b></p>
     <div class="row">
-        <div class="col-md-6">
-           
+        <div class="col-md-12">
             <div class="bg-info">
-                <h4><b>Part 7. Use of Assets to Supplement Income</b> (Optional) (continued)</h4>
+                <h4><b>Part 7. Use of Assets to Supplement Income</b> (if Applicable) (continued)</h4>
+            </div>
+            <label class="control-label col-md-12">Assets of the principal sponsored immigrant (if applicable).</label>
+            <label class="control-label col-md-12">The principal sponsored immigrant is the person listed in Part 3., Item Number 1. Only include the assets if the principal immigrant
+                is being sponsored by this affidavit of support.</label>
+            <div class="form-group">
+                <label class="control-label col-md-12">6. Enter the balance of the principal immigrant's savings and checking accounts.</label>
+                <div class="col-md-6 col-md-offset-6 d-flexible">
+                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_add_together2" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together2'); ?>">
+                </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">9. <b>Add together Item Numbers 6. - 8. and enter the number here:</b></label>
+                <label class="control-label col-md-12">7. Enter the net cash value of all the principal immigrant's real estate holdings. (Net value means
+                    investment value minus mortgage debt.)</label>
+                <div class="col-md-6 col-md-offset-6 d-flexible">
+                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_add_together2" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together2'); ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">8. Enter the current cash value of the principal immigrant's stocks, bonds, certificates of deposit, and
+                    other assets not included in Item Number 6. or Item Number 7.</label>
+                <div class="col-md-6 col-md-offset-6 d-flexible">
+                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_add_together2" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together2'); ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">9. Add together Item Numbers 6. - 8. and enter the number here.</label>
                 <div class="col-md-6 col-md-offset-6 d-flexible">
                     $<input type="text" class="form-control" name="sponsor_assets_of_supplement_add_together2" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together2'); ?>">
                 </div>
             </div>
             <h4 style="margin-left: 17px;"><b>Total Value of Assets </b></h4>
             <div class="form-group">
-                <label class="control-label col-md-12">10. Add together Item Numbers 4., 5.b., and 9. and enter the number here.</label>
-                <div class="col-md-8 col-md-offset-4 d-flexible ">
+                <label class="control-label col-md-12">10. Add together Item Numbers 4., 5., and 9. and enter the number here.</label>
+                <div class="col-md-7 col-md-offset-5 d-flexible ">
                     <div style="font-size: larger;"><b>TOTAL</b></div>:$<input type="text" class="form-control" name="sponsor_assets_of_supplement_add_together3" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together3'); ?>">
                 </div>
             </div>
             <div class="bg-info">
-                <h4> <b>Part 8. Sponsor's Contract, Statement, Contact Information, Declaration, Certification, and Signature</b></h4>
+                <h4> <b>Part 8. Sponsor's Contract, Contact Information, Certification, and Signature</b></h4>
             </div>
             <div style="margin-left: 17px;">
                 <b>NOTE:</b> Read the <b>Penalties</b> section of the Form I-864 Instructions before completing this part.
             </div>
+
+
+
             <div class="bg-info">
                 <h4> <b> Sponsor's Contract</b></h4>
             </div>
             <div style="margin-left: 17px;">
-                Please note that, by signing this Form I-864, you agree to
-                assume certain specific obligations under the Immigration and
-                Nationality Act (INA) and other Federal laws. The following
-                paragraphs describe those obligations. Please read the following
-                information carefully before you sign Form I-864. If you do not
-                understand the obligations, you may wish to consult an attorney
-                or accredited representative.
+                Please note that, by signing this Form I-864, you agree to assume certain specific obligations under the Immigration and Nationality
+                Act (INA) and other Federal laws. The following paragraphs describe those obligations. Please read the following information
+                carefully before you sign Form I-864. If you do not understand the obligations, you may wish to consult an attorney or accredited
+                representative.
+
                 <br><br>
                 <b>What is the Legal Effect of My Signing Form I-864?</b>
                 <br><br>
-                If you sign Form I-864 on behalf of any person (called the
-                intending immigrant) who is applying for an immigrant visa or
-                for adjustment of status to a lawful permanent resident, and that
-                intending immigrant submits Form I-864 to the U.S.
-                Government with his or her application for an immigrant visa or
-                adjustment of status, under INA section 213A, these actions
-                create a contract between you and the U.S. Government. The
-                intending immigrant becoming a lawful permanent resident is
-                the consideration for the contract.
+                If you sign Form I-864 on behalf of any person (called the intending immigrant) who is applying for an immigrant visa or for
+                adjustment of status to a lawful permanent resident, and that intending immigrant submits Form I-864 to the U.S. Government with his
+                or her application for an immigrant visa or adjustment of status, under INA section 213A, these actions create a contract between you
+                and the U.S. Government. The intending immigrant becoming a lawful permanent resident is the consideration for the contract.
                 <br><br>
-                Under this contract, you agree that, in deciding whether the
-                intending immigrant can establish that he or she is not
-                inadmissible to the United States as a person likely to become a
-                public charge, the U.S. Government can consider your income
-                and assets as available for the support of the intending
-                immigrant.
+                Under this contract, you agree that, in deciding whether the intending immigrant can establish that he or she is not inadmissible to the
+                United States as a person likely to become a public charge, the U.S. Government can consider your income and assets as available for
+                the support of the intending immigrant.
             </div>
-
-        </div>
-        <div class="col-md-6">
+            <br><br>
             <div style="margin-left: 17px;">
                 <b> What If I Choose Not to Sign Form I-864?</b>
                 <br><br>
-                The U.S. Government cannot make you sign Form I-864 if you
-                do not want to do so. But if you do not sign Form I-864, the
-                intending immigrant may not become a lawful permanent
-                resident in the United States.
+                The U.S. Government cannot make you sign Form 1-864 if you do not want to do so. But if you do not sign Form I-864, the intending
+                immigrant may not become a lawful permanent resident in the United States.
                 <br><br>
                 <b>What Does Signing Form I-864 Require Me To Do?</b>
                 <br><br>
-                If an intending immigrant becomes a lawful permanent resident
-                in the United States based on a Form I-864 that you have
-                signed, then, until your obligations under Form I-864 terminate,
-                you must:
+                If an intending immigrant becomes a lawful permanent resident in the United States based on a Form I-864 that you have signed, then,
+                until your obligations under Form I-864 terminate, you must:
             </div>
             <br>
             <div class="col-md-offset-2">
-                <b> A.</b> Provide the intending immigrant any support
-                necessary to maintain him or her at an income that is
-                at least 125 percent of the Federal Poverty Guidelines
-                for his or her household size (100 percent if you are
-                the petitioning sponsor and are on active duty in the
-                U.S. Armed Forces or U.S. Coast Guard, and the
-                person is your husband, wife, or unmarried child
-                under 21 years of age); and
+                <b> A.</b> Provide the intending immigrant any support necessary to maintain him or her at an income that is at least 125 percent of
+                the Federal Poverty Guidelines for his or her household size (100 percent if you are the petitioning sponsor and are on
+                active duty in the U.S. Armed Forces or U.S. Coast Guard, and the person is your husband, wife, or unmarried child under
+                21 years of age); and
                 <br><br>
-                <b>B.</b> Notify U.S. Citizenship and Immigration Services
-                (USCIS) of any change in your address, within 30
-                days of the change, by filing Form I-865.
+                <b>B.</b> Notify U.S. Citizenship and Immigration Services (USCIS) of any change in your address, within 30 days of the change, by
+                filing Form I-865.
             </div>
-            <br>
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
+<!----------------------------------------------------------------------
+-------------------------------- page 9--------------------------------
+------------------------------------------------------------------------>
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 9 of 12</b></p>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="bg-info">
+                <h4> <b>Part 8. Sponsor's Contract, Contact
+                        Information, Certification, and
+                        Signaturee</b>(continued)</h4>
+            </div>
             <div>
                 <b> What Other Consequences Are There?</b>
                 <br><br>
@@ -1337,24 +1337,6 @@ display: flex;
                 becomes a lawful permanent resident based on a Form I-864
                 that you signed, that person may sue you for this support.
             </div>
-        </div>
-    </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset>
-<!----------------------------------------------------------------------
--------------------------------- page 9--------------------------------
------------------------------------------------------------------------->
-<!-- <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 7 of 10</b></p>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="bg-info">
-                <h4> <b>Part 8. Sponsor's Contract, Statement, Contact
-                        Information, Declaration, Certification, and
-                        Signaturee</b>(continued)</h4>
-            </div>
             <div style="margin-left: 17px;">
                 If a Federal, state, local, or private agency provided any covered
                 means-tested public benefit to the person who becomes a lawful
@@ -1379,7 +1361,7 @@ display: flex;
                 Your obligations under a Form I-864 that you signed will end if
                 the person who becomes a lawful permanent resident based on
                 that affidavit:
-            </div>
+            </div> <br>
             <div style="margin-left: 17px;">
                 <b>A.</b> Becomes a U.S. citizen;<br><br>
                 <b>B.</b> Has worked, or can receive credit for, 40 quarters of
@@ -1398,26 +1380,46 @@ display: flex;
                 if you die. Therefore, if you die, your estate is not required to
                 take responsibility for the person's support after your death.
                 However, your estate may owe any support that you
-                accumulated before you died.
+                accumulated before you died. <br><br>
+                <b>NOTE:</b> Select the box for either <b> Item A. or B</b> in <b> Item Number 1.</b> If applicable, select the box for <b> Item Number 2.</b>
             </div>
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
+<!----------------------------------------------------------------------
+-------------------------------- page 10 -------------------------------
+------------------------------------------------------------------------>
+
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 8 of 10</b></p>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="bg-info">
+                <h4> <b>Part 8. Sponsor's Contract, Contact
+                        Information, Certification, and
+                        Signaturee</b>(continued)</h4>
+            </div><br>
+
             <div class="bg-info">
                 <h4><b><i>Sponsor's Statement</i></b></h4>
             </div>
             <div style="margin-left:17px">
-                <b>NOTE:</b> Select the box for either <b>Item Number 1.a</b>. or <b>1.b. If</b>
-                applicable, select the box for <b>Item Number 2.</b>
+                <b>1. </b>Sponsor's Statement Regarding the Interpreter</b>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">1.a. <?php echo createCheckbox("sponsor_statement_english_status") ?>I can read and understand English, and I have read and understand every question and instruction on this affidavit and my answer to every question. </label>
+                <label class="control-label col-md-12">A. <?php echo createCheckbox("sponsor_statement_english_status") ?>I can read and understand English, and I have read and understand every question and instruction on this affidavit and
+                    my answer to every question. </label>
             </div>
-        </div>
-        <div class="col-md-6">
+
             <div class="form-group">
-                <label class="control-label col-md-12">1.b. <?php echo createCheckbox("sponsor_statement_interpreter_named_status") ?>The interpreter named in Part 9. read to me every question and instruction on this affidavit and my answer to every question in</label>
+                <label class="control-label col-md-12">B. <?php echo createCheckbox("sponsor_statement_interpreter_named_status") ?>The interpreter named in Part 9. read to me every question and instruction on this affidavit and my answer to every question in</label>
                 <div class="col-md-12 d-flexible">
                     <input type="text" class="form-control  " name="sponsor_statement_interpreter_named" maxlength="35" value="<?php echo showData('sponsor_statement_interpreter_named') ?>"><b>,</b>
                 </div>
-                <div style="margin-left: 17px;"><b> a language in which I am fluent, and I understood everything.</b></div>
+                <div style="margin-left: 17px; margin-top: 10px;"><b> a language in which I am fluent, and I understood everything.</b></div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">2. <?php echo createCheckbox("sponsor_statement_preparer_named_status") ?>At my request, the preparer named in Part 10.,</label>
@@ -1429,94 +1431,62 @@ display: flex;
             <div class="bg-info">
                 <h4><b><i>Sponsor's Contact Information</i></b></h4>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">3. Sponsor's Daytime Telephone Number</label>
+            <div class="row">
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="sponsor_daytime_tel" maxlength="12" value="<?php echo showData('sponsor_daytime_tel') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">4. Sponsor's Mobile Telephone Number (if any)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control  " name="sponsor_mobile" maxlength="13" value="<?php echo showData('sponsor_mobile') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">5. Sponsor's Email Address (if any)</label>
-                <div class="col-md-12">
-                    <input type="email" class="form-control  " name="sponsor_email" maxlength="38" value="<?php echo showData('sponsor_email') ?>">
+                    <div class=" col-md-6">
+                        <label class="control-label">3. Sponsor's Daytime Telephone Number</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="sponsor_daytime_tel" maxlength="12" value="<?php echo showData('sponsor_daytime_tel') ?>">
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <label class="control-label ">4. Sponsor's Mobile Telephone Number (if any)</label>
+                        <div class="">
+                            <input type="text" class="form-control  " name="sponsor_mobile" maxlength="13" value="<?php echo showData('sponsor_mobile') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label ">5. Sponsor's Email Address (if any)</label>
+                        <div class="">
+                            <input type="email" class="form-control  " name="sponsor_email" maxlength="38" value="<?php echo showData('sponsor_email') ?>">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="bg-info">
                 <h4><b><i>Sponsor's Declaration and Certification</i></b></h4>
             </div>
             <div style="margin-left: 17px;">
-                Copies of any documents I have submitted are exact
-                photocopies of unaltered, original documents, and I understand
-                that USCIS or the U.S. Department of State (DOS) may require
-                that I submit original documents to USCIS or DOS at a later
-                late. Furthermore, I authorize the release of any information
-                from any and all of my records that USCIS or DOS may need to
-                determine my eligibility for the benefit that I seek. <br><br>
-                I furthermore authorize release of information contained in this
-                affidavit, in supporting documents, and in my USCIS or DOS
-                records, to other entities and persons where necessary for the
-                administration and enforcement of U.S. immigration law. <br><br>
-                certify, under penalty of perjury, that all of the information in
-                my affidavit and any document submitted with it were provided
-                or authorized by me, that I reviewed and understand all of the
-                information contained in, and submitted with, my affidavit and
-                that all of this information is complete, true, and correct.
+                Copies of any documents I have submitted are exact photocopies of unaltered, original documents, and I understand that USCIS or the
+                U.S. Department of State (DOS) may require that I submit original documents to USCIS or DOS at a later date. Furthermore, I
+                authorize the release of any information from any of my records that USCIS or DOS may need to determine my eligibility for the
+                immigration benefit I seek. <br><br>
+                I furthermore authorize release of information contained in this affidavit, in supporting documents, and in my USCIS or DOS records
+                to other entities and persons where necessary for the administration and enforcement of U.S. immigration law. <br><br>
+                I certify, under penalty of perjury, that all of the information in my affidavit and any document submitted with it were provided or
+                authorized by me, that I reviewed and understand all of the information contained in, and submitted with, my affidavit, and that all of
+                this information is complete, true, and correct.
+
             </div>
             <br>
             <div class="col-md-offset-2">
-                <b> A.</b> I know the contents of this affidavit of support that I signed;
+                <b> A.</b> I know the contents of this affidavit of support that I signed
                 <br><br>
-                <b>B.</b> I have read and I understand each of the obligations
-                described in Part 8., and I agree, freely and without any
-                mental reservation or purpose of evasion, to accept
-                each of those obligations in order to make it possible
-                for the immigrants indicated in Part 3. to become
-                lawful permanent residents of the United States;
+                <b>B.</b> I have read and I understand each of the obligations described in <b>Part 8</b> ., and I agree, freely and without any mental
+                reservation or purpose of evasion, to accept each of those obligations in order to make it possible for the immigrant
+                indicated in <b>Part 3</b> . to become a lawful permanent resident of the United States;
                 <br><br>
-                <b>C.</b> I agree to submit to the personal jurisdiction of any
-                Federal or state court that has subject matter
-                jurisdiction of a lawsuit against me to enforce my
-                obligations under this Form I-864;
+                <b>C.</b> I agree to submit to the personal jurisdiction of any Federal or state court that has subject matter jurisdiction of a lawsuit
+                against me to enforce my obligations under this Form I-864EZ;
+                <br><br>
             </div>
-        </div>
-    </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset> -->
-<!----------------------------------------------------------------------
--------------------------------- page 10 -------------------------------
------------------------------------------------------------------------->
-
-<fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 8 of 10</b></p>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="bg-info">
-                <h4> <b>Part 8. Sponsor's Contract, Statement, Contact
-                        Information, Declaration, Certification, and
-                        Signaturee</b>(continued)</h4>
-            </div><br>
             <div class="col-md-offset-2">
-                <b>D.</b> Each of the Federal income tax returns submitted in
-                support of this affidavit are true copies, or are unaltered
-                tax transcripts, of the tax returns I filed with the IRS;
+                <b>D.</b> Each of the Federal income tax returns submitted in support of this affidavit are true copies, or are unaltered tax
+                transcripts, of the tax returns I filed with the IRS; <br><br>
+                <b>E.</b> I understand that, if I am related to the sponsored immigrant by marriage, the termination of the marriage (by divorce,
+                dissolution, annulment, or other legal process) will not relieve me of my obligations under this Form I-864EZ; and
                 <br><br>
-                <b>E.</b> I understand that, if I am related to the sponsored
-                immigrant by marriage, the termination of the marriage
-                (by divorce, dissolution, annulment, or other legal
-                process) will not relieve me of my obligations under
-                this Form I-864; and
-                <br><br>
-                <b>F.</b> I authorize the Social Security Administration to
-                release information about me in its records to USCIS
-                and DOS.
+                <b>F.</b> I authorize the Social Security Administration to release information about me in its records to the USCIS and DOS.
             </div><br>
             <div class="bg-info">
                 <h4><b><i>Sponsor's Signature</i></b></h4>
@@ -1524,7 +1494,7 @@ display: flex;
             <div class="form-group">
                 <label class="control-label col-md-12">6.a. Sponsor's Signature</label>
                 <div class="col-md-12">
-                    <input type="text" disabled class="form-control"maxlength="">
+                    <input type="text" disabled class="form-control" maxlength="">
                 </div>
             </div>
             <div class="form-group">
@@ -1533,346 +1503,172 @@ display: flex;
                     <input type="date" class="form-control" name="sponsor_sign_date" value="<?php echo showData('sponsor_sign_date') ?>" />
                 </div>
             </div>
-            <div><b>NOTE TO ALL SPONSORS:</b> If you do not completely fill
-                out this affidavit or fail to submit required documents listed in
-                the Instructions, USCIS or DOS may deny your affidavit</div> <br>
-
-            <div class="bg-info">
-                <h4><b>Part 9. Interpreter's Contact Information,
-                        Certification, and Signature</b></h4>
+            <div><b>NOTE TO ALL SPONSORS:</b> If you do not completely fill out this affidavit or fail to submit required documents listed in the
+                Instructions, USCIS or DOS may deny your request.
             </div> <br>
-            <div><b>Provide the following information about the interpreter.</b></div><br>
-            <div class="bg-info">
-                <h4><b><i>Interpreter's Full Name</i></b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">1.a. Interpreter's Family Name (Last Name)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_864_interpreter_family_last_name') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">1.b. Interpreter's Given Name (First Name)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control  " name="i_864_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_864_interpreter_given_first_name') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">2. Interpreter's Business or Organization Name (if any)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_interpreter_business_name" maxlength="39" value="<?php echo showData('i_864_interpreter_business_name') ?>">
-                </div>
-            </div>
+        </div>
 
-        </div>
-        <!-- left side column end -->
-        <div class="col-md-6">
-            <div class="bg-info">
-                <h4><i><b>Interpreters's Mailing Address </b></i></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.a. Street Number and Name</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_street_number" maxlength="25" value="<?php echo showData('i_864_interpreter_address_street_number') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
-                    <label class="control-label">
-                        <input type="radio" name="i_864_interpreter_address_apt_ste_flr" value="apt" <?php echo (showData('i_864_interpreter_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
-                    </label>
-                    <label class="control-label">
-                        <input type="radio" name="i_864_interpreter_address_apt_ste_flr" value="ste" <?php echo (showData('i_864_interpreter_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
-                    </label>
-                    <label class="control-label">
-                        <input type="radio" name="i_864_interpreter_address_apt_ste_flr" value="flr" <?php echo (showData('i_864_interpreter_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
-                    </label>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" type="text" class="form-control" name="i_864_interpreter_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_864_interpreter_address_apt_ste_flr_value') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.c. City or Town</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_city_town" maxlength="20" value="<?php echo showData('i_864_interpreter_address_city_town') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.d. State</label>
-                <div class="col-md-7">
-                    <select class="form-control" name="i_864_interpreter_address_state">
-                        <option value=''>Select</option>
-                        <?php
-                        foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('i_864_interpreter_address_state')) $selected = "selected";
-                            else $selected = "";
-                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.e. ZIP Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_zip_code" maxlength="5" value="<?php echo showData('i_864_interpreter_address_zip_code') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.f. Province</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_province" maxlength="20" value="<?php echo showData('i_864_interpreter_address_province') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.g. Postal Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_postal_code" maxlength="9" value="<?php echo showData('i_864_interpreter_address_postal_code') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">3.h. Country</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_interpreter_address_country" maxlength="39" value="<?php echo showData('i_864_interpreter_address_country') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b><i>Interpreter's Contact Information</i></b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">4. Interpreter's Daytime Telephone Number</label>
-                <div class="col-md-12">
-                    <input type="number" class="form-control  " name="i_864_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864_interpreter_daytime_tel') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">5. Interpreter's Mobile Telephone Number (if any)</label>
-                <div class="col-md-12">
-                    <input type="number" class="form-control  " name="i_864_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864_interpreter_mobile') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">6. Interpreter's Email Address (if any)</label>
-                <div class="col-md-12">
-                    <input type="email" class="form-control  " name="i_864_interpreter_email" maxlength="38" value="<?php echo showData('i_864_interpreter_email') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><i><b>Interpreter's Certification</b></i></h4>
-            </div>
-            <p>I certify, under penalty of perjury, that:</p>
-            <div class="form-group" style="display:flex;  align-items: center;">
-                <p>I am fluent in English and</p>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_interpreter_fluent_in_english" maxlength="23" value="<?php echo showData('i_864_interpreter_fluent_in_english') ?>">
-                </div>
-            </div>
-            <div>which is the same language specified in <b>Part 8., Item Number
-                    1.b.</b>, and I have read to this sponsor in the identified language
-                every question and instruction on this affidavit and his or her
-                answer to every question. The sponsor informed me that he or
-                she understands every instruction, question, and answer on the
-                affidavit, including the <b>Sponsor's Declaration and
-                    Certification,</b> and has verified the accuracy of every answer. </div>
-            <div class="bg-info">
-                <h4><b>Interpreter's Signature</b> </h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">7.a. Interpreter's Signature</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" disabled />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">7.b. Date of Signature (mm/dd/yyyy)</label>
-                <div class="col-md-7 col-md-offset-5">
-                    <input type="date" class="form-control" name="i_864_interpreter_sign_date" value="<?php echo showData('i_864_interpreter_sign_date') ?>"/>
-                </div>
-            </div>
-        </div>
-        <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
------------------------- page 9 -------------------------
+------------------------ page 11 -------------------------
 --------------------------------------------------------->
 <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 9 of 10</b></p>
+    <p style="text-align: right; margin-right: 15px;"><b>Page 11 of 12</b></p>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="bg-info">
-                <h4><b>Part 10. Contact Information, Declaration, and
-                        Signature of the Person Preparing this Affidavit,
-                        if Other Than the Sponsor
-                    </b>
-                </h4>
-            </div>
-            <h5><b>Provide the following information about the preparer</b></h5>
+                <h4><b>Part 9. Interpreter's Contact Information, Certification, and Signature</b></h4>
+            </div> <br>
             <div class="bg-info">
-                <h4><b>Preparer's Full Name</b> </h4>
+                <h4><b><i>Interpreter's Full Name</i></b></h4>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">1.a. Preparer's Family Name (Last Name)</label>
+            <div class="row">
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_preparer_family_last_name" maxlength="39" value="<?php echo showData('i_864_preparer_family_last_name') ?>" />
+                    <div class="col-md-6">
+                        <label class="control-label ">1. Interpreter's Family Name (Last Name)</label>
+                        <div class="">
+                            <input type="text" class="form-control  " name="i_864_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_864_interpreter_family_last_name') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label ">Interpreter's Given Name (First Name)</label>
+                        <div class="">
+                            <input type="text" class="form-control  " name="i_864_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_864_interpreter_given_first_name') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label ">2. Interpreter's Business or Organization Name (if any)</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="i_864_interpreter_business_name" maxlength="39" value="<?php echo showData('i_864_interpreter_business_name') ?>">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">1.b. Preparer's Given Name (First Name)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_preparer_given_first_name" maxlength="39" value="<?php echo showData('i_864_preparer_given_first_name') ?>" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">2. Preparer's Business or Organization Name (if any)</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_preparer_business_name" maxlength="34" value="<?php echo showData('i_864_preparer_business_name') ?>" />
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b>Preparer's Mailing Address</b> </h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.a. Street Number and Name</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_preparer_address_street_number" maxlength="25" value="<?php echo showData('i_864_preparer_address_street_number') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="control-label col-md-6"><b>3.b. </b> &nbsp;
-                    <input type="radio" name="i_864_preparer_address_apt_ste_flr" value="apt" <?php echo (showData('i_864_preparer_address_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                    Apt. &nbsp;
-                    <input type="radio" name="i_864_preparer_address_apt_ste_flr" value="ste" <?php echo (showData('i_864_preparer_address_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                    Ste. &nbsp;
-                    <input type="radio" name="i_864_preparer_address_apt_ste_flr" value="flr" <?php echo (showData('i_864_preparer_address_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                    Flr.:
-                </div>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" type="text" class="form-control" name="i_864_preparer_address_apt_ste_flr_value" maxlength="6" value="<?php echo showData('i_864_preparer_address_apt_ste_flr_value') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.c. City or Town</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_preparer_address_city_town" maxlength="20" value="<?php echo showData('i_864_preparer_address_city_town') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.d. State</label>
-                <div class="col-md-7">
-                    <select class="form-control" name="i_864_preparer_address_state">
-                        <option style="" value=''>Select</option>
-                        <?php
-                        foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('i_864_preparer_address_state')) $selected = "selected";
-                            else $selected = "";
-                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.e. ZIP Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_preparer_address_zip_code" maxlength="5" value="<?php echo showData('i_864_preparer_address_zip_code') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.f. Province</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_preparer_address_province" maxlength="20" value="<?php echo showData('i_864_preparer_address_province') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">3.g. Postal Code</label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" name="i_864_preparer_address_postal_code" maxlength="9" value="<?php echo showData('i_864_preparer_address_postal_code') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">3.h. Country</label>
-                <div class="col-md-12">
-                    <input type="text" class="form-control" name="i_864_preparer_address_country" maxlength="39" value="<?php echo showData('i_864_preparer_address_country') ?>">
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4><b> Preparer's Contact Information</b></h4>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">4. Preparer's Daytime Telephone Number</label>
-                <div class="col-md-12">
-                    <input type="number" class="form-control" name="i_864_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864_preparer_daytime_tel') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">5. Preparer's Mobile Telephone Number (if any)</label>
-                <div class="col-md-12">
-                    <input type="number" class="form-control" name="i_864_preparer_mobile" maxlength="10" value="<?php echo showData('i_864_preparer_mobile') ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">6. Preparer's Email Address (if any)</label>
-                <div class="col-md-12">
-                    <input type="email" class="form-control" maxlength="38" name="i_864_preparer_email" value="<?php echo showData('i_864_preparer_email') ?>">
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="bg-info">
-                <h4><b>Preparer's Statement</b></h4>
-            </div>
-            <div class="d-flexible" style="padding-bottom:10px;">
 
-                <label class="control-label col-md-12">7.a. <?php echo createCheckbox("i_864_preparer_not_attorney_status") ?> PI am not an attorney or accredited representative but
-                    have prepared this affidavit on behalf of the sponsor and with the sponsor's consent.</label>
+
+
+            <div class="bg-info">
+                <h4><b><i>Interpreter's Contact Information</i></b></h4>
             </div>
-            <div class="d-flexible" style="padding-bottom:10px;">
-                <div>
-                    <label class="control-label col-md-12">7.b. <?php echo createCheckbox("i_864_preparer_an_attorney_status") ?>
-                        I am an attorney or accredited representative and my
-                        representation of the sponsor in this case</label><br>
-                    <label class="control-label col-md-12"> <?php echo createCheckbox("i_864_preparer_extends_status") ?> extends </label><label class="control-label col-md-12"><?php echo createCheckbox("i_864_preparer_not_extends_status") ?>does not extend beyond the preparation of this affidavit</label>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label class="control-label ">3. Interpreter's Daytime Telephone Number</label>
+                        <div class="">
+                            <input type="number" class="form-control  " name="i_864_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864_interpreter_daytime_tel') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label ">4. Interpreter's Mobile Telephone Number (if any)</label>
+                        <div class="">
+                            <input type="number" class="form-control  " name="i_864_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864_interpreter_mobile') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label ">5. Interpreter's Email Address (if any)</label>
+                        <div class="">
+                            <input type="email" class="form-control  " name="i_864_interpreter_email" maxlength="38" value="<?php echo showData('i_864_interpreter_email') ?>">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p><b>NOTE:</b> If you are an attorney or accredited
-                representative, you may be obliged to submit a
-                completed Form G-28, Notice of Entry of Appearance
-                as Attorney or Accredited Representative, or G-281,
-                Notice of Entry of Appearance as Attorney In Matters
-                Outside the Geographical Confines of the United
-                States, with this ffidavit.</p>
             <div class="bg-info">
-                <h4><b>Preparer's Certification</b></h4>
+                <h4><i><b>Interpreter's Certification and Signature</b></i></h4>
             </div>
-            <p>By my signature, I certify, under penalty of perjury, that I
-                prepared this affidavit at the request of the sponsor. The
-                sponsor then reviewed this completed affidavit and informed
-                me that he or she understands all of the information contained
-                in, and submitted with, his or her affidavit, including the
-                <b>Sponsor's Declaration and Certification</b>, and that all of this
-                information is complete, true, and correct. I completed this
-                affidavit based only on information that the sponsor provided
-                to me or authorized me to obtain or use.
-            </p>
-            <div class="bg-info">
-                <h4><b>Preparer's Signature</b> </h4>
+            <p>I certify, under penalty of perjury, that:</p>
+            <div class="form-group" style="display:flex;  align-items: center;">
+                <p>that I am fluent in English and</p>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_interpreter_fluent_in_english" maxlength="23" value="<?php echo showData('i_864_interpreter_fluent_in_english') ?>">
+                </div>
             </div>
+            <div>and I have interpreted every question on the affidavit and Instructions and interpreted the sponsor's answers to the questions in that language, and the sponsor
+                informed me that they understood every instruction, question, and answer on the affidavit. </div>
             <div class="form-group">
-                <label class="control-label col-md-12">8.a. Preparer's Signature (sign in ink) </label>
+                <label class="control-label col-md-12">6. Interpreter's Signature</label>
                 <div class="col-md-12">
                     <input type="text" class="form-control" disabled />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">8.b. Date of Signature (mm/dd/yyyy)</label>
+                <label class="control-label col-md-12"> Date of Signature (mm/dd/yyyy)</label>
+                <div class="col-md-7 col-md-offset-5">
+                    <input type="date" class="form-control" name="i_864_interpreter_sign_date" value="<?php echo showData('i_864_interpreter_sign_date') ?>" />
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b>Part 10. Contact Information, Declaration, and Signature of the Person Preparing this Affidavit, if Other Than the Sponsor</b></h4>
+            </div>
+            <div class="bg-info">
+                <h4><b>Preparer's Full Name</b> </h4>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class=" col-md-6">
+                        <label class="control-label ">1. Preparer's Family Name (Last Name)</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="i_864_preparer_family_last_name" maxlength="39" value="<?php echo showData('i_864_preparer_family_last_name') ?>" />
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <label class="control-label ">1. Preparer's Given Name (First Name)</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="i_864_preparer_given_first_name" maxlength="39" value="<?php echo showData('i_864_preparer_given_first_name') ?>" />
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <label class="control-label ">2. Preparer's Business or Organization Name (if any)</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="i_864_preparer_business_name" maxlength="34" value="<?php echo showData('i_864_preparer_business_name') ?>" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b> Preparer's Contact Information</b></h4>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label class="control-label">3. Preparer's Daytime Telephone Number</label>
+                        <div class="">
+                            <input type="number" class="form-control" name="i_864_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864_preparer_daytime_tel') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">4. Preparer's Mobile Telephone Number (if any)</label>
+                        <div class="">
+                            <input type="number" class="form-control" name="i_864_preparer_mobile" maxlength="10" value="<?php echo showData('i_864_preparer_mobile') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">5. Preparer's Email Address (if any)</label>
+                        <div class="">
+                            <input type="email" class="form-control" maxlength="38" name="i_864_preparer_email" value="<?php echo showData('i_864_preparer_email') ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b>Preparer's Certification and Signature</b></h4>
+            </div>
+            <p>I certify, under penalty of perjury, that I prepared this affidavit for the sponsor at their request and with express consent and that all of
+                the responses and information contained in and submitted with the affidavit are complete, true, and correct and reflects only
+                information provided by the sponsor. The sponsor reviewed the responses and information and informed me that they understand the
+                responses and information in or submitted with the affidavit.
+            </p>
+            <div class="form-group">
+                <label class="control-label col-md-12">6. Preparer's Signature </label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" disabled />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">Date of Signature (mm/dd/yyyy)</label>
                 <div class="col-md-7 col-md-offset-5">
                     <input type="date" class="form-control" name="i_864_preparer_sign_date" value="<?php echo showData('i_864_preparer_sign_date') ?>">
                 </div>
@@ -1884,197 +1680,119 @@ display: flex;
     <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
------------------------- page 10 -------------------------
+------------------------ page 12 -------------------------
 --------------------------------------------------------->
 <fieldset class="setpage">
     <div class="row">
-        <div class="page_number">
-            <b>
-                <p style=" text-align: right;">Page 10 of 10</p>
-            </b>
-        </div>
-        <div class="col-md-6">
+        <p style=" text-align: right;  margin-right: 25px;"><b>Page 12 of 12</b></p>
+        <div class="col-md-12">
             <div class="bg-info">
-                <h4><b>Part 11. Additional Information </b> </h4>
+                <h4><b>Part 11. Additional Information</b> </h4>
             </div>
-            <p>If you need extra space to provide any additional information
-                within this affidavit, use the space below. If you need more space
-                than what is provided, you may make copies of this page to
-                complete and file with this affidavit or attach a separate sheet of
-                paper. Type or print your name and A-Number (if any) at the top
-                of each sheet; indicate the Page Number, Part Number, and
-                Item Number to which your answer refers; and sign and date
-                each sheet.
+            <p>If you need extra space to provide any additional information within this contract, use the space below. If you need more space than
+                what is provided, you may make copies of this page to complete and file with this contract or attach a separate sheet of paper. Type or
+                print your name and A-Number (if any) at the top of each sheet; indicate the Page Number, Part Number, and Item Number to
+                which your answer refers; and sign and date each sheet.
             </p>
 
-            <div class="form-group">
-                <label class="control-label col-md-5">1.a. Family Name(Last Name) </label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" maxlength="29" name="i_864_additional_info_last_name" value="<?php echo showData('i_864_additional_info_last_name') ?>" />
-                </div>
+            <div class="col-md-4">
+                <label class="control-label">1. Family Name(Last Name) </label>
+                <input type="text" class="form-control" maxlength="29" name="i_864_additional_info_last_name" value="<?php echo showData('i_864_additional_info_last_name') ?>" />
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">1.b. Given Name(First Name) </label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" maxlength="29" name="i_864_additional_info_first_name" value="<?php echo showData('i_864_additional_info_first_name') ?>" />
-                </div>
+
+
+            <div class="col-md-4">
+                <label class="control-label">Given Name(First Name) </label>
+                <input type="text" class="form-control" maxlength="27" name="i_864_additional_info_first_name" value="<?php echo showData('i_864_additional_info_first_name') ?>" />
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-5">1.c. Middle Name </label>
-                <div class="col-md-7">
-                    <input type="text" class="form-control" maxlength="29" name="i_864_additional_info_middle_name" value="<?php echo showData('i_864_additional_info_middle_name') ?>" />
-                </div>
+
+
+            <div class="col-md-4">
+                <label class="control-label">Middle Name (if applicable)</label>
+                <input type="text" class="form-control" maxlength="27" name="i_864_additional_info_middle_name" value="<?php echo showData('i_864_additional_info_middle_name') ?>" />
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">2. A-Number (if any)</label>
-                <div class="col-md-6 col-md-offset-6">
-                    <div class="d-flexible">
-                        <b>A-</b><input type="text" maxlength="9" class="form-control" name="i_864_additional_info_a_number" value="<?php echo showData('i_864_additional_info_a_number') ?>">
-                    </div>
-                </div>
+            <div class="col-md-4">
+                <label class="control-label">2. A-Number (if any) ► A- </label>
+                <input type="text" class="form-control" maxlength="9" name="i_864_additional_info_a_number" value="<?php echo showData('i_864_additional_info_a_number') ?>" />
             </div>
-            <div class="d-flexible">
-                <div class="form-group">
-                    <label class="control-label col-md-12">3.a. Page Number</label>
-                    <div class="col-md-12">
+
+
+            <div class="col-md-12">
+                <div class="row">
+
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">3. Page Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_864_additional_info_3a_page_no') ?>">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">3.b. Part Number</label>
-                    <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">Part Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_864_additional_info_3b_part_no') ?>">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">3.c. Item Number</label>
-                    <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">Item Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864_additional_info_3c_item_no') ?>">
                     </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <b>3.d.</b>
-                    <textarea name="i_864_additional_info_3d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_864_additional_info_3d') ?></textarea>
-                </div>
-            </div>
-            <div class="d-flexible">
-                <div class="form-group">
-                    <label class="control-label col-md-12">4.a. Page Number</label>
                     <div class="col-md-12">
+                        <textarea name="i_864_additional_info_3d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864_additional_info_3d') ?></textarea>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">4. Page Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_4a_page_no" maxlength="2" value="<?php echo showData('i_864_additional_info_4a_page_no') ?>">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">4.b. Part Number</label>
-                    <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">Part Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_4b_part_no" maxlength="6" value="<?php echo showData('i_864_additional_info_4b_part_no') ?>">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">4.c. Item Number</label>
-                    <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">Item Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_4c_item_no" maxlength="6" value="<?php echo showData('i_864_additional_info_4c_item_no') ?>">
                     </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <b>4.d.</b>
-                    <textarea name="i_864_additional_info_4d" maxlength="343" class="form-control" cols="30" rows="10"><?php echo showData('i_864_additional_info_4d') ?></textarea>
-                </div>
-            </div>
-        </div>
-        <!-- left side column end -->
-        <div class="col-md-6">
-            <div class="d-flexible">
-                <div class="form-group">
-                    <label class="control-label col-md-12">5.a. Page Number</label>
                     <div class="col-md-12">
+                        <textarea name="i_864_additional_info_4d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864_additional_info_4d') ?></textarea>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">5. Page Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_5a_page_no" maxlength="2" value="<?php echo showData('i_864_additional_info_5a_page_no') ?>">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">5.b. Part Number</label>
-                    <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">Part Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_5b_part_no" maxlength="6" value="<?php echo showData('i_864_additional_info_5b_part_no') ?>">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">5.c. Item Number</label>
-                    <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">Item Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_5c_item_no" maxlength="6" value="<?php echo showData('i_864_additional_info_5c_item_no') ?>">
                     </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <b>5.d.</b>
-                    <textarea name="i_864_additional_info_5d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_864_additional_info_5d') ?></textarea>
-                </div>
-            </div>
-            <div class="d-flexible">
-                <div class="form-group">
-                    <label class="control-label col-md-12">6.a. Page Number</label>
                     <div class="col-md-12">
+                        <textarea name="i_864_additional_info_5d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864_additional_info_5d') ?></textarea>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">6. Page Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_6a_page_no" maxlength="2" value="<?php echo showData('i_864_additional_info_6a_page_no') ?>">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">6.b. Part Number</label>
-                    <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">Part Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_6b_part_no" maxlength="6" value="<?php echo showData('i_864_additional_info_6b_part_no') ?>">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">6.c. Item Number</label>
-                    <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">Item Number</label>
                         <input type="text" class="form-control" name="i_864_additional_info_6c_item_no" maxlength="6" value="<?php echo showData('i_864_additional_info_6c_item_no') ?>">
                     </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <b>6.d.</b>
-                    <textarea name="i_864_additional_info_6d" class="form-control" maxlength="343" cols="30" rows="10"><?php echo showData('i_864_additional_info_6d') ?></textarea>
-                </div>
-            </div>
-            <div class="d-flexible">
-                <div class="form-group">
-                    <label class="control-label col-md-12">7.a. Page Number</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864_additional_info_7a_page_no" maxlength="2" value="<?php echo showData('i_864_additional_info_7a_page_no') ?>">
+                        <textarea name="i_864_additional_info_6d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864_additional_info_6d') ?></textarea>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">7.b. Part Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864_additional_info_7b_part_no" maxlength="6" value="<?php echo showData('i_864_additional_info_7b_part_no') ?>">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-12">7.c. Item Number</label>
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" name="i_864_additional_info_7c_item_no" maxlength="6" value="<?php echo showData('i_864_additional_info_7c_item_no') ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <b>7.d.</b>
-                    <textarea class="form-control" name="i_864_additional_info_7d" maxlength="343" class="form-control" cols="30" rows="10"><?php echo showData('i_864_additional_info_7d') ?></textarea>
                 </div>
             </div>
         </div>
-        <!-- right side column end -->
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
-
+<!-- javascript for change the address -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         const yesRadio = document.getElementById("mailing_address_yes");
         const noRadio = document.getElementById("mailing_address_no");
         const mailingAddressForm = document.getElementById("mailingAddressForm");

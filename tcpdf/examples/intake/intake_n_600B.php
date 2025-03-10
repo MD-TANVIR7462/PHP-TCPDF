@@ -62,12 +62,12 @@
                         style="width: 100%; padding: 5px; margin-top: 3%;">
                         <option value=''>Select</option>
                         <?php
-                            foreach ($allDataCountry as $record) {
-                                if ($record->state_code == showData('information_about_you_residence_state')) $selected = "selected";
-                                else $selected = "";
-                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                            }
-                            ?>
+                        foreach ($allDataCountry as $record) {
+                            if ($record->state_code == showData('information_about_you_residence_state')) $selected = "selected";
+                            else $selected = "";
+                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                        }
+                        ?>
                     </select>
                 </div>
             </div>
@@ -302,12 +302,12 @@
                     style="width: 100%; padding: 5px; margin-top: 3%;">
                     <option value=''>Select</option>
                     <?php
-                            foreach ($allDataCountry as $record) {
-                                if ($record->state_code == showData('information_about_you_residence_state')) $selected = "selected";
-                                else $selected = "";
-                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                            }
-                            ?>
+                    foreach ($allDataCountry as $record) {
+                        if ($record->state_code == showData('information_about_you_residence_state')) $selected = "selected";
+                        else $selected = "";
+                        echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                    }
+                    ?>
                 </select>
             </div>
         </div>
