@@ -39,32 +39,6 @@ if(isset($_GET['clientId'])){
 	
 }
 
-/* if(isset($_GET['clientId'])){
-	$clientId = $_GET['clientId'];
-	$singleData = indexByQuerySingleData("
-	SELECT c.*,s.name AS class_name,t.name AS type_name FROM client_info c
-	LEFT JOIN tbl_class s ON s.id=c.class_id
-	LEFT JOIN tbl_type t ON t.id=c.type_id
-	WHERE c.id='$clientId'");
-	if($singleData){
-		$first_name = " ".$singleData->first_name;
-		$last_name = " ".$singleData->last_name;
-		$address = " ".$singleData->address;
-		$address = " ".str_replace('&comma;', ',', $singleData->address);
-		
-		
-		// $address = utf8_decode($singleData->address);
-		
-		$city = " ".$singleData->city;
-		$state = " ".$singleData->state;
-		$zip = " ".$singleData->zip;
-	} else {
-		
-	}
-	
-	
-} */
-
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
 

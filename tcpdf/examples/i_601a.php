@@ -1,10 +1,7 @@
 <?php
 
 require_once('formheader.php');   //database connection file 
-// require_once("localconfig.php");
-//$allDataCountry = indexByQueryAlldata("SELECT * FROM countries");
 
-// Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
 
 // Extend the TCPDF class to create custom Header and Footer
