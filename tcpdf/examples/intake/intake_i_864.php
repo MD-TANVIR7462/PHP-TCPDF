@@ -1254,21 +1254,21 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">6. Enter the balance of the principal immigrant's savings and checking accounts.</label>
                 <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_add_together2" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together2'); ?>">
+                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_saving_checking_accounts" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_saving_checking_accounts'); ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">7. Enter the net cash value of all the principal immigrant's real estate holdings. (Net value means
                     investment value minus mortgage debt.)</label>
                 <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_add_together2" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together2'); ?>">
+                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_saving_cash_value" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_saving_cash_value'); ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-12">8. Enter the current cash value of the principal immigrant's stocks, bonds, certificates of deposit, and
                     other assets not included in Item Number 6. or Item Number 7.</label>
                 <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_add_together2" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together2'); ?>">
+                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_current_cash_value" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_current_cash_value'); ?>">
                 </div>
             </div>
             <div class="form-group">
@@ -1281,7 +1281,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">10. Add together Item Numbers 4., 5., and 9. and enter the number here.</label>
                 <div class="col-md-7 col-md-offset-5 d-flexible ">
-                    <div style="font-size: larger;"><b>TOTAL</b></div>:$<input type="text" class="form-control" name="sponsor_assets_of_supplement_add_together3" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together3'); ?>">
+                    <div style="font-size: larger;"><b>TOTAL</b></div>:$<input type="text" class="form-control" name="sponsor_assets_of_supplement_total2" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_total2'); ?>">
                 </div>
             </div>
             <div class="bg-info">
@@ -1438,7 +1438,7 @@ include "intake_header.php";
 ------------------------------------------------------------------------>
 
 <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 8 of 10</b></p>
+    <p style="text-align: right; margin-right: 15px;"><b>Page 10 of 12</b></p>
     <div class="row">
         <div class="col-md-12">
             <div class="bg-info">
@@ -1480,19 +1480,19 @@ include "intake_header.php";
                     <div class=" col-md-6">
                         <label class="control-label">3. Sponsor's Daytime Telephone Number</label>
                         <div class="">
-                            <input type="text" class="form-control" name="sponsor_daytime_tel" maxlength="12" value="<?php echo showData('sponsor_daytime_tel') ?>">
+                            <input type="text" class="form-control" name="i_864_sponsor_daytime_tel" maxlength="12" value="<?php echo showData('i_864_sponsor_daytime_tel') ?>">
                         </div>
                     </div>
                     <div class=" col-md-6">
                         <label class="control-label ">4. Sponsor's Mobile Telephone Number (if any)</label>
                         <div class="">
-                            <input type="text" class="form-control  " name="sponsor_mobile" maxlength="13" value="<?php echo showData('sponsor_mobile') ?>">
+                            <input type="text" class="form-control  " name="i_864_sponsor_mobile" maxlength="13" value="<?php echo showData('i_864_sponsor_mobile') ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label class="control-label ">5. Sponsor's Email Address (if any)</label>
                         <div class="">
-                            <input type="email" class="form-control  " name="sponsor_email" maxlength="38" value="<?php echo showData('sponsor_email') ?>">
+                            <input type="email" class="form-control  " name="i_864_sponsor_email" maxlength="38" value="<?php echo showData('i_864_sponsor_email') ?>">
                         </div>
                     </div>
                 </div>
@@ -1544,7 +1544,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-6">6.b. Date of Signature (mm/dd/yyyy)</label>
                 <div class="col-md-6 ">
-                    <input type="date" class="form-control" name="sponsor_sign_date" value="<?php echo showData('sponsor_sign_date') ?>" />
+                    <input type="date" class="form-control" name="i_864_sponsor_sign_date" value="<?php echo showData('i_864_sponsor_sign_date') ?>" />
                 </div>
             </div>
             <div><b>NOTE TO ALL SPONSORS:</b> If you do not completely fill out this affidavit or fail to submit required documents listed in the
