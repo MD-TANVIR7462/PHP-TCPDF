@@ -1220,7 +1220,7 @@ include "intake_header.php";
             <div class="form-group">
                 <label class="control-label col-md-12">4. Add together Item Numbers 1. - 3. and enter the number here. </span></label>
                 <div class="col-md-6  col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_stocks_bonds_certificates" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_stocks_bonds_certificates') ?>">
+                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_add_together" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_stocks_bonds_certificates') ?>">
                 </div>
             </div>
             <div class="mx-4"><b>Assets of your household members (if applicable)</b><br><br><b>Your household members who are combining their income with yours, report their assets on Form I-864A Part 4., in Item Number 6</b></div>
@@ -1229,7 +1229,7 @@ include "intake_header.php";
                 <label class="control-label col-md-12">5. Add together the household members' assets reported on all the Form I-864A
                     Part 4., Item Number 6. and enter the number here. .</label>
                 <div class="col-md-8  col-md-offset-4 d-flexible">
-                    <div style="font-size: larger;"><b>TOTAL</b></div>:$<input type="text" class="form-control  " name="sponsor_assets_of_supplement_add_together1" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together1') ?>">
+                    <div style="font-size: larger;"><b>TOTAL</b></div>:$<input type="text" class="form-control  " name="sponsor_assets_of_supplement_total" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_total') ?>">
                 </div>
             </div>
         </div>
