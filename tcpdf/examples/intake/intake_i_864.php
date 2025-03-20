@@ -106,12 +106,14 @@ include "intake_header.php";
             </div>
 
             <div class="form-group">
-                <label class="control-label " style="margin-left:17px;">1.d. <?php echo createCheckbox("i_864_joint_sponsor") ?>
+                <label class="control-label " style="margin-left:17px;">1.d. <?php echo createCheckbox("i_864_joint_sponsor_staus") ?>
                     I am the only joint sponsor.</label>
             </div>
 
             <div class="form-group">
-                <label class="control-label " style="margin-left:17px;">1.e. <?php echo createCheckbox("i_864_joint_sponsor_first") ?>
+                <label class="control-label " style="margin-left:17px;">1.e. <?php echo createCheckbox("i_864_joint_sponsor_i_am_status") ?>
+                    I am the </label>
+                <label class="control-label " style="margin-left:17px;"> <?php echo createCheckbox("i_864_joint_sponsor_first") ?>
                     First</label>
                 <label class="control-label " style="margin-left:10px;"> <?php echo createCheckbox("i_864_joint_sponsor_second") ?>
                     Second of two joint sponsors.</label>
@@ -156,8 +158,8 @@ include "intake_header.php";
         </div>
     </div>
 
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;">
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;">
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;">
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;">
 </fieldset>
 <!----------------------------------------------------------------------
    -------------------------------- page 2 --------------------------------
@@ -479,7 +481,7 @@ include "intake_header.php";
                 </div>
 
                 <div class="my-4">
-                    <label class="control-label" style="margin-bottom: 5px;">9. Immigration Status</label>
+                    <label class="control-label col-md-12" style="margin-bottom: 5px;">9. Immigration Status</label>
                     <div class="form-group">
                         <label class="control-label col-md-12">
                             <span class="d-flexible">
@@ -523,8 +525,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
   -------------------------------- page 3 ------------------------------
@@ -701,13 +703,13 @@ include "intake_header.php";
                     who are immigrating more than six months after the principal immigrant.</b>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">2. <?php echo createCheckbox("i_864_immigrants_family_member_timeperiod") ?>I am sponsoring the following family members immigrating at the same time or within six months of the principal
+                <label class="control-label col-md-12">2. <?php echo createCheckbox("i_864_immigrants_family_member_timeperiod_status") ?>I am sponsoring the following family members immigrating at the same time or within six months of the principal
                     immigrant named in Part 3. (List family members in Item Numbers 4. - 7. Do not include any relative listed on a separate
                     visa petition.)</label>
 
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">3. <?php echo createCheckbox("i_864_immigrants_family_member_after_timeperiod") ?>I am sponsoring the following family members who are immigrating more than six months after the principal immigrant. (List
+                <label class="control-label col-md-12">3. <?php echo createCheckbox("i_864_immigrants_family_member_after_timeperiod_status") ?>I am sponsoring the following family members who are immigrating more than six months after the principal immigrant. (List
                     family members in Item Numbers 4. - 7.)</label>
             </div>
 
@@ -734,7 +736,7 @@ include "intake_header.php";
                 </div>
                 <div class="col-md-4">
                     <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="dater " maxlength="29" class="form-control" name="i_864_family_member1_date_of_birth" value="<?php echo showData('i_864_family_member1_date_of_birth') ?>" />
+                    <input type="date" maxlength="29" class="form-control" name="i_864_family_member1_date_of_birth" value="<?php echo showData('i_864_family_member1_date_of_birth') ?>" />
                 </div>
                 <div class="col-md-4">
                     <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
@@ -748,8 +750,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
@@ -781,7 +783,7 @@ include "intake_header.php";
                 </div>
                 <div class="col-md-4">
                     <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="dater " maxlength="29" class="form-control" name="i_864_family_member2_date_of_birth" value="<?php echo showData('i_864_family_member2_date_of_birth') ?>" />
+                    <input type="date" maxlength="29" class="form-control" name="i_864_family_member2_date_of_birth" value="<?php echo showData('i_864_family_member2_date_of_birth') ?>" />
                 </div>
                 <div class="col-md-4">
                     <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
@@ -813,7 +815,7 @@ include "intake_header.php";
                 </div>
                 <div class="col-md-4">
                     <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="dater " maxlength="29" class="form-control" name="i_864_family_member3_date_of_birth" value="<?php echo showData('i_864_family_member3_date_of_birth') ?>" />
+                    <input type="date" maxlength="29" class="form-control" name="i_864_family_member3_date_of_birth" value="<?php echo showData('i_864_family_member3_date_of_birth') ?>" />
                 </div>
                 <div class="col-md-4">
                     <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
@@ -847,7 +849,7 @@ include "intake_header.php";
                 </div>
                 <div class="col-md-4">
                     <label class="control-label ">Date of Birth (mm/dd/yyyy)</label>
-                    <input type="dater " maxlength="29" class="form-control" name="i_864_family_member4_date_of_birth" value="<?php echo showData('i_864_family_member4_date_of_birth') ?>" />
+                    <input type="date" maxlength="29" class="form-control" name="i_864_family_member4_date_of_birth" value="<?php echo showData('i_864_family_member4_date_of_birth') ?>" />
                 </div>
                 <div class="col-md-4">
                     <label class="control-label ">Alien Registration Number (A-Number, if any)</label>
@@ -866,8 +868,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5  --------------------------------
@@ -997,8 +999,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6  --------------------------------
@@ -1142,8 +1144,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 7--------------------------------
@@ -1181,7 +1183,7 @@ include "intake_header.php";
             </div>
 
             <div class="form-group">
-                <label class="control-label col-md-12">25. <?php echo createCheckbox("sponsor_employment_irs_required_level") ?>I was not required to file a Federal income tax return
+                <label class="control-label col-md-12">25. <?php echo createCheckbox("sponsor_employment_irs_required_level_status") ?>I was not required to file a Federal income tax return
                     as my income was below the IRS required level and I have attached evidence to support this.</label>
             </div>
 
@@ -1235,8 +1237,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 8--------------------------------
@@ -1339,8 +1341,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 9--------------------------------
@@ -1430,8 +1432,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 10 -------------------------------
@@ -1492,7 +1494,7 @@ include "intake_header.php";
                     <div class="col-md-6">
                         <label class="control-label ">5. Sponsor's Email Address (if any)</label>
                         <div class="">
-                            <input type="email" class="form-control  " name="i_864_sponsor_email" maxlength="38" value="<?php echo showData('i_864_sponsor_email') ?>">
+                            <input type="text" class="form-control  " name="i_864_sponsor_email" maxlength="38" value="<?php echo showData('i_864_sponsor_email') ?>">
                         </div>
                     </div>
                 </div>
@@ -1554,8 +1556,8 @@ include "intake_header.php";
 
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
 ------------------------ page 11 -------------------------
@@ -1603,19 +1605,19 @@ include "intake_header.php";
                     <div class="col-md-6">
                         <label class="control-label ">3. Interpreter's Daytime Telephone Number</label>
                         <div class="">
-                            <input type="number" class="form-control  " name="i_864_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864_interpreter_daytime_tel') ?>">
+                            <input type="text" class="form-control  " name="i_864_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864_interpreter_daytime_tel') ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label class="control-label ">4. Interpreter's Mobile Telephone Number (if any)</label>
                         <div class="">
-                            <input type="number" class="form-control  " name="i_864_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864_interpreter_mobile') ?>">
+                            <input type="text" class="form-control  " name="i_864_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864_interpreter_mobile') ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label class="control-label ">5. Interpreter's Email Address (if any)</label>
                         <div class="">
-                            <input type="email" class="form-control  " name="i_864_interpreter_email" maxlength="38" value="<?php echo showData('i_864_interpreter_email') ?>">
+                            <input type="text" class="form-control  " name="i_864_interpreter_email" maxlength="38" value="<?php echo showData('i_864_interpreter_email') ?>">
                         </div>
                     </div>
                 </div>
@@ -1680,19 +1682,19 @@ include "intake_header.php";
                     <div class="col-md-6">
                         <label class="control-label">3. Preparer's Daytime Telephone Number</label>
                         <div class="">
-                            <input type="number" class="form-control" name="i_864_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864_preparer_daytime_tel') ?>">
+                            <input type="text" class="form-control" name="i_864_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864_preparer_daytime_tel') ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label class="control-label">4. Preparer's Mobile Telephone Number (if any)</label>
                         <div class="">
-                            <input type="number" class="form-control" name="i_864_preparer_mobile" maxlength="10" value="<?php echo showData('i_864_preparer_mobile') ?>">
+                            <input type="text" class="form-control" name="i_864_preparer_mobile" maxlength="10" value="<?php echo showData('i_864_preparer_mobile') ?>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label class="control-label">5. Preparer's Email Address (if any)</label>
                         <div class="">
-                            <input type="email" class="form-control" maxlength="38" name="i_864_preparer_email" value="<?php echo showData('i_864_preparer_email') ?>">
+                            <input type="text" class="form-control" maxlength="38" name="i_864_preparer_email" value="<?php echo showData('i_864_preparer_email') ?>">
                         </div>
                     </div>
                 </div>
@@ -1720,8 +1722,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
 ------------------------ page 12 -------------------------

@@ -267,3 +267,34 @@
 'i_864_member4_a_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
 'i_864_member4_uscis_account_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
 
+
+
+'i_864_member2_last_name':' " . showData('i_864_family_member2_family_last_name') . " ',
+'i_864_member2_first_name':' " . showData('i_864_family_member2_given_first_name') . " ',
+'i_864_member2_middle_name':' " . showData('i_864_family_member2_middle_name') . " ',
+'i_864_member2_relationship_to_immigrant':' " . showData('i_864_family_member2_relationship') . " ',
+'i_864_member2_date_of_birth':' " . showData('i_864_family_member2_date_of_birth') . " ',
+'i_864_member2_a_number':' " . showData('i_864_family_member2_alien_number') . " ',
+'i_864_member2_uscis_account_number':' " . showData('i_864_family_member2_uscis_number') . " ',
+    
+  
+
+'i_864_member3_last_name':' " . showData('i_864_family_member3_family_last_name') . " ',
+'i_864_member3_first_name':' " . showData('i_864_family_member3_given_first_name') . " ',
+'i_864_member3_middle_name':' " . showData('i_864_family_member3_middle_name') . " ',
+'i_864_member3_relationship_to_immigrant':' " . showData('i_864_family_member3_relationship') . " ',
+'i_864_member3_date_of_birth':' " . showData('i_864_family_member3_date_of_birth') . " ',
+'i_864_member3_a_number':' " . showData('i_864_family_member3_alien_number') . " ',
+'i_864_member3_uscis_account_number':' " . showData('i_864_family_member3_uscis_number') . " ',
+    
+  
+
+'i_864_member4_last_name':' " . showData('i_864_family_member4_family_last_name') . " ',
+'i_864_member4_first_name':' " . showData('i_864_family_member4_given_first_name') . " ',
+'i_864_member4_middle_name':' " . showData('i_864_family_member4_middle_name') . " ',
+'i_864_member4_relationship_to_immigrant':' " . showData('i_864_family_member4_relationship') . " ',
+'i_864_member4_date_of_birth':' " . showData('i_864_family_member4_date_of_birth') . " ',
+'i_864_member4_a_number':' " . showData('i_864_family_member4_alien_number') . " ',
+'i_864_member4_uscis_account_number':' " . showData('i_864_family_member4_uscis_number') . " ',
+    
+  
