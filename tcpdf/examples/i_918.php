@@ -1,6 +1,6 @@
 <?php
-// require_once('formheader.php');
-require_once('localconfig.php');
+require_once('formheader.php');
+// require_once('localconfig.php');
 
 
 
@@ -3888,16 +3888,16 @@ $pdf->AddPage('P', 'LETTER');
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
 $pdf->setCellPaddings(1, 1, 0, 1);
-$html = '<div><b>Part 7.  &nbsp;Additional Information</b><i></i></div>';
+$html = '<div><b>Part 8.  &nbsp;Additional Information</b><i></i></div>';
 $pdf->writeHTMLCell(91, 7, 13, 19, $html, 1, 1, true, false, 'L', true);
 //...........
 $pdf->SetFont('times', '', 10);
-$html = '<div>If you need extra space to provide any additional information<br>within this form, use the space below. If you need more space<br>
-than what is provided, you may make copies of this page to<br>
-complete and file with this form or attach a separate sheet of<br>
-paper. Type or print your name and A-Number at the top of<br>
-each sheet; indicate the <b>Page Number, Part Number</b>, and <b>Item
-Number </b> to which your answer refers; and sign and date each<br>
+$html = '<div>If you need extra space to provide any additional information<br>within this petition, use the space below. If you need more<br>
+space than what is provided, you may make copies of this page<br>to
+complete and file with this form or attach a separate sheet<br>of
+paper. Include your name and A-Number (if any) at the top<br>of
+each sheet; indicate the <b>Page Number, Part Number</b>, and<br><b>Item
+Number </b> to which your answer refers; and sign and date<br>each
 sheet</div>';
 $pdf->writeHTMLCell(100, 7, 12, 26, $html, 0, 1, false, true, 'L', true);
 //............
@@ -3926,13 +3926,13 @@ $pdf->StartTransform();
 $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(-30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
-$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 40, 70, false); // angle 1
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 41, 69.5, false); // angle 1
 $pdf->StopTransform();
 $pdf->SetFont('times', '', 11);
 $html = '<b>A-</b>';
-$pdf->writeHTMLCell(90, 7, 51, 88, $html, 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(90, 7, 52, 88, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_918_additional_info_a_number', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 57.9, 88);
+$pdf->TextField('i_918_additional_info_a_number', 45, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 58.9, 88);
 //............
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>3.a.  </b> &nbsp;Page Number</div>';
@@ -4168,11 +4168,11 @@ $pdf->TextField('i_918_additional_info_name_7d', 82, 65, array('multiline' => tr
 
 
 
-// 'attorney_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
-// 'attorney_state_bar_number' : ' $attorneyData->bar_number',
 $js = "
 var fields = {
-
+    
+'attorney_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
+'attorney_state_bar_number' : ' $attorneyData->bar_number',
 'part1_1a_lastname':' ".showData('information_about_you_family_last_name')." ',
 'part1_1b_firstname':' ".showData('information_about_you_given_first_name')." ',
 'part1_1c_middlename':' ".showData('information_about_you_middle_name')." ',

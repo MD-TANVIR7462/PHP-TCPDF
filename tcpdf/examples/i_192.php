@@ -43,7 +43,7 @@ class MyPDF extends TCPDF {
         //* Set font
         $this->SetFont( 'times', '', 9 );
 
-        $this->Cell( 40, 6.4, 'Form I-192 Edition 04/01/24 ', 0, 0, 'L' );
+        $this->Cell( 40, 6.4, 'Form I-192   Edition   01/20/25 ', 0, 0, 'L' );
 
         //* if ( $this->page == 1 ) {
         $barcode_image = "images/i192/I-192-footer-pdf417-$this->page.png";
@@ -565,7 +565,7 @@ $pdf->TextField('p2_other_info_7', 90, 7, array('strokeColor' => array(64, 64, 6
 //.................
 
 $pdf->SetFont('times', '', 10);
-$html ='<div><b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender</div>';
+$html ='<div><b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sex</div>';
 $pdf->writeHTMLCell(190, 5, 12, 160,$html, '', 0, false, true, 'L', true);
 
 if(showData('other_information_about_you_gender')=="male") $male_checked = "checked"; else $male_checked = "";
@@ -573,8 +573,8 @@ if(showData('other_information_about_you_gender')=="female") $female_checked = "
 if(showData('other_information_about_you_gender')=="another") $another_checked = "checked"; else $another_checked = "";
 
 $html = '<input type="checkbox" name="p2_other_info_8_gender" value="Male" checked="'.$male_checked.'" /> &nbsp; Male
-&nbsp;&nbsp; <input type="checkbox" name="p2_other_info_8_gender" value="Female" checked="'.$female_checked.'" /> &nbsp; Female
-&nbsp;&nbsp; <input type="checkbox" name="p2_other_info_8_gender" value="Another_Gender_Identity" checked="'.$another_checked.'" /> Another Gender Identity';
+&nbsp;&nbsp; <input type="checkbox" name="p2_other_info_8_gender" value="Female" checked="'.$female_checked.'" /> &nbsp; Female';
+// &nbsp;&nbsp; <input type="checkbox" name="p2_other_info_8_gender" value="Another_Gender_Identity" checked="'.$another_checked.'" /> Another Gender Identity';
 $pdf->writeHTMLCell( 195, 0, 19.5, 166.2, $html, 0, 1, false, true, 'J', 0 );
 
 //.................
@@ -1422,7 +1422,7 @@ $pdf->writeHTMLCell( 70, 6, 73, 89,'', 1, 0, false, true, 'L', true); */
 //....................
 
 $pdf->SetFont('times', '', 10);
-$html ="<div><b>30.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you EVER been in the United States for a period of six months or more?</div>";
+$html ="<div><b>30.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been in the United States for a period of six months or more?</div>";
 $pdf->writeHTMLCell(150, 5, 12, 97.4,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 11);
 
@@ -1600,9 +1600,9 @@ $pdf->writeHTMLCell(25, 7, 114, 51.5, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('times', '', 10);
 $html ="<div><b>39.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name of Port of Entry</div>";
-$pdf->writeHTMLCell(190, 5, 138, 46,$html, '', 0, false, true, 'L', true);
+$pdf->writeHTMLCell(190, 5, 142, 46,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p2_about_you_39_port_entry', 60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 144,52);
+$pdf->TextField('p2_about_you_39_port_entry', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 152,52);
 
 //.............
 
@@ -2341,10 +2341,13 @@ $pdf->writeHTMLCell(182, 1, 21.2, 225.5, '', "B", 1, false, 'L');
 // 'volag_number':' $attorneyData->volag_number',
 // 'attorney_state_bar_number':' $attorneyData->bar_number',
 // 'attorney_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
-
+// 'volag_number':' $attorneyData->volag_number',
+// 'attorney_state_bar_number':' $attorneyData->bar_number',
+// 'attorney_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
 
 $js = "
 var fields = {
+
 
 
 // page 2

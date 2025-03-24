@@ -1,6 +1,6 @@
 <?php
-// require_once('formheader.php');   //database connection file
-require_once('localconfig.php');   //LOCAL connection file
+require_once('formheader.php');   //database connection file
+// require_once('localconfig.php');   //LOCAL connection file
 
 //* $allDataCountry = indexByQueryAlldata( 'SELECT * FROM countries' );
 
@@ -292,7 +292,7 @@ $html = '
    ';
 $pdf->writeHTMLCell( 195, 0, 19, 139, $html, 0, 1, false, true, 'J', 0 );
 $html = '
-<input type="checkbox" name="part1-Unmarried sibling under 18 years of age" value="Unmarried sibling under 18 years of age"checked="'.$part1_relation_sibling.'"/> Unmarried sibling under 18 years of age
+<input type="checkbox" name="part1_Unmarried" value="Unmarried sibling under 18 years of age"checked="'.$part1_relation_sibling.'"/> Unmarried sibling under 18 years of age
    ';
 
 $pdf->writeHTMLCell( 195, 0, 19, 145, $html, 0, 1, false, true, 'J', 0 );
@@ -4118,12 +4118,12 @@ $pdf->TextField('i_918a_additional_info_7d', 82.5, 64.8, array('multiline' => tr
 
 
 
-// 'Attorney_or_According_Representative':' $attorneyData->uscis_online_account_number',
-// 'attorney_state_bar_number':' $attorneyData->bar_number',
 $js = "
 var fields = {
+'Attorney_or_According_Representative':' $attorneyData->uscis_online_account_number',
+'attorney_state_bar_number':' $attorneyData->bar_number',
 
-'part1-Unmarried sibling under 18 years of age': ' ',
+'part1_Unmarried': ' ',
 //*part-1 finished
 'part2_1a_lastname':' ".showData('information_about_you_family_last_name')."',
 'part2_1b_firstname':' ".showData('information_about_you_given_first_name')."',

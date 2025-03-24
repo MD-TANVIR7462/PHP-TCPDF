@@ -1,6 +1,6 @@
 <?php
-// require_once('formheader.php'); //database connection
-require_once("config.php");
+require_once('formheader.php');
+
 // Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
 // Extend the TCPDF class to create custom Header and Footer
@@ -695,7 +695,6 @@ $pdf->TextField('p4_1_zip_code', 21, 7, array('strokeColor' => array(64, 64, 64)
 $pdf->TextField('p4_1_province', 56, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21.7, 187.5);
 $pdf->TextField('p4_1_postal_code', 44.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 79.7, 187.5);
 $pdf->TextField('p4_1_country', 78, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 126, 187.5);
-$pdf->SetFont('courier', 'B', 10);
 $comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
 	$comboBoxOptions[] = $record->state_code;
@@ -893,7 +892,8 @@ $pdf->writeHTMLCell(0, 0, 21, 111, 'If you are single and have <b>never</b> marr
 //..........
 $pdf->writeHTMLCell(0, 0, 12, 117, '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you are currently married, is your spouse a current member of the U.S. armed forces?', 0, 0, false, true, 'L', true);
 //..........
-if (showData('other_information_about_you_marital_spouse_armed_force_status') == "Y") $checked = "checked";else $checked = "";
+if (showData('other_information_about_you_marital_spouse_armed_force_status') == "Y") $checked = "checked";
+else $checked = "";
 $html = '<div>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</div>';
 $pdf->writeHTMLCell(140, 1, 178.5, 117.5, $html, 0, 0, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
@@ -2525,7 +2525,7 @@ $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $pdf->SetFontSize(11.6);
-$html = '<div><b>Part 10. Request for a Fee Reduction </b></div>';
+$html = "<div><b>Part 12. Interpreter's Contact Information, Certification, and Signature</b></div>";
 $pdf->writeHTMLCell(138, 6.5, 13, 19, $html, 1, 1, true, 'L');
 
 //............
