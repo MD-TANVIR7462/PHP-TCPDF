@@ -100,17 +100,17 @@ $style = array(
 
 //* Logo
 $logo = 'homeland_security_logo.png';
-$pdf->Image( $logo, 12, 9, 18, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false );
+$pdf->Image( $logo, 12, 10, 19.4, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false );
 
 $pdf->Cell( 30, 5, '', 0, 0 );
-$pdf->SetFont( 'times', 'B', 14 );
+$pdf->SetFont( 'times', 'B', 14.4 );
 //* set font
 $pdf->MultiCell( 120, 15, 'Application for Advance Permission to Enter 
-', 0, 'C', 0, 1, 48, 6, true );
-$pdf->SetFont( 'times', 'B', 14 );
+', 0, 'C', 0, 1, 48, 5, true );
+$pdf->SetFont( 'times', 'B', 14.4 );
 //* set font
 $pdf->MultiCell( 120, 15, 'as a Nonimmigrant 
-', 0, 'C', 0, 1, 48, 11, true );
+', 0, 'C', 0, 1, 48, 10, true );
 
 $pdf->SetFont( 'times', 'B', 11 );
 //* set font
@@ -120,11 +120,11 @@ $pdf->MultiCell( 30, 5, 'USCIS  Form I-192 ', 0, 'C', 0, 1, 174.5, 5.5, true );
 
 $pdf->SetFont( 'times', 'B', 11 );
 //* set font
-$pdf->MultiCell( 80, 15, 'Department of Homeland Security', 0, 'C', 0, 1, 67, 13.3, true );
+$pdf->MultiCell( 80, 15, 'Department of Homeland Security', 0, 'C', 0, 1, 67, 14, true );
 
 $pdf->SetFont( 'times', '', 10.8 );
 //* set font
-$pdf->MultiCell( 80, 15, 'U.S. Citizenship and Immigration Services', 0, 'C', 0, 1, 67, 18, true );
+$pdf->MultiCell( 80, 15, 'U.S. Citizenship and Immigration Services', 0, 'C', 0, 1, 67, 18.6, true );
 
 $pdf->SetFont( 'times', '', 9 );
 //* set font
