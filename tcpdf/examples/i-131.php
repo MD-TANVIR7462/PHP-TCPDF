@@ -43,7 +43,7 @@ class MyPDF extends TCPDF
         // Set font
         $this->SetFont('times', '', 9);
 
-        $this->Cell(40, 6, "Form I-131  04/24/19  C", 0, 0, 'L');
+        $this->Cell(40, 6, "Form I-131   Edition   01/20/25", 0, 0, 'L');
 
 
         // if ($this->page == 1){
@@ -192,7 +192,6 @@ $pdf->SetFont('times', '', 8.3);
 $html = '<div>Single Advance Parole</div>';
 $pdf->writeHTMLCell(30, 7, 18, 84, $html, 0, 1, false, false, 'J', false);
 //.....
-
 $pdf->SetFont('times', '', 7);
 $pdf->writeHTMLCell(2, 2, 50, 85, '', 1, 1, false, true, 'J', false); //square qube 
 $pdf->SetFont('times', '', 8.3);
@@ -200,22 +199,11 @@ $html = '<div> Multiple Advance Parole<br>
 Valid Until: ____/____/____</div>';
 $pdf->writeHTMLCell(40, 7, 52, 84, $html, 0, 1, false, false, 'L', true);
 //.....
-
 $pdf->SetFont('times', '', 7);
 $pdf->writeHTMLCell(2, 2, 15, 95, '', 1, 1, false, true, 'L', false); //square qube 
 $pdf->SetFont('times', '', 8.3);
 $html = '<div>TPS Travel Authorization Documentation<br>Valid Until: ____/____/____</div>';
 $pdf->writeHTMLCell(100, 7, 18, 95, $html, 0, 1, false, false, 'L', false);
-//.....
-
-
-
-
-
-
-
-
-
 //.........
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(118, 7, 91, 89, '<div><b>Mail To</b></div>', 0, 1, false, false, 'L', true);
@@ -317,7 +305,7 @@ abroad. The receipt number for my last approved Form I-821, Application for Temp
 $pdf->writeHTMLCell(190, 7, 27, 191, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p7_Interpreter_family_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27.5,204);
+$pdf->TextField('p7_Interpreter_family_name', 176, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27.5,204);
 //...............
 $pdf->SetFont('times', '', 12);
 $pdf->writeHTMLCell(190, 6.5, 13, 216, '<b><i>Advance Parole Document (for aliens who are inside the United States) and Advance Permission to Travel
@@ -326,22 +314,238 @@ for Commonwealth of Northern Mariana Islands (CNMI) Long-Term Residents</i></b>'
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(50, 15, 12, 228, '<b>5.</b>', 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
-$html = 'I am located <b>inside</b> the United States, and I am applying for an Advance Parole Document to allow me to seek parole into the
+$html = 'I am located <b>inside</b> the United States, and I am applying for an Advance Parole Document to allow me to seek parole into the<br>
 United States under INA section 212(d)(5)(A) upon my return from abroad based on:';
 $pdf->writeHTMLCell(190, 7, 22, 228, $html, '', 0, 0, true, 'L');
 //..................
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 15, 20, 238, '<b>A.</b>', 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(50, 15, 22, 238, '<b>A.</b>', 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
 if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
 else $checked = "";
 $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
-$pdf->writeHTMLCell(50, 15, 26, 237, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(50, 15, 27, 237, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
-$html = 'I am a TPS beneficiary in the United States, and I am applying for a TPS Travel Authorization Document under the<br>
-Immigration and Nationality Act (INA) section 244(f)(3) to allow me to seek admission under TPS upon my return from<br>
-abroad. The receipt number for my last approved Form I-821, Application for Temporary Protected Status, is:';
+$html = 'A pending Form I-485, Application to Register Permanent Residence or Adjust Status, receipt number if you are<br>
+filing this form separately from your Form I-485: ';
 $pdf->writeHTMLCell(190, 7, 33, 238, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_family_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,247);
+/******************************
+ ******** End Page No 1 ******
+ ******************************/
+
+/******************************
+ ******** Start Page No 2****
+ ******************************/
+$pdf->AddPage('P', 'LETTER');
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$pdf->SetFontSize(11.6);
+$html = '<div><b>Part 1. Application Type</b> (continued)</div>';
+$pdf->writeHTMLCell(191, 6.5, 13, 19, $html, 1, 1, true, 'L');
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20, 26, '<b>B.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 26, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'A pending Form I-589, Application for Asylum and for Withholding of Removal, receipt number:';
+$pdf->writeHTMLCell(190, 7, 33, 27, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_family_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,32);
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20, 39, '<b>C.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 39, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'A pending initial Form I-821, Application for Temporary Protected Status, receipt number: ';
+$pdf->writeHTMLCell(190, 7, 33, 40, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_family_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,46);
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20, 53, '<b>D.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 53, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'Deferred Enforced Departure.';
+$pdf->writeHTMLCell(190, 7, 33, 54, $html, '', 0, 0, true, 'L');
+
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20,61, '<b>E.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 61, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'A pending initial Form I-821, Application for Temporary Protected Status, receipt number: ';
+$pdf->writeHTMLCell(190, 7, 33, 62, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmly_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,68);
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20,76, '<b>F.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 76, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'An approved Form I-914, Application for T Nonimmigrant Status, or Form I-914, Supplement A, Application for<br>
+Family Member of T-1 Recipient, receipt number:';
+$pdf->writeHTMLCell(190, 7, 33, 77, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,87);
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20,94, '<b>G.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 94, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'An approved Form I-918, Petition for U Nonimmigrant Status, or Form I-918, Supplement A, Petition for<br>
+Qualifying Family Member of U-1 Recipient, receipt number:';
+$pdf->writeHTMLCell(190, 7, 33, 95, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,105);
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20,112, '<b>H.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 112, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'Being a current parolee under INA section 212(d)(5), under class of admission:';
+$pdf->writeHTMLCell(190, 7, 33, 113, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,119);
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20,127, '<b>I.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 127, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'An approved Form I-817, Application for Family Unity Benefits, receipt number:';
+$pdf->writeHTMLCell(190, 7, 33, 128, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,134);
+//.............
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20,142, '<b>J.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 142, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'A pending Form I-687, Application for Status as a Temporary Resident Under Section 245A of the Immigration and<br>
+Nationality Act, receipt number:';
+$pdf->writeHTMLCell(190, 7, 33, 143, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,152);
+//.............
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20,159, '<b>K.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 159, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'An approved V Nonimmigrant Status, receipt number:';
+$pdf->writeHTMLCell(190, 7, 33, 160, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,166);
+//.............
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20,174, '<b>L.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 174, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'CNMI long-term residence, receipt number:';
+$pdf->writeHTMLCell(190, 7, 33, 175, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,181);
+//.............
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20,188, '<b>M.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 188, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'Other (provide explanation):';
+$pdf->writeHTMLCell(190, 7, 33, 189, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 169, 19, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,194);
+//..............
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$pdf->SetFontSize(12);
+$html = '<div><b><i>Initial Parole Document (for aliens who are currently outside the United States)</i></b></div>';
+$pdf->writeHTMLCell(191, 6.5, 13, 217, $html, 0, 1, true, 'L');
+///.............
+//.............
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 12,225, '<b>6.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'I am applying for a parole document under INA section 212(d)(5)(A) on my own behalf and I am outside the United States, or I<br>
+am applying on behalf of someone else who is <b>outside</b> the United States, for the first time (initial application) under one of the<br>
+following specific parole programs or processes:';
+$pdf->writeHTMLCell(190, 7,20, 225, $html, '', 0, 0, true, 'L');
+//.............
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 20,238, '<b>A.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 26, 238, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'Filipino World War II Veterans Parole (FWVP) Program, Form I-130 receipt number:';
+$pdf->writeHTMLCell(190, 7, 33, 239, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34,244);
 /******************************
  ******** End Page No 11 ******
  ******************************/
