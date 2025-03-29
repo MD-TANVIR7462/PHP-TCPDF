@@ -700,8 +700,28 @@ $pdf->writeHTMLCell(190, 7, 20, 181, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('p7_Interpreter_fmily_name', 184, 29, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.7,190);
 //............
-
-
+//..............
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>4.</b> ';
+$pdf->writeHTMLCell(90, 7, 13, 220, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('times', '', 10); // set font
+$html = 'How many trips do you intend to use this document?';
+$pdf->writeHTMLCell(120, 7, 21.4, 220, $html, '', 0, 0, true, 'L');
+if (showData('is_your_current_mailing_address_same_as_physical') == "Y") $checked_y = "checked";
+else $checked_y = "";
+if (showData('is_your_current_mailing_address_same_as_physical') == "N") $checked_N = "checked";
+else $checked_N = "";
+$pdf->writeHTMLCell(120, 7, 26.4, 227, "One Trip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More than one trip", '', 0, 0, true, 'L');
+$pdf->SetFont('times', '', 14); // set font
+$html = '<div><input type="checkbox" name="part1_3" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part1_3" value="N" checked="' . $checked_N . '" /></div>';
+$pdf->writeHTMLCell(50, 7, 21, 226, $html, 0, 1, false, true, 'J', true);
+//.......
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(197, 5, 12, 235, '<b>5.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 235, "Expected Length of Trip (in days)", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_family_name', 17, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 70, 235);
 
 /******************************
  ******** End Page No 11 ******
