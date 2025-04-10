@@ -1,6 +1,6 @@
 <?php
-require_once('formheader.php');
-// require_once("localconfig.php");
+// require_once('formheader.php');
+require_once("localconfig.php");
 //$allDataCountry = indexByQueryAllData("SELECT * FROM countries");
 
 // Include the main TCPDF library (search for installation path).
@@ -1430,10 +1430,10 @@ $physical_province = $isMailingAndPhysical ? 'information_about_you_us_mailing_p
 $physical_postal_code = $isMailingAndPhysical ? 'information_about_you_us_mailing_postal_code': 'information_about_you_home_postal_code';
 $physical_country = $isMailingAndPhysical ? 'information_about_you_us_mailing_country': 'information_about_you_home_country';
 
+// 'attorney_state_bar_number':' $attorneyData->bar_number',
+// 'attorney_or_according_representative':' $attorneyData->uscis_online_account_number',
 $js = "
 var fields = {
-   'attorney_state_bar_number':' $attorneyData->bar_number',
-   'attorney_or_according_representative':' $attorneyData->uscis_online_account_number',
     'info_about_you_last_name':' " . showData('information_about_you_family_last_name') . "',
     'info_about_You_first_name':' " . showData('information_about_you_given_first_name') . "',
     'info_about_you_middle_name':' " . showData('information_about_you_middle_name') . "',
