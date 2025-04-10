@@ -1185,140 +1185,55 @@ $pdf->TextField('i_864_info_about_principal_city_town', 119.4, 7, array('strokeC
 //............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div>State</div>';
-$pdf->writeHTMLCell(50, 4, 144, 85.7, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(50, 4, 144, 139, $html, '', 0, 0, true, 'L');
 
 $pdf->SetFont('courier', 'B', 10); // set font
 $comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
     $comboBoxOptions[] = $record->state_code;
 }
-$pdf->ComboBox("i_864_info_about_principal_state", 22, 7, $comboBoxOptions, array(), array(), 144.2, 91);
+$pdf->ComboBox("i_864_info_about_principal_state", 22, 7, $comboBoxOptions, array(), array(), 144.2, 144);
 $pdf->SetFont('times', '', 10);
 $html = '<div>ZIP Code</div>';
-$pdf->writeHTMLCell(30, 3, 168, 85.7, $html, '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(30, 3, 167, 139, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_864_info_about_principal_zip_code', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 91);
+$pdf->TextField('i_864_info_about_principal_zip_code', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 144);
 //..............
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(90, 7, 22, 97, 'Province', '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('i_864_info_about_principal_province', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 102);
-// //.............
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(90, 7, 88, 97, 'Postal Code', '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('i_864_info_about_principal_postal_code', 35, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 88, 102);
-// //.............
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(90, 7, 124, 97, 'Country', '', 0, 0, true, 'L');
+$pdf->SetFont('times', '', 12);
+$pdf->SetFillColor(220, 220, 220);
+$pdf->setCellPaddings(1, 1, 0, 1);
+$html = '<div><b><i>Other Information</i></b></div>';
+$pdf->writeHTMLCell(191, 5, 13, 155, $html, 0, 0, true, false, 'L', true);
+//...........
 
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('i_864_info_about_principal_country', 79, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 125, 102);
-// // //..............
-
-
-// $pdf->SetFont('times', '', 11); // set font
-// $pdf->writeHTMLCell(90, 7, 12, 101, "Other Information", '', 0, 0, true, 'L');
-// $pdf->SetFont('times', '', 10); // set font
-
-// //..............
-
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(90, 7, 12, 108, '<b>3</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Citizenship or Nationality', '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('i_864_information_about_principal_nationality', 69, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 113);
-// //.............
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(90, 7, 95, 108, '<b>4</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)', '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('i_864_info_about_principal_date_of_birth', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 105, 113);
-// ///.............
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(90, 7, 12, 121, '<b>5</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alien Registration Number (A-Number) (if any)', '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('i_864_info_about_principal_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 126.5);
-// //.............
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(90, 7, 95, 121, '<b>6</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USCIS Online Account Number (if any)', '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('i_864_info_about_principal_uscis_online_number', 53, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 109, 126.5);
-// ///.............
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(90, 7, 12, 134, '<b>7</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Daytime Telephone Number', '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('i_864_info_about_principal_telephone_number', 69, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 139);
-// //........
-// $pdf->SetFont('times', '', 12);
-// $pdf->SetFillColor(220, 220, 220);
-// $pdf->setCellPaddings(1, 1, 0, 1);
-// $html = '<div><b>Part 4. Information About the Immigrants You Are Sponsoring</b></div>';
-// $pdf->writeHTMLCell(191, 6, 13, 150, $html, 1, 1, true, false, 'L', true);
-// //./........
-// $pdf->SetFont('times', '', 10); // set font
-// $html = '<div><b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am sponsoring the principal immigrant named in <b>Part 3.</b></div>';
-// $pdf->writeHTMLCell(190, 0, 12, 156.5, $html, '', 0, 0, true, 'L');
-// $pdf->writeHTMLCell(90, 0, 27, 164, "Yes", '', 0, 0, true, 'L');
-// $pdf->writeHTMLCell(190, 0, 42, 164, "No, I am sponsoring family members in <b>Part 4</b>. as the second joint sponsor or I am sponsoring family members<br>
-// who are immigrating more than six months after the principal immigrant.", '', 0, 0, true, 'L');
-// $pdf->SetFont('times', '', 14); // set font
-// if (showData('i_864_immigrants_family_member_status') == "Y") $checked = "checked";
-// else $checked = "";
-// $html = '<div><input type="checkbox" name="checkbox26" value="Y" checked="' . $checked . '" /></div>';
-// $pdf->writeHTMLCell(90, 0, 20, 163, $html, '', 0, 0, true, 'L');
-// if (showData('i_864_immigrants_family_member_status') == "N") $checked = "checked";
-// else $checked = "";
-// $html = '<div><input type="checkbox" name="checkbox27" value="Y" checked="' . $checked . '" /></div>';
-// $pdf->writeHTMLCell(90, 0, 35, 163, $html, '', 0, 0, true, 'L');
-// //.....
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(190, 0, 12, 174, "<b>2.</b>", '', 0, 0, true, 'L');
-// $pdf->writeHTMLCell(190, 0, 27, 174, "I am sponsoring the following family members immigrating at the same time or within six months of the principal<br>
-// immigrant named in <b>Part 3</b>. (List family members in <b>Item Numbers 4. - 7.</b> Do not include any relative listed on a separate<br>
-// visa petition.)", '', 0, 0, true, 'L');
-// $pdf->SetFont('times', '', 14); // set font
-// if (showData('i_864_immigrants_family_member_timeperiod_status') == "Y") $checked = "checked";
-// else $checked = "";
-// $html = '<div><input type="checkbox" name="checkbox28" value="Y" checked="' . $checked . '" /></div>';
-// $pdf->writeHTMLCell(90, 0, 20, 173, $html, '', 0, 0, true, 'L');
-// //....
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(190, 0, 12, 189, "<b>3.</b>", '', 0, 0, true, 'L');
-// $pdf->writeHTMLCell(190, 0, 27, 189, "I am sponsoring the following family members who are immigrating more than six months after the principal immigrant. (List<br>
-// family members in <b>Item Numbers 4. - 7</b>.)", '', 0, 0, true, 'L');
-// $pdf->SetFont('times', '', 14); // set font
-// if (showData('i_864_immigrants_family_member_after_timeperiod_status') == "Y") $checked = "checked";
-// else $checked = "";
-// $html = '<div><input type="checkbox" name="checkbox29" value="Y" checked="' . $checked . '" /></div>';
-// $pdf->writeHTMLCell(90, 0, 20, 188, $html, '', 0, 0, true, 'L');
-// //.............
-// $pdf->SetFont('times', '', 10); // set font
-// $html = '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Family Member 1</b>';
-// $pdf->writeHTMLCell(90, 7, 12, 200,  $html, '', 0, 0, true, 'L');
-// $pdf->writeHTMLCell(90, 7, 19, 206,  'Family Name (Last Name)', '', 0, 0, true, 'L');
-// $pdf->writeHTMLCell(90, 7, 91.5, 206,  'Given Name (First Name)', '', 0, 0, true, 'L');
-// $pdf->writeHTMLCell(90, 7, 154, 206,  'Middle Name (if applicable)', '', 0, 0, true, 'L');
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('i_864_member1_last_name', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 211.2);
-// $pdf->TextField('i_864_member1_first_name', 60.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 211.2);
-// $pdf->TextField('i_864_member1_middle_name', 49, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 155, 211.2);
-// //............
-// $pdf->SetFont('times', '', 10); // set font
-// $pdf->writeHTMLCell(90, 7, 19, 218.5,  'Relationship to Principal Immigrant', '', 0, 0, true, 'L');
-// $pdf->writeHTMLCell(90, 7, 91.5, 218.5,  'Date of Birth (mm/dd/yyyy)', '', 0, 0, true, 'L');
-// $pdf->writeHTMLCell(90, 7, 136, 218.5,  'Alien Registration Number (A-Number, if any)', '', 0, 0, true, 'L');
-// $pdf->writeHTMLCell(90, 7, 19, 232.7,  'USCIS Online Account Number (if any)', '', 0, 0, true, 'L');
-// $pdf->Image('images/right_angle.jpg', 137, 225.5, 3.3, 3.3);
-// $pdf->Image('images/right_angle.jpg', 20, 239.4, 3.3, 3.3);
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('i_864_member1_relationship_to_immigrant', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 224);
-// $pdf->TextField('i_864_member1_date_of_birth', 43, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 92.5, 224);
-// $pdf->TextField('i_864_member1_a_number', 63, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 141, 224);
-// $pdf->TextField('i_864_member1_uscis_account_number', 54, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 24, 238);
-
-
-
-
-
+//..........
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 13, 162, "<b>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Alien Registration Number (A-Number) (if any) ", 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(190, 7, 96, 162, "<b>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Country of Birth", 0, 1, false, false, 'L', true);
+//...........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('i_864_info_about_principal_zip_code', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 33.7, 167);
+$pdf->TextField('i_864_info_about_principal_zip_code', 81, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 106, 167);
+//..........
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 13, 174, "<b>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Country of Citizenship or Nationality ", 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(190, 7, 112, 174, "<b>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Sex", 0, 1, false, false, 'L', true);
+//...........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('i_864_info_about_principal_zip_code', 81, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 180);
+//.............
+if (showData('other_information_about_you_gender') == "male") $checked_male = "checked";
+else $checked_male = "";
+if (showData('other_information_about_you_gender') == "female") $checked_female = "checked";
+else $checked_female = "";
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(90, 7, 125.5, 178.2, 'Male', 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(90, 7, 142.5, 177.2, 'Female', 0, 1, false, false, 'J', true);
+$pdf->SetFont('times', '', 13);
+$html = '<div><input type="checkbox" name="gender" value="Male" checked="' . $checked_male . '" /></div>';
+$pdf->writeHTMLCell(90, 7, 120.4, 179, $html, 0, 1, false, false, 'J', true);
+$html = '<div><input type="checkbox" name="gender" value="Female" checked="' . $checked_female . '" /></div>';
+$pdf->writeHTMLCell(90, 7, 137.4, 179, $html, 0, 1, false, false, 'J', true);
 
 
 /******************************
