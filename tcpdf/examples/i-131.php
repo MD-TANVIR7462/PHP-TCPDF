@@ -1514,256 +1514,465 @@ $pdf->TextField('p7_Interpreter_family_name', 169, 6.6, array('strokeColor' => a
  ******** Start Page No 7****
  ******************************/
 
+//  $pdf->AddPage('P', 'LETTER');
+//  $pdf->setFillColor(220, 220, 220);
+//  $pdf->setFont('Times', '', 12);
+//  $pdf->setCellHeightRatio(1.2);
+//  $pdf->setCellPaddings(1, 0.5, 1, 1);
+//  $pdf->SetFontSize(12);
+//  $html = '<div><b>Part 2. Information About You</b> (continued)</div>';
+//  $pdf->writeHTMLCell(191, 6.5, 13, 19, $html, 1, 1, true, 'L');
+// //.................
+// $pdf->SetFont('times', '', 12);
+// $html = '<div><i><b>Their Other Information</b></i></div>';
+// $pdf->writeHTMLCell(191, 6, 13, 29, $html, 0, 1, true, false, 'L', true);
+// //.................
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 12, 36,  "<div><b>26.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class of Admission (COA) (if any)</div>", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(130, 1, 94, 36,  "<div><b>27.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Most Recent Form I-94 Arrival/Departure Record Number (if any)</div>", 0, 0, false, true, 'L', true);
+// //................
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('i_864_info_about_principal_last_tname', 68, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 41);
+// $pdf->TextField('i_864_info_about_principal_first_name', 97, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 105, 41);
+// //...........
+// $pdf->SetFont('times', '', 12);
+// $html = '<div><b>Part 3. Biographic Information of the Person Who Will Receive the Travel Document, Parole Document,
+// or Arrival/Departure Record</b>d</div>';
+// $pdf->writeHTMLCell(191, 6, 13, 54, $html, 1, 1, true, false, 'L', true);
+//  //...............
+//  $pdf->SetFont('times', '', 10);
+//  $html = '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ethnicity (Select <b>only one</b> box)';
+//  $pdf->writeHTMLCell(0, 0, 12, 67, $html, 0, 0, false, true, 'L', true);
+//  //............. 
+//  $pdf->SetFont('times', '', 14);
+//  if (showData('biographic_info_ethnicity') == "hispanic") $checked = "checked";
+//  else $checked = "";
+//  $html = '<input type="checkbox" name="hispanic_not_hispanic" value="hispanic"  checked="' . $checked . '" />';
+//  $pdf->writeHTMLCell(5, 1, 21, 72, $html, 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_ethnicity') == "nothispanic") $checked = "checked";
+//  else $checked = "";
+//  $html = '<input type="checkbox" name="hispanic_not_hispanic" value="nothispanic"  checked="' . $checked . '" />';
+//  $pdf->writeHTMLCell(5, 1, 58, 72, $html, 0, 1, false, false, 'L', false);
+//  $pdf->SetFont('times', '', 10);
+//  $pdf->writeHTMLCell(140, 1, 27.7, 72.5, "Hispanic or Latino", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 65, 72.5, "Not Hispanic or Latino", 0, 0, false, true, 'L', true);
+//  //...............
+//  $pdf->SetFont('times', '', 10);
+//  $html = '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Race (Select <b>all applicable</b> boxes)';
+//  $pdf->writeHTMLCell(0, 0, 12, 79, $html, 0, 0, false, true, 'L', true);
+//  //.............
+//  $pdf->SetFont('times', '', 14);
+//  if (showData('biographic_info_race_american_native') == "Y") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 21, 86, '<input type="checkbox" name="p3_race1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_race_asian') == "Y") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 58, 86, '<input type="checkbox" name="p3_race2" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_race_black_african') == "Y") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 78, 86, '<input type="checkbox" name="p3_race3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_race_native_islander') == "Y") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 115, 86, '<input type="checkbox" name="p3_race4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_race_white') == "Y") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 158, 86, '<input type="checkbox" name="p3_race5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  //.........
+//  $pdf->SetFont('times', '', 10);
+//  $pdf->writeHTMLCell(140, 1, 27.7, 86.5, "American Indian or<br>Alaska Native", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 65, 86.5, "Asian", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 85, 86.5, "Black or African<br>American", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 122, 86.5, "Native Hawaiian or<br>Other Pacific Islander", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 165, 86.5, "White", 0, 0, false, true, 'L', true);
+//  //............
+//  $pdf->SetFont('times', '', 10);
+//  $pdf->writeHTMLCell(0, 0, 12, 98, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feet', 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(0, 0, 64, 98, 'Inches', 0, 0, false, true, 'L', true);
+//  //............
+//  $pdf->SetFont('courier', 'B', 10);
+//  $pdf->ComboBox('p3_height_feet', 19, 6.6, array('', '2', '3', '4', '5', '6', '7', '8'), array(), array(), 44, 97.7);
+//  $pdf->ComboBox('p3_height_inch', 19, 6.6, array('', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'), array(), array(), 76, 97.7);
+//  //...............
+//  $pdf->SetFont('times', '', 10);
+//  $pdf->writeHTMLCell(0, 0, 100,98, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pounds', 0, 0, false, true, 'L', true);
+//  //............
+//  $pdf->SetFont('courier', 'B', 10);
+//  $pdf->TextField('p3_Pounds1', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 137, 97.7);
+//  $pdf->TextField('p3_Pounds2', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 144, 97.7);
+//  $pdf->TextField('p3_Pounds3', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 151, 97.7);
+//  //...............
+//  $pdf->SetFont('times', '', 10);
+//  $html = '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eye color (Select <b>only one</b> box)';
+//  $pdf->writeHTMLCell(0, 0, 12, 106, $html, 0, 0, false, true, 'L', true);
+//  //.............
+//  $pdf->SetFont('times', '', 14);
+//  if (showData('biographic_info_eye_color') == "black") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 21, 112, '<input type="checkbox" name="p3_eye_color_status1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_eye_color') == "blue") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 42, 112, '<input type="checkbox" name="p3_eye_color_status2" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_eye_color') == "brown") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 60, 112, '<input type="checkbox" name="p3_eye_color_status3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_eye_color') == "gray") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 80, 112, '<input type="checkbox" name="p3_eye_color_status4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_eye_color') == "green") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 100, 112, '<input type="checkbox" name="p3_eye_color_status5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_eye_color') == "hazel") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 120, 112, '<input type="checkbox" name="p3_eye_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_eye_color') == "marron") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 140, 112, '<input type="checkbox" name="p3_eye_color_status7" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_eye_color') == "pink") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 160, 112, '<input type="checkbox" name="p3_eye_color_status8" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_eye_color') == "unknown") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 176, 112, '<input type="checkbox" name="p3_eye_color_status9" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  //..................
+//  $pdf->SetFont('times', '', 10);
+//  $pdf->writeHTMLCell(140, 1, 28, 112.3, "Black", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 49, 112.3, "Blue", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 67, 112.3, "Brown", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 87, 112.3, "Gray", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 107, 112.3, "Green", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 127, 112.3, "Hazel", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 147, 112.3, "Maroon", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 167, 112.3, "Pink", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 183, 112.3, "Unknown/Other", 0, 0, false, true, 'L', true);
+//  //.................
+//  $pdf->SetFont('times', '', 10);
+//  $pdf->writeHTMLCell(0, 0, 12, 118, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hair color (Select <b>only one</b> box)', 0, 0, false, true, 'L', true);
+// //  //.................
+//  $pdf->SetFont('times', '', 14);
+//  if (showData('biographic_info_hair_color') == "blad") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 21, 124, '<input type="checkbox" name="p3_hair_color_status1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_hair_color') == "black") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 42, 124, '<input type="checkbox" name="p3_hair_color_status2" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_hair_color') == "blond") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 60, 124, '<input type="checkbox" name="p3_hair_color_status3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_hair_color') == "brown") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 80, 124, '<input type="checkbox" name="p3_hair_color_status4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_hair_color') == "gray") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 100, 124, '<input type="checkbox" name="p3_hair_color_status5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_hair_color') == "red") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 120, 124, '<input type="checkbox" name="p3_hair_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_hair_color') == "sandy") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 140, 124, '<input type="checkbox" name="p3_hair_color_status7" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_hair_color') == "white") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 160, 124, '<input type="checkbox" name="p3_hair_color_status8" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  if (showData('biographic_info_hair_color') == "unknown") $checked = "checked";
+//  else $checked = "";
+//  $pdf->writeHTMLCell(5, 1, 176, 124, '<input type="checkbox" name="p3_hair_color_status9" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//  //.................
+//  $pdf->SetFont('times', '', 10);
+//  $pdf->writeHTMLCell(140, 1, 28, 124.3, "Bald<br>(No hair)", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 49, 124.3, "Black", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 67, 124.3, "Blond", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 87, 124.3, "Brown", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 107, 124.3, "Gray", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 127, 124.3, "Red", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 147, 124.3, "Sandy", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 167, 124.3, "White", 0, 0, false, true, 'L', true);
+//  $pdf->writeHTMLCell(140, 1, 183, 124.3, "Unknown/<br>Other", 0, 0, false, true, 'L', true);
+//  //................
+//  $pdf->SetFontSize(11.6);
+//  $pdf->writeHTMLCell(191, 6.5, 13, 137, "<b>Part 4. Processing Information</b>", 1, 1, true, 'L');
+//  //................
+// $pdf->SetFont('times', '', 10); // set font
+// $html = '<b>1.</b> ';
+// $pdf->writeHTMLCell(90, 7, 13, 144, $html, '', 0, 0, true, 'L');
+// $pdf->SetFont('times', '', 10); // set font
+// $html = 'Has the person who will receive the travel document, parole document, or Arrival/Departure Record, if<br>approved, been in any exclusion, deportation, removal, or rescission proceedings? ';
+// $pdf->writeHTMLCell(190, 7, 21.4, 144, $html, '', 0, 0, true, 'L');
+// if (showData('is_your_current_mailing_address_same_as_physical') == "Y") $checked_y = "checked";
+// else $checked_y = "";
+// if (showData('is_your_current_mailing_address_same_as_physical') == "N") $checked_N = "checked";
+// else $checked_N = "";
+// $pdf->writeHTMLCell(120, 7, 178, 145, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
+// $pdf->SetFont('times', '', 14); // set font
+// $html = '<div><input type="checkbox" name="part1_3" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part1_3" value="N" checked="' . $checked_N . '" /></div>';
+// $pdf->writeHTMLCell(50, 7, 172, 144, $html, 0, 1, false, true, 'J', true);
+// //..............
+// $pdf->SetFont('times', '', 10); // set font
+// $html = '<b>2.a.</b> ';
+// $pdf->writeHTMLCell(90, 7, 13, 155, $html, '', 0, 0, true, 'L');
+// $pdf->SetFont('times', '', 10); // set font
+// $html = 'Have you <b>EVER</b> before been issued a Reentry Permit or Refugee Travel Document? (If you answered<br>
+// “Yes,” provide the information in <b>Item Numbers 2.b. - 2.c.</b> for the last document issued to you.)';
+// $pdf->writeHTMLCell(190, 7, 21.4, 155, $html, '', 0, 0, true, 'L');
+// if (showData('is_your_current_mailing_address_same_as_physical') == "Y") $checked_y = "checked";
+// else $checked_y = "";
+// if (showData('is_your_current_mailing_address_same_as_physical') == "N") $checked_N = "checked";
+// else $checked_N = "";
+// $pdf->writeHTMLCell(120, 7, 178, 156, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
+// $pdf->SetFont('times', '', 14); // set font
+// $html = '<div><input type="checkbox" name="part1_3" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part1_3" value="N" checked="' . $checked_N . '" /></div>';
+// $pdf->writeHTMLCell(50, 7, 172, 155, $html, 0, 1, false, true, 'J', true);
+// //.................
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 12, 165,  "<div><b>2.b.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Issued</div>", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(130, 1, 22, 170,  "<div>(mm/dd/yyyy)</div>", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(130, 1, 77, 165,  "<div><b>2.c.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disposition (attached, lost, stolen, damaged/destroyed, still in my possession, etc.):</div>", 0, 0, false, true, 'L', true);
+// //................
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('i_864_info_about_principal_last_tname', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 44, 170);
+// $pdf->TextField('i_864_info_about_principal_first_name', 117, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 88, 170);
+// //..............
+// $pdf->SetFont('times', '', 10); // set font
+// $html = '<b>3.a.</b> ';
+// $pdf->writeHTMLCell(90, 7, 13, 179, $html, '', 0, 0, true, 'L');
+// $pdf->SetFont('times', '', 9.6); // set font
+// $html = 'Have you <b>EVER</b> R been issued an Advance Parole Document? (If you answered “Yes,” please provide the<br>
+// information in <b>Item Numbers 3.b. - 3.c.</b> for the last document issued to you.)';
+// $pdf->writeHTMLCell(190, 7, 21.4, 179, $html, '', 0, 0, true, 'L');
+// if (showData('is_your_current_mailing_address_same_as_physical') == "Y") $checked_y = "checked";
+// else $checked_y = "";
+// if (showData('is_your_current_mailing_address_same_as_physical') == "N") $checked_N = "checked";
+// else $checked_N = "";
+// $pdf->writeHTMLCell(120, 7, 178, 180, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
+// $pdf->SetFont('times', '', 14); // set font
+// $html = '<div><input type="checkbox" name="part1_3" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part1_3" value="N" checked="' . $checked_N . '" /></div>';
+// $pdf->writeHTMLCell(50, 7, 172, 179, $html, 0, 1, false, true, 'J', true);
+// //.................
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 12, 190,  "<div><b>3.b.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Issued</div>", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(130, 1, 22, 195,  "<div>(mm/dd/yyyy)</div>", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(130, 1, 77, 190,  "<div><b>3.c.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disposition (attached, lost, stolen, damaged/destroyed, still in my possession, etc.):</div>", 0, 0, false, true, 'L', true);
+// //................
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('i_864_info_about_principal_last_tname', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 44, 195);
+// $pdf->TextField('i_864_info_about_principal_first_name', 117, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 88, 195);
+// //...........
+
+// $pdf->SetFont('times', '', 10); // set font
+// $html = 'If you are requesting <b>parole from outside the United States, parole in place, or re-parole from inside the United States, SKIP to<br>Part 8.</b>';
+// $pdf->writeHTMLCell(196, 7, 13, 202, $html, '', 0, 0, true, 'L');
+// //..............
+
+// //..............
+// $pdf->SetFont('times', '', 10); // set font
+// $html = '<b>4.</b> ';
+// $pdf->writeHTMLCell(90, 7, 13, 213, $html, '', 0, 0, true, 'L');
+// $pdf->SetFont('times', '', 9.6); // set font
+// $html = 'Are you requesting a <b>replacement</b> Reentry Permit, Refugee Travel Document, Advance Parole<br>Document, or TPS Travel Authorization Document?)';
+// $pdf->writeHTMLCell(190, 7, 21.4, 213, $html, '', 0, 0, true, 'L');
+// if (showData('is_your_current_mailing_address_same_as_physical') == "Y") $checked_y = "checked";
+// else $checked_y = "";
+// if (showData('is_your_current_mailing_address_same_as_physical') == "N") $checked_N = "checked";
+// else $checked_N = "";
+// $pdf->writeHTMLCell(120, 7, 178, 214, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
+// $pdf->SetFont('times', '', 14); // set font
+// $html = '<div><input type="checkbox" name="part1_3" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part1_3" value="N" checked="' . $checked_N . '" /></div>';
+// $pdf->writeHTMLCell(50, 7, 172, 213, $html, 0, 1, false, true, 'J', true);
+/******************************
+ ******** End Page No 7 ******
+ ******************************/
+
+/******************************
+ ******** Start Page No 8****
+ ******************************/
  $pdf->AddPage('P', 'LETTER');
  $pdf->setFillColor(220, 220, 220);
  $pdf->setFont('Times', '', 12);
  $pdf->setCellHeightRatio(1.2);
  $pdf->setCellPaddings(1, 0.5, 1, 1);
- $pdf->SetFontSize(12);
- $html = '<div><b>Part 2. Information About You</b> (continued)</div>';
- $pdf->writeHTMLCell(191, 6.5, 13, 19, $html, 1, 1, true, 'L');
-//.................
-$pdf->SetFont('times', '', 12);
-$html = '<div><i><b>Their Other Information</b></i></div>';
-$pdf->writeHTMLCell(191, 6, 13, 29, $html, 0, 1, true, false, 'L', true);
-//.................
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 36,  "<div><b>26.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class of Admission (COA) (if any)</div>", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(130, 1, 94, 36,  "<div><b>27.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Most Recent Form I-94 Arrival/Departure Record Number (if any)</div>", 0, 0, false, true, 'L', true);
-//................
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_864_info_about_principal_last_tname', 68, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 41);
-$pdf->TextField('i_864_info_about_principal_first_name', 97, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 105, 41);
-//...........
-$pdf->SetFont('times', '', 12);
-$html = '<div><b>Part 3. Biographic Information of the Person Who Will Receive the Travel Document, Parole Document,
-or Arrival/Departure Record</b>d</div>';
-$pdf->writeHTMLCell(191, 6, 13, 54, $html, 1, 1, true, false, 'L', true);
- //...............
- $pdf->SetFont('times', '', 10);
- $html = '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ethnicity (Select <b>only one</b> box)';
- $pdf->writeHTMLCell(0, 0, 12, 67, $html, 0, 0, false, true, 'L', true);
- //............. 
- $pdf->SetFont('times', '', 14);
- if (showData('biographic_info_ethnicity') == "hispanic") $checked = "checked";
- else $checked = "";
- $html = '<input type="checkbox" name="hispanic_not_hispanic" value="hispanic"  checked="' . $checked . '" />';
- $pdf->writeHTMLCell(5, 1, 21, 72, $html, 0, 1, false, false, 'L', false);
- if (showData('biographic_info_ethnicity') == "nothispanic") $checked = "checked";
- else $checked = "";
- $html = '<input type="checkbox" name="hispanic_not_hispanic" value="nothispanic"  checked="' . $checked . '" />';
- $pdf->writeHTMLCell(5, 1, 58, 72, $html, 0, 1, false, false, 'L', false);
- $pdf->SetFont('times', '', 10);
- $pdf->writeHTMLCell(140, 1, 27.7, 72.5, "Hispanic or Latino", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 65, 72.5, "Not Hispanic or Latino", 0, 0, false, true, 'L', true);
- //...............
- $pdf->SetFont('times', '', 10);
- $html = '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Race (Select <b>all applicable</b> boxes)';
- $pdf->writeHTMLCell(0, 0, 12, 79, $html, 0, 0, false, true, 'L', true);
- //.............
- $pdf->SetFont('times', '', 14);
- if (showData('biographic_info_race_american_native') == "Y") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 21, 86, '<input type="checkbox" name="p3_race1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_race_asian') == "Y") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 58, 86, '<input type="checkbox" name="p3_race2" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_race_black_african') == "Y") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 78, 86, '<input type="checkbox" name="p3_race3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_race_native_islander') == "Y") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 115, 86, '<input type="checkbox" name="p3_race4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_race_white') == "Y") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 158, 86, '<input type="checkbox" name="p3_race5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- //.........
- $pdf->SetFont('times', '', 10);
- $pdf->writeHTMLCell(140, 1, 27.7, 86.5, "American Indian or<br>Alaska Native", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 65, 86.5, "Asian", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 85, 86.5, "Black or African<br>American", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 122, 86.5, "Native Hawaiian or<br>Other Pacific Islander", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 165, 86.5, "White", 0, 0, false, true, 'L', true);
- //............
- $pdf->SetFont('times', '', 10);
- $pdf->writeHTMLCell(0, 0, 12, 98, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feet', 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(0, 0, 64, 98, 'Inches', 0, 0, false, true, 'L', true);
- //............
- $pdf->SetFont('courier', 'B', 10);
- $pdf->ComboBox('p3_height_feet', 19, 6.6, array('', '2', '3', '4', '5', '6', '7', '8'), array(), array(), 44, 97.7);
- $pdf->ComboBox('p3_height_inch', 19, 6.6, array('', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'), array(), array(), 76, 97.7);
- //...............
- $pdf->SetFont('times', '', 10);
- $pdf->writeHTMLCell(0, 0, 100,98, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pounds', 0, 0, false, true, 'L', true);
- //............
- $pdf->SetFont('courier', 'B', 10);
- $pdf->TextField('p3_Pounds1', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 137, 97.7);
- $pdf->TextField('p3_Pounds2', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 144, 97.7);
- $pdf->TextField('p3_Pounds3', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 151, 97.7);
- //...............
- $pdf->SetFont('times', '', 10);
- $html = '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eye color (Select <b>only one</b> box)';
- $pdf->writeHTMLCell(0, 0, 12, 106, $html, 0, 0, false, true, 'L', true);
- //.............
- $pdf->SetFont('times', '', 14);
- if (showData('biographic_info_eye_color') == "black") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 21, 112, '<input type="checkbox" name="p3_eye_color_status1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_eye_color') == "blue") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 42, 112, '<input type="checkbox" name="p3_eye_color_status2" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_eye_color') == "brown") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 60, 112, '<input type="checkbox" name="p3_eye_color_status3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_eye_color') == "gray") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 80, 112, '<input type="checkbox" name="p3_eye_color_status4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_eye_color') == "green") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 100, 112, '<input type="checkbox" name="p3_eye_color_status5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_eye_color') == "hazel") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 120, 112, '<input type="checkbox" name="p3_eye_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_eye_color') == "marron") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 140, 112, '<input type="checkbox" name="p3_eye_color_status7" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_eye_color') == "pink") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 160, 112, '<input type="checkbox" name="p3_eye_color_status8" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_eye_color') == "unknown") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 176, 112, '<input type="checkbox" name="p3_eye_color_status9" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- //..................
- $pdf->SetFont('times', '', 10);
- $pdf->writeHTMLCell(140, 1, 28, 112.3, "Black", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 49, 112.3, "Blue", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 67, 112.3, "Brown", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 87, 112.3, "Gray", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 107, 112.3, "Green", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 127, 112.3, "Hazel", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 147, 112.3, "Maroon", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 167, 112.3, "Pink", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 183, 112.3, "Unknown/Other", 0, 0, false, true, 'L', true);
- //.................
- $pdf->SetFont('times', '', 10);
- $pdf->writeHTMLCell(0, 0, 12, 118, '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hair color (Select <b>only one</b> box)', 0, 0, false, true, 'L', true);
-//  //.................
- $pdf->SetFont('times', '', 14);
- if (showData('biographic_info_hair_color') == "blad") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 21, 124, '<input type="checkbox" name="p3_hair_color_status1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_hair_color') == "black") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 42, 124, '<input type="checkbox" name="p3_hair_color_status2" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_hair_color') == "blond") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 60, 124, '<input type="checkbox" name="p3_hair_color_status3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_hair_color') == "brown") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 80, 124, '<input type="checkbox" name="p3_hair_color_status4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_hair_color') == "gray") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 100, 124, '<input type="checkbox" name="p3_hair_color_status5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_hair_color') == "red") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 120, 124, '<input type="checkbox" name="p3_hair_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_hair_color') == "sandy") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 140, 124, '<input type="checkbox" name="p3_hair_color_status7" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_hair_color') == "white") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 160, 124, '<input type="checkbox" name="p3_hair_color_status8" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- if (showData('biographic_info_hair_color') == "unknown") $checked = "checked";
- else $checked = "";
- $pdf->writeHTMLCell(5, 1, 176, 124, '<input type="checkbox" name="p3_hair_color_status9" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
- //.................
- $pdf->SetFont('times', '', 10);
- $pdf->writeHTMLCell(140, 1, 28, 124.3, "Bald<br>(No hair)", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 49, 124.3, "Black", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 67, 124.3, "Blond", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 87, 124.3, "Brown", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 107, 124.3, "Gray", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 127, 124.3, "Red", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 147, 124.3, "Sandy", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 167, 124.3, "White", 0, 0, false, true, 'L', true);
- $pdf->writeHTMLCell(140, 1, 183, 124.3, "Unknown/<br>Other", 0, 0, false, true, 'L', true);
- //................
  $pdf->SetFontSize(11.6);
- $pdf->writeHTMLCell(191, 6.5, 13, 137, "<b>Part 4. Processing Information</b>", 1, 1, true, 'L');
- //................
+ $html = '<div><b>Part 4. Processing Information</b> (continued)</div>';
+ $pdf->writeHTMLCell(191, 6.5, 13, 19, $html, 1, 1, true, 'L');
+ // .............
+ $pdf->SetFont('times', '', 10);
+ $pdf->writeHTMLCell(50, 15, 12, 27, '<b>5.</b>', 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'If you answered “Yes,” select one of the following boxes and complete <b>Item Numbers 6.a. - 6.b.</b> If you answered “No,” you<br>can skip to <b>Item Number 7.a.</b>';
+ $pdf->writeHTMLCell(190, 7, 20, 27, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 37, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'My document was issued, but I did not receive it.';
+ $pdf->writeHTMLCell(190, 7, 26, 38, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 44, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'I received my document, but then it was lost, stolen, or damaged. ';
+ $pdf->writeHTMLCell(190, 7, 26, 45, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 51, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'I received my document, but it has incorrect information because of an error caused by me or because my information has<br>changed.';
+ $pdf->writeHTMLCell(190, 7, 26, 52, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 61, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'I received my document, but it has incorrect information because of an error not caused by me (such as a U.S. Citizenship<br>and Immigration Services (USCIS) error).';
+ $pdf->writeHTMLCell(190, 7, 26, 62, $html, '', 0, 0, true, 'L');
+ // .............
+ $pdf->SetFont('times', '', 10);
+ $pdf->writeHTMLCell(50, 15, 12, 72, '<b>6.</b>', 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'If you are replacing your Reentry Permit, Refugee Travel Document, Advance Parole Document, or TPS Travel Authorization<br>
+Document because it has incorrect information, please select the applicable box(es) indicating the information that needs to be<br>
+corrected and then provide any additional information in the text box that helps USCIS confirm the correction needed.';
+ $pdf->writeHTMLCell(190, 7, 20, 72, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 86, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'Name';
+ $pdf->writeHTMLCell(190, 7, 26, 87, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 93, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'A-Number';
+ $pdf->writeHTMLCell(190, 7, 26, 94, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 100, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'Country of Birth/Citizenship';
+ $pdf->writeHTMLCell(190, 7, 26, 101, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 107, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'Terms and Conditions';
+ $pdf->writeHTMLCell(190, 7, 26, 108, $html, '', 0, 0, true, 'L');
+ //..................
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 114, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'Date of Birth';
+ $pdf->writeHTMLCell(190, 7, 26, 115, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 121, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'Sex';
+ $pdf->writeHTMLCell(190, 7, 26, 122, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 128, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'Validity Date';
+ $pdf->writeHTMLCell(190, 7, 26, 129, $html, '', 0, 0, true, 'L');
+ //..................
+ $pdf->SetFont('times', '', 14);
+ if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+ else $checked = "";
+ $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+ $pdf->writeHTMLCell(50, 15, 19, 135, $html, 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'Photo';
+ $pdf->writeHTMLCell(190, 7, 26, 136, $html, '', 0, 0, true, 'L');
+ //..................
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>1.</b> ';
-$pdf->writeHTMLCell(90, 7, 13, 144, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('times', '', 10); // set font
-$html = 'Has the person who will receive the travel document, parole document, or Arrival/Departure Record, if<br>approved, been in any exclusion, deportation, removal, or rescission proceedings? ';
-$pdf->writeHTMLCell(190, 7, 21.4, 144, $html, '', 0, 0, true, 'L');
-if (showData('is_your_current_mailing_address_same_as_physical') == "Y") $checked_y = "checked";
-else $checked_y = "";
-if (showData('is_your_current_mailing_address_same_as_physical') == "N") $checked_N = "checked";
-else $checked_N = "";
-$pdf->writeHTMLCell(120, 7, 178, 145, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
-$pdf->SetFont('times', '', 14); // set font
-$html = '<div><input type="checkbox" name="part1_3" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part1_3" value="N" checked="' . $checked_N . '" /></div>';
-$pdf->writeHTMLCell(50, 7, 172, 144, $html, 0, 1, false, true, 'J', true);
+$html = 'Provide an explanation of what is incorrect on your current document to support your request for a correction and attach copies<br>of any documents supporting your request';
+$pdf->writeHTMLCell(190, 7, 19, 142, $html, '', 0, 0, true, 'L');
 //..............
-$pdf->SetFont('times', '', 10); // set font
-$html = '<b>2.a.</b> ';
-$pdf->writeHTMLCell(90, 7, 13, 155, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('times', '', 10); // set font
-$html = 'Have you <b>EVER</b> before been issued a Reentry Permit or Refugee Travel Document? (If you answered<br>
-“Yes,” provide the information in <b>Item Numbers 2.b. - 2.c.</b> for the last document issued to you.)';
-$pdf->writeHTMLCell(190, 7, 21.4, 155, $html, '', 0, 0, true, 'L');
-if (showData('is_your_current_mailing_address_same_as_physical') == "Y") $checked_y = "checked";
-else $checked_y = "";
-if (showData('is_your_current_mailing_address_same_as_physical') == "N") $checked_N = "checked";
-else $checked_N = "";
-$pdf->writeHTMLCell(120, 7, 178, 156, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
-$pdf->SetFont('times', '', 14); // set font
-$html = '<div><input type="checkbox" name="part1_3" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part1_3" value="N" checked="' . $checked_N . '" /></div>';
-$pdf->writeHTMLCell(50, 7, 172, 155, $html, 0, 1, false, true, 'J', true);
-//.................
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 184.5, 21, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20,152);
+ //.............
+ $pdf->SetFont('times', '', 10);
+ $pdf->writeHTMLCell(50, 15, 12, 174.4, '<b>6.b.</b>', 0, 1, false, true, 'L', true);
+ $pdf->SetFont('times', '', 10); // set font
+ $html = 'Provide the receipt number for the Form I-131 related to the Reentry Permit, Refugee Travel Document, Advance Parole<br>Document, or TPS Travel Authorization Document that you are seeking to replace: ';
+ $pdf->writeHTMLCell(190, 7, 19, 174.4, $html, '', 0, 0, true, 'L');
+ //  ..............
+ $pdf->SetFont('courier', 'B', 10); // set font
+ $pdf->TextField('p7_Interpreter_fmily_name', 184.5, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 184);
+ //..............
+ $pdf->SetFont('times', '', 10); // set font
+ $pdf->writeHTMLCell(190, 7, 12, 191, '<b>If you are applying for an Advance Parole Document, SKIP to Part 7.</b> ', '', 0, 0, true, 'L');
+ $pdf->writeHTMLCell(190, 7, 12, 197, '<b>You must complete the rest of Part 4. if you are requesting a Reentry Permit or Refugee Travel Document.</b> ', '', 0, 0, true, 'L');
+ $pdf->writeHTMLCell(190, 7, 12, 203, 'Where do you want your Reentry Permit or Refugee Travel Document sent? Please note that if you want your Reentry Permit or<br>
+Refugee Travel Document sent to another country, you will need to pick it up at a U.S. Embassy, U.S. Consulate, or USCIS<br>
+international field office. (Select one) ', '', 0, 0, true, 'L');
+//.............
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 165,  "<div><b>2.b.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Issued</div>", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(130, 1, 22, 170,  "<div>(mm/dd/yyyy)</div>", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(130, 1, 77, 165,  "<div><b>2.c.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disposition (attached, lost, stolen, damaged/destroyed, still in my possession, etc.):</div>", 0, 0, false, true, 'L', true);
-//................
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_864_info_about_principal_last_tname', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 44, 170);
-$pdf->TextField('i_864_info_about_principal_first_name', 117, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 88, 170);
-//..............
+$pdf->writeHTMLCell(50, 15, 12, 218, '<b>7.a.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 19, 217.4, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>3.a.</b> ';
-$pdf->writeHTMLCell(90, 7, 13, 179, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('times', '', 9.6); // set font
-$html = 'Have you <b>EVER</b> R been issued an Advance Parole Document? (If you answered “Yes,” please provide the<br>
-information in <b>Item Numbers 3.b. - 3.c.</b> for the last document issued to you.)';
-$pdf->writeHTMLCell(190, 7, 21.4, 179, $html, '', 0, 0, true, 'L');
-if (showData('is_your_current_mailing_address_same_as_physical') == "Y") $checked_y = "checked";
-else $checked_y = "";
-if (showData('is_your_current_mailing_address_same_as_physical') == "N") $checked_N = "checked";
-else $checked_N = "";
-$pdf->writeHTMLCell(120, 7, 178, 180, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
-$pdf->SetFont('times', '', 14); // set font
-$html = '<div><input type="checkbox" name="part1_3" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="part1_3" value="N" checked="' . $checked_N . '" /></div>';
-$pdf->writeHTMLCell(50, 7, 172, 179, $html, 0, 1, false, true, 'J', true);
-
-//.................
+$html = 'To the U.S. address shown in <b>Part 2., Item Number 3.</b> of this application.';
+$pdf->writeHTMLCell(190, 7, 26, 218, $html, '', 0, 0, true, 'L');
+//.............
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 190,  "<div><b>3.b.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Issued</div>", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(130, 1, 22, 195,  "<div>(mm/dd/yyyy)</div>", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(130, 1, 77, 190,  "<div><b>3.c.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disposition (attached, lost, stolen, damaged/destroyed, still in my possession, etc.):</div>", 0, 0, false, true, 'L', true);
-//................
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_864_info_about_principal_last_tname', 30, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 44, 195);
-$pdf->TextField('i_864_info_about_principal_first_name', 117, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 88, 195);
-//...........
+$pdf->writeHTMLCell(50, 15, 12, 225, '<b>7.a.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 19, 224.4, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'To a U.S. Embassy, U.S. Consulate, USCIS international field office, or Department of Homeland Security (DHS) office<br>overseas at:';
+$pdf->writeHTMLCell(190, 7, 26, 225, $html, '', 0, 0, true, 'L');
 
-
-
-
-
-
-
+ $pdf->SetFont('times', '', 10);
+ $html = '<div>City or Town</div>';
+ $pdf->writeHTMLCell(90, 7, 26, 232, $html, 0, 1, false, false, 'L', true);
+ $pdf->SetFont('courier', 'B', 10);
+ $pdf->TextField('info_about_you_last_name', 61, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 234.5);
+ //............
+ $pdf->SetFont('times', '', 10);
+ $html = '<div>Country</div>';
+ $pdf->writeHTMLCell(90, 7, 111, 233.7, $html, 0, 1, false, false, 'L', true);
+ $pdf->SetFont('courier', 'B', 10);
+ $pdf->TextField('info_about_you_last_name', 71, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 125, 234.5);
+ //............
 
 /******************************
  ******** End Page No 9 ******
