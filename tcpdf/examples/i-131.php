@@ -331,7 +331,8 @@ filing this form separately from your Form I-485: ';
 $pdf->writeHTMLCell(190, 7, 33, 238, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p7_Interpreter_family_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 34, 247);
+$pdf->TextField('p7_Interpreter_family_name', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 36, 247);
+
 /******************************
  ******** End Page No 1 ******
  ******************************/
@@ -2402,6 +2403,124 @@ $pdf->writeHTMLCell(197, 5, 20, 235, "Expected Length of Trip (in days)", '', 1,
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('p7_Interpreter_family_name', 17, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 70, 235);
+
+/******************************
+ ******** End Page No 10 ******
+ ******************************/
+
+/******************************
+ ******** Start Page No 12****
+ ******************************/
+$pdf->AddPage('P', 'LETTER');
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$pdf->SetFontSize(11.6);
+$html = '<div><b>Part 11. Interpreter\'s Contact Information, Certification, and Signature (if applicable) (If no interpreter
+was used, skip to Part 12.) </b></div>';
+$pdf->writeHTMLCell(191, 6.5, 13, 19, $html, 1, 1, true, 'L');
+//..........
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 12, 31, '<b>1.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'Explain how you qualify for parole, parole in place, or re-parole. (If you need extra space to complete this section, use the space
+provided in <b>Part 13. Additional Information.</b>) Include copies of any supporting documents or evidence you wish considered.<br>
+(See Instructions.) ';
+$pdf->writeHTMLCell(190, 7, 20, 31, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_fmily_name', 184, 29, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.7, 44);
+//..........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(197, 5, 12, 75, '<b>2.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 75, "Expected Length of Stay in the United States", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_family_name', 118, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 86.5, 75);
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(197, 5, 12, 82, 'If the person intended to receive the parole document is outside the United States, complete the following <b>Item Numbers:</b>', '', 1, false, 'L');
+//..........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(197, 5, 12, 89, '<b>3.a.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 89, "Date of Intended Arrival to the United States&nbsp;&nbsp;&nbsp;&nbsp;(mm/dd/yyyy)", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_family_name', 50, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 110, 89);
+//..........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(197, 5, 12, 96, '<b>3.b.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 96, "Location (City or Town and Country) of the U.S. Embassy, U.S. Consulate, or the USCIS international field office that you<br>
+want us to notify.", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 106, "City or Town", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 105, 106, "Country", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_family_name', 83, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.5, 110.5);
+$pdf->TextField('p7_Interpreter_family_name', 98.4, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 105.5, 110.5);
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$pdf->SetFontSize(11.6);
+$html = "<div><b>Part 9. Employment Authorization For New Period of Parole (Re-parole) (Part 1., Item Number 10. or<br>11.)  </b></div>";
+$pdf->writeHTMLCell(191, 6.5, 13, 123, $html, 1, 1, true, 'L');
+$html = "<div><b>Part 10. Applicant's Contact Information, Certification, and Signature (Read the information on<br>penalties and travel warnings in the form Instructions before completing this Part 10.) </b></div>";
+$pdf->writeHTMLCell(191, 6.5, 13, 150, $html, 1, 1, true, 'L');
+$pdf->writeHTMLCell(191, 6.5, 13, 166, "<b><i>Applicant's Contact Information</i></b>", '', 1, true, 'L');
+//...........
+//.............
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 12, 136, '<b>1.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_864a_i_am_intending_immigrant_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 19, 135, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'I am requesting an Employment Authorization Document (EAD) upon approval of my new period of parole (re-parole)<br>selected under <b>Part 1., Item Number 10</b>. or <b>11.</b>';
+$pdf->writeHTMLCell(190, 7, 26, 136, $html, '', 0, 0, true, 'L');
+// //..............
+
+
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 174, 'Provide your daytime telephone number, mobile telephone number (if any), and email address (if any). ', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 180, '<b>1.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 180, "Applicant's Daytime Telephone Number ", '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 108, 180, '<b>2.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 116, 180, "Applicant Mobile Telephone Number (if any)", '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 12, 193, '<b>3.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 193, "Applicant's Email Address (if any)", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_family_name', 84, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21,185);
+$pdf->TextField('p7_Interpreter_given_name', 87, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 117, 185);
+$pdf->TextField('p7_Interpreter_business_name', 84, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 198);
+
+//........................
+$pdf->setFont('Times', '', 11.6);
+$html = "<div><b><i>Applicant's Certification and Signature</i></b></div>";
+$pdf->writeHTMLCell(191, 6.5, 13, 207, $html, '', 1, true, 'L');
+//.........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 215, 'I certify, under penalty of perjury, that I provided or authorized all of the responses and information contained in and submitted with<br>
+my application, I read and understand or, if interpreted to me in a language in which I am fluent by the interpreter listed in <b>Part 11.</b>,<br>
+understood, all of the responses and information contained in, and submitted with, my application (as explained to me by the<br>
+interpreter), and that all of the responses and the information are complete, true, and correct. Furthermore, I authorize the release of<br>
+any information from any and all of my records that USCIS may need to determine my eligibility for an immigration request and to<br>
+other entities and persons where necessary for the administration and enforcement of U.S. immigration law. ', '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 12, 243.5, '<b>4.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 243.5, "Applicant's Signature", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 155, 243.5, "Date of Signature (mm/dd/yyyy)", '', 1, false, 'L');
+//.............
+$pdf->writeHTMLCell(133, 6.4, 21, 248.6, "", 1, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p7_Interpreter_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 248.5);
+
+
 
 /******************************
  ******** End Page No 11 ******
