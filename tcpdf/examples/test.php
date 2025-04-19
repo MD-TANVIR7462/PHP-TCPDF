@@ -2484,6 +2484,14 @@ $pdf->Output('I-90.pdf', 'I');
 
 
 
+   'P12_1a':' " . showData('n_400_a_number') . "',
+   'P12_1b':' " . showData('n_400_a_number') . "',
+   'P12_2':' " . showData('n_400_a_number') . "',
+   'P12_3':' " . showData('n_400_a_number') . "',
+   'P12_4':' " . showData('n_400_a_number') . "',
+   'P12_5':' " . showData('n_400_a_number') . "',
+   'P12_interpreter_english':' " . showData('n_400_a_number') . "',
+   'P12_6':' " . showData('n_400_a_number') . "',
 
 
 
