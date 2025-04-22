@@ -1089,7 +1089,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 6  --------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <div class="col-md-12">
         <p style="text-align: right"><b>Page 6 of 14</b></p>
         <div class="row ">
@@ -1381,351 +1381,319 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
-<!-- <fieldset class="setpage">
-    <div class="row">
-        <p style=" text-align: right;  margin-right: 25px;"><b>Page 6 of 12</b></p>
-
-        <div class="bg-info">
-            <h4><b>Part 6. Sponsor's Employment and Income (continued) </b>
-            </h4>
-        </div>
-
-        <h5 style="margin-left:17px;"><b>8. Person 1</b></h5>
-        <div class="d-flexible">
-            <div class="form-group col-md-6">
-                <label class="control-label ">Name</label>
-                <div>
-                    <input type="text" class="form-control" name="i_864_person1_name" maxlength="38" value="<?php echo showData('i_864_person1_name') ?>">
-                </div>
-            </div>
-            <div class="form-group col-md-6">
-                <label class="control-label ">Relationship </label>
-                <div class="">
-                    <input type="text" class="form-control" name="i_864_person1_relationship" maxlength="38" value="<?php echo showData('i_864_person1_relationship') ?>">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">Current Income </label>
-            <div class="col-md-3 d-flexible">
-                $<input type="text" class="form-control" name="i_864_person1_current_income" maxlength="16" value="<?php echo showData('i_864_person1_current_income') ?>">
-            </div>
-        </div>
-
-        <h5 style="margin-left:17px;"><b>9. Person 2</b></h5>
-        <div class="d-flexible">
-            <div class="form-group col-md-6">
-                <label class="control-label ">Name</label>
-                <div>
-                    <input type="text" class="form-control" name="i_864_person2_name" maxlength="38" value="<?php echo showData('i_864_person2_name') ?>">
-                </div>
-            </div>
-            <div class="form-group col-md-6">
-                <label class="control-label ">Relationship </label>
-                <div class="">
-                    <input type="text" class="form-control" name="i_864_person2_relationship" maxlength="38" value="<?php echo showData('i_864_person2_relationship') ?>">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">Current Income </label>
-            <div class="col-md-3 d-flexible">
-                $<input type="text" class="form-control" name="i_864_person2_current_income" maxlength="16" value="<?php echo showData('i_864_person2_current_income') ?>">
-            </div>
-        </div>
-
-        <h5 style="margin-left:17px;"><b>10. Person 3</b></h5>
-        <div class="d-flexible">
-            <div class="form-group col-md-6">
-                <label class="control-label ">Name</label>
-                <div>
-                    <input type="text" class="form-control" name="i_864_person3_name" maxlength="38" value="<?php echo showData('i_864_person3_name') ?>">
-                </div>
-            </div>
-            <div class="form-group col-md-6">
-                <label class="control-label ">Relationship </label>
-                <div class="">
-                    <input type="text" class="form-control" name="i_864_person3_relationship" maxlength="38" value="<?php echo showData('i_864_person3_relationship') ?>">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">Current Income </label>
-            <div class="col-md-3 d-flexible">
-                $<input type="text" class="form-control" name="i_864_person3_current_income" maxlength="16" value="<?php echo showData('i_864_person3_current_income') ?>">
-            </div>
-        </div>
-
-        <h5 style="margin-left:17px;"><b>11. Person 4</b></h5>
-        <div class="d-flexible">
-            <div class="form-group col-md-6">
-                <label class="control-label ">Name</label>
-                <div>
-                    <input type="text" class="form-control" name="i_864_person4_name" maxlength="38" value="<?php echo showData('i_864_person4_name') ?>">
-                </div>
-            </div>
-            <div class="form-group col-md-6">
-                <label class="control-label ">Relationship </label>
-                <div class="">
-                    <input type="text" class="form-control" name="i_864_person4_relationship" maxlength="38" value="<?php echo showData('i_864_person4_relationship') ?>">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">Current Income </label>
-            <div class="col-md-3 d-flexible">
-                $<input type="text" class="form-control" name="i_864_person4_current_income" maxlength="16" value="<?php echo showData('i_864_person4_current_income') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">If you need additional space, use the space provided in Part 11. Additional Information </label>
-            <label class="control-label col-md-12">Remarks </label>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-12">12. My Current Annual Household Income $ (Total all lines from Part 6. Item Numbers 7. - 11.; the total will be compared to Federal Poverty Guidelines on Form I-864P.) </label>
-            <div class="col-md-4 col-md-offset-8">
-                <input type="text" class="form-control" name="i_864_current_household_income" maxlength="16" value="<?php echo showData('i_864_current_household_income') ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">13. <?php echo createCheckbox("i_864_completed_form_i864_status") ?>The people listed in Item Numbers 8. - 11. have completed Form I-864A. I am filing along with this affidavit all necessary
-                Form I-864As completed by these people.</label>
-
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-12">14. <?php echo createCheckbox("i_864_accompanying_dependents_status") ?>One or more of the people listed in Item Numbers 8. - 11. do not need to complete Form I-864A because he or she is the intending immigrant and has no accompanying dependents </label>
-            <div class="col-md-6 col-md-offset-6 ">
-                <input type="text" class="form-control" name="i_864_accompanying_dependents" maxlength="36" value="<?php echo showData('i_864_accompanying_dependents') ?>">
-            </div>
-        </div>
-        <div class="bg-info">
-            <h4><b>Federal Income Tax Return Information</b>
-            </h4>
-        </div>
-        <div class="form-group">
-            <label class="col-md-12">15. Have you filed a Federal income tax return for each of the three most recent tax years?</label>
-            <div class="col-md-4 col-md-offset-6 "><?php echo createRadio("i_864_federal_income_tax_status") ?> </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-12 ">NOTE: You MUST attach a photocopy or transcript of your Federal income tax return for only the most recent tax year and
-                complete Item Number 16.a. If you believe additional returns may help you to establish your ability to maintain sufficient income,
-                you may submit transcripts or photocopies of your Federal individual income tax returns for the three most recent years and complete
-                Item Numbers 16.a. - 16.c.
-            </div>
-            <div class="col-md-12 my-4">Type or print the most recent tax year and your total income for that most recent tax year. If the amount was zero, type or print “zero”
-                or if you were not required to file a Federal income tax return type or print “N/A” for not applicable. Type or print “N/A” for not
-                applicable for Item Numbers 16.b. - 16.c. if you do are not submitting any additional tax returns.
-            </div>
-        </div>
-    </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 7--------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <div class="row">
         <p style=" text-align: right; margin-right: 15px;"><b>Page 7 of 12</b></p>
         <div class="col-md-12">
-
             <div class="bg-info">
-                <h4><b>Part 6. Sponsor's Employment and Income </b>(continued)</h4>
+                <h4><b>Part 2. Information About You </b>(continued)</h4>
             </div>
-
-            <p style="margin-left: 17px;">My total income (adjusted gross income on Internal Revenue Service (IRS) Form 1040EZ) as reported on my Federal income tax returns for the most recent three years was: </p>
-            <div class="d-flexible row" style="margin-left: 37%;">
-                <div class="col-md-6"><b>Tax Year</b></div>
-                <div class="col-md-6"><b>Total Income</b></div>
-            </div>
-            <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
-                <label class="control-label" style="flex: 1;">24.a. Most Recent</label>
-                <input type="text" style="flex: 1;  padding: 10px;" class="form-control" name="sponsor_employment_most_recent_tax_year" maxlength="4" value="<?php echo showData('sponsor_employment_most_recent_tax_year') ?>">
-                $<input type="text" style="flex: 1;  padding: 10px;" class="form-control" name="sponsor_employment_most_recent_total_income" maxlength="13" value="<?php echo showData('sponsor_employment_most_recent_total_income') ?>">
-            </div>
-
-            <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
-                <label class="control-label" style="flex: 1;">24.b. 2nd Most Recent</label>
-                <input type="text" style="flex: 1;  padding: 10px;" class="form-control" name="sponsor_employment_2nd_most_recent_tax_year" maxlength="4" value="<?php echo showData('sponsor_employment_2nd_most_recent_tax_year') ?>">
-                $<input type="text" style="flex: 1;  padding: 10px;" class="form-control" name="sponsor_employment_2nd_most_recent_total_income" maxlength="13" value="<?php echo showData('sponsor_employment_2nd_most_recent_total_income') ?>">
-            </div>
-
-            <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
-                <label class="control-label" style="flex: 1;">24.c. 3rd Most Recent</label>
-                <input type="text" class="form-control" style="flex: 1;  padding: 10px;" name="sponsor_employment_3rd_most_recent_tax_year" maxlength="4" value="<?php echo showData('sponsor_employment_3rd_most_recent_tax_year') ?>">
-                $<input type="text" class="form-control" style="flex: 1;  padding: 10px;" name="sponsor_employment_3rd_most_recent_total_income" maxlength="13" value="<?php echo showData('sponsor_employment_3rd_most_recent_total_income') ?>">
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-md-12">25. <?php echo createCheckbox("sponsor_employment_irs_required_level_status") ?>I was not required to file a Federal income tax return
-                    as my income was below the IRS required level and I have attached evidence to support this.</label>
-            </div>
-
             <div class="bg-info">
-                <h4><b>Part 7. Use of Assets to Supplement Income</b>(if Applicable)</h4>
+                <h4><b><i>Other Information</i></b></h4>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="control-label ">26. Class of Admission (COA) (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_family_last_name" value="<?php echo showData('i_864_family_member3_family_last_name') ?>" />
+                </div>
+                <div class="col-md-6">
+                    <label class="control-label ">27. Most Recent Form I-94 Arrival/Departure Record Number (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_given_first_name" value="<?php echo showData('i_864_family_member3_given_first_name') ?>" />
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b>Part 3. Biographic Information of the Person Who Will Receive the Travel Document, Parole Document,
+                        or Arrival/Departure Record</b></h4>
             </div>
             <div class="form-group">
-                If your income, or the total income for you and your household.from <b>Part 6., Item Numbers 12</b>. or <b>16</b>, exceeds the
-                Federal Poverty Guidelines for your household size, <b>YOU ARE NOT REQUIRED</b> to complete this <b>Part 7</b>. Skip to <b>Part 8.</b>
-                <b>Your Assets (if applicable)</b>
+                <label class="control-label col-md-12">1. Ethnicity (Select only one box)</label>
+                <div class="col-md-6 ">
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="hispanic" name="biographic_info_ethnicity" value="hispanic" <?php echo (showData('biographic_info_ethnicity') == 'hispanic') ? 'checked' : '' ?>>
+                            <label for="hispanic" class="form-check-label">Hispanic or Latino</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="not_hispanic" name="biographic_info_ethnicity" value="nothispanic" <?php echo (showData('biographic_info_ethnicity') == 'nothispanic') ? 'checked' : '' ?>>
+                            <label for="not_hispanic" class="form-check-label">Not Hispanic or Latino</label>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-12">1. Enter the balance of all cash, savings, and checking accounts. </label>
-                <div class="col-md-6  col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_saving_accounts" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_saving_accounts') ?>">
+                <label class="control-label col-md-12">2. Race (Select all applicable boxes)</label>
+                <div class="col-md-12 ">
+                    <div class="">
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>American Indian or Alaska Native</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_asian") ?>Asian</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_black_african") ?>Black or African American</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_native_islander") ?>Native Hawaiian or Other Pacific Islander</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_white") ?>White</label><br>
+                    </div>
+                </div>
+            </div>
+            <div style="padding-left: 1.5%;">
+                <div>
+                    <label>3.Height</label>
+                    <label style="padding-left:10%">Feet:</label>
+                    <select id="feet" name="biographic_info_height_feet" style="padding: 8px; margin-right: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                        <?php echo "<option value=" . showData('biographic_info_height_feet') . " selected>" . showData('biographic_info_height_feet') . "</option>"; ?>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                    <label>Inches:</label>
+                    <select id="inches" name="biographic_info_height_inches" style="padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                        <?php echo "<option value=" . showData('biographic_info_height_inches') . " selected>" . showData('biographic_info_height_inches') . "</option>"; ?>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                    </select>
+                </div>
+                <div>
+                    <span><b>4.Weight</b></span>
+                    <span style="padding-left:10%"><b> Pounds:</b></span>
+
+                    <input type="text" maxlength="1" name="biographic_info_weight_in_pound1" value="<?php echo showData('biographic_info_weight_in_pound1') ?>" style="width: 40px; margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+
+                    <input type="text" maxlength="1" name="biographic_info_weight_in_pound2" value="<?php echo showData('biographic_info_weight_in_pound2') ?>" style="width: 40px; margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+
+                    <input type="text" maxlength="1" name="biographic_info_weight_in_pound3" value="<?php echo showData('biographic_info_weight_in_pound3') ?>" style="width: 40px; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>5. Eye Color (Select only one box )</label><br>
+                    <div>
+                        <input type="radio" id="eye_black" name="biographic_info_eye_color" value="black" <?php echo (showData('biographic_info_eye_color') == 'black') ? 'checked' : '' ?>>
+                        <label for="eye_black">Black</label><br>
+
+                        <input type="radio" id="eye_blue" name="biographic_info_eye_color" value="blue" <?php echo (showData('biographic_info_eye_color') == 'blue') ? 'checked' : '' ?>>
+                        <label for="eye_blue">Blue</label><br>
+
+                        <input type="radio" id="eye_brown" name="biographic_info_eye_color" value="brown" <?php echo (showData('biographic_info_eye_color') == 'brown') ? 'checked' : '' ?>>
+                        <label for="eye_brown">Brown</label><br>
+
+                        <input type="radio" id="eye_gray" name="biographic_info_eye_color" value="gray" <?php echo (showData('biographic_info_eye_color') == 'gray') ? 'checked' : '' ?>>
+                        <label for="eye_gray">Gray</label><br>
+
+                        <input type="radio" id="eye_green" name="biographic_info_eye_color" value="green" <?php echo (showData('biographic_info_eye_color') == 'green') ? 'checked' : '' ?>>
+                        <label for="eye_green">Green</label><br>
+
+                        <input type="radio" id="eye_hazel" name="biographic_info_eye_color" value="hazel" <?php echo (showData('biographic_info_eye_color') == 'hazel') ? 'checked' : '' ?>>
+                        <label for="eye_hazel">Hazel</label><br>
+
+                        <input type="radio" id="eye_maroon" name="biographic_info_eye_color" value="maroon" <?php echo (showData('biographic_info_eye_color') == 'maroon') ? 'checked' : '' ?>>
+                        <label for="eye_maroon">Maroon</label><br>
+
+                        <input type="radio" id="eye_pink" name="biographic_info_eye_color" value="pink" <?php echo (showData('biographic_info_eye_color') == 'pink') ? 'checked' : '' ?>>
+                        <label for="eye_pink">Pink</label><br>
+
+                        <input type="radio" id="eye_unknown" name="biographic_info_eye_color" value="unknown" <?php echo (showData('biographic_info_eye_color') == 'unknown') ? 'checked' : '' ?>>
+                        <label for="eye_unknown">Unknown/Other</label>
+                    </div>
+                    <br><br>
+                    <label>6. Hair Color (Select only one box )</label><br>
+                    <div>
+                        <input type="radio" id="hair_bald" name="biographic_info_hair_color" value="bald" <?php echo (showData('biographic_info_hair_color') == 'bald') ? 'checked' : '' ?>>
+                        <label for="hair_bald">Bald (No hair)</label><br>
+
+                        <input type="radio" id="hair_black" name="biographic_info_hair_color" value="black" <?php echo (showData('biographic_info_hair_color') == 'black') ? 'checked' : '' ?>>
+                        <label for="hair_black">Black</label><br>
+
+                        <input type="radio" id="hair_blond" name="biographic_info_hair_color" value="blond" <?php echo (showData('biographic_info_hair_color') == 'blond') ? 'checked' : '' ?>>
+                        <label for="hair_blond">Blond</label><br>
+
+                        <input type="radio" id="hair_brown" name="biographic_info_hair_color" value="brown" <?php echo (showData('biographic_info_hair_color') == 'brown') ? 'checked' : '' ?>>
+                        <label for="hair_brown">Brown</label><br>
+
+                        <input type="radio" id="hair_gray" name="biographic_info_hair_color" value="gray" <?php echo (showData('biographic_info_hair_color') == 'gray') ? 'checked' : '' ?>>
+                        <label for="hair_gray">Gray</label><br>
+
+                        <input type="radio" id="hair_red" name="biographic_info_hair_color" value="red" <?php echo (showData('biographic_info_hair_color') == 'red') ? 'checked' : '' ?>>
+                        <label for="hair_red">Red</label><br>
+
+                        <input type="radio" id="hair_sandy" name="biographic_info_hair_color" value="sandy" <?php echo (showData('biographic_info_hair_color') == 'sandy') ? 'checked' : '' ?>>
+                        <label for="hair_sandy">Sandy</label><br>
+
+                        <input type="radio" id="hair_white" name="biographic_info_hair_color" value="white" <?php echo (showData('biographic_info_hair_color') == 'white') ? 'checked' : '' ?>>
+                        <label for="hair_white">White</label><br>
+
+                        <input type="radio" id="hair_unknown" name="biographic_info_hair_color" value="unknown" <?php echo (showData('biographic_info_hair_color') == 'unknown') ? 'checked' : '' ?>>
+                        <label for="hair_unknown">Unknown/Other</label>
+                    </div>
+
+                    <div class="bg-info">
+                        <h4><b>Part 4. Processing Information</b></h4>
+                    </div>
+                    <div>
+                        <label class="col-md-12">1. Has the person who will receive the travel document, parole document, or Arrival/Departure Record, if
+                            approved, been in any exclusion, deportation, removal, or rescission proceedings?</label>
+                        <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_864_federal_income_tax_status") ?> </div>
+                    </div>
+                    <div>
+                        <label class="col-md-12">2.a. Have you EVER before been issued a Reentry Permit or Refugee Travel Document? (If you answered
+                            “Yes,” provide the information in Item Numbers 2.b. - 2.c. for the last document issued to you.)</label>
+                        <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_864_federal_income_tax_status") ?> </div>
+                    </div>
+                    <div class="row" style="margin: 5px;">
+                        <div class="col-md-6">
+                            <label class="control-label ">2.b. Date Issued (mm/dd/yyyy)</label>
+                            <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_family_last_name" value="<?php echo showData('i_864_family_member3_family_last_name') ?>" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label ">2.c. Disposition (attached, lost, stolen, damaged/destroyed, still in my possession, etc.):</label>
+                            <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_given_first_name" value="<?php echo showData('i_864_family_member3_given_first_name') ?>" />
+                        </div>
+                    </div> <br>
+                    <div>
+                        <label class="col-md-12">3.a. Have you EVER been issued an Advance Parole Document? (If you answered “Yes,” please provide the
+                            information in Item Numbers 3.b. - 3.c. for the last document issued to you.)</label>
+                        <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_864_federal_income_tax_status") ?> </div>
+                    </div>
+                    <div class="row" style="margin: 5px;">
+                        <div class="col-md-6">
+                            <label class="control-label ">3.b. Date Issued (mm/dd/yyyy)</label>
+                            <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_family_last_name" value="<?php echo showData('i_864_family_member3_family_last_name') ?>" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label ">3.c. Disposition (attached, lost, stolen, damaged/destroyed, still in my possession, etc.):</label>
+                            <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_given_first_name" value="<?php echo showData('i_864_family_member3_given_first_name') ?>" />
+                        </div>
+                    </div><br>
+                    <label class="col-md-12">If you are requesting parole from outside the United States, parole in place, or re-parole from inside the United States, SKIP to Part 8.</label>
+                   <br>
+                    <div>
+                        <label class="col-md-12">4. Are you requesting a replacement Reentry Permit, Refugee Travel Document, Advance Parole
+                            Document, or TPS Travel Authorization Document?</label>
+                        <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_864_federal_income_tax_status") ?> </div>
+                    </div>
+                </div>
+            </div>
+            <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+            <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+            <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 8--------------------------------
+------------------------------------------------------------------------>
+<fieldset class="setpage">
+    <div class="row">
+        <p style=" text-align: right; margin-right: 15px;"><b>Page 8 of 12</b></p>
+        <div class="col-md-12">
+            <div class="bg-info">
+                <h4><b>Part 4. Processing Information</b>(continued)</h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">5. If you answered “Yes,” select one of the following boxes and complete Item Numbers 6.a. - 6.b. If you answered “No,” you
+                    can skip to Item Number 7.a</label>
+                <div class="col-md-12 ">
+                    <div class="">
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>My document was issued, but I did not receive it</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_asian") ?>I received my document, but then it was lost, stolen, or damaged. </label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_black_african") ?>I received my document, but it has incorrect information because of an error caused by me or because my information has
+                            changed.</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_native_islander") ?>I received my document, but it has incorrect information because of an error not caused by me (such as a U.S. Citizenship
+                            and Immigration Services (USCIS) error).</label><br>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">6. If you are replacing your Reentry Permit, Refugee Travel Document, Advance Parole Document, or TPS Travel Authorization
+                    Document because it has incorrect information, please select the applicable box(es) indicating the information that needs to be
+                    corrected and then provide any additional information in the text box that helps USCIS confirm the correction needed.</label>
+                <div class="col-md-12 ">
+                    <div class="">
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>Name</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>A-Number</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>Country of Birth/Citizenship</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>Terms and Conditions</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>Date of Birth</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>Sex</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>Validity Date</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>Photo</label><br>
+                    </div>
+                </div>
+                <label class="control-label col-md-12">Provide an explanation of what is incorrect on your current document to support your request for a correction and attach copies
+                    of any documents supporting your request. </label>
+            </div>
+            <div class="col-md-12">
+                <textarea name="i_864_additional_info_6d" class="form-control" maxlength="341" cols="30" rows="5"><?php echo showData('i_864_additional_info_6d') ?></textarea>
+            </div>
+
+            <div class="row" style="margin: 5px;">
+                <div class="col-md-12">
+                    <label class="control-label ">6.b . Provide the receipt number for the Form I-131 related to the Reentry Permit, Refugee Travel Document, Advance Parole
+                        Document, or TPS Travel Authorization Document that you are seeking to replace: </label>
+                    <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_family_last_name" value="<?php echo showData('i_864_family_member3_family_last_name') ?>" />
+                </div>
+            </div>
+            <br>
+            <div>
+                <label class="col-md-12">If you are applying for an Advance Parole Document, SKIP to Part 7. <br><br>
+                    You must complete the rest of Part 4. if you are requesting a Reentry Permit or Refugee Travel Document. <br> <br>
+                    Where do you want your Reentry Permit or Refugee Travel Document sent? Please note that if you want your Reentry Permit or
+                    Refugee Travel Document sent to another country, you will need to pick it up at a U.S. Embassy, U.S. Consulate, or USCIS
+                    international field office. (Select one)</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12" style="display: flex; align-items: flex-start;">
+                    <span style="width: 30px; flex-shrink: 0;">7.a.</span>
+                    <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_864_substitute_sponsor") ?></span>
+                    <span style="flex: 1;">
+                        To the U.S. address shown in Part 2., Item Number 3. of this application.
+                    </span>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12" style="display: flex; align-items: flex-start;">
+                    <span style="width: 30px; flex-shrink: 0;">7.b.</span>
+                    <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_864_substitute_sponsor") ?></span>
+                    <span style="flex: 1;">
+                        To a U.S. Embassy, U.S. Consulate, USCIS international field office, or Department of Homeland Security (DHS) office overseas at:
+                    </span>
+                </label>
+            </div>
+            <div class="row" style="margin: 5px;">
+                <div class="col-md-6">
+                    <label class="control-label ">City or Town</label>
+                    <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_family_last_name" value="<?php echo showData('i_864_family_member3_family_last_name') ?>" />
+                </div>
+                <div class="col-md-6">
+                    <label class="control-label ">Country </label>
+                    <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_given_first_name" value="<?php echo showData('i_864_family_member3_given_first_name') ?>" />
                 </div>
             </div>
 
 
-            <div class="form-group">
-                <label class="control-label col-md-12">2. Enter the net cash value of real-estate holdings. (Net value means assessed value minus mortgage
-                    debt.) $ </label>
-                <div class="col-md-6  col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_real_estate_holdings" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_real_estate_holdings') ?>">
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <label class="control-label col-md-12">3. Enter the net cash value of all stocks, bonds, certificates of deposit, and any other assets not already included in Item Number 1. or Item Number 2. </span></label>
-                <div class="col-md-6  col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_stocks_bonds_certificates" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_stocks_bonds_certificates') ?>">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-md-12">4. Add together Item Numbers 1. - 3. and enter the number here. </span></label>
-                <div class="col-md-6  col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control  " name="sponsor_assets_of_supplement_add_together" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_stocks_bonds_certificates') ?>">
-                </div>
-            </div>
-            <div class="mx-4"><b>Assets of your household members (if applicable)</b><br><br><b>Your household members who are combining their income with yours, report their assets on Form I-864A Part 4., in Item Number 6</b></div>
-
-            <div class="form-group">
-                <label class="control-label col-md-12">5. Add together the household members' assets reported on all the Form I-864A
-                    Part 4., Item Number 6. and enter the number here. .</label>
-                <div class="col-md-8  col-md-offset-4 d-flexible">
-                    <div style="font-size: larger;"><b>TOTAL</b></div>:$<input type="text" class="form-control  " name="sponsor_assets_of_supplement_total" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_total') ?>">
-                </div>
-            </div>
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
-<!----------------------------------------------------------------------
--------------------------------- page 8--------------------------------
------------------------------------------------------------------------->
-<fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 8 of 12</b></p>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="bg-info">
-                <h4><b>Part 7. Use of Assets to Supplement Income</b> (if Applicable) (continued)</h4>
-            </div>
-            <label class="control-label col-md-12">Assets of the principal sponsored immigrant (if applicable).</label>
-            <label class="control-label col-md-12">The principal sponsored immigrant is the person listed in Part 3., Item Number 1. Only include the assets if the principal immigrant
-                is being sponsored by this affidavit of support.</label>
-            <div class="form-group">
-                <label class="control-label col-md-12">6. Enter the balance of the principal immigrant's savings and checking accounts.</label>
-                <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_saving_checking_accounts" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_saving_checking_accounts'); ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">7. Enter the net cash value of all the principal immigrant's real estate holdings. (Net value means
-                    investment value minus mortgage debt.)</label>
-                <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_saving_cash_value" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_saving_cash_value'); ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">8. Enter the current cash value of the principal immigrant's stocks, bonds, certificates of deposit, and
-                    other assets not included in Item Number 6. or Item Number 7.</label>
-                <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_current_cash_value" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_current_cash_value'); ?>">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-12">9. Add together Item Numbers 6. - 8. and enter the number here.</label>
-                <div class="col-md-6 col-md-offset-6 d-flexible">
-                    $<input type="text" class="form-control" name="sponsor_assets_of_supplement_add_together2" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_add_together2'); ?>">
-                </div>
-            </div>
-            <h4 style="margin-left: 17px;"><b>Total Value of Assets </b></h4>
-            <div class="form-group">
-                <label class="control-label col-md-12">10. Add together Item Numbers 4., 5., and 9. and enter the number here.</label>
-                <div class="col-md-7 col-md-offset-5 d-flexible ">
-                    <div style="font-size: larger;"><b>TOTAL</b></div>:$<input type="text" class="form-control" name="sponsor_assets_of_supplement_total2" maxlength="16" value="<?php echo showData('sponsor_assets_of_supplement_total2'); ?>">
-                </div>
-            </div>
-            <div class="bg-info">
-                <h4> <b>Part 8. Sponsor's Contract, Contact Information, Certification, and Signature</b></h4>
-            </div>
-            <div style="margin-left: 17px;">
-                <b>NOTE:</b> Read the <b>Penalties</b> section of the Form I-864 Instructions before completing this part.
-            </div>
-
-
-
-            <div class="bg-info">
-                <h4> <b> Sponsor's Contract</b></h4>
-            </div>
-            <div style="margin-left: 17px;">
-                Please note that, by signing this Form I-864, you agree to assume certain specific obligations under the Immigration and Nationality
-                Act (INA) and other Federal laws. The following paragraphs describe those obligations. Please read the following information
-                carefully before you sign Form I-864. If you do not understand the obligations, you may wish to consult an attorney or accredited
-                representative.
-
-                <br><br>
-                <b>What is the Legal Effect of My Signing Form I-864?</b>
-                <br><br>
-                If you sign Form I-864 on behalf of any person (called the intending immigrant) who is applying for an immigrant visa or for
-                adjustment of status to a lawful permanent resident, and that intending immigrant submits Form I-864 to the U.S. Government with his
-                or her application for an immigrant visa or adjustment of status, under INA section 213A, these actions create a contract between you
-                and the U.S. Government. The intending immigrant becoming a lawful permanent resident is the consideration for the contract.
-                <br><br>
-                Under this contract, you agree that, in deciding whether the intending immigrant can establish that he or she is not inadmissible to the
-                United States as a person likely to become a public charge, the U.S. Government can consider your income and assets as available for
-                the support of the intending immigrant.
-            </div>
-            <br><br>
-            <div style="margin-left: 17px;">
-                <b> What If I Choose Not to Sign Form I-864?</b>
-                <br><br>
-                The U.S. Government cannot make you sign Form 1-864 if you do not want to do so. But if you do not sign Form I-864, the intending
-                immigrant may not become a lawful permanent resident in the United States.
-                <br><br>
-                <b>What Does Signing Form I-864 Require Me To Do?</b>
-                <br><br>
-                If an intending immigrant becomes a lawful permanent resident in the United States based on a Form I-864 that you have signed, then,
-                until your obligations under Form I-864 terminate, you must:
-            </div>
-            <br>
-            <div class="col-md-offset-2">
-                <b> A.</b> Provide the intending immigrant any support necessary to maintain him or her at an income that is at least 125 percent of
-                the Federal Poverty Guidelines for his or her household size (100 percent if you are the petitioning sponsor and are on
-                active duty in the U.S. Armed Forces or U.S. Coast Guard, and the person is your husband, wife, or unmarried child under
-                21 years of age); and
-                <br><br>
-                <b>B.</b> Notify U.S. Citizenship and Immigration Services (USCIS) of any change in your address, within 30 days of the change, by
-                filing Form I-865.
-            </div>
-        </div>
-    </div>
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 9--------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
-    <p style="text-align: right; margin-right: 15px;"><b>Page 9 of 12</b></p>
+    <p style="text-align: right; margin-right: 15px;"><b>Page 9 of 14</b></p>
     <div class="row">
         <div class="col-md-12">
             <div class="bg-info">
@@ -1733,78 +1701,198 @@ include "intake_header.php";
                         Information, Certification, and
                         Signaturee</b>(continued)</h4>
             </div>
+            <label class="control-label col-md-12">If you are requesting that the Reentry Permit or Refugee Travel Document be sent to a U.S. Embassy, U.S. Consulate, or USCIS
+                international field office, where should the notification to pick up the travel document be sent? </label>
+            <div class="form-group">
+                <label class="control-label col-md-12" style="display: flex; align-items: flex-start;">
+                    <span style="width: 30px; flex-shrink: 0;">8.a.</span>
+                    <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_864_substitute_sponsor") ?></span>
+                    <span style="flex: 1;">
+                        To the address shown in Part 2., Item Number 3. of this application
+                    </span>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12" style="display: flex; align-items: flex-start;">
+                    <span style="width: 30px; flex-shrink: 0;">8.b.</span>
+                    <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_864_substitute_sponsor") ?></span>
+                    <span style="flex: 1;">
+                        To the address shown below in Part 4., Item Number 9.a. of this application.
+                    </span>
+                </label>
+            </div>
+
+
+            <div class="col-md-12">
+                <label class="control-label ">9.a. In Care Of Name (if any) </label>
+                <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_middle_name" value="<?php echo showData('i_864_family_member2_middle_name') ?>" />
+            </div>
+            <div id="physicalAddressForm" style="margin:0px 3% 0px 3%;">
+                <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                    <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                        <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
+                        <div style="width: 100%;">
+                            <input type="text" maxlength="34" class="form-control" name="i_864_sponsor_physical_street_number" value="<?php echo showData('i_864_sponsor_physical_street_number'); ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                        <div style="flex: 1; margin-left: 5%;">
+                            <label>
+                                <input type="radio" name="i_864_sponsor_physical_apt_ste_flr" value="apt"
+                                    <?php echo (showData('i_864_sponsor_physical_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                                Apt. &nbsp;
+                            </label>
+                            <label>
+                                <input type="radio" name="i_864_sponsor_physical_apt_ste_flr" value="ste"
+                                    <?php echo (showData('i_864_sponsor_physical_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                                Ste. &nbsp;
+                            </label>
+                            <label>
+                                <input type="radio" name="i_864_sponsor_physical_apt_ste_flr" value="flr"
+                                    <?php echo (showData('i_864_sponsor_physical_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                                Flr.
+                            </label>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <label class="control-label">Number</label>
+                        <input type="text" class="form-control" name="i_864_sponsor_physical_apt_ste_flr_value"
+                            maxlength="6" value="<?php echo showData('i_864_sponsor_physical_apt_ste_flr_value'); ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                    <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                        <div style="width: 100%;">
+                            <select class="form-control" name="i_864_sponsor_physical_state"
+                                style="width: 100%; padding: 5px; margin-top: 3%;">
+                                <option value=''>Select</option>
+                                <?php
+                                foreach ($allDataCountry as $record) {
+                                    if ($record->state_code == showData('i_864_sponsor_physical_state')) $selected = "selected";
+                                    else $selected = "";
+                                    echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
+                        <div class='d-flexible'>
+                            <div style="width: 100%;">
+                                <input type="text" class="form-control" name="i_864_sponsor_physical_zip_code" maxlength="5" value="<?php echo showData('i_864_sponsor_physical_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                    <div class="form-group" style="flex: 1.5; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province</label>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code</label>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="flex: 2; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country</label>
+                        <div class='d-flexible'>
+                            <div style="width: 100%;">
+                                <input type="text" class="form-control" name="i_864_sponsor_physical_zip_code" maxlength="5" value="<?php echo showData('i_864_sponsor_physical_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                    <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">9.b. Daytime Phone Number</label>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                        <label class="control-label" style="width: 100%; margin-bottom: 5px;">9.c. Email Address</label>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                                style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-info">
+                <h4><b>Part 5. Complete Only If Applying for a Reentry Permit (Part 1., Item Number 1.)</b></h4>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">1. Since becoming a permanent resident of the United States (or during the past 5 years, whichever is less), how much total time
+                    have you spent outside the United States?</label>
+                <div class="col-md-12 ">
+                    <div class="">
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>Less Than 6 Months</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>6 Months to 1 Year</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>1 to 2 Years</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>2 to 3 Years</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>3 to 4 Years</label><br>
+                        <label class="control-label"><?php echo createCheckbox("biographic_info_race_american_native") ?>More Than 4 Years</label><br>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-info">
+                <h4><b>Part 6. Complete Only If Applying for a Refugee Travel Document (Part 1., Item Number 2. or 3.)</b></h4>
+            </div>
+
+            <div class="row" style="display: flex; flex-wrap: wrap;  justify-items:center; align-items: center;  margin:10px 10px 0 10px">
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">1. Country from which you are a refugee or asylee:</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">If you answer “Yes” to Item Numbers 2. - 6.c. below, use the space provided in Part 13. Additional Information to provide an
+                        explanation.</label>
+                </div>
+            </div>
             <div>
-                <b> What Other Consequences Are There?</b>
-                <br><br>
-                If an intending immigrant becomes a lawful permanent resident
-                in the United States based on a Form I-864 that you have
-                signed, then, until your obligations under Form I-864 terminate,
-                the U.S. Government may consider (deem) your income and
-                assets as available to that person, in determining whether he or
-                she is eligible for certain Federal means-tested public and also
-                for state or local means-tested public benefits, if the state or
-                local government's rules provide for consideration (deeming) of
-                your income and assets as available to the person.
-                <br><br>
-                This provision does not apply to public benefits specified in
-                section 403(c) of the Welfare Reform Act such as emergency
-                Medicaid, short-term, non-cash emergency relief; services
-                provided under the National School Lunch and Child Nutrition
-                Acts; immunizations and testing and treatment for
-                communicable diseases; and means-tested programs under the
-                Elementary and Secondary Education Act.
-                <br><br>
-                <b>What If I Do Not Fulfill My Obligations?</b>
-                <br><br>
-                If you do not provide sufficient support to the person who
-                becomes a lawful permanent resident based on a Form I-864
-                that you signed, that person may sue you for this support.
+                <label class="col-md-12">2. Do you plan to travel to the country named above in Item Number 1.?</label>
+                <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_864_federal_income_tax_status") ?> </div>
             </div>
-            <div style="margin-left: 17px;">
-                If a Federal, state, local, or private agency provided any covered
-                means-tested public benefit to the person who becomes a lawful
-                permanent resident based on a Form I-864 that you signed, the
-                agency may ask you to reimburse them for the amount of the
-                benefits they provided. If you do not make the reimbursement,
-                the agency may sue you for the amount that the agency believes
-                you owe.
-                <br><br>
-                If you are sued, and the court enters a judgment against you, the
-                person or agency that sued you may use any legally permitted
-                procedures for enforcing or collecting the judgment. You may
-                also be required to pay the costs of collection, including
-                attorney fees.
-                <br><br>
-                If you do not file a properly completed Form I-865 within 30
-                days of any change of address, USCIS may impose a civil fine
-                for your failing to do so.
-                <br><br>
-                <b>When Will These Obligations End?</b>
-                <br><br>
-                Your obligations under a Form I-864 that you signed will end if
-                the person who becomes a lawful permanent resident based on
-                that affidavit:
-            </div> <br>
-            <div style="margin-left: 17px;">
-                <b>A.</b> Becomes a U.S. citizen;<br><br>
-                <b>B.</b> Has worked, or can receive credit for, 40 quarters of
-                coverage under the Social Security Act;<br><br>
-                <b>C.</b> No longer has lawful permanent resident status and has
-                departed the United States;<br><br>
-                <b>D.</b> Is subject to removal, but applies for and obtains, in
-                removal proceedings, a new grant of adjustment of status,
-                based on a new affidavit of support, if one is required; or <br><br>
-                <b>E.</b> Dies.
+            <div>
+                <label class="col-md-12">Since you were admitted to the United States as a refugee or granted asylee status, have you EVER: </label>
+            </div> 
+            <div>
+                <label class="col-md-12">3.a. Returned to the country named above in Item Number 1.? </label>
+                <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_864_federal_income_tax_status") ?> </div>
             </div>
-            <br>
-            <div style="margin-left: 17px;"><b>NOTE:</b> Divorce <b>does not</b> terminate your obligations under
-                Form I-864. <br><br>
-                Your obligations under a Form I-864 that you signed also end
-                if you die. Therefore, if you die, your estate is not required to
-                take responsibility for the person's support after your death.
-                However, your estate may owe any support that you
-                accumulated before you died. <br><br>
-                <b>NOTE:</b> Select the box for either <b> Item A. or B</b> in <b> Item Number 1.</b> If applicable, select the box for <b> Item Number 2.</b>
+            <div>
+                <label class="col-md-12">3.b. Applied for and/or obtained a national passport, passport renewal, or entry permit from the country in
+                    Item Number 1.?</label>
+                <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_864_federal_income_tax_status") ?> </div>
+            </div>
+            <div>
+                <label class="col-md-12">3.c. Applied for and/or received any benefit from the country named in Item Number 1. (for example, health
+                    insurance benefits)?</label>
+                <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_864_federal_income_tax_status") ?> </div>
             </div>
         </div>
     </div>
