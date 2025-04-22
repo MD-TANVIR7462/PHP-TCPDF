@@ -777,7 +777,7 @@ include "intake_header.php";
 -------------------------------- page 5  --------------------------------
 ------------------------------------------------------------------------>
 
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <div class="col-md-12">
 
         <p style="text-align: right"><b>Page 5 of 14</b></p>
@@ -809,10 +809,6 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
-
-
-
-
         <div class="col-md-12">
             <label class="control-label ">3. Current Mailing Address or Safe Address (if applicable)</label>
         </div>
@@ -916,9 +912,6 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
-
-
-
         <div class="col-md-12">
             <label class="control-label ">4. Current Physical Address (if different from the above address)</label>
         </div>
@@ -926,9 +919,6 @@ include "intake_header.php";
             <label class="control-label ">In Care Of Name (if any) </label>
             <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_middle_name" value="<?php echo showData('i_864_family_member2_middle_name') ?>" />
         </div>
-
-
-
         <div id="physicalAddressForm" style="margin:0px 3% 0px 3%;">
             <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
@@ -1023,26 +1013,6 @@ include "intake_header.php";
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="bg-info">
             <h4><b><i>Other Information</i></b></h4>
         </div>
@@ -1115,11 +1085,304 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 6  --------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
+    <div class="col-md-12">
+        <p style="text-align: right"><b>Page 6 of 14</b></p>
+        <div class="row ">
+            <div class="col-md-12">
+                <div class="bg-info">
+                    <h4><b>Part 2. Information About You </b>(continued)</h4>
+                </div>
+             <div class="row">
+             <div class="col-md-6">
+                    <label class="control-label ">14. Expiration Date of Authorized Stay Shown on Form I-94 (if any) (mm/dd/yyyy)</label>
+                    <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_date_of_birth" value="<?php echo showData('i_864_family_member3_date_of_birth') ?>" />
+                </div>
+                <div class="col-md-6">
+                    <label class="control-label ">15. eMedical U.S. Parolee ID (USPID) (if any)</label>
+                    <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_alien_number" value="<?php echo showData('i_864_family_member3_alien_number') ?>" />
+                </div>
+             </div>
+                <div class="bg-info">
+                    <h4><i><b>Information About Them </b>(Complete this section only if you are applying on behalf of someone else.)</i> </h4>
+                </div>
+                <label class="control-label ">If you are requesting parole on behalf of someone other than yourself, provide the following information about that person in Item
+                Numbers 16. - 27. Do not complete this section if filing for yourself. </label>
+                <div>
+                    <div class="col-md-4">
+                        <label class="control-label ">16. Family Name (Last Name) </label>
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_family_last_name" value="<?php echo showData('i_864_family_member2_family_last_name') ?>" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">Given Name(First Name)</label>
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_given_first_name" value="<?php echo showData('i_864_family_member2_given_first_name') ?>" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">Middle Name (if applicable)</label>
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_middle_name" value="<?php echo showData('i_864_family_member2_middle_name') ?>" />
+                    </div>
+                </div>
+                <div>
+                    <label class="control-label col-md-12">17. Their Other Names Used (if applicable)</label>
+                    <div class="col-md-4">
+                        <label class="control-label ">Family Name(Last Name)</label>
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_family_last_name" value="<?php echo showData('i_864_family_member2_family_last_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_family_last_name" value="<?php echo showData('i_864_family_member2_family_last_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_family_last_name" value="<?php echo showData('i_864_family_member2_family_last_name') ?>" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">Given Name(First Name)</label>
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_given_first_name" value="<?php echo showData('i_864_family_member2_given_first_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_given_first_name" value="<?php echo showData('i_864_family_member2_given_first_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_given_first_name" value="<?php echo showData('i_864_family_member2_given_first_name') ?>" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label ">Middle Name (if applicable)</label>
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_middle_name" value="<?php echo showData('i_864_family_member2_middle_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_middle_name" value="<?php echo showData('i_864_family_member2_middle_name') ?>" />
+                        <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_middle_name" value="<?php echo showData('i_864_family_member2_middle_name') ?>" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="col-md-6">
+                <label class="control-label ">18. Date of Birth (mm/dd/yyyy)</label>
+                <input type="date" class="form-control" name="i_864_family_member3_family_last_name" value="<?php echo showData('i_864_family_member3_family_last_name') ?>" />
+            </div>
+            <div class="col-md-6">
+                <label class="control-label ">19. Country of Birth</label>
+                <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_given_first_name" value="<?php echo showData('i_864_family_member3_given_first_name') ?>" />
+            </div>
+            <div class="col-md-6">
+                <label class="control-label ">20. Country of Citizenship or Nationality</label>
+                <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_middle_name" value="<?php echo showData('i_864_family_member3_middle_name') ?>" />
+            </div>
+            <div class="col-md-6">
+                <label class="control-label ">21. Daytime Phone Number</label>
+                <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_middle_name" value="<?php echo showData('i_864_family_member3_middle_name') ?>" />
+            </div>
+            <div class="col-md-6">
+                <label class="control-label ">22. Email Address (if any)</label>
+                <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_middle_name" value="<?php echo showData('i_864_family_member3_middle_name') ?>" />
+            </div>
+            <div class="col-md-6">
+                <label class="control-label ">23. Alien Registration Number (A-Number) (if any) </label>
+                <input type="text" maxlength="29" class="form-control" name="i_864_family_member3_middle_name" value="<?php echo showData('i_864_family_member3_middle_name') ?>" />
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label class="control-label ">24. Their Current Mailing Address</label>
+        </div>
+        <div class="col-md-12">
+            <label class="control-label ">In Care Of Name (if any) </label>
+            <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_middle_name" value="<?php echo showData('i_864_family_member2_middle_name') ?>" />
+        </div>
+        <div id="mailingAddressForm" style="margin:0px 3% 0px 3%;">
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                    <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
+                    <div style="width: 100%;">
+                        <input type="text" maxlength="34" class="form-control" name="i_864_sponsor_physical_street_number" value="<?php echo showData('i_864_sponsor_physical_street_number'); ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                    <div style="flex: 1; margin-left: 5%;">
+                        <label>
+                            <input type="radio" name="i_864_sponsor_physical_apt_ste_flr" value="apt"
+                                <?php echo (showData('i_864_sponsor_physical_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                            Apt. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="i_864_sponsor_physical_apt_ste_flr" value="ste"
+                                <?php echo (showData('i_864_sponsor_physical_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                            Ste. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="i_864_sponsor_physical_apt_ste_flr" value="flr"
+                                <?php echo (showData('i_864_sponsor_physical_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                            Flr.
+                        </label>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <label class="control-label">Number</label>
+                    <input type="text" class="form-control" name="i_864_sponsor_physical_apt_ste_flr_value"
+                        maxlength="6" value="<?php echo showData('i_864_sponsor_physical_apt_ste_flr_value'); ?>"
+                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                    <div style="width: 100%;">
+                        <select class="form-control" name="i_864_sponsor_physical_state"
+                            style="width: 100%; padding: 5px; margin-top: 3%;">
+                            <option value=''>Select</option>
+                            <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('i_864_sponsor_physical_state')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
+                    <div class='d-flexible'>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="i_864_sponsor_physical_zip_code" maxlength="5" value="<?php echo showData('i_864_sponsor_physical_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                <div class="form-group" style="flex: 1.5; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="flex: 2; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country</label>
+                    <div class='d-flexible'>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="i_864_sponsor_physical_zip_code" maxlength="5" value="<?php echo showData('i_864_sponsor_physical_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label class="control-label ">25. Their Current Physical Address </label>
+        </div>
+        <div class="col-md-12">
+            <label class="control-label ">In Care Of Name (if any) </label>
+            <input type="text" maxlength="29" class="form-control" name="i_864_family_member2_middle_name" value="<?php echo showData('i_864_family_member2_middle_name') ?>" />
+        </div>
+        <div id="physicalAddressForm" style="margin:0px 3% 0px 3%;">
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
+                <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                    <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
+                    <div style="width: 100%;">
+                        <input type="text" maxlength="34" class="form-control" name="i_864_sponsor_physical_street_number" value="<?php echo showData('i_864_sponsor_physical_street_number'); ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
+                    <div style="flex: 1; margin-left: 5%;">
+                        <label>
+                            <input type="radio" name="i_864_sponsor_physical_apt_ste_flr" value="apt"
+                                <?php echo (showData('i_864_sponsor_physical_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
+                            Apt. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="i_864_sponsor_physical_apt_ste_flr" value="ste"
+                                <?php echo (showData('i_864_sponsor_physical_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
+                            Ste. &nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="i_864_sponsor_physical_apt_ste_flr" value="flr"
+                                <?php echo (showData('i_864_sponsor_physical_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
+                            Flr.
+                        </label>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <label class="control-label">Number</label>
+                    <input type="text" class="form-control" name="i_864_sponsor_physical_apt_ste_flr_value"
+                        maxlength="6" value="<?php echo showData('i_864_sponsor_physical_apt_ste_flr_value'); ?>"
+                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                <div class="form-group" style="flex: 3; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
+                    <div style="width: 100%;">
+                        <select class="form-control" name="i_864_sponsor_physical_state"
+                            style="width: 100%; padding: 5px; margin-top: 3%;">
+                            <option value=''>Select</option>
+                            <?php
+                            foreach ($allDataCountry as $record) {
+                                if ($record->state_code == showData('i_864_sponsor_physical_state')) $selected = "selected";
+                                else $selected = "";
+                                echo "<option value='$record->state_code' $selected>$record->state_code</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
+                    <div class='d-flexible'>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="i_864_sponsor_physical_zip_code" maxlength="5" value="<?php echo showData('i_864_sponsor_physical_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
+                <div class="form-group" style="flex: 1.5; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Province</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+                <div class="form-group" style="flex: 1; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Postal Code</label>
+                    <div style="width: 100%;">
+                        <input type="text" class="form-control" name="i_864_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_864_sponsor_physical_city_town'); ?>"
+                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="flex: 2; margin-bottom: 10px;">
+                    <label class="control-label" style="width: 100%; margin-bottom: 5px;">Country</label>
+                    <div class='d-flexible'>
+                        <div style="width: 100%;">
+                            <input type="text" class="form-control" name="i_864_sponsor_physical_zip_code" maxlength="5" value="<?php echo showData('i_864_sponsor_physical_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+</fieldset>
+<!-- <fieldset class="setpage">
     <div class="row">
         <p style=" text-align: right;  margin-right: 25px;"><b>Page 6 of 12</b></p>
 
@@ -1260,7 +1523,7 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 7--------------------------------
 ------------------------------------------------------------------------>
