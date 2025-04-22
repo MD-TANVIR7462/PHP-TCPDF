@@ -1594,7 +1594,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 8--------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <div class="row">
         <p style=" text-align: right; margin-right: 15px;"><b>Page 8 of 12</b></p>
         <div class="col-md-12">
@@ -1688,11 +1688,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 9--------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 9 of 14</b></p>
     <div class="row">
         <div class="col-md-12">
@@ -1899,12 +1899,12 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset>
+</fieldset> -->
 <!----------------------------------------------------------------------
 -------------------------------- page 10 -------------------------------
 ------------------------------------------------------------------------>
 
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 10 of 12</b></p>
     <div class="row">
         <div class="col-md-12">
@@ -2023,11 +2023,11 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset>
+</fieldset> -->
 <!-------------------------------------------------------
 ------------------------ page 11 -------------------------
 --------------------------------------------------------->
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
     <p style="text-align: right; margin-right: 15px;"><b>Page 11 of 12</b></p>
     <div class="row">
         <div class="col-md-12">
@@ -2189,21 +2189,201 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
     <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset>
+</fieldset> -->
 <!-------------------------------------------------------
 ------------------------ page 12 -------------------------
 --------------------------------------------------------->
 <fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 12 of 14</b></p>
     <div class="row">
-        <p style=" text-align: right;  margin-right: 25px;"><b>Page 12 of 12</b></p>
         <div class="col-md-12">
             <div class="bg-info">
-                <h4><b>Part 11. Additional Information</b> </h4>
+                <h4><b>Part 11. Interpreter's Contact Information, Certification, and Signature (if applicable) (If no interpreter
+                        was used, skip to Part 12.)</b></h4>
+            </div> <br>
+            <div class="bg-info">
+                <h4><b><i>Interpreter's Full Name</i></b></h4>
             </div>
-            <p>If you need extra space to provide any additional information within this contract, use the space below. If you need more space than
-                what is provided, you may make copies of this page to complete and file with this contract or attach a separate sheet of paper. Type or
-                print your name and A-Number (if any) at the top of each sheet; indicate the Page Number, Part Number, and Item Number to
-                which your answer refers; and sign and date each sheet.
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label class="control-label ">1. Interpreter's Family Name (Last Name)</label>
+                        <div class="">
+                            <input type="text" class="form-control  " name="i_864_interpreter_family_last_name" maxlength="39" value="<?php echo showData('i_864_interpreter_family_last_name') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label ">Interpreter's Given Name (First Name)</label>
+                        <div class="">
+                            <input type="text" class="form-control  " name="i_864_interpreter_given_first_name" maxlength="39" value="<?php echo showData('i_864_interpreter_given_first_name') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label ">2. Interpreter's Business or Organization Name (if any)</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="i_864_interpreter_business_name" maxlength="39" value="<?php echo showData('i_864_interpreter_business_name') ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="bg-info">
+                <h4><b><i>Interpreter's Contact Information</i></b></h4>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label class="control-label ">3. Interpreter's Daytime Telephone Number</label>
+                        <div class="">
+                            <input type="text" class="form-control  " name="i_864_interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_864_interpreter_daytime_tel') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label ">4. Interpreter's Mobile Telephone Number (if any)</label>
+                        <div class="">
+                            <input type="text" class="form-control  " name="i_864_interpreter_mobile" maxlength="10" value="<?php echo showData('i_864_interpreter_mobile') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label ">5. Interpreter's Email Address (if any)</label>
+                        <div class="">
+                            <input type="text" class="form-control  " name="i_864_interpreter_email" maxlength="38" value="<?php echo showData('i_864_interpreter_email') ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><i><b>Interpreter's Certification and Signature</b></i></h4>
+            </div>
+            <p>I certify, under penalty of perjury, that:</p>
+            <div class="form-group" style="display:flex;  align-items: center;">
+                <p>that I am fluent in English and</p>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" name="i_864_interpreter_fluent_in_english" maxlength="23" value="<?php echo showData('i_864_interpreter_fluent_in_english') ?>">
+                </div>
+            </div>
+            <div>and I have interpreted every question on the application and Instructions and interpreted the applicant's answers to the questions in that language,
+                and the applicant informed me that he or she understood every instruction, question, and answer on the application.</div>
+            <div class="form-group">
+                <label class="control-label col-md-12">6. Interpreter's Signature</label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" disabled />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12"> Date of Signature (mm/dd/yyyy)</label>
+                <div class="col-md-7 col-md-offset-5">
+                    <input type="date" class="form-control" name="i_864_interpreter_sign_date" value="<?php echo showData('i_864_interpreter_sign_date') ?>" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
+<!-------------------------------------------------------
+------------------------ page 13 -------------------------
+--------------------------------------------------------->
+<fieldset class="setpage">
+    <p style="text-align: right; margin-right: 15px;"><b>Page 13 of 14</b></p>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="bg-info">
+                <h4><b>Part 12. Contact Information, Certification, and Signature of the Person Preparing this Application, if Other Than the Applicant </b></h4>
+            </div>
+            <div class="bg-info">
+                <h4><b>Preparer's Full Name</b> </h4>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class=" col-md-6">
+                        <label class="control-label ">1. Preparer's Family Name (Last Name)</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="i_864_preparer_family_last_name" maxlength="39" value="<?php echo showData('i_864_preparer_family_last_name') ?>" />
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <label class="control-label ">1. Preparer's Given Name (First Name)</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="i_864_preparer_given_first_name" maxlength="39" value="<?php echo showData('i_864_preparer_given_first_name') ?>" />
+                        </div>
+                    </div>
+                    <div class=" col-md-6">
+                        <label class="control-label ">2. Preparer's Business or Organization Name (if any)</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="i_864_preparer_business_name" maxlength="34" value="<?php echo showData('i_864_preparer_business_name') ?>" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b> Preparer's Contact Information</b></h4>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label class="control-label">3. Preparer's Daytime Telephone Number</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="i_864_preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_864_preparer_daytime_tel') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">4. Preparer's Mobile Telephone Number (if any)</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="i_864_preparer_mobile" maxlength="10" value="<?php echo showData('i_864_preparer_mobile') ?>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">5. Preparer's Email Address (if any)</label>
+                        <div class="">
+                            <input type="text" class="form-control" maxlength="38" name="i_864_preparer_email" value="<?php echo showData('i_864_preparer_email') ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-info">
+                <h4><b>Preparer's Certification and Signature</b></h4>
+            </div>
+            <p>I certify, under penalty of perjury, that I prepared this application for the applicant at his or her request and with express consent and
+                that all the responses and information contained in and submitted with the application are complete, true, and correct and reflects only
+                information provided by the applicant. The applicant reviewed the responses and information and informed me that he or she
+                understands the responses and information in or submitted with the application.
+            </p>
+            <div class="form-group">
+                <label class="control-label col-md-12">6. Preparer's Signature </label>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" disabled />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-12">Date of Signature (mm/dd/yyyy)</label>
+                <div class="col-md-7 col-md-offset-5">
+                    <input type="date" class="form-control" name="i_864_preparer_sign_date" value="<?php echo showData('i_864_preparer_sign_date') ?>">
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
+<!-------------------------------------------------------
+------------------------ page 14 -------------------------
+--------------------------------------------------------->
+<fieldset class="setpage">
+    <div class="row">
+        <p style=" text-align: right;  margin-right: 25px;"><b>Page 14 of 14</b></p>
+        <div class="col-md-12">
+            <div class="bg-info">
+                <h4><b>Part 13. Additional Information</b> </h4>
+            </div>
+            <p>If you need extra space to provide any additional information within this application, use the space below. If you need more space than
+                what is provided, make copies of this page to complete and file with this application or attach a separate sheet of paper. Type or print
+                your name and A-Number (if any) at the top of each sheet; indicate the Page Number, Part Number, and Item Number to which the
+                answer refers; and sign and date each sheet.
             </p>
 
             <div class="col-md-4">
@@ -2219,7 +2399,7 @@ include "intake_header.php";
 
 
             <div class="col-md-4">
-                <label class="control-label">Middle Name (if applicable)</label>
+                <label class="control-label">Middle Name</label>
                 <input type="text" class="form-control" maxlength="27" name="i_864_additional_info_middle_name" value="<?php echo showData('i_864_additional_info_middle_name') ?>" />
             </div>
             <div class="col-md-4">
@@ -2244,7 +2424,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="i_864_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_864_additional_info_3c_item_no') ?>">
                     </div>
                     <div class="col-md-12">
-                        <textarea name="i_864_additional_info_3d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864_additional_info_3d') ?></textarea>
+                        <textarea name="i_864_additional_info_3d" class="form-control" maxlength="341" cols="30" rows="6"><?php echo showData('i_864_additional_info_3d') ?></textarea>
                     </div>
 
                     <div class="form-group col-md-3">
@@ -2260,7 +2440,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="i_864_additional_info_4c_item_no" maxlength="6" value="<?php echo showData('i_864_additional_info_4c_item_no') ?>">
                     </div>
                     <div class="col-md-12">
-                        <textarea name="i_864_additional_info_4d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864_additional_info_4d') ?></textarea>
+                        <textarea name="i_864_additional_info_4d" class="form-control" maxlength="341" cols="30" rows="6"><?php echo showData('i_864_additional_info_4d') ?></textarea>
                     </div>
 
                     <div class="form-group col-md-3">
@@ -2276,7 +2456,7 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="i_864_additional_info_5c_item_no" maxlength="6" value="<?php echo showData('i_864_additional_info_5c_item_no') ?>">
                     </div>
                     <div class="col-md-12">
-                        <textarea name="i_864_additional_info_5d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864_additional_info_5d') ?></textarea>
+                        <textarea name="i_864_additional_info_5d" class="form-control" maxlength="341" cols="30" rows="6"><?php echo showData('i_864_additional_info_5d') ?></textarea>
                     </div>
 
                     <div class="form-group col-md-3">
@@ -2292,7 +2472,22 @@ include "intake_header.php";
                         <input type="text" class="form-control" name="i_864_additional_info_6c_item_no" maxlength="6" value="<?php echo showData('i_864_additional_info_6c_item_no') ?>">
                     </div>
                     <div class="col-md-12">
-                        <textarea name="i_864_additional_info_6d" class="form-control" maxlength="341" cols="30" rows="10"><?php echo showData('i_864_additional_info_6d') ?></textarea>
+                        <textarea name="i_864_additional_info_6d" class="form-control" maxlength="341" cols="30" rows="6"><?php echo showData('i_864_additional_info_6d') ?></textarea>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">7. Page Number</label>
+                        <input type="text" class="form-control" name="i_864_additional_info_6a_page_no" maxlength="2" value="<?php echo showData('i_864_additional_info_6a_page_no') ?>">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">Part Number</label>
+                        <input type="text" class="form-control" name="i_864_additional_info_6b_part_no" maxlength="6" value="<?php echo showData('i_864_additional_info_6b_part_no') ?>">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="control-label ">Item Number</label>
+                        <input type="text" class="form-control" name="i_864_additional_info_6c_item_no" maxlength="6" value="<?php echo showData('i_864_additional_info_6c_item_no') ?>">
+                    </div>
+                    <div class="col-md-12">
+                        <textarea name="i_864_additional_info_6d" class="form-control" maxlength="341" cols="30" rows="6"><?php echo showData('i_864_additional_info_6d') ?></textarea>
                     </div>
                 </div>
             </div>
@@ -2301,6 +2496,8 @@ include "intake_header.php";
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
     <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
+
+
 <!-- javascript for change the address -->
 <!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
