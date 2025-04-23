@@ -399,7 +399,7 @@ else $checked = "";
 $html = '<div><input type="checkbox"  name="part2_1_status" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 15, 26, 61, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
-$html = 'A pending initial Form I-821, Application for Temporary Protected Status, receipt number: ';
+$html = 'Approved Form I-821D, Consideration of Deferred Action for Childhood Arrivals, receipt number: ';
 $pdf->writeHTMLCell(190, 7, 33, 62, $html, '', 0, 0, true, 'L');
 // ..............
 $pdf->SetFont('courier', 'B', 10); // set font
