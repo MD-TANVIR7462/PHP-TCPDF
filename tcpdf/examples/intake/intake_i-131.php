@@ -549,7 +549,6 @@ include "intake_header.php";
                 <div class="form-group">
                     <label class="control-label col-md-12" style="display: flex; align-items: flex-start;">
                         <span style="width: 30px; flex-shrink: 0;">10.</span>
-                        <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_131_reparole_program_status") ?></span>
                         <span style="flex: 1;">
                             I was initially paroled into the United States or granted parole in place under INA section 212(d)(5)(A) under one of the
                             following programs or processes and I am requesting a new period of parole, or I am applying for a new period of parole on
@@ -660,14 +659,14 @@ include "intake_header.php";
                     <div style="margin-left: 30px;">
                         <label class="control-label col-md-12" style="display: flex; align-items: flex-start;">
                             <span style="width: 30px; flex-shrink: 0;">(1)</span>
-                            <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_131_pip_member_status") ?></span>
+                            <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_131_pip_member_status2") ?></span>
                             <span style="flex: 1;">
                                 A current or former service member.
                             </span>
                         </label>
                         <label class="control-label col-md-12" style="display: flex; align-items: flex-start;">
                             <span style="width: 30px; flex-shrink: 0;">(2)</span>
-                            <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_131_pip_family_status") ?></span>
+                            <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_131_pip_family_status2") ?></span>
                             <span style="flex: 1;">
                                 A spouse, parent, son, or daughter of a current or former service member.
                             </span>
@@ -961,22 +960,22 @@ include "intake_header.php";
         <div>
             <div class="col-md-6">
                 <label class="control-label ">5.Alien Registration Number (A-Number) (if any)</label>
-                <input type="text" maxlength="29" class="form-control" name="i_131_family_member3_family_last_name" value="<?php echo showData('i_131_family_member3_family_last_name') ?>" />
+                <input type="text" maxlength="29" class="form-control" name="other_information_about_you_alien_registration_number" value="<?php echo showData('other_information_about_you_alien_registration_number') ?>" />
             </div>
             <div class="col-md-6">
                 <label class="control-label ">6.Country of Birth</label>
-                <input type="text" maxlength="29" class="form-control" name="i_131_family_member3_given_first_name" value="<?php echo showData('i_131_family_member3_given_first_name') ?>" />
+                <input type="text" maxlength="29" class="form-control" name="other_information_about_you_country_of_birth" value="<?php echo showData('other_information_about_you_country_of_birth') ?>" />
             </div>
             <div class="col-md-6">
                 <label class="control-label ">7.Country of Citizenship or Nationality</label>
-                <input type="text" maxlength="29" class="form-control" name="i_131_family_member3_middle_name" value="<?php echo showData('i_131_family_member3_middle_name') ?>" />
+                <input type="text" maxlength="29" class="form-control" name="other_information_about_you_country_of_citizen" value="<?php echo showData('other_information_about_you_country_of_citizen') ?>" />
             </div>
 
             <div class="col-md-6">
                 <label class="control-label ">8.Sex</label>
                 <div>
-                    <label> <input type="radio" name="parent1_info_gender" value="male" <?php echo (showData('parent1_info_gender') == 'male') ? 'checked' : '' ?>> Male &nbsp;</label>
-                    <label> <input type="radio" name="parent1_info_gender" value="female" <?php echo (showData('parent1_info_gender') == 'female') ? 'checked' : '' ?>> Female &nbsp;</label>
+                    <label> <input type="radio" name="other_information_about_you_gender" value="male" <?php echo (showData('other_information_about_you_gender') == 'male') ? 'checked' : '' ?>> Male &nbsp;</label>
+                    <label> <input type="radio" name="other_information_about_you_gender" value="female" <?php echo (showData('other_information_about_you_gender') == 'female') ? 'checked' : '' ?>> Female &nbsp;</label>
 
                 </div>
             </div>
@@ -985,14 +984,14 @@ include "intake_header.php";
             <div class="form-group" style="flex: 2; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">9.Date of Birth (mm/dd/yyyy)</label>
                 <div style="width: 100%;">
-                    <input type="date" class="form-control" name="i_131_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_131_sponsor_physical_city_town'); ?>"
+                    <input type="date" class="form-control" name="other_information_about_you_date_of_birth" maxlength="20" value="<?php echo showData('other_information_about_you_date_of_birth'); ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
             <div class="form-group" style="flex: 2; margin-bottom: 10px;">
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">10.U.S. Social Security Number (if any)</label>
                 <div style="width: 100%;">
-                    <input type="text" class="form-control" name="i_131_sponsor_physical_city_town" maxlength="20" value="<?php echo showData('i_131_sponsor_physical_city_town'); ?>"
+                    <input type="text" class="form-control" name="other_information_about_you_social_security_number" maxlength="20" value="<?php echo showData('other_information_about_you_social_security_number'); ?>"
                         style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                 </div>
             </div>
@@ -1002,7 +1001,7 @@ include "intake_header.php";
                 <label class="control-label" style="width: 100%; margin-bottom: 5px;">11. USCIS Online Account Number (if any)</label>
                 <div class='d-flexible'>
                     <div style="width: 100%;">
-                        <input type="text" class="form-control" name="i_131_sponsor_physical_zip_code" maxlength="5" value="<?php echo showData('i_131_sponsor_physical_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+                        <input type="text" class="form-control" name="other_information_about_you_uscis_online_account_number" maxlength="5" value="<?php echo showData('other_information_about_you_uscis_online_account_number'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
             </div>
@@ -1127,7 +1126,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
                     <div style="width: 100%;">
-                        <input type="text" maxlength="34" class="form-control" name="i_131_them_mailing_street_number_name" value="<?php echo showData('i_131_them_mailing_street_number_name'); ?>"
+  ext" maxlength="34" class                      <input type="t="form-control" name="i_131_them_mailing_street_number_name" value="<?php echo showData('i_131_them_mailing_street_number_name'); ?>"
                             style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
@@ -1344,7 +1343,7 @@ include "intake_header.php";
                 </div>
                 <div class="col-md-6">
                     <label class="control-label">27. Most Recent Form I-94 Arrival/Departure Record Number (if any)</label>
-                    <input type="text" maxlength="29" class="form-control" name="i_131_recent_form_I-94" value="<?php echo showData('i_131_recent_form_I-94') ?>" />
+                    <input type="text" maxlength="29" class="form-control" name="i_131_recent_form_I_94" value="<?php echo showData('i_131_recent_form_I_94') ?>" />
                 </div>
             </div>
 
@@ -1837,6 +1836,11 @@ include "intake_header.php";
                 </label>
             </div>
             <div class="row">
+            <div>
+                <label class="col-md-12">6.a. Are you currently outside the United States?
+                </label>
+                <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_131_filing_before_currently_outside_status") ?> </div>
+            </div>
                 <div class="col-md-12">
                     <div class="col-md-12">
                         <label class="control-label ">6.b. If you answered "Yes," what is your current location (City or Town and Country)?</label>
@@ -2322,30 +2326,5 @@ include "intake_header.php";
 </fieldset>
 
 
-<!-- javascript for change the address -->
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const yesRadio = document.getElementById("mailing_address_yes");
-        const noRadio = document.getElementById("mailing_address_no");
-        const mailingAddressForm = document.getElementById("mailingAddressForm");
-        const physicalAddressForm = document.getElementById("physicalAddressForm");
 
-        function toggleAddressForms() {
-            if (yesRadio.checked) {
-                mailingAddressForm.style.display = "block";
-                physicalAddressForm.style.display = "none";
-            } else {
-                mailingAddressForm.style.display = "none";
-                physicalAddressForm.style.display = "block";
-            }
-        }
-
-        // Initial check on page load
-        toggleAddressForms();
-
-        // Add event listeners
-        yesRadio.addEventListener("change", toggleAddressForms);
-        noRadio.addEventListener("change", toggleAddressForms);
-    });
-</script> -->
 <?php include "intake_footer.php" ?>
