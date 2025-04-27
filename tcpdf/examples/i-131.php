@@ -1,6 +1,6 @@
 <?php
 
-//require_once('form_header.php');   //database connection file 
+// require_once('formheader.php');   //database connection file 
 
 require_once("localconfig.php");
 // $allDataCountry = indexByQueryAllData("SELECT * FROM countries");
@@ -47,7 +47,7 @@ class MyPDF extends TCPDF
 
 
 		// if ($this->page == 1){
-		$barcode_image = "images/I-131-footer-pdf417-$this->page.png";
+		$barcode_image = "images/i131/I-131-footer-pdf417-$this->page.png";
 		// )
 		$this->Image($barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
 		$this->MultiCell(61, 6, 'Page ' . $this->getAliasNumPage() . ' of ' . $this->getAliasNbPages(), 0, 'R', 0, 1, 159, 264.5, true);
@@ -242,6 +242,7 @@ $pdf->SetFont('times', '', 10);
 $html = '<div>Fill in box if G-28 is<br>attached to represent<br>the applicant.</div>';
 $pdf->writeHTMLCell(45, 7, 166, 59.5, $html, 0, 0, false, true, 'L', true);
 //...........
+$pdf->Image('images/right_angle.jpg', 14, 109.3, 3.3, 3.3);
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(118, 7, 18, 108, '<div><b>START HERE - Type or print in black ink.</b></div>', 0, 1, false, false, 'L', true);
 //...........
@@ -760,7 +761,7 @@ else $checked = "";
 $html = '<div><input type="checkbox"  name="32" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 15, 26, 205, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
-$html = 'Family Reunification Task Force (FRTF) Process; Task Force Registration Number: ';
+$html = 'Other: (List specific program or process) ';
 $pdf->writeHTMLCell(190, 7, 33, 206, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
@@ -918,7 +919,7 @@ $pdf->writeHTMLCell(190, 7, 33, 118, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(50, 15, 20, 124, '<b>G.</b>', 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 14);
-if (showData('i_131_frtf_status') == "Y") $checked = "checked";
+if (showData('i_131_frtf_status2') == "Y") $checked = "checked";
 else $checked = "";
 $html = '<div><input type="checkbox"  name="43" value="Y" checked="' . $checked . '" /></div>';
 $pdf->writeHTMLCell(50, 15, 26, 124, $html, 0, 1, false, true, 'L', true);
@@ -1097,7 +1098,7 @@ $pdf->SetFont('times', '', 10);
 $html = '<div>Street Number and Name</div>';
 $pdf->writeHTMLCell(90, 7, 22, 72, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_3a', 119.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 79);
+$pdf->TextField('p5_3b', 119.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 79);
 // ...........
 if (showData('information_about_you_us_mailing_apt_ste_flr') == "apt") $checked_apt = "checked";
 else $checked_apt = "";
@@ -1261,7 +1262,7 @@ $pdf->writeHTMLCell(190, 7, 13, 201.5, "<b>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 $pdf->writeHTMLCell(190, 7, 21.8, 205, "(mm/dd/yyyy)", 0, 1, false, false, 'L', true);
 //...
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_8', 45, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 43.5, 206.5);
+$pdf->TextField('p5_9', 45, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 43.5, 206.5);
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(190, 7, 93, 201.5, "<b>10.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>U.S. Social Security Number (if any)", 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
@@ -2445,7 +2446,7 @@ provided in <b>Part 13. Additional Information.</b>) Include copies of any suppo
 $pdf->writeHTMLCell(190, 7, 20, 31, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('P11_1', 184, 29, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.7, 44);
+$pdf->TextField('P11_1', 184, 29, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_qualify_for_parole_explanation')), 20.7, 44);
 //..........
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(197, 5, 12, 75, '<b>2.</b>', '', 1, false, 'L');
@@ -2721,7 +2722,7 @@ $pdf->writeHTMLCell(197, 5, 53, 60, '<b>A-</b>', '', 1, false, 'L');
 //.....................
 $pdf->Image('images/right_angle.jpg', 50, 61.4, 3.3, 3.3);
 $pdf->setFont('courier', 'B', 10);
-$pdf->TextField('p14_additional_info_a_number', 47, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 59.5, 60);
+$pdf->TextField('p14_additional_info_a_number', 47, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_additional_info_2d')), 59.5, 60);
 
 
 //............
@@ -2735,7 +2736,7 @@ $pdf->TextField('p14_additional_info_3a', 22, 7, array('strokeColor' => array(64
 $pdf->TextField('p14_additional_info_3b', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 72);
 $pdf->TextField('p14_additional_info_3c', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 72);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p14_additional_info_3d', 183, 20.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_3d')), 21, 81);
+$pdf->TextField('p14_additional_info_3d', 183, 20.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_additional_info_3d')), 21, 81);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
@@ -2754,7 +2755,7 @@ $pdf->TextField('p14_additional_info_4a', 22, 7, array('strokeColor' => array(64
 $pdf->TextField('p14_additional_info_4b', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 108);
 $pdf->TextField('p14_additional_info_4c', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 108);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p14_additional_info_4d', 183, 20.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_4d')), 21, 118);
+$pdf->TextField('p14_additional_info_4d', 183, 20.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_additional_info_4d')), 21, 118);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
@@ -2772,7 +2773,7 @@ $pdf->TextField('p14_additional_info_5a', 22, 7, array('strokeColor' => array(64
 $pdf->TextField('p14_additional_info_5b', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 144);
 $pdf->TextField('p14_additional_info_5c', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71, 144);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p14_additional_info_5d', 183, 20.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_5d')), 21, 153);
+$pdf->TextField('p14_additional_info_5d', 183, 20.5, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_additional_info_5d')), 21, 153);
 $pdf->setCellHeightRatio(1.2);
 
 //.................
@@ -2790,7 +2791,7 @@ $pdf->TextField('p14_additional_info_6a', 22, 7, array('strokeColor' => array(64
 $pdf->TextField('p14_additional_info_6b', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 179);
 $pdf->TextField('p14_additional_info_6c', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71.5, 179);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p14_additional_info_6d', 183, 20, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_6d')), 21, 188);
+$pdf->TextField('p14_additional_info_6d', 183, 20, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_additional_info_6d')), 21, 188);
 $pdf->setCellHeightRatio(1.2);
 //.................
 $pdf->writeHTMLCell(182.5, 1, 21.2, 189.5, '', "B", 1, false, 'L');
@@ -2807,7 +2808,7 @@ $pdf->TextField('p14_additional_info_6a', 22, 7, array('strokeColor' => array(64
 $pdf->TextField('p14_additional_info_6b', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 47, 214);
 $pdf->TextField('p14_additional_info_6c', 20, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 71.5, 214);
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p14_additional_info_6d', 183, 20, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_539_additional_info_6d')), 21, 223);
+$pdf->TextField('p14_additional_info_6d', 183, 20, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_additional_info_7d')), 21, 223);
 $pdf->setCellHeightRatio(1.2);
 //.................
 $pdf->writeHTMLCell(182.5, 1, 21.2, 224.5, '', "B", 1, false, 'L');
@@ -2817,215 +2818,215 @@ $pdf->writeHTMLCell(182.8, 20.2, 21, 223, '', 1, 1, false, 'L');
 //? NOTE:- Page number then serial / part number --> p1_4 means page 1 seiral 4..................
 $js = "
 var fields = {
-	'p1_4':' " . showData('i_131_beneficiary_value') . "',
-	'p1_5a':' " . showData('i_131_pending485_value') . "',
+	'p1_4':' ".showData('i_131_beneficiary_value')."',
+	'p1_5a':' ".showData('i_131_pending485_value')."',
 //page 1 end.....
 
-	'p2_5b':' " . showData('i_131_pending_589_value') . "',
-	'p2_5c':' " . showData('i_131_pending_821_value') . "',
-	'p2_5e':' " . showData('i_131_deferred_action_value') . "',
-	'p2_5f':' " . showData('i_131_approved_914_value') . "',
-	'p2_5g':' " . showData('i_131_approved_918_value') . "',
-	'p2_5h':' " . showData('i_131_current_parolee_value') . "',
-	'p2_5i':' " . showData('i_131_approved_817_value') . "',
-	'p2_5j':' " . showData('i_131_pending_687_value') . "',
-	'p2_5k':' " . showData('i_131_approved_v_status_value') . "',
-	'p2_5l':' " . showData('i_131_cnmi_residence_status') . "',
-	'p2_6':' " . showData('i_131_cnmi_residence_value') . "',
+	'p2_5b':' ".showData('i_131_pending_589_value')."',
+	'p2_5c':' ".showData('i_131_pending_821_value')."',
+	'p2_5e':' ".showData('i_131_deferred_action_value')."',
+	'p2_5f':' ".showData('i_131_approved_914_value')."',
+	'p2_5g':' ".showData('i_131_approved_918_value')."',
+	'p2_5h':' ".showData('i_131_current_parolee_value')."',
+	'p2_5i':' ".showData('i_131_approved_817_value')."',
+	'p2_5j':' ".showData('i_131_pending_687_value')."',
+	'p2_5k':' ".showData('i_131_approved_v_status_value')."',
+	'p2_5l':' ".showData('i_131_cnmi_residence_value')."',
+	'p2_6':' ".showData('i_131_filipino_fwvp_value')."',
 //page 2 end.....
 
-	'p3_6ca':' " . showData('i_131_federal_agency') . "',
-	'p3_6cb':' " . showData('i_131_agency_email') . "',
-	'p3_6d':' " . showData('i_131_frtf_number') . "',
-	'p3_6e':' " . showData('i_131_parole_program') . "',
-	'p3_8b':' " . showData('i_131_pip_frtf_number') . "',
-	'p3_8c':' " . showData('i_131_pip_program') . "',
+	'p3_6ca':' ".showData('i_131_federal_agency')."',
+	'p3_6cb':' ".showData('i_131_agency_email')."',
+	'p3_6d':' ".showData('i_131_frtf_number')."',
+	'p3_6e':' ".showData('i_131_parole_program')."',
+	'p3_8b':' ".showData('i_131_pip_frtf_number')."',
+	'p3_8c':' ".showData('i_131_pip_program')."',
 //page 3 end.....
 
-	'p4_10i':' " . showData('i_131_specific_program') . "',
-	'p4_12':' " . showData('i_131_i94_parole_date') . "',
-	'p4_p2_1a':' " . showData('information_about_you_family_last_name') . "',
-	'p4_p2_1b':' " . showData('information_about_you_given_first_name') . "',
-	'p4_p2_1c':' " . showData('information_about_you_middle_name') . "',
+	'p4_10i':' ".showData('i_131_specific_program')."',
+	'p4_12':' ".showData('i_131_i94_parole_date')."',
+	'p4_p2_1a':' ".showData('information_about_you_family_last_name')."',
+	'p4_p2_1b':' ".showData('information_about_you_given_first_name')."',
+	'p4_p2_1c':' ".showData('information_about_you_middle_name')."',
 //page 4 end.....
 
-	'p5_2a1':' " . showData('information_about_you_other_family_last_name') . "',
-	'p5_2b1':' " . showData('information_about_you_other_given_first_name') . "',
-	'p5_2c1':' " . showData('information_about_you_other_middle_name') . "',
+	'p5_2a1':' ".showData('information_about_you_other_family_last_name')."',
+	'p5_2a2':' ".showData('information_about_you_other_given_first_name')."',
+	'p5_2a3':' ".showData('information_about_you_other_middle_name')."',
 
-	'p5_2a2':' " . showData('information_about_you_other_family_last_name2') . "',
-	'p5_2b2':' " . showData('information_about_you_other_given_first_name2') . "',
-	'p5_2c2':' " . showData('information_about_you_other_middle_name2') . "',
+	'p5_2b1':' ".showData('information_about_you_other_family_last_name2')."',
+	'p5_2b2':' ".showData('information_about_you_other_given_first_name2')."',
+	'p5_2b3':' ".showData('information_about_you_other_middle_name2')."',
 
-	'p5_2a3':' " . showData('information_about_you_other_family_last_name3') . "',
-	'p5_2b3':' " . showData('information_about_you_other_given_first_name3') . "',
-	'p5_2c3':' " . showData('information_about_you_other_middle_name3') . "',
+	'p5_2c1':' ".showData('information_about_you_other_family_last_name3')."',
+	'p5_2c2':' ".showData('information_about_you_other_given_first_name3')."',
+	'p5_2c3':' ".showData('information_about_you_other_middle_name3')."',
 
 	
-	'p5_3a':' " . showData('information_about_you_us_mailing_care_of_name') . "',
-	'p5_3b':' " . showData('information_about_you_us_mailing_street_number') . "',
-	'p5_3c':' " . showData('information_about_you_us_mailing_apt_ste_flr_value') . "',
-	'p5_3d':' " . showData('information_about_you_us_mailing_city_town') . "',
-	'p5_3e':' " . showData('information_about_you_us_mailing_state') . "',
-	'p5_3f':' " . showData('information_about_you_us_mailing_zip_code') . "',
-	'p5_3g':' " . showData('information_about_you_us_mailing_province') . "',
-	'p5_3h':' " . showData('information_about_you_us_mailing_postal_code') . "',
-	'p5_3i':' " . showData('information_about_you_us_mailing_country') . "',
+	'p5_3a':' ".showData('information_about_you_us_mailing_care_of_name')."',
+	'p5_3b':' ".showData('information_about_you_us_mailing_street_number')."',
+	'p5_3c':' ".showData('information_about_you_us_mailing_apt_ste_flr_value')."',
+	'p5_3d':' ".showData('information_about_you_us_mailing_city_town')."',
+	'p5_3e':' ".showData('information_about_you_us_mailing_state')."',
+	'p5_3f':' ".showData('information_about_you_us_mailing_zip_code')."',
+	'p5_3g':' ".showData('information_about_you_us_mailing_province')."',
+	'p5_3h':' ".showData('information_about_you_us_mailing_postal_code')."',
+	'p5_3i':' ".showData('information_about_you_us_mailing_country')."',
 	
-	'p5_4a':' " . showData('information_about_you_home_care_of_name') . "',
-	'p5_4b':' " . showData('information_about_you_home_street_number') . "',
-	'p5_4c':' " . showData('information_about_you_home_apt_ste_flr_value') . "',
-	'p5_4d':' " . showData('information_about_you_home_city_town') . "',
-	'p5_4e':' " . showData('information_about_you_home_state') . "',
-	'p5_4f':' " . showData('information_about_you_home_zip_code') . "',
-	'p5_4g':' " . showData('information_about_you_home_province') . "',
-	'p5_4h':' " . showData('information_about_you_home_postal_code') . "',
-	'p5_4i':' " . showData('information_about_you_home_country') . "',
+	'p5_4a':' ".showData('information_about_you_home_care_of_name')."',
+	'p5_4b':' ".showData('information_about_you_home_street_number')."',
+	'p5_4c':' ".showData('information_about_you_home_apt_ste_flr_value')."',
+	'p5_4d':' ".showData('information_about_you_home_city_town')."',
+	'p5_4e':' ".showData('information_about_you_home_state')."',
+	'p5_4f':' ".showData('information_about_you_home_zip_code')."',
+	'p5_4g':' ".showData('information_about_you_home_province')."',
+	'p5_4h':' ".showData('information_about_you_home_postal_code')."',
+	'p5_4i':' ".showData('information_about_you_home_country')."',
 
-	'p5_5':' " . showData('other_information_about_you_alien_registration_number') . "',
-	'p5_6':' " . showData('other_information_about_you_country_of_birth') . "',
-	'p5_7':' " . showData('other_information_about_you_country_of_citizen') . "',
-	'p5_9':' " . showData('other_information_about_you_date_of_birth') . "',
-	'p5_10':' " . showData('other_information_about_you_social_security_number') . "',
-	'p5_11':' " . showData('other_information_about_you_uscis_online_account_number') . "',
+	'p5_5':' ".showData('other_information_about_you_alien_registration_number')."',
+	'p5_6':' ".showData('other_information_about_you_country_of_birth')."',
+	'p5_7':' ".showData('other_information_about_you_country_of_citizen')."',
+	'p5_9':' ".showData('other_information_about_you_date_of_birth')."',
+	'p5_10':' ".showData('other_information_about_you_social_security_number')."',
+	'p5_11':' ".showData('other_information_about_you_uscis_online_account_number')."',
 
-	'p5_12':' " . showData('i_131_class_of_admission_coa') . "',
-	'p5_13':' " . showData('i_131_most_recent_departure_record') . "',
+	'p5_12':' ".showData('i_131_class_of_admission_coa')."',
+	'p5_13':' ".showData('i_131_most_recent_departure_record')."',
 	
 //page 5 end.....
 
-	'p6_14':' " . showData('i_131_expiration_date_authorized_stay') . "',
-	'p6_15':' " . showData('i_131_emedical_parolee_id') . "',
-	'p6_16a':' " . showData('i_131_them_family_last_name') . "',
-	'p6_16b':' " . showData('i_131_them_given_first_name') . "',
-	'p6_16c':' " . showData('i_131_them_middle_name') . "',
+	'p6_14':' ".showData('i_131_expiration_date_authorized_stay')."',
+	'p6_15':' ".showData('i_131_emedical_parolee_id')."',
+	'p6_16a':' ".showData('i_131_them_family_last_name')."',
+	'p6_16b':' ".showData('i_131_them_given_first_name')."',
+	'p6_16c':' ".showData('i_131_them_middle_name')."',
 
-	'p6_17a1':' " . showData('i_131_them_other_family_last_name_1') . "',
-	'p6_17b1':' " . showData('i_131_them_other_given_first_name_1') . "',
-	'p6_17c1':' " . showData('i_131_them_other_middle_name_1') . "',
-	'p6_17a2':' " . showData('i_131_them_other_family_last_name_2') . "',
-	'p6_17b2':' " . showData('i_131_them_other_given_first_name_2') . "',
-	'p6_17c2':' " . showData('i_131_them_other_middle_name_2') . "',
-	'p6_17a3':' " . showData('i_131_them_other_family_last_name_3') . "',
-	'p6_17b3':' " . showData('i_131_them_other_given_first_name_3') . "',
-	'p6_17c3':' " . showData('i_131_them_other_middle_name_3') . "',
+	'p6_17a1':' ".showData('i_131_them_other_family_last_name_1')."',
+	'p6_17b1':' ".showData('i_131_them_other_given_first_name_1')."',
+	'p6_17c1':' ".showData('i_131_them_other_middle_name_1')."',
+	'p6_17a2':' ".showData('i_131_them_other_family_last_name_2')."',
+	'p6_17b2':' ".showData('i_131_them_other_given_first_name_2')."',
+	'p6_17c2':' ".showData('i_131_them_other_middle_name_2')."',
+	'p6_17a3':' ".showData('i_131_them_other_family_last_name_3')."',
+	'p6_17b3':' ".showData('i_131_them_other_given_first_name_3')."',
+	'p6_17c3':' ".showData('i_131_them_other_middle_name_3')."',
 
-	'p6_18':' " . showData('i_131_them_date_of_birth') . "',
-	'p6_19':' " . showData('i_131_them_country_of_birth') . "',
-	'p6_20':' " . showData('i_131_them_country_of_citizenship') . "',
-	'p6_21':' " . showData('i_131_them_daytime_phone_number') . "',
-	'p6_22':' " . showData('i_131_them_email_address') . "',
-	'p6_23':' " . showData('i_131_them_alien_registration_number') . "',
+	'p6_18':' ".showData('i_131_them_date_of_birth')."',
+	'p6_19':' ".showData('i_131_them_country_of_birth')."',
+	'p6_20':' ".showData('i_131_them_country_of_citizenship')."',
+	'p6_21':' ".showData('i_131_them_daytime_phone_number')."',
+	'p6_22':' ".showData('i_131_them_email_address')."',
+	'p6_23':' ".showData('i_131_them_alien_registration_number')."',
 
-	'p6_24a':' " . showData('i_131_them_mailing_in_care_of_name') . "',
-	'p6_24b':' " . showData('i_131_them_mailing_street_number_name') . "',
-	'p6_24c':' " . showData('i_131_them_mailing_apt_ste_flr_number') . "',
-	'p6_24d':' " . showData('i_131_them_mailing_city_town') . "',
-	'p6_24e':' " . showData('i_131_them_mailing_state') . "',
-	'p6_24f':' " . showData('i_131_them_mailing_zip_code') . "',
-	'p6_24g':' " . showData('i_131_them_mailing_province') . "',
-	'p6_24h':' " . showData('i_131_them_mailing_postal_code') . "',
-	'p6_24i':' " . showData('i_131_them_mailing_country') . "',
+	'p6_24a':' ".showData('i_131_them_mailing_in_care_of_name')."',
+	'p6_24b':' ".showData('i_131_them_mailing_street_number_name')."',
+	'p6_24c':' ".showData('i_131_them_mailing_apt_ste_flr_number')."',
+	'p6_24d':' ".showData('i_131_them_mailing_city_town')."',
+	'p6_24e':' ".showData('i_131_them_mailing_state')."',
+	'p6_24f':' ".showData('i_131_them_mailing_zip_code')."',
+	'p6_24g':' ".showData('i_131_them_mailing_province')."',
+	'p6_24h':' ".showData('i_131_them_mailing_postal_code')."',
+	'p6_24i':' ".showData('i_131_them_mailing_country')."',
 
-	'p6_25a':' " . showData('i_131_them_physical_in_care_of_name') . "',
-	'p6_25b':' " . showData('i_131_them_physical_street_number_name') . "',
-	'p6_25c':' " . showData('i_131_them_physical_apt_ste_flr_number') . "',
-	'p6_25d':' " . showData('i_131_them_physical_city_town') . "',
-	'p6_25e':' " . showData('i_131_them_physical_state') . "',
-	'p6_25f':' " . showData('i_131_them_physical_zip_code') . "',
-	'p6_25g':' " . showData('i_131_them_physical_province') . "',
-	'p6_25h':' " . showData('i_131_them_physical_postal_code') . "',
-	'p6_25i':' " . showData('i_131_them_physical_country') . "',
+	'p6_25a':' ".showData('i_131_them_physical_in_care_of_name')."',
+	'p6_25b':' ".showData('i_131_them_physical_street_number_name')."',
+	'p6_25c':' ".showData('i_131_them_physical_apt_ste_flr_number')."',
+	'p6_25d':' ".showData('i_131_them_physical_city_town')."',
+	'p6_25e':' ".showData('i_131_them_physical_state')."',
+	'p6_25f':' ".showData('i_131_them_physical_zip_code')."',
+	'p6_25g':' ".showData('i_131_them_physical_province')."',
+	'p6_25h':' ".showData('i_131_them_physical_postal_code')."',
+	'p6_25i':' ".showData('i_131_them_physical_country')."',
 
 //page 6 end.....
-    'p7_26':' " . showData('i_131_class_of_admission') . "',
-    'p7_27':' " . showData('i_131_recent_form_I_94') . "',
-    'p7_3feet':' " . showData('i_131_biographic_info_height_feet') . "',
-    'p7_3inches':' " . showData('i_131_biographic_info_height_inches') . "',
-    'p7_4Pounds1':' " . showData('i_131_biographic_info_weight_in_pound1') . "',
-    'p7_4Pounds2':' " . showData('i_131_biographic_info_weight_in_pound2') . "',
-    'p7_4Pounds3':' " . showData('i_131_biographic_info_weight_in_pound3') . "',
-    'p7_2b':' " . showData('i_131_reentry_permit_date') . "',
-    'p7_2c':' " . showData('i_131_reentry_permit_disposition') . "',
-    'p7_3b':' " . showData('i_131_issued_an_advance_parole_document_date') . "',
-    'p7_3c':' " . showData('i_131_issued_an_advance_parole_document_disposition') . "',
+    'p7_26':' ".showData('i_131_class_of_admission')."',
+    'p7_27':' ".showData('i_131_recent_form_I_94')."',
+    'p7_3feet':' ".showData('i_131_biographic_info_height_feet')."',
+    'p7_3inches':' ".showData('i_131_biographic_info_height_inches')."',
+    'p7_4Pounds1':' ".showData('i_131_biographic_info_weight_in_pound1')."',
+    'p7_4Pounds2':' ".showData('i_131_biographic_info_weight_in_pound2')."',
+    'p7_4Pounds3':' ".showData('i_131_biographic_info_weight_in_pound3')."',
+    'p7_2b':' ".showData('i_131_reentry_permit_date')."',
+    'p7_2c':' ".showData('i_131_reentry_permit_disposition')."',
+    'p7_3b':' ".showData('i_131_issued_an_advance_parole_document_date')."',
+    'p7_3c':' ".showData('i_131_issued_an_advance_parole_document_disposition')."',
 //page 7 end.....
 
-    'p8_6b':' " . showData('i_131_receipt_number_for_replacement') . "',
-    'p8_7b1':' " . showData('i_131_embassy_city_town') . "',
-    'p8_7b2':' " . showData('i_131_embassy_country') . "',
+    'p8_6b':' ".showData('i_131_receipt_number_for_replacement')."',
+    'p8_7b1':' ".showData('i_131_embassy_city_town')."',
+    'p8_7b2':' ".showData('i_131_embassy_country')."',
 //page 8 end.....
 
-    'p9_9a':' " . showData('i_131_sponsor_in_care_of_name') . "',
-    'p9_9b':' " . showData('i_131_sponsor_street_number_name') . "',
-    'p9_9c':' " . showData('i_131_sponsor_address_number') . "',
-    'p9_9d':' " . showData('i_131_sponsor_city_town') . "',
-    'p9_9e':' " . showData('i_131_sponsor_state') . "',
-    'p9_9f':' " . showData('i_131_sponsor_zip_code') . "',
-    'p9_9g':' " . showData('i_131_sponsor_province') . "',
-    'p9_9h':' " . showData('i_131_sponsor_postal_code') . "',
-    'p9_9i':' " . showData('i_131_sponsor_country') . "',
-    'p9_9b_daytime':' " . showData('i_131_sponsor_daytime_phone') . "',
-    'p9_9c_email':' " . showData('i_131_sponsor_email') . "',
-    'p9_p6_1':' " . showData('i_131_refugee_country') . "',
+    'p9_9a':' ".showData('i_131_sponsor_in_care_of_name')."',
+    'p9_9b':' ".showData('i_131_sponsor_street_number_name')."',
+    'p9_9c':' ".showData('i_131_sponsor_address_number')."',
+    'p9_9d':' ".showData('i_131_sponsor_city_town')."',
+    'p9_9e':' ".showData('i_131_sponsor_state')."',
+    'p9_9f':' ".showData('i_131_sponsor_zip_code')."',
+    'p9_9g':' ".showData('i_131_sponsor_province')."',
+    'p9_9h':' ".showData('i_131_sponsor_postal_code')."',
+    'p9_9i':' ".showData('i_131_sponsor_country')."',
+    'p9_9b_daytime':' ".showData('i_131_sponsor_daytime_phone')."',
+    'p9_9c_email':' ".showData('i_131_sponsor_email')."',
+    'p9_p6_1':' ".showData('i_131_refugee_country')."',
 //page 9 end.....
 
-    'p10_6b':' " . showData('i_131_current_location') . "',
-    'p10_6c':' " . showData('i_131_other_countries_visited') . "',
-    'p10_p7_1':' " . showData('i_131_intended_departure_date') . "',
-    'p10_p7_5':' " . showData('i_131_expected_trip_length') . "',
+    'p10_6b':' ".showData('i_131_current_location')."',
+    'p10_6c':' ".showData('i_131_other_countries_visited')."',
+    'p10_p7_1':' ".showData('i_131_intended_departure_date')."',
+    'p10_p7_5':' ".showData('i_131_expected_trip_length')."',
 
 //page 10 end.....
 
-    'P11_2':' " . showData('i_131_expected_length_of_stay') . "',
-    'P11_3a':' " . showData('i_131_intended_arrival_date') . "',
-    'P11_3b1':' " . showData('i_131_embassy_notification_city') . "',
-    'P11_3b2':' " . showData('i_131_embassy_notification_country') . "',
-    'P11_p10_1':' " . showData('i_131_applicant_daytime_phone') . "',
-    'P11_p10_2':' " . showData('i_131_applicant_mobile_phone') . "',
-    'P11_p10_3':' " . showData('i_131_applicant_email') . "',
-    'P11_p10_4':' " . showData('i_131_applicant_signature_date') . "',
+    'P11_2':' ".showData('i_131_expected_length_of_stay')."',
+    'P11_3a':' ".showData('i_131_intended_arrival_date')."',
+    'P11_3b1':' ".showData('i_131_embassy_notification_city')."',
+    'P11_3b2':' ".showData('i_131_embassy_notification_country')."',
+    'P11_p10_1':' ".showData('i_131_applicant_daytime_phone')."',
+    'P11_p10_2':' ".showData('i_131_applicant_mobile_phone')."',
+    'P11_p10_3':' ".showData('i_131_applicant_email')."',
+    'P11_p10_4':' ".showData('i_131_applicant_signature_date')."',
 
 //page 11 end.....
 
-   'p12_1a':' " . showData('i_131_interpreter_family_last_name') . "',
-   'P12_1b':' " . showData('i_131_interpreter_given_first_name') . "',
-   'P12_2':' " . showData('i_131_interpreter_business_name') . "',
-   'P12_3':' " . showData('i_131_interpreter_daytime_phone') . "',
-   'P12_4':' " . showData('i_131_interpreter_mobile_phone') . "',
-   'P12_5':' " . showData('i_131_interpreter_email') . "',
-   'P12_interpreter_english':' " . showData('i_131_interpreter_second_language') . "',
-   'P12_6':' " . showData('i_131_interpreter_signature_date') . "',
+   'p12_1a':' ".showData('i_131_interpreter_family_last_name')."',
+   'P12_1b':' ".showData('i_131_interpreter_given_first_name')."',
+   'P12_2':' ".showData('i_131_interpreter_business_name')."',
+   'P12_3':' ".showData('i_131_interpreter_daytime_phone')."',
+   'P12_4':' ".showData('i_131_interpreter_mobile_phone')."',
+   'P12_5':' ".showData('i_131_interpreter_email')."',
+   'P12_interpreter_english':' ".showData('i_131_interpreter_second_language')."',
+   'P12_6':' ".showData('i_131_interpreter_signature_date')."',
 
 //page 12 end.....
 
-   'p13_1a':' " . showData('i_131_preparer_family_last_name') . "',
-   'p13_1b':' " . showData('i_131_preparer_given_first_name') . "',
-   'p13_2':' " . showData('i_131_preparer_business_name') . "',
-   'p13_3':' " . showData('i_131_preparer_daytime_phone') . "',
-   'p13_4':' " . showData('i_131_preparer_mobile_phone') . "',
-   'p13_5':' " . showData('i_131_preparer_email') . "',
-   'p13_6':' " . showData('i_131_preparer_signature_date') . "',
+   'p13_1a':' ".showData('i_131_preparer_family_last_name')."',
+   'p13_1b':' ".showData('i_131_preparer_given_first_name')."',
+   'p13_2':' ".showData('i_131_preparer_business_name')."',
+   'p13_3':' ".showData('i_131_preparer_daytime_phone')."',
+   'p13_4':' ".showData('i_131_preparer_mobile_phone')."',
+   'p13_5':' ".showData('i_131_preparer_email')."',
+   'p13_6':' ".showData('i_131_preparer_signature_date')."',
    
 //page 13 end.....
 
 
-    'p14_additional_info_family_name':' " . showData('i_131_additional_info_last_name') . "', 
-	'p14_additional_info_given_name':' " . showData('i_131_additional_info_first_name') . "', 
-	'p14_additional_info_middle_name':' " . showData('i_131_additional_info_middle_name') . "', 
-	'p14_additional_info_a_number':' " . showData('i_131_additional_info_middle_name') . "', 
-	'p14_additional_info_3a':' " . showData('i_131_additional_info_2a_page_no') . "', 
-	'p14_additional_info_3b':' " . showData('i_131_additional_info_2b_part_no') . "', 
-	'p14_additional_info_3c':' " . showData('i_131_additional_info_2c_item_no') . "', 
-	'p14_additional_info_4a':' " . showData('i_131_additional_info_3a_page_no') . "', 
-	'p14_additional_info_4b':' " . showData('i_131_additional_info_3b_part_no') . "', 
-	'p14_additional_info_4c':' " . showData('i_131_additional_info_3c_item_no') . "', 
-	'p14_additional_info_5a':' " . showData('i_131_additional_info_4a_page_no') . "', 
-	'p14_additional_info_5b':' " . showData('i_131_additional_info_4b_part_no') . "', 
-	'p14_additional_info_5c':' " . showData('i_131_additional_info_4c_item_no') . "', 
-	'p14_additional_info_6a':' " . showData('i_131_additional_info_5a_page_no') . "', 
-	'p14_additional_info_6b':' " . showData('i_131_additional_info_5b_part_no') . "', 
-	'p14_additional_info_6c':' " . showData('i_131_additional_info_5c_item_no') . "', 
+    'p14_additional_info_family_name':' ".showData('i_131_additional_info_last_name')."', 
+	'p14_additional_info_given_name':' ".showData('i_131_additional_info_first_name')."', 
+	'p14_additional_info_middle_name':' ".showData('i_131_additional_info_middle_name')."', 
+	'p14_additional_info_a_number':' ".showData('i_131_additional_info_middle_name')."', 
+	'p14_additional_info_3a':' ".showData('i_131_additional_info_2a_page_no')."', 
+	'p14_additional_info_3b':' ".showData('i_131_additional_info_2b_part_no')."', 
+	'p14_additional_info_3c':' ".showData('i_131_additional_info_2c_item_no')."', 
+	'p14_additional_info_4a':' ".showData('i_131_additional_info_3a_page_no')."', 
+	'p14_additional_info_4b':' ".showData('i_131_additional_info_3b_part_no')."', 
+	'p14_additional_info_4c':' ".showData('i_131_additional_info_3c_item_no')."', 
+	'p14_additional_info_5a':' ".showData('i_131_additional_info_4a_page_no')."', 
+	'p14_additional_info_5b':' ".showData('i_131_additional_info_4b_part_no')."', 
+	'p14_additional_info_5c':' ".showData('i_131_additional_info_4c_item_no')."', 
+	'p14_additional_info_6a':' ".showData('i_131_additional_info_5a_page_no')."', 
+	'p14_additional_info_6b':' ".showData('i_131_additional_info_5b_part_no')."', 
+	'p14_additional_info_6c':' ".showData('i_131_additional_info_5c_item_no')."', 
 
 
 

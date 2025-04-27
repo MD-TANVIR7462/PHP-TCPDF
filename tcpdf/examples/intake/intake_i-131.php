@@ -49,7 +49,7 @@ include "intake_header.php";
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
-    <p style="text-align: right"><b>Page 1 of 12</b></p>
+    <p style="text-align: right"><b>Page 1 of 14</b></p>
     <table>
         <thead>
             <tr>
@@ -145,14 +145,14 @@ include "intake_header.php";
         </div>
     </div>
 
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;">
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;">
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;">
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;">
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
 <fieldset class="setpage">
-    <p style="text-align: right"><b>Page 2 of 12</b></p>
+    <p style="text-align: right"><b>Page 2 of 14</b></p>
     <div class="row">
         <div class="col-md-12">
             <div class="bg-info" style="margin-top:10px;">
@@ -296,7 +296,7 @@ include "intake_header.php";
                     <span>Other (provide explanation):</span>
                 </label>
                 <div class="col-md-11" style="margin-left: 50px; margin-top: 0.5rem;">
-                    <input type="text" class="form-control" maxlength="82" name="i_131_other_explanation_value" value="<?php echo showData('i_131_other_explanation_value'); ?>">
+                    <textarea name="i_131_other_explanation_value" class="form-control" maxlength="341" cols="30" rows="6"><?php echo showData('i_131_other_explanation_value') ?></textarea>
                 </div>
             </div>
 
@@ -328,8 +328,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -527,8 +527,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
@@ -641,7 +641,7 @@ include "intake_header.php";
                     <div class="form-group">
                         <label class="control-label col-md-12" style="display: flex; align-items: flex-start;">
                             <span style="width: 30px; flex-shrink: 0;">G.</span>
-                            <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_131_frtf_status") ?></span>
+                            <span style="width: 20px; flex-shrink: 0;"><?php echo createCheckbox("i_131_frtf_status2") ?></span>
                             <span style="flex: 1;">
                                 Family Reunification Task Force (FRTF) Process
                             </span>
@@ -736,8 +736,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5  --------------------------------
@@ -1023,8 +1023,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6  --------------------------------
@@ -1126,7 +1126,7 @@ include "intake_header.php";
                 <div class="form-group" style="flex: 3; margin-bottom: 10px;">
                     <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
                     <div style="width: 100%;">
-  ext" maxlength="34" class                      <input type="t="form-control" name="i_131_them_mailing_street_number_name" value="<?php echo showData('i_131_them_mailing_street_number_name'); ?>"
+                         <input type="t=" form-control" name="i_131_them_mailing_street_number_name" value="<?php echo showData('i_131_them_mailing_street_number_name'); ?>"
                             style="width: 100%; padding: 5px; margin-bottom: 5px;" />
                     </div>
                 </div>
@@ -1318,8 +1318,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 7--------------------------------
@@ -1486,8 +1486,8 @@ include "intake_header.php";
     </div>
 
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 <!----------------------------------------------------------------------
@@ -1585,8 +1585,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 9--------------------------------
@@ -1793,8 +1793,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 10 -------------------------------
@@ -1836,11 +1836,11 @@ include "intake_header.php";
                 </label>
             </div>
             <div class="row">
-            <div>
-                <label class="col-md-12">6.a. Are you currently outside the United States?
-                </label>
-                <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_131_filing_before_currently_outside_status") ?> </div>
-            </div>
+                <div>
+                    <label class="col-md-12">6.a. Are you currently outside the United States?
+                    </label>
+                    <div class="col-md-4 col-md-offset-10 "><?php echo createRadio("i_131_filing_before_currently_outside_status") ?> </div>
+                </div>
                 <div class="col-md-12">
                     <div class="col-md-12">
                         <label class="control-label ">6.b. If you answered "Yes," what is your current location (City or Town and Country)?</label>
@@ -1893,8 +1893,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
 ------------------------ page 11 -------------------------
@@ -2017,8 +2017,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
 ------------------------ page 12 -------------------------
@@ -2109,8 +2109,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
 <!-------------------------------------------------------
 ------------------------ page 13 -------------------------
@@ -2134,7 +2134,7 @@ include "intake_header.php";
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label class="control-label">1. Preparer's Given Name (First Name)</label>
+                        <label class="control-label">Preparer's Given Name (First Name)</label>
                         <div>
                             <input type="text" class="form-control" name="i_131_preparer_given_first_name" maxlength="39" value="<?php echo showData('i_131_preparer_given_first_name') ?>">
                         </div>
@@ -2195,8 +2195,8 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous">
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px">
-    <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;">
+    <input type="submit" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px">
+    <input type="submit" name="submit" class="submit btn btn-success" value="Save" style="float: right;">
 </fieldset>
 <!-------------------------------------------------------
 ------------------------ page 14 -------------------------
@@ -2322,7 +2322,7 @@ include "intake_header.php";
         </div>
     </div>
     <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input style="float: right;" type="button" name="submit" class="submit btn btn-success" value="Save" />
+    <input style="float: right;" type="submit" name="submit" class="submit btn btn-success" value="Save" />
 </fieldset>
 
 
