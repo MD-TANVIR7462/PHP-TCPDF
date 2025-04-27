@@ -522,9 +522,12 @@ $pdf->writeHTMLCell(190, 7, 33, 189, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p2_5m', 169, 19, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_other_explanation_value')), 34, 194);
+$pdf->TextField('p2_5m', 169, 21, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_other_explanation_value')), 34, 194);
 $pdf->setCellHeightRatio(1.2);
 //.................
+$pdf->writeHTMLCell(168.9, 1, 34, 195, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(168.9, 1, 34, 201.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(168.9, 1, 34, 208.5, '', "B", 1, false, 'L');
 //..............
 $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
@@ -1228,6 +1231,11 @@ $pdf->setCellPaddings(1, 1, 0, 1);
 $html = '<div><b><i>Other Information</i></b></div>';
 $pdf->writeHTMLCell(191, 5, 13, 166, $html, 0, 0, true, false, 'L', true);
 //..........
+$pdf->Image('images/right_angle.jpg', 23, 183, 3.3, 3.3);
+$pdf->writeHTMLCell(190, 7, 27, 181, "<b>A-</b>", 0, 1, false, false, 'L', true);
+
+$pdf->Image('images/right_angle.jpg', 105, 208, 3.3, 3.3);
+$pdf->Image('images/right_angle.jpg', 23, 220, 3.3, 3.3);
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(190, 7, 13, 175, "<b>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Alien Registration Number (A-Number) (if any) ", 0, 1, false, false, 'L', true);
 $pdf->writeHTMLCell(190, 7, 96, 175, "<b>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Country of Birth", 0, 1, false, false, 'L', true);
@@ -1300,6 +1308,7 @@ $pdf->setCellPaddings(1, 1, 0, 1);
 $html = '<div><b>Part 2. Information About You</b>(continued)</div>';
 $pdf->writeHTMLCell(191, 6, 13, 17, $html, 1, 1, true, false, 'L', true);
 //.............
+
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 24,  "<div><b>14.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Expiration Date of Authorized Stay Shown on Form I-94</div>", 0, 0, false, true, 'L', true);
 $pdf->writeHTMLCell(130, 1, 110, 24,  "<div><b>15.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eMedical U.S. Parolee ID (USPID) (if any)</div>", 0, 0, false, true, 'L', true);
@@ -1372,7 +1381,14 @@ $pdf->TextField('p6_21', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineW
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 131,  "<div><b>22.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email Address (if any)</div>", 0, 0, false, true, 'L', true);
 $pdf->writeHTMLCell(130, 1, 110, 131,  "<div><b>23.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alien Registration Number (A-Number) (if any) </div>", 0, 0, false, true, 'L', true);
+$pdf->Image('images/right_angle.jpg', 121, 139, 3.5, 3.5);
+$pdf->SetFont('times', '', 11);
+$pdf->writeHTMLCell(190, 7, 126, 137, "<b>A-</b>", 0, 1, false, false, 'L', true);
+$pdf->SetFont('times', '', 10);
+
 //................
+
+
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('p6_22', 85, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22.5, 137);
 $pdf->TextField('p6_23', 47, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 132, 137);
@@ -1928,8 +1944,12 @@ $pdf->writeHTMLCell(190, 7, 19, 142, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->setCellHeightRatio(1.8);
-$pdf->TextField('p8_6a', 184.5, 21, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_explanation_incorrect_current_document')), 20, 152);
+$pdf->TextField('p8_6a', 184.8, 21, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_explanation_incorrect_current_document')), 20, 152);
 $pdf->setCellHeightRatio(1.2);
+//.................
+$pdf->writeHTMLCell(184.3, 1, 20, 153, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(184.3, 1, 20, 160, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(184.3, 1, 20, 167.2, '', "B", 1, false, 'L');
 //.................
 //.............
 $pdf->SetFont('times', '', 10);
@@ -2384,6 +2404,11 @@ $pdf->setCellHeightRatio(1.8);
 $pdf->TextField('p10_p7_2', 184, 29, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_trip_purpose')), 20.7, 150.53);
 $pdf->setCellHeightRatio(1.2);
 //.................
+$pdf->writeHTMLCell(183.3, 1, 21, 151.6, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(183.3, 1, 21, 158.4, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(183.3, 1, 21, 165.6, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(183.3, 1, 21, 172.8, '', "B", 1, false, 'L');
+//.................
 //..........
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(50, 15, 12, 181, '<b>3.</b>', 0, 1, false, true, 'L', true);
@@ -2395,6 +2420,10 @@ $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->setCellHeightRatio(1.8);
 $pdf->TextField('p10_p7_3', 184, 29, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_countries_to_visit')), 20.7, 190);
 $pdf->setCellHeightRatio(1.2);
+$pdf->writeHTMLCell(183.3, 1, 21, 191.6, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(183.3, 1, 21, 198.4, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(183.3, 1, 21, 205.6, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(183.3, 1, 21, 212.8, '', "B", 1, false, 'L');
 //.................
 //............
 //..............
@@ -2446,7 +2475,13 @@ provided in <b>Part 13. Additional Information.</b>) Include copies of any suppo
 $pdf->writeHTMLCell(190, 7, 20, 31, $html, '', 0, 0, true, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('P11_1', 184, 29, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_qualify_for_parole_explanation')), 20.7, 44);
+$pdf->setCellHeightRatio(1.8);
+$pdf->TextField('p10_p7_3', 184, 29, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_131_countries_to_visit')), 20.7, 44);
+$pdf->setCellHeightRatio(1.2);
+$pdf->writeHTMLCell(183.3, 1, 21, 45.6, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(183.3, 1, 21, 52.4, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(183.3, 1, 21, 59.4, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(183.3, 1, 21, 66.4, '', "B", 1, false, 'L');
 //..........
 $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(197, 5, 12, 75, '<b>2.</b>', '', 1, false, 'L');
@@ -2535,7 +2570,9 @@ $pdf->writeHTMLCell(197, 5, 155, 243.5, "Date of Signature (mm/dd/yyyy)", '', 1,
 $pdf->writeHTMLCell(133, 6.4, 21, 248.6, "", 1, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('P11_p10_4', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 248.5);
-
+//...........
+$pdf->SetFont('zapfdingbats', '', 22);  // symbol font
+$pdf->writeHTMLCell(82, 7, 12, 246, TCPDF_FONTS::unichr(225), 0, 0, false, 'L');
 
 
 /******************************
