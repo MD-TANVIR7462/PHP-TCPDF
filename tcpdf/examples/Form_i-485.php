@@ -152,10 +152,10 @@ $html = '<div><b>For USCIS Use Only</b></div>';
 $pdf->writeHTMLCell(190, 7, 13, 32, $html, 'LTR', 1, true, false, 'C', true);
 $pdf->writeHTMLCell(190, 55, 13, 39, '',  1,  0, false, false, 'C', true);
 $pdf->SetFont('times', 'B', 8);
-$pdf->writeHTMLCell(55, 6, 13, 39, 'Preference Category:',  'BR',  1, false, true, 'L', true);
-$pdf->writeHTMLCell(55, 6, 13, 45, 'Country Chargeable:',  'BR',  1, false, true, 'L', true);
-$pdf->writeHTMLCell(55, 6, 13, 51, 'Priority Date:',  'BR',  1, false, true, 'L', true);
-$pdf->writeHTMLCell(55, 6, 13, 57, 'Date Form I-693 Received:',  'BR',  1, false, true, 'L', true);
+$pdf->writeHTMLCell(71, 6, 13, 39, 'Preference Category:',  'BR',  1, false, true, 'L', true);
+$pdf->writeHTMLCell(71, 6, 13, 45, 'Country Chargeable:',  'BR',  1, false, true, 'L', true);
+$pdf->writeHTMLCell(71, 6, 13, 51, 'Priority Date:',  'BR',  1, false, true, 'L', true);
+$pdf->writeHTMLCell(71, 6, 13, 57, 'Date Form I-693 Signed By Civil Surgeon:',  'BR',  1, false, true, 'L', true);
 $pdf->writeHTMLCell(15, 31, 53, 63, '',  'R',  1, false, true, 'L', true); //middle verticle row 1 
 $pdf->writeHTMLCell(15, 31, 120, 63, '',  'R',  1, false, true, 'L', true); //middle verticle row 2
 
@@ -182,7 +182,7 @@ $pdf->writeHTMLCell(55, 7, 13, 82, $html,  0,  1, false, true, 'L', false);
 
 $pdf->writeHTMLCell(67, 24, 68, 39, '',  'BR',  1, false, true, 'L', true);
 $pdf->SetFont('times', 'B', 9);
-$pdf->writeHTMLCell(80, 7, 95, 39, 'Receipt',   0,  1, false, true, 'L', true);
+$pdf->writeHTMLCell(80, 7, 102, 39, 'Receipt',   0,  1, false, true, 'L', true);
 $pdf->writeHTMLCell(80, 7, 90, 62, 'Section of Law',   0,  1, false, true, 'L', true);
 $pdf->writeHTMLCell(80, 7, 160, 39, 'Action Block',   0,  1, false, true, 'L', true);
 
@@ -281,23 +281,37 @@ $pdf->SetFillColor(0, 0, 0);
 $pdf->Rotate(-30);
 $pdf->SetFont('zapfdingbats', 'B', 10);
 $pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 12, 123, false); // angle 1
-$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 125, 55.5, false); // angle 2
+$pdf->MultiCell(10, 10, "t", '', 'L', 0, 1, 125, 56.5, false); // angle 2
 $pdf->StopTransform();
 
 $pdf->SetFont('times', '', 10);
 $html = '<div>A-Number  </div>';
-$pdf->writeHTMLCell(60, 7, 100, 120, $html, 0, 1, false, false, 'C', true);
-$pdf->writeHTMLCell(60, 7, 120, 122, 'A-', 0, 1, false, false, 'C', true);
+$pdf->writeHTMLCell(60, 7, 105, 121, $html, 0, 1, false, false, 'C', true);
+$pdf->writeHTMLCell(60, 7, 120, 123, 'A-', 0, 1, false, false, 'C', true);
 
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_485_a_number', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 153, 124);
+$pdf->TextField('i_485_a_number', 50.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 153, 125);
 //..........
 $pdf->SetFont('times', '', 10);
-$pdf->setCellHeightRatio(1.1);
-$html = '<div><b>NOTE TO ALL APPLICANTS: </b>If you do not completely fill out this application or fail to submit required documents listed in the Instructions, U.S. Citizenship and Immigration Services (USCIS) may deny your application.</div>';
-$pdf->writeHTMLCell(190, 7, 13, 130, $html, 0, 1, false, true, 'J', true);
+$pdf->setCellHeightRatio(1.2);
+$html = '<div><b>NOTE TO ALL APPLICANTS: </b>If you do not completely fill out this application or fail to submit required documents listed in the<br>
+Instructions, U.S. Citizenship and Immigration Services (USCIS) may reject or deny your application.</div>';
+$pdf->writeHTMLCell(190, 7, 13, 132, $html, 0, 1, false, true, 'J', true);
+$html = '<div>For all sections of this application, if you need to provide any additional information or are instructed to provide an explanation, use
+the space provided in <b>Part 14. Additional Information</b>.</div>';
+$pdf->writeHTMLCell(190, 7, 13, 142, $html, 0, 1, false, true, 'J', true);
 
 //..............
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$pdf->SetFontSize(11.6);
+$html = '<div><b>Part 1. Information About You</b>  (Person applying for lawful permanent residence)</div>';
+$pdf->writeHTMLCell(191, 6.5, 13, 158, $html, 1, 1, true, 'L');
+
+
+
 
 // 'volag_number':' $attorneyData->volag_number',
 // 'attorney_statebar_number':' $attorneyData->bar_number',
