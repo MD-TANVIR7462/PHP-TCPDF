@@ -1335,6 +1335,8 @@ $pdf->TextField('part5_7_optional', 15, 7, array('strokeColor' => array(64, 64, 
 $pdf->SetFont('times', '', 10);
 $html ='<div><b>8.      </b>      Add together <b>Part 5., Item Numbers 1. - 7.</b> and enter the<br>   &nbsp;   &nbsp;
 number here.
+
+
 </div>';
 $pdf->writeHTMLCell(90, 7, 12, 170, $html, 0, 1, false, true, 'L',true);
 $pdf->SetFont('courier', 'B', 10);
