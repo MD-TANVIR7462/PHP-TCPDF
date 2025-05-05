@@ -341,6 +341,9 @@ $pdf->TextField('p1_5a', 169, 6.6, array('strokeColor' => array(64, 64, 64), 'li
  ******** End Page No 1 ******
  *****************************/
 
+
+
+
 /****************************
  ******** Start Page No 2****
  ****************************/
@@ -392,6 +395,9 @@ $pdf->writeHTMLCell(50, 15, 26, 53, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', '', 10); // set font
 $html = 'Deferred Enforced Departure.';
 $pdf->writeHTMLCell(190, 7, 33, 54, $html, '', 0, 0, true, 'L');
+
+
+
 
 // ..................
 $pdf->SetFont('times', '', 10);
