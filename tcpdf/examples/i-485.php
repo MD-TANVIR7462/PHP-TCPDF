@@ -300,7 +300,6 @@ $pdf->writeHTMLCell(190, 7, 13, 132, $html, 0, 1, false, true, 'J', true);
 $html = '<div>For all sections of this application, if you need to provide any additional information or are instructed to provide an explanation, use
 the space provided in <b>Part 14. Additional Information</b>.</div>';
 $pdf->writeHTMLCell(190, 7, 13, 142, $html, 0, 1, false, true, 'J', true);
-
 //..............
 $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);
@@ -310,11 +309,6 @@ $pdf->SetFontSize(11.6);
 $html = '<div><b>Part 1. Information About You</b>  (Person applying for lawful permanent residence)</div>';
 $pdf->writeHTMLCell(191, 6.5, 13, 158, $html, 1, 1, true, 'L');
 //.........
-
-
-
-
-
 $pdf->SetFont('times', '', 10);
 $pdf->setCellHeightRatio(1.2);
 $pdf->writeHTMLCell(197, 5, 12, 165, '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Current Legal Name (<b>Do not</b> provide a nickname)', '', 1, false, 'L');
@@ -326,9 +320,9 @@ $pdf->writeHTMLCell(60, 1, 92.3, 170, '<div>Given Name (First Name)</div>', 0, 0
 $pdf->writeHTMLCell(60, 1, 151, 170, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
 //................
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p6_16a', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 175);
-$pdf->TextField('p6_16b', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 93, 175);
-$pdf->TextField('p6_16c', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 152, 175);
+$pdf->TextField('p1_1a', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 175);
+$pdf->TextField('p1_1b', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 93, 175);
+$pdf->TextField('p1_1c', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 152, 175);
 //.............
 $pdf->SetFont('times', '', 10);
 $html = "<div><b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other Names You Have Used Since Birth (if applicable)</div>";
@@ -341,25 +335,21 @@ $pdf->writeHTMLCell(60, 1, 93.3, 198, '<div>Given Name (First Name)</div>', 0, 0
 $pdf->writeHTMLCell(60, 1, 152, 198, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
 //................
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p6_17a1', 72, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 203.5);
-$pdf->TextField('p6_17b1', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 94, 203.5);
-$pdf->TextField('p6_17c1', 51, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 153, 203.5);
+$pdf->TextField('p1_2a1', 72, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 203.5);
+$pdf->TextField('p1_2b1', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 94, 203.5);
+$pdf->TextField('p1_2c1', 51, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 153, 203.5);
 // //.
-$pdf->TextField('p6_17a2', 72, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 210.2);
-$pdf->TextField('p6_17b2', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 94, 210.2);
-$pdf->TextField('p6_17c2', 51, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 153, 210.2);
+$pdf->TextField('p1_2a2', 72, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 210.2);
+$pdf->TextField('p1_2b2', 57.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 94, 210.2);
+$pdf->TextField('p1_2c2', 51, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 153, 210.2);
 // //.
 $pdf->SetFont('times', '', 10);
 $html = "<div><b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)</div>";
 $pdf->writeHTMLCell(130, 1, 12, 219.3, $html, 0, 0, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p6_17a1', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 62.8, 219);
-
+$pdf->TextField('p1_3', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 62.8, 219);
 //................
-$pdf->SetFont('times', '', 10); // set font
-// $html = '<b>1.</b> ';
-// $pdf->writeHTMLCell(90, 7, 13, 144, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); // set font
 $html = 'Have you ever used any other date of birth?';
 $pdf->writeHTMLCell(190, 7, 20, 227, $html, '', 0, 0, true, 'L');
@@ -378,9 +368,23 @@ $pdf->writeHTMLCell(190, 7, 20, 233, 'If you answered "Yes," provide all', '', 0
 $pdf->writeHTMLCell(190, 7, 20, 238, 'other dates of birth (mm/dd/yyyy).', '', 0, 0, true, 'L');
 //...............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p6_17a1', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 243);
-$pdf->TextField('p6_17a1', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 249.5);
+$pdf->TextField('p1_3_other1', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 243);
+$pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 249.5);
+/******************************
+ ******** End Page No 1 ******
+ ******************************/
 
+/******************************
+ ******** Start Page No 2****
+ ******************************/
+$pdf->AddPage('P', 'LETTER');
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$pdf->SetFontSize(11.6);
+$html = '<div><b>Part 4. Processing Information</b> (continued)</div>';
+$pdf->writeHTMLCell(191, 6.5, 13, 19, $html, 1, 1, true, 'L');
 
 
 
