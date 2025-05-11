@@ -383,14 +383,26 @@ $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $pdf->SetFontSize(11.6);
-$html = '<div><b>Part 4. Processing Information</b> (continued)</div>';
+$html = '<div><b>Part 1. Information About You</b> (Person applying for lawful permanent residence) (continued)</div>';
 $pdf->writeHTMLCell(191, 6.5, 13, 19, $html, 1, 1, true, 'L');
 
+//......
+$pdf->SetFont('times', '', 10);
+$html = "<div><b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do you have an Alien Registration Number (A-Number)?</div>";
+$pdf->writeHTMLCell(130, 1, 12, 27.3, $html, 0, 0, false, true, 'L', true);
 
-
-
-
-
+// //..............
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>3.b.</b> ';
+$pdf->writeHTMLCell(90, 7, 13, 230, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('times', '', 10); // set font
+$html = 'Applied for and/or obtained a national passport, passport renewal, or entry permit from the country in<br><b>Item Number 1.</b>?';
+$pdf->writeHTMLCell(190, 7, 21.4, 230, $html, '', 0, 0, true, 'L');
+if (showData('i_131_obtained_passport_from_refugee_country_status') == "Y") $checked_y = "checked";
+else $checked_y = "";
+if (showData('i_131_obtained_passport_from_refugee_country_status') == "N") $checked_N = "checked";
+else $checked_N = "";
+$pdf->writeHTMLCell(120, 7, 178, 231, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
 
 
 
@@ -436,20 +448,19 @@ var fields = {
 // page 1
 
     'i_485_a_number':' " . showData('i_485_a_number') . "',	
-    'info_about_you_family_lastname':' " . showData('information_about_you_family_last_name') . "',
-    'info_about_you_family_firstname':' " . showData('information_about_you_given_first_name') . "',
-    'info_about_you_family_middlename':' " . showData('information_about_you_middle_name') . "',	
-    'additional_info_family_lastname':' " . showData('information_about_you_other_family_last_name') . "',
-    'additional_info_family_firstname':' " . showData('information_about_you_other_given_first_name') . "',
-    'additional_info_family_middlename':' " . showData('information_about_you_other_middle_name') . "',	
-    'additional_info_3_family_lastname':' " . showData('information_about_you_other_family_last_name2') . "',
-    'additional_info_3_family_firstname':' " . showData('information_about_you_other_given_first_name2') . "',
-    'additional_info_3_family_middlename':' " . showData('information_about_you_other_middle_name2') . "',	
-    'additional_info_4_family_lastname':' " . showData('information_about_you_other_family_last_name3') . "',
-    'additional_info_4_family_firstname':' " . showData('information_about_you_other_given_first_name3') . "',
-    'additional_info_4_family_middlename':' " . showData('information_about_you_other_middle_name3') . "',	
-    'other_info_you_date_of_birth':' " . showData('other_information_about_you_date_of_birth') . "',
-    'other_info_you_city_town_of_birth':' " . showData('other_information_about_you_city_of_birth') . "',
+    'p1_1a':' " . showData('information_about_you_family_last_name') . "',
+    'p1_1b':' " . showData('information_about_you_family_last_name') . "',
+    'p1_1c':' " . showData('information_about_you_family_last_name') . "',
+    'p1_2a1':' " . showData('information_about_you_family_last_name') . "',
+    'p1_2b1':' " . showData('information_about_you_family_last_name') . "',
+    'p1_2c1':' " . showData('information_about_you_family_last_name') . "',
+    'p1_2a2':' " . showData('information_about_you_family_last_name') . "',
+    'p1_2b2':' " . showData('information_about_you_family_last_name') . "',
+    'p1_2c2':' " . showData('information_about_you_family_last_name') . "',
+    'p1_3':' " . showData('information_about_you_family_last_name') . "',
+    'p1_3_other1':' " . showData('information_about_you_family_last_name') . "',
+    'p1_3_other2':' " . showData('information_about_you_family_last_name') . "',
+   
 	
     // page 2
 	
