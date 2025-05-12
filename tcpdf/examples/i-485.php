@@ -386,32 +386,59 @@ $pdf->SetFontSize(11.6);
 $html = '<div><b>Part 1. Information About You</b> (Person applying for lawful permanent residence) (continued)</div>';
 $pdf->writeHTMLCell(191, 6.5, 13, 19, $html, 1, 1, true, 'L');
 
-//......
-$pdf->SetFont('times', '', 10);
-$html = "<div><b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do you have an Alien Registration Number (A-Number)?</div>";
-$pdf->writeHTMLCell(130, 1, 12, 27.3, $html, 0, 0, false, true, 'L', true);
-
-// //..............
+//..........
 $pdf->SetFont('times', '', 10); // set font
-$html = '<b>3.b.</b> ';
-$pdf->writeHTMLCell(90, 7, 13, 230, $html, '', 0, 0, true, 'L');
+$html = '<b>4.</b> ';
+$pdf->writeHTMLCell(90, 7, 13, 26, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 10); // set font
-$html = 'Applied for and/or obtained a national passport, passport renewal, or entry permit from the country in<br><b>Item Number 1.</b>?';
-$pdf->writeHTMLCell(190, 7, 21.4, 230, $html, '', 0, 0, true, 'L');
+$html = "<div>Do you have an Alien Registration Number (A-Number)?</div>";
+$pdf->writeHTMLCell(190, 7, 21.4, 26, $html, '', 0, 0, true, 'L');
 if (showData('i_131_obtained_passport_from_refugee_country_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
 if (showData('i_131_obtained_passport_from_refugee_country_status') == "N") $checked_N = "checked";
 else $checked_N = "";
-$pdf->writeHTMLCell(120, 7, 178, 231, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(120, 7, 178, 27, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
+$pdf->SetFont('times', '', 14); // set font
+$html = '<div><input type="checkbox" name="83" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="83" value="N" checked="' . $checked_N . '" /></div>';
+$pdf->writeHTMLCell(50, 7, 172, 26, $html, 0, 1, false, true, 'J', true);
 
+//.......
+$pdf->SetFont('times', '', 10); // set font
+$html = '<div>If you answered "Yes," provide your A-Number.</div>';
+$pdf->writeHTMLCell(190, 7, 21.4, 31, $html, '', 0, 0, true, 'L');
 
+//..........
 
-
-
-
-
-
-
+$pdf->SetFont('times', '', 10);
+$html = "<div>A-Number (if any)</div>";
+$pdf->writeHTMLCell(130, 1, 21, 37.3, $html, 0, 0, false, true, 'L', true);
+$pdf->SetFont('times', '', 11);
+$pdf->writeHTMLCell(130, 1, 57, 37.3, "<b>A-</b>", 0, 0, false, true, 'L', true);
+//............
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 62.8, 37);
+//............
+$pdf->SetFont('times', '', 10); // set font
+$html = '<b>5.</b> ';
+$pdf->writeHTMLCell(90, 7, 13, 44.3, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('times', '', 10); // set font
+$html = "<div>Have you ever used, or been assigned, any other A-Number? </div>";
+$pdf->writeHTMLCell(190, 7, 21.4, 44.3, $html, '', 0, 0, true, 'L');
+if (showData('i_131_obtained_passport_from_refugee_country_status') == "Y") $checked_y = "checked";
+else $checked_y = "";
+if (showData('i_131_obtained_passport_from_refugee_country_status') == "N") $checked_N = "checked";
+else $checked_N = "";
+$pdf->writeHTMLCell(120, 7, 178, 45, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
+$pdf->SetFont('times', '', 14); // set font
+$html = '<div><input type="checkbox" name="83" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="83" value="N" checked="' . $checked_N . '" /></div>';
+$pdf->writeHTMLCell(50, 7, 172, 44.3, $html, 0, 1, false, true, 'J', true);
+//.......
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 21.6, 49, 'If you answered "Yes," provide the A-Numbers. ', '', 0, 0, true, 'L');
+//...............
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22.2, 54);
+$pdf->TextField('p1_3_other2', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22.2, 60.8);
 
 
 
