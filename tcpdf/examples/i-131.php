@@ -2236,20 +2236,7 @@ $pdf->SetFont('times', '', 14); // set font
 $html = '<div><input type="checkbox" name="82" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="82" value="N" checked="' . $checked_N . '" /></div>';
 $pdf->writeHTMLCell(50, 7, 172, 223, $html, 0, 1, false, true, 'J', true);
 // //..............
-$pdf->SetFont('times', '', 10); // set font
-$html = '<b>3.b.</b> ';
-$pdf->writeHTMLCell(90, 7, 13, 230, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('times', '', 10); // set font
-$html = 'Applied for and/or obtained a national passport, passport renewal, or entry permit from the country in<br><b>Item Number 1.</b>?';
-$pdf->writeHTMLCell(190, 7, 21.4, 230, $html, '', 0, 0, true, 'L');
-if (showData('i_131_obtained_passport_from_refugee_country_status') == "Y") $checked_y = "checked";
-else $checked_y = "";
-if (showData('i_131_obtained_passport_from_refugee_country_status') == "N") $checked_N = "checked";
-else $checked_N = "";
-$pdf->writeHTMLCell(120, 7, 178, 231, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
-$pdf->SetFont('times', '', 14); // set font
-$html = '<div><input type="checkbox" name="83" value="Y" checked="' . $checked_y . '" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="83" value="N" checked="' . $checked_N . '" /></div>';
-$pdf->writeHTMLCell(50, 7, 172, 230, $html, 0, 1, false, true, 'J', true);
+
 // //..............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>3.c.</b> ';

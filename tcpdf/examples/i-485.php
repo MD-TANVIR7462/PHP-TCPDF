@@ -439,12 +439,51 @@ $pdf->writeHTMLCell(190, 7, 21.6, 49, 'If you answered "Yes," provide the A-Numb
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('p1_3_other1', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22.2, 54);
 $pdf->TextField('p1_3_other2', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22.2, 60.8);
+//.............
 
 
+//...........
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 12, 69, "<b>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Sex", 0, 1, false, false, 'L', true);
+//.............
+if (showData('other_information_about_you_gender') == "male") $checked_male = "checked";
+else $checked_male = "";
+if (showData('other_information_about_you_gender') == "female") $checked_female = "checked";
+else $checked_female = "";
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(90, 7,40.5, 67.6, 'Male', 0, 1, false, false, 'J', true);
+$pdf->writeHTMLCell(90, 7,56.5, 66.8, 'Female', 0, 1, false, false, 'J', true);
+$pdf->SetFont('times', '', 14);
+$html = '<div><input type="checkbox" name="gender1" value="Male" checked="' . $checked_male . '" /></div>';
+$pdf->writeHTMLCell(90, 7, 34.4, 68, $html, 0, 1, false, false, 'J', true);
+$html = '<div><input type="checkbox" name="gender1" value="Female" checked="' . $checked_female . '" /></div>';
+$pdf->writeHTMLCell(90, 7, 50.4, 68, $html, 0, 1, false, false, 'J', true);
+//...........
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 12, 76, "<b>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Place of Birth", 0, 1, false, false, 'L', true);
 
-
-
-
+//............
+//.......
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 20.8, 82, 'City or Town of Birth', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(190, 7, 110.6, 82, 'Country of Birth', '', 0, 0, true, 'L');
+//...............
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 88, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 86.5);
+$pdf->TextField('p1_3_other2', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 112, 86.5);
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 12, 95, '<b>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Country of Citizenship or Nationality', '', 0, 0, true, 'L');
+//...............
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 88, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 99.5);
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 12, 107.5, '<b>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>USCIS Online Account Number (if any)', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(190, 7, 21, 119.5, 'If one has been assigned, you can find it on a notice that USCIS may have sent to you.', '', 0, 0, true, 'L');
+//...............
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 112.3);
 
 
 
