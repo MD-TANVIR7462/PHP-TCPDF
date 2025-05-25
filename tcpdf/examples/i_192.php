@@ -1304,8 +1304,12 @@ $pdf->writeHTMLCell(90, 50, 21, 232, $html, 0, 0, false, 'L');*/
 
 $pdf->SetFont('courier', 'B', 10);
 $pdf->setCellHeightRatio( 2.2 );
-$pdf->TextField('information_about_you_explain_grounds_of_inadmissibility', 182, 26, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>0, 'borderStyle'=>'solid'), array('v'=>showData('information_about_you_explain_grounds_of_inadmissibility')), 22, 234);
+$pdf->TextField('information_about_you_explain_grounds_of_inadmissibility', 182, 23, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>0, 'borderStyle'=>'solid'), array('v'=>showData('information_about_you_explain_grounds_of_inadmissibility')), 22, 234);
 $pdf->setCellHeightRatio( 1.2 );
+//.................
+$pdf->writeHTMLCell(182, 1, 22, 235, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 22, 242.5, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182, 1, 22, 250.3, '', "B", 1, false, 'L');
 
 /********************************
 ******** End Page No 4 **********
@@ -1638,8 +1642,15 @@ $pdf->writeHTMLCell(190, 5, 12, 91,$html, '', 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
 
 $pdf->setCellHeightRatio( 2.2 );
-$pdf->TextField('p2_about_you_43', 183, 32, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>0, 'borderStyle'=>'solid'), array('v'=>showData('information_about_you_travel_info_explain_fully_purpose_of_stay')), 21, 96.5);
+$pdf->TextField('p2_about_you_43', 183, 35, array('multiline'=>true, 'strokeColor' => array(64, 64, 64), 'lineWidth'=>0, 'borderStyle'=>'solid'), array('v'=>showData('information_about_you_travel_info_explain_fully_purpose_of_stay')), 21, 96.5);
 $pdf->setCellHeightRatio( 1.2 );
+//.................
+$pdf->writeHTMLCell(182.6, 1, 21, 97, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182.6, 1, 21, 104, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182.6, 1, 21, 111, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182.6, 1, 21, 118, '', "B", 1, false, 'L');
+$pdf->writeHTMLCell(182.6, 1, 21, 125, '', "B", 1, false, 'L');
+
 
 //.............
 
@@ -2341,13 +2352,13 @@ $pdf->writeHTMLCell(182, 1, 21.2, 225.5, '', "B", 1, false, 'L');
 // 'volag_number':' $attorneyData->volag_number',
 // 'attorney_state_bar_number':' $attorneyData->bar_number',
 // 'attorney_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
+
 // 'volag_number':' $attorneyData->volag_number',
 // 'attorney_state_bar_number':' $attorneyData->bar_number',
 // 'attorney_uscis_online_account_number':' $attorneyData->uscis_online_account_number',
 
 $js = "
 var fields = {
-
 
 
 // page 2

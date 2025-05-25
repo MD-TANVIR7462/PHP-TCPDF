@@ -39,35 +39,36 @@ class MyPDF extends TCPDF
          'B' => array('width' => 0.5, 'color' => array(0, 0, 0), 'dash' => 0, 'cap' => 'butt'),
       );
 
-      if ($this->page != 1) {
+      if ($this->page >0) {
          $this->Cell(191, 2, '', $header_top_border, 1, 1);
       }
 
       if ($this->page >= 1 && $this->page < 11) {
          $this->SetFont('times', '', 8);
-         $this->MultiCell(59, 10, 'Form  I-589  Edition 03/01/23', 0, 'L', 0, 1, 13.5, 264.5, true);
+         $this->MultiCell(59, 10, 'Form  I-589  Edition 01/20/25', 0, 'L', 0, 1, 13.5, 264.5, true);
       }
 
 
       if ($this->page == 11) {
          $this->SetFont('times', '', 8);
-         $this->MultiCell(59, 10, 'Form I-589   Supplement  A   Edition 03/01/23', 0, 'L', 0, 1, 13, 264.5, true);
+         $this->MultiCell(59, 10, 'Form I-589   Supplement  A   Edition 01/20/25', 0, 'L', 0, 1, 13, 264.5, true);
       }
 
       if ($this->page == 12) {
          $this->SetFont('times', '', 8);
-         $this->MultiCell(59, 10, 'Form I-589   Supplement B Edition 03/01/23', 0, 'L', 0, 1, 13, 264.5, true);
+         $this->MultiCell(59, 10, 'Form I-589   Supplement B Edition 01/20/25', 0, 'L', 0, 1, 13, 264.5, true);
       }
 
       // Page number
-      if ($this->page < 10) {
+      if ($this->page) {
          $this->MultiCell(59, 10, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages() , 0, 'R', 0, 1, 152.5, 264.5, true);
       }
-      if ($this->page >= 10) {
-         $this->MultiCell(59, 10, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages() , 0, 'R', 0, 1, 151.5, 264.5, true);
+     
+      if ($this->page) {
+         // $barcode_image = "images/i589/I-589-footer-pdf417-$this->page.png";
+         // $this->Image($barcode_image, 67, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
       }
-      $barcode_image = "images/i589/I-589-footer-pdf417-$this->page.png";
-      $this->Image($barcode_image, 65, 265, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
+     
 
    }
 }
@@ -170,7 +171,7 @@ $style = array(
 
 // Logo
 $logo = 'homeland_security_logo.png';
-$pdf->Image($logo, 12, 12, 19, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+$pdf->Image($logo, 12, 11, 18, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 
 $pdf->Cell(25, 5, '', 0, 0);
 $pdf->SetFont('times', 'B', 13.5);    // set font
@@ -2943,7 +2944,7 @@ $pdf->AddPage('P', 'LETTER');  // page number 11
 $pdf->SetFont('times', 'B', 12);
 
 $logo = 'homeland_security_logo.png';
-$pdf->Image($logo, 12, 12, 19, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+$pdf->Image($logo,  11, 11, 17, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 
 $pdf->Cell(25, 5, '', 0, 0);
 $pdf->SetFont('times', 'B', 13.5);    // set font
@@ -2976,9 +2977,10 @@ $pdf->Cell(188.5, 0, '', $top_border, 1, 1);
 $pdf->setCellPaddings(1, 1, 0, 1); // set cell padding
 $pdf->SetLineWidth(0.1); // set border width
 $pdf->SetDrawColor(0, 0, 0); // set color for cell border
-$pdf->SetFillColor(255, 255, 255); // set filling color
+$pdf->SetFillColor(220, 220, 220); // set filling color
 $pdf->setCellHeightRatio(1.1); // set cell height ratio
-$pdf->MultiCell(0, 0, '', 'T', 1, 'C', 1, 12.8, 32.65, false, 'T', 'C');
+
+
 
 
 
@@ -3014,7 +3016,7 @@ $pdf->writeHTMLCell(191, 11, 13, 60, "", 1, 1, true, true, 'L', true);
 //...........
 $pdf->SetFont('times', '', 12);
 $html = '<div><b>List All of Your Children, Regardless of Age or Marital Status</b></div>';
-$pdf->writeHTMLCell(191, 7, 13, 60, $html, 0, 1, false, true, 'L', true);
+$pdf->writeHTMLCell(191, 7, 13, 60, $html, "T", 1, true, true, 'L', true);
 //...............
 
 $pdf->SetFont('times', '', 9);
@@ -3405,7 +3407,7 @@ $pdf->writeHTMLCell(190, 7, 18, 233, $html, 0, 1, false, true, 'L', true);
  ******************************/
 $pdf->AddPage('P', 'LETTER');
 $logo = 'homeland_security_logo.png';
-$pdf->Image($logo, 12, 12, 19, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+$pdf->Image($logo, 11, 11, 17, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 
 $pdf->Cell(25, 5, '', 0, 0);
 $pdf->SetFont('times', 'B', 13.5);    // set font

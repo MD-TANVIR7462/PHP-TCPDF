@@ -1,7 +1,10 @@
 <?php
 
-require_once('formheader.php');   //database connection file 
+// require_once('formheader.php');   //database connection file 
+require_once("localconfig.php");
+//$allDataCountry = indexByQueryAlldata("SELECT * FROM countries");
 
+// Include the main TCPDF library (search for installation path).
 require_once('tcpdf_include.php');
 
 // Extend the TCPDF class to create custom Header and Footer
@@ -40,7 +43,7 @@ class MyPDF extends TCPDF
         // Set font
         $this->SetFont('times', '', 9);
 
-        $this->Cell(40, 6, "Form I-601A   Edition   04/01/24 ", 0, 0, 'L');
+        $this->Cell(40, 6, "Form I-601A   Edition   01/20/25 ", 0, 0, 'L');
 
 
         // if ($this->page == 1){
@@ -549,7 +552,7 @@ $pdf->TextField('information_about_you_date_of_birth', 37, 7, array('strokeColor
 /********************************
  ******** Start Page No 2 ********
  *********************************/
-$pdf->AddPage('P', 'LETTER');  // page number 2
+$pdf->AddPage('P', 'LETTER');  
 //.........
 $pdf->SetFont('times', '', 12);
 $pdf->SetFillColor(220, 220, 220);
@@ -809,7 +812,8 @@ $pdf->writeHTMLCell(85, 7, 120, 150, $html, 0, 1, false, true, 'J', true);
 
 
 $pdf->SetFont('times', '', 10);
-if (showData('i_601a_immigration_exclusion_status') == "Y") $checked = "checked";else $checked = "";
+if (showData('i_601a_immigration_exclusion_status') == "Y") $checked = "checked";
+else $checked = "";
 $html = '<div><b>28.a.   </b> <input type="checkbox" name="part1_28a " value="Y" checked="' . $checked . '" /> </b></div>';
 $pdf->writeHTMLCell(90, 7, 110, 172, $html, 0, 1, false, true, 'J', true);
 //............
@@ -1610,7 +1614,7 @@ $html = '<div>
 <input type="checkbox" name="unknown2" value="unknown" checked="' . $checked_unknown . '"/> &nbsp;unknown/<br>&nbsp;&nbsp;&nbsp;&nbsp;Other<br>
  </div>';
 $pdf->writeHTMLCell(90, 7, 166, 183, $html, 0, 0, false, true, 'J', true);
-// $pdf->writeHTMLCell(90, 7, 116, 183, $html, 0, 0, false, true, 'J', true);
+
 
 /********************************
  ******** End Page No 4 **********
@@ -2001,6 +2005,41 @@ $pdf->writeHTMLCell(91, 7, 12, 26, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->setCellHeightRatio(1.8);
 $pdf->TextField('statement_from_applicant', 91, 195, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_601a_applicant_statement')), 12, 62);
+$pdf->setCellHeightRatio(1.2);
+$pdf->writeHTMLCell(90.8, 1, 12, 29.3, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 34, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 39, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 44, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 49, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 54, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 59, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 64, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 69, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 74, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 79, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 84, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 89, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 94, '',  "B",  0, false, false, 'C', true);
+
+$pdf->writeHTMLCell(90.8, 1, 12, 99, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 104, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 109, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 114, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 119, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 124, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 129, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 134, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 139, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 144, '',  "B",  0, false, false, 'C', true);
+
+$pdf->writeHTMLCell(90.8, 1, 12, 149, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 154, '',  "B",  0, false, false, 'C', true);
+
+$pdf->writeHTMLCell(90.8, 1, 12, 159, '',  "B",  0, false, false, 'C', true);
+$pdf->writeHTMLCell(90.8, 1, 12, 164, '',  "B",  0, false, false, 'C', true);
+
+
+
 //..............
 $pdf->setCellHeightRatio(1.1);
 $pdf->SetFont('times', '', 12);
@@ -2981,11 +3020,11 @@ $pdf->writeHTMLCell(82, 1, 121.6, 232, '',  "B",  0, false, false, 'C', true); /
 $pdf->TextField('i_601a_additional_info_name_7d', 82.5, 64, array('multiline' => true, 'strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_601a_additional_info_7d')), 121.5, 194);
 
 
+
+// 'attorney_state_bar_number':' $attorneyData->bar_number',
+// 'attorney_or_according_representative':' $attorneyData->uscis_online_account_number',
 $js = "
 var fields = {
-
-    'attorney_state_bar_number':' $attorneyData->bar_number',
-    'attorney_or_according_representative':' $attorneyData->uscis_online_account_number',
     'info_about_you_alien_reg':' " . showData('other_information_about_you_alien_registration_number') . "',
     'info_about_you_social_security':' " . showData('other_information_about_you_social_security_number') . "',
     'info_about_you_uscis_online':' " . showData('other_information_about_you_uscis_online_account_number') . "',
@@ -3118,10 +3157,6 @@ var fields = {
     'additional_info_item_number4':' " . showData('i_601a_additional_info_7c_item_no') . "',
 
 };
-
-
-
-
 for (var fieldName in fields) {
     if (!fields.hasOwnProperty(fieldName)) continue;
     var field = getField(fieldName);

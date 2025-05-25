@@ -1196,19 +1196,7 @@ answer to every question in<br>
 a language in which I am fluent, and I understood
 everything.</div>';
 $pdf->writeHTMLCell(79, 7, 25, 83, $html, 0, 1, false, true, 'L', true);
-
-
-
-
-
 //.........
-
-
-
-
-
-
-
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>2.</b></div>';
 $pdf->writeHTMLCell(50, 7, 12, 114, $html, 0, 1, false, true, 'J', true);
@@ -1223,19 +1211,11 @@ $html ='<div>At my request, the preparer named in <b>Part 5.</b>,<br><br><br>
 prepared this application for me based only upon
 information I provided or authorized.</div>';
 $pdf->writeHTMLCell(79, 7, 25, 114, $html, 0, 1, false, true, 'L', true);
-
-
-
-
-
 //.........
-
 $pdf->SetFont('times', 'I', 12);
 $html ='<div><b>Applicant\'s Contact Information</b></div>';
 $pdf->writeHTMLCell(91, 4, 13, 139, $html, 0, 1, true, false, 'J', true);
-
 //.........
-
 $pdf->SetFont('times', '', 10);
 $html= '<div><b>3.<b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 147, $html, 0, 0, false, true, 'J', true);
@@ -1243,9 +1223,7 @@ $html= '<div>Applicant\'s Daytime Telephone Number</div>';
 $pdf->writeHTMLCell(79, 7, 19.6, 147, $html, 0, 0, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('applicant_daytime_tel', 83, 7,array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),  20, 152);
-
-//.........
-
+//........
 $pdf->SetFont('times', '', 10);
 $html= '<div><b>4.<b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 160, $html, 0, 0, false, true, 'J', true);
@@ -1253,9 +1231,7 @@ $html= '<div>Applicant\'s Mobile Telephone Number (if any)</div>';
 $pdf->writeHTMLCell(79, 7, 19.6, 160, $html, 0, 0, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('applicant_mobile', 83, 7,array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(),  20, 166);
-
 //.........
-
 $pdf->SetFont('times', '', 10);
 $html= '<div><b>5.<b/></div>';
 $pdf->writeHTMLCell(90, 7, 12, 173.5, $html, 0, 0, false, true, 'J', true);
@@ -1263,9 +1239,7 @@ $html= '<div>Applicant\'s Email Address (if any)</div>';
 $pdf->writeHTMLCell(79, 7, 19.6, 173.5, $html, 0, 0, false, true, 'J', true);
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('applicant_email', 83, 7,array('strokeColor' => array(64, 64, 64), 'lineWidth'=>1, 'borderStyle'=>'solid'), array(), 20, 179);
-
 //.........
-
 $pdf->SetFont('times', '', 10);
 $html = '<div><b>6.</b></div>';
 $pdf->writeHTMLCell(50, 7, 12, 188.5, $html, 0, 1, false, true, 'J', true);
@@ -1301,7 +1275,6 @@ application, in supporting documents, and in my USCIS
 records, to other entities and persons where necessary for the
 administration and enforcement of U.S. immigration law.</div>';
 $pdf->writeHTMLCell(92, 7, 112, 52, $html, 0, 1, false, true, 'L', true);
-
 //......
 $pdf->SetFont('times', '', 10);
 $html = '<div>I understand that USCIS may require me to appear for an appointment to take my biometrics (fingerprints, photograph, and/or signature) and, at that time, if I am required to provide biometrics, I will be required to sign an oath reaffirming that:</div>';
@@ -1315,7 +1288,6 @@ contained in, and submitted with, my application; and
 correct at the time of filing</div>';
 $pdf->writeHTMLCell(80, 7, 122, 90, $html, 0, 1, false, true, 'L', true);
 //......
-
 $pdf->SetFont('times', '', 10);
 $html ='<div>I certify, under penalty of perjury, that all of the information in my application and any document submitted with it were provided or authorized by me, that I reviewed and understand all of the information contained in, and submitted with, my application and that all of this information is complete, true, and correct.</div>';
 $pdf->writeHTMLCell(90, 7, 112, 113, $html, 0, 1, false, true, 'L', true);
@@ -1323,7 +1295,6 @@ $pdf->writeHTMLCell(90, 7, 112, 113, $html, 0, 1, false, true, 'L', true);
 $pdf->SetFont('times', 'I', 12);
 $html ='<div><b>Applicant\'s Signature</b></div>';
 $pdf->writeHTMLCell(91, 6, 113, 142, $html, 0, 1, true, false, 'L', true);
-
 //.......
 $pdf->setFont('Times', '', 10);
 $html= '<div><b>7.a. </b>&nbsp;&nbsp; Applicant\'s Signature </div>';
@@ -1391,7 +1362,6 @@ $pdf->TextField('i_765_interpreter_business_name', 83, 7, array('strokeColor' =>
 *********************************/
 
 $pdf->AddPage('P', 'LETTER');
-
 $pdf->SetFont('times', '', 12);
 $html ='<div><b>Part 4. Interpreter\'s Contact Information,
 Certification, and Signature</b></div>';
