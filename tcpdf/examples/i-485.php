@@ -485,9 +485,24 @@ $pdf->writeHTMLCell(190, 7, 21, 119.5, 'If one has been assigned, you can find i
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('p1_3_other1', 62, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 112.3);
 
-
-
-
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 12, 126, '<b>10.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Recent Immigration History', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(190, 7, 21, 132, 'If you last entered the United States using a passport or travel document, provide the following information.', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(190, 7, 21, 138, 'Passport or Travel Document Number Used at Last Arrival', '', 0, 0, true, 'L');
+//...............
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 78, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 106, 137);
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 21, 146, 'Expiration Date of this Passport or Travel Document (mm/dd/yyyy)', '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 45.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 118.4, 145.5);
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 21, 154.5, 'Country that Issued this Passport or Travel Document', '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 71.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 100, 154);
 
 
 
