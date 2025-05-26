@@ -386,7 +386,7 @@ $pdf->SetFontSize(11.6);
 $html = '<div><b>Part 1. Information About You</b> (Person applying for lawful permanent residence) (continued)</div>';
 $pdf->writeHTMLCell(191, 6.5, 13, 19, $html, 1, 1, true, 'L');
 
-//..........
+// ..........
 $pdf->SetFont('times', '', 10); // set font
 $html = '<b>4.</b> ';
 $pdf->writeHTMLCell(90, 7, 13, 26, $html, '', 0, 0, true, 'L');
@@ -503,11 +503,96 @@ $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(190, 7, 21, 154.5, 'Country that Issued this Passport or Travel Document', '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('p1_3_other1', 71.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 100, 154);
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 21, 162.5, 'Nonimmigrant Visa Number Used During Most Recent Arrival (if any)', '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 71.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 123, 162.2);
 
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 21, 170.5, 'Date Nonimmigrant Visa Was Issued (mm/dd/yyyy)', '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 48.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 97, 170.5);
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 21, 178.5, 'Place and Date of Last Arrival into the United States', '', 0, 0, true, 'L');
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 21, 186, 'City or Town', '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 84.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21.4, 190.5);
 
+//.............
+$pdf->SetFont('times', '', 10); // set font
+$html = '<div>State</div>';
+$pdf->writeHTMLCell(50, 4, 107, 186, $html, '', 0, 0, true, 'L');
 
-// ! wrong...........
+$pdf->SetFont('courier', 'B', 10); // set font
+$comboBoxOptions = array('');
+foreach ($allDataCountry as $record) {
+    $comboBoxOptions[] = $record->state_code;
+}
+$pdf->ComboBox("about_your_mailing_state", 22, 7, $comboBoxOptions, array(), array(), 107.5, 190.5);
+$pdf->SetFont('times', '', 10);
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(190, 7, 130.8, 186, 'Date of Last Arrival (mm/dd/yyyy)', '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 51, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 131.4, 190.5);
 
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(50, 15, 12, 198, '<b>11.</b>', 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 14);
+if (showData('i_131_parole_referral_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="24" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 20, 204, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'When I last arrived in the United States: ';
+$pdf->writeHTMLCell(190, 7, 20, 198, $html, '', 0, 0, true, 'L');
+//............
+$html = 'I was inspected at a Port of Entry and admitted as (for example, exchange visitor, visitor, temporary worker, student):';
+$pdf->writeHTMLCell(190, 7, 27, 204.5, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p3_6ca', 177, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 209.6);
+//...........
+$pdf->SetFont('times', '', 14);
+if (showData('i_131_parole_referral_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="24" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 20, 216.5, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'I was inspected at a Port of Entry and paroled as (for example, humanitarian parole, Cuban parole):';
+$pdf->writeHTMLCell(190, 7, 27, 217.5, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p3_6cb', 177, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 223);
+
+ //..................
+$pdf->SetFont('times', '', 14);
+if (showData('i_131_frtf_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="25" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 20, 230, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'I came into the United States without admission or parole.';
+$pdf->writeHTMLCell(190, 7, 27, 231, $html, '', 0, 0, true, 'L');
+
+//..................
+$pdf->SetFont('times', '', 14);
+if (showData('i_131_other_parole_status') == "Y") $checked = "checked";
+else $checked = "";
+$html = '<div><input type="checkbox"  name="26" value="Y" checked="' . $checked . '" /></div>';
+$pdf->writeHTMLCell(50, 15, 20, 238, $html, 0, 1, false, true, 'L', true);
+$pdf->SetFont('times', '', 10); // set font
+$html = 'Other: ';
+$pdf->writeHTMLCell(190, 7, 27, 239, $html, '', 0, 0, true, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p3_6e', 177, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 28, 244);
 // ******************************
 //  ******** End Page No 2 ******
 //  ******************************/
