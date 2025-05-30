@@ -1954,21 +1954,7 @@ var fields = {
 	
 	// page 17
 	
-    'applicants_date_of_signature':' " . showData('i_485_applicant_sign_date') . "',
-    'interpreter_family_last_name':' " . showData('i_485_interpreter_family_last_name') . "',
-    'interpreter_given_first_name':' " . showData('i_485_interpreter_given_first_name') . "',
-    'interpreter_family_organization_name':' " . showData('i_485_interpreter_business_name') . "',	
-    'interpreter_mailing_address_street':' " . showData('i_485_interpreter_address_street_number') . "',
-    'interpreter_mailing_address_apt_ste_flr':' " . showData('i_485_interpreter_address_apt_ste_flr_value') . "',
-    'interpreter_mailing_address_city_town':' " . showData('i_485_interpreter_address_city_town') . "',
-    'interpreter_mailing_address_state':' " . showData('i_485_interpreter_address_state') . "',
-    'interpreter_mailing_address_zipcode':' " . showData('i_485_interpreter_address_zip_code') . "',
-    'interpreter_mailing_address_province':' " . showData('i_485_interpreter_address_province') . "',
-    'interpreter_mailing_address_postalcode':' " . showData('i_485_interpreter_address_postal_code') . "',
-    'interpreter_mailing_address_country':' " . showData('i_485_interpreter_address_country') . "',
-    'interpreter_contact_daytime_telephone':' " . showData('i_485_interpreter_daytime_tel') . "',
-    'interpreter_contact_mobile_telephone':' " . showData('i_485_interpreter_mobile') . "',
-    'interpreter_contact_email':' " . showData('i_485_interpreter_email') . "',
+
 	
 	// page 18
 	
