@@ -610,6 +610,131 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 // //..............
 // $pdf->SetFont('courier', 'B', 10); // set font
 // $pdf->TextField('p3_6e', 177, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 28, 250);
+
+// ******************************
+//  ******** End Page No 21 ******
+//  ******************************/
+
+// ******************************
+//  ******** Start Page No 22 ****
+//  ******************************/
+
+$pdf->AddPage('P', 'LETTER');
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$pdf->SetFontSize(12);
+$html = "<div><b>Part 10. Applicant's Contact Information, Certification, and Signature</b></div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
+//............
+$html = '<div><b><i>Applicant\'s Contact Information</i></b></div>';
+$pdf->writeHTMLCell(191.5, 6.5, 13, 35, $html, '', 1, true, 'L');
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 43, "Provide your daytime telephone number, mobile telephone number (if any), and email address (if any). ", '', 1, false, 'L');
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 49, '<b>1.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 49, "Applicant's Daytime Telephone Number ", '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 112, 49, '<b>2.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 119, 49, "Applicant's Mobile Telephone Number (if any)", '', 1, false, 'L');
+// //..............
+$pdf->writeHTMLCell(197, 5, 12, 62, '<b>3.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 62, "Applicant's Email Address (if any)", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_Applicant_family_name', 88, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 54);
+$pdf->TextField('p13_Applicant_given_name', 84, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 54);
+$pdf->TextField('p13_Applicant_business_name', 88, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 67);
+//........................
+$pdf->setFont('Times', '', 12);
+$html = '<div><b><i>Applicant\'s Certification and Signature</i></b></div>';
+$pdf->writeHTMLCell(191, 6.5, 13,78, $html, '', 1, true, 'L');
+//.........
+$pdf->setCellHeightRatio(1.3);
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 85.5, "I certify, under penalty of perjury, that I provided or authorized all of the responses and information contained in and submitted with<br>
+my application, I read and understand or, if interpreted to me in a language in which I am fluent by the interpreter listed in <b>Part 11.,</b><br>
+understood, all of the responses and information contained in, and submitted with, my application, and that all of the responses and the<br>
+information are complete, true, and correct. Furthermore, I authorize the release of any information from any and all of my records<br>
+that USCIS may need to determine my eligibility for an immigration request and to other entities and persons where necessary for the<br>
+administration and enforcement of U.S. immigration law. ", '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 12, 114, '<b>4.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 114, "Applicant's Signature", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 155, 114, "Date of Signature (mm/dd/yyyy)", '', 1, false, 'L');
+//.............
+$pdf->writeHTMLCell(133, 6.6, 21, 119.2, "", 1, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_Applicant_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 119.2);
+//................
+
+
+
+$pdf->setFont('Times', '', 12);
+$html = "<div><b>Part 11. Interpreter's Contact Information, Certification, and Signature </b></div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 132, $html, 1, 1, true, 'L');
+//............
+$html = '<div><b><i>Interpreter\'s Full Name</i></b></div>';
+$pdf->writeHTMLCell(191.5, 6.5, 13,143, $html, '', 1, true, 'L');
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 151, '<b>1.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 151, "Interpreter's Family Name (Last Name) ", '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 114.6, 151, "Interpreter's Given Name (First Name)", '', 1, false, 'L');
+// //..............
+$pdf->writeHTMLCell(197, 5, 12, 165, '<b>2.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 165, "Interpreter's Business or Organization Name", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_Interpreter_family_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 156);
+$pdf->TextField('p13_Interpreter_given_name', 89, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 156);
+$pdf->TextField('p13_Interpreter_business_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 170);
+//...............
+$pdf->setFont('Times', '', 12);
+$html = '<div><b><i>Interpreter\'s Contact Information </i></b></div>';
+$pdf->writeHTMLCell(191, 6.5, 13, 180.7, $html, '', 1, true, 'L');
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 189, '<b>3.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 189, "Interpreter's Daytime Telephone Number ", '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 115, 189, '<b>4.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 123, 189, "Interpreter's Mobile Telephone Number (if any) ", '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 12, 202, '<b>5.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 202, "Interpreter's Email Address (if any) ", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_Interpreter_daytime', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 194);
+$pdf->TextField('p13_Interpreter_mobile', 80, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 124, 194);
+$pdf->TextField('p13_Interpreter_email', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 207);
+
+//........................
+$pdf->setFont('Times', '', 11.6);
+$html = '<div><b><i>Interpreter\'s Certification and Signature</i></b></div>';
+$pdf->writeHTMLCell(191, 6.5, 13, 217.6, $html, '', 1, true, 'L');
+//.........
+$pdf->setCellHeightRatio(1.4);
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 226.5, "I certify, under penalty of perjury, that I am fluent in English and<br>
+and I have interpreted every question on the application and Instructions and interpreted the applicant's answers to the questions in that<br>
+language, and the applicant informed me that he or she understood every instruction, question, and answer on the application.", '', 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_Interpreter_signature_date', 93, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 106, 225.8);
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 199, 225.8, ',', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 243.4, '<b>6.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 243.4, "Interpreter's Signature", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 155, 243.4, "Date of Signature (mm/dd/yyyy)", '', 1, false, 'L');
+//.............
+$pdf->writeHTMLCell(133, 6.6, 21, 249.2, "", 1, 1, false, 'L');
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_Interpreter_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 249.2);
+
 // ******************************
 //  ******** End Page No 22 ******
 //  ******************************/
@@ -689,7 +814,38 @@ $pdf->writeHTMLCell(191, 9.5, 36, 158.2, "<b>NOTE: Do not complete Part 13. unti
 //...........
 $pdf->SetFontSize(11.6);
 $html = '<div><b>Part 13. Signature at Interview</b></div>';
-$pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
+$pdf->writeHTMLCell(191, 6, 13, 171, $html, 1, 1, true, 'L');
+//...............
+$pdf->setCellHeightRatio(1.5);
+$pdf->SetFontSize(10);
+$pdf->writeHTMLCell(197, 5, 12, 177.6, "I swear (affirm) and certify under penalty of perjury under the laws of the United States of America that I know that the contents of<br>
+this Form I-485, Application to Register Permanent Residence or Adjust Status, subscribed by me, including the", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 189, "changes made to this application, ,<b>numbered</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 101, 189, "<b>through</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 136, 189, ", are complete, true, and correct. All", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 194.5, "information on additional pages submitted by me with this Form I-485, <b>on numbered pages</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 169, 194.5, "<b>through</b>", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 12, 200.5, "are complete, true, and correct. All documents submitted at this interview were provided by me and are complete, true, and correct.<br>Subscribed to and sworn to (affirmed) before me", '', 1, false, 'L');
+//..............
+$pdf->writeHTMLCell(197, 5, 20, 212, "USCIS Officer's Printed Name or Stamp", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 110, 212, "Date of Signature (mm/dd/yyyy)", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 227, "Applicant's Signature (sign in ink)", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 110, 227, "USCIS Officer's Signature (sign in ink)", '', 1, false, 'L');
+$pdf->writeHTMLCell(88, 6.6, 21, 217.6, "", 1, 1, false, 'L');
+$pdf->writeHTMLCell(48, 6.6, 111.6, 217.6, "", 1, 1, false, 'L');
+$pdf->writeHTMLCell(88, 6.6, 21, 232.6, "", 1, 1, false, 'L');
+$pdf->writeHTMLCell(92.5, 6.6, 111.6, 232.6, "", 1, 1, false, 'L');
+$pdf->setCellHeightRatio(1.3);
+//......................
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_preparer_signature_date', 24, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 174, 183.2);
+$pdf->TextField('p13_preparer_signature_date', 23, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 78, 189.2);
+$pdf->TextField('p13_preparer_signature_date', 21, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 189.2);
+$pdf->TextField('p13_preparer_signature_date', 24, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 145, 195.2);
+$pdf->TextField('p13_preparer_signature_date', 21, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 183, 195.2);
+
+
+
 // ******************************
 //  ******** End Page No 3 ******
 //  ******************************/
