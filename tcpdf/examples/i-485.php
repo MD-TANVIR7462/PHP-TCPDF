@@ -1940,44 +1940,7 @@ var fields = {
     'information_children2_date_of_birth':' " . showData('child2_date_of_birth') . "',
     'information_children2_country_of_birth':' " . showData('child2_country_of_birth') . "',
 	
-	// page 9
-	
-    'information_children3_lastname':' " . showData('child3_family_last_name') . "',
-    'information_children3_firstname':' " . showData('child3_given_first_name') . "',
-    'information_children3_middlename':' " . showData('child3_middle_name') . "',
-    'information_children3_a_number':' " . showData('child3_a_number') . "',
-    'information_children3_date_of_birth':' " . showData('child3_date_of_birth') . "',
-    'information_children3_country_of_birth':' " . showData('child3_country_of_birth') . "',
-	
-    'biographic_info_feet':' " . showData('biographic_info_height_feet') . "',
-    'biographic_info_inches':' " . showData('biographic_info_height_inches') . "',
-    'biographic_info_pound1':' " . showData('biographic_info_weight_in_pound1') . "',
-    'biographic_info_pound2':' " . showData('biographic_info_weight_in_pound2') . "',
-    'biographic_info_pound3':' " . showData('biographic_info_weight_in_pound3') . "',
-	
-    'organization1_name_of_org':' " . showData('organaization1_name') . "',
-    'organization1_city_or_town':' " . showData('organaization1_city_town') . "',
-    'organization1_state_or_province':' " . showData('organaization1_province') . "',
-    'organization1_counrty':' " . showData('organaization1_country') . "',
-    'organization1_nature_of_group':' " . showData('organaization1_nature') . "',
-    'organization1_date_from':' " . showData('organaization1_from_date') . "',
-    'organization1_date_to':' " . showData('organaization1_to_date') . "',
-	
-    'organization2_name_of_org':' " . showData('organaization2_name') . "',
-    'organization2_city_or_town':' " . showData('organaization2_city_town') . "',
-    'organization2_state_or_province':' " . showData('organaization2_province') . "',
-    'organization2_counrty':' " . showData('organaization2_country') . "',
-    'organization2_nature_of_group':' " . showData('organaization2_nature') . "',
-    'organization2_date_from':' " . showData('organaization2_from_date') . "',
-    'organization2_date_to':' " . showData('organaization2_to_date') . "',
-	
-    'organization3_name_of_org':' " . showData('organaization3_name') . "',
-    'organization3_city_or_town':' " . showData('organaization3_city_town') . "',
-    'organization3_state_or_province':' " . showData('organaization3_province') . "',
-    'organization3_counrty':' " . showData('organaization3_country') . "',
-    'organization3_nature_of_group':' " . showData('organaization3_nature') . "',
-    'organization3_date_from':' " . showData('organaization3_from_date') . "',
-    'organization3_date_to':' " . showData('organaization3_to_date') . "',
+
 	
 	// page 13 
 	
