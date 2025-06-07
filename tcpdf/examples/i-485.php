@@ -1950,9 +1950,7 @@ var fields = {
 	
 	// page 16
 	
-    'applicants_contact_telephone':' " . showData('i_485_applicant_daytime_tel') . "',
-    'applicants_contact_mobile':' " . showData('i_485_applicant_mobile') . "',
-    'applicants_contact_email':' " . showData('i_485_applicant_email') . "',
+ 
 	
 	// page 17
 	
