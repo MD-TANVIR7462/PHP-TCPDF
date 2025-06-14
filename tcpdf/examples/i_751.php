@@ -521,16 +521,12 @@ $pdf->SetFont('times', '', 10);
 $html = '<div>If you answered "Yes" to <b>Item Number 16.</b>, provide your
 physical address below.</div>';
 $pdf->writeHTMLCell(85, 7, 22, 93, $html, 0, 1, false, true, 'J', true);
-
 //.........
 $pdf->SetFont('times', 'I', 12);
 $pdf->SetFillColor(220, 220, 220);
 $html = '<div><b> Physical Address</b></div>';
 $pdf->writeHTMLCell(90, 7, 13, 103, $html, 0, 0, true, true, 'L', true);
-
-
 //...........
-
 $pdf->SetFillColor(220, 220, 220);
 $pdf->SetFont('times', 'I', 10); // set font
 $pdf->setCellHeightRatio(1.3);

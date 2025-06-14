@@ -2744,7 +2744,6 @@ $pdf->SetFont('times', '', 9);
 $html = '<div>Daytime Telephone Number</div>';
 $pdf->writeHTMLCell(100, 7, 13, 199, $html, 0, 1, false, true, 'L', true);
 //................
-
 $pdf->SetFont('times', '', 9);
 $html = '<div>Address of Preparer: Street Number and Name</div>';
 $pdf->writeHTMLCell(100, 7, 70, 199, $html, 0, 1, false, true, 'L', true);
@@ -2759,9 +2758,7 @@ $pdf->TextField('part_e_daytime_telephone_number', 43, 6, array('strokeColor' =>
 $pdf->TextField('part_e_address_of_preparer_street', 134, 6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array('v' => showData('i_589_person_preparing_address_street')), 69, 204);
 
 $pdf->writeHTMLCell(190, 1, 13, 204, "", "B", 1, false,   true,  'L',  true);  //.........horizontal line--------
-
 $pdf->writeHTMLCell(1, 10, 68, 200, "", "R", 1, false,   true,  'L',  true);  //.........verticle line --------
-//................
 
 //................
 $pdf->SetFont('times', '', 9);
