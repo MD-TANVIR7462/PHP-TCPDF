@@ -796,6 +796,58 @@ $pdf->writeHTMLCell(50, 7, 172, 182, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(190, 7, 21, 188, 'If you answered "No," provide your current mailing address.', 0, 1, false, false, 'L', true);
 $pdf->writeHTMLCell(190, 7, 21, 196, '<b>Current Mailing Address (Safe or Alternate Mailing Address, if applicable)</b>', 0, 1, false, false, 'L', true);
+//.............
+$pdf->writeHTMLCell(190, 7, 21, 202, 'In Care Of Name (if any)', '', 0, 0, true, 'L');
+//...............
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p1_3_other1', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 207);
+//.............
+
+$pdf->SetFont('times', '', 10);
+$html = '<div>Street Number and Name</div>';
+$pdf->writeHTMLCell(90, 7, 21, 213, $html, 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_3b', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 219.5);
+// ...........
+if (showData('information_about_you_us_mailing_apt_ste_flr') == "apt") $checked_apt = "checked";
+else $checked_apt = "";
+if (showData('information_about_you_us_mailing_apt_ste_flr') == "ste") $checked_ste = "checked";
+else $checked_ste = "";
+if (showData('information_about_you_us_mailing_apt_ste_flr') == "flr") $checked_flr = "checked";
+else $checked_flr = "";
+$pdf->SetFont('times', '', 14); // set font
+$html = '<div><input type="checkbox" name="50a" value="Apt" checked="' . $checked_apt . '" />&nbsp;<input type="checkbox" name="50st" value="Ste" checked="' . $checked_ste . '"  /> <input type="checkbox" name="50f" value="Flr" checked="' . $checked_flr . '" /></div>';
+$pdf->writeHTMLCell(50, 0, 144, 219.5, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('times', '', 10); // set font
+$pdf->writeHTMLCell(50, 0, 144.2, 213, "Apt.&nbsp;&nbsp;Ste.&nbsp;&nbsp;Flr", '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(50, 0, 167, 213, "Number", '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_3c', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 219.5);
+//...........
+$pdf->SetFont('times', '', 10); // set font
+$html = '<div>City or Town </div>';
+$pdf->writeHTMLCell(50, 5, 21, 227.2, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_3d', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 232);
+//............
+$pdf->SetFont('times', '', 10); // set font
+$html = '<div>State</div>';
+$pdf->writeHTMLCell(50, 4, 144, 227.2, $html, '', 0, 0, true, 'L');
+//..........
+$pdf->SetFont('courier', 'B', 10); // set font
+$comboBoxOptions = array('');
+foreach ($allDataCountry as $record) {
+	$comboBoxOptions[] = $record->state_code;
+}
+$pdf->ComboBox("p5_3e", 22, 7, $comboBoxOptions, array(), array(), 144.2, 232);
+$pdf->SetFont('times', '', 10);
+$html = '<div>ZIP Code</div>';
+$pdf->writeHTMLCell(30, 3, 168, 227.2, $html, '', 0, 0, true, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p5_3f', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 232);
+
+
+
 
 // ******************************
 //  ******** End Page No 21 ******
