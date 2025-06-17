@@ -112,18 +112,7 @@ $pdf->AddPage('P', 'LETTER');
 // Set font
 $pdf->SetFont('helvetica', '', 9);
 
-// Positioning
-$topY = 43;
-$leftX = 12.4;
-$colWidth = 92;
-$rowHeight = 6;
-
-// ---------- BILL TO BOX ----------
-$pdf->Rect($leftX, $topY, $colWidth, 35); // Outer Bill To box
-
-$pdf->SetXY($leftX + 1, $topY + 2);
-$pdf->Cell($colWidth - 2, $rowHeight, 'Bill To :', 0, 1);
-$pdf->Rect($leftX, $topY + 8, $colWidth, 0); // Under  Bill To box border
+ 
 $pdf->SetX($leftX + 1);
 $pdf->setCellHeightRatio(1.5);
 $pdf->writeHTMLCell($colWidth - 2, '', '', '', "<b>06284 BD'S (PROVIDENCE)</b><br>BD&APOS;S 699 HARTFORD AVE. PROVIDENCE, RI,<br>PROVIDENCE, 02909,<br><b>Phone</b> : 401-331-8200<br><b>Email :</b>", 0, 1, false, true, 'L', true);
