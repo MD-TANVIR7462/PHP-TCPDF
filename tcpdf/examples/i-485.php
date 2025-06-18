@@ -946,7 +946,8 @@ $pdf->writeHTMLCell(60, 1, $startX , $startY + 64, "From (mm/dd/yyyy) ", 0, 0, f
 $pdf->writeHTMLCell(60, 1, $startX +80, $startY + 64, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
 // Fields
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 60, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 50.5);
+$pdf->TextField('p1_1a', 60, $fieldHeight,
+ $stroke, array(), $startX + 0.8, $startY + 50.5);
 $pdf->TextField('p1_1b', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $startY + 50.5);
 $pdf->TextField('p1_1c', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
 $pdf->TextField('p1_1d', 47, $fieldHeight, $stroke, array(), $startX +32, $startY + 65.5);
@@ -956,7 +957,7 @@ $pdf->TextField('p1_1e', 47, $fieldHeight, $stroke, array(), $startX + 108, $sta
 // *Reuseable Section
 // *.................
 $startX = 20;
-$startY = 127.6;
+$startY = 127.5;
 $lineHeight = 6;
 $fieldHeight = 7;
 $labelFont = ['times', '', 10];
@@ -965,13 +966,11 @@ $stroke = array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderSty
 
 // ---------------------- Section: Title ----------------------
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(190, $lineHeight, $startX, $startY, 'Provide your most recent physical address outside the United States where you lived for more than one year (if not already
+$pdf->writeHTMLCell(190, $lineHeight, $startX, $startY, '<b>Most Recent Address Outside the United States</b>', '', 0, 0, true, 'L');
+// ---------------------- Section: Title ----------------------
+$pdf->SetFont(...$labelFont);
+$pdf->writeHTMLCell(190, $lineHeight, $startX, $startY+7, 'Provide your most recent physical address outside the United States where you lived for more than one year (if not already<br>
 listed above).', '', 0, 0, true, 'L');
-
-// ---------------------- In Care Of ----------------------
-$pdf->writeHTMLCell(190, $lineHeight, $startX, $startY + 6, 'In Care Of Name (if any)', '', 0, 0, true, 'L');
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_3_other1', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 11);
 
 // ---------------------- Street Number ----------------------
 $pdf->SetFont(...$labelFont);
@@ -1035,7 +1034,9 @@ $pdf->TextField('p1_1b', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $
 $pdf->TextField('p1_1c', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
 $pdf->TextField('p1_1d', 47, $fieldHeight, $stroke, array(), $startX +32, $startY + 65.5);
 $pdf->TextField('p1_1e', 47, $fieldHeight, $stroke, array(), $startX + 108, $startY + 65.5);
-
+//.....................
+$pdf->SetFont(...$labelFont);
+$pdf->writeHTMLCell(60, 1, 11.5, $startY+73, "<b>19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Social Security Card", 0, 0, false, false, 'L', true);
 
 
 

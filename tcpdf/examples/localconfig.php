@@ -24,3 +24,4 @@ function addYesNoQuestion($pdf, $question, $x, $y, $fieldName, $dataKey)
     $pdf->writeHTMLCell(50, 7, 172, $y, $html, 0, 1, false, true, 'J', true);
 }
 
+// addYesNoQuestion($pdf, 'Have you resided at your current address for at least 5 years?', 20, 32.5, '54', 'i_131_exclusion_status');
