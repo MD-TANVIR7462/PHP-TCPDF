@@ -855,192 +855,257 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 //******** Start Page No 4****
 //******************************
 
+// $pdf->AddPage('P', 'LETTER');
+// $pdf->setFillColor(220, 220, 220);
+// $pdf->setFont('Times', '', 12);
+// $pdf->setCellHeightRatio(1.2);
+// $pdf->setCellPaddings(1, 0.5, 1, 1);
+// $html = '<div><b>Part 1. Information About You</b>   (Person applying for lawful permanent residence) (continued)</div>';
+// $pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');
+// addYesNoQuestion($pdf, 'Have you resided at your current address for at least 5 years?', 20, 32.5, '54', 'i_131_exclusion_status');
+// //........
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(197, 5, 20, 40, 'If you answered "No," provide your prior address(es) for the last 5 years. Use the space provided in <b>Part 14. Additional<br>
+// Information, </b> if necessary. ', '', 1, false, 'L');
+// // *.................
+// // *Reuseable Section
+// // *.................
+// $startX = 20;
+// $startY = 52;
+// $lineHeight = 6;
+// $fieldHeight = 7;
+// $labelFont = ['times', '', 10];
+// $fieldFont = ['courier', 'B', 10];
+// $stroke = array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid');
+
+// // ---------------------- Section: Title ----------------------
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(190, $lineHeight, $startX, $startY, '<b>Prior Address</b>', '', 0, 0, true, 'L');
+
+// // ---------------------- In Care Of ----------------------
+// $pdf->writeHTMLCell(190, $lineHeight, $startX, $startY + 6, 'In Care Of Name (if any)', '', 0, 0, true, 'L');
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_3_other1', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 11);
+
+// // ---------------------- Street Number ----------------------
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(90, $lineHeight, $startX, $startY + 18, 'Street Number and Name', '', 0, 0, true, 'L');
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p5_3b', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 24);
+
+// // ---------------------- Apt / Ste / Flr ----------------------
+// $apt_ste_flr = showData('information_about_you_us_mailing_apt_ste_flr');
+// $checked_apt = $apt_ste_flr == 'apt' ? 'checked' : '';
+// $checked_ste = $apt_ste_flr == 'ste' ? 'checked' : '';
+// $checked_flr = $apt_ste_flr == 'flr' ? 'checked' : '';
+
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(50, 0, 144.2, $startY + 18, "Apt.&nbsp;&nbsp;Ste.&nbsp;&nbsp;Flr", '', 0, 0, true, 'L');
+
+// $pdf->SetFont('times', '', 14);
+// $html = '
+//   <input type="checkbox" name="50a" value="Apt" ' . $checked_apt . ' />&nbsp;
+//   <input type="checkbox" name="50st" value="Ste" ' . $checked_ste . '  />
+//   <input type="checkbox" name="50f" value="Flr" ' . $checked_flr . ' />
+// ';
+// $pdf->writeHTMLCell(50, 0, 143, $startY + 24, $html, '', 0, 0, true, 'L');
+
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(50, 0, 167, $startY + 18, "Number", '', 0, 0, true, 'L');
+
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p5_3c', 36, $fieldHeight, $stroke, array(), 168, $startY + 24);
+
+// // ---------------------- City / State / ZIP ----------------------
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(50, 5, $startX, $startY + 31.7, 'City or Town', '', 0, 0, true, 'L');
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p5_3d', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 37);
+
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(50, 4, 144, $startY + 31.7, 'State', '', 0, 0, true, 'L');
+// $pdf->SetFont(...$fieldFont);
+// $comboBoxOptions = [''];
+// foreach ($allDataCountry as $record) {
+//     $comboBoxOptions[] = $record->state_code;
+// }
+// $pdf->ComboBox("p5_3e", 22, $fieldHeight, $comboBoxOptions, array(), array(), 144.2, $startY + 37);
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(30, 3, 168, $startY + 31.7, 'ZIP Code', '', 0, 0, true, 'L');
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p5_3f', 36, $fieldHeight, $stroke, array(), 168, $startY + 37);
+// // ---------------------- Province / Postal Code / Country ----------------------
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY + 45.5, "<div>Province</div>", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 62.3, $startY + 45.5, '<div>Postal Code</div>', 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 121, $startY + 45.5, "Country", 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX , $startY + 58, "Dates of Residence ", 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX , $startY + 64, "From (mm/dd/yyyy) ", 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX +80, $startY + 64, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
+// // Fields
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 60, $fieldHeight,
+//  $stroke, array(), $startX + 0.8, $startY + 50.5);
+// $pdf->TextField('p1_1b', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $startY + 50.5);
+// $pdf->TextField('p1_1c', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
+// $pdf->TextField('p1_1d', 47, $fieldHeight, $stroke, array(), $startX +32, $startY + 65.5);
+// $pdf->TextField('p1_1e', 47, $fieldHeight, $stroke, array(), $startX + 108, $startY + 65.5);
+
+// // *.................
+// // *Reuseable Section
+// // *.................
+// $startX = 20;
+// $startY = 127.5;
+// $lineHeight = 6;
+// $fieldHeight = 7;
+// $labelFont = ['times', '', 10];
+// $fieldFont = ['courier', 'B', 10];
+// $stroke = array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid');
+
+// // ---------------------- Section: Title ----------------------
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(190, $lineHeight, $startX, $startY, '<b>Most Recent Address Outside the United States</b>', '', 0, 0, true, 'L');
+// // ---------------------- Section: Title ----------------------
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(190, $lineHeight, $startX, $startY+7, 'Provide your most recent physical address outside the United States where you lived for more than one year (if not already<br>
+// listed above).', '', 0, 0, true, 'L');
+
+// // ---------------------- Street Number ----------------------
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(90, $lineHeight, $startX, $startY + 18, 'Street Number and Name', '', 0, 0, true, 'L');
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p5_3b', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 24);
+
+// // ---------------------- Apt / Ste / Flr ----------------------
+// $apt_ste_flr = showData('information_about_you_us_mailing_apt_ste_flr');
+// $checked_apt = $apt_ste_flr == 'apt' ? 'checked' : '';
+// $checked_ste = $apt_ste_flr == 'ste' ? 'checked' : '';
+// $checked_flr = $apt_ste_flr == 'flr' ? 'checked' : '';
+
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(50, 0, 144.2, $startY + 18, "Apt.&nbsp;&nbsp;Ste.&nbsp;&nbsp;Flr", '', 0, 0, true, 'L');
+
+// $pdf->SetFont('times', '', 14);
+// $html = '
+//   <input type="checkbox" name="50a" value="Apt" ' . $checked_apt . ' />&nbsp;
+//   <input type="checkbox" name="50st" value="Ste" ' . $checked_ste . '  />
+//   <input type="checkbox" name="50f" value="Flr" ' . $checked_flr . ' />
+// ';
+// $pdf->writeHTMLCell(50, 0, 143, $startY + 24, $html, '', 0, 0, true, 'L');
+
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(50, 0, 167, $startY + 18, "Number", '', 0, 0, true, 'L');
+
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p5_3c', 36, $fieldHeight, $stroke, array(), 168, $startY + 24);
+
+// // ---------------------- City / State / ZIP ----------------------
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(50, 5, $startX, $startY + 31.7, 'City or Town', '', 0, 0, true, 'L');
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p5_3d', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 37);
+
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(50, 4, 144, $startY + 31.7, 'State', '', 0, 0, true, 'L');
+// $pdf->SetFont(...$fieldFont);
+// $comboBoxOptions = [''];
+// foreach ($allDataCountry as $record) {
+//     $comboBoxOptions[] = $record->state_code;
+// }
+// $pdf->ComboBox("p5_3e", 22, $fieldHeight, $comboBoxOptions, array(), array(), 144.2, $startY + 37);
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(30, 3, 168, $startY + 31.7, 'ZIP Code', '', 0, 0, true, 'L');
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p5_3f', 36, $fieldHeight, $stroke, array(), 168, $startY + 37);
+// // ---------------------- Province / Postal Code / Country ----------------------
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY + 45.5, "<div>Province</div>", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 62.3, $startY + 45.5, '<div>Postal Code</div>', 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 121, $startY + 45.5, "Country", 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX , $startY + 58, "Dates of Residence ", 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX , $startY + 64, "From (mm/dd/yyyy) ", 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX +80, $startY + 64, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
+// // Fields
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 60, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 50.5);
+// $pdf->TextField('p1_1b', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $startY + 50.5);
+// $pdf->TextField('p1_1c', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
+// $pdf->TextField('p1_1d', 47, $fieldHeight, $stroke, array(), $startX +32, $startY + 65.5);
+// $pdf->TextField('p1_1e', 47, $fieldHeight, $stroke, array(), $startX + 108, $startY + 65.5);
+// //.....................
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(60, 1, 11.5, $startY+73, "<b>19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Social Security Card", 0, 0, false, false, 'L', true);
+// addYesNoQuestion($pdf, 'Has the Social Security Administration (SSA) ever officially issued a Social Security card to you?', 20, 205.5, '54', 'i_131_exclusion_status');
+// addYesNoQuestion($pdf, 'Do you want the SSA to issue you a Social Security card?', 20, 220, '54', 'i_131_exclusion_status');
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(160, 1, 20, $startY+84, 'If you answered "Yes," provide your U.S. Social Security Number (SSN).', 0, 0, false, false, 'L', true);
+// //....................
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 47, $fieldHeight, $stroke, array(), $startX + 112, $startY + 85);
+// //...........
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(160, 5, 20, 229.5, 'If you answered "Yes," you must also answer "Yes" to the <b>Consent for Disclosure</b> below.', 0, 0, 0, true, 'L', false); 
+// addYesNoQuestion($pdf, '<b>Consent for Disclosure:</b> I authorize disclosure of information from this application to the SSA as<br>
+// required for the purpose of assigning me an SSN and issuing me a Social Security Card.', 20, 235, '54', 'i_131_exclusion_status');
+//******************************
+//******** End Page No 4 ******
+//******************************
+
+//******************************
+//******** Start Page No 5****
+//******************************
+
 $pdf->AddPage('P', 'LETTER');
 $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $html = '<div><b>Part 1. Information About You</b>   (Person applying for lawful permanent residence) (continued)</div>';
-$pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');
-addYesNoQuestion($pdf, 'Have you resided at your current address for at least 5 years?', 20, 32.5, '54', 'i_131_exclusion_status');
-//........
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(197, 5, 20, 40, 'If you answered "No," provide your prior address(es) for the last 5 years. Use the space provided in <b>Part 14. Additional<br>
-Information, </b> if necessary. ', '', 1, false, 'L');
-
-
-// *.................
-// *Reuseable Section
-// *.................
+$pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');                   
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 33, "<b>1.</b>", 0, 0, false, true, 'L', true);               
+addYesNoQuestion($pdf, 'Are you filing for adjustment of status with the Executive Office for Immigration Review (EOIR) while<br>in removal, exclusion, rescission, or deportation proceedings?', 20, 32.5, '54', 'i_131_exclusion_status');
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 43, "<b>2.</b>", 0, 0, false, true, 'L', true);    
+$pdf->writeHTMLCell(130, 1, 20, 43, "Receipt Number of Underlying Petition (if any)", 0, 0, false, true, 'L', true);    
+$pdf->writeHTMLCell(130, 1, 106.8, 43, "Priority Date from Underlying Petition (if any)", 0, 0, false, true, 'L', true);    
+$pdf->writeHTMLCell(130, 1, 106.8, 48.5, "(mm/dd/yyyy)", 0, 0, false, true, 'L', true);    
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_street', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 48);
+$pdf->TextField('employer_street', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 129, 48);
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 20, 55.5, "I am filing this Form I-485 as a (select <b>only one</b> box):", 0, 0, false, true, 'L', true); 
+//.................
+drawCheckboxWithLabel($pdf, 19, 61, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Principal Applicant');
+drawCheckboxWithLabel($pdf, 19, 67, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Derivative Applicant (Provide the following information about the principal applicant.)');
+//.......
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 20, 74, "Principal Applicant's Name", 0, 0, false, true, 'L', true); 
+//...................
 $startX = 20;
-$startY = 52;
+$startY = 80;
 $lineHeight = 6;
 $fieldHeight = 7;
 $labelFont = ['times', '', 10];
 $fieldFont = ['courier', 'B', 10];
-$stroke = array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid');
+$stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
 
-// ---------------------- Section: Title ----------------------
+// Labels
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(190, $lineHeight, $startX, $startY, '<b>Prior Address</b>', '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(130, 1, $startX, $startY, "Family Name (Last Name)", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY, "Given Name (First Name)", 0, 0, false, false, 'L', false);
+$pdf->writeHTMLCell(60, 1, $startX + 131, $startY-0.5, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
 
-// ---------------------- In Care Of ----------------------
-$pdf->writeHTMLCell(190, $lineHeight, $startX, $startY + 6, 'In Care Of Name (if any)', '', 0, 0, true, 'L');
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_3_other1', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 11);
-
-// ---------------------- Street Number ----------------------
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(90, $lineHeight, $startX, $startY + 18, 'Street Number and Name', '', 0, 0, true, 'L');
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3b', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 24);
-
-// ---------------------- Apt / Ste / Flr ----------------------
-$apt_ste_flr = showData('information_about_you_us_mailing_apt_ste_flr');
-$checked_apt = $apt_ste_flr == 'apt' ? 'checked' : '';
-$checked_ste = $apt_ste_flr == 'ste' ? 'checked' : '';
-$checked_flr = $apt_ste_flr == 'flr' ? 'checked' : '';
-
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(50, 0, 144.2, $startY + 18, "Apt.&nbsp;&nbsp;Ste.&nbsp;&nbsp;Flr", '', 0, 0, true, 'L');
-
-$pdf->SetFont('times', '', 14);
-$html = '
-  <input type="checkbox" name="50a" value="Apt" ' . $checked_apt . ' />&nbsp;
-  <input type="checkbox" name="50st" value="Ste" ' . $checked_ste . '  />
-  <input type="checkbox" name="50f" value="Flr" ' . $checked_flr . ' />
-';
-$pdf->writeHTMLCell(50, 0, 143, $startY + 24, $html, '', 0, 0, true, 'L');
-
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(50, 0, 167, $startY + 18, "Number", '', 0, 0, true, 'L');
-
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3c', 36, $fieldHeight, $stroke, array(), 168, $startY + 24);
-
-// ---------------------- City / State / ZIP ----------------------
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(50, 5, $startX, $startY + 31.7, 'City or Town', '', 0, 0, true, 'L');
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3d', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 37);
-
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(50, 4, 144, $startY + 31.7, 'State', '', 0, 0, true, 'L');
-$pdf->SetFont(...$fieldFont);
-$comboBoxOptions = [''];
-foreach ($allDataCountry as $record) {
-    $comboBoxOptions[] = $record->state_code;
-}
-$pdf->ComboBox("p5_3e", 22, $fieldHeight, $comboBoxOptions, array(), array(), 144.2, $startY + 37);
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(30, 3, 168, $startY + 31.7, 'ZIP Code', '', 0, 0, true, 'L');
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3f', 36, $fieldHeight, $stroke, array(), 168, $startY + 37);
-// ---------------------- Province / Postal Code / Country ----------------------
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY + 45.5, "<div>Province</div>", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 62.3, $startY + 45.5, '<div>Postal Code</div>', 0, 0, false, false, 'L', false);
-$pdf->writeHTMLCell(60, 1, $startX + 121, $startY + 45.5, "Country", 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX , $startY + 58, "Dates of Residence ", 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX , $startY + 64, "From (mm/dd/yyyy) ", 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX +80, $startY + 64, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
 // Fields
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 60, $fieldHeight,
- $stroke, array(), $startX + 0.8, $startY + 50.5);
-$pdf->TextField('p1_1b', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $startY + 50.5);
-$pdf->TextField('p1_1c', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
-$pdf->TextField('p1_1d', 47, $fieldHeight, $stroke, array(), $startX +32, $startY + 65.5);
-$pdf->TextField('p1_1e', 47, $fieldHeight, $stroke, array(), $startX + 108, $startY + 65.5);
-
-// *.................
-// *Reuseable Section
-// *.................
-$startX = 20;
-$startY = 127.5;
-$lineHeight = 6;
-$fieldHeight = 7;
-$labelFont = ['times', '', 10];
-$fieldFont = ['courier', 'B', 10];
-$stroke = array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid');
-
-// ---------------------- Section: Title ----------------------
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(190, $lineHeight, $startX, $startY, '<b>Most Recent Address Outside the United States</b>', '', 0, 0, true, 'L');
-// ---------------------- Section: Title ----------------------
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(190, $lineHeight, $startX, $startY+7, 'Provide your most recent physical address outside the United States where you lived for more than one year (if not already<br>
-listed above).', '', 0, 0, true, 'L');
-
-// ---------------------- Street Number ----------------------
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(90, $lineHeight, $startX, $startY + 18, 'Street Number and Name', '', 0, 0, true, 'L');
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3b', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 24);
-
-// ---------------------- Apt / Ste / Flr ----------------------
-$apt_ste_flr = showData('information_about_you_us_mailing_apt_ste_flr');
-$checked_apt = $apt_ste_flr == 'apt' ? 'checked' : '';
-$checked_ste = $apt_ste_flr == 'ste' ? 'checked' : '';
-$checked_flr = $apt_ste_flr == 'flr' ? 'checked' : '';
-
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(50, 0, 144.2, $startY + 18, "Apt.&nbsp;&nbsp;Ste.&nbsp;&nbsp;Flr", '', 0, 0, true, 'L');
-
-$pdf->SetFont('times', '', 14);
-$html = '
-  <input type="checkbox" name="50a" value="Apt" ' . $checked_apt . ' />&nbsp;
-  <input type="checkbox" name="50st" value="Ste" ' . $checked_ste . '  />
-  <input type="checkbox" name="50f" value="Flr" ' . $checked_flr . ' />
-';
-$pdf->writeHTMLCell(50, 0, 143, $startY + 24, $html, '', 0, 0, true, 'L');
-
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(50, 0, 167, $startY + 18, "Number", '', 0, 0, true, 'L');
-
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3c', 36, $fieldHeight, $stroke, array(), 168, $startY + 24);
-
-// ---------------------- City / State / ZIP ----------------------
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(50, 5, $startX, $startY + 31.7, 'City or Town', '', 0, 0, true, 'L');
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3d', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 37);
-
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(50, 4, 144, $startY + 31.7, 'State', '', 0, 0, true, 'L');
-$pdf->SetFont(...$fieldFont);
-$comboBoxOptions = [''];
-foreach ($allDataCountry as $record) {
-    $comboBoxOptions[] = $record->state_code;
-}
-$pdf->ComboBox("p5_3e", 22, $fieldHeight, $comboBoxOptions, array(), array(), 144.2, $startY + 37);
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(30, 3, 168, $startY + 31.7, 'ZIP Code', '', 0, 0, true, 'L');
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3f', 36, $fieldHeight, $stroke, array(), 168, $startY + 37);
-// ---------------------- Province / Postal Code / Country ----------------------
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY + 45.5, "<div>Province</div>", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 62.3, $startY + 45.5, '<div>Postal Code</div>', 0, 0, false, false, 'L', false);
-$pdf->writeHTMLCell(60, 1, $startX + 121, $startY + 45.5, "Country", 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX , $startY + 58, "Dates of Residence ", 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX , $startY + 64, "From (mm/dd/yyyy) ", 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX +80, $startY + 64, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
-// Fields
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 60, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 50.5);
-$pdf->TextField('p1_1b', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $startY + 50.5);
-$pdf->TextField('p1_1c', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
-$pdf->TextField('p1_1d', 47, $fieldHeight, $stroke, array(), $startX +32, $startY + 65.5);
-$pdf->TextField('p1_1e', 47, $fieldHeight, $stroke, array(), $startX + 108, $startY + 65.5);
-//.....................
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(60, 1, 11.5, $startY+73, "<b>19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Social Security Card", 0, 0, false, false, 'L', true);
+$pdf->TextField('p1_1a', 70, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 5);    // Family Name
+$pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
+$pdf->TextField('p1_1c', 52, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
 
 
 
-// ******************************
+
+//  *****************************
 //  ******** End Page No 8******
 //  ******************************/
 
