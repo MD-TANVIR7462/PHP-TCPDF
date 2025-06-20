@@ -1101,8 +1101,38 @@ $pdf->SetFont(...$fieldFont);
 $pdf->TextField('p1_1a', 70, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 5);    // Family Name
 $pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
 $pdf->TextField('p1_1c', 52, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
-
-
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 128, "<b>3.a.&nbsp;&nbsp;&nbsp;Family-based</b>", 0, 0, false, true, 'L', true); 
+$pdf->writeHTMLCell(190, 1, 20, 134, "Immediate relative of a U.S. citizen, Form I-130, I-129F, or I-360 (select your specific category below):", 0, 0, false, true, 'L', true); 
+//.................
+drawCheckboxWithLabel($pdf, 19,139, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Spouse of a U.S. Citizen.');
+drawCheckboxWithLabel($pdf, 19, 146, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried child under 21 years of age of a U.S. citizen.');
+drawCheckboxWithLabel($pdf, 19, 153, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Parent of a U.S. citizen (if the citizen is at least 21 years of age). ');
+drawCheckboxWithLabel($pdf, 19, 160, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Person admitted to the United States as a fiancé(e) or child of a fiancé(e) of a U.S. citizen (K-1/K-2 Nonimmigrant).');
+drawCheckboxWithLabel($pdf, 19, 167, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Widow or widower of a U.S. citizen.');
+drawCheckboxWithLabel($pdf, 19, 173, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Spouse, child, or parent of a deceased U.S. active-duty service member in the armed forces under the National Defense<br>Authorization Act (NDAA).');
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(190, 1, 20, 184, "Other relative of a U.S. citizen under the family-based preference categories, Form I-130 (select your specific category below):", 0, 0, false, true, 'L', true); 
+//........
+drawCheckboxWithLabel($pdf, 19, 190, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried son or daughter of a U.S. citizen and I am 21 years of age or older.');
+drawCheckboxWithLabel($pdf, 19, 197, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Married son or daughter of a U.S. citizen. ');
+drawCheckboxWithLabel($pdf, 19, 204, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Brother or sister of a U.S. citizen (if the citizen is at least 21 years of age).');
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(190, 1, 20, 211, "Relative of a lawful permanent resident under the family-based preference categories, Form I-130 (select your specific category<br>below):", 0, 0, false, true, 'L', true); 
+//........
+drawCheckboxWithLabel($pdf, 19, 220, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Spouse of a lawful permanent resident.');
+drawCheckboxWithLabel($pdf, 19, 227, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried child under 21 years of age of a lawful permanent resident. ');
+drawCheckboxWithLabel($pdf, 19, 234, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried son or daughter of a lawful permanent resident and I am 21 years of age or older. ');
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(190, 1, 20, 241, "VAWA self-petitioner (victim of battery or extreme cruelty), Form I-360 (select your specific category below):", 0, 0, false, true, 'L', true); 
+//........
+drawCheckboxWithLabel($pdf, 19, 245.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'VAWA self-petitioning spouse of a U.S. citizen or lawful permanent resident.');
+drawCheckboxWithLabel($pdf, 19, 251.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'VAWA self-petitioning child of a U.S. citizen or lawful permanent resident.');
+drawCheckboxWithLabel($pdf, 19, 258, 'terms_checkbox','i_131_correction_terms_conditions_status', 'VAWA self-petitioning parent of a U.S. citizen (if the citizen is at least 21 years of age).  ');
 
 
 //  *****************************
@@ -1953,49 +1983,7 @@ var fields = {
 	
     'general_eligibility_household_size':' " . showData('i_485_general_eligibility_household_size') . "',
 	
-	// page 14
-	
-    'part8_table_benefit_received1':' " . showData('i_485_general_eligibility_benefit_receive', '0') . "',
-    'part8_table_benefit_received2':' " . showData('i_485_general_eligibility_benefit_receive', '1') . "',
-    'part8_table_benefit_received3':' " . showData('i_485_general_eligibility_benefit_receive', '2') . "',
-    'part8_table_benefit_received4':' " . showData('i_485_general_eligibility_benefit_receive', '3') . "',
-	
-    'part8_table_startdate_68c_1':' " . showData('i_485_general_eligibility_benefit_start_date', '0') . "',
-    'part8_table_startdate_68c_2':' " . showData('i_485_general_eligibility_benefit_start_date', '1') . "',
-    'part8_table_startdate_68c_3':' " . showData('i_485_general_eligibility_benefit_start_date', '2') . "',
-    'part8_table_startdate_68c_4':' " . showData('i_485_general_eligibility_benefit_start_date', '3') . "',
-	
-    'part8_table_end_date_68c_1':' " . showData('i_485_general_eligibility_benefit_end_date', '0') . "',
-    'part8_table_end_date_68c_2':' " . showData('i_485_general_eligibility_benefit_end_date', '1') . "',
-    'part8_table_end_date_68c_3':' " . showData('i_485_general_eligibility_benefit_end_date', '2') . "',
-    'part8_table_end_date_68c_4':' " . showData('i_485_general_eligibility_benefit_end_date', '3') . "',
-	
-    'part8_table_dollaramount_68c_1':' " . showData('i_485_general_eligibility_benefit_amount', '0') . "',
-    'part8_table_dollaramount_68c_2':' " . showData('i_485_general_eligibility_benefit_amount', '1') . "',
-    'part8_table_dollaramount_68c_3':' " . showData('i_485_general_eligibility_benefit_amount', '2') . "',
-    'part8_table_dollaramount_68c_4':' " . showData('i_485_general_eligibility_benefit_amount', '3') . "',
-	
-    'part8_table_institution_68d_1':' " . showData('i_485_general_eligibility_institution_name', '0') . "',
-    'part8_table_institution_68d_2':' " . showData('i_485_general_eligibility_institution_name', '1') . "',
-    'part8_table_institution_68d_3':' " . showData('i_485_general_eligibility_institution_name', '2') . "',
-    'part8_table_institution_68d_4':' " . showData('i_485_general_eligibility_institution_name', '3') . "',
-	
-    'part8_table_date_form_68d_1':' " . showData('i_485_general_eligibility_institution_date_from', '0') . "',
-    'part8_table_date_form_68d_2':' " . showData('i_485_general_eligibility_institution_date_from', '1') . "',
-    'part8_table_date_form_68d_3':' " . showData('i_485_general_eligibility_institution_date_from', '2') . "',
-    'part8_table_date_form_68d_4':' " . showData('i_485_general_eligibility_institution_date_from', '3') . "',
-	
-    'part8_table_date_to_68d_1':' " . showData('i_485_general_eligibility_institution_date_to', '0') . "',
-    'part8_table_date_to_68d_2':' " . showData('i_485_general_eligibility_institution_date_to', '1') . "',
-    'part8_table_date_to_68d_3':' " . showData('i_485_general_eligibility_institution_date_to', '2') . "',
-    'part8_table_date_to_68d_4':' " . showData('i_485_general_eligibility_institution_date_to', '3') . "',
-	
-    'part8_table_reason_68d_1':' " . showData('i_485_general_eligibility_institution_reason', '0') . "',
-    'part8_table_reason_68d_2':' " . showData('i_485_general_eligibility_institution_reason', '1') . "',
-    'part8_table_reason_68d_3':' " . showData('i_485_general_eligibility_institution_reason', '2') . "',
-    'part8_table_reason_68d_4':' " . showData('i_485_general_eligibility_institution_reason', '3') . "',
-	
-	// page 15
+
 	
 	// page 16
 	
