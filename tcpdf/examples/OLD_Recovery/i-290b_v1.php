@@ -1,6 +1,5 @@
 <?php
 
-//require_once('form_header.php');   //database connection file 
 
 require_once("config.php");
 // $allDataCountry = indexByQueryAllData("SELECT * FROM countries");
