@@ -1055,68 +1055,116 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 //******** Start Page No 5****
 //******************************
 
+// $pdf->AddPage('P', 'LETTER');
+// $pdf->setFillColor(220, 220, 220);
+// $pdf->setFont('Times', '', 12);
+// $pdf->setCellHeightRatio(1.2);
+// $pdf->setCellPaddings(1, 0.5, 1, 1);
+// $html = '<div><b>Part 1. Information About You</b>   (Person applying for lawful permanent residence) (continued)</div>';
+// $pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');                   
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 12, 33, "<b>1.</b>", 0, 0, false, true, 'L', true);               
+// addYesNoQuestion($pdf, 'Are you filing for adjustment of status with the Executive Office for Immigration Review (EOIR) while<br>in removal, exclusion, rescission, or deportation proceedings?', 20, 32.5, '54', 'i_131_exclusion_status');
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 12, 43, "<b>2.</b>", 0, 0, false, true, 'L', true);    
+// $pdf->writeHTMLCell(130, 1, 20, 43, "Receipt Number of Underlying Petition (if any)", 0, 0, false, true, 'L', true);    
+// $pdf->writeHTMLCell(130, 1, 106.8, 43, "Priority Date from Underlying Petition (if any)", 0, 0, false, true, 'L', true);    
+// $pdf->writeHTMLCell(130, 1, 106.8, 48.5, "(mm/dd/yyyy)", 0, 0, false, true, 'L', true);    
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('employer_street', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 48);
+// $pdf->TextField('employer_street', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 129, 48);
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 20, 55.5, "I am filing this Form I-485 as a (select <b>only one</b> box):", 0, 0, false, true, 'L', true); 
+// //.................
+// drawCheckboxWithLabel($pdf, 19, 61, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Principal Applicant');
+// drawCheckboxWithLabel($pdf, 19, 67, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Derivative Applicant (Provide the following information about the principal applicant.)');
+// //.......
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 20, 74, "Principal Applicant's Name", 0, 0, false, true, 'L', true); 
+// //...................
+// $startX = 20;
+// $startY = 80;
+// $lineHeight = 6;
+// $fieldHeight = 7;
+// $labelFont = ['times', '', 10];
+// $fieldFont = ['courier', 'B', 10];
+// $stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
+
+// // Labels
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY, "Family Name (Last Name)", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 72, $startY, "Given Name (First Name)", 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 131, $startY-0.5, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX , $startY+12, "Principal Applicant's A-Number (if any)", 0, 0, false, false, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 72, $startY+11, "Principal Applicant's Date of Birth<br>(mm/dd/yyyy)", 0, 0, false, false, 'L', true);
+
+// // Fields
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 70, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 5);    // Family Name
+// $pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
+// $pdf->TextField('p1_1c', 52, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
+// $pdf->TextField('p1_1c',48, $fieldHeight, $stroke, array(), $startX + 10.8, $startY + 18.2);    // principal application 
+// $pdf->TextField('p1_1c', 50, $fieldHeight, $stroke, array(), $startX + 94, $startY + 18.2);    // date of birth
+// //...........
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(190, 1, 20, 107, "<b>I am applying</b> based on the following category (You must select <b>ONLY ONE</b> category. If you are filing as a derivative<br>
+// applicant, select the appropriate box based on the category under which the principal applicant is applying or has applied. See<br>
+// the Form I-485 Instructions for more information, including any <b>Additional Instructions</b> that relate to the immigrant category<br>
+// you select.):", 0, 0, false, true, 'L', true); 
+// //...........
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 12, 128, "<b>3.a.&nbsp;&nbsp;&nbsp;Family-based</b>", 0, 0, false, true, 'L', true); 
+// $pdf->writeHTMLCell(190, 1, 20, 134, "Immediate relative of a U.S. citizen, Form I-130, I-129F, or I-360 (select your specific category below):", 0, 0, false, true, 'L', true); 
+// //.................
+// drawCheckboxWithLabel($pdf, 19,139, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Spouse of a U.S. Citizen.');
+// drawCheckboxWithLabel($pdf, 19, 146, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried child under 21 years of age of a U.S. citizen.');
+// drawCheckboxWithLabel($pdf, 19, 153, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Parent of a U.S. citizen (if the citizen is at least 21 years of age). ');
+// drawCheckboxWithLabel($pdf, 19, 160, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Person admitted to the United States as a fiancé(e) or child of a fiancé(e) of a U.S. citizen (K-1/K-2 Nonimmigrant).');
+// drawCheckboxWithLabel($pdf, 19, 167, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Widow or widower of a U.S. citizen.');
+// drawCheckboxWithLabel($pdf, 19, 173, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Spouse, child, or parent of a deceased U.S. active-duty service member in the armed forces under the National Defense<br>Authorization Act (NDAA).');
+// //...........
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(190, 1, 20, 184, "Other relative of a U.S. citizen under the family-based preference categories, Form I-130 (select your specific category below):", 0, 0, false, true, 'L', true); 
+// //........
+// drawCheckboxWithLabel($pdf, 19, 190, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried son or daughter of a U.S. citizen and I am 21 years of age or older.');
+// drawCheckboxWithLabel($pdf, 19, 197, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Married son or daughter of a U.S. citizen. ');
+// drawCheckboxWithLabel($pdf, 19, 204, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Brother or sister of a U.S. citizen (if the citizen is at least 21 years of age).');
+// //...........
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(190, 1, 20, 211, "Relative of a lawful permanent resident under the family-based preference categories, Form I-130 (select your specific category<br>below):", 0, 0, false, true, 'L', true); 
+// //........
+// drawCheckboxWithLabel($pdf, 19, 220, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Spouse of a lawful permanent resident.');
+// drawCheckboxWithLabel($pdf, 19, 227, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried child under 21 years of age of a lawful permanent resident. ');
+// drawCheckboxWithLabel($pdf, 19, 234, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried son or daughter of a lawful permanent resident and I am 21 years of age or older. ');
+// //...........
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(190, 1, 20, 241, "VAWA self-petitioner (victim of battery or extreme cruelty), Form I-360 (select your specific category below):", 0, 0, false, true, 'L', true); 
+// //........
+// drawCheckboxWithLabel($pdf, 19, 245.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'VAWA self-petitioning spouse of a U.S. citizen or lawful permanent resident.');
+// drawCheckboxWithLabel($pdf, 19, 251.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'VAWA self-petitioning child of a U.S. citizen or lawful permanent resident.');
+// drawCheckboxWithLabel($pdf, 19, 258, 'terms_checkbox','i_131_correction_terms_conditions_status', 'VAWA self-petitioning parent of a U.S. citizen (if the citizen is at least 21 years of age).  ');
+//******************************
+//******** End Page No 5 ******
+//******************************
+
+//******************************
+//******** Start Page No 6****
+//******************************
+
 $pdf->AddPage('P', 'LETTER');
 $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
-$html = '<div><b>Part 1. Information About You</b>   (Person applying for lawful permanent residence) (continued)</div>';
+$html = '<div><b>Part 2. Application Type or Filing Category </b> (continued)</div>';
 $pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');                   
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 33, "<b>1.</b>", 0, 0, false, true, 'L', true);               
-addYesNoQuestion($pdf, 'Are you filing for adjustment of status with the Executive Office for Immigration Review (EOIR) while<br>in removal, exclusion, rescission, or deportation proceedings?', 20, 32.5, '54', 'i_131_exclusion_status');
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 43, "<b>2.</b>", 0, 0, false, true, 'L', true);    
-$pdf->writeHTMLCell(130, 1, 20, 43, "Receipt Number of Underlying Petition (if any)", 0, 0, false, true, 'L', true);    
-$pdf->writeHTMLCell(130, 1, 106.8, 43, "Priority Date from Underlying Petition (if any)", 0, 0, false, true, 'L', true);    
-$pdf->writeHTMLCell(130, 1, 106.8, 48.5, "(mm/dd/yyyy)", 0, 0, false, true, 'L', true);    
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_street', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 48);
-$pdf->TextField('employer_street', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 129, 48);
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 20, 55.5, "I am filing this Form I-485 as a (select <b>only one</b> box):", 0, 0, false, true, 'L', true); 
-//.................
-drawCheckboxWithLabel($pdf, 19, 61, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Principal Applicant');
-drawCheckboxWithLabel($pdf, 19, 67, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Derivative Applicant (Provide the following information about the principal applicant.)');
-//.......
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 20, 74, "Principal Applicant's Name", 0, 0, false, true, 'L', true); 
-//...................
-$startX = 20;
-$startY = 80;
-$lineHeight = 6;
-$fieldHeight = 7;
-$labelFont = ['times', '', 10];
-$fieldFont = ['courier', 'B', 10];
-$stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
-
-// Labels
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY, "Family Name (Last Name)", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 72, $startY, "Given Name (First Name)", 0, 0, false, false, 'L', false);
-$pdf->writeHTMLCell(60, 1, $startX + 131, $startY-0.5, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX , $startY+12, "Principal Applicant's A-Number (if any)", 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 72, $startY+11, "Principal Applicant's Date of Birth<br>(mm/dd/yyyy)", 0, 0, false, false, 'L', true);
-
-// Fields
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 70, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 5);    // Family Name
-$pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
-$pdf->TextField('p1_1c', 52, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
-$pdf->TextField('p1_1c',48, $fieldHeight, $stroke, array(), $startX + 10.8, $startY + 18.2);    // principal application 
-$pdf->TextField('p1_1c', 50, $fieldHeight, $stroke, array(), $startX + 94, $startY + 18.2);    // date of birth
 //...........
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(190, 1, 20, 107, "<b>I am applying</b> based on the following category (You must select <b>ONLY ONE</b> category. If you are filing as a derivative<br>
-applicant, select the appropriate box based on the category under which the principal applicant is applying or has applied. See<br>
-the Form I-485 Instructions for more information, including any <b>Additional Instructions</b> that relate to the immigrant category<br>
-you select.):", 0, 0, false, true, 'L', true); 
-//...........
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 128, "<b>3.a.&nbsp;&nbsp;&nbsp;Family-based</b>", 0, 0, false, true, 'L', true); 
-$pdf->writeHTMLCell(190, 1, 20, 134, "Immediate relative of a U.S. citizen, Form I-130, I-129F, or I-360 (select your specific category below):", 0, 0, false, true, 'L', true); 
+$pdf->writeHTMLCell(130, 1, 12, 33, "<b>3.b.&nbsp;&nbsp;&nbsp;Employment-based </b>", 0, 0, false, true, 'L', true); 
 //.................
-drawCheckboxWithLabel($pdf, 19,139, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Spouse of a U.S. Citizen.');
+drawCheckboxWithLabel($pdf, 19,38.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Alien Investor, Form I-526 or Form I-526E');
+$pdf->writeHTMLCell(190, 1, 20, 45, "Alien Workers, Form I-140 (select your category below and answer the following questions below, as applicable): ", 0, 0, false, true, 'L', true); 
+
 drawCheckboxWithLabel($pdf, 19, 146, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried child under 21 years of age of a U.S. citizen.');
 drawCheckboxWithLabel($pdf, 19, 153, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Parent of a U.S. citizen (if the citizen is at least 21 years of age). ');
 drawCheckboxWithLabel($pdf, 19, 160, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Person admitted to the United States as a fiancé(e) or child of a fiancé(e) of a U.S. citizen (K-1/K-2 Nonimmigrant).');
