@@ -1093,14 +1093,24 @@ $stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'so
 // Labels
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(130, 1, $startX, $startY, "Family Name (Last Name)", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY, "Given Name (First Name)", 0, 0, false, false, 'L', false);
+$pdf->writeHTMLCell(60, 1, $startX + 72, $startY, "Given Name (First Name)", 0, 0, false, false, 'L', false);
 $pdf->writeHTMLCell(60, 1, $startX + 131, $startY-0.5, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX , $startY+12, "Principal Applicant's A-Number (if any)", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX + 72, $startY+11, "Principal Applicant's Date of Birth<br>(mm/dd/yyyy)", 0, 0, false, false, 'L', true);
 
 // Fields
 $pdf->SetFont(...$fieldFont);
 $pdf->TextField('p1_1a', 70, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 5);    // Family Name
 $pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
 $pdf->TextField('p1_1c', 52, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
+$pdf->TextField('p1_1c',48, $fieldHeight, $stroke, array(), $startX + 10.8, $startY + 18.2);    // principal application 
+$pdf->TextField('p1_1c', 50, $fieldHeight, $stroke, array(), $startX + 94, $startY + 18.2);    // date of birth
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(190, 1, 20, 107, "<b>I am applying</b> based on the following category (You must select <b>ONLY ONE</b> category. If you are filing as a derivative<br>
+applicant, select the appropriate box based on the category under which the principal applicant is applying or has applied. See<br>
+the Form I-485 Instructions for more information, including any <b>Additional Instructions</b> that relate to the immigrant category<br>
+you select.):", 0, 0, false, true, 'L', true); 
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 128, "<b>3.a.&nbsp;&nbsp;&nbsp;Family-based</b>", 0, 0, false, true, 'L', true); 
