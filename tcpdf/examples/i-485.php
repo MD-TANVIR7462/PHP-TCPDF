@@ -1162,36 +1162,62 @@ $pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 33, "<b>3.b.&nbsp;&nbsp;&nbsp;Employment-based </b>", 0, 0, false, true, 'L', true); 
 //.................
-drawCheckboxWithLabel($pdf, 19,38.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Alien Investor, Form I-526 or Form I-526E');
+drawCheckboxWithLabel($pdf, 19,38.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Alien of Extraordinary Ability ');
 $pdf->writeHTMLCell(190, 1, 20, 45, "Alien Workers, Form I-140 (select your category below and answer the following questions below, as applicable): ", 0, 0, false, true, 'L', true); 
 
-drawCheckboxWithLabel($pdf, 19, 146, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried child under 21 years of age of a U.S. citizen.');
-drawCheckboxWithLabel($pdf, 19, 153, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Parent of a U.S. citizen (if the citizen is at least 21 years of age). ');
-drawCheckboxWithLabel($pdf, 19, 160, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Person admitted to the United States as a fiancé(e) or child of a fiancé(e) of a U.S. citizen (K-1/K-2 Nonimmigrant).');
-drawCheckboxWithLabel($pdf, 19, 167, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Widow or widower of a U.S. citizen.');
-drawCheckboxWithLabel($pdf, 19, 173, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Spouse, child, or parent of a deceased U.S. active-duty service member in the armed forces under the National Defense<br>Authorization Act (NDAA).');
+drawCheckboxWithLabel($pdf, 19, 50.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Outstanding Professor or Researcher');
+drawCheckboxWithLabel($pdf, 19, 57, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Multinational Executive or Manager');
+drawCheckboxWithLabel($pdf, 19, 63, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Member of the Professions Holding an Advanced Degree or Alien of Exceptional Ability (who is NOT seeking a National<br>Interest Waiver)');
+drawCheckboxWithLabel($pdf, 19, 73, 'terms_checkbox','i_131_correction_terms_conditions_status', "A Professional (at a minimum, requiring a bachelor's degree or a foreign degree equivalent to a U.S. bachelor's degree)");
+drawCheckboxWithLabel($pdf, 19, 80, 'terms_checkbox','i_131_correction_terms_conditions_status', 'A Skilled Worker (requiring at least 2 years of specialized training or experience)');
+drawCheckboxWithLabel($pdf, 19, 87, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Any Other Worker (requiring less than 2 years of training or experience)');
+drawCheckboxWithLabel($pdf, 19, 94, 'terms_checkbox','i_131_correction_terms_conditions_status', 'An Alien Applying For a National Interest Waiver (who IS a member of the professions holding an advanced degree or an<br>alien of exceptional ability)');
 //...........
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(190, 1, 20, 184, "Other relative of a U.S. citizen under the family-based preference categories, Form I-130 (select your specific category below):", 0, 0, false, true, 'L', true); 
+$pdf->writeHTMLCell(190, 1, 20, 105.5, "Did a relative file the associated Form I-140 for you (or for the principal applicant if you are a derivative applicant) or does a<br>
+relative have a significant ownership interest (5 percent or more) in the business that filed Form I-140 for you (or for the<br>
+principal applicant, if you are a derivative applicant)? ", 0, 0, false, true, 'L', true); 
 //........
-drawCheckboxWithLabel($pdf, 19, 190, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried son or daughter of a U.S. citizen and I am 21 years of age or older.');
-drawCheckboxWithLabel($pdf, 19, 197, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Married son or daughter of a U.S. citizen. ');
-drawCheckboxWithLabel($pdf, 19, 204, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Brother or sister of a U.S. citizen (if the citizen is at least 21 years of age).');
+drawCheckboxWithLabel($pdf, 19, 120, 'terms_checkbox','i_131_correction_terms_conditions_status', 'N/A (I am adjusting on the basis of a Form I-140 self-petition)');
+drawCheckboxWithLabel($pdf, 19, 127, 'terms_checkbox','i_131_correction_terms_conditions_status', 'No');
+drawCheckboxWithLabel($pdf, 19, 134, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Yes');
 //...........
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(190, 1, 20, 211, "Relative of a lawful permanent resident under the family-based preference categories, Form I-130 (select your specific category<br>below):", 0, 0, false, true, 'L', true); 
+$pdf->writeHTMLCell(190, 1, 26, 142, 'If you answered "Yes," is this relative your (select only one box):', 0, 0, false, true, 'L', true); 
 //........
-drawCheckboxWithLabel($pdf, 19, 220, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Spouse of a lawful permanent resident.');
-drawCheckboxWithLabel($pdf, 19, 227, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried child under 21 years of age of a lawful permanent resident. ');
-drawCheckboxWithLabel($pdf, 19, 234, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Unmarried son or daughter of a lawful permanent resident and I am 21 years of age or older. ');
+drawCheckboxWithLabel($pdf, 25, 147, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Father');
+drawCheckboxWithLabel($pdf, 47, 147, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Mother');
+drawCheckboxWithLabel($pdf, 69, 147, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Child');
+drawCheckboxWithLabel($pdf, 88, 147, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Adult Son');
+drawCheckboxWithLabel($pdf, 113.5, 147, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Adult Daughter ');
+drawCheckboxWithLabel($pdf, 147, 147, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Brother');
+drawCheckboxWithLabel($pdf, 170, 147, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Sister');
+drawCheckboxWithLabel($pdf, 25, 154, 'terms_checkbox','i_131_correction_terms_conditions_status', 'None of These');
 //...........
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(190, 1, 20, 241, "VAWA self-petitioner (victim of battery or extreme cruelty), Form I-360 (select your specific category below):", 0, 0, false, true, 'L', true); 
+$pdf->writeHTMLCell(190, 1, 26, 162, 'Is the relative above a:', 0, 0, false, true, 'L', true); 
 //........
-drawCheckboxWithLabel($pdf, 19, 245.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'VAWA self-petitioning spouse of a U.S. citizen or lawful permanent resident.');
-drawCheckboxWithLabel($pdf, 19, 251.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'VAWA self-petitioning child of a U.S. citizen or lawful permanent resident.');
-drawCheckboxWithLabel($pdf, 19, 258, 'terms_checkbox','i_131_correction_terms_conditions_status', 'VAWA self-petitioning parent of a U.S. citizen (if the citizen is at least 21 years of age).  ');
-
+drawCheckboxWithLabel($pdf, 25, 167, 'terms_checkbox','i_131_correction_terms_conditions_status', 'U.S. Citizen');
+drawCheckboxWithLabel($pdf, 52, 167, 'terms_checkbox','i_131_correction_terms_conditions_status', 'U.S. National');
+drawCheckboxWithLabel($pdf, 81, 167, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Lawful Permanent Resident');
+drawCheckboxWithLabel($pdf, 130, 167, 'terms_checkbox','i_131_correction_terms_conditions_status', 'None of These ');
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 175, "<b>3.c.&nbsp;&nbsp;&nbsp;Special Immigrant </b>", 0, 0, false, true, 'L', true); 
+// .........
+drawCheckboxWithLabel($pdf, 19, 181, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Special Immigrant Juvenile, Form I-360');
+drawCheckboxWithLabel($pdf, 19, 187.3, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Certain Afghan or Iraqi National, Form I-360 or Form DS-157');
+drawCheckboxWithLabel($pdf, 19, 193.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Certain International Broadcaster, Form I-360');
+drawCheckboxWithLabel($pdf, 19, 199.7, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Certain G-4 International Organization or Family Member or NATO-6 Employee or Family Member, Form I-360');
+drawCheckboxWithLabel($pdf, 19, 206, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Certain U.S. Armed Forces Members (also known as the Six and Six program), Form I-360');
+drawCheckboxWithLabel($pdf, 19, 212, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Panama Canal Zone Employees, Form I-360 ');
+drawCheckboxWithLabel($pdf, 19, 218.3, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Certain Physicians, Form I-360');
+drawCheckboxWithLabel($pdf, 19, 224.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Certain Employee or Former Employee of the U.S. Government Abroad, DS-1884');
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(190, 1, 20, 232, 'Religious Worker, Form I-360 (select your specific category below):', 0, 0, false, true, 'L', true); 
+drawCheckboxWithLabel($pdf, 19, 238.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Minister of Religion');
+drawCheckboxWithLabel($pdf, 19, 244.5, 'terms_checkbox','i_131_correction_terms_conditions_status', 'Other Religious Worker');
 
 //  *****************************
 //  ******** End Page No 8******
