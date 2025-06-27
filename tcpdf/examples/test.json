@@ -221,24 +221,9 @@
 
 
 
-'information_about_principal_care_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'information_about_principal_street_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'information_about_principal_apt_ste_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'information_about_principal_city_town':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'information_about_principal_state':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'information_about_principal_zip_code':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'information_about_principal_province':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'information_about_principal_postal_code':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'information_about_principal_country':' " . showData('sponsor_family_member1_family_last_name') . " ',
 
 
 
-'i_864_member1_last_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'i_864_member1_first_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'i_864_member1_middle_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'i_864_member1_relationship_to_immigrant':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'i_864_member1_date_of_birth':' " . showData('sponsor_family_member1_family_last_name') . " ',
-'i_864_member1_a_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
 'i_864_member1_uscis_account_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
 
 'i_864_member2_last_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
