@@ -1315,18 +1315,43 @@ $pdf->SetFont('Times', '', 10);
 $pdf->writeHTMLCell(210, 6, 12, 38, 'I am requesting an exemption from submitting an Affidavit of Support Under Section 213A of the INA (Form I-864 or Form I-864EZ)<br>because (select <b>only one</b>):', 0, 1, false, true, 'L', true);
 
 // ........
-// drawCheckboxWithLabel($pdf, 19, 32, 'exemption_1a', 'exemption_1a_key', '1.a. I have earned or can receive credit for 40 qualifying quarters (credits) of work in the United States (as defined by the Social Security Act (SSA)). (Attach your SSA earnings statements. Do not count any quarters during which you received a means-tested public benefit.)');
+$pdf->writeHTMLCell(210, 6, 12, 48, '<b>1.a.</b>', 0, 1, false, true, 'L', true);
+drawCheckboxWithLabel($pdf, 19, 47, 'exemption_1a', 'exemption_1a_key', 'I have earned or can receive credit for 40 qualifying quarters (credits) of work in the United States (as defined by the Social<br>
+Security Act (SSA)). (Attach your SSA earnings statements. Do not count any quarters during which you received a means-<br>tested public benefit.)');
+// ........
+$pdf->writeHTMLCell(210, 6, 12, 63, '<b>1.b.</b>', 0, 1, false, true, 'L', true);
+drawCheckboxWithLabel($pdf, 19, 62, 'exemption_1a', 'exemption_1a_key', 'I am under 18 years of age, unmarried, the child of a U.S. citizen, am not likely to become a public charge, and will<br>
+automatically become a U.S. citizen under INA section 320, upon my admission as a lawful permanent resident. ');
+// ........
+$pdf->writeHTMLCell(210, 6, 12, 73.5, '<b>1.c.</b>', 0, 1, false, true, 'L', true);
+drawCheckboxWithLabel($pdf, 19, 72.5, 'exemption_1a', 'exemption_1a_key', 'I am applying under the widow or widower of a U.S. citizen (Form I-360) immigrant category.');
+// ........
+$pdf->writeHTMLCell(210, 6, 12, 80.5, '<b>1.d.</b>', 0, 1, false, true, 'L', true);
+drawCheckboxWithLabel($pdf, 19, 79.5, 'exemption_1a', 'exemption_1a_key', 'I am applying as a VAWA self-petitioner.');
+// ........
+$pdf->writeHTMLCell(210, 6, 12, 87.5, '<b>1.e.</b>', 0, 1, false, true, 'L', true);
+drawCheckboxWithLabel($pdf, 19, 86.5, 'exemption_1a', 'exemption_1a_key', 'None of these exemptions apply to me and I am not required by statute to submit an Affidavit of Support Under Section<br>
+213A of the INA, nor am I required to request an exemption.');
+// ........
+$pdf->writeHTMLCell(210, 6, 12, 97.5, '<b>1.f.</b>', 0, 1, false, true, 'L', true);
+drawCheckboxWithLabel($pdf, 19, 96.5, 'exemption_1a', 'exemption_1a_key', 'None of these exemptions apply to me and I am not requesting an exemption as I am required to submit an Affidavit of<br>
+Support Under Section 213A of the INA.');
+//..........
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$html = "<div><b>Part 4. Additional Information About You</b> </div>";
+$pdf->writeHTMLCell(191.5, 6.5, 13, 110, $html, 1, 1, true, 'L');  
 
-// drawCheckboxWithLabel($pdf, 19, 48, 'exemption_1b', 'exemption_1b_key', '1.b. I am under 18 years of age, unmarried, the child of a U.S. citizen, am not likely to become a public charge, and will automatically become a U.S. citizen under INA section 320, upon my admission as a lawful permanent resident.');
-
-// drawCheckboxWithLabel($pdf, 19, 64.5, 'exemption_1c', 'exemption_1c_key', '1.c. I am applying under the widow or widower of a U.S. citizen (Form I-360) immigrant category.');
-
-// drawCheckboxWithLabel($pdf, 19, 74.5, 'exemption_1d', 'exemption_1d_key', '1.d. I am applying as a VAWA self-petitioner.');
-
-// drawCheckboxWithLabel($pdf, 19, 82.5, 'exemption_1e', 'exemption_1e_key', '1.e. None of these exemptions apply to me and I am not required by statute to submit an Affidavit of Support Under Section 213A of the INA, nor am I required to request an exemption.');
-
-// drawCheckboxWithLabel($pdf, 19, 92, 'exemption_1f', 'exemption_1f_key', '1.f. None of these exemptions apply to me and I am not requesting an exemption as I am required to submit an Affidavit of Support Under Section 213A of the INA.');
-
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 117, "<b>1.</b>", 0, 0, false, 'L');  
+//......
+addYesNoQuestion($pdf, 'Have you ever applied for an immigrant visa to obtain permanent resident status at a U.S. Embassy or<br>
+U.S. Consulate abroad?', 20, 116.5, '54', 'i_131_exclusion_status');
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 20, 126, 'If you answered "Yes," complete <b>Item Numbers 2. - 4.</b>below.', 0, 0, false, 'L');  
 //  *****************************
 //  ******** End Page No 8******
 //  ******************************/

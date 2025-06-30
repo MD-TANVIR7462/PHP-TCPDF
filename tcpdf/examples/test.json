@@ -225,7 +225,6 @@
 
 
 'i_864_member1_uscis_account_number':' " . showData('sponsor_family_member1_family_last_name') . " ',
-
 'i_864_member2_last_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
 'i_864_member2_first_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
 'i_864_member2_middle_name':' " . showData('sponsor_family_member1_family_last_name') . " ',
