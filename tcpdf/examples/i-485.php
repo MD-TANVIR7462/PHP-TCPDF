@@ -1372,7 +1372,28 @@ $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 162.8, '<b>4.</b>', 0, 0, false, 'L');
 $pdf->writeHTMLCell(191.5, 6.5, 20, 163, 'Date of Decision (mm/dd/yyyy)', 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_street', 87, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 69, 163.5);
+$pdf->TextField('employer_street', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 69, 163.5);
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 172, '<b>5.</b>', 0, 0, false, 'L');
+addYesNoQuestion($pdf, 'Have you previously applied for permanent residence while in the United States?', 20, 171, '54', 'i_131_exclusion_status');
+//.............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13,180, '<b>6.</b>', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 35,180, '<b>EVER</b>', 0, 0, false, 'L');
+addYesNoQuestion($pdf, '<div>Have you&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; held lawful permanent resident status which was later rescinded under INA section 246?</div>', 20, 179, '54', 'i_131_exclusion_status');
+//.............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13,187, '<b>Employment and Educational History</b>', 0, 0, false, 'L');
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 194, '<b>7.</b>', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 20, 194, 'Provide <b>ALL</b> of your employment and educational history for the last 5 years as indicated in the Instructions. Provide your<br>
+current employment or school attended first. Include periods of self-employment, unemployment, or retirement. For each period<br>
+of unemployment or retirement, list source of financial support. If you have additional employment or educational history, use<br>
+the space provided in <b>Part 14. Additional Information.</b>', 0, 0, false, 'L');
+
+
 //  *****************************
 //  ******** End Page No 8******
 //  ******************************/

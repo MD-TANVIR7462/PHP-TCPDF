@@ -17,11 +17,11 @@ function addYesNoQuestion($pdf, $question, $x, $y, $fieldName, $dataKey)
     // Write question
     $pdf->writeHTMLCell(190, 7, $x, $y, $question, 0, 1, false, false, 'L', true);
     // Write Yes/No labels
-    $pdf->writeHTMLCell(120, 7, 178, $y + 1, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
+    $pdf->writeHTMLCell(120, 7, 182, $y + 1, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
     // Write checkboxes
     $pdf->SetFont('times', '', 14);
     $html = '<div><input type="checkbox"  name="' . $fieldName . '" value="Y" ' . $checked_y . ' />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"  name="' . $fieldName . '" value="N" ' . $checked_n . ' /></div>';
-    $pdf->writeHTMLCell(50, 7, 172, $y, $html, 0, 1, false, true, 'J', true);
+    $pdf->writeHTMLCell(50, 7, 176, $y, $html, 0, 1, false, true, 'J', true);
 }
  
 // use case
