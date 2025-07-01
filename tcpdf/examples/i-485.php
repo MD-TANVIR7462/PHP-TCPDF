@@ -1308,7 +1308,7 @@ $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $html = "<div><b>Part 3. Request for Exemption for Intending Immigrant's Affidavit of Support Under Section 213A of the INA  </b> </div>";
-$pdf->writeHTMLCell(191.5, 6.5, 13, 25.5, $html, 1, 1, true, 'L');                   
+$pdf->writeHTMLCell(191.5, 6.5, 13, 25.5, $html, 1, 1, true, 'L');
 
 // Main instructional text
 $pdf->SetFont('Times', '', 10);
@@ -1341,17 +1341,38 @@ $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $html = "<div><b>Part 4. Additional Information About You</b> </div>";
-$pdf->writeHTMLCell(191.5, 6.5, 13, 110, $html, 1, 1, true, 'L');  
+$pdf->writeHTMLCell(191.5, 6.5, 13, 110, $html, 1, 1, true, 'L');
 
 //...........
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(191.5, 6.5, 13, 117, "<b>1.</b>", 0, 0, false, 'L');  
+$pdf->writeHTMLCell(191.5, 6.5, 13, 117, "<b>1.</b>", 0, 0, false, 'L');
 //......
 addYesNoQuestion($pdf, 'Have you ever applied for an immigrant visa to obtain permanent resident status at a U.S. Embassy or<br>
 U.S. Consulate abroad?', 20, 116.5, '54', 'i_131_exclusion_status');
 //...........
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(191.5, 6.5, 20, 126, 'If you answered "Yes," complete <b>Item Numbers 2. - 4.</b>below.', 0, 0, false, 'L');  
+$pdf->writeHTMLCell(191.5, 6.5, 20, 127, 'If you answered "Yes," complete <b>Item Numbers 2. - 4.</b>below.', 0, 0, false, 'L');
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 132.8, '<b>2.</b>', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 20, 133, 'Location of U.S. Embassy or U.S. Consulate', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 20, 141, 'City or Town', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 113.6, 141, 'Country', 0, 0, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_street', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 145.7);
+$pdf->TextField('employer_street', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 145.7);
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 154.8, '<b>3.</b>', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 20, 155, 'Decision (for example, approved, refused, denied, withdrawn)', 0, 0, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_street', 87, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 118, 154.9);
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 162.8, '<b>4.</b>', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 20, 163, 'Date of Decision (mm/dd/yyyy)', 0, 0, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_street', 87, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 69, 163.5);
 //  *****************************
 //  ******** End Page No 8******
 //  ******************************/
