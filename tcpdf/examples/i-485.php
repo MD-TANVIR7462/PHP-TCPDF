@@ -1642,218 +1642,61 @@ $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
-$pdf->SetFontSize(11.6);
-
-// // Section Header
-$html = '<div><b>Part 4. Additional Information About You (continued)</b></div>';
-$pdf->writeHTMLCell(191.5, 6, 13, 25.5, $html, 1, 1, true, 'L');
-
-// Employer/School Address Section
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 21, 32, 'Address of Employer, Company, or School', 0, 1, false, false, 'L', true);
-
-// Street Number and Name
-$pdf->writeHTMLCell(90, 7, 21, 36.6, 'Street Number and Name', 0, 1, false, false, 'L', true);
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_street', 120, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 43);
-
-// Apt/Ste/Flr Checkboxes
-if (showData('employer_apt_ste_flr') == "apt") $checked_apt = "checked";
-else $checked_apt = "";
-if (showData('employer_apt_ste_flr') == "ste") $checked_ste = "checked";
-else $checked_ste = "";
-if (showData('employer_apt_ste_flr') == "flr") $checked_flr = "checked";
-else $checked_flr = "";
-$pdf->SetFont('times', '', 14);
-$html = '<div><input type="checkbox" name="employer_addr_type" value="Apt" checked="' . $checked_apt . '" />&nbsp;<input type="checkbox" name="employer_addr_type" value="Ste" checked="' . $checked_ste . '"  /> <input type="checkbox" name="employer_addr_type" value="Flr" checked="' . $checked_flr . '" /></div>';
-$pdf->writeHTMLCell(50, 0, 144, 43, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 0, 144.2, 38, "Apt.&nbsp;&nbsp;Ste.&nbsp;&nbsp;Flr", '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(50, 0, 167, 38, "Number", '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_unit_number', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 43);
-
-// City/State/ZIP Row
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 5, 21, 50, 'City or Town', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_city', 120.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 55);
-
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(30, 5, 144.2, 50, 'State', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$comboBoxOptions = array('');
-foreach ($allDataCountry as $record) {
-    $comboBoxOptions[] = $record->state_code;
-}
-$pdf->ComboBox("employer_state", 22, 7, $comboBoxOptions, array(), array(), 144.2, 55);
-
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(30, 5, 168, 50, 'ZIP Code', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_zip', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 55);
-
-// Province/Postal Code/Country Row
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 5, 21, 62, 'Province', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_province', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 67);
-
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 5, 93, 62, 'Postal Code', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_postal_code', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 94, 67);
-
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 5, 132, 62, 'Country', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_country', 72, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 132, 67);
-
-// Dates Section
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 21, 75, 'Dates of Employment, Unemployment, Retirement, or School Attendance', 0, 1, false, false, 'L', true);
-
-$pdf->writeHTMLCell(60, 7, 21, 82, 'From (mm/dd/yyyy)', 0, 1, false, false, 'L', true);
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employment_from_date', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 53, 83.3);
-
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(60, 7, 106, 82, 'To (mm/dd/yyyy)', 0, 1, false, false, 'L', true);
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employment_to_date', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 134, 83.1);
-
-// Financial Support Section
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 21, 89, 'If unemployed or retired, source of financial support:', 0, 1, false, false, 'L', true);
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('financial_support', 182, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 97);
-
-// 8. Most Recent Employer/School Outside US Section - UPDATED TO MATCH SCREENSHOT (y-4)
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 12, 104.5, '<b>8.</b>', 0, 1, false, false, 'L', true);
-$pdf->writeHTMLCell(190, 7, 21, 103.5, 'Provide your most recent employer or school outside of the United States (if not already listed above).', 0, 1, false, false, 'L', true);
-
-// Name and Occupation on SAME LINE (updated)
-$pdf->writeHTMLCell(90, 7, 21, 110, 'Name of Employer, Company, or School', 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(90, 7, 114, 110, 'Your Occupation (if unemployed or retired, so state)', 0, 1, false, false, 'L', true);
-
-// Text fields below each label
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_employer_name', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 117.4);
-$pdf->TextField('foreign_occupation', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 117.4);
-
-// Address Section
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 21, 123, 'Address of Employer, Company, or School', 0, 1, false, false, 'L', true);
-
-// Street Number and Name
-$pdf->writeHTMLCell(90, 7, 21, 128, 'Street Number and Name', 0, 1, false, false, 'L', true);
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_employer_street', 120, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 138);
-
-// Apt/Ste/Flr Checkboxes
-$pdf->SetFont('times', '', 14);
-$html = '<div><input type="checkbox" name="foreign_employer_addr_type" value="Apt" checked="' . $checked_apt . '" />&nbsp;<input type="checkbox" name="foreign_employer_addr_type" value="Ste" checked="' . $checked_ste . '"  /> <input type="checkbox" name="foreign_employer_addr_type" value="Flr" checked="' . $checked_flr . '" /></div>';
-$pdf->writeHTMLCell(50, 0, 144, 138, $html, '', 0, 0, true, 'L');
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 0, 144.2, 132, "Apt.&nbsp;&nbsp;Ste.&nbsp;&nbsp;Flr", '', 0, 0, true, 'L');
-$pdf->writeHTMLCell(50, 0, 167, 132, "Number", '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_employer_unit_number', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 138);
-
-// City/State/ZIP Row
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 5, 21, 146, 'City or Town', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_employer_city', 120.2, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 151);
-
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(30, 5, 144.2, 146, 'State', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->ComboBox("foreign_employer_state", 22, 7, $comboBoxOptions, array(), array(), 144.2, 151);
-
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(30, 5, 168, 146, 'ZIP Code', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_employer_zip', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 151);
-
-// Province/Postal Code/Country Row
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 5, 21, 158, 'Province', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_employer_province', 70, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 163);
-
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 5, 93, 158, 'Postal Code', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_employer_postal_code', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 94, 163);
-
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(50, 5, 132, 158, 'Country', '', 0, 0, true, 'L');
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_employer_country', 72, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 132, 163);
-
-// Dates Section
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 21, 171, 'Dates of Employment, Unemployment, Retirement, or School Attendance', 0, 1, false, false, 'L', true);
-
-$pdf->writeHTMLCell(60, 7, 21, 178, 'From (mm/dd/yyyy)', 0, 1, false, false, 'L', true);
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_employment_from_date', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 53, 179.3);
-
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(60, 7, 106, 178, 'To (mm/dd/yyyy)', 0, 1, false, false, 'L', true);
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_employment_to_date', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 134, 179.1);
-
-// Financial Support Section
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 21, 185, 'If unemployed or retired, source of financial support:', 0, 1, false, false, 'L', true);
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('foreign_financial_support', 182, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 193);
-
-// Part 5 Header (y-4)
-$pdf->SetFont('times', 'B', 12);
-$html = '<div><b>Part 5. Information About Your Parents</b></div>';
-$pdf->writeHTMLCell(191.5, 6, 13, 204, $html, 1, 1, true, 'L');
-$html = '<div><i>Information About Your Parent 1</i></div>';
-$pdf->writeHTMLCell(191.5, 6, 13, 213.5, $html, 0, 1, true, 'L');
-
-// 1. Parent 1's Legal Name - ALL THREE FIELDS ON ONE LINE (y-4)
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 13, 220, '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parent 1\'s Legal Name', 0, 1, false, false, 'L', true);
-
+$pdf->SetFontSize(12);
+$html = "<div><b>Part 5. Information About Your Parents</b> (continued)</div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
+//........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 34, '<b>4.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 34, "Country of Birth ", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_Applicant_family_name', 90, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 38.7);
+//.................
+$pdf->setFont('Times', 'I', 12);
+$html = "<div><b>Information About Your Parent 2</b></div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 48, $html, 0, 1, true, 'L');
+//........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 55, '<b>5.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 55, "Parent 2's Legal Name", '', 1, false, 'L');
+//.............
 // Name fields on one line - Family, Given, Middle (adjusted spacing)
-$pdf->writeHTMLCell(58, 7, 21, 224, 'Family Name (Last Name)', 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(58, 7, 86, 223, 'Given Name (First Name)', 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(65, 7, 147, 222, 'Middle Name (if applicable)', 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(58, 7, 20, 60, 'Family Name (Last Name)', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(58, 7, 86, 59, 'Given Name (First Name)', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(65, 7, 147, 58, 'Middle Name (if applicable)', 0, 1, false, false, 'L', true);
 
 // Input fields below labels (aligned with above)
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('parent1_last_name', 63.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 230);
-$pdf->TextField('parent1_first_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 87, 230);
-$pdf->TextField('parent1_middle_name', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 148, 230);
+$pdf->TextField('parent1_last_name', 63.6, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 66);
+$pdf->TextField('parent1_first_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 87, 66);
+$pdf->TextField('parent1_middle_name', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 148, 66);
 
 // 2. Parent 1's Name at Birth - ALL THREE FIELDS ON ONE LINE (y-4)
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 13, 238, '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parent 1\'s Name at Birth (if different than above)', 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(190, 7, 12, 74, "<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parent 2's Name at Birth (if different than above)", 0, 1, false, false, 'L', true);
 
 // Name fields on one line - Family, Given, Middle (adjusted spacing)
-$pdf->writeHTMLCell(58, 7, 21, 242, 'Family Name (Last Name)', 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(58, 7, 86, 241, 'Given Name (First Name)', 0, 0, false, false, 'L', true);
-$pdf->writeHTMLCell(65, 7, 147, 240, 'Middle Name (if applicable)', 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(58, 7, 20, 80, 'Family Name (Last Name)', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(58, 7, 85, 79, 'Given Name (First Name)', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(65, 7, 147, 78, 'Middle Name (if applicable)', 0, 1, false, false, 'L', true);
 
 // Input fields below labels (aligned with above)
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('parent1_birth_last_name', 63.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 248);
-$pdf->TextField('parent1_birth_first_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 87, 248);
-$pdf->TextField('parent1_birth_middle_name', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 148, 248);
+$pdf->TextField('parent1_birth_last_name', 63.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 86);
+$pdf->TextField('parent1_birth_first_name',60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 86, 86);
+$pdf->TextField('parent1_birth_middle_name', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 148, 86);
 
 // 3. Date of Birth
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 13, 257, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)', 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(190, 7, 13, 95, '<b>7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)', 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('parent1_dob', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 66, 256.5);
+$pdf->TextField('parent1_dob', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 65, 95);
+//.........
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 13, 103, '<b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Birth', 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('parent1_dob', 80, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 108);
 
 
 // ******************************
@@ -2330,18 +2173,7 @@ var fields = {
     'aditional_info_address3_date_from':' " . showData('information_about_you_outside_us_residence_from_date') . "',
     'aditional_info_address3_date_to':' " . showData('information_about_you_outside_us_residence_to_date') . "',
     
-    'aditional_info_employement_company':' " . showData('employer1_name') . "',
-    'aditional_info_employer_street':' " . showData('employer1_address') . "',
-    'aditional_info_employer_apt_ste_flr':' " . showData('employer1_apt_ste_flr_value') . "',
-    'aditional_info_employer_city_or_town':' " . showData('employer1_city_town') . "',
-    'aditional_info_employer_state':' " . showData('employer1_state') . "',
-    'aditional_info_employer_zip_code':' " . showData('employer1_zip_code') . "',
-    'aditional_info_employer_province':' " . showData('employer1_province') . "',
-    'aditional_info_employer_postal_code':' " . showData('employer1_postal_code') . "',
-    'aditional_info_employer_country':' " . showData('employer1_country') . "',
-    'aditional_info_employer_occupation':' " . showData('employer1_occupation') . "',
-    'aditional_info_employer_date_from':' " . showData('employer1_from_date') . "',
-    'aditional_info_employer_date_to':' " . showData('employer1_to_date') . "', 
+
 	
     'aditional_info_employer2_company':' " . showData('employer2_name') . "',
     'aditional_info_employer2_street':' " . showData('employer2_address') . "',
