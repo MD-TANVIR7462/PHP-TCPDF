@@ -1646,101 +1646,96 @@ $pdf->SetFontSize(12);
 $html = "<div><b>Part 5. Information About Your Parents</b> (continued)</div>";
 $pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
 //........
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(197, 5, 12, 34, '<b>4.</b>', '', 1, false, 'L');
-// $pdf->writeHTMLCell(197, 5, 20, 34, "Country of Birth ", '', 1, false, 'L');
-// //..............
-// $pdf->SetFont('courier', 'B', 10); // set font
-// $pdf->TextField('p13_Applicant_family_name', 90, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 38.7);
-// //.................
-// $pdf->setFont('Times', 'I', 12);
-// $html = "<div><b>Information About Your Parent 2</b></div>";
-// $pdf->writeHTMLCell(191.5, 6, 13, 48, $html, 0, 1, true, 'L');
-// //........
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(197, 5, 12, 55, '<b>5.</b>', '', 1, false, 'L');
-// $pdf->writeHTMLCell(197, 5, 20, 55, "Parent 2's Legal Name", '', 1, false, 'L');
-// //.............
-// // Name fields on one line - Family, Given, Middle (adjusted spacing)
-// $pdf->writeHTMLCell(58, 7, 20, 60, 'Family Name (Last Name)', 0, 0, false, false, 'L', true);
-// $pdf->writeHTMLCell(58, 7, 86, 59, 'Given Name (First Name)', 0, 0, false, false, 'L', true);
-// $pdf->writeHTMLCell(65, 7, 147, 58, 'Middle Name (if applicable)', 0, 1, false, false, 'L', true);
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 34, '<b>4.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 34, "Country of Birth ", '', 1, false, 'L');
+//..............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_Applicant_family_name', 90, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 38.7);
+//.................
+$pdf->setFont('Times', 'I', 12);
+$html = "<div><b>Information About Your Parent 2</b></div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 48, $html, 0, 1, true, 'L');
+//........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 55, '<b>5.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, 20, 55, "Parent 2's Legal Name", '', 1, false, 'L');
+//.............
+// Name fields on one line - Family, Given, Middle (adjusted spacing)
+$pdf->writeHTMLCell(58, 7, 20, 60, 'Family Name (Last Name)', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(58, 7, 86, 59, 'Given Name (First Name)', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(65, 7, 147, 58, 'Middle Name (if applicable)', 0, 1, false, false, 'L', true);
 
-// // Input fields below labels (aligned with above)
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('parent1_last_name', 63.6, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 66);
-// $pdf->TextField('parent1_first_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 87, 66);
-// $pdf->TextField('parent1_middle_name', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 148, 66);
+// Input fields below labels (aligned with above)
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('parent1_last_name', 63.6, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 66);
+$pdf->TextField('parent1_first_name', 59, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 87, 66);
+$pdf->TextField('parent1_middle_name', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 148, 66);
 
-// // 2. Parent 1's Name at Birth - ALL THREE FIELDS ON ONE LINE (y-4)
-// $pdf->SetFont('times', '', 10);
-// $pdf->writeHTMLCell(190, 7, 12, 74, "<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parent 2's Name at Birth (if different than above)", 0, 1, false, false, 'L', true);
+// 2. Parent 1's Name at Birth - ALL THREE FIELDS ON ONE LINE (y-4)
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 12, 74, "<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parent 2's Name at Birth (if different than above)", 0, 1, false, false, 'L', true);
 
-// // Name fields on one line - Family, Given, Middle (adjusted spacing)
-// $pdf->writeHTMLCell(58, 7, 20, 80, 'Family Name (Last Name)', 0, 0, false, false, 'L', true);
-// $pdf->writeHTMLCell(58, 7, 85, 79, 'Given Name (First Name)', 0, 0, false, false, 'L', true);
-// $pdf->writeHTMLCell(65, 7, 147, 78, 'Middle Name (if applicable)', 0, 1, false, false, 'L', true);
+// Name fields on one line - Family, Given, Middle (adjusted spacing)
+$pdf->writeHTMLCell(58, 7, 20, 80, 'Family Name (Last Name)', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(58, 7, 85, 79, 'Given Name (First Name)', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(65, 7, 147, 78, 'Middle Name (if applicable)', 0, 1, false, false, 'L', true);
 
-// // Input fields below labels (aligned with above)
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('parent1_birth_last_name', 63.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 86);
-// $pdf->TextField('parent1_birth_first_name',60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 86, 86);
-// $pdf->TextField('parent1_birth_middle_name', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 148, 86);
+// Input fields below labels (aligned with above)
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('parent1_birth_last_name', 63.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 86);
+$pdf->TextField('parent1_birth_first_name',60, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 86, 86);
+$pdf->TextField('parent1_birth_middle_name', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 148, 86);
 
-// // 3. Date of Birth
-// $pdf->SetFont('times', '', 10);
-// $pdf->writeHTMLCell(190, 7, 13, 95, '<b>7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)', 0, 1, false, false, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('parent1_dob', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 65, 95);
-// //.........
-// $pdf->SetFont('times', '', 10);
-// $pdf->writeHTMLCell(190, 7, 13, 103, '<b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Birth', 0, 1, false, false, 'L', true);
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('parent1_dob', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 108);
-// //..........
-// $pdf->SetFont('times', '', 10);
-// $pdf->setCellPaddings(1, 0.5, 1, 1);
-// $pdf->SetFontSize(12);
-// $html = "<div><b>Part 6. Information About Your Marital History</b></div>";
-// $pdf->writeHTMLCell(191.5, 6, 13, 120, $html, 1, 1, true, 'L');
+// 3. Date of Birth
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 13, 95, '<b>7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth (mm/dd/yyyy)', 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('parent1_dob', 50, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 65, 95);
+//.........
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 13, 103, '<b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country of Birth', 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('parent1_dob', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20, 108);
+//..........
+$pdf->SetFont('times', '', 10);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$pdf->SetFontSize(12);
+$html = "<div><b>Part 6. Information About Your Marital History</b></div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 120, $html, 1, 1, true, 'L');
 // ///..........
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 13, 95, '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What is your current marital status?', 0, 1, false, false, 'L', true);
-//...........
-
-
-
+$pdf->writeHTMLCell(190, 7, 13, 127, '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What is your current marital status?', 0, 1, false, false, 'L', true);
 
 //.............
 $pdf->SetFont('times', '', 14);
 if (showData('biographic_info_eye_color') == "black") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 20, 80, '<input type="checkbox" name="p3_eye_color_status1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 20, 133, '<input type="checkbox" name="p3_eye_color_status1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 if (showData('biographic_info_eye_color') == "brown") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 61, 80, '<input type="checkbox" name="p3_eye_color_status3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 61, 133, '<input type="checkbox" name="p3_eye_color_status3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 if (showData('biographic_info_eye_color') == "gray") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 82, 80, '<input type="checkbox" name="p3_eye_color_status4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 82, 133, '<input type="checkbox" name="p3_eye_color_status4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 if (showData('biographic_info_eye_color') == "green") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 105, 80, '<input type="checkbox" name="p3_eye_color_status5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 105, 133, '<input type="checkbox" name="p3_eye_color_status5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 if (showData('biographic_info_eye_color') == "hazel") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 127, 80, '<input type="checkbox" name="p3_eye_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 127, 133, '<input type="checkbox" name="p3_eye_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 if (showData('biographic_info_eye_color') == "hazel") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 127, 80, '<input type="checkbox" name="p3_eye_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 165, 133, '<input type="checkbox" name="p3_eye_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 
 //..................
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(140, 1, 26, 80.3, "Single, Never Married", 0, 0, false, true, 'L', true);
-
-$pdf->writeHTMLCell(140, 1, 67, 80.3, "Married", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, 88, 80.3, "Divorced", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, 111, 80.3, "Widowed", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, 133, 80.3, "Marriage Annulledel", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, 133, 80.3, "Marriage Annulledel", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 26, 133.5, "Single, Never Married", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 67, 133.5, "Married", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 88, 133.5, "Divorced", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 111, 133.5, "Widowed", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 133, 133.5, "Marriage Annulledel", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 171, 133.5, "Legally Separated", 0, 0, false, true, 'L', true);
 
 
 
