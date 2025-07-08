@@ -1805,7 +1805,7 @@ $pdf->TextField('p1_1a', 70, $fieldHeight, $stroke, array(), $startX + 0.8, $sta
 $pdf->TextField('p1_1b', 58.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
 $pdf->TextField('p1_1c', 52, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
 $pdf->TextField('p1_1c', 48, $fieldHeight, $stroke, array(), $startX + 10.8, $startY + 18.2);    // principal application 
-$pdf->TextField('p1_1c', 50, $fieldHeight, $stroke, array(), $startX + 94, $startY + 18.2);    // date of birth
+$pdf->TextField('p1_1c', 50, $fieldHeight, $stroke, array(), $startX + 94, $startY + 18.2);    
 // //...........
 //...........................
 $startX = 20;
