@@ -1774,6 +1774,40 @@ $pdf->writeHTMLCell(191.5, 6, 13, 162.4, $html, 0, 0, true, 'L');
 // *.................
 // *Reuseable Section
 // *.................
+//............
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(200, 7, 13, 170, "<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current Spouse's Legal Name ", 0, 1, false, false, 'L', true);
+//...........
+$startX = 20;
+$startY = 175;
+$lineHeight = 6;
+$fieldHeight = 7;
+$labelFont = ['times', '', 10];
+$fieldFont = ['courier', 'B', 10];
+$stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
+
+// Labels
+$pdf->SetFont(...$labelFont);
+$pdf->writeHTMLCell(130, 1, $startX, $startY, "Family Name (Last Name)", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX + 72, $startY, "Given Name (First Name)", 0, 0, false, false, 'L', false);
+$pdf->writeHTMLCell(61.5, 1, $startX + 131, $startY - 0.5, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX, $startY + 12, "Current Spouse's A-Number (if any)", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX + 72, $startY + 11, "Current Spouse's Date of Birth <br>(mm/dd/yyyy)", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX + 65, $startY + 13, "<b>6.</b>", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX-8 , $startY + 13, "<b>5.</b>", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX-8 , $startY + 26, "<b>7.</b>", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX , $startY + 26, "Current Spouse's Country of Birth", 0, 0, false, false, 'L', true);
+
+// Fields
+$pdf->SetFont(...$fieldFont);
+$pdf->TextField('p1_1a', 81, $fieldHeight, $stroke, array(), $startX + 0.8, $startY +32);    // Family Name
+$pdf->TextField('p1_1a', 70, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 5);    // Family Name
+$pdf->TextField('p1_1b', 58.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
+$pdf->TextField('p1_1c', 52, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
+$pdf->TextField('p1_1c', 48, $fieldHeight, $stroke, array(), $startX + 10.8, $startY + 18.2);    // principal application 
+$pdf->TextField('p1_1c', 50, $fieldHeight, $stroke, array(), $startX + 94, $startY + 18.2);    // date of birth
+// //...........
+//...........................
 $startX = 20;
 $startY = 204.5;
 $lineHeight = 6;
@@ -1784,7 +1818,7 @@ $stroke = array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderSty
 
 // ---------------------- Section: Title ----------------------
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(190, $lineHeight, $startX-8, $startY + 11, "<b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current Spouse's Legal Name", '', 0, 0, true, 'L');
+$pdf->writeHTMLCell(190, $lineHeight, $startX - 8, $startY + 11, "<b>8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current Spouse's Legal Name", '', 0, 0, true, 'L');
 
 // ---------------------- Street Number ----------------------
 $pdf->SetFont(...$labelFont);
