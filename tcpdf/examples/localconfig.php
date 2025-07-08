@@ -5,8 +5,7 @@ $attorneyData     = '';
 
 function showData($name, $arrayNo = "") {}
 
-function addYesNoQuestion($pdf, $question, $x, $y, $fieldName, $dataKey)
-{
+function addYesNoQuestion($pdf, $question, $x, $y, $fieldName, $dataKey){
     // Determine checkbox status
     $value = showData($dataKey);
     $checked_y = $value === "Y" ? "checked" : "";
