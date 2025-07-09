@@ -1946,15 +1946,68 @@ $pdf->writeHTMLCell(65, 7, $startX + 128, $startY + 5, 'Middle Name (if applicab
 
 // Input fields on same horizontal line
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('prior_spouse_last_name', 63.6, 7, ['strokeColor' => [64, 64, 64],'lineWidth' => 1,'borderStyle' => 'solid'], [], $startX + 1, $startY + 12);
-$pdf->TextField('prior_spouse_first_name', 60, 7, ['strokeColor' => [64, 64, 64],'lineWidth' => 1,'borderStyle' => 'solid'], [], $startX + 67, $startY + 12);
-$pdf->TextField('prior_spouse_middle_name', 56, 7, ['strokeColor' => [64, 64, 64],'lineWidth' => 1,'borderStyle' => 'solid'], [], $startX + 129, $startY + 12);
+$pdf->TextField('prior_spouse_last_name', 63.6, 7, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 11);
+$pdf->TextField('prior_spouse_first_name', 60, 7, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 67, $startY + 11.5);
+$pdf->TextField('prior_spouse_middle_name', 56, 7, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 129, $startY + 12);
 //.......
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 7, 12, 111, "<b>12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prior Spouse's Date of Birth (mm/dd/yyyy)", 0, 1, false, false, 'L', true);
+$pdf->writeHTMLCell(190, 7, 12, 111, "<b>12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prior Spouse's Date of Birth (mm/dd/yyyy)", 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('prior_spouse_first_name', 47, 7, ['strokeColor' => [64, 64, 64],'lineWidth' => 1,'borderStyle' => 'solid'], [], $startX + 67, $startY + 21);
-
+$pdf->TextField('prior_spouse_first_name', 47, 7, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 67, $startY + 21);
+// // Name fields on one line - Family, Given, Middle (adjusted spacing)
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(58, 7, 12, 120.5, "<b>13.</b>&nbsp;&nbsp;&nbsp;&nbsp;Prior Spouse's Country of Birthf", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(108, 7, 115, 120.5, "<b>14.</b>&nbsp;&nbsp;&nbsp;&nbsp;Prior Spouse's Country of Citizenship or Nationality", 0, 0, false, false, 'L', true);
+// //......
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('parent1_birth_last_name', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 125.6);
+$pdf->TextField('parent1_birth_first_name', 80, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 124, 125.6);
+//.......
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 12, 135, "<b>15.</b>&nbsp;&nbsp;&nbsp;&nbsp;Date of Marriage to Prior Spouse's (mm/dd/yyyy)", 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('prior_spouse_first_name', 50, 7, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], 94, 135);
+//...................
+//! reusable component
+//........
+$startX = 20;
+$startY = 142;
+// Set font for labels
+$pdf->SetFont('Times', '', 10);
+// Section number and title
+$pdf->writeHTMLCell(197, 5, $startX - 8, $startY, '<b>16.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY, "Place of Marriage to Prior Spouse", '', 1, false, 'L');
+// Sub-labels
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 6, "City or Town", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 18, "Country", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX + 92, $startY + 6, "State or Province", '', 1, false, 'L');
+// Set fot for input fields
+$pdf->SetFont('courier', 'B', 10);
+// Input fields
+$pdf->TextField('marriage_city', 90, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 11);
+$pdf->TextField('marriage_country', 90, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 23);
+$pdf->TextField('marriage_state', 92, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 93, $startY + 11);
+//! reusable component
+$startX = 20;
+$startY = 172;
+// Set font for labels
+$pdf->SetFont('Times', '', 10);
+// Section number and title
+$pdf->writeHTMLCell(197, 5, $startX - 8, $startY, '<b>17.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY, "Place Where Marriage with Prior Spouse Legally Ended ", '', 1, false, 'L');
+// Sub-labels
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 6, "City or Town", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 18, "Country", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX + 92, $startY + 6, "State or Province", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 32, "Date of Marriage with Prior Spouse Legally Ended (mm/dd/yyyy)", '', 1, false, 'L');
+// Set fot for input fields
+$pdf->SetFont('courier', 'B', 10);
+// Input fields
+$pdf->TextField('marriage_city', 90, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 11);
+$pdf->TextField('marriage_country', 90, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 23);
+$pdf->TextField('marriage_state', 92, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 93, $startY + 11);
+$pdf->TextField('marriage_date', 47, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 95, $startY + 32);
+//! reusable component
 
 
 //  ******************************
