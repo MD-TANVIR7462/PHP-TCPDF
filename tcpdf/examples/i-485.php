@@ -2008,7 +2008,40 @@ $pdf->TextField('marriage_country', 90, 6.6, ['strokeColor' => [64, 64, 64], 'li
 $pdf->TextField('marriage_state', 92, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 93, $startY + 11);
 $pdf->TextField('marriage_date', 47, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 95, $startY + 32);
 //! reusable component
+// Set font for labels
+$pdf->SetFont('Times', '', 10);
+// Section number and title
+$pdf->writeHTMLCell(197, 5, $startX - 8, $startY+40, '<b>18.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY+40.4, "How Marriage Ended with Prior Spouse (select one):", '', 1, false, 'L'); 
 
+//............
+
+//.............
+$pdf->SetFont('times', '', 14);
+if (showData('biographic_info_eye_color') == "black") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 20, 218, '<input type="checkbox" name="p3_eye_color_status1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('biographic_info_eye_color') == "brown") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 61, 218, '<input type="checkbox" name="p3_eye_color_status3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('biographic_info_eye_color') == "gray") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 82, 218, '<input type="checkbox" name="p3_eye_color_status4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('biographic_info_eye_color') == "green") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 105, 218, '<input type="checkbox" name="p3_eye_color_status5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('biographic_info_eye_color') == "hazel") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 127, 218, '<input type="checkbox" name="p3_eye_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('biographic_info_eye_color') == "hazel") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 165, 218, '<input type="checkbox" name="p3_eye_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(140, 1, 26, 218.5, "Annulled", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 67, 218.5, "Divorced", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 88, 218.5, "Spouse Deceased", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 111, 218.5, "Other (Explain):", 0, 0, false, true, 'L', true);
 
 //  ******************************
 //  ******** End Page No 21 ******
