@@ -2023,25 +2023,24 @@ else $checked = "";
 $pdf->writeHTMLCell(5, 1, 20, 218, '<input type="checkbox" name="p3_eye_color_status1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 if (showData('biographic_info_eye_color') == "brown") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 61, 218, '<input type="checkbox" name="p3_eye_color_status3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 42, 218, '<input type="checkbox" name="p3_eye_color_status3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 if (showData('biographic_info_eye_color') == "gray") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 82, 218, '<input type="checkbox" name="p3_eye_color_status4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 64, 218, '<input type="checkbox" name="p3_eye_color_status4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 if (showData('biographic_info_eye_color') == "green") $checked = "checked";
 else $checked = "";
-$pdf->writeHTMLCell(5, 1, 105, 218, '<input type="checkbox" name="p3_eye_color_status5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-if (showData('biographic_info_eye_color') == "hazel") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 127, 218, '<input type="checkbox" name="p3_eye_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-if (showData('biographic_info_eye_color') == "hazel") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, 165, 218, '<input type="checkbox" name="p3_eye_color_status6" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+$pdf->writeHTMLCell(5, 1, 98, 218, '<input type="checkbox" name="p3_eye_color_status5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
 //..................
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(140, 1, 26, 218.5, "Annulled", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, 67, 218.5, "Divorced", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, 88, 218.5, "Spouse Deceased", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, 111, 218.5, "Other (Explain):", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 48, 218.5, "Divorced", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 70, 218.5, "Spouse Deceased", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 104, 218.5, "Other (Explain):", 0, 0, false, true, 'L', true);
+//..........
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_Interpreter_signature_date', 75, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 130, 218.5);
+
 
 //  ******************************
 //  ******** End Page No 21 ******
@@ -2166,6 +2165,7 @@ $pdf->writeHTMLCell(197, 5, 155, 243.4, "Date of Signature (mm/dd/yyyy)", '', 1,
 $pdf->writeHTMLCell(133, 6.6, 21, 249.2, "", 1, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('p13_Interpreter_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 249.2);
+
 
 // ******************************
 //  ******** End Page No 22 *****
