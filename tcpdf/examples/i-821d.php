@@ -76,69 +76,7 @@ class MyPDF extends TCPDF {
 		
 		$this->MultiCell(61, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 0, 'R', 0, 1, 159, 264.5, true);
 		
-        // Page number
-		//$created_date = date("F d, Y");
-		//$this->Cell(40, 4, 'Form N-400 Edition 09/17/19');
-		
- 		// $this->write2DBarcode('N-400|09/17/19|1', 'PDF417', 20, 120, 0, 20, $style, 'N');
-		
- 		// $this->write2DBarcode('test');
-		
-        // set style for barcode
-        /* $style = array(
-            'border' => 0,
-            'vpadding' => '0',
-            'hpadding' => '0',
-			'stretch' => true,
-            'fgcolor' => array(0,0,0),
-            'bgcolor' => false, //array(255,255,255)
-            'module_width' => 22, // width of a single module in points
-            'module_height' => 2.5, // height of a single module in points
-        ); */
-        // set a barcode on the page footer
-        //$this->setBarcode(date('Y-m-d H:i:s'));
-		
-		// $this->Cell(60, 4, '1025GEJ Approved February 26, 2018    ', $single_border_top, 0, 0);
-		// $this->Cell(60, 4, '1025GEJ Approved February 26, 2018', 1, 0, 'L');
-		// $this->MultiCell(60, 4,'1025GEJ Approved February 26, 2018','T','L',1,0);
-		
-		// $this->MultiCell(60, 4,'Ex Parte Motion for Alternative Service','T','C',1,0);
-		
-        // $this->write2DBarcode('N-400|09/17/19|'.$this->getAliasNumPage(), 'PDF417', 65, 265, 95, 0, $style, '');
-		
-		
-		 
-		/* $logoX = 186; // 186mm. The logo will be displayed on the right side close to the border of the page
-		$logoFileName = "barcode_1.jpg";
-		$logoWidth = 15; // 15mm
-		$logo = $this->PageNo() . ' | '. $this->Image($logoFileName, $logoX, $this->GetY()+2, $logoWidth);
- */
-
-		// define barcode style
-		/* $style = array(
-			'position' => '',
-			'align' => '',
-			'stretch' => true,
-			'fitwidth' => false,
-			'cellfitalign' => '',
-			'border' => true,
-			'hpadding' => 'auto',
-			'vpadding' => 'auto',
-			'fgcolor' => array(0,0,128),
-			'bgcolor' => array(255,255,128),
-			'text' => true,
-			'label' => '',
-			'font' => 'helvetica',
-			'fontsize' => 12,
-			'stretchtext' => 4
-		);
-
-		// CODE 39 EXTENDED + CHECKSUM
-		// $pdf->SetLineStyle(array('width' => 1, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(255, 0, 0)));
-		// $this->write1DBarcode('tt', 'C39E+', '', '', 40, 15, 0.4, $style, '0');
-		$this->write2DBarcode('N-400|09/17/19|', 'PDF417', 65, 265, 55, 25, $style, '0'); */
-		
-        // $this->Cell(80, 6, 'Page '.$this->getAliasNumPage().' of '.$this->getAliasNbPages(), 1, 0, 'R', 0, '', 0, false, 'L', 'R');
+    
         
     }
 }
