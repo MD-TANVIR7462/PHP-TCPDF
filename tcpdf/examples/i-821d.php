@@ -13,13 +13,7 @@ class MyPDF extends TCPDF {
     public function Header() {
         $this->SetY(13);
 		if ($this->page > 1){
-		  // return;
-			// $this->Cell(0, 30, '<< Company Heading >>', 0, false, 'C', 0, '', 0, false, 'M', 'M');
-			
-			/* $top_border = array(
-			   'T' => array('width' => 2, 'color' => array(0,0,0), 'dash' => 0, 'cap' => 'square'),
-			);
-			$this->Cell(184, 0, '', $top_border, 1, 1); */
+		
 			
 			$this->SetLineWidth(2); // set border width
 			// $this->SetDrawColor(0,0,0); // set color for cell border

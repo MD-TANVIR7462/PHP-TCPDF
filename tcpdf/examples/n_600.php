@@ -55,9 +55,6 @@ class MyPDF extends TCPDF
 	}
 }
 
-// create new PDF document
-// $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-// $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, false, 'ISO-8859-1', false);
 
 $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
@@ -87,8 +84,6 @@ $pdf->SetAutoPageBreak(FALSE, PDF_MARGIN_BOTTOM);
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-// set a barcode on the page footer
-// $pdf->setBarcode(date('Y-m-d H:i:s'));
 
 /********************************
  ******** Start Page No 1 ********
