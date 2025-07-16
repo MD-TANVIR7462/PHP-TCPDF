@@ -131,30 +131,7 @@ $style = array(
     'module_height' => 1 // height of a single module in points
 );
 
-// define barcode style
-/*$style = array(
-    'position' => '',
-    'align' => 'C',
-    'stretch' => false,
-    'fitwidth' => true,
-    'cellfitalign' => '',
-    'border' => true,
-    'hpadding' => 'auto',
-    'vpadding' => 'auto',
-    'fgcolor' => array(0,0,0),
-    'bgcolor' => false, //array(255,255,255),
-    'text' => true,
-    'font' => 'helvetica',
-    'fontsize' => 8,
-    'stretchtext' => 4
-);*/
 
-
-// $html = '<h4>PDF Example</h4><br><p>Welcome to the Jungle</p>';
-
-//$pdf->Text(50, 85, 'PDF417 (ISO/IEC 15438:2006)');
- 
-// $pdf->Ln(2);
 
 // Logo
 $logo = 'homeland_security_logo.png';
