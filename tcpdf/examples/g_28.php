@@ -3,9 +3,8 @@
 // require_once('formheader.php');   //database connection file 
 
 require_once("config.php");
-//$allDataCountry = indexByQueryAllData("SELECT * FROM countries");
 
-// Include the main TCPDF library (search for installation path).
+
 require_once('tcpdf_include.php');
 
 // Extend the TCPDF class to create custom Header and Footer
@@ -47,9 +46,6 @@ class MyPDF extends TCPDF {
     }
 }
 
-// create new PDF document
-// $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-// $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, false, 'ISO-8859-1', false);
 
 $pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
@@ -71,8 +67,7 @@ $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 // set margins
 // $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 $pdf->SetMargins(13.7, 15.3, 12.8, true);
-//$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-//$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
 
 // set auto page breaks
 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
