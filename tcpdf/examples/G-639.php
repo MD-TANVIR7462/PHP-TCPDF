@@ -1821,9 +1821,6 @@ $pdf->writeHTMLCell(192, 7, 12, 115, $html, 0, 0, false, 'L');
 
 
 
-
-
-
 $js = "
 var fields = {
 

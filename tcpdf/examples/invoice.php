@@ -1,239 +1,197 @@
 <?php
-
-// require_once('formheader.php');
-require_once("localconfig.php");
-
-
-// Include the main TCPDF library (search for installation path).
+// Include TCPDF library
 require_once('tcpdf_include.php');
 
-// Extend the TCPDF class to create custom Header and Footer
-class MyPDF extends TCPDF
-{
-    // Page header
-    public function Header()
-    {
-        $this->SetY(10); // Moved everything higher
-
-        if ($this->page === 1) {
-            // Left section: Company info
-            $this->SetFont('helvetica', 'B', 15);
-            $this->SetTextColor(0, 0, 0);
-            $this->SetXY(12, 10); // Top-left starting point
-            $this->Cell(100, 6, 'Mirtex Trading Corp.', 0, 2, 'L');
-
-            $this->SetFont('helvetica', '', 10);
-            $this->Cell(100, 5, '20 Berry Street', 0, 2, 'L');
-            $this->Cell(100, 5, 'Brooklyn, NY 11249', 0, 2, 'L');
-            $this->Cell(100, 5, '718-486-7832', 0, 2, 'L');
-            $this->Cell(100, 5, 'starofmirtex@aol.com', 0, 2, 'L');
-
-            // Right section: Invoice info
-            $this->SetXY(154.4, 10);
-            $this->SetFont('helvetica', 'B', 15);
-            $this->Cell(50, 6, 'Invoice', 0, 2, 'L');
-
-            $this->SetFont('helvetica', '', 10);
-            // Date
-            $this->Cell(20, 6, '  Date', 1, 0, 'L');
-            $this->Cell(30, 6, '', 1, 1, 'L');
-
-            // Invoice Number
-            $this->SetX(154.4);
-            $this->Cell(20, 6, '  Invoice', 1, 0, 'L');
-            $this->Cell(30, 6, '', 1, 1, 'L');
-        }
+// Extend TCPDF to create custom header and footer
+class AGINGPDF extends TCPDF {
+    public function Header() {
+        $this->SetFont('helvetica', '', 18);
+        $this->MultiCell(200, 6, 'MIRTEX INDUSTRIES INC', 0, 'L', 0, 1, '', 7, true);
+        $this->SetFont('helvetica', '', 12);
+        
+        $html = "<table cellspacing='0' cellpadding='1' border='0' style='width:100%;text-align:center'>
+                    <tr><td>20 Berry Street</td></tr>
+                    <tr><td>Brooklyn, NY 11249</td></tr>
+                    <tr><td>718-486-7832</td></tr>
+                    <tr><td>starofmirtex@aol.com</td></tr>
+                </table>";
+        $this->writeHTMLCell(0, 0, 7, 9, $html, 0, 1, 0, true, 'L', true);
+        
+        $this->SetFont('helvetica', '', 18);
+        $this->writeHTMLCell(0, 0, 165, 9, 'A/R Aging Report', 0, 1, 0, true, 'L', true);
+        
+        $this->SetFont('helvetica', '', 10);
+        $currentDate = date('m/d/Y');
+        $html = "<table cellspacing='0' cellpadding='4' border='1' style='width:100%; text-align:left; border-collapse:collapse;'>
+                    <tr>
+                        <td style='border:1px solid #000;'>As of Date</td>
+                        <td style='border:1px solid #000;'>$currentDate</td>
+                    </tr>
+                </table>";
+        $this->writeHTMLCell(0, 0, 165, 16, $html, 0, 1, 0, true, 'L', true);
+        
+        // Add report headers
+        $this->SetY(40);
+        $html = '<table cellspacing="0" cellpadding="4" border="1" style="width:100%; border-collapse:collapse;">
+                    <tr style="background-color:#f2f2f2; font-weight:bold;">
+                        <th style="width:8%;">ID</th>
+                        <th style="width:25%;">Customer</th>
+                        <th style="width:10%;">Balance</th>
+                        <th style="width:10%;">Current</th>
+                        <th style="width:8%;">1-30</th>
+                        <th style="width:8%;">31-60</th>
+                        <th style="width:8%;">61-90</th>
+                        <th style="width:8%;">Over-90</th>
+                        <th style="width:15%;">SP</th>
+                    </tr>
+                </table>';
+        $this->writeHTML($html, true, false, true, false, '');
     }
-
-
-
-
-    // Page footer
-    public function Footer()
-    {
-        // Position at 15 mm from bottom
-        $this->SetY(-18);
-
-        $header_top_border = array(
-            'B' => array('width' => 0.5, 'color' => array(0, 0, 0), 'dash' => 0, 'cap' => 'butt'),
-        );
-        $this->Cell(191.5, 4, '', $header_top_border, 1, 1);
-
-        // Set font
-        $this->SetFont('times', '', 9);
-
-        $this->Cell(40, 6, "Form I-485    Edition    01/20/25 ", 0, 0, 'L');
-
-
-        // if ($this->page == 1){
-        $barcode_image = "images/i485/I-485-footer-pdf417-$this->page.png";
-        // )
-        $this->Image($barcode_image, 65, 267, 95, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false); // Footer Barcode PDF417
-
-        $this->MultiCell(61, 6, 'Page ' . $this->getAliasNumPage() . ' of ' . $this->getAliasNbPages(), 0, 'R', 0, 1, 156, 266.5, true);
+    
+    public function Footer() {
+        $this->SetY(-15);
+        $this->SetFont('helvetica', 'I', 8);
+        $this->Cell(0, 10, 'Page '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
     }
 }
 
+// Create demo data similar to the image
+$demoData = array(
+    array('02747', 'Fashion Mail', 4037.20, 0, 0, 0, 4027.30, 0, 6),
+    array('05999', 'Trades', 126.42, 0, 0, 0, 120.42, 0, 8),
+    array('06438', 'Galaxy Furniture', 40.00, 0, 0, 0, 40.00, 0, 9),
+    array('03470', 'General Mode', 2005.20, 2805.20, 0, 0, 0, 0, 7),
+    array('06765', 'Electric test 2', 184976.18, 184976.18, 0, 0, 0, 0, 7),
+    array('06764', 'Sahraq_test', -102793.40, 10792.74, -113576.14, 0, 0, 0, 7),
+    array('02987', 'J & G Variety Discount', 792.60, 0, 0, 0, 822.00, 0, 6),
+    array('00757', 'Jackney Department Store', 1068.00, 0, 0, 0, 0, 0, 1),
+    array('06228', 'Jersey Plaza', 3833.70, 0, 0, 0, 0, 0, 1),
+    array('03092', 'Kennedy Dept Store', 17.46, 0, 0, 0, 0, 17.46, 1),
+    array('06354', 'Stoney & Dept. Store', 4032.50, 0, 0, 0, 0, -37.00, 1),
+    array('05354', 'Liberty Curtain & Clothing', 510.00, 510.00, 4110.60, 0, 0, 4300.85, 1),
+    array('06197', 'NAS Wholesale Holdings LLC', 4306.95, 0, 0, 0, 0, -381.05, 1),
+    array('05625', 'Mega Mail Discount', 2000.24, 0, 0, 0, 0, -0.01, 1),
+    array('05633', 'Nelson Dept. & Furniture', 7014.00, 0, 0, 0, 0, 7214.00, 1),
+    array('06245', 'National Warehouse Store', 12692.96, 0, 0, 0, 0, 5675.60, 1),
+    array('06532', 'New Dream Discount', 2553.20, 0, 0, 0, 0, 0, 4),
+    array('03376', 'New Jerome Enterprise INC', 3326.40, 3326.40, 2020.80, 0, 0, -20.00, 1),
+    array('03155', 'New York Variety Store', 2000.80, 0, 0, 0, 0, 1346.00, 1),
+    array('06115', 'Nicholas Discount', 1346.00, 0, 0, 0, 0, 0, 1),
+    array('06741', 'Noor Pharmacy', 2200.00, 0, 0, 0, 0, 2200.00, 1),
+    array('05862', 'Mr. Hut', -81.22, 0, 0, 0, 0, -81.28, 1),
+    array('03455', 'Paradise Decorators', 3032.00, 0, 0, 0, 0, 0, 1),
+    array('03692', 'Passatel-Linen', 1172.00, 0, 0, 0, 0, 1172.00, 1),
+    array('01074', 'People\'s Bargain', 3627.65, 0, 0, 0, 0, 0, 1),
+    array('03349', 'Quickly PSc Store', 1789.60, 0, 0, 0, 0, 1789.60, 1),
+    array('06665', 'R & R Furniture World', -90.00, 0, 0, 0, 0, -90.00, 1),
+    array('06247', 'Risk Furniture world #2', 2992.60, 0, 0, 0, 0, 2992.60, 1),
+    array('02330', 'Ralph Chris, Inc.', 9943.79, 0, 0, 0, 0, 1111.88, 1),
+    array('06750', 'Rice Departments', 10298.78, 0, 0, 0, 0, 5124.71, 1),
+    array('02119', 'Robert\'s Variety', 4127.34, 0, 0, 0, 0, 4127.24, 1),
+    array('03545', 'Sondesk Village Outlet', -152.00, 0, 0, 0, 0, 3139.50, 1),
+    array('06662', 'Sara & 3', 1780.00, 1780.00, 0, 0, 0, 1838.48, 1),
+    array('01150', 'Save A Thon', 1716.46, 0, 0, 0, 0, 965.20, 1),
+    array('03728', 'Spring Smart Stores', 810.12, 0, 0, 0, 0, 938.25, 1),
+    array('03946', 'Spring Valley', 3732.00, 0, 0, 0, 0, 3732.00, 1),
+    array('02629', 'Stylish Curtain & Clothing', 50.00, 0, 0, 0, 0, 50.00, 1),
+    array('06707', 'Stylish Furniture', 1617.00, 0, 0, 0, 0, 1617.00, 1),
+    array('05227', 'Stylish Furniture #2', 3731.00, 3731.00, 0, 0, 0, 0, 1),
+    array('05594', 'Super Discount', 1431.00, 0, 0, 0, 0, 0, 1),
+    array('06745', 'Super Discount Outlet', 5045.40, 0, 0, 0, 0, 5045.40, 1),
+    array('06744', 'TJJ Department Store', 2670.00, 0, 0, 0, 0, 2670.00, 1),
+    array('03050', 'TGJ Corporation', 1230.25, 0, 0, 0, 0, 1230.25, 1),
+    array('04056', 'Trials Deconvolumes', 474.00, 0, 0, 0, 0, 0, 1),
+    array('06221', 'TMT Furniture & Mattress', -132.36, 0, 0, 0, 0, -132.36, 1),
+    array('06730', 'United Discount Inc.', 607.00, 0, 0, 0, 0, 607.00, 1),
+    array('06512', 'USA Super Store', -5657.00, 0, 0, 0, 0, 6218.40, 1),
+    array('06754', 'White Queen', 6218.40, 0, 0, 0, 0, 6218.40, 1),
+    array('01310', 'Value Zone #1', 2052.00, 0, 0, 0, 0, 2052.00, 1)
+);
 
-$pdf = new MyPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+// Calculate totals
+$totals = array('Balance' => 0, 'Current' => 0, '1-30' => 0, '31-60' => 0, '61-90' => 0, 'Over-90' => 0);
+foreach ($demoData as $row) {
+    $totals['Balance'] += $row[2];
+    $totals['Current'] += $row[3];
+    $totals['1-30'] += $row[4];
+    $totals['31-60'] += $row[5];
+    $totals['61-90'] += $row[6];
+    $totals['Over-90'] += $row[7];
+}
 
-// set document information
+// Create new PDF document
+$pdf = new AGINGPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'LETTER', true, 'UTF-8', false);
+
+// Set document information
 $pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('');
-$pdf->SetTitle('Form I-485');
+$pdf->SetAuthor('MIRTEX INDUSTRIES INC');
+$pdf->SetTitle('A/R Aging Report');
+$pdf->SetSubject('A/R Aging Report');
+$pdf->SetKeywords('Aging, Report, Accounts Receivable');
 
-// set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE . ' 006', PDF_HEADER_STRING);
+// Set default header data
+$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
-// set header and footer fonts
-$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+// Set header and footer fonts
+$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
-// set default monospaced font
+// Set default monospaced font
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
-// set margins
-// $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetMargins(13.7, 15.3, 12.8, true);
+// Set margins
+$pdf->SetMargins(7, 50, 7, true);
 
+// Set auto page breaks
+$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 
-// set auto page breaks
-$pdf->SetAutoPageBreak(FALSE, PDF_MARGIN_BOTTOM);
-
-// set image scale factor
+// Set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-
-/********************************
- ******** Start Page No 1 ********
- *********************************/
-
-$pdf->AddPage('P', 'LETTER');
 // Set font
 $pdf->SetFont('helvetica', '', 9);
 
- 
-$pdf->SetX($leftX + 1);
-$pdf->setCellHeightRatio(1.5);
-$pdf->writeHTMLCell($colWidth - 2, '', '', '', "<b>06284 BD'S (PROVIDENCE)</b><br>BD&APOS;S 699 HARTFORD AVE. PROVIDENCE, RI,<br>PROVIDENCE, 02909,<br><b>Phone</b> : 401-331-8200<br><b>Email :</b>", 0, 1, false, true, 'L', true);
-$pdf->setCellHeightRatio(1.2);
+// Add a page
+$pdf->AddPage();
 
+// Create the table content
+$html = '<table cellspacing="0" cellpadding="4" border="1" style="width:100%; border-collapse:collapse;">';
 
-
-// Resale and Certificate #
-$pdf->Rect($leftX, $topY + 35, $colWidth / 3, $rowHeight + 4); // Resale
-$pdf->Rect($leftX + $colWidth / 3, $topY + 35, $colWidth / 2 + 15.3, $rowHeight + 4);
-$pdf->setCellHeightRatio(1.5);
-$pdf->SetXY($leftX + 1, $topY + 35);
-$pdf->writeHTMLCell($colWidth / 2 - 2, $rowHeight, $leftX + 1, $topY + 35, "Resale<br>Certificate #", 0, 0, false, true, 'L', true);
-$pdf->setCellHeightRatio(1.2);
-
-
-
-// ---------- SHIP TO BOX ----------
-$rightX = $leftX + $colWidth + 5;
-$pdf->Rect($rightX, $topY, $colWidth + 3, 45); // Outer Bill To box
-
-$pdf->SetXY($rightX + 1, $topY + 2);
-$pdf->Cell($colWidth - 2, $rowHeight, 'Ship To :', 0, 1);
-$pdf->Rect($rightX, $topY + 8, $colWidth + 3, 0); // Under  Bill To box border
-$pdf->SetX($rightX + 1);
-// Example: Sample data from database
-$shipToData = [
-    'name' => "BD'S (PROVIDENCE)",
-    'address_line1' => "699 HARTFORD AVE.",
-    'city' => "PROVIDENCE",
-    'state' => "RI",
-    'zip' => "02909",
-    'phone' => "401-331-8200",
-];
-
-// Construct HTML string from database
-$shipToHTML = "<b>" . htmlspecialchars($shipToData['name']) . "</b><br>" .
-    htmlspecialchars($shipToData['name']) . " " . htmlspecialchars($shipToData['address_line1']) .
-    " " . htmlspecialchars($shipToData['city']) . ", " . htmlspecialchars($shipToData['state']) .
-    ",<br>" . htmlspecialchars($shipToData['zip']) . ",<br>" .
-    "<b>Phone</b> : " . htmlspecialchars($shipToData['phone']);
-
-// Use in TCPDF
-$pdf->setCellHeightRatio(1.5);
-$pdf->writeHTMLCell($colWidth + 12, '', '', '', $shipToHTML, 0, 1, false, true, 'L', true);
-$pdf->setCellHeightRatio(1.2);
-
-
-// ---------- CUSTOMER / PO / TERMS / SALESMAN BOX ----------
-
-$infoTopY = 91; // Adjust Y position based on your layout
-$infoLeftX = 12.4;
-$infoTotalWidth = 190; // Total width of the full table
-$colWidths = [66, 32.5, 32.5, 61]; // Four equal columns
-
-$rowHeight = 8;
-
-// Draw outer box
-$pdf->Rect($infoLeftX, $infoTopY, array_sum($colWidths), $rowHeight * 2);
-
-// Draw vertical column lines
-$currentX = $infoLeftX;
-foreach ($colWidths as $width) {
-    $currentX += $width;
-    $pdf->Line($currentX, $infoTopY, $currentX, $infoTopY + $rowHeight * 2);
+// Add data rows
+foreach ($demoData as $row) {
+    $html .= '<tr>';
+    $html .= '<td style="width:8%;">' . $row[0] . '</td>';
+    $html .= '<td style="width:25%;">' . $row[1] . '</td>';
+    $html .= '<td style="width:10%; text-align:right;">' . number_format($row[2], 2) . '</td>';
+    $html .= '<td style="width:10%; text-align:right;">' . number_format($row[3], 2) . '</td>';
+    $html .= '<td style="width:8%; text-align:right;">' . number_format($row[4], 2) . '</td>';
+    $html .= '<td style="width:8%; text-align:right;">' . number_format($row[5], 2) . '</td>';
+    $html .= '<td style="width:8%; text-align:right;">' . number_format($row[6], 2) . '</td>';
+    $html .= '<td style="width:8%; text-align:right;">' . number_format($row[7], 2) . '</td>';
+    $html .= '<td style="width:15%; text-align:center;">' . $row[8] . '</td>';
+    $html .= '</tr>';
 }
 
-// Draw horizontal middle line
-$pdf->Line($infoLeftX, $infoTopY + $rowHeight, $infoLeftX + array_sum($colWidths), $infoTopY + $rowHeight);
+// Add totals row
+$html .= '<tr style="font-weight:bold; background-color:#f2f2f2;">';
+$html .= '<td colspan="2" style="text-align:right;">Total:</td>';
+$html .= '<td style="text-align:right;">' . number_format($totals['Balance'], 2) . '</td>';
+$html .= '<td style="text-align:right;">' . number_format($totals['Current'], 2) . '</td>';
+$html .= '<td style="text-align:right;">' . number_format($totals['1-30'], 2) . '</td>';
+$html .= '<td style="text-align:right;">' . number_format($totals['31-60'], 2) . '</td>';
+$html .= '<td style="text-align:right;">' . number_format($totals['61-90'], 2) . '</td>';
+$html .= '<td style="text-align:right;">' . number_format($totals['Over-90'], 2) . '</td>';
+$html .= '<td></td>';
+$html .= '</tr>';
 
-// Set font and print headers
-$pdf->SetFont('helvetica', '', 9);
-$pdf->SetXY($infoLeftX + 1, $infoTopY + 2);
-$pdf->Cell($colWidths[0] - 2, 5, 'Customer #', 0, 0);
+$html .= '</table>';
 
-$pdf->SetXY($infoLeftX + $colWidths[0] + 1, $infoTopY + 2);
-$pdf->Cell($colWidths[1] - 2, 5, 'P.O. #', 0, 0);
+// Output the HTML content
+$pdf->writeHTML($html, true, false, true, false, '');
 
-$pdf->SetXY($infoLeftX + $colWidths[0] + $colWidths[1] + 1, $infoTopY + 2);
-$pdf->Cell($colWidths[2] - 2, 5, 'Terms', 0, 0);
+// Close and output PDF document
+$pdf->Output('ar_aging_report.pdf', 'I');
 
-$pdf->SetXY($infoLeftX + $colWidths[0] + $colWidths[1] + $colWidths[2] + 1, $infoTopY + 2);
-$pdf->Cell($colWidths[3] - 2, 5, 'Salesman', 0, 0);
-
-// Data Input
-$pdf->SetXY($infoLeftX + 1, $infoTopY + $rowHeight + 2);
-$pdf->Cell($colWidths[1] - 2, 5, "06284 BD'S (Providence)", 0, 0);
-$pdf->SetXY($infoLeftX + $colWidths[0] + 1, $infoTopY + $rowHeight + 2);
-$pdf->Cell($colWidths[1] - 2, 5, "-", 0, 0);
-$pdf->SetXY($infoLeftX + $colWidths[0] + $colWidths[1] + 1, $infoTopY + $rowHeight + 2);
-$pdf->Cell($colWidths[1] - 2, 5, "30", 0, 0);
-$pdf->SetXY($infoLeftX + $colWidths[0] + $colWidths[1] + $colWidths[2] + 1, $infoTopY + $rowHeight + 2);
-$pdf->Cell($colWidths[1] - 2, 5, "Moustapha ", 0, 0);
-
-
-
-
-
-
-
-
-
-$js = "
-var fields = {
-// page 1
-
-   
-   
-   
-};
-for (var fieldName in fields) {
-    if (!fields.hasOwnProperty(fieldName)) continue;
-    var field = getField(fieldName);
-    if (field && field.value === '') {
-        field.value = fields[fieldName];
-    }
-}
-
-";
-$pdf->IncludeJS($js);
-
-// $pdf->lastPage();
-//Close and output PDF document
-$pdf->Output('Invoice', 'I');
+//============================================================+
+// END OF FILE
+//============================================================+
