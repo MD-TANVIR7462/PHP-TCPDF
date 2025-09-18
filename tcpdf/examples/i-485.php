@@ -981,10 +981,10 @@ listed above).', '', 0, 0, true, 'L');
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(90, $lineHeight, $startX, $startY + 18, 'Street Number and Name', '', 0, 0, true, 'L');
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3b', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 24);
+$pdf->TextField('p1_18_street_number4', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 24);
 
 // ---------------------- Apt / Ste / Flr ----------------------
-$apt_ste_flr = showData('information_about_you_us_mailing_apt_ste_flr');
+$apt_ste_flr = showData('p1_18_apt_ste_flr4');
 $checked_apt = $apt_ste_flr == 'apt' ? 'checked' : '';
 $checked_ste = $apt_ste_flr == 'ste' ? 'checked' : '';
 $checked_flr = $apt_ste_flr == 'flr' ? 'checked' : '';
@@ -1004,13 +1004,13 @@ $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(50, 0, 167, $startY + 18, "Number", '', 0, 0, true, 'L');
 
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3c', 36, $fieldHeight, $stroke, array(), 168, $startY + 24);
+$pdf->TextField('p1_18_number4', 36, $fieldHeight, $stroke, array(), 168, $startY + 24);
 
 // ---------------------- City / State / ZIP ----------------------
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(50, 5, $startX, $startY + 31.7, 'City or Town', '', 0, 0, true, 'L');
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3d', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 37);
+$pdf->TextField('p1_18_city_town4', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 37);
 
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(50, 4, 144, $startY + 31.7, 'State', '', 0, 0, true, 'L');
@@ -1019,11 +1019,11 @@ $comboBoxOptions = [''];
 foreach ($allDataCountry as $record) {
     $comboBoxOptions[] = $record->state_code;
 }
-$pdf->ComboBox("p5_3e", 22, $fieldHeight, $comboBoxOptions, array(), array(), 144.2, $startY + 37);
+$pdf->ComboBox("p1_18_state4", 22, $fieldHeight, $comboBoxOptions, array(), array(), 144.2, $startY + 37);
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(30, 3, 168, $startY + 31.7, 'ZIP Code', '', 0, 0, true, 'L');
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3f', 36, $fieldHeight, $stroke, array(), 168, $startY + 37);
+$pdf->TextField('p1_18_zip_code4', 36, $fieldHeight, $stroke, array(), 168, $startY + 37);
 // ---------------------- Province / Postal Code / Country ----------------------
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(130, 1, $startX, $startY + 45.5, "<div>Province</div>", 0, 0, false, true, 'L', true);
@@ -1034,26 +1034,26 @@ $pdf->writeHTMLCell(60, 1, $startX, $startY + 64, "From (mm/dd/yyyy) ", 0, 0, fa
 $pdf->writeHTMLCell(60, 1, $startX + 80, $startY + 64, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
 // Fields
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 60, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 50.5);
-$pdf->TextField('p1_1b', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $startY + 50.5);
-$pdf->TextField('p1_1c', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
-$pdf->TextField('p1_1d', 47, $fieldHeight, $stroke, array(), $startX + 32, $startY + 65.5);
-$pdf->TextField('p1_1e', 47, $fieldHeight, $stroke, array(), $startX + 108, $startY + 65.5);
+$pdf->TextField('p1_18_province4', 60, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 50.5);
+$pdf->TextField('p1_18_postal_code4', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $startY + 50.5);
+$pdf->TextField('p1_18_country4', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
+$pdf->TextField('p1_18_residence_from_date4', 47, $fieldHeight, $stroke, array(), $startX + 32, $startY + 65.5);
+$pdf->TextField('p1_18_residence_to_date4', 47, $fieldHeight, $stroke, array(), $startX + 108, $startY + 65.5);
 //.....................
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(60, 1, 11.5, $startY + 73, "<b>19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Social Security Card", 0, 0, false, false, 'L', true);
-addYesNoQuestion($pdf, 'Has the Social Security Administration (SSA) ever officially issued a Social Security card to you?', 20, 205.5, '54', 'i_131_exclusion_status');
-addYesNoQuestion($pdf, 'Do you want the SSA to issue you a Social Security card?', 20, 220, '54', 'i_131_exclusion_status');
+addYesNoQuestion($pdf, 'Has the Social Security Administration (SSA) ever officially issued a Social Security card to you?', 20, 205.5, 'p1_19_officially_issued_ssa', 'i_131_exclusion_status');
+addYesNoQuestion($pdf, 'Do you want the SSA to issue you a Social Security card?', 20, 220, 'p1_19_want_to_issue_ssa', 'i_131_exclusion_status');
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(160, 1, 20, $startY + 84, 'If you answered "Yes," provide your U.S. Social Security Number (SSN).', 0, 0, false, false, 'L', true);
 //....................
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 47, $fieldHeight, $stroke, array(), $startX + 112, $startY + 85);
+$pdf->TextField('p1_19_social', 47, $fieldHeight, $stroke, array(), $startX + 112, $startY + 85);
 //...........
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(160, 5, 20, 229.5, 'If you answered "Yes," you must also answer "Yes" to the <b>Consent for Disclosure</b> below.', 0, 0, 0, true, 'L', false);
 addYesNoQuestion($pdf, '<b>Consent for Disclosure:</b> I authorize disclosure of information from this application to the SSA as<br>
-required for the purpose of assigning me an SSN and issuing me a Social Security Card.', 20, 235, '54', 'i_131_exclusion_status');
+required for the purpose of assigning me an SSN and issuing me a Social Security Card.', 20, 235, 'p1_19_want_to_issue_ssa', 'p1_19_consent_for_disclosure');
 //******************************
 //******** End Page No 4 ******
 //******************************
@@ -1067,7 +1067,7 @@ $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
-$html = '<div><b>Part 1. Information About You</b>   (Person applying for lawful permanent residence) (continued)</div>';
+$html = '<div><b>Part 2. Application Type or Filing Category</b></div>';
 $pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 33, "<b>1.</b>", 0, 0, false, true, 'L', true);
@@ -1078,13 +1078,13 @@ $pdf->writeHTMLCell(130, 1, 20, 43, "Receipt Number of Underlying Petition (if a
 $pdf->writeHTMLCell(130, 1, 106.8, 43, "Priority Date from Underlying Petition (if any)", 0, 0, false, true, 'L', true);
 $pdf->writeHTMLCell(130, 1, 106.8, 48.5, "(mm/dd/yyyy)", 0, 0, false, true, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_street', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 48);
-$pdf->TextField('employer_street', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 129, 48);
+$pdf->TextField('p2_2_receipt_number', 83, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 48);
+$pdf->TextField('p2_2_priority_date', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 129, 48);
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 20, 55.5, "I am filing this Form I-485 as a (select <b>only one</b> box):", 0, 0, false, true, 'L', true);
 //.................
-drawCheckboxWithLabel($pdf, 19, 61, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Principal Applicant');
-drawCheckboxWithLabel($pdf, 19, 67, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Derivative Applicant (Provide the following information about the principal applicant.)');
+drawCheckboxWithLabel($pdf, 19, 61, 'p2_2_principal_applicant', 'i_131_correction_terms_conditions_status', 'Principal Applicant');
+drawCheckboxWithLabel($pdf, 19, 67, 'p2_2_derivative_applicant', 'i_131_correction_terms_conditions_status', 'Derivative Applicant (Provide the following information about the principal applicant.)');
 //.......
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 20, 74, "Principal Applicant's Name", 0, 0, false, true, 'L', true);
@@ -1107,11 +1107,11 @@ $pdf->writeHTMLCell(60, 1, $startX + 72, $startY + 11, "Principal Applicant's Da
 
 // Fields
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 70, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 5);    // Family Name
-$pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
-$pdf->TextField('p1_1c', 52, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
-$pdf->TextField('p1_1c', 48, $fieldHeight, $stroke, array(), $startX + 10.8, $startY + 18.2);    // principal application 
-$pdf->TextField('p1_1c', 50, $fieldHeight, $stroke, array(), $startX + 94, $startY + 18.2);    // date of birth
+$pdf->TextField('p2_2_family', 70, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 5);    // Family Name
+$pdf->TextField('p2_2_given', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
+$pdf->TextField('p2_2_middle', 52, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
+$pdf->TextField('p2_2_a_number', 48, $fieldHeight, $stroke, array(), $startX + 10.8, $startY + 18.2);    // principal application 
+$pdf->TextField('p2_2_dob', 50, $fieldHeight, $stroke, array(), $startX + 94, $startY + 18.2);    // date of birth
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(190, 1, 20, 107, "<b>I am applying</b> based on the following category (You must select <b>ONLY ONE</b> category. If you are filing as a derivative<br>
@@ -1123,33 +1123,34 @@ $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 128, "<b>3.a.&nbsp;&nbsp;&nbsp;Family-based</b>", 0, 0, false, true, 'L', true);
 $pdf->writeHTMLCell(190, 1, 20, 134, "Immediate relative of a U.S. citizen, Form I-130, I-129F, or I-360 (select your specific category below):", 0, 0, false, true, 'L', true);
 //.................
-drawCheckboxWithLabel($pdf, 19, 139, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Spouse of a U.S. Citizen.');
-drawCheckboxWithLabel($pdf, 19, 146, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Unmarried child under 21 years of age of a U.S. citizen.');
-drawCheckboxWithLabel($pdf, 19, 153, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Parent of a U.S. citizen (if the citizen is at least 21 years of age). ');
-drawCheckboxWithLabel($pdf, 19, 160, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Person admitted to the United States as a fiancé(e) or child of a fiancé(e) of a U.S. citizen (K-1/K-2 Nonimmigrant).');
-drawCheckboxWithLabel($pdf, 19, 167, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Widow or widower of a U.S. citizen.');
-drawCheckboxWithLabel($pdf, 19, 173, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Spouse, child, or parent of a deceased U.S. active-duty service member in the armed forces under the National Defense<br>Authorization Act (NDAA).');
-//...........
+drawCheckboxWithLabel($pdf, 19, 139, 'p2_3a_spouse_us_citizen', 'i_485_spouse_us_citizen_status', 'Spouse of a U.S. Citizen.');
+drawCheckboxWithLabel($pdf, 19, 146, 'p2_3a_child_us_citizen', 'i_485_child_us_citizen_status', 'Unmarried child under 21 years of age of a U.S. citizen.');
+drawCheckboxWithLabel($pdf, 19, 153, 'p2_3a_parent_us_citizen', 'i_485_parent_us_citizen_status', 'Parent of a U.S. citizen (if the citizen is at least 21 years of age).');
+drawCheckboxWithLabel($pdf, 19, 160, 'p2_3a_fiance_us_citizen', 'i_485_fiance_us_citizen_status', 'Person admitted to the United States as a fiancé(e) or child of a fiancé(e) of a U.S. citizen (K-1/K-2 Nonimmigrant).');
+drawCheckboxWithLabel($pdf, 19, 167, 'p2_3a_widow_us_citizen', 'i_485_widow_us_citizen_status', 'Widow or widower of a U.S. citizen.');
+drawCheckboxWithLabel($pdf, 19, 173, 'p2_3a_ndaa_relative', 'i_485_ndaa_relative_status', 'Spouse, child, or parent of a deceased U.S. active-duty service member in the armed forces under the National Defense Authorization Act (NDAA).');
+
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(190, 1, 20, 184, "Other relative of a U.S. citizen under the family-based preference categories, Form I-130 (select your specific category below):", 0, 0, false, true, 'L', true);
-//........
-drawCheckboxWithLabel($pdf, 19, 190, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Unmarried son or daughter of a U.S. citizen and I am 21 years of age or older.');
-drawCheckboxWithLabel($pdf, 19, 197, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Married son or daughter of a U.S. citizen. ');
-drawCheckboxWithLabel($pdf, 19, 204, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Brother or sister of a U.S. citizen (if the citizen is at least 21 years of age).');
-//...........
+
+drawCheckboxWithLabel($pdf, 19, 190, 'p2_3a_unmarried_son_daughter_us_citizen', 'i_485_unmarried_son_daughter_us_citizen_status', 'Unmarried son or daughter of a U.S. citizen and I am 21 years of age or older.');
+drawCheckboxWithLabel($pdf, 19, 197, 'p2_3a_married_son_daughter_us_citizen', 'i_485_married_son_daughter_us_citizen_status', 'Married son or daughter of a U.S. citizen.');
+drawCheckboxWithLabel($pdf, 19, 204, 'p2_3a_brother_sister_us_citizen', 'i_485_brother_sister_us_citizen_status', 'Brother or sister of a U.S. citizen (if the citizen is at least 21 years of age).');
+
 $pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(190, 1, 20, 211, "Relative of a lawful permanent resident under the family-based preference categories, Form I-130 (select your specific category<br>below):", 0, 0, false, true, 'L', true);
-//........
-drawCheckboxWithLabel($pdf, 19, 220, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Spouse of a lawful permanent resident.');
-drawCheckboxWithLabel($pdf, 19, 227, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Unmarried child under 21 years of age of a lawful permanent resident. ');
-drawCheckboxWithLabel($pdf, 19, 234, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Unmarried son or daughter of a lawful permanent resident and I am 21 years of age or older. ');
-//...........
+$pdf->writeHTMLCell(190, 1, 20, 211, "Relative of a lawful permanent resident under the family-based preference categories, Form I-130 (select your specific category below):", 0, 0, false, true, 'L', true);
+
+drawCheckboxWithLabel($pdf, 19, 220, 'p2_3a_spouse_lpr', 'i_485_spouse_lpr_status', 'Spouse of a lawful permanent resident.');
+drawCheckboxWithLabel($pdf, 19, 227, 'p2_3a_child_lpr', 'i_485_child_lpr_status', 'Unmarried child under 21 years of age of a lawful permanent resident.');
+drawCheckboxWithLabel($pdf, 19, 234, 'p2_3a_unmarried_son_daughter_lpr', 'i_485_unmarried_son_daughter_lpr_status', 'Unmarried son or daughter of a lawful permanent resident and I am 21 years of age or older.');
+
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(190, 1, 20, 241, "VAWA self-petitioner (victim of battery or extreme cruelty), Form I-360 (select your specific category below):", 0, 0, false, true, 'L', true);
-//........
-drawCheckboxWithLabel($pdf, 19, 245.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'VAWA self-petitioning spouse of a U.S. citizen or lawful permanent resident.');
-drawCheckboxWithLabel($pdf, 19, 251.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'VAWA self-petitioning child of a U.S. citizen or lawful permanent resident.');
-drawCheckboxWithLabel($pdf, 19, 258, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'VAWA self-petitioning parent of a U.S. citizen (if the citizen is at least 21 years of age).  ');
+
+drawCheckboxWithLabel($pdf, 19, 245.5, 'p2_3a_vawa_spouse', 'i_485_vawa_spouse_status', 'VAWA self-petitioning spouse of a U.S. citizen or lawful permanent resident.');
+drawCheckboxWithLabel($pdf, 19, 251.5, 'p2_3a_vawa_child', 'i_485_vawa_child_status', 'VAWA self-petitioning child of a U.S. citizen or lawful permanent resident.');
+drawCheckboxWithLabel($pdf, 19, 258, 'p2_3a_vawa_parent', 'i_485_vawa_parent_status', 'VAWA self-petitioning parent of a U.S. citizen (if the citizen is at least 21 years of age).');
+
 // !start 
 
 
@@ -1534,7 +1535,6 @@ var fields = {
     'p1_3_other1':' " . showData('example') . "',
     'p1_3_other2':' " . showData('example') . "',
    
-	
 // page 2
 	
     'p1_4_a_number':' " . showData('example') . "',	
@@ -1559,8 +1559,6 @@ var fields = {
 
 // page 3
 	
-
-
     'p1_12_fmily_name':' " . showData('example') . "',	
     'p1_12_given_name':' " . showData('example') . "',	
     'p1_12_i_194':' " . showData('example') . "',	
@@ -1586,7 +1584,7 @@ var fields = {
     'p1_18_state2':' " . showData('example') . "',	
     'p1_18_zip_code2':' " . showData('example') . "',
 
-    // page 4
+// page 4
 	
     'p1_18_care_name3':' " . showData('example') . "',	
     'p1_18_street_number3':' " . showData('example') . "',	
@@ -1600,151 +1598,42 @@ var fields = {
     'p1_18_residence_from_date3':' " . showData('example') . "',
     'p1_18_residence_to_date3':' " . showData('example') . "',
 	
-    // page 5
-	
-    'aditional_info_address_street':' " . showData('information_about_you_home_street_number') . "',
-    'aditional_info_address_apt_ste_flr':' " . showData('information_about_you_home_apt_ste_flr_value') . "',
-    'aditional_info_address_city_or_town':' " . showData('information_about_you_home_city_town') . "',
-    'aditional_info_address_state':' " . showData('information_about_you_home_state') . "',
-    'aditional_info_address_zip_code':' " . showData('information_about_you_home_zip_code') . "',
-    'aditional_info_address_province':' " . showData('information_about_you_home_province') . "',
-    'aditional_info_address_postal_code':' " . showData('information_about_you_home_postal_code') . "',
-    'aditional_info_address_country':' " . showData('information_about_you_home_country') . "',
-    'aditional_info_address_date_from':' " . showData('information_about_you_home_residence_from_date') . "',
-    'aditional_info_address_date_to':' " . showData('information_about_you_home_residence_to_date') . "',
-    'aditional_info_address2_street':' " . showData('information_about_you_home_street_number2') . "',
-    'aditional_info_address2_apt_ste_flr':' " . showData('information_about_you_home_apt_ste_flr_value2') . "',
-    'aditional_info_address2_city_or_town':' " . showData('information_about_you_home_city_town2') . "',
-    'aditional_info_address2_state':' " . showData('information_about_you_home_state2') . "',
-    'aditional_info_address2_zip_code':' " . showData('information_about_you_home_zip_code2') . "',
-    'aditional_info_address2_province':' " . showData('information_about_you_home_province2') . "',
-    'aditional_info_address2_postal_code':' " . showData('information_about_you_home_postal_code2') . "',
-    'aditional_info_address2_country':' " . showData('information_about_you_home_country2') . "',
-    'aditional_info_address2_date_from':' " . showData('information_about_you_home_residence_from_date2') . "',
-    'aditional_info_address2_date_to':' " . showData('information_about_you_home_residence_to_date2') . "',
-	
-    'aditional_info_address3_street':' " . showData('information_about_you_outside_us_street_number') . "',
-    'aditional_info_address3_apt_ste_flr':' " . showData('information_about_you_outside_us_apt_ste_flr_value') . "',
-    'aditional_info_address3_city_or_town':' " . showData('information_about_you_outside_us_city_town') . "',
-    'aditional_info_address3_state':' " . showData('information_about_you_outside_us_state') . "',
-    'aditional_info_address3_zip_code':' " . showData('information_about_you_outside_us_zip_code') . "',
-    'aditional_info_address3_province':' " . showData('information_about_you_outside_us_province') . "',
-    'aditional_info_address3_postal_code':' " . showData('information_about_you_outside_us_postal_code') . "',
-    'aditional_info_address3_country':' " . showData('information_about_you_outside_us_country') . "',
-    'aditional_info_address3_date_from':' " . showData('information_about_you_outside_us_residence_from_date') . "',
-    'aditional_info_address3_date_to':' " . showData('information_about_you_outside_us_residence_to_date') . "',
-    
+    'p1_18_street_number4':' " . showData('example') . "',	
+    'p1_18_number4':' " . showData('example') . "',	
+    'p1_18_city_town4':' " . showData('example') . "',	
+    'p1_18_state4':' " . showData('example') . "',	
+    'p1_18_zip_code4':' " . showData('example') . "',
+    'p1_18_province4':' " . showData('example') . "',
+    'p1_18_postal_code4':' " . showData('example') . "',
+    'p1_18_country4':' " . showData('example') . "',
+    'p1_18_residence_from_date4':' " . showData('example') . "',
+    'p1_18_residence_to_date4':' " . showData('example') . "',
+    'p1_19_social':' " . showData('example') . "',
+
+// page 5
+
+    'p2_2_receipt_number':' " . showData('example') . "',
+    'p2_2_priority_date':' " . showData('example') . "',
+    'p2_2_family':' " . showData('example') . "',
+    'p2_2_given':' " . showData('example') . "',
+    'p2_2_middle':' " . showData('example') . "',
+    'p2_2_a_number':' " . showData('example') . "',
+    'p2_2_dob':' " . showData('example') . "',
+    	
+// page 13 
+
+
 
 	
-    'aditional_info_employer2_company':' " . showData('employer2_name') . "',
-    'aditional_info_employer2_street':' " . showData('employer2_address') . "',
-    'aditional_info_employer2_apt_ste_flr':' " . showData('employer2_apt_ste_flr_value') . "',
-    'aditional_info_employer2_city_or_town':' " . showData('employer2_city_town') . "',
-    'aditional_info_employer2_state':' " . showData('employer2_state') . "',
-    'aditional_info_employer2_zip_code':' " . showData('employer2_zip_code') . "',
-    'aditional_info_employer2_province':' " . showData('employer2_province') . "',
-    'aditional_info_employer2_postal_code':' " . showData('employer2_postal_code') . "',
-    'aditional_info_employer2_country':' " . showData('employer2_country') . "',
-    'aditional_info_employer2_date_from':' " . showData('employer2_from_date') . "',
-    'aditional_info_employer2_date_to':' " . showData('employer2_to_date') . "',
-    'aditional_info_employer2_occupation':' " . showData('employer2_occupation') . "',
-    
-    'aditional_info_employer3_company':' " . showData('employer_outside_us_name') . "',
-    'aditional_info_employer3_street':' " . showData('employer_outside_us_street_number') . "',
-    'aditional_info_employer3_apt_ste_flr':' " . showData('employer_outside_us_apt_ste_flr_value') . "',
-    'aditional_info_employer3_city_town':' " . showData('employer_outside_us_city_town') . "',
-    'aditional_info_employer3_state':' " . showData('employer_outside_us_state') . "',
-    'aditional_info_employer3_zip_code':' " . showData('employer_outside_us_zip_code') . "',
-    'aditional_info_employer3_province':' " . showData('employer_outside_us_province') . "',
-    'aditional_info_employer3_postal_code':' " . showData('employer_outside_us_postal_code') . "',
-    'aditional_info_employer3_country':' " . showData('employer_outside_us_country') . "',
-    'aditional_info_employer3_occupation':' " . showData('employer_outside_us_occupation') . "',
-    'aditional_info_employer3_date_from':' " . showData('employer_outside_us_from_date') . "',
-    'aditional_info_employer3_date_to':' " . showData('employer_outside_us_to_date') . "',
-	
-    'information_parent1_lastname':' " . showData('parent1_info_family_last_name') . "',
-    'information_parent1_firstname':' " . showData('parent1_info_given_first_name') . "',
-    'information_parent1_middlename':' " . showData('parent1_info_middle_name') . "',
-    'information_parent1_lastname_at_birth':' " . showData('parent1_info_at_birth_family_last_name') . "',
-    'information_parent1_firstname_at_birth':' " . showData('parent1_info_at_birth_given_first_name') . "',
-    'information_parent1_middlename_at_birth':' " . showData('parent1_info_at_birth_middle_name') . "',
-    'information_parent1_date_of_birth':' " . showData('parent1_info_date_of_birth') . "',
-    'information_parent1_city_of_birth':' " . showData('parent1_info_city_of_birth') . "',
-    'information_parent1_country_of_birth':' " . showData('parent1_info_country_of_birth') . "',	
-    'information_parent1_current_city_of_resident':' " . showData('parent1_info_current_city_of_residence') . "',
-    'information_parent1_current_country_of_resident':' " . showData('parent1_info_current_country_of_residence') . "',
-	
-    'information_parent2_lastname':' " . showData('parent2_info_family_last_name') . "',
-    'information_parent2_firstname':' " . showData('parent2_info_given_first_name') . "',
-    'information_parent2_middlename':' " . showData('parent2_info_middle_name') . "',
-    'information_parent2_lastname_at_birth':' " . showData('parent2_info_at_birth_family_last_name') . "',
-    'information_parent2_firstname_at_birth':' " . showData('parent2_info_at_birth_given_first_name') . "',
-    'information_parent2_middlename_at_birth':' " . showData('parent2_info_at_birth_middle_name') . "',
-    'information_parent2_date_of_birth':' " . showData('parent2_info_date_of_birth') . "',
-    'information_parent2_city_of_birth':' " . showData('parent2_info_city_of_birth') . "',
-    'information_parent2_country_of_birth':' " . showData('parent2_info_country_of_birth') . "',
-    'information_parent2_current_city_of_resident':' " . showData('parent1_info_current_city_of_residence') . "',
-    'information_parent2_current_country_of_resident':' " . showData('parent2_info_current_country_of_residence') . "',
-	
-    'how_many_times_married':' " . showData('other_information_about_you_total_married') . "',
-    'current_mariage_spouse_lastname':' " . showData('current_spouse_family_last_name') . "',
-    'current_mariage_spouse_firstname':' " . showData('current_spouse_given_first_name') . "',
-    'current_mariage_spouse_middlename':' " . showData('current_spouse_family_middle_name') . "',
-    'current_mariage_spouse_a_number':' " . showData('current_spouse_a_number') . "',
-    'current_mariage_spouse_date_of_birth':' " . showData('current_spouse_date_of_birth') . "',
-    'current_mariage_spouse_date_of_marriage':' " . showData('current_spouse_date_of_marriage') . "',
-    'current_mariage_spouse_birth_city_town':' " . showData('current_spouse_birth_place_city_town') . "',
-    'current_mariage_spouse_birth_state':' " . showData('current_spouse_birth_place_province') . "',
-    'current_mariage_spouse_birth_country':' " . showData('current_spouse_birth_place_country') . "',
-    'place_of_mariage_current_spouse_city_or_town':' " . showData('current_spouse_marriage_place_city_town') . "',
-    'place_of_mariage_current_spouse_province':' " . showData('current_spouse_marriage_place_province') . "',
-    'place_of_mariage_current_spouse_country':' " . showData('current_spouse_marriage_place_country') . "',
-	
-    'information_prior_marriage_lastname':' " . showData('prior_spouse1_family_last_name') . "',
-    'information_prior_marriage_firstname':' " . showData('prior_spouse1_given_first_name') . "',
-    'information_prior_marriage_middlename':' " . showData('prior_spouse1_middle_name') . "',
-    'prior_spouse_date_of_marriage':' " . showData('prior_spouse1_date_of_marriage') . "',
-    'prior_spouse_date_of_birth':' " . showData('prior_spouse1_date_of_birth') . "',
-    'place_of_mariage_prior_spouse_city_town':' " . showData('prior_spouse1_marriage_place_city_town') . "',
-    'place_of_mariage_prior_spouse_state_province':' " . showData('prior_spouse1_marriage_place_province') . "',
-    'place_of_mariage_prior_spouse_country':' " . showData('prior_spouse1_marriage_place_country') . "',
-    'legally_ended_date_of_prior_spouse_marriage':' " . showData('prior_spouse1_marriage_end_date') . "',
-    'place_of_spouse_prior_marriage_ended_city_town':' " . showData('prior_spouse1_marriage_end_city_town') . "',
-    'place_of_spouse_prior_marriage_ended_state_province':' " . showData('prior_spouse1_marriage_end_province') . "',
-    'place_of_spouse_prior_marriage_ended_country':' " . showData('prior_spouse1_marriage_end_country') . "',
-	
-    'total_number_of_children':' " . showData('total_number_of_all_children') . "',
-    'information_children1_lastname':' " . showData('child1_family_last_name') . "',
-    'information_children1_firstname':' " . showData('child1_given_first_name') . "',
-    'information_children1_middlename':' " . showData('child1_middle_name') . "',
-    'information_children1_a_number':' " . showData('child1_a_number') . "',
-    'information_children1_date_of_birth':' " . showData('child1_date_of_birth') . "',
-    'information_children1_country_of_birth':' " . showData('child1_country_of_birth') . "',
-	
-    'information_children2_lastname':' " . showData('child2_family_last_name') . "',
-    'information_children2_firstname':' " . showData('child2_given_first_name') . "',
-    'information_children2_middlename':' " . showData('child2_middle_name') . "',
-    'information_children2_a_number':' " . showData('child2_a_number') . "',
-    'information_children2_date_of_birth':' " . showData('child2_date_of_birth') . "',
-    'information_children2_country_of_birth':' " . showData('child2_country_of_birth') . "',
-	
-
-	
-	// page 13 
-	
-    'general_eligibility_household_size':' " . showData('i_485_general_eligibility_household_size') . "',
-	
-
-	
-	// page 16
+// page 16
 	
  
 	
-	// page 17
+// page 17
 	
 
 	
-	// page 18
+// page 18
 	
     'interpreter_certification':' " . showData('i_485_interpreter_certification_language_skill') . "',
     'interpreter_signature_date':' " . showData('i_485_interpreter_sign_date') . "',
@@ -1763,7 +1652,7 @@ var fields = {
     'preparers_contact_mobile_telephone':' " . showData('i_485_preparer_mobile') . "',
     'preparers_contact_email':' " . showData('i_485_preparer_email') . "',
 	
-	//page 19
+//page 19
 	
     'Preparer_signature_date':' " . showData('i_485_preparer_sign_date') . "',
     'part13_numbered':'" . showData('i_485_sign_interview_permanent_residence_pages_from') . "',
@@ -1772,7 +1661,7 @@ var fields = {
     'part13_through2':'" . showData('i_485_sign_interview_additional_pages_to') . "',
     'i_485_page_19_p13_signature':' " . showData('i_485_uscis_officer_sign_date') . "',
 	
-	// page 20
+// page 20
 	
     'i_485_additional_info_last_name':' " . showData('i_485_additional_info_last_name') . "',
     'i_485_additional_info_first_name':' " . showData('i_485_additional_info_first_name') . "',

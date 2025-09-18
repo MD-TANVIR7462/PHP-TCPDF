@@ -36,3 +36,16 @@
     'p1_18_country3':' " . showData('example') . "',
     'p1_18_residence_from_date3':' " . showData('example') . "',
     'p1_18_residence_to_date3':' " . showData('example') . "',
+
+     p1_18_apt_ste_flr4
+    	
+    'p1_18_street_number4':' " . showData('example') . "',	
+    'p1_18_number4':' " . showData('example') . "',	
+    'p1_18_city_town4':' " . showData('example') . "',	
+    'p1_18_state4':' " . showData('example') . "',	
+    'p1_18_zip_code4':' " . showData('example') . "',
+    'p1_18_province4':' " . showData('example') . "',
+    'p1_18_postal_code4':' " . showData('example') . "',
+    'p1_18_country4':' " . showData('example') . "',
+    'p1_18_residence_from_date4':' " . showData('example') . "',
+    'p1_18_residence_to_date4':' " . showData('example') . "',
