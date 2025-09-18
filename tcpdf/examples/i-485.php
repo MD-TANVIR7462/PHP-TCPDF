@@ -643,14 +643,14 @@ $html = "<div>Family Name (Last Name) </div>";
 $pdf->writeHTMLCell(130, 1, 21.5, 37.3, $html, 0, 0, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p1_3', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 42);
+$pdf->TextField('p1_12_fmily_name', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 23, 42);
 //........
 $pdf->SetFont('times', '', 10);
 $html = "<div>Given Name (First Name)  </div>";
 $pdf->writeHTMLCell(130, 1, 114.5, 37.3, $html, 0, 0, false, true, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p1_3', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115.5, 42);
+$pdf->TextField('p1_12_given_name', 89, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115.5, 42);
 //............
 $pdf->SetFont('times', '', 10); // set font
 $html = "<div>Form I-94 Arrival/Departure Record Number</div>";
@@ -661,8 +661,8 @@ $pdf->writeHTMLCell(190, 7, 21.6, 59, 'Expiration Date of Authorized Stay Shown 
 or Type or Print "D/S" for Duration of Status ', '', 0, 0, true, 'L');
 //...............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p1_3_other1', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 96, 51);
-$pdf->TextField('p1_3_other2', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 128, 59.5);
+$pdf->TextField('p1_12_i_194', 57, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 96, 51);
+$pdf->TextField('p1_12_expiration_date', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 128, 59.5);
 //.............
 // ..........
 $pdf->SetFont('times', '', 10); // set font
@@ -670,15 +670,15 @@ $pdf->writeHTMLCell(190, 7, 21.6, 69, 'Immigration Status on Form I-94 (for exam
 or paroled, if paroled) ', '', 0, 0, true, 'L');
 //.....
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p1_3_other2', 76.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 128, 69.5);
+$pdf->TextField('p1_12_immigration_status', 76.5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 128, 69.5);
 
 //...........
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(190, 7, 12, 80, "<b>13.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Was your last arrival the first time you were physically present in the United States?", 0, 1, false, false, 'L', true);
 //............
-if (showData('i_131_exclusion_status') == "Y") $checked_y = "checked";
+if (showData('p1_13_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
-if (showData('i_131_exclusion_status') == "N") $checked_N = "checked";
+if (showData('p1_13_status') == "N") $checked_N = "checked";
 else $checked_N = "";
 $pdf->writeHTMLCell(120, 7, 178, 80, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); // set font
@@ -689,21 +689,21 @@ $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(190, 7, 12, 88, "<b>14.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>What is your current immigration status (if it has changed since your last arrival)?", 0, 1, false, false, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p1_3_other1', 64.9, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 140, 88);
+$pdf->TextField('p1_14', 64.9, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 140, 88);
 //...........
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(190, 7, 12, 96, '<b>15.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Expiration Date of Current Immigration Status (mm/dd/yyyy) or Type or<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print "D/S" for Duration of Status', 0, 1, false, false, 'L', true);
 //............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p1_3_other1', 44, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 128, 97);
+$pdf->TextField('p1_15', 44, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 128, 97);
 // // //...........
 //...........
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(190, 7, 12, 106, '<b>16.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Have you ever been issued an "alien crewman" visa?', 0, 1, false, false, 'L', true);
 //............
-if (showData('i_131_exclusion_status') == "Y") $checked_y = "checked";
+if (showData('p1_16_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
-if (showData('i_131_exclusion_status') == "N") $checked_N = "checked";
+if (showData('p1_16_status') == "N") $checked_N = "checked";
 else $checked_N = "";
 $pdf->writeHTMLCell(120, 7, 178, 106, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); // set font
@@ -713,9 +713,9 @@ $pdf->writeHTMLCell(50, 7, 172, 105, $html, 0, 1, false, true, 'J', true);
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(190, 7, 12, 114, '<b>17.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Did you last arrive in the United States to join a vessel as a seaman or crewman, or while serving in any<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;capacity aboard a vessel or aircraft?', 0, 1, false, false, 'L', true);
 //............
-if (showData('i_131_exclusion_status') == "Y") $checked_y = "checked";
+if (showData('p1_17_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
-if (showData('i_131_exclusion_status') == "N") $checked_N = "checked";
+if (showData('p1_17_status') == "N") $checked_N = "checked";
 else $checked_N = "";
 $pdf->writeHTMLCell(120, 7, 178, 115, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); // set font
@@ -728,7 +728,7 @@ $pdf->writeHTMLCell(190, 7, 21, 129, '<b>Current U.S. Physical Address</b>', '',
 $pdf->writeHTMLCell(190, 7, 21, 135, 'In Care Of Name (if any)', '', 0, 0, true, 'L');
 //...............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p1_3_other1', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 140);
+$pdf->TextField('p1_18_care_name', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 140);
 
 
 //.............
@@ -737,13 +737,13 @@ $pdf->SetFont('times', '', 10);
 $html = '<div>Street Number and Name</div>';
 $pdf->writeHTMLCell(90, 7, 21, 147, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_3b', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 153);
+$pdf->TextField('p1_18_street_number', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 153);
 // ...........
-if (showData('information_about_you_us_mailing_apt_ste_flr') == "apt") $checked_apt = "checked";
+if (showData('p1_18_apt_ste_flr') == "apt") $checked_apt = "checked";
 else $checked_apt = "";
-if (showData('information_about_you_us_mailing_apt_ste_flr') == "ste") $checked_ste = "checked";
+if (showData('p1_18_apt_ste_flr') == "ste") $checked_ste = "checked";
 else $checked_ste = "";
-if (showData('information_about_you_us_mailing_apt_ste_flr') == "flr") $checked_flr = "checked";
+if (showData('p1_18_apt_ste_flr') == "flr") $checked_flr = "checked";
 else $checked_flr = "";
 $pdf->SetFont('times', '', 14); // set font
 $html = '<div><input type="checkbox" name="50a" value="Apt" checked="' . $checked_apt . '" />&nbsp;<input type="checkbox" name="50st" value="Ste" checked="' . $checked_ste . '"  /> <input type="checkbox" name="50f" value="Flr" checked="' . $checked_flr . '" /></div>';
@@ -752,13 +752,13 @@ $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(50, 0, 144.2, 147, "Apt.&nbsp;&nbsp;Ste.&nbsp;&nbsp;Flr", '', 0, 0, true, 'L');
 $pdf->writeHTMLCell(50, 0, 167, 147, "Number", '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_3c', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 153);
+$pdf->TextField('p1_18_number', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 153);
 //...........
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div>City or Town </div>';
 $pdf->writeHTMLCell(50, 5, 21, 160.7, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_3d', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 166);
+$pdf->TextField('p1_18_city_town', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 166);
 //............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div>State</div>';
@@ -769,25 +769,25 @@ $comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
     $comboBoxOptions[] = $record->state_code;
 }
-$pdf->ComboBox("p5_3e", 22, 7, $comboBoxOptions, array(), array(), 144.2, 166);
+$pdf->ComboBox("p1_18_state", 22, 7, $comboBoxOptions, array(), array(), 144.2, 166);
 $pdf->SetFont('times', '', 10);
 $html = '<div>ZIP Code</div>';
 $pdf->writeHTMLCell(30, 3, 168, 160.7, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_3f', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 166);
+$pdf->TextField('p1_18_zip_code', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 166);
 //..............
 $pdf->SetFont('times', '', 10);
 $html = '<div>Date You First Resided at This Address (mm/dd/yyyy)</div>';
 $pdf->writeHTMLCell(130, 3, 21, 174.7, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_3f', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 101, 175);
+$pdf->TextField('p1_18_resided_date', 46, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 101, 175);
 //............
 $pdf->SetFont('times', '', 10);
 $pdf->writeHTMLCell(190, 7, 21, 182, 'Is this your current mailing address?', 0, 1, false, false, 'L', true);
 //............
-if (showData('i_131_exclusion_status') == "Y") $checked_y = "checked";
+if (showData('p1_18_mailing_address_status') == "Y") $checked_y = "checked";
 else $checked_y = "";
-if (showData('i_131_exclusion_status') == "N") $checked_N = "checked";
+if (showData('p1_18_mailing_address_status') == "N") $checked_N = "checked";
 else $checked_N = "";
 $pdf->writeHTMLCell(120, 7, 178, 183, "Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No", '', 0, 0, true, 'L');
 $pdf->SetFont('times', '', 14); // set font
@@ -801,20 +801,20 @@ $pdf->writeHTMLCell(190, 7, 21, 196, '<b>Current Mailing Address (Safe or Altern
 $pdf->writeHTMLCell(190, 7, 21, 202, 'In Care Of Name (if any)', '', 0, 0, true, 'L');
 //...............
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p1_3_other1', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 207);
+$pdf->TextField('p1_18_care_name2', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 207);
 //.............
 
 $pdf->SetFont('times', '', 10);
 $html = '<div>Street Number and Name</div>';
 $pdf->writeHTMLCell(90, 7, 21, 213, $html, 0, 1, false, false, 'L', true);
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_3b', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 219.5);
+$pdf->TextField('p1_18_street_number2', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 219.5);
 // ...........
-if (showData('information_about_you_us_mailing_apt_ste_flr') == "apt") $checked_apt = "checked";
+if (showData('p1_18_apt_ste_flr2') == "apt") $checked_apt = "checked";
 else $checked_apt = "";
-if (showData('information_about_you_us_mailing_apt_ste_flr') == "ste") $checked_ste = "checked";
+if (showData('p1_18_apt_ste_flr2') == "ste") $checked_ste = "checked";
 else $checked_ste = "";
-if (showData('information_about_you_us_mailing_apt_ste_flr') == "flr") $checked_flr = "checked";
+if (showData('p1_18_apt_ste_flr2') == "flr") $checked_flr = "checked";
 else $checked_flr = "";
 $pdf->SetFont('times', '', 14); // set font
 $html = '<div><input type="checkbox" name="50a" value="Apt" checked="' . $checked_apt . '" />&nbsp;<input type="checkbox" name="50st" value="Ste" checked="' . $checked_ste . '"  /> <input type="checkbox" name="50f" value="Flr" checked="' . $checked_flr . '" /></div>';
@@ -823,13 +823,13 @@ $pdf->SetFont('times', '', 10); // set font
 $pdf->writeHTMLCell(50, 0, 144.2, 213, "Apt.&nbsp;&nbsp;Ste.&nbsp;&nbsp;Flr", '', 0, 0, true, 'L');
 $pdf->writeHTMLCell(50, 0, 167, 213, "Number", '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_3c', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 219.5);
+$pdf->TextField('p1_18_street_number2', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 219.5);
 //...........
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div>City or Town </div>';
 $pdf->writeHTMLCell(50, 5, 21, 227.2, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_3d', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 232);
+$pdf->TextField('p1_18_city_town2', 120.4, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 22, 232);
 //............
 $pdf->SetFont('times', '', 10); // set font
 $html = '<div>State</div>';
@@ -840,12 +840,12 @@ $comboBoxOptions = array('');
 foreach ($allDataCountry as $record) {
     $comboBoxOptions[] = $record->state_code;
 }
-$pdf->ComboBox("p5_3e", 22, 7, $comboBoxOptions, array(), array(), 144.2, 232);
+$pdf->ComboBox("p1_18_state2", 22, 7, $comboBoxOptions, array(), array(), 144.2, 232);
 $pdf->SetFont('times', '', 10);
 $html = '<div>ZIP Code</div>';
 $pdf->writeHTMLCell(30, 3, 168, 227.2, $html, '', 0, 0, true, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('p5_3f', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 232);
+$pdf->TextField('p1_18_zip_code2', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 232);
 
 //******************************
 //******** End Page No 3 ******
@@ -885,16 +885,16 @@ $pdf->writeHTMLCell(190, $lineHeight, $startX, $startY, '<b>Prior Address</b>', 
 // ---------------------- In Care Of ----------------------
 $pdf->writeHTMLCell(190, $lineHeight, $startX, $startY + 6, 'In Care Of Name (if any)', '', 0, 0, true, 'L');
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_3_other1', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 11);
+$pdf->TextField('p1_18_care_name3', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 11);
 
 // ---------------------- Street Number ----------------------
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(90, $lineHeight, $startX, $startY + 18, 'Street Number and Name', '', 0, 0, true, 'L');
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3b', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 24);
+$pdf->TextField('p1_18_street_number3', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 24);
 
 // ---------------------- Apt / Ste / Flr ----------------------
-$apt_ste_flr = showData('information_about_you_us_mailing_apt_ste_flr');
+$apt_ste_flr = showData('p1_18_apt_ste_flr3');
 $checked_apt = $apt_ste_flr == 'apt' ? 'checked' : '';
 $checked_ste = $apt_ste_flr == 'ste' ? 'checked' : '';
 $checked_flr = $apt_ste_flr == 'flr' ? 'checked' : '';
@@ -914,13 +914,13 @@ $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(50, 0, 167, $startY + 18, "Number", '', 0, 0, true, 'L');
 
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3c', 36, $fieldHeight, $stroke, array(), 168, $startY + 24);
+$pdf->TextField('p1_18_number3', 36, $fieldHeight, $stroke, array(), 168, $startY + 24);
 
 // ---------------------- City / State / ZIP ----------------------
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(50, 5, $startX, $startY + 31.7, 'City or Town', '', 0, 0, true, 'L');
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3d', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 37);
+$pdf->TextField('p1_18_city_town3', 121, $fieldHeight, $stroke, array(), $startX + 1, $startY + 37);
 
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(50, 4, 144, $startY + 31.7, 'State', '', 0, 0, true, 'L');
@@ -929,11 +929,11 @@ $comboBoxOptions = [''];
 foreach ($allDataCountry as $record) {
     $comboBoxOptions[] = $record->state_code;
 }
-$pdf->ComboBox("p5_3e", 22, $fieldHeight, $comboBoxOptions, array(), array(), 144.2, $startY + 37);
+$pdf->ComboBox("p1_18_state3", 22, $fieldHeight, $comboBoxOptions, array(), array(), 144.2, $startY + 37);
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(30, 3, 168, $startY + 31.7, 'ZIP Code', '', 0, 0, true, 'L');
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p5_3f', 36, $fieldHeight, $stroke, array(), 168, $startY + 37);
+$pdf->TextField('p1_18_zip_code3', 36, $fieldHeight, $stroke, array(), 168, $startY + 37);
 // ---------------------- Province / Postal Code / Country ----------------------
 $pdf->SetFont(...$labelFont);
 $pdf->writeHTMLCell(130, 1, $startX, $startY + 45.5, "<div>Province</div>", 0, 0, false, true, 'L', true);
@@ -945,7 +945,7 @@ $pdf->writeHTMLCell(60, 1, $startX + 80, $startY + 64, "To (mm/dd/yyyy)", 0, 0, 
 // Fields
 $pdf->SetFont(...$fieldFont);
 $pdf->TextField(
-    'p1_1a',
+    'p1_18_province3',
     60,
     $fieldHeight,
     $stroke,
@@ -953,10 +953,10 @@ $pdf->TextField(
     $startX + 0.8,
     $startY + 50.5
 );
-$pdf->TextField('p1_1b', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $startY + 50.5);
-$pdf->TextField('p1_1c', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
-$pdf->TextField('p1_1d', 47, $fieldHeight, $stroke, array(), $startX + 32, $startY + 65.5);
-$pdf->TextField('p1_1e', 47, $fieldHeight, $stroke, array(), $startX + 108, $startY + 65.5);
+$pdf->TextField('p1_18_postal_code3', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $startY + 50.5);
+$pdf->TextField('p1_18_country3', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
+$pdf->TextField('p1_18_residence_from_date3', 47, $fieldHeight, $stroke, array(), $startX + 32, $startY + 65.5);
+$pdf->TextField('p1_18_residence_to_date3', 47, $fieldHeight, $stroke, array(), $startX + 108, $startY + 65.5);
 
 // *.................
 // *Reuseable Section
@@ -1521,21 +1521,21 @@ var fields = {
 // page 1
 
     'i_485_a_number':' " . showData('i_485_a_number') . "',	
-    'p1_1a':' " . showData('information_about_you_family_last_name') . "',
-    'p1_1b':' " . showData('information_about_you_family_last_name') . "',
-    'p1_1c':' " . showData('information_about_you_family_last_name') . "',
-    'p1_2a1':' " . showData('information_about_you_family_last_name') . "',
-    'p1_2b1':' " . showData('information_about_you_family_last_name') . "',
-    'p1_2c1':' " . showData('information_about_you_family_last_name') . "',
-    'p1_2a2':' " . showData('information_about_you_family_last_name') . "',
-    'p1_2b2':' " . showData('information_about_you_family_last_name') . "',
-    'p1_2c2':' " . showData('information_about_you_family_last_name') . "',
-    'p1_3':' " . showData('information_about_you_family_last_name') . "',
-    'p1_3_other1':' " . showData('information_about_you_family_last_name') . "',
-    'p1_3_other2':' " . showData('information_about_you_family_last_name') . "',
+    'p1_1a':' " . showData('example') . "',
+    'p1_1b':' " . showData('example') . "',
+    'p1_1c':' " . showData('example') . "',
+    'p1_2a1':' " . showData('example') . "',
+    'p1_2b1':' " . showData('example') . "',
+    'p1_2c1':' " . showData('example') . "',
+    'p1_2a2':' " . showData('example') . "',
+    'p1_2b2':' " . showData('example') . "',
+    'p1_2c2':' " . showData('example') . "',
+    'p1_3':' " . showData('example') . "',
+    'p1_3_other1':' " . showData('example') . "',
+    'p1_3_other2':' " . showData('example') . "',
    
 	
-    // page 2
+// page 2
 	
     'p1_4_a_number':' " . showData('example') . "',	
     'p1_5_1':' " . showData('example') . "',	
@@ -1557,85 +1557,48 @@ var fields = {
     'p1_11_b':' " . showData('example') . "',	
     'p1_11_c':' " . showData('example') . "',	
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    'infor_about_you_country_birth':' " . showData('other_information_about_you_country_of_birth') . "',
-    'info_about_you_citizen_nationality':' " . showData('other_information_about_you_country_of_citizen') . "',
-    'info_about_you_alien_reg_number':' " . showData('other_information_about_you_alien_registration_number') . "',
-    'info_about_you_online_account_number':' " . showData('other_information_about_you_uscis_online_account_number') . "',
-    'info_about_you_us_mail_in_care_name':' " . showData('information_about_you_us_mailing_care_of_name') . "',
-    'info_about_you_us_mail_street':' " . showData('information_about_you_us_mailing_street_number') . "',
-    'info_about_you_us_mail_apt_ste_flr':' " . showData('information_about_you_us_mailing_apt_ste_flr_value') . "',
-    'info_about_you_us_mail_city_town':' " . showData('information_about_you_us_mailing_city_town') . "',
-    'info_about_you_us_mail_state':' " . showData('information_about_you_us_mailing_state') . "',
-    'info_about_you_us_mail_zipcode':' " . showData('information_about_you_us_mailing_zip_code') . "',
+// page 3
 	
-    'info_about_you_safe_mailing_care_of_name':' " . showData('information_about_you_mailing_care_of_name') . "',
-    'info_about_you_safe_mailing_street_number_name':' " . showData('information_about_you_mailing_street_number') . "',
-    'info_about_you_safe_mailing_apt_ste_flr':' " . showData('information_about_you_mailing_apt_ste_flr_value') . "',
-    'info_about_you_safe_mailing_city_town':' " . showData('information_about_you_mailing_city_town') . "',
-    'info_about_you_safe_mailing_state':' " . showData('information_about_you_mailing_state') . "',
-    'info_about_you_safe_mailing_zipcode':' " . showData('information_about_you_mailing_zip_code') . "',
-    'info_about_you_us_social_security_card':' " . showData('other_information_about_you_social_security_number') . "',
-    
-    'info_about_you_recent_immigration_pasport_number':' " . showData('other_information_about_you_passport_number') . "',
-    'info_about_you_recent_immigration_travel_number':' " . showData('other_information_about_you_travel_document_number') . "',
-    'info_about_you_recent_immigration_pasport_expire_date':' " . showData('other_information_about_you_expiry_date_issuance_passport') . "',
-    'info_about_you_recent_immigration_country_issue_pasport':' " . showData('i_94_imgt_country_issuance_passport') . "',
-    'info_about_you_recent_immigration_nonimmigrant_number':' " . showData('i_94_imgt_nonimmigrant_visa_number') . "',
-    'info_about_you_recent_immigration_city_town':' " . showData('i_94_imgt_city_town') . "',
-    'info_about_you_recent_immigration_state':' " . showData('i_94_imgt_state') . "',
-    'info_about_you_recent_immigration_date_last_arrive':' " . showData('i_94_imgt_date_of_last_arival') . "',
-    
-    // page 3
-	
-    'info_about_you_recent_immigration_other':' " . showData('i_485_25d_other_status_text_value') . "',
-    'info_about_you_recent_immigration_arival_record_number':' " . showData('i_94_imgt_arrival_record_number') . "',
-    'info_about_you_recent_immigration_pasport_expire_date_authorized':' " . showData('i_94_imgt_expiry_date_of_authorized') . "',
-    'info_about_you_recent_immigration_status_on_form_I94':' " . showData('i_94_status_on_form') . "',
-    'info_about_you_status_on_current_immigration':' " . showData('i_94_current_immigration_status_changed') . "',
-    'information_you_exactly_lastname':' " . showData('i_94_family_last_name') . "',
-    'information_you_exactly_firstname':' " . showData('i_94_given_first_name') . "',
-    'information_you_exactly_middlename':' " . showData('i_94_middle_name') . "',
-	
+
+
+    'p1_12_fmily_name':' " . showData('example') . "',	
+    'p1_12_given_name':' " . showData('example') . "',	
+    'p1_12_i_194':' " . showData('example') . "',	
+    'p1_12_expiration_date':' " . showData('example') . "',	
+    'p1_12_immigration_status':' " . showData('example') . "',	
+    'p1_14':' " . showData('example') . "',	
+    'p1_15':' " . showData('example') . "',	
+    'p1_15':' " . showData('example') . "',	
+
+    'p1_18_care_name':' " . showData('example') . "',	
+    'p1_18_street_number':' " . showData('example') . "',	
+    'p1_18_number':' " . showData('example') . "',	
+    'p1_18_city_town':' " . showData('example') . "',	
+    'p1_18_state':' " . showData('example') . "',	
+    'p1_18_zip_code':' " . showData('example') . "',	
+
+    'p1_18_resided_date':' " . showData('example') . "',	
+
+    'p1_18_care_name2':' " . showData('example') . "',	
+    'p1_18_street_number2':' " . showData('example') . "',	
+    'p1_18_number2':' " . showData('example') . "',	
+    'p1_18_city_town2':' " . showData('example') . "',	
+    'p1_18_state2':' " . showData('example') . "',	
+    'p1_18_zip_code2':' " . showData('example') . "',
+
     // page 4
 	
-    'info_about_you_receipt_number_underliying':' " . showData('i_485_info_about_you_part2_3_receipt_number_underlying') . "',
-    'info_about_you_priority_date_underliying':' " . showData('i_485_info_about_you_part2_4_periority_date') . "',
-	
-    'principal_applicant_lastname':' " . showData('i_485_principal_applicant_family_last_name') . "',
-    'principal_applicant_firstname':' " . showData('i_485_principal_applicant_given_first_name') . "',
-    'principal_applicant_middlename':' " . showData('i_485_principal_applicant_middle_name') . "',
-    'principal_applicant_a_number':' " . showData('i_485_principal_applicant_a_number') . "',
-    'principal_applicant_date_of_birth':' " . showData('i_485_principal_applicant_date_of_birth') . "',
-    'principal_applicant_receipt_number':' " . showData('i_485_principal_applicant_receipt_number') . "',
-    'principal_applicant_priority_date':' " . showData('i_485_principal_applicant_priority_date') . "',
-	
-    //......end part 2
-	
-    'additional_info_location_city':' " . showData('i_485_additional_info_city') . "',
-    'additional_info_location_country':' " . showData('i_485_additional_info_country') . "',
-    'additional_info_decision':' " . showData('i_485_additional_info_decision_for_example') . "',
-    'additional_info_decision1':' " . showData('i_485_additional_info_decision_date') . "',
+    'p1_18_care_name3':' " . showData('example') . "',	
+    'p1_18_street_number3':' " . showData('example') . "',	
+    'p1_18_number3':' " . showData('example') . "',	
+    'p1_18_city_town3':' " . showData('example') . "',	
+    'p1_18_state3':' " . showData('example') . "',	
+    'p1_18_zip_code3':' " . showData('example') . "',
+    'p1_18_province3':' " . showData('example') . "',
+    'p1_18_postal_code3':' " . showData('example') . "',
+    'p1_18_country3':' " . showData('example') . "',
+    'p1_18_residence_from_date3':' " . showData('example') . "',
+    'p1_18_residence_to_date3':' " . showData('example') . "',
 	
     // page 5
 	
