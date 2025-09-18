@@ -1152,8 +1152,79 @@ drawCheckboxWithLabel($pdf, 19, 251.5, 'p2_3a_vawa_child', 'i_485_vawa_child_sta
 drawCheckboxWithLabel($pdf, 19, 258, 'p2_3a_vawa_parent', 'i_485_vawa_parent_status', 'VAWA self-petitioning parent of a U.S. citizen (if the citizen is at least 21 years of age).');
 
 // !start 
+// ******************************
+// ******** End Page No 5 ******
+// ******************************
 
+// ******************************
+// ******** Start Page No 6****
+// ******************************
 
+$pdf->AddPage('P', 'LETTER');
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$html = '<div><b>Part 2. Application Type or Filing Category </b> (continued)</div>';
+$pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');
+// ...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 33, "<b>3.b.&nbsp;&nbsp;&nbsp;Employment-based </b>", 0, 0, false, true, 'L', true);
+
+drawCheckboxWithLabel($pdf, 19, 38.5, 'p2_3b_alien_extraordinary', 'i_485_alien_extraordinary_status', 'Alien of Extraordinary Ability');
+$pdf->writeHTMLCell(190, 1, 20, 45, "Alien Workers, Form I-140 (select your category below and answer the following questions below, as applicable): ", 0, 0, false, true, 'L', true);
+
+drawCheckboxWithLabel($pdf, 19, 50.5, 'p2_3b_outstanding_professor', 'i_485_outstanding_professor_status', 'Outstanding Professor or Researcher');
+drawCheckboxWithLabel($pdf, 19, 57, 'p2_3b_multinational_exec', 'i_485_multinational_exec_status', 'Multinational Executive or Manager');
+drawCheckboxWithLabel($pdf, 19, 63, 'p2_3b_advanced_degree', 'i_485_advanced_degree_status', 'Member of the Professions Holding an Advanced Degree or Alien of Exceptional Ability (who is NOT seeking a National Interest Waiver)');
+drawCheckboxWithLabel($pdf, 19, 73, 'p2_3b_professional_bachelor', 'i_485_professional_bachelor_status', "A Professional (at a minimum, requiring a bachelor's degree or a foreign degree equivalent to a U.S. bachelor's degree)");
+drawCheckboxWithLabel($pdf, 19, 80, 'p2_3b_skilled_worker', 'i_485_skilled_worker_status', 'A Skilled Worker (requiring at least 2 years of specialized training or experience)');
+drawCheckboxWithLabel($pdf, 19, 87, 'p2_3b_other_worker', 'i_485_other_worker_status', 'Any Other Worker (requiring less than 2 years of training or experience)');
+drawCheckboxWithLabel($pdf, 19, 94, 'p2_3b_national_interest', 'i_485_national_interest_status', 'An Alien Applying For a National Interest Waiver (who IS a member of the professions holding an advanced degree or an alien of exceptional ability)');
+
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(190, 1, 20, 105.5, "Did a relative file the associated Form I-140 for you (or for the principal applicant if you are a derivative applicant) or does a relative have a significant ownership interest (5 percent or more) in the business that filed Form I-140 for you (or for the principal applicant, if you are a derivative applicant)? ", 0, 0, false, true, 'L', true);
+
+drawCheckboxWithLabel($pdf, 19, 120, 'p2_3b_na_self_petition', 'i_485_na_self_petition_status', 'N/A (I am adjusting on the basis of a Form I-140 self-petition)');
+drawCheckboxWithLabel($pdf, 19, 127, 'p2_3b_no', 'i_485_no_status', 'No');
+drawCheckboxWithLabel($pdf, 19, 134, 'p2_3b_yes', 'i_485_yes_status', 'Yes');
+
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(190, 1, 26, 142, 'If you answered "Yes," is this relative your (select only one box):', 0, 0, false, true, 'L', true);
+
+drawCheckboxWithLabel($pdf, 25, 147, 'p2_3b_father', 'i_485_father_status', 'Father');
+drawCheckboxWithLabel($pdf, 47, 147, 'p2_3b_mother', 'i_485_mother_status', 'Mother');
+drawCheckboxWithLabel($pdf, 69, 147, 'p2_3b_child', 'i_485_child_status', 'Child');
+drawCheckboxWithLabel($pdf, 88, 147, 'p2_3b_adult_son', 'i_485_adult_son_status', 'Adult Son');
+drawCheckboxWithLabel($pdf, 113.5, 147, 'p2_3b_adult_daughter', 'i_485_adult_daughter_status', 'Adult Daughter');
+drawCheckboxWithLabel($pdf, 147, 147, 'p2_3b_brother', 'i_485_brother_status', 'Brother');
+drawCheckboxWithLabel($pdf, 170, 147, 'p2_3b_sister', 'i_485_sister_status', 'Sister');
+drawCheckboxWithLabel($pdf, 25, 154, 'p2_3b_none', 'i_485_none_status', 'None of These');
+
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(190, 1, 26, 162, 'Is the relative above a:', 0, 0, false, true, 'L', true);
+
+drawCheckboxWithLabel($pdf, 25, 167, 'p2_3b_us_citizen', 'i_485_us_citizen_status', 'U.S. Citizen');
+drawCheckboxWithLabel($pdf, 52, 167, 'p2_3b_us_national', 'i_485_us_national_status', 'U.S. National');
+drawCheckboxWithLabel($pdf, 81, 167, 'p2_3b_lpr', 'i_485_lpr_status', 'Lawful Permanent Resident');
+drawCheckboxWithLabel($pdf, 130, 167, 'p2_3b_none', 'i_485_none_status', 'None of These');
+
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 175, "<b>3.c.&nbsp;&nbsp;&nbsp;Special Immigrant </b>", 0, 0, false, true, 'L', true);
+
+drawCheckboxWithLabel($pdf, 19, 181, 'p2_3c_special_juvenile', 'i_485_special_juvenile_status', 'Special Immigrant Juvenile, Form I-360');
+drawCheckboxWithLabel($pdf, 19, 187.3, 'p2_3c_afghan_iraqi', 'i_485_afghan_iraqi_status', 'Certain Afghan or Iraqi National, Form I-360 or Form DS-157');
+drawCheckboxWithLabel($pdf, 19, 193.5, 'p2_3c_broadcaster', 'i_485_broadcaster_status', 'Certain International Broadcaster, Form I-360');
+drawCheckboxWithLabel($pdf, 19, 199.7, 'p2_3c_g4_nato', 'i_485_g4_nato_status', 'Certain G-4 International Organization or Family Member or NATO-6 Employee or Family Member, Form I-360');
+drawCheckboxWithLabel($pdf, 19, 206, 'p2_3c_armed_forces', 'i_485_armed_forces_status', 'Certain U.S. Armed Forces Members (also known as the Six and Six program), Form I-360');
+drawCheckboxWithLabel($pdf, 19, 212, 'p2_3c_panama', 'i_485_panama_status', 'Panama Canal Zone Employees, Form I-360');
+drawCheckboxWithLabel($pdf, 19, 218.3, 'p2_3c_physicians', 'i_485_physicians_status', 'Certain Physicians, Form I-360');
+drawCheckboxWithLabel($pdf, 19, 224.5, 'p2_3c_usgov_employee', 'i_485_usgov_employee_status', 'Certain Employee or Former Employee of the U.S. Government Abroad, DS-1884');
+
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(190, 1, 20, 232, 'Religious Worker, Form I-360 (select your specific category below):', 0, 0, false, true, 'L', true);
+drawCheckboxWithLabel($pdf, 19, 238.5, 'p2_3c_minister', 'i_485_minister_status', 'Minister of Religion');
+drawCheckboxWithLabel($pdf, 19, 244.5, 'p2_3c_other_religious', 'i_485_other_religious_status', 'Other Religious Worker');
 
 
 // !end
