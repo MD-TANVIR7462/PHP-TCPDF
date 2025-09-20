@@ -1207,7 +1207,7 @@ $pdf->writeHTMLCell(190, 1, 26, 162, 'Is the relative above a:', 0, 0, false, tr
 drawCheckboxWithLabel($pdf, 25, 167, 'p2_3b_us_citizen', 'i_485_us_citizen_status', 'U.S. Citizen');
 drawCheckboxWithLabel($pdf, 52, 167, 'p2_3b_us_national', 'i_485_us_national_status', 'U.S. National');
 drawCheckboxWithLabel($pdf, 81, 167, 'p2_3b_lpr', 'i_485_lpr_status', 'Lawful Permanent Resident');
-drawCheckboxWithLabel($pdf, 130, 167, 'p2_3b_none', 'i_485_none_status', 'None of These');
+drawCheckboxWithLabel($pdf, 130, 167, 'p2_3b_none', 'i_485_none2_status', 'None of These');
 
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 175, "<b>3.c.&nbsp;&nbsp;&nbsp;Special Immigrant </b>", 0, 0, false, true, 'L', true);
@@ -1225,7 +1225,83 @@ $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(190, 1, 20, 232, 'Religious Worker, Form I-360 (select your specific category below):', 0, 0, false, true, 'L', true);
 drawCheckboxWithLabel($pdf, 19, 238.5, 'p2_3c_minister', 'i_485_minister_status', 'Minister of Religion');
 drawCheckboxWithLabel($pdf, 19, 244.5, 'p2_3c_other_religious', 'i_485_other_religious_status', 'Other Religious Worker');
+//******************************
+//******** End Page No 6 ******
+//******************************
 
+//******************************
+//******** Start Page No 7****
+//******************************
+$pdf->AddPage('P', 'LETTER');
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$html = '<div><b>Part 2. Application Type or Filing Category </b> (continued)</div>';
+$pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');
+// ...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 33, "<b>3.d.&nbsp;&nbsp;&nbsp;Asylee or Refugee </b>", 0, 0, false, true, 'L', true);
+//.................
+drawCheckboxWithLabel($pdf, 19, 38.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Asylum Status (Immigration and Nationality Act (INA) section 208), Form I-589 or Form I-730');
+$pdf->writeHTMLCell(190, 1, 20, 45, "If you selected asylum, date you were granted asylum (mm/dd/yyyy). ", 0, 0, false, true, 'L', true);
+//........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_unit_number', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 127, 45);
+//........
+//.................
+drawCheckboxWithLabel($pdf, 19, 51.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Refugee Status (INA section 207), Form I-590 or Form I-730');
+$pdf->writeHTMLCell(190, 1, 20, 59, "If you selected refugee, date of initial admission as refugee (mm/dd/yyyy).", 0, 0, false, true, 'L', true);
+//........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_unit_number', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 127, 59);
+// ...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 66, "<b>3.e.&nbsp;&nbsp;&nbsp;Human Trafficking Victim or Crime Victim</b>", 0, 0, false, true, 'L', true);
+drawCheckboxWithLabel($pdf, 19, 71.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Human Trafficking Victim (T Nonimmigrant), Form I-914 or Derivative Family Member, Form I-914A');
+drawCheckboxWithLabel($pdf, 19, 78, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Victim of Qualifying Criminal Activity (U Nonimmigrant), Form I-918, Derivative Family Member, Form I-918A, or<br>Qualifying Family Member, Form I-929r');
+// ...........
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 12, 89, "<b>3.f.&nbsp;&nbsp;&nbsp;Special Programs Based on Certain Public Laws</b>", 0, 0, false, true, 'L', true);
+// drawCheckboxWithLabel($pdf, 19, 95.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'The Cuban Adjustment Act ');
+// drawCheckboxWithLabel($pdf, 19, 102, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'A Victim of Battery or Extreme Cruelty as a Spouse or Child Under the Cuban Adjustment Act');
+// drawCheckboxWithLabel($pdf, 19, 109, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Applicant Adjusting Based on Dependent Status Under the Haitian Refugee Immigrant Fairness Act');
+// drawCheckboxWithLabel($pdf, 19, 116, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'A Victim of Battery or Extreme Cruelty as a Spouse or Child Applying Based on Dependent Status Under the Haitian<br>Refugee Immigrant Fairness Act');
+// drawCheckboxWithLabel($pdf, 19, 126.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', "Lautenberg Parolees");
+// drawCheckboxWithLabel($pdf, 19, 133.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Diplomats or High-Ranking Officials Unable to Return Home (Section 13 of the Act of September 11, 1957)');
+// drawCheckboxWithLabel($pdf, 19, 140, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Nationals of Vietnam, Cambodia, and Laos Applying for Adjustment of Status Under section 586 of Public Law 106-429');
+// drawCheckboxWithLabel($pdf, 19, 146.6, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Applicant Adjusting Under the Amerasian Act (October 22, 1982), Form I-360');
+// //...........
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 12, 155, "<b>3.g.&nbsp;&nbsp;&nbsp;Additional Options  </b>", 0, 0, false, true, 'L', true);
+// // .........
+// drawCheckboxWithLabel($pdf, 19, 161, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Diversity Visa program');
+// $pdf->writeHTMLCell(190, 1, 20, 168, "If you selected Diversity Visa program, provide your Diversity Visa Rank Number:", 0, 0, false, true, 'L', true);
+// //........
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('employer_unit_number', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 142, 168);
+// //.............
+// drawCheckboxWithLabel($pdf, 19, 174, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Continuous Residence in the United States Since Before January 1, 1972 ("Registry")');
+// drawCheckboxWithLabel($pdf, 19, 180.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Individual Born in the United States Under Diplomatic Status');
+// drawCheckboxWithLabel($pdf, 19, 187, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'S Nonimmigrants and Qualifying Family Members (can only adjust in this category with an approved Form I-854B filed by<br>a law enforcement officer) ');
+// drawCheckboxWithLabel($pdf, 19, 197, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Other Eligibility');
+// //........
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('employer_unit_number', 178, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 202.8);
+// //..............
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 12, 210.6, "<b>4.</b>", 0, 0, false, true, 'L', true);
+// addYesNoQuestion($pdf, 'If you selected a family-based, employment-based, special immigrant, or Diversity Visa immigrant<br>
+// category listed above in <b>Item Numbers 3.a. - 3.g</b>. as the basis for your application for adjustment of<br>
+// status, are you applying for adjustment based on INA section 245(i)?', 20, 210, 'name', 'i_131_exclusion_status');
+// //..............
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(130, 1, 12, 223.6, "<b>5.</b>", 0, 0, false, true, 'L', true);
+// addYesNoQuestion($pdf, 'Are you 21 years of age or older and applying for adjustment based on classification as a child, under the<br>
+// provisions of the Child Status Protection Act (CSPA)?', 20, 223, 'name', 'i_131_exclusion_status');
+// //..............
+// $pdf->setFont('Times', '', 10);
+// $pdf->writeHTMLCell(190, 1, 20, 235, "<b>NOTE:</b>For more information to determine if you are eligible under CSPA, see the <b>Who May File Form I-485</b> section of these<br>Instructions.", 0, 0, false, true, 'L', true);
 
 // !end
 //  ******************************
@@ -1260,9 +1336,9 @@ $pdf->writeHTMLCell(197, 5, 12, 62, '<b>3.</b>', '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 20, 62, "Applicant's Email Address (if any)", '', 1, false, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p13_Applicant_family_name', 88, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 54);
-$pdf->TextField('p13_Applicant_given_name', 84, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 54);
-$pdf->TextField('p13_Applicant_business_name', 88, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 67);
+$pdf->TextField('p10_Applicant_daytime', 88, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 54);
+$pdf->TextField('p10_Applicant_mobile', 84, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 120, 54);
+$pdf->TextField('p10_Applicant_email', 88, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 67);
 //........................
 $pdf->setFont('Times', '', 12);
 $html = '<div><b><i>Applicant\'s Certification and Signature</i></b></div>';
@@ -1283,7 +1359,7 @@ $pdf->writeHTMLCell(197, 5, 155, 114, "Date of Signature (mm/dd/yyyy)", '', 1, f
 //.............
 $pdf->writeHTMLCell(133, 6.6, 21, 119.2, "", 1, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p13_Applicant_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 119.2);
+$pdf->TextField('p10_Applicant_date_signature', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 119.2);
 //................
 
 
@@ -1305,9 +1381,9 @@ $pdf->writeHTMLCell(197, 5, 12, 165, '<b>2.</b>', '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 20, 165, "Interpreter's Business or Organization Name", '', 1, false, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p13_Interpreter_family_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 156);
-$pdf->TextField('p13_Interpreter_given_name', 89, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 156);
-$pdf->TextField('p13_Interpreter_business_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 170);
+$pdf->TextField('p11_Interpreter_family_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 156);
+$pdf->TextField('p11_Interpreter_given_name', 89, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 156);
+$pdf->TextField('p11_Interpreter_business_name', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 170);
 //...............
 $pdf->setFont('Times', '', 12);
 $html = '<div><b><i>Interpreter\'s Contact Information </i></b></div>';
@@ -1324,9 +1400,9 @@ $pdf->writeHTMLCell(197, 5, 12, 202, '<b>5.</b>', '', 1, false, 'L');
 $pdf->writeHTMLCell(197, 5, 20, 202, "Interpreter's Email Address (if any) ", '', 1, false, 'L');
 //..............
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p13_Interpreter_daytime', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 194);
-$pdf->TextField('p13_Interpreter_mobile', 80, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 124, 194);
-$pdf->TextField('p13_Interpreter_email', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 207);
+$pdf->TextField('p11_Interpreter_daytime', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 194);
+$pdf->TextField('p11_Interpreter_mobile', 80, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 124, 194);
+$pdf->TextField('p11_Interpreter_email', 92, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 207);
 
 //........................
 $pdf->setFont('Times', '', 11.6);
@@ -1339,7 +1415,7 @@ $pdf->writeHTMLCell(197, 5, 12, 226.5, "I certify, under penalty of perjury, tha
 and I have interpreted every question on the application and Instructions and interpreted the applicant's answers to the questions in that<br>
 language, and the applicant informed me that he or she understood every instruction, question, and answer on the application.", '', 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p13_Interpreter_signature_date', 93, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 106, 225.8);
+$pdf->TextField('p11_Interpreter_fluent_language', 93, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 106, 225.8);
 //..............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(197, 5, 199, 225.8, ',', '', 1, false, 'L');
@@ -1349,7 +1425,7 @@ $pdf->writeHTMLCell(197, 5, 155, 243.4, "Date of Signature (mm/dd/yyyy)", '', 1,
 //.............
 $pdf->writeHTMLCell(133, 6.6, 21, 249.2, "", 1, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
-$pdf->TextField('p13_Interpreter_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 249.2);
+$pdf->TextField('p11_Interpreter_signature_date', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 249.2);
 
 
 // ******************************
@@ -1704,6 +1780,29 @@ var fields = {
 	
 
 	
+
+
+
+// page 22
+
+    'p10_Applicant_daytime':' " . showData('example') . "',
+    'p10_Applicant_mobile':' " . showData('example') . "',
+    'p10_Applicant_email':' " . showData('example') . "',
+    'p10_Applicant_date_signature':' " . showData('example') . "',
+
+    'p11_Interpreter_family_name':' " . showData('example') . "',
+    'p11_Interpreter_given_name':' " . showData('example') . "',
+    'p11_Interpreter_business_name':' " . showData('example') . "',
+    'p11_Interpreter_daytime':' " . showData('example') . "',
+    'p11_Interpreter_mobile':' " . showData('example') . "',
+    'p11_Interpreter_email':' " . showData('example') . "',
+    'p11_Interpreter_fluent_language':' " . showData('example') . "',
+    'p11_Interpreter_signature_date':' " . showData('example') . "',
+
+
+
+
+
 // page 18
 	
     'interpreter_certification':' " . showData('i_485_interpreter_certification_language_skill') . "',
@@ -1723,7 +1822,7 @@ var fields = {
     'preparers_contact_mobile_telephone':' " . showData('i_485_preparer_mobile') . "',
     'preparers_contact_email':' " . showData('i_485_preparer_email') . "',
 	
-//page 19
+//page 
 	
     'Preparer_signature_date':' " . showData('i_485_preparer_sign_date') . "',
     'part13_numbered':'" . showData('i_485_sign_interview_permanent_residence_pages_from') . "',
@@ -1732,7 +1831,7 @@ var fields = {
     'part13_through2':'" . showData('i_485_sign_interview_additional_pages_to') . "',
     'i_485_page_19_p13_signature':' " . showData('i_485_uscis_officer_sign_date') . "',
 	
-// page 20
+// page 24
 	
     'i_485_additional_info_last_name':' " . showData('i_485_additional_info_last_name') . "',
     'i_485_additional_info_first_name':' " . showData('i_485_additional_info_first_name') . "',

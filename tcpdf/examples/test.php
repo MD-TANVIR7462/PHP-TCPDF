@@ -49,3 +49,19 @@
     'p1_18_country4':' " . showData('example') . "',
     'p1_18_residence_from_date4':' " . showData('example') . "',
     'p1_18_residence_to_date4':' " . showData('example') . "',
+
+
+
+    'p10_Applicant_daytime':' " . showData('example') . "',
+    'p10_Applicant_mobile':' " . showData('example') . "',
+    'p10_Applicant_email':' " . showData('example') . "',
+    'p10_Applicant_date_signature':' " . showData('example') . "',
+
+    'p11_Interpreter_family_name':' " . showData('example') . "',
+    'p11_Interpreter_given_name':' " . showData('example') . "',
+    'p11_Interpreter_business_name':' " . showData('example') . "',
+    'p11_Interpreter_daytime':' " . showData('example') . "',
+    'p11_Interpreter_mobile':' " . showData('example') . "',
+    'p11_Interpreter_email':' " . showData('example') . "',
+    'p11_Interpreter_fluent_language':' " . showData('example') . "',
+    'p11_Interpreter_signature_date':' " . showData('example') . "',
