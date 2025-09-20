@@ -1357,8 +1357,8 @@ $pdf->writeHTMLCell(191.5, 6.5, 13, 117, "<b>1.</b>", 0, 0, false, 'L');
 addYesNoQuestion($pdf, 'Have you ever applied for an immigrant visa to obtain permanent resident status at a U.S. Embassy or<br>
 U.S. Consulate abroad?', 20, 116.5, '54', 'i_131_exclusion_status');
 // //...........
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(191.5, 6.5, 20, 127, 'If you answered "Yes," complete <b>Item Numbers 2. - 4.</b>below.', 0, 0, false, 'L');
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 20, 127, 'If you answered "Yes," complete <b>Item Numbers 2. - 4.</b>below.', 0, 0, false, 'L');
 // //...........
 // $pdf->setFont('Times', '', 10);
 // $pdf->writeHTMLCell(191.5, 6.5, 13, 132.8, '<b>2.</b>', 0, 0, false, 'L');
