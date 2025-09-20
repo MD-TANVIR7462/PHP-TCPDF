@@ -1360,56 +1360,56 @@ U.S. Consulate abroad?', 20, 116.5, '54', 'i_131_exclusion_status');
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 20, 127, 'If you answered "Yes," complete <b>Item Numbers 2. - 4.</b>below.', 0, 0, false, 'L');
 // //...........
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(191.5, 6.5, 13, 132.8, '<b>2.</b>', 0, 0, false, 'L');
-// $pdf->writeHTMLCell(191.5, 6.5, 20, 133, 'Location of U.S. Embassy or U.S. Consulate', 0, 0, false, 'L');
-// $pdf->writeHTMLCell(191.5, 6.5, 20, 141, 'City or Town', 0, 0, false, 'L');
-// $pdf->writeHTMLCell(191.5, 6.5, 113.6, 141, 'Country', 0, 0, false, 'L');
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('employer_street', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 145.7);
-// $pdf->TextField('employer_street', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 145.7);
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 132.8, '<b>2.</b>', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 20, 133, 'Location of U.S. Embassy or U.S. Consulate', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 20, 141, 'City or Town', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 113.6, 141, 'Country', 0, 0, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_street', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 145.7);
+$pdf->TextField('employer_street', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 145.7);
 // //...........
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(191.5, 6.5, 13, 154.8, '<b>3.</b>', 0, 0, false, 'L');
-// $pdf->writeHTMLCell(191.5, 6.5, 20, 155, 'Decision (for example, approved, refused, denied, withdrawn)', 0, 0, false, 'L');
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('employer_street', 87, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 118, 154.9);
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 154.8, '<b>3.</b>', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 20, 155, 'Decision (for example, approved, refused, denied, withdrawn)', 0, 0, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_street', 87, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 118, 154.9);
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 162.8, '<b>4.</b>', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 20, 163, 'Date of Decision (mm/dd/yyyy)', 0, 0, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_street', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 69, 163.5);
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 172, '<b>5.</b>', 0, 0, false, 'L');
+addYesNoQuestion($pdf, 'Have you previously applied for permanent residence while in the United States?', 20, 171, '54', 'i_131_exclusion_status');
+//.............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 180, '<b>6.</b>', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 35, 180, '<b>EVER</b>', 0, 0, false, 'L');
+addYesNoQuestion($pdf, '<div>Have you&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; held lawful permanent resident status which was later rescinded under INA section 246?</div>', 20, 179, '54', 'i_131_exclusion_status');
+//.............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 187, '<b>Employment and Educational History</b>', 0, 0, false, 'L');
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 13, 194, '<b>7.</b>', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 20, 194, 'Provide <b>ALL</b> of your employment and educational history for the last 5 years as indicated in the Instructions. Provide your<br>
+current employment or school attended first. Include periods of self-employment, unemployment, or retirement. For each period<br>
+of unemployment or retirement, list source of financial support. If you have additional employment or educational history, use<br>
+the space provided in <b>Part 14. Additional Information.</b>', 0, 0, false, 'L');
 // //...........
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(191.5, 6.5, 13, 162.8, '<b>4.</b>', 0, 0, false, 'L');
-// $pdf->writeHTMLCell(191.5, 6.5, 20, 163, 'Date of Decision (mm/dd/yyyy)', 0, 0, false, 'L');
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('employer_street', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 69, 163.5);
-// //...........
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(191.5, 6.5, 13, 172, '<b>5.</b>', 0, 0, false, 'L');
-// addYesNoQuestion($pdf, 'Have you previously applied for permanent residence while in the United States?', 20, 171, '54', 'i_131_exclusion_status');
-// //.............
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(191.5, 6.5, 13, 180, '<b>6.</b>', 0, 0, false, 'L');
-// $pdf->writeHTMLCell(191.5, 6.5, 35, 180, '<b>EVER</b>', 0, 0, false, 'L');
-// addYesNoQuestion($pdf, '<div>Have you&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; held lawful permanent resident status which was later rescinded under INA section 246?</div>', 20, 179, '54', 'i_131_exclusion_status');
-// //.............
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(191.5, 6.5, 13, 187, '<b>Employment and Educational History</b>', 0, 0, false, 'L');
-// //...........
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(191.5, 6.5, 13, 194, '<b>7.</b>', 0, 0, false, 'L');
-// $pdf->writeHTMLCell(191.5, 6.5, 20, 194, 'Provide <b>ALL</b> of your employment and educational history for the last 5 years as indicated in the Instructions. Provide your<br>
-// current employment or school attended first. Include periods of self-employment, unemployment, or retirement. For each period<br>
-// of unemployment or retirement, list source of financial support. If you have additional employment or educational history, use<br>
-// the space provided in <b>Part 14. Additional Information.</b>', 0, 0, false, 'L');
-// //...........
-// $pdf->writeHTMLCell(191.5, 6.5, 20, 214, 'Employer or School (current or most recent)', 0, 0, false, 'L');
-// $pdf->writeHTMLCell(191.5, 6.5, 113.6, 214, 'Name of Employer, Company, or School', 0, 0, false, 'L');
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('employer_street', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 219);
-// $pdf->TextField('employer_street', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 219);
-// //...........
-// $pdf->setFont('Times', '', 10);
-// $pdf->writeHTMLCell(191.5, 6.5, 20, 226.5, 'Your Occupation (if unemployed or retired, so state)', 0, 0, false, 'L');
-// $pdf->SetFont('courier', 'B', 10);
-// $pdf->TextField('employer_street', 184, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 232);
+$pdf->writeHTMLCell(191.5, 6.5, 20, 214, 'Employer or School (current or most recent)', 0, 0, false, 'L');
+$pdf->writeHTMLCell(191.5, 6.5, 113.6, 214, 'Name of Employer, Company, or School', 0, 0, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_street', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 219);
+$pdf->TextField('employer_street', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 219);
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(191.5, 6.5, 20, 226.5, 'Your Occupation (if unemployed or retired, so state)', 0, 0, false, 'L');
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('employer_street', 184, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 232);
 // !end
 //  ******************************
 //  ******** End Page No 21 ******
