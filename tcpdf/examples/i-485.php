@@ -1468,9 +1468,6 @@ $pdf->writeHTMLCell(133, 6.6, 21, 119.2, "", 1, 1, false, 'L');
 $pdf->SetFont('courier', 'B', 10); // set font
 $pdf->TextField('p10_Applicant_date_signature', 48, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 156, 119.2);
 //................
-
-
-
 $pdf->setFont('Times', '', 12);
 $html = "<div><b>Part 11. Interpreter's Contact Information, Certification, and Signature </b></div>";
 $pdf->writeHTMLCell(191.5, 6, 13, 132, $html, 1, 1, true, 'L');
