@@ -1242,63 +1242,64 @@ $pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');
 // ...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 33, "<b>3.d.&nbsp;&nbsp;&nbsp;Asylee or Refugee </b>", 0, 0, false, true, 'L', true);
-//.................
-drawCheckboxWithLabel($pdf, 19, 38.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Asylum Status (Immigration and Nationality Act (INA) section 208), Form I-589 or Form I-730');
+//................. 
+drawCheckboxWithLabel($pdf, 19, 38.5, 'p2_3d_asylum', 'i_485_asylum_status', 'Asylum Status (Immigration and Nationality Act (INA) section 208), Form I-589 or Form I-730');
 $pdf->writeHTMLCell(190, 1, 20, 45, "If you selected asylum, date you were granted asylum (mm/dd/yyyy). ", 0, 0, false, true, 'L', true);
 //........
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_unit_number', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 127, 45);
+$pdf->TextField('i_485_asylum_date', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 127, 45);
 //........
-//.................
-drawCheckboxWithLabel($pdf, 19, 51.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Refugee Status (INA section 207), Form I-590 or Form I-730');
+//................. 
+drawCheckboxWithLabel($pdf, 19, 51.5, 'p2_3d_refugee', 'i_485_refugee_status', 'Refugee Status (INA section 207), Form I-590 or Form I-730');
 $pdf->writeHTMLCell(190, 1, 20, 59, "If you selected refugee, date of initial admission as refugee (mm/dd/yyyy).", 0, 0, false, true, 'L', true);
 //........
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_unit_number', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 127, 59);
+$pdf->TextField('i_485_refugee_date', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 127, 59);
 // ...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 66, "<b>3.e.&nbsp;&nbsp;&nbsp;Human Trafficking Victim or Crime Victim</b>", 0, 0, false, true, 'L', true);
-drawCheckboxWithLabel($pdf, 19, 71.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Human Trafficking Victim (T Nonimmigrant), Form I-914 or Derivative Family Member, Form I-914A');
-drawCheckboxWithLabel($pdf, 19, 78, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Victim of Qualifying Criminal Activity (U Nonimmigrant), Form I-918, Derivative Family Member, Form I-918A, or<br>Qualifying Family Member, Form I-929r');
+drawCheckboxWithLabel($pdf, 19, 71.5, 'p2_3e_t_visa', 'i_485_human_trafficking_status', 'Human Trafficking Victim (T Nonimmigrant), Form I-914 or Derivative Family Member, Form I-914A');
+drawCheckboxWithLabel($pdf, 19, 78, 'p2_3e_u_visa', 'i_485_crime_victim_status', 'Victim of Qualifying Criminal Activity (U Nonimmigrant), Form I-918, Derivative Family Member, Form I-918A, or<br>Qualifying Family Member, Form I-929r');
 // ...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 89, "<b>3.f.&nbsp;&nbsp;&nbsp;Special Programs Based on Certain Public Laws</b>", 0, 0, false, true, 'L', true);
-drawCheckboxWithLabel($pdf, 19, 95.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'The Cuban Adjustment Act ');
-drawCheckboxWithLabel($pdf, 19, 102, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'A Victim of Battery or Extreme Cruelty as a Spouse or Child Under the Cuban Adjustment Act');
-drawCheckboxWithLabel($pdf, 19, 109, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Applicant Adjusting Based on Dependent Status Under the Haitian Refugee Immigrant Fairness Act');
-drawCheckboxWithLabel($pdf, 19, 116, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'A Victim of Battery or Extreme Cruelty as a Spouse or Child Applying Based on Dependent Status Under the Haitian<br>Refugee Immigrant Fairness Act');
-drawCheckboxWithLabel($pdf, 19, 126.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', "Lautenberg Parolees");
-drawCheckboxWithLabel($pdf, 19, 133.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Diplomats or High-Ranking Officials Unable to Return Home (Section 13 of the Act of September 11, 1957)');
-drawCheckboxWithLabel($pdf, 19, 140, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Nationals of Vietnam, Cambodia, and Laos Applying for Adjustment of Status Under section 586 of Public Law 106-429');
-drawCheckboxWithLabel($pdf, 19, 146.6, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Applicant Adjusting Under the Amerasian Act (October 22, 1982), Form I-360');
+drawCheckboxWithLabel($pdf, 19, 95.5, 'p2_3f_cuban_adjustment', 'i_485_cuban_adjustment_status', 'The Cuban Adjustment Act ');
+drawCheckboxWithLabel($pdf, 19, 102, 'p2_3f_cuban_vawa', 'i_485_cuban_vawa_status', 'A Victim of Battery or Extreme Cruelty as a Spouse or Child Under the Cuban Adjustment Act');
+drawCheckboxWithLabel($pdf, 19, 109, 'p2_3f_hrifa', 'i_485_hrifa_status', 'Applicant Adjusting Based on Dependent Status Under the Haitian Refugee Immigrant Fairness Act');
+drawCheckboxWithLabel($pdf, 19, 116, 'p2_3f_hrifa_vawa', 'i_485_hrifa_vawa_status', 'A Victim of Battery or Extreme Cruelty as a Spouse or Child Applying Based on Dependent Status Under the Haitian<br>Refugee Immigrant Fairness Act');
+drawCheckboxWithLabel($pdf, 19, 126.5, 'p2_3f_lautenberg', 'i_485_lautenberg_status', "Lautenberg Parolees");
+drawCheckboxWithLabel($pdf, 19, 133.5, 'p2_3f_section13', 'i_485_section13_status', 'Diplomats or High-Ranking Officials Unable to Return Home (Section 13 of the Act of September 11, 1957)');
+drawCheckboxWithLabel($pdf, 19, 140, 'p2_3f_se_asia', 'i_485_se_asia_status', 'Nationals of Vietnam, Cambodia, and Laos Applying for Adjustment of Status Under section 586 of Public Law 106-429');
+drawCheckboxWithLabel($pdf, 19, 146.6, 'p2_3f_amerasian', 'i_485_amerasian_status', 'Applicant Adjusting Under the Amerasian Act (October 22, 1982), Form I-360');
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 155, "<b>3.g.&nbsp;&nbsp;&nbsp;Additional Options  </b>", 0, 0, false, true, 'L', true);
-// .........
-drawCheckboxWithLabel($pdf, 19, 161, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Diversity Visa program');
+// ......... 
+drawCheckboxWithLabel($pdf, 19, 161, 'p2_3g_dv', 'i_485_diversity_visa_status', 'Diversity Visa program');
 $pdf->writeHTMLCell(190, 1, 20, 168, "If you selected Diversity Visa program, provide your Diversity Visa Rank Number:", 0, 0, false, true, 'L', true);
 //........
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_unit_number', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 142, 168);
-//.............
-drawCheckboxWithLabel($pdf, 19, 174, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Continuous Residence in the United States Since Before January 1, 1972 ("Registry")');
-drawCheckboxWithLabel($pdf, 19, 180.5, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Individual Born in the United States Under Diplomatic Status');
-drawCheckboxWithLabel($pdf, 19, 187, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'S Nonimmigrants and Qualifying Family Members (can only adjust in this category with an approved Form I-854B filed by<br>a law enforcement officer) ');
-drawCheckboxWithLabel($pdf, 19, 197, 'terms_checkbox', 'i_131_correction_terms_conditions_status', 'Other Eligibility');
+$pdf->TextField('i_485_diversity_visa_rank', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 142, 168);
+//............. 
+drawCheckboxWithLabel($pdf, 19, 174, 'p2_3g_registry', 'i_485_registry_status', 'Continuous Residence in the United States Since Before January 1, 1972 ("Registry")');
+drawCheckboxWithLabel($pdf, 19, 180.5, 'p2_3g_diplomatic_birth', 'i_485_diplomatic_birth_status', 'Individual Born in the United States Under Diplomatic Status');
+drawCheckboxWithLabel($pdf, 19, 187, 'p2_3g_s_nonimmigrant', 'i_485_s_nonimmigrant_status', 'S Nonimmigrants and Qualifying Family Members (can only adjust in this category with an approved Form I-854B filed by<br>a law enforcement officer) ');
+drawCheckboxWithLabel($pdf, 19, 197, 'p2_3g_other', 'i_485_other_eligibility_status', 'Other Eligibility');
 //........
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_unit_number', 178, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 202.8);
+$pdf->TextField('i_485_other_eligibility_text', 178, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 202.8);
+
 //..............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 210.6, "<b>4.</b>", 0, 0, false, true, 'L', true);
 addYesNoQuestion($pdf, 'If you selected a family-based, employment-based, special immigrant, or Diversity Visa immigrant<br>
 category listed above in <b>Item Numbers 3.a. - 3.g</b>. as the basis for your application for adjustment of<br>
-status, are you applying for adjustment based on INA section 245(i)?', 20, 210, 'name', 'i_131_exclusion_status');
+status, are you applying for adjustment based on INA section 245(i)?', 20, 210, 'name', 'i_485_diversity_visa_immigrant_status');
 //..............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(130, 1, 12, 223.6, "<b>5.</b>", 0, 0, false, true, 'L', true);
 addYesNoQuestion($pdf, 'Are you 21 years of age or older and applying for adjustment based on classification as a child, under the<br>
-provisions of the Child Status Protection Act (CSPA)?', 20, 223, 'name', 'i_131_exclusion_status');
+provisions of the Child Status Protection Act (CSPA)?', 20, 223, 'name', 'i_485_21_years_applying_status');
 //..............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(190, 1, 20, 235, "<b>NOTE:</b>For more information to determine if you are eligible under CSPA, see the <b>Who May File Form I-485</b> section of these<br>Instructions.", 0, 0, false, true, 'L', true);
@@ -1316,11 +1317,9 @@ $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $html = "<div><b>Part 3. Request for Exemption for Intending Immigrant's Affidavit of Support Under Section 213A of the INA  </b> </div>";
 $pdf->writeHTMLCell(191.5, 6.5, 13, 25.5, $html, 1, 1, true, 'L');
-
 // Main instructional text
 $pdf->SetFont('Times', '', 10);
 $pdf->writeHTMLCell(210, 6, 12, 38, 'I am requesting an exemption from submitting an Affidavit of Support Under Section 213A of the INA (Form I-864 or Form I-864EZ)<br>because (select <b>only one</b>):', 0, 1, false, true, 'L', true);
-
 // ........
 $pdf->writeHTMLCell(210, 6, 12, 48, '<b>1.a.</b>', 0, 1, false, true, 'L', true);
 drawCheckboxWithLabel($pdf, 19, 47, 'exemption_1a', 'exemption_1a_key', 'I have earned or can receive credit for 40 qualifying quarters (credits) of work in the United States (as defined by the Social<br>
@@ -1349,17 +1348,16 @@ $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $html = "<div><b>Part 4. Additional Information About You</b> </div>";
 $pdf->writeHTMLCell(191.5, 6.5, 13, 110, $html, 1, 1, true, 'L');
-
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 117, "<b>1.</b>", 0, 0, false, 'L');
 //......
 addYesNoQuestion($pdf, 'Have you ever applied for an immigrant visa to obtain permanent resident status at a U.S. Embassy or<br>
 U.S. Consulate abroad?', 20, 116.5, '54', 'i_131_exclusion_status');
-// //...........
+//...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 20, 127, 'If you answered "Yes," complete <b>Item Numbers 2. - 4.</b>below.', 0, 0, false, 'L');
-// //...........
+//...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 132.8, '<b>2.</b>', 0, 0, false, 'L');
 $pdf->writeHTMLCell(191.5, 6.5, 20, 133, 'Location of U.S. Embassy or U.S. Consulate', 0, 0, false, 'L');
@@ -1368,7 +1366,7 @@ $pdf->writeHTMLCell(191.5, 6.5, 113.6, 141, 'Country', 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('employer_street', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 145.7);
 $pdf->TextField('employer_street', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 145.7);
-// //...........
+//...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 154.8, '<b>3.</b>', 0, 0, false, 'L');
 $pdf->writeHTMLCell(191.5, 6.5, 20, 155, 'Decision (for example, approved, refused, denied, withdrawn)', 0, 0, false, 'L');
@@ -1399,7 +1397,7 @@ $pdf->writeHTMLCell(191.5, 6.5, 20, 194, 'Provide <b>ALL</b> of your employment 
 current employment or school attended first. Include periods of self-employment, unemployment, or retirement. For each period<br>
 of unemployment or retirement, list source of financial support. If you have additional employment or educational history, use<br>
 the space provided in <b>Part 14. Additional Information.</b>', 0, 0, false, 'L');
-// //...........
+//...........
 $pdf->writeHTMLCell(191.5, 6.5, 20, 214, 'Employer or School (current or most recent)', 0, 0, false, 'L');
 $pdf->writeHTMLCell(191.5, 6.5, 113.6, 214, 'Name of Employer, Company, or School', 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
@@ -1410,7 +1408,6 @@ $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 20, 226.5, 'Your Occupation (if unemployed or retired, so state)', 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('employer_street', 184, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 232);
-
 //  *****************************
 //  ******** End Page No 8******
 //  ******************************/
@@ -1425,7 +1422,7 @@ $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $pdf->SetFontSize(11.6);
 
-// // Section Header
+// Section Header
 $html = '<div><b>Part 4. Additional Information About You (continued)</b></div>';
 $pdf->writeHTMLCell(191.5, 6, 13, 25.5, $html, 1, 1, true, 'L');
 
@@ -1878,6 +1875,169 @@ $pdf->SetFont(...$fieldFont);
 $pdf->TextField('p1_1a', 60, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 50.5);
 $pdf->TextField('p1_1b', 55.5, $fieldHeight, $stroke, array(), $startX + 62.5, $startY + 50.5);
 $pdf->TextField('p1_1c', 65, $fieldHeight, $stroke, array(), $startX + 120, $startY + 50.5);
+// ******************************
+//  ******** End Page No 10 ******
+//  ******************************/
+
+// ******************************
+//  ******** Start Page No 11 ****
+//  ******************************/
+
+$pdf->AddPage('P', 'LETTER');
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+$pdf->SetFontSize(12);
+$html = "<div><b>Part 6. Information About Your Marital History</b> (continued)</div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
+//........
+$startX = 20;
+$startY = 34;
+// Set font for labels
+$pdf->SetFont('Times', '', 10);
+
+// Section number and title
+$pdf->writeHTMLCell(197, 5, $startX - 8, $startY, '<b>9.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY, "Place of Marriage to Current Spouse", '', 1, false, 'L');
+
+// Sub-labels
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 6, "City or Town", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 18, "Country", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX + 92, $startY + 6, "State or Province", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 32, "Date of Marriage to Current Spouse (mm/dd/yyyy)", '', 1, false, 'L');
+
+// Set font for input fields
+$pdf->SetFont('courier', 'B', 10);
+
+// Input fields
+$pdf->TextField('marriage_city', 90, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 11);
+
+$pdf->TextField('marriage_country', 90, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 23);
+
+$pdf->TextField('marriage_state', 92, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 93, $startY + 11);
+
+$pdf->TextField('marriage_date', 47, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 75.5, $startY + 32);
+
+// .................
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, 12, 74.2, '<b>10.</b>', '', 1, false, 'L');
+addYesNoQuestion($pdf, 'Is your current spouse applying with you?', 20, 73.5, '54', 'i_131_exclusion_status');
+//................
+$pdf->setFont('Times', 'I', 12);
+$html = "<div><b>Information About Prior Marriages</b> (if any)</div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 83, $html, 0, 1, true, 'L');
+//............
+$startX = 20;
+$startY = 90;
+
+// Section label
+$pdf->SetFont('Times', '', 10);
+$pdf->writeHTMLCell(197, 5, $startX - 8, $startY, '<b>11.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY, "Prior Spouse's Legal Name (provide family name before marriage)", '', 1, false, 'L');
+
+// Labels (all on same line)
+$pdf->writeHTMLCell(58, 7, $startX, $startY + 5, 'Family Name (Last Name)', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(58, 7, $startX + 66, $startY + 5, 'Given Name (First Name)', 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(65, 7, $startX + 128, $startY + 5, 'Middle Name (if applicable)', 0, 1, false, false, 'L', true);
+
+// Input fields on same horizontal line
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('prior_spouse_last_name', 63.6, 7, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 11);
+$pdf->TextField('prior_spouse_first_name', 60, 7, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 67, $startY + 11.5);
+$pdf->TextField('prior_spouse_middle_name', 56, 7, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 129, $startY + 12);
+//.......
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 12, 111, "<b>12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prior Spouse's Date of Birth (mm/dd/yyyy)", 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('prior_spouse_first_name', 47, 7, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 67, $startY + 21);
+// // Name fields on one line - Family, Given, Middle (adjusted spacing)
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(58, 7, 12, 120.5, "<b>13.</b>&nbsp;&nbsp;&nbsp;&nbsp;Prior Spouse's Country of Birthf", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(108, 7, 115, 120.5, "<b>14.</b>&nbsp;&nbsp;&nbsp;&nbsp;Prior Spouse's Country of Citizenship or Nationality", 0, 0, false, false, 'L', true);
+// //......
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('parent1_birth_last_name', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 125.6);
+$pdf->TextField('parent1_birth_first_name', 80, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 124, 125.6);
+//.......
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 7, 12, 135, "<b>15.</b>&nbsp;&nbsp;&nbsp;&nbsp;Date of Marriage to Prior Spouse's (mm/dd/yyyy)", 0, 1, false, false, 'L', true);
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('prior_spouse_first_name', 50, 7, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], 94, 135);
+//...................
+//! reusable component
+//........
+$startX = 20;
+$startY = 142;
+// Set font for labels
+$pdf->SetFont('Times', '', 10);
+// Section number and title
+$pdf->writeHTMLCell(197, 5, $startX - 8, $startY, '<b>16.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY, "Place of Marriage to Prior Spouse", '', 1, false, 'L');
+// Sub-labels
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 6, "City or Town", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 18, "Country", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX + 92, $startY + 6, "State or Province", '', 1, false, 'L');
+// Set fot for input fields
+$pdf->SetFont('courier', 'B', 10);
+// Input fields
+$pdf->TextField('marriage_city', 90, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 11);
+$pdf->TextField('marriage_country', 90, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 23);
+$pdf->TextField('marriage_state', 92, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 93, $startY + 11);
+//! reusable component
+$startX = 20;
+$startY = 172;
+// Set font for labels
+$pdf->SetFont('Times', '', 10);
+// Section number and title
+$pdf->writeHTMLCell(197, 5, $startX - 8, $startY, '<b>17.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY, "Place Where Marriage with Prior Spouse Legally Ended ", '', 1, false, 'L');
+// Sub-labels
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 6, "City or Town", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 18, "Country", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX + 92, $startY + 6, "State or Province", '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY + 32, "Date of Marriage with Prior Spouse Legally Ended (mm/dd/yyyy)", '', 1, false, 'L');
+// Set fot for input fields
+$pdf->SetFont('courier', 'B', 10);
+// Input fields
+$pdf->TextField('marriage_city', 90, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 11);
+$pdf->TextField('marriage_country', 90, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 1, $startY + 23);
+$pdf->TextField('marriage_state', 92, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 93, $startY + 11);
+$pdf->TextField('marriage_date', 47, 6.6, ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'], [], $startX + 95, $startY + 32);
+//? reusable component
+// Set font for labels
+$pdf->SetFont('Times', '', 10);
+// Section number and title
+$pdf->writeHTMLCell(197, 5, $startX - 8, $startY+40, '<b>18.</b>', '', 1, false, 'L');
+$pdf->writeHTMLCell(197, 5, $startX, $startY+40.4, "How Marriage Ended with Prior Spouse (select one):", '', 1, false, 'L'); 
+
+//............
+
+//.............
+$pdf->SetFont('times', '', 14);
+if (showData('biographic_info_eye_color') == "black") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 20, 218, '<input type="checkbox" name="p3_eye_color_status1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('biographic_info_eye_color') == "brown") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 42, 218, '<input type="checkbox" name="p3_eye_color_status3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('biographic_info_eye_color') == "gray") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 64, 218, '<input type="checkbox" name="p3_eye_color_status4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+if (showData('biographic_info_eye_color') == "green") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, 98, 218, '<input type="checkbox" name="p3_eye_color_status5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
+//..................
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(140, 1, 26, 218.5, "Annulled", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 48, 218.5, "Divorced", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 70, 218.5, "Spouse Deceased", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, 104, 218.5, "Other (Explain):", 0, 0, false, true, 'L', true);
+//..........
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p13_Interpreter_signature_date', 75, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 130, 218.5);
+
 
 // !end
 //  ******************************
@@ -2340,9 +2500,12 @@ var fields = {
     'p2_2_a_number':' " . showData('example') . "',
     'p2_2_dob':' " . showData('example') . "',
     	
-// page 13 
+// page 7
 
-
+    'i_485_asylum_date':' " . showData('example') . "',
+    'i_485_refugee_date':' " . showData('example') . "',
+    'i_485_diversity_visa_rank':' " . showData('example') . "',
+    'i_485_other_eligibility_text':' " . showData('example') . "',
 
 	
 // page 16

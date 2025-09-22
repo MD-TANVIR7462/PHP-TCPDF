@@ -65,3 +65,10 @@
     'p11_Interpreter_email':' " . showData('example') . "',
     'p11_Interpreter_fluent_language':' " . showData('example') . "',
     'p11_Interpreter_signature_date':' " . showData('example') . "',
+
+
+
+    'i_485_asylum_date':' " . showData('example') . "',
+    'i_485_refugee_date':' " . showData('example') . "',
+    'i_485_diversity_visa_rank':' " . showData('example') . "',
+    'i_485_other_eligibility_text':' " . showData('example') . "',
