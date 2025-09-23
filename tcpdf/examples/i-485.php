@@ -1237,6 +1237,84 @@ $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
+$html = '<div><b>Part 2. Application Type or Filing Category </b> (continued)</div>';
+$pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');
+// ...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 33, "<b>3.d.&nbsp;&nbsp;&nbsp;Asylee or Refugee </b>", 0, 0, false, true, 'L', true);
+//................. 
+drawCheckboxWithLabel($pdf, 19, 38.5, 'p2_3d_asylum', 'i_485_asylum_status', 'Asylum Status (Immigration and Nationality Act (INA) section 208), Form I-589 or Form I-730');
+$pdf->writeHTMLCell(190, 1, 20, 45, "If you selected asylum, date you were granted asylum (mm/dd/yyyy). ", 0, 0, false, true, 'L', true);
+//........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('i_485_asylum_date', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 127, 45);
+//........
+//................. 
+drawCheckboxWithLabel($pdf, 19, 51.5, 'p2_3d_refugee', 'i_485_refugee_status', 'Refugee Status (INA section 207), Form I-590 or Form I-730');
+$pdf->writeHTMLCell(190, 1, 20, 59, "If you selected refugee, date of initial admission as refugee (mm/dd/yyyy).", 0, 0, false, true, 'L', true);
+//........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('i_485_refugee_date', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 127, 59);
+// ...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 66, "<b>3.e.&nbsp;&nbsp;&nbsp;Human Trafficking Victim or Crime Victim</b>", 0, 0, false, true, 'L', true);
+drawCheckboxWithLabel($pdf, 19, 71.5, 'p2_3e_t_visa', 'i_485_human_trafficking_status', 'Human Trafficking Victim (T Nonimmigrant), Form I-914 or Derivative Family Member, Form I-914A');
+drawCheckboxWithLabel($pdf, 19, 78, 'p2_3e_u_visa', 'i_485_crime_victim_status', 'Victim of Qualifying Criminal Activity (U Nonimmigrant), Form I-918, Derivative Family Member, Form I-918A, or<br>Qualifying Family Member, Form I-929r');
+// ...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 89, "<b>3.f.&nbsp;&nbsp;&nbsp;Special Programs Based on Certain Public Laws</b>", 0, 0, false, true, 'L', true);
+drawCheckboxWithLabel($pdf, 19, 95.5, 'p2_3f_cuban_adjustment', 'i_485_cuban_adjustment_status', 'The Cuban Adjustment Act ');
+drawCheckboxWithLabel($pdf, 19, 102, 'p2_3f_cuban_vawa', 'i_485_cuban_vawa_status', 'A Victim of Battery or Extreme Cruelty as a Spouse or Child Under the Cuban Adjustment Act');
+drawCheckboxWithLabel($pdf, 19, 109, 'p2_3f_hrifa', 'i_485_hrifa_status', 'Applicant Adjusting Based on Dependent Status Under the Haitian Refugee Immigrant Fairness Act');
+drawCheckboxWithLabel($pdf, 19, 116, 'p2_3f_hrifa_vawa', 'i_485_hrifa_vawa_status', 'A Victim of Battery or Extreme Cruelty as a Spouse or Child Applying Based on Dependent Status Under the Haitian<br>Refugee Immigrant Fairness Act');
+drawCheckboxWithLabel($pdf, 19, 126.5, 'p2_3f_lautenberg', 'i_485_lautenberg_status', "Lautenberg Parolees");
+drawCheckboxWithLabel($pdf, 19, 133.5, 'p2_3f_section13', 'i_485_section13_status', 'Diplomats or High-Ranking Officials Unable to Return Home (Section 13 of the Act of September 11, 1957)');
+drawCheckboxWithLabel($pdf, 19, 140, 'p2_3f_se_asia', 'i_485_se_asia_status', 'Nationals of Vietnam, Cambodia, and Laos Applying for Adjustment of Status Under section 586 of Public Law 106-429');
+drawCheckboxWithLabel($pdf, 19, 146.6, 'p2_3f_amerasian', 'i_485_amerasian_status', 'Applicant Adjusting Under the Amerasian Act (October 22, 1982), Form I-360');
+//...........
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 155, "<b>3.g.&nbsp;&nbsp;&nbsp;Additional Options  </b>", 0, 0, false, true, 'L', true);
+// ......... 
+drawCheckboxWithLabel($pdf, 19, 161, 'p2_3g_dv', 'i_485_diversity_visa_status', 'Diversity Visa program');
+$pdf->writeHTMLCell(190, 1, 20, 168, "If you selected Diversity Visa program, provide your Diversity Visa Rank Number:", 0, 0, false, true, 'L', true);
+//........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('i_485_diversity_visa_rank', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 142, 168);
+//............. 
+drawCheckboxWithLabel($pdf, 19, 174, 'p2_3g_registry', 'i_485_registry_status', 'Continuous Residence in the United States Since Before January 1, 1972 ("Registry")');
+drawCheckboxWithLabel($pdf, 19, 180.5, 'p2_3g_diplomatic_birth', 'i_485_diplomatic_birth_status', 'Individual Born in the United States Under Diplomatic Status');
+drawCheckboxWithLabel($pdf, 19, 187, 'p2_3g_s_nonimmigrant', 'i_485_s_nonimmigrant_status', 'S Nonimmigrants and Qualifying Family Members (can only adjust in this category with an approved Form I-854B filed by<br>a law enforcement officer) ');
+drawCheckboxWithLabel($pdf, 19, 197, 'p2_3g_other', 'i_485_other_eligibility_status', 'Other Eligibility');
+//........
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('i_485_other_eligibility_text', 178, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 202.8);
+
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 210.6, "<b>4.</b>", 0, 0, false, true, 'L', true);
+addYesNoQuestion($pdf, 'If you selected a family-based, employment-based, special immigrant, or Diversity Visa immigrant<br>
+category listed above in <b>Item Numbers 3.a. - 3.g</b>. as the basis for your application for adjustment of<br>
+status, are you applying for adjustment based on INA section 245(i)?', 20, 210, 'name', 'i_485_diversity_visa_immigrant_status');
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(130, 1, 12, 223.6, "<b>5.</b>", 0, 0, false, true, 'L', true);
+addYesNoQuestion($pdf, 'Are you 21 years of age or older and applying for adjustment based on classification as a child, under the<br>
+provisions of the Child Status Protection Act (CSPA)?', 20, 223, 'name', 'i_485_21_years_applying_status');
+//..............
+$pdf->setFont('Times', '', 10);
+$pdf->writeHTMLCell(190, 1, 20, 235, "<b>NOTE:</b>For more information to determine if you are eligible under CSPA, see the <b>Who May File Form I-485</b> section of these<br>Instructions.", 0, 0, false, true, 'L', true);
+// //******************************
+// //******** End Page No 7 ******
+// //******************************
+
+// //******************************
+// //******** Start Page No 8 ****
+// //******************************
+$pdf->AddPage('P', 'LETTER');
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
 $html = "<div><b>Part 3. Request for Exemption for Intending Immigrant's Affidavit of Support Under Section 213A of the INA  </b> </div>";
 $pdf->writeHTMLCell(191.5, 6.5, 13, 25.5, $html, 1, 1, true, 'L');
 
@@ -2441,15 +2519,16 @@ var fields = {
     'i_485_refugee_date':' " . showData('example') . "',
     'i_485_diversity_visa_rank':' " . showData('example') . "',
     'i_485_other_eligibility_text':' " . showData('example') . "',
+
 	
 // page 8
-	'p4_2_city_town'         : '" . showData('example') . "',
-    'p4_2_country'           : '" . showData('example') . "',
-    'p4_3_decision'          : '" . showData('example') . "',
-    'p4_4_date_decision'     : '" . showData('example') . "',
-    'p4_7_employer_school'   : '" . showData('example') . "',
-    'p4_7_company_name'      : '" . showData('example') . "',
-    'p4_7_occupation'        : '" . showData('example') . "',
+	'i_485_p4_2_city_town': ' " . showData('example') . "',
+    'i_485_p4_2_country': ' " . showData('example') . "',
+    'i_485_p4_3_decision': ' " . showData('example') . "',
+    'i_485_p4_4_date_decision': ' " . showData('example') . "',
+    'i_485_p4_7_employer_school': ' " . showData('example') . "',
+    'i_485_p4_7_company_name': ' " . showData('example') . "',
+    'i_485_p4_7_occupation': ' " . showData('example') . "',
 
  
 	
