@@ -1237,126 +1237,52 @@ $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
-$html = '<div><b>Part 2. Application Type or Filing Category </b> (continued)</div>';
-$pdf->writeHTMLCell(191.5, 6.5, 13, 26, $html, 1, 1, true, 'L');
-// ...........
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 33, "<b>3.d.&nbsp;&nbsp;&nbsp;Asylee or Refugee </b>", 0, 0, false, true, 'L', true);
-//................. 
-drawCheckboxWithLabel($pdf, 19, 38.5, 'p2_3d_asylum', 'i_485_asylum_status', 'Asylum Status (Immigration and Nationality Act (INA) section 208), Form I-589 or Form I-730');
-$pdf->writeHTMLCell(190, 1, 20, 45, "If you selected asylum, date you were granted asylum (mm/dd/yyyy). ", 0, 0, false, true, 'L', true);
-//........
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_485_asylum_date', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 127, 45);
-//........
-//................. 
-drawCheckboxWithLabel($pdf, 19, 51.5, 'p2_3d_refugee', 'i_485_refugee_status', 'Refugee Status (INA section 207), Form I-590 or Form I-730');
-$pdf->writeHTMLCell(190, 1, 20, 59, "If you selected refugee, date of initial admission as refugee (mm/dd/yyyy).", 0, 0, false, true, 'L', true);
-//........
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_485_refugee_date', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 127, 59);
-// ...........
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 66, "<b>3.e.&nbsp;&nbsp;&nbsp;Human Trafficking Victim or Crime Victim</b>", 0, 0, false, true, 'L', true);
-drawCheckboxWithLabel($pdf, 19, 71.5, 'p2_3e_t_visa', 'i_485_human_trafficking_status', 'Human Trafficking Victim (T Nonimmigrant), Form I-914 or Derivative Family Member, Form I-914A');
-drawCheckboxWithLabel($pdf, 19, 78, 'p2_3e_u_visa', 'i_485_crime_victim_status', 'Victim of Qualifying Criminal Activity (U Nonimmigrant), Form I-918, Derivative Family Member, Form I-918A, or<br>Qualifying Family Member, Form I-929r');
-// ...........
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 89, "<b>3.f.&nbsp;&nbsp;&nbsp;Special Programs Based on Certain Public Laws</b>", 0, 0, false, true, 'L', true);
-drawCheckboxWithLabel($pdf, 19, 95.5, 'p2_3f_cuban_adjustment', 'i_485_cuban_adjustment_status', 'The Cuban Adjustment Act ');
-drawCheckboxWithLabel($pdf, 19, 102, 'p2_3f_cuban_vawa', 'i_485_cuban_vawa_status', 'A Victim of Battery or Extreme Cruelty as a Spouse or Child Under the Cuban Adjustment Act');
-drawCheckboxWithLabel($pdf, 19, 109, 'p2_3f_hrifa', 'i_485_hrifa_status', 'Applicant Adjusting Based on Dependent Status Under the Haitian Refugee Immigrant Fairness Act');
-drawCheckboxWithLabel($pdf, 19, 116, 'p2_3f_hrifa_vawa', 'i_485_hrifa_vawa_status', 'A Victim of Battery or Extreme Cruelty as a Spouse or Child Applying Based on Dependent Status Under the Haitian<br>Refugee Immigrant Fairness Act');
-drawCheckboxWithLabel($pdf, 19, 126.5, 'p2_3f_lautenberg', 'i_485_lautenberg_status', "Lautenberg Parolees");
-drawCheckboxWithLabel($pdf, 19, 133.5, 'p2_3f_section13', 'i_485_section13_status', 'Diplomats or High-Ranking Officials Unable to Return Home (Section 13 of the Act of September 11, 1957)');
-drawCheckboxWithLabel($pdf, 19, 140, 'p2_3f_se_asia', 'i_485_se_asia_status', 'Nationals of Vietnam, Cambodia, and Laos Applying for Adjustment of Status Under section 586 of Public Law 106-429');
-drawCheckboxWithLabel($pdf, 19, 146.6, 'p2_3f_amerasian', 'i_485_amerasian_status', 'Applicant Adjusting Under the Amerasian Act (October 22, 1982), Form I-360');
-//...........
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 155, "<b>3.g.&nbsp;&nbsp;&nbsp;Additional Options  </b>", 0, 0, false, true, 'L', true);
-// ......... 
-drawCheckboxWithLabel($pdf, 19, 161, 'p2_3g_dv', 'i_485_diversity_visa_status', 'Diversity Visa program');
-$pdf->writeHTMLCell(190, 1, 20, 168, "If you selected Diversity Visa program, provide your Diversity Visa Rank Number:", 0, 0, false, true, 'L', true);
-//........
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_485_diversity_visa_rank', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 142, 168);
-//............. 
-drawCheckboxWithLabel($pdf, 19, 174, 'p2_3g_registry', 'i_485_registry_status', 'Continuous Residence in the United States Since Before January 1, 1972 ("Registry")');
-drawCheckboxWithLabel($pdf, 19, 180.5, 'p2_3g_diplomatic_birth', 'i_485_diplomatic_birth_status', 'Individual Born in the United States Under Diplomatic Status');
-drawCheckboxWithLabel($pdf, 19, 187, 'p2_3g_s_nonimmigrant', 'i_485_s_nonimmigrant_status', 'S Nonimmigrants and Qualifying Family Members (can only adjust in this category with an approved Form I-854B filed by<br>a law enforcement officer) ');
-drawCheckboxWithLabel($pdf, 19, 197, 'p2_3g_other', 'i_485_other_eligibility_status', 'Other Eligibility');
-//........
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('i_485_other_eligibility_text', 178, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 27, 202.8);
-
-//..............
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 210.6, "<b>4.</b>", 0, 0, false, true, 'L', true);
-addYesNoQuestion($pdf, 'If you selected a family-based, employment-based, special immigrant, or Diversity Visa immigrant<br>
-category listed above in <b>Item Numbers 3.a. - 3.g</b>. as the basis for your application for adjustment of<br>
-status, are you applying for adjustment based on INA section 245(i)?', 20, 210, 'name', 'i_485_diversity_visa_immigrant_status');
-//..............
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(130, 1, 12, 223.6, "<b>5.</b>", 0, 0, false, true, 'L', true);
-addYesNoQuestion($pdf, 'Are you 21 years of age or older and applying for adjustment based on classification as a child, under the<br>
-provisions of the Child Status Protection Act (CSPA)?', 20, 223, 'name', 'i_485_21_years_applying_status');
-//..............
-$pdf->setFont('Times', '', 10);
-$pdf->writeHTMLCell(190, 1, 20, 235, "<b>NOTE:</b>For more information to determine if you are eligible under CSPA, see the <b>Who May File Form I-485</b> section of these<br>Instructions.", 0, 0, false, true, 'L', true);
-// //******************************
-// //******** End Page No 7 ******
-// //******************************
-
-// //******************************
-// //******** Start Page No 8 ****
-// //******************************
-$pdf->AddPage('P', 'LETTER');
-$pdf->setFillColor(220, 220, 220);
-$pdf->setFont('Times', '', 12);
-$pdf->setCellHeightRatio(1.2);
-$pdf->setCellPaddings(1, 0.5, 1, 1);
 $html = "<div><b>Part 3. Request for Exemption for Intending Immigrant's Affidavit of Support Under Section 213A of the INA  </b> </div>";
 $pdf->writeHTMLCell(191.5, 6.5, 13, 25.5, $html, 1, 1, true, 'L');
+
 // Main instructional text
 $pdf->SetFont('Times', '', 10);
 $pdf->writeHTMLCell(210, 6, 12, 38, 'I am requesting an exemption from submitting an Affidavit of Support Under Section 213A of the INA (Form I-864 or Form I-864EZ)<br>because (select <b>only one</b>):', 0, 1, false, true, 'L', true);
-// ........
+
+// ........ Part 3 ........
 $pdf->writeHTMLCell(210, 6, 12, 48, '<b>1.a.</b>', 0, 1, false, true, 'L', true);
-drawCheckboxWithLabel($pdf, 19, 47, 'exemption_1a', 'exemption_1a_key', 'I have earned or can receive credit for 40 qualifying quarters (credits) of work in the United States (as defined by the Social<br>
+drawCheckboxWithLabel($pdf, 19, 47, 'i_485_p3_1a_status', 'i_485_p3_1a_key', 'I have earned or can receive credit for 40 qualifying quarters (credits) of work in the United States (as defined by the Social<br>
 Security Act (SSA)). (Attach your SSA earnings statements. Do not count any quarters during which you received a means-<br>tested public benefit.)');
-// ........
+
 $pdf->writeHTMLCell(210, 6, 12, 63, '<b>1.b.</b>', 0, 1, false, true, 'L', true);
-drawCheckboxWithLabel($pdf, 19, 62, 'exemption_1a', 'exemption_1a_key', 'I am under 18 years of age, unmarried, the child of a U.S. citizen, am not likely to become a public charge, and will<br>
+drawCheckboxWithLabel($pdf, 19, 62, 'i_485_p3_1b_status', 'i_485_p3_1b_key', 'I am under 18 years of age, unmarried, the child of a U.S. citizen, am not likely to become a public charge, and will<br>
 automatically become a U.S. citizen under INA section 320, upon my admission as a lawful permanent resident. ');
-// ........
+
 $pdf->writeHTMLCell(210, 6, 12, 73.5, '<b>1.c.</b>', 0, 1, false, true, 'L', true);
-drawCheckboxWithLabel($pdf, 19, 72.5, 'exemption_1a', 'exemption_1a_key', 'I am applying under the widow or widower of a U.S. citizen (Form I-360) immigrant category.');
-// ........
+drawCheckboxWithLabel($pdf, 19, 72.5, 'i_485_p3_1c_status', 'i_485_p3_1c_key', 'I am applying under the widow or widower of a U.S. citizen (Form I-360) immigrant category.');
+
 $pdf->writeHTMLCell(210, 6, 12, 80.5, '<b>1.d.</b>', 0, 1, false, true, 'L', true);
-drawCheckboxWithLabel($pdf, 19, 79.5, 'exemption_1a', 'exemption_1a_key', 'I am applying as a VAWA self-petitioner.');
-// ........
+drawCheckboxWithLabel($pdf, 19, 79.5, 'i_485_p3_1d_status', 'i_485_p3_1d_key', 'I am applying as a VAWA self-petitioner.');
+
 $pdf->writeHTMLCell(210, 6, 12, 87.5, '<b>1.e.</b>', 0, 1, false, true, 'L', true);
-drawCheckboxWithLabel($pdf, 19, 86.5, 'exemption_1a', 'exemption_1a_key', 'None of these exemptions apply to me and I am not required by statute to submit an Affidavit of Support Under Section<br>
+drawCheckboxWithLabel($pdf, 19, 86.5, 'i_485_p3_1e_status', 'i_485_p3_1e_key', 'None of these exemptions apply to me and I am not required by statute to submit an Affidavit of Support Under Section<br>
 213A of the INA, nor am I required to request an exemption.');
-// ........
+
 $pdf->writeHTMLCell(210, 6, 12, 97.5, '<b>1.f.</b>', 0, 1, false, true, 'L', true);
-drawCheckboxWithLabel($pdf, 19, 96.5, 'exemption_1a', 'exemption_1a_key', 'None of these exemptions apply to me and I am not requesting an exemption as I am required to submit an Affidavit of<br>
+drawCheckboxWithLabel($pdf, 19, 96.5, 'i_485_p3_1f_status', 'i_485_p3_1f_key', 'None of these exemptions apply to me and I am not requesting an exemption as I am required to submit an Affidavit of<br>
 Support Under Section 213A of the INA.');
-//..........
+
+//.......... Part 4 ..........
 $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 $html = "<div><b>Part 4. Additional Information About You</b> </div>";
 $pdf->writeHTMLCell(191.5, 6.5, 13, 110, $html, 1, 1, true, 'L');
+
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 117, "<b>1.</b>", 0, 0, false, 'L');
-//......
 addYesNoQuestion($pdf, 'Have you ever applied for an immigrant visa to obtain permanent resident status at a U.S. Embassy or<br>
-U.S. Consulate abroad?', 20, 116.5, '54', 'i_131_exclusion_status');
-//...........
+U.S. Consulate abroad?', 20, 116.5, '54', 'i_485_p4_1_status');
+
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 20, 127, 'If you answered "Yes," complete <b>Item Numbers 2. - 4.</b>below.', 0, 0, false, 'L');
+
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 132.8, '<b>2.</b>', 0, 0, false, 'L');
@@ -1364,32 +1290,38 @@ $pdf->writeHTMLCell(191.5, 6.5, 20, 133, 'Location of U.S. Embassy or U.S. Consu
 $pdf->writeHTMLCell(191.5, 6.5, 20, 141, 'City or Town', 0, 0, false, 'L');
 $pdf->writeHTMLCell(191.5, 6.5, 113.6, 141, 'Country', 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_street', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 145.7);
-$pdf->TextField('employer_street', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 145.7);
+$pdf->TextField('i_485_p4_2_city_town', 92, 7, array('strokeColor'=>[64,64,64],'lineWidth'=>1,'borderStyle'=>'solid'), array(), 21, 145.7);
+$pdf->TextField('i_485_p4_2_country', 90, 7, array('strokeColor'=>[64,64,64],'lineWidth'=>1,'borderStyle'=>'solid'), array(), 115, 145.7);
+
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 154.8, '<b>3.</b>', 0, 0, false, 'L');
 $pdf->writeHTMLCell(191.5, 6.5, 20, 155, 'Decision (for example, approved, refused, denied, withdrawn)', 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_street', 87, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 118, 154.9);
+$pdf->TextField('i_485_p4_3_decision', 87, 7, array('strokeColor'=>[64,64,64],'lineWidth'=>1,'borderStyle'=>'solid'), array(), 118, 154.9);
+
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 162.8, '<b>4.</b>', 0, 0, false, 'L');
 $pdf->writeHTMLCell(191.5, 6.5, 20, 163, 'Date of Decision (mm/dd/yyyy)', 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_street', 48, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 69, 163.5);
+$pdf->TextField('i_485_p4_4_date_decision', 48, 7, array('strokeColor'=>[64,64,64],'lineWidth'=>1,'borderStyle'=>'solid'), array(), 69, 163.5);
+
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 172, '<b>5.</b>', 0, 0, false, 'L');
-addYesNoQuestion($pdf, 'Have you previously applied for permanent residence while in the United States?', 20, 171, '54', 'i_131_exclusion_status');
+addYesNoQuestion($pdf, 'Have you previously applied for permanent residence while in the United States?', 20, 171, '54', 'i_485_p4_5_status');
+
 //.............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 180, '<b>6.</b>', 0, 0, false, 'L');
 $pdf->writeHTMLCell(191.5, 6.5, 35, 180, '<b>EVER</b>', 0, 0, false, 'L');
-addYesNoQuestion($pdf, '<div>Have you&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; held lawful permanent resident status which was later rescinded under INA section 246?</div>', 20, 179, '54', 'i_131_exclusion_status');
+addYesNoQuestion($pdf, '<div>Have you&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; held lawful permanent resident status which was later rescinded under INA section 246?</div>', 20, 179, '54', 'i_485_p4_6_status');
+
 //.............
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 187, '<b>Employment and Educational History</b>', 0, 0, false, 'L');
+
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 13, 194, '<b>7.</b>', 0, 0, false, 'L');
@@ -1397,17 +1329,20 @@ $pdf->writeHTMLCell(191.5, 6.5, 20, 194, 'Provide <b>ALL</b> of your employment 
 current employment or school attended first. Include periods of self-employment, unemployment, or retirement. For each period<br>
 of unemployment or retirement, list source of financial support. If you have additional employment or educational history, use<br>
 the space provided in <b>Part 14. Additional Information.</b>', 0, 0, false, 'L');
+
 //...........
 $pdf->writeHTMLCell(191.5, 6.5, 20, 214, 'Employer or School (current or most recent)', 0, 0, false, 'L');
 $pdf->writeHTMLCell(191.5, 6.5, 113.6, 214, 'Name of Employer, Company, or School', 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_street', 92, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 219);
-$pdf->TextField('employer_street', 90, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 115, 219);
+$pdf->TextField('i_485_p4_7_employer_school', 92, 7, array('strokeColor'=>[64,64,64],'lineWidth'=>1,'borderStyle'=>'solid'), array(), 21, 219);
+$pdf->TextField('i_485_p4_7_company_name', 90, 7, array('strokeColor'=>[64,64,64],'lineWidth'=>1,'borderStyle'=>'solid'), array(), 115, 219);
+
 //...........
 $pdf->setFont('Times', '', 10);
 $pdf->writeHTMLCell(191.5, 6.5, 20, 226.5, 'Your Occupation (if unemployed or retired, so state)', 0, 0, false, 'L');
 $pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('employer_street', 184, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 232);
+$pdf->TextField('i_485_p4_7_occupation', 184, 7, array('strokeColor'=>[64,64,64],'lineWidth'=>1,'borderStyle'=>'solid'), array(), 21, 232);
+
 //  *****************************
 //  ******** End Page No 8******
 //  ******************************/
@@ -2506,10 +2441,16 @@ var fields = {
     'i_485_refugee_date':' " . showData('example') . "',
     'i_485_diversity_visa_rank':' " . showData('example') . "',
     'i_485_other_eligibility_text':' " . showData('example') . "',
+	
+// page 8
+	'p4_2_city_town'         : '" . showData('example') . "',
+    'p4_2_country'           : '" . showData('example') . "',
+    'p4_3_decision'          : '" . showData('example') . "',
+    'p4_4_date_decision'     : '" . showData('example') . "',
+    'p4_7_employer_school'   : '" . showData('example') . "',
+    'p4_7_company_name'      : '" . showData('example') . "',
+    'p4_7_occupation'        : '" . showData('example') . "',
 
-	
-// page 16
-	
  
 	
 // page 17
