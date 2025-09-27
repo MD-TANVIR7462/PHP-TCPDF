@@ -68,7 +68,21 @@
 
 
 
-    'i_485_asylum_date':' " . showData('example') . "',
-    'i_485_refugee_date':' " . showData('example') . "',
-    'i_485_diversity_visa_rank':' " . showData('example') . "',
-    'i_485_other_eligibility_text':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_apt_number':' " . showData('example') . "',
+    'p4_7_city_or_town ':' " . showData('example') . "',
+    'p4_7_state':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+    'p4_7_streen_number':' " . showData('example') . "',
+

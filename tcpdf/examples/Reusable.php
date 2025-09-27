@@ -16,7 +16,7 @@ $pdf->writeHTMLCell(60, 1, $startX + 131,$startY-0.5, "Middle Name (if applicabl
 
 // Fields
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 70, $fieldHeight, $stroke, array(), $startX + 0.8, $startY + 5);    // Family Name
+$pdf->TextField('p1_1a', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY + 5);    // Family Name
 $pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
 $pdf->TextField('p1_1c', 52, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
 
