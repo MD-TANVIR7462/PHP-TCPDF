@@ -2059,152 +2059,313 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 //  ******** Start Page No 12 ****
 //  ******************************/
 // Start the page
+// $pdf->AddPage('P', 'LETTER');
+// $pdf->setFillColor(220, 220, 220);
+// $pdf->setFont('Times', '', 12);
+// $pdf->setCellHeightRatio(1.2);
+// $pdf->setCellPaddings(1, 0.5, 1, 1);
+
+// // ==================== PART 7: INFORMATION ABOUT YOUR CHILDREN ====================
+// $pdf->SetFontSize(12);
+// $html = "<div><b>Part 7. Information About Your Children</b></div>";
+// $pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
+
+// // ==================== QUESTION 1: TOTAL NUMBER OF CHILDREN ====================
+// $pdf->setCellHeightRatio(2);
+// $pdf->setCellPaddings(0, 1, 0, 0);
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(190, 5, 12, 32, '<b>1.</b>', 0, 1, false, false, 'L', true);
+
+// $pdf->writeHTMLCell(190, 5, 20, 32, 'Indicate the total number of ALL living children anywhere in the world (including adult sons and daughters) that you have.', 0, 1, false, false, 'L', true);
+
+
+// // Note section
+// $pdf->SetFont('times', '', 10);
+// $pdf->setCellHeightRatio(1.2);
+// $pdf->setCellPaddings(0, 0, 0, 0);
+// $note_text = "<b>NOTE</b>: The term \"children\" includes all biological or legally adopted children, as well as current stepchildren, of any age, whether born in the United States or other countries, married or unmarried, living with you or elsewhere and includes any missing children and those born to you outside of marriage.";
+// $pdf->writeHTMLCell(180, 7, 20, 42, $note_text, 0, 1, false, true, 'L', true);
+
+// // Total children input field
+// $pdf->SetFont('courier', 'B', 10);
+// $pdf->TextField('total_children', 55, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 150, 51);
+// //.........
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(180, 5, 20, 58, 'Provide the following information for each of your children. If you have more than two children, use the space provided in <b>Part 14. Additional Information</b>.', 0, 1, false, true, 'L', true);
+
+
+// // ==================== CHILD 1 SECTION ====================
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(190, 6, 13, 68.6, '<b>2.</b>', 0, 1, false, false, 'L', true);
+// $pdf->writeHTMLCell(190, 6, 20, 68, ' Child 1', 0, 1, false, false, 'L', true);
+
+// // Child 1 - Current Legal Name section
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(190, 5, 20, 73, 'Current Legal Name', 0, 1, false, false, 'L', true);
+
+// // Name labels
+// $startX = 20;
+// $startY = 80;
+// $lineHeight = 6;
+// $fieldHeight = 7;
+// $labelFont = ['times', '', 10];
+// $fieldFont = ['courier', 'B', 10];
+// $stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
+
+// // Labels
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY, "Family Name (Last Name)", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY, "Given Name (First Name)", 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 131,$startY-0.5, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
+
+// // Fields
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY + 5);    // Family Name
+// $pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
+// $pdf->TextField('p1_1c', 53, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
+
+// // A-Number and Date of Birth section - Child 1
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+15, "A-Number (if any)", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 91, $startY+15, "Date of Birth (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
+// // A-Number dropdown and Date of Birth field - Child 1
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 50, $fieldHeight, $stroke, array(), $startX + 39, $startY +14);    // a number
+// $pdf->TextField('p1_1b', 47, $fieldHeight, $stroke, array(), $startX + 132, $startY + 14); // date of birth
+
+
+// // Country of Birth - Child 1
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+21.8, "Country of Birth", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 94, $fieldHeight, $stroke, array(), $startX , $startY +26);    // country of birth
+
+
+// // What is your child's relationship to you? (for example, biological child, stepchild, legally adopted child)
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(160, 1, $startX, $startY+34.5, "What is your child's relationship to you? (for example, biological child, stepchild, legally adopted child)", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 185, $fieldHeight, $stroke, array(), $startX , $startY +39);    
+// //.......
+
+// addYesNoQuestion($pdf, 'Is this child also applying now on a separate Form I-485?', $startX, $startY+47.5, 'p7_child2_Q', 'i_131_exclusion_status');
+
+// // ==================== CHILD 2 SECTION ====================
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(190, 6, 13, 134.6, '<b>3.</b>', 0, 1, false, false, 'L', true);
+// $pdf->writeHTMLCell(190, 6, 20, 134, ' Child 2', 0, 1, false, false, 'L', true);
+
+// // Child 1 - Current Legal Name section
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(190, 5, 20, 139, 'Current Legal Name', 0, 1, false, false, 'L', true);
+
+// // Name labels
+// $startX = 20;
+// $startY = 146;
+// $lineHeight = 6;
+// $fieldHeight = 7;
+// $labelFont = ['times', '', 10];
+// $fieldFont = ['courier', 'B', 10];
+// $stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
+
+// // Labels
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY, "Family Name (Last Name)", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY, "Given Name (First Name)", 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 131,$startY-0.5, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
+
+// // Fields
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY + 5);    // Family Name
+// $pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
+// $pdf->TextField('p1_1c', 53, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
+
+// // A-Number and Date of Birth section - Child 1
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+15, "A-Number (if any)", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 91, $startY+15, "Date of Birth (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
+// // A-Number dropdown and Date of Birth field - Child 1
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 50, $fieldHeight, $stroke, array(), $startX + 39, $startY +14);    // a number
+// $pdf->TextField('p1_1b', 47, $fieldHeight, $stroke, array(), $startX + 132, $startY + 14); // date of birth
+
+
+// // Country of Birth - Child 1
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+21.8, "Country of Birth", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 94, $fieldHeight, $stroke, array(), $startX , $startY +26);    // country of birth
+
+
+// // What is your child's relationship to you? (for example, biological child, stepchild, legally adopted child)
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(160, 1, $startX, $startY+34.5, "What is your child's relationship to you? (for example, biological child, stepchild, legally adopted child)", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p1_1a', 185, $fieldHeight, $stroke, array(), $startX , $startY +39);    
+// //.......
+
+// addYesNoQuestion($pdf, 'Is this child also applying now on a separate Form I-485?', $startX, $startY+47.5, 'p7_child2_Q', 'i_131_exclusion_status');
+//  ******************************
+//  ******** End Page No 12 ******
+//  ******************************/
+
+//  ******************************
+//  ******** Start Page No 13 ****
+//  ******************************/
+// Start the page
 $pdf->AddPage('P', 'LETTER');
 $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 
-// ==================== PART 7: INFORMATION ABOUT YOUR CHILDREN ====================
+
 $pdf->SetFontSize(12);
-$html = "<div><b>Part 7. Information About Your Children</b></div>";
+$html = "<div><b>Part 8. Biographic Information</b></div>";
 $pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
-
-// ==================== QUESTION 1: TOTAL NUMBER OF CHILDREN ====================
-$pdf->setCellHeightRatio(2);
-$pdf->setCellPaddings(0, 1, 0, 0);
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 5, 12, 32, '<b>1.</b>', 0, 1, false, false, 'L', true);
-
-$pdf->writeHTMLCell(190, 5, 20, 32, 'Indicate the total number of ALL living children anywhere in the world (including adult sons and daughters) that you have.', 0, 1, false, false, 'L', true);
-
-
-// Note section
-$pdf->SetFont('times', '', 10);
-$pdf->setCellHeightRatio(1.2);
-$pdf->setCellPaddings(0, 0, 0, 0);
-$note_text = "<b>NOTE</b>: The term \"children\" includes all biological or legally adopted children, as well as current stepchildren, of any age, whether born in the United States or other countries, married or unmarried, living with you or elsewhere and includes any missing children and those born to you outside of marriage.";
-$pdf->writeHTMLCell(180, 7, 20, 42, $note_text, 0, 1, false, true, 'L', true);
-
-// Total children input field
-$pdf->SetFont('courier', 'B', 10);
-$pdf->TextField('total_children', 55, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 150, 51);
-//.........
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(180, 5, 20, 58, 'Provide the following information for each of your children. If you have more than two children, use the space provided in <b>Part 14. Additional Information</b>.', 0, 1, false, true, 'L', true);
-
-
-// ==================== CHILD 1 SECTION ====================
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 6, 13, 68.6, '<b>2.</b>', 0, 1, false, false, 'L', true);
-$pdf->writeHTMLCell(190, 6, 20, 68, ' Child 1', 0, 1, false, false, 'L', true);
-
-// Child 1 - Current Legal Name section
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 5, 20, 73, 'Current Legal Name', 0, 1, false, false, 'L', true);
-
-// Name labels
-$startX = 20;
-$startY = 80;
-$lineHeight = 6;
-$fieldHeight = 7;
+//........
+$startX = 12;
+$startY = 34;
 $labelFont = ['times', '', 10];
 $fieldFont = ['courier', 'B', 10];
-$stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
 
-// Labels
+// Question 1: Ethnicity
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY, "Family Name (Last Name)", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY, "Given Name (First Name)", 0, 0, false, false, 'L', false);
-$pdf->writeHTMLCell(60, 1, $startX + 131,$startY-0.5, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
+$html = '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ethnicity (Select <b>only one</b> box)';
+$pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
 
-// Fields
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY + 5);    // Family Name
-$pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
-$pdf->TextField('p1_1c', 53, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
+// Ethnicity checkboxes
+$pdf->SetFont('times', '', 14);
+if (showData('i_131_biographic_info_ethnicity') == "hispanic") $checked = "checked";
+else $checked = "";
+$html = '<input type="checkbox" name="hispanic_not_hispanic" value="hispanic"  checked="' . $checked . '" />';
+$pdf->writeHTMLCell(5, 1, $startX + 9, $startY + 5, $html, 0, 1, false, false, 'L', false);
 
-// A-Number and Date of Birth section - Child 1
+if (showData('i_131_biographic_info_ethnicity') == "nothispanic") $checked = "checked";
+else $checked = "";
+$html = '<input type="checkbox" name="hispanic_not_hispanic" value="nothispanic"  checked="' . $checked . '" />';
+$pdf->writeHTMLCell(5, 1, $startX + 46, $startY + 5, $html, 0, 1, false, false, 'L', false);
+
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY+15, "A-Number (if any)", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 91, $startY+15, "Date of Birth (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
-// A-Number dropdown and Date of Birth field - Child 1
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 50, $fieldHeight, $stroke, array(), $startX + 39, $startY +14);    // a number
-$pdf->TextField('p1_1b', 47, $fieldHeight, $stroke, array(), $startX + 132, $startY + 14); // date of birth
+$pdf->writeHTMLCell(140, 1, $startX + 15.7, $startY + 5.5, "Hispanic or Latino", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, $startX + 53, $startY + 5.5, "Not Hispanic or Latino", 0, 0, false, true, 'L', true);
 
+// ==================== RACE SECTION ====================
+$startY = $startY + 12;
 
-// Country of Birth - Child 1
+// Question 2: Race
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY+21.8, "Country of Birth", 0, 0, false, true, 'L', true);
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 94, $fieldHeight, $stroke, array(), $startX , $startY +26);    // country of birth
+$html = '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Race (Select <b>all applicable</b> boxes)';
+$pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
 
+// Race checkboxes
+$pdf->SetFont('times', '', 14);
+if (showData('i_485_biographic_info_race_american_native') == "Y") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, $startX + 9, $startY + 7, '<input type="checkbox" name="p3_race1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
 
-// What is your child's relationship to you? (for example, biological child, stepchild, legally adopted child)
+if (showData('i_485_biographic_info_race_asian') == "Y") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, $startX + 67, $startY + 7, '<input type="checkbox" name="p3_race2" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
+if (showData('i_485_biographic_info_race_black_african') == "Y") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, $startX + 85, $startY + 7, '<input type="checkbox" name="p3_race3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
+if (showData('i_485_biographic_info_race_native_islander') == "Y") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, $startX +9, $startY + 15, '<input type="checkbox" name="p3_race4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
+if (showData('i_485_biographic_info_race_white') == "Y") $checked = "checked";
+else $checked = "";
+$pdf->writeHTMLCell(5, 1, $startX + 77, $startY + 15, '<input type="checkbox" name="p3_race5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
+// Race labels
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(160, 1, $startX, $startY+34.5, "What is your child's relationship to you? (for example, biological child, stepchild, legally adopted child)", 0, 0, false, true, 'L', true);
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 185, $fieldHeight, $stroke, array(), $startX , $startY +39);    
-//.......
+$pdf->writeHTMLCell(140, 1, $startX + 15.7, $startY + 7.5, "American Indian or Alaska Native", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, $startX + 74, $startY + 7.5, "Asian", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, $startX + 92, $startY + 7.5, "Black or African American", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, $startX + 15.7, $startY + 15.5, "Native Hawaiian or Other Pacific Islander", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(140, 1, $startX + 83, $startY + 15.5, "White", 0, 0, false, true, 'L', true);
 
-addYesNoQuestion($pdf, 'Is this child also applying now on a separate Form I-485?', $startX, $startY+47.5, 'p7_child2_Q', 'i_131_exclusion_status');
+// ==================== HEIGHT AND WEIGHT SECTION ====================
+$startY = $startY + 24;
 
-// ==================== CHILD 2 SECTION ====================
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 6, 13, 134.6, '<b>3.</b>', 0, 1, false, false, 'L', true);
-$pdf->writeHTMLCell(190, 6, 20, 134, ' Child 2', 0, 1, false, false, 'L', true);
-
-// Child 1 - Current Legal Name section
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 5, 20, 139, 'Current Legal Name', 0, 1, false, false, 'L', true);
-
-// Name labels
-$startX = 20;
-$startY = 146;
-$lineHeight = 6;
-$fieldHeight = 7;
-$labelFont = ['times', '', 10];
-$fieldFont = ['courier', 'B', 10];
-$stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
-
-// Labels
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY, "Family Name (Last Name)", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY, "Given Name (First Name)", 0, 0, false, false, 'L', false);
-$pdf->writeHTMLCell(60, 1, $startX + 131,$startY-0.5, "Middle Name (if applicable)", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(0, 0, $startX, $startY, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feet', 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(0, 0, $startX + 52, $startY, 'Inches', 0, 0, false, true, 'L', true);
 
-// Fields
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY + 5);    // Family Name
-$pdf->TextField('p1_1b', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY + 5); // Given Name
-$pdf->TextField('p1_1c', 53, $fieldHeight, $stroke, array(), $startX + 132, $startY + 5);    // Middle Name
+$pdf->ComboBox('p8_3feet', 19, 6.6, array('', '2', '3', '4', '5', '6', '7', '8'), array(), array(), $startX + 32, $startY - 0.3);
+$pdf->ComboBox('p8_3inches', 19, 6.6, array('','0' ,'1','2', '3', '4', '5', '6', '7', '8', '9', '10', '11'), array(), array(), $startX + 64, $startY - 0.3);
 
-// A-Number and Date of Birth section - Child 1
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY+15, "A-Number (if any)", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 91, $startY+15, "Date of Birth (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
-// A-Number dropdown and Date of Birth field - Child 1
+$pdf->writeHTMLCell(0, 0, $startX + 88, $startY, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pounds', 0, 0, false, true, 'L', true);
+
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 50, $fieldHeight, $stroke, array(), $startX + 39, $startY +14);    // a number
-$pdf->TextField('p1_1b', 47, $fieldHeight, $stroke, array(), $startX + 132, $startY + 14); // date of birth
+$pdf->TextField('p8_4Pounds1', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), $startX + 125, $startY - 0.3);
+$pdf->TextField('p8_4Pounds2', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), $startX + 132, $startY - 0.3);
+$pdf->TextField('p8_4Pounds3', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), $startX + 139, $startY - 0.3);
 
+// ==================== EYE COLOR SECTION ====================
+$startY = $startY + 8;
 
-// Country of Birth - Child 1
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY+21.8, "Country of Birth", 0, 0, false, true, 'L', true);
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 94, $fieldHeight, $stroke, array(), $startX , $startY +26);    // country of birth
+$html = '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eye color (Select <b>only one</b> box)';
+$pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
 
+// Eye color checkboxes
+$pdf->SetFont('times', '', 14);
+$eyeColorOptions = [
+    ['x' => 21, 'value' => "black", 'label' => "Black", 'label_x' => 28],
+    ['x' => 49, 'value' => "blue", 'label' => "Blue", 'label_x' => 56],
+    ['x' => 66, 'value' => "brown", 'label' => "Brown", 'label_x' => 73],
+    ['x' => 84, 'value' => "gray", 'label' => "Gray", 'label_x' => 91],
+    ['x' => 101, 'value' => "green", 'label' => "Green", 'label_x' => 108],
+    ['x' => 117.5, 'value' => "hazel", 'label' => "Hazel", 'label_x' => 124.5],
+    ['x' => 133.5, 'value' => "marron", 'label' => "Maroon", 'label_x' => 140],
+    ['x' => 153, 'value' => "pink", 'label' => "Pink", 'label_x' => 160],
+    ['x' => 171, 'value' => "unknown", 'label' => "Unknown/Other", 'label_x' => 178]
+];
 
-// What is your child's relationship to you? (for example, biological child, stepchild, legally adopted child)
+foreach ($eyeColorOptions as $option) {
+    $pdf->SetFont('times', '', 14);
+    $checked = (showData('i_131_biographic_info_eye_color') == $option['value']) ? "checked" : "";
+    $pdf->writeHTMLCell(5, 1, $option['x'], $startY + 6, '<input type="checkbox" name="p3_eye_color_status' . $option['value'] . '" value="Y"  checked="' . $checked . '" />', 0, 0, false, false, 'L', false);
+    
+    $pdf->SetFont(...$labelFont);
+    $pdf->writeHTMLCell(140, 1, $option['label_x'], $startY + 6.3, $option['label'], 0, 0, false, true, 'L', true);
+}
+
+// ==================== HAIR COLOR SECTION ====================
+$startY = $startY + 12;
+
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(160, 1, $startX, $startY+34.5, "What is your child's relationship to you? (for example, biological child, stepchild, legally adopted child)", 0, 0, false, true, 'L', true);
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p1_1a', 185, $fieldHeight, $stroke, array(), $startX , $startY +39);    
-//.......
+$html = '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hair color (Select <b>only one</b> box)';
+$pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
 
-addYesNoQuestion($pdf, 'Is this child also applying now on a separate Form I-485?', $startX, $startY+47.5, 'p7_child2_Q', 'i_131_exclusion_status');
+// Hair color checkboxes
+$pdf->SetFont('times', '', 14);
+$hairColorOptions = [
+    ['x' => 21, 'value' => "blad", 'label' => "Bald(No hair)", 'label_x' => 28],
+    ['x' => 49, 'value' => "black", 'label' => "Black", 'label_x' => 56],
+    ['x' => 66, 'value' => "blond", 'label' => "Blond", 'label_x' => 73],
+    ['x' => 84, 'value' => "brown", 'label' => "Brown", 'label_x' => 91],
+    ['x' => 102, 'value' => "gray", 'label' => "Gray", 'label_x' => 109],
+    ['x' => 118, 'value' => "red", 'label' => "Red", 'label_x' => 125],
+    ['x' => 133, 'value' => "sandy", 'label' => "Sandy", 'label_x' => 140],
+    ['x' => 153, 'value' => "white", 'label' => "White", 'label_x' => 160],
+    ['x' => 171, 'value' => "unknown", 'label' => "Unknown/Other", 'label_x' => 178]
+];
+
+foreach ($hairColorOptions as $option) {
+    $pdf->SetFont('times', '', 14);
+    $checked = (showData('i_131_biographic_info_hair_color') == $option['value']) ? "checked" : "";
+    $pdf->writeHTMLCell(5, 1, $option['x'], $startY + 6, '<input type="checkbox" name="p3_hair_color_status' . $option['value'] . '" value="Y"  checked="' . $checked . '" />', 0, 0, false, false, 'L', false);
+    
+    $pdf->SetFont(...$labelFont);
+    $pdf->writeHTMLCell(140, 1, $option['label_x'], $startY + 6.3, $option['label'], 0, 0, false, true, 'L', true);
+}
 
 //  ******************************
 //  ******** End Page No 21 ******
@@ -2682,6 +2843,15 @@ var fields = {
     'i_485_p4_7_employer_school': ' " . showData('example') . "',
     'i_485_p4_7_company_name': ' " . showData('example') . "',
     'i_485_p4_7_occupation': ' " . showData('example') . "',
+
+ 
+	
+// page 13
+    'p8_3feet':' " . showData('example') . "',
+    'p8_3inches':' " . showData('example') . "',
+    'p8_4Pounds1':' " . showData('example') . "',
+    'p8_4Pounds2':' " . showData('example') . "',
+    'p8_4Pounds3':' " . showData('example') . "',
 
  
 	

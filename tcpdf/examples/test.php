@@ -80,9 +80,11 @@
     'p4_7_streen_number':' " . showData('example') . "',
     'p4_7_streen_number':' " . showData('example') . "',
     'p4_7_streen_number':' " . showData('example') . "',
-    'p4_7_streen_number':' " . showData('example') . "',
-    'p4_7_streen_number':' " . showData('example') . "',
-    'p4_7_streen_number':' " . showData('example') . "',
-    'p4_7_streen_number':' " . showData('example') . "',
-    'p4_7_streen_number':' " . showData('example') . "',
+
+
+    'p8_3feet':' " . showData('example') . "',
+    'p8_3inches':' " . showData('example') . "',
+    'p8_4Pounds1':' " . showData('example') . "',
+    'p8_4Pounds2':' " . showData('example') . "',
+    'p8_4Pounds3':' " . showData('example') . "',
 
