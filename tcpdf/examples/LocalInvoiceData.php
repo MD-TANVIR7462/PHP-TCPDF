@@ -39,7 +39,7 @@ class settings {
     }
 }
 
-namespace App\dataTableQuery;
+// namespace App\dataTableQuery;
 class dataTableQuery {
     public function indexByQueryAllData($query) {
         // Mock data to simulate invoice records

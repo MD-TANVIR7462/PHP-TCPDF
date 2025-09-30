@@ -2366,6 +2366,131 @@ foreach ($hairColorOptions as $option) {
     $pdf->SetFont(...$labelFont);
     $pdf->writeHTMLCell(140, 1, $option['label_x'], $startY + 6.3, $option['label'], 0, 0, false, true, 'L', true);
 }
+//...........
+
+$pdf->SetFontSize(12);
+$html = "<div><b>Part 9. General Eligibility and Inadmissibility Grounds</b></div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 107, $html, 1, 1, true, 'L');
+//.............
+$pdf->SetFont(...$labelFont);
+$html = 'Choose the answer that you think is correct in <b>Part 9</b>. If you answer "Yes" to any questions (<b>or if you answer "No," but are unsure<br>
+of your answer</b>), provide an explanation of the events and circumstances in the space provided in <b>Part 14. Additional Information.</b>';
+$pdf->writeHTMLCell(200, 0, 13,114.6, $html, 0, 0, false, true, 'L', true);
+//.........
+$pdf->SetFont(...$labelFont);
+$pdf->writeHTMLCell(60, 0, 13,125, '<b>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Have you', 0, 0, false, true, 'L', true);
+// ..............
+addYesNoQuestion($pdf, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EVER</b> been a member of, involved in, or in any way associated with any organization,<br>
+association, fund, foundation, party, club, society, or similar group in the United States or in any other<br>
+location in the world?',20, 125, 'i_131_associated_organization', 'i_131_associated_organization');
+//.............
+$pdf->SetFont(...$labelFont);
+$html = 'If you answered "Yes" to <b>Item Number 1</b>., complete <b>Item Numbers 2. - 9.</b> If you were a member of more than two<br>
+organizations, use the space provided in Part <b>14. Additional Information.</b>.';
+$pdf->writeHTMLCell(200, 0, 20,140, $html, 0, 0, false, true, 'L', true);
+
+
+//.............
+
+
+
+// ==================== ORGANIZATION 1 SECTION ====================
+$startX = 20;
+$startY = 147;
+$lineHeight = 6;
+$fieldHeight = 7;
+$labelFont = ['times', '', 10];
+$fieldFont = ['courier', 'B', 10];
+$stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 6, 13, 145, '<b>Organization 1</b>', 0, 1, false, false, 'L', true);
+
+// Organization Name
+$pdf->SetFont(...$labelFont);
+$pdf->writeHTMLCell(130, 1, $startX, $startY+55, "2. Name of Organization", 0, 0, false, true, 'L', true);
+$pdf->SetFont(...$fieldFont);
+$pdf->TextField('org1_name', 185, $fieldHeight, $stroke, array(), $startX, $startY+60);
+
+// City, State, Country section
+$pdf->SetFont(...$labelFont);
+$pdf->writeHTMLCell(130, 1, $startX, $startY+67, "3. City or Town", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY+67, "State or Province", 0, 0, false, false, 'L', false);
+$pdf->writeHTMLCell(60, 1, $startX + 131, $startY+66.5, "Country", 0, 0, false, false, 'L', true);
+
+// Fields
+$pdf->SetFont(...$fieldFont);
+$pdf->TextField('org1_city', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY+72);    // City
+$pdf->TextField('org1_state', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY+72); // State
+$pdf->TextField('org1_country', 53, $fieldHeight, $stroke, array(), $startX + 132, $startY+72);  // Country
+
+// Nature of Organization
+$pdf->SetFont(...$labelFont);
+$pdf->writeHTMLCell(190, 1, $startX, $startY+80, "4. Nature of Organization, including its purposes and activities, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
+$pdf->SetFont(...$fieldFont);
+$pdf->TextField('org1_nature', 185, $fieldHeight, $stroke, array(), $startX, $startY+85);
+
+// Nature of involvement in organization
+$pdf->SetFont(...$labelFont);
+$pdf->writeHTMLCell(190, 1, $startX, $startY+92, "Nature of involvement in organization, including role or positions(s) held, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
+$pdf->SetFont(...$fieldFont);
+$pdf->TextField('org1_involvement', 185, $fieldHeight, $stroke, array(), $startX, $startY+97);
+
+// Dates of Membership
+$pdf->SetFont(...$labelFont);
+$pdf->writeHTMLCell(130, 1, $startX, $startY+104, "5. Dates of Membership or Dates of Involvement", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY+104, "From (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
+$pdf->writeHTMLCell(60, 1, $startX + 131, $startY+103.5, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
+
+// Date Fields
+$pdf->SetFont(...$fieldFont);
+$pdf->TextField('org1_date_from', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY+109);    // From date
+$pdf->TextField('org1_date_to', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY+109);     // To date
+
+// // ==================== ORGANIZATION 2 SECTION ====================
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(190, 6, 13, $startY+120, '<b>Organization 2</b>', 0, 1, false, false, 'L', true);
+
+// // Organization Name
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+125, "6. Name of Organization", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org2_name', 185, $fieldHeight, $stroke, array(), $startX, $startY+130);
+
+// // City, State, Country section - Organization 2
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+137, "City or Town", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY+137, "State or Province", 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 131, $startY+136.5, "Country", 0, 0, false, false, 'L', true);
+
+// // Fields - Organization 2
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org2_city', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY+142);    // City
+// $pdf->TextField('org2_state', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY+142); // State
+// $pdf->TextField('org2_country', 53, $fieldHeight, $stroke, array(), $startX + 132, $startY+142);  // Country
+
+// // Nature of Organization - Organization 2
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(190, 1, $startX, $startY+150, "Nature of Organization, including its purposes and activities, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org2_nature', 185, $fieldHeight, $stroke, array(), $startX, $startY+155);
+
+// // Nature of involvement in organization - Organization 2
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(190, 1, $startX, $startY+162, "Nature of involvement in organization, including role or positions(s) held, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org2_involvement', 185, $fieldHeight, $stroke, array(), $startX, $startY+167);
+
+// // Dates of Membership - Organization 2
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+174, "Dates of Membership or Dates of Involvement", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY+174, "From (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 131, $startY+173.5, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
+
+// // Date Fields - Organization 2
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org2_date_from', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY+179);    // From date
+// $pdf->TextField('org2_date_to', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY+179);     // To date
+
 
 //  ******************************
 //  ******** End Page No 21 ******
