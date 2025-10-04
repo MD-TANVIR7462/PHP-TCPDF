@@ -2212,6 +2212,252 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 //  ******************************
 //  ******** Start Page No 13 ****
 //  ******************************/
+// // Start the page
+// $pdf->AddPage('P', 'LETTER');
+// $pdf->setFillColor(220, 220, 220);
+// $pdf->setFont('Times', '', 12);
+// $pdf->setCellHeightRatio(1.2);
+// $pdf->setCellPaddings(1, 0.5, 1, 1);
+
+
+// $pdf->SetFontSize(12);
+// $html = "<div><b>Part 8. Biographic Information</b></div>";
+// $pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
+// //........
+// $startX = 12;
+// $startY = 34;
+// $labelFont = ['times', '', 10];
+// $fieldFont = ['courier', 'B', 10];
+
+// // Question 1: Ethnicity
+// $pdf->SetFont(...$labelFont);
+// $html = '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ethnicity (Select <b>only one</b> box)';
+// $pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
+
+// // Ethnicity checkboxes
+// $pdf->SetFont('times', '', 14);
+// if (showData('i_131_biographic_info_ethnicity') == "hispanic") $checked = "checked";
+// else $checked = "";
+// $html = '<input type="checkbox" name="hispanic_not_hispanic" value="hispanic"  checked="' . $checked . '" />';
+// $pdf->writeHTMLCell(5, 1, $startX + 9, $startY + 5, $html, 0, 1, false, false, 'L', false);
+
+// if (showData('i_131_biographic_info_ethnicity') == "nothispanic") $checked = "checked";
+// else $checked = "";
+// $html = '<input type="checkbox" name="hispanic_not_hispanic" value="nothispanic"  checked="' . $checked . '" />';
+// $pdf->writeHTMLCell(5, 1, $startX + 46, $startY + 5, $html, 0, 1, false, false, 'L', false);
+
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(140, 1, $startX + 15.7, $startY + 5.5, "Hispanic or Latino", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(140, 1, $startX + 53, $startY + 5.5, "Not Hispanic or Latino", 0, 0, false, true, 'L', true);
+
+// // ==================== RACE SECTION ====================
+// $startY = $startY + 12;
+
+// // Question 2: Race
+// $pdf->SetFont(...$labelFont);
+// $html = '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Race (Select <b>all applicable</b> boxes)';
+// $pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
+
+// // Race checkboxes
+// $pdf->SetFont('times', '', 14);
+// if (showData('i_485_biographic_info_race_american_native') == "Y") $checked = "checked";
+// else $checked = "";
+// $pdf->writeHTMLCell(5, 1, $startX + 9, $startY + 7, '<input type="checkbox" name="p3_race1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
+// if (showData('i_485_biographic_info_race_asian') == "Y") $checked = "checked";
+// else $checked = "";
+// $pdf->writeHTMLCell(5, 1, $startX + 67, $startY + 7, '<input type="checkbox" name="p3_race2" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
+// if (showData('i_485_biographic_info_race_black_african') == "Y") $checked = "checked";
+// else $checked = "";
+// $pdf->writeHTMLCell(5, 1, $startX + 85, $startY + 7, '<input type="checkbox" name="p3_race3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
+// if (showData('i_485_biographic_info_race_native_islander') == "Y") $checked = "checked";
+// else $checked = "";
+// $pdf->writeHTMLCell(5, 1, $startX +9, $startY + 15, '<input type="checkbox" name="p3_race4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
+// if (showData('i_485_biographic_info_race_white') == "Y") $checked = "checked";
+// else $checked = "";
+// $pdf->writeHTMLCell(5, 1, $startX + 77, $startY + 15, '<input type="checkbox" name="p3_race5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
+
+// // Race labels
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(140, 1, $startX + 15.7, $startY + 7.5, "American Indian or Alaska Native", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(140, 1, $startX + 74, $startY + 7.5, "Asian", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(140, 1, $startX + 92, $startY + 7.5, "Black or African American", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(140, 1, $startX + 15.7, $startY + 15.5, "Native Hawaiian or Other Pacific Islander", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(140, 1, $startX + 83, $startY + 15.5, "White", 0, 0, false, true, 'L', true);
+
+// // ==================== HEIGHT AND WEIGHT SECTION ====================
+// $startY = $startY + 24;
+
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(0, 0, $startX, $startY, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feet', 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(0, 0, $startX + 52, $startY, 'Inches', 0, 0, false, true, 'L', true);
+
+// $pdf->SetFont(...$fieldFont);
+// $pdf->ComboBox('p8_3feet', 19, 6.6, array('', '2', '3', '4', '5', '6', '7', '8'), array(), array(), $startX + 32, $startY - 0.3);
+// $pdf->ComboBox('p8_3inches', 19, 6.6, array('','0' ,'1','2', '3', '4', '5', '6', '7', '8', '9', '10', '11'), array(), array(), $startX + 64, $startY - 0.3);
+
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(0, 0, $startX + 88, $startY, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pounds', 0, 0, false, true, 'L', true);
+
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('p8_4Pounds1', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), $startX + 125, $startY - 0.3);
+// $pdf->TextField('p8_4Pounds2', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), $startX + 132, $startY - 0.3);
+// $pdf->TextField('p8_4Pounds3', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), $startX + 139, $startY - 0.3);
+
+// // ==================== EYE COLOR SECTION ====================
+// $startY = $startY + 8;
+
+// $pdf->SetFont(...$labelFont);
+// $html = '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eye color (Select <b>only one</b> box)';
+// $pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
+
+// // Eye color checkboxes
+// $pdf->SetFont('times', '', 14);
+// $eyeColorOptions = [
+//     ['x' => 21, 'value' => "black", 'label' => "Black", 'label_x' => 28],
+//     ['x' => 49, 'value' => "blue", 'label' => "Blue", 'label_x' => 56],
+//     ['x' => 66, 'value' => "brown", 'label' => "Brown", 'label_x' => 73],
+//     ['x' => 84, 'value' => "gray", 'label' => "Gray", 'label_x' => 91],
+//     ['x' => 101, 'value' => "green", 'label' => "Green", 'label_x' => 108],
+//     ['x' => 117.5, 'value' => "hazel", 'label' => "Hazel", 'label_x' => 124.5],
+//     ['x' => 133.5, 'value' => "marron", 'label' => "Maroon", 'label_x' => 140],
+//     ['x' => 153, 'value' => "pink", 'label' => "Pink", 'label_x' => 160],
+//     ['x' => 171, 'value' => "unknown", 'label' => "Unknown/Other", 'label_x' => 178]
+// ];
+
+// foreach ($eyeColorOptions as $option) {
+//     $pdf->SetFont('times', '', 14);
+//     $checked = (showData('i_131_biographic_info_eye_color') == $option['value']) ? "checked" : "";
+//     $pdf->writeHTMLCell(5, 1, $option['x'], $startY + 6, '<input type="checkbox" name="p3_eye_color_status' . $option['value'] . '" value="Y"  checked="' . $checked . '" />', 0, 0, false, false, 'L', false);
+    
+//     $pdf->SetFont(...$labelFont);
+//     $pdf->writeHTMLCell(140, 1, $option['label_x'], $startY + 6.3, $option['label'], 0, 0, false, true, 'L', true);
+// }
+
+// // ==================== HAIR COLOR SECTION ====================
+// $startY = $startY + 12;
+
+// $pdf->SetFont(...$labelFont);
+// $html = '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hair color (Select <b>only one</b> box)';
+// $pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
+
+// // Hair color checkboxes
+// $pdf->SetFont('times', '', 14);
+// $hairColorOptions = [
+//     ['x' => 21, 'value' => "blad", 'label' => "Bald(No hair)", 'label_x' => 28],
+//     ['x' => 49, 'value' => "black", 'label' => "Black", 'label_x' => 56],
+//     ['x' => 66, 'value' => "blond", 'label' => "Blond", 'label_x' => 73],
+//     ['x' => 84, 'value' => "brown", 'label' => "Brown", 'label_x' => 91],
+//     ['x' => 102, 'value' => "gray", 'label' => "Gray", 'label_x' => 109],
+//     ['x' => 118, 'value' => "red", 'label' => "Red", 'label_x' => 125],
+//     ['x' => 133, 'value' => "sandy", 'label' => "Sandy", 'label_x' => 140],
+//     ['x' => 153, 'value' => "white", 'label' => "White", 'label_x' => 160],
+//     ['x' => 171, 'value' => "unknown", 'label' => "Unknown/Other", 'label_x' => 178]
+// ];
+
+// foreach ($hairColorOptions as $option) {
+//     $pdf->SetFont('times', '', 14);
+//     $checked = (showData('i_131_biographic_info_hair_color') == $option['value']) ? "checked" : "";
+//     $pdf->writeHTMLCell(5, 1, $option['x'], $startY + 6, '<input type="checkbox" name="p3_hair_color_status' . $option['value'] . '" value="Y"  checked="' . $checked . '" />', 0, 0, false, false, 'L', false);
+    
+//     $pdf->SetFont(...$labelFont);
+//     $pdf->writeHTMLCell(140, 1, $option['label_x'], $startY + 6.3, $option['label'], 0, 0, false, true, 'L', true);
+// }
+// //...........
+
+// $pdf->SetFontSize(12);
+// $html = "<div><b>Part 9. General Eligibility and Inadmissibility Grounds</b></div>";
+// $pdf->writeHTMLCell(191.5, 6, 13, 107, $html, 1, 1, true, 'L');
+// //.............
+// $pdf->SetFont(...$labelFont);
+// $html = 'Choose the answer that you think is correct in <b>Part 9</b>. If you answer "Yes" to any questions (<b>or if you answer "No," but are unsure<br>
+// of your answer</b>), provide an explanation of the events and circumstances in the space provided in <b>Part 14. Additional Information.</b>';
+// $pdf->writeHTMLCell(200, 0, 13,114.6, $html, 0, 0, false, true, 'L', true);
+// //.........
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(60, 0, 13,125, '<b>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Have you', 0, 0, false, true, 'L', true);
+// // ..............
+// addYesNoQuestion($pdf, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EVER</b> been a member of, involved in, or in any way associated with any organization,<br>
+// association, fund, foundation, party, club, society, or similar group in the United States or in any other<br>
+// location in the world?',20, 125, 'i_131_associated_organization', 'i_131_associated_organization');
+// //.............
+// $pdf->SetFont(...$labelFont);
+// $html = 'If you answered "Yes" to <b>Item Number 1</b>., complete <b>Item Numbers 2. - 9.</b> If you were a member of more than two<br>
+// organizations, use the space provided in Part <b>14. Additional Information.</b>.';
+// $pdf->writeHTMLCell(200, 0, 20,140, $html, 0, 0, false, true, 'L', true);
+// // ==================== ORGANIZATION 1 SECTION ====================
+// $startX = 13;
+// $startY = 150;
+// $lineHeight = 6;
+// $fieldHeight = 7;
+// $labelFont = ['times', '', 10];
+// $fieldFont = ['courier', 'B', 10];
+// $stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(190, 6, 13, $startY, '<i>Organization 1</i>', 0, 1, false, false, 'L', true);
+
+// // Organization Name
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+5, "<b>2</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name of Organization", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org1_name', 120, $fieldHeight, $stroke, array(), $startX+9, $startY+10);
+
+// // City, State, Country section
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+17, "<b>3</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City or Town", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 105.5, $startY+17, "State or Province", 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 8, $startY+28, "Country", 0, 0, false, false, 'L', true);
+
+// // Fields
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org1_city', 95, $fieldHeight, $stroke, array(), $startX +9, $startY+21.7);    // City
+// $pdf->TextField('org1_state', 85, $fieldHeight, $stroke, array(), $startX + 106.8, $startY+21.7); // State
+// $pdf->TextField('org1_country', 95, $fieldHeight, $stroke, array(), $startX +9, $startY+33.5);  // Country
+
+// // Nature of Organization
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(190, 1, $startX, $startY+41, "<b>4</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nature of Organization, including its purposes and activities, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org1_nature', 183, $fieldHeight, $stroke, array(), $startX+9, $startY+46);
+
+// // Nature of involvement in organization
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(190, 1, $startX+8, $startY+54, "Nature of involvement in organization, including role or positions(s) held, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org1_involvement', 183, $fieldHeight, $stroke, array(), $startX+9, $startY+59);
+
+// // Dates of Membership
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+67, "<b>5</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dates of Membership or Dates of Involvement", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 8, $startY+74, "From (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 87, $startY+74, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
+
+// // Date Fields
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org1_date_from', 46, $fieldHeight, $stroke, array(), $startX + 40, $startY+74);    // From date
+// $pdf->TextField('org1_date_to', 47, $fieldHeight, $stroke, array(), $startX + 116, $startY+74);     // To date
+
+// // ==================== ORGANIZATION 2 SECTION ====================
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(190, 6, 13, 232, '<i>Organization 2</i>', 0, 1, false, false, 'L', true);
+
+// // Organization Name
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, 13, 239, "<b>6</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name of Organization", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org2_name', 120, $fieldHeight, $stroke, array(), 22, 244);
+//...........
+
+//  ******************************
+//  ******** End Page No 12 ******
+//  ******************************/
+
+//  ******************************
+//  ******** Start Page No 13 ****
+//  ******************************/
 // Start the page
 $pdf->AddPage('P', 'LETTER');
 $pdf->setFillColor(220, 220, 220);
@@ -2219,278 +2465,51 @@ $pdf->setFont('Times', '', 12);
 $pdf->setCellHeightRatio(1.2);
 $pdf->setCellPaddings(1, 0.5, 1, 1);
 
-
 $pdf->SetFontSize(12);
-$html = "<div><b>Part 8. Biographic Information</b></div>";
+$html = "<div><b>Part 9. General Eligibility and Inadmissibility Grounds </b>(continued)</div>";
 $pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
-//........
-$startX = 12;
-$startY = 34;
-$labelFont = ['times', '', 10];
-$fieldFont = ['courier', 'B', 10];
-
-// Question 1: Ethnicity
-$pdf->SetFont(...$labelFont);
-$html = '<b>1.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ethnicity (Select <b>only one</b> box)';
-$pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
-
-// Ethnicity checkboxes
-$pdf->SetFont('times', '', 14);
-if (showData('i_131_biographic_info_ethnicity') == "hispanic") $checked = "checked";
-else $checked = "";
-$html = '<input type="checkbox" name="hispanic_not_hispanic" value="hispanic"  checked="' . $checked . '" />';
-$pdf->writeHTMLCell(5, 1, $startX + 9, $startY + 5, $html, 0, 1, false, false, 'L', false);
-
-if (showData('i_131_biographic_info_ethnicity') == "nothispanic") $checked = "checked";
-else $checked = "";
-$html = '<input type="checkbox" name="hispanic_not_hispanic" value="nothispanic"  checked="' . $checked . '" />';
-$pdf->writeHTMLCell(5, 1, $startX + 46, $startY + 5, $html, 0, 1, false, false, 'L', false);
-
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(140, 1, $startX + 15.7, $startY + 5.5, "Hispanic or Latino", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, $startX + 53, $startY + 5.5, "Not Hispanic or Latino", 0, 0, false, true, 'L', true);
-
-// ==================== RACE SECTION ====================
-$startY = $startY + 12;
-
-// Question 2: Race
-$pdf->SetFont(...$labelFont);
-$html = '<b>2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Race (Select <b>all applicable</b> boxes)';
-$pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
-
-// Race checkboxes
-$pdf->SetFont('times', '', 14);
-if (showData('i_485_biographic_info_race_american_native') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, $startX + 9, $startY + 7, '<input type="checkbox" name="p3_race1" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-
-if (showData('i_485_biographic_info_race_asian') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, $startX + 67, $startY + 7, '<input type="checkbox" name="p3_race2" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-
-if (showData('i_485_biographic_info_race_black_african') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, $startX + 85, $startY + 7, '<input type="checkbox" name="p3_race3" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-
-if (showData('i_485_biographic_info_race_native_islander') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, $startX +9, $startY + 15, '<input type="checkbox" name="p3_race4" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-
-if (showData('i_485_biographic_info_race_white') == "Y") $checked = "checked";
-else $checked = "";
-$pdf->writeHTMLCell(5, 1, $startX + 77, $startY + 15, '<input type="checkbox" name="p3_race5" value="Y"  checked="' . $checked . '" />', 0, 1, false, false, 'L', false);
-
-// Race labels
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(140, 1, $startX + 15.7, $startY + 7.5, "American Indian or Alaska Native", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, $startX + 74, $startY + 7.5, "Asian", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, $startX + 92, $startY + 7.5, "Black or African American", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, $startX + 15.7, $startY + 15.5, "Native Hawaiian or Other Pacific Islander", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(140, 1, $startX + 83, $startY + 15.5, "White", 0, 0, false, true, 'L', true);
-
-// ==================== HEIGHT AND WEIGHT SECTION ====================
-$startY = $startY + 24;
-
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(0, 0, $startX, $startY, '<b>3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feet', 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(0, 0, $startX + 52, $startY, 'Inches', 0, 0, false, true, 'L', true);
-
-$pdf->SetFont(...$fieldFont);
-$pdf->ComboBox('p8_3feet', 19, 6.6, array('', '2', '3', '4', '5', '6', '7', '8'), array(), array(), $startX + 32, $startY - 0.3);
-$pdf->ComboBox('p8_3inches', 19, 6.6, array('','0' ,'1','2', '3', '4', '5', '6', '7', '8', '9', '10', '11'), array(), array(), $startX + 64, $startY - 0.3);
-
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(0, 0, $startX + 88, $startY, '<b>4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pounds', 0, 0, false, true, 'L', true);
-
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('p8_4Pounds1', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), $startX + 125, $startY - 0.3);
-$pdf->TextField('p8_4Pounds2', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), $startX + 132, $startY - 0.3);
-$pdf->TextField('p8_4Pounds3', 5, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), $startX + 139, $startY - 0.3);
-
-// ==================== EYE COLOR SECTION ====================
-$startY = $startY + 8;
-
-$pdf->SetFont(...$labelFont);
-$html = '<b>5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eye color (Select <b>only one</b> box)';
-$pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
-
-// Eye color checkboxes
-$pdf->SetFont('times', '', 14);
-$eyeColorOptions = [
-    ['x' => 21, 'value' => "black", 'label' => "Black", 'label_x' => 28],
-    ['x' => 49, 'value' => "blue", 'label' => "Blue", 'label_x' => 56],
-    ['x' => 66, 'value' => "brown", 'label' => "Brown", 'label_x' => 73],
-    ['x' => 84, 'value' => "gray", 'label' => "Gray", 'label_x' => 91],
-    ['x' => 101, 'value' => "green", 'label' => "Green", 'label_x' => 108],
-    ['x' => 117.5, 'value' => "hazel", 'label' => "Hazel", 'label_x' => 124.5],
-    ['x' => 133.5, 'value' => "marron", 'label' => "Maroon", 'label_x' => 140],
-    ['x' => 153, 'value' => "pink", 'label' => "Pink", 'label_x' => 160],
-    ['x' => 171, 'value' => "unknown", 'label' => "Unknown/Other", 'label_x' => 178]
-];
-
-foreach ($eyeColorOptions as $option) {
-    $pdf->SetFont('times', '', 14);
-    $checked = (showData('i_131_biographic_info_eye_color') == $option['value']) ? "checked" : "";
-    $pdf->writeHTMLCell(5, 1, $option['x'], $startY + 6, '<input type="checkbox" name="p3_eye_color_status' . $option['value'] . '" value="Y"  checked="' . $checked . '" />', 0, 0, false, false, 'L', false);
-    
-    $pdf->SetFont(...$labelFont);
-    $pdf->writeHTMLCell(140, 1, $option['label_x'], $startY + 6.3, $option['label'], 0, 0, false, true, 'L', true);
-}
-
-// ==================== HAIR COLOR SECTION ====================
-$startY = $startY + 12;
-
-$pdf->SetFont(...$labelFont);
-$html = '<b>6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hair color (Select <b>only one</b> box)';
-$pdf->writeHTMLCell(0, 0, $startX, $startY, $html, 0, 0, false, true, 'L', true);
-
-// Hair color checkboxes
-$pdf->SetFont('times', '', 14);
-$hairColorOptions = [
-    ['x' => 21, 'value' => "blad", 'label' => "Bald(No hair)", 'label_x' => 28],
-    ['x' => 49, 'value' => "black", 'label' => "Black", 'label_x' => 56],
-    ['x' => 66, 'value' => "blond", 'label' => "Blond", 'label_x' => 73],
-    ['x' => 84, 'value' => "brown", 'label' => "Brown", 'label_x' => 91],
-    ['x' => 102, 'value' => "gray", 'label' => "Gray", 'label_x' => 109],
-    ['x' => 118, 'value' => "red", 'label' => "Red", 'label_x' => 125],
-    ['x' => 133, 'value' => "sandy", 'label' => "Sandy", 'label_x' => 140],
-    ['x' => 153, 'value' => "white", 'label' => "White", 'label_x' => 160],
-    ['x' => 171, 'value' => "unknown", 'label' => "Unknown/Other", 'label_x' => 178]
-];
-
-foreach ($hairColorOptions as $option) {
-    $pdf->SetFont('times', '', 14);
-    $checked = (showData('i_131_biographic_info_hair_color') == $option['value']) ? "checked" : "";
-    $pdf->writeHTMLCell(5, 1, $option['x'], $startY + 6, '<input type="checkbox" name="p3_hair_color_status' . $option['value'] . '" value="Y"  checked="' . $checked . '" />', 0, 0, false, false, 'L', false);
-    
-    $pdf->SetFont(...$labelFont);
-    $pdf->writeHTMLCell(140, 1, $option['label_x'], $startY + 6.3, $option['label'], 0, 0, false, true, 'L', true);
-}
-//...........
-
-$pdf->SetFontSize(12);
-$html = "<div><b>Part 9. General Eligibility and Inadmissibility Grounds</b></div>";
-$pdf->writeHTMLCell(191.5, 6, 13, 107, $html, 1, 1, true, 'L');
-//.............
-$pdf->SetFont(...$labelFont);
-$html = 'Choose the answer that you think is correct in <b>Part 9</b>. If you answer "Yes" to any questions (<b>or if you answer "No," but are unsure<br>
-of your answer</b>), provide an explanation of the events and circumstances in the space provided in <b>Part 14. Additional Information.</b>';
-$pdf->writeHTMLCell(200, 0, 13,114.6, $html, 0, 0, false, true, 'L', true);
-//.........
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(60, 0, 13,125, '<b>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Have you', 0, 0, false, true, 'L', true);
-// ..............
-addYesNoQuestion($pdf, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EVER</b> been a member of, involved in, or in any way associated with any organization,<br>
-association, fund, foundation, party, club, society, or similar group in the United States or in any other<br>
-location in the world?',20, 125, 'i_131_associated_organization', 'i_131_associated_organization');
-//.............
-$pdf->SetFont(...$labelFont);
-$html = 'If you answered "Yes" to <b>Item Number 1</b>., complete <b>Item Numbers 2. - 9.</b> If you were a member of more than two<br>
-organizations, use the space provided in Part <b>14. Additional Information.</b>.';
-$pdf->writeHTMLCell(200, 0, 20,140, $html, 0, 0, false, true, 'L', true);
-
-
-//.............
-
-
-
-// ==================== ORGANIZATION 1 SECTION ====================
-$startX = 20;
-$startY = 147;
+//..........
+$startX = 13;
+$startY = 33;
 $lineHeight = 6;
 $fieldHeight = 7;
 $labelFont = ['times', '', 10];
 $fieldFont = ['courier', 'B', 10];
 $stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
-$pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 6, 13, 145, '<b>Organization 1</b>', 0, 1, false, false, 'L', true);
-
-// Organization Name
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY+55, "2. Name of Organization", 0, 0, false, true, 'L', true);
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('org1_name', 185, $fieldHeight, $stroke, array(), $startX, $startY+60);
-
 // City, State, Country section
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY+67, "3. City or Town", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY+67, "State or Province", 0, 0, false, false, 'L', false);
-$pdf->writeHTMLCell(60, 1, $startX + 131, $startY+66.5, "Country", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(130, 1, $startX, $startY, "<b>7</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City or Town", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX + 105.5, $startY, "State or Province", 0, 0, false, false, 'L', false);
+$pdf->writeHTMLCell(60, 1, $startX + 8, $startY+11, "Country", 0, 0, false, false, 'L', true);
 
 // Fields
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('org1_city', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY+72);    // City
-$pdf->TextField('org1_state', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY+72); // State
-$pdf->TextField('org1_country', 53, $fieldHeight, $stroke, array(), $startX + 132, $startY+72);  // Country
+$pdf->TextField('org1_city', 95, $fieldHeight, $stroke, array(), $startX +9, $startY+4.7);    // City
+$pdf->TextField('org1_state', 85, $fieldHeight, $stroke, array(), $startX + 106.8, $startY+4.7); // State
+$pdf->TextField('org1_country', 95, $fieldHeight, $stroke, array(), $startX +9, $startY+16.5);  // Country
 
 // Nature of Organization
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(190, 1, $startX, $startY+80, "4. Nature of Organization, including its purposes and activities, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(190, 1, $startX, $startY+24.5, "<b>8</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nature of Organization, including its purposes and activities, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('org1_nature', 185, $fieldHeight, $stroke, array(), $startX, $startY+85);
+$pdf->TextField('org1_nature', 183, $fieldHeight, $stroke, array(), $startX+9, $startY+29.5);
 
 // Nature of involvement in organization
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(190, 1, $startX, $startY+92, "Nature of involvement in organization, including role or positions(s) held, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(190, 1, $startX+8, $startY+37.6, "Nature of involvement in organization, including role or positions(s) held, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('org1_involvement', 185, $fieldHeight, $stroke, array(), $startX, $startY+97);
+$pdf->TextField('org1_involvement', 183, $fieldHeight, $stroke, array(), $startX+9, $startY+42.5);
 
 // Dates of Membership
 $pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY+104, "5. Dates of Membership or Dates of Involvement", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY+104, "From (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
-$pdf->writeHTMLCell(60, 1, $startX + 131, $startY+103.5, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
+$pdf->writeHTMLCell(130, 1, $startX, $startY+50, "<b>9</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dates of Membership or Dates of Involvement", 0, 0, false, true, 'L', true);
+$pdf->writeHTMLCell(60, 1, $startX + 8, $startY+57, "From (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
+$pdf->writeHTMLCell(60, 1, $startX + 87, $startY+57, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
 
 // Date Fields
 $pdf->SetFont(...$fieldFont);
-$pdf->TextField('org1_date_from', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY+109);    // From date
-$pdf->TextField('org1_date_to', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY+109);     // To date
-
-// // ==================== ORGANIZATION 2 SECTION ====================
-// $pdf->SetFont('times', '', 10);
-// $pdf->writeHTMLCell(190, 6, 13, $startY+120, '<b>Organization 2</b>', 0, 1, false, false, 'L', true);
-
-// // Organization Name
-// $pdf->SetFont(...$labelFont);
-// $pdf->writeHTMLCell(130, 1, $startX, $startY+125, "6. Name of Organization", 0, 0, false, true, 'L', true);
-// $pdf->SetFont(...$fieldFont);
-// $pdf->TextField('org2_name', 185, $fieldHeight, $stroke, array(), $startX, $startY+130);
-
-// // City, State, Country section - Organization 2
-// $pdf->SetFont(...$labelFont);
-// $pdf->writeHTMLCell(130, 1, $startX, $startY+137, "City or Town", 0, 0, false, true, 'L', true);
-// $pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY+137, "State or Province", 0, 0, false, false, 'L', false);
-// $pdf->writeHTMLCell(60, 1, $startX + 131, $startY+136.5, "Country", 0, 0, false, false, 'L', true);
-
-// // Fields - Organization 2
-// $pdf->SetFont(...$fieldFont);
-// $pdf->TextField('org2_city', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY+142);    // City
-// $pdf->TextField('org2_state', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY+142); // State
-// $pdf->TextField('org2_country', 53, $fieldHeight, $stroke, array(), $startX + 132, $startY+142);  // Country
-
-// // Nature of Organization - Organization 2
-// $pdf->SetFont(...$labelFont);
-// $pdf->writeHTMLCell(190, 1, $startX, $startY+150, "Nature of Organization, including its purposes and activities, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
-// $pdf->SetFont(...$fieldFont);
-// $pdf->TextField('org2_nature', 185, $fieldHeight, $stroke, array(), $startX, $startY+155);
-
-// // Nature of involvement in organization - Organization 2
-// $pdf->SetFont(...$labelFont);
-// $pdf->writeHTMLCell(190, 1, $startX, $startY+162, "Nature of involvement in organization, including role or positions(s) held, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
-// $pdf->SetFont(...$fieldFont);
-// $pdf->TextField('org2_involvement', 185, $fieldHeight, $stroke, array(), $startX, $startY+167);
-
-// // Dates of Membership - Organization 2
-// $pdf->SetFont(...$labelFont);
-// $pdf->writeHTMLCell(130, 1, $startX, $startY+174, "Dates of Membership or Dates of Involvement", 0, 0, false, true, 'L', true);
-// $pdf->writeHTMLCell(60, 1, $startX + 72.3, $startY+174, "From (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
-// $pdf->writeHTMLCell(60, 1, $startX + 131, $startY+173.5, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
-
-// // Date Fields - Organization 2
-// $pdf->SetFont(...$fieldFont);
-// $pdf->TextField('org2_date_from', 70.5, $fieldHeight, $stroke, array(), $startX + 0.2, $startY+179);    // From date
-// $pdf->TextField('org2_date_to', 57.5, $fieldHeight, $stroke, array(), $startX + 72.2, $startY+179);     // To date
-
+$pdf->TextField('org1_date_from', 46, $fieldHeight, $stroke, array(), $startX + 40, $startY+57);    // From date
+$pdf->TextField('org1_date_to', 47, $fieldHeight, $stroke, array(), $startX + 116, $startY+57);     // To date
 
 //  ******************************
 //  ******** End Page No 21 ******
