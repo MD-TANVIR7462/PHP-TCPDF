@@ -2452,11 +2452,124 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 //...........
 
 //  ******************************
-//  ******** End Page No 12 ******
+//  ******** End Page No 13 ******
 //  ******************************/
 
 //  ******************************
-//  ******** Start Page No 13 ****
+//  ******** Start Page No 14 ****
+//  ******************************/
+// Start the page
+// $pdf->AddPage('P', 'LETTER');
+// $pdf->setFillColor(220, 220, 220);
+// $pdf->setFont('Times', '', 12);
+// $pdf->setCellHeightRatio(1.2);
+// $pdf->setCellPaddings(1, 0.5, 1, 1);
+
+// $pdf->SetFontSize(12);
+// $html = "<div><b>Part 9. General Eligibility and Inadmissibility Grounds </b>(continued)</div>";
+// $pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
+// //..........
+// $startX = 13;
+// $startY = 33;
+// $lineHeight = 6;
+// $fieldHeight = 7;
+// $labelFont = ['times', '', 10];
+// $fieldFont = ['courier', 'B', 10];
+// $stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
+// // City, State, Country section
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY, "<b>7</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City or Town", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 105.5, $startY, "State or Province", 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 8, $startY+11, "Country", 0, 0, false, false, 'L', true);
+
+// // Fields
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org1_city', 95, $fieldHeight, $stroke, array(), $startX +9, $startY+4.7);    // City
+// $pdf->TextField('org1_state', 85, $fieldHeight, $stroke, array(), $startX + 106.8, $startY+4.7); // State
+// $pdf->TextField('org1_country', 95, $fieldHeight, $stroke, array(), $startX +9, $startY+16.5);  // Country
+
+// // Nature of Organization
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(190, 1, $startX, $startY+24.5, "<b>8</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nature of Organization, including its purposes and activities, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org1_nature', 183, $fieldHeight, $stroke, array(), $startX+9, $startY+29.5);
+
+// // Nature of involvement in organization
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(190, 1, $startX+8, $startY+37.6, "Nature of involvement in organization, including role or positions(s) held, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org1_involvement', 183, $fieldHeight, $stroke, array(), $startX+9, $startY+42.5);
+
+// // Dates of Membership
+// $pdf->SetFont(...$labelFont);
+// $pdf->writeHTMLCell(130, 1, $startX, $startY+50, "<b>9</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dates of Membership or Dates of Involvement", 0, 0, false, true, 'L', true);
+// $pdf->writeHTMLCell(60, 1, $startX + 8, $startY+57, "From (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
+// $pdf->writeHTMLCell(60, 1, $startX + 87, $startY+57, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
+
+// // Date Fields
+// $pdf->SetFont(...$fieldFont);
+// $pdf->TextField('org1_date_from', 46, $fieldHeight, $stroke, array(), $startX + 40, $startY+57);    // From date
+// $pdf->TextField('org1_date_to', 47, $fieldHeight, $stroke, array(), $startX + 116, $startY+57);     // To date
+// //.............................................
+
+// $y_position = 100;
+// addYesNoQuestion($pdf, '<b>10.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been denied admission to the United States?', 13, $y_position, 'exclusion_10', 'i_485_exclusion_status_10');
+// $y_position += 7;
+
+// addYesNoQuestion($pdf, '<b>11.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been denied a visa to the United States?', 13, $y_position, 'exclusion_11', 'i_485_exclusion_status_11');
+// $y_position += 7;
+
+// addYesNoQuestion($pdf, '<b>12.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> worked in the United States without authorization?', 13, $y_position, 'exclusion_12', 'i_485_exclusion_status_12');
+// $y_position += 7;
+
+// addYesNoQuestion($pdf, '<b>13.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> violated the terms or conditions of your nonimmigrant status?', 13, $y_position, 'exclusion_13', 'i_485_exclusion_status_13');
+// $y_position += 7;
+
+// addYesNoQuestion($pdf, '<b>14.</b> &nbsp;&nbsp;&nbsp;&nbsp;Are you presently orhave you <b>EVER</b> been in removal, exclusion, rescission, or deportation proceedings,<br>
+// &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;including expedited removal proceedings?', 13, $y_position, 'exclusion_14', 'i_485_exclusion_status_14');
+
+// $y_position += 10;
+
+// addYesNoQuestion($pdf, '<b>15.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been issued a final order of exclusion, deportation, or removal?', 13, $y_position, 'exclusion_15', 'i_485_exclusion_status_15');
+// $y_position += 7;
+
+// addYesNoQuestion($pdf, '<b>16.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> had a prior final order of exclusion, deportation, or removal reinstated?', 13, $y_position, 'exclusion_16', 'i_485_exclusion_status_16');
+// $y_position += 7;
+
+// addYesNoQuestion($pdf, '<b>17.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been granted voluntary departure by an immigration officer or an immigration judge but<br>
+// &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;failed to depart within the allotted time?', 13, $y_position, 'exclusion_1.5', 'i_485_exclusion_status_17');
+// $y_position += 11;
+
+// addYesNoQuestion($pdf, '<b>18.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> applied for any kind of relief or protection from removal, exclusion, or deportation?', 13, $y_position, 'exclusion_18', 'i_485_exclusion_status_18');
+// $y_position += 7;
+
+// addYesNoQuestion($pdf, '<b>19.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been a J-1 nonimmigrant exchange visitor who was subject to the two-year foreign<br>
+// &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;residence requirement?', 13, $y_position, 'exclusion_19', 'i_485_exclusion_status_19');
+// $y_position += 10;
+
+// addYesNoQuestion($pdf, '<b>20.</b> &nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 19.</b>, have you complied with the foreign residence requirement?', 13, $y_position, 'exclusion_20', 'i_485_exclusion_status_20');
+// $y_position += 6.5;
+
+// addYesNoQuestion($pdf, '<b>21.</b> &nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 19.</b> and "No" to <b>Item Number 20.</b>, have you been granted a<br>
+// &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;waiver or has Department of State issued a favorable waiver recommendation letter for you?', 13, $y_position, 'exclusion_21', 'i_485_exclusion_status_21');
+// //,.......
+
+// $pdf->SetFontSize(12);
+// $html = "<div><b><i>Criminal Acts and Violations</i></b></div>";
+// $pdf->writeHTMLCell(191.5, 6, 13, 197, $html, 0, 0, true, 'L');
+
+// $pdf->SetFont('times', '', 10);
+// $html = 'For <b>Item Numbers 22. - 41.</b>, you must answer "Yes" to any question that applies to you, even if your records were sealed or otherwise cleared, or even if anyone, including a judge, law enforcement officer, or attorney, told you that you no longer have a record. You<br>must also answer "Yes" to the following questions whether the action or offense occurred here in the United States or anywhere else in<br>the world. If you answer "Yes" to <b>Item Numbers 22. - 41.</b>, use the space provided in <b>Part 14. Additional Information</b> to provide an<br>explanation for each offense, if applicable, that includes a description of the criminal offense; where the criminal offense occurred;<br>when the criminal offense occurred; whether you were arrested, cited, charged, or detained for the criminal offense you committed;<br>and the outcome or disposition of that criminal offense (for example, convicted, placement in a diversion program, no charges filed,<br>charges dismissed, jail, prison, detention, probation, or community service). Your explanation must include the duration of any<br>sentence to confinement (even if suspended).';
+// $pdf->writeHTMLCell(195, 0, 13, 204, $html, 0, 1, false, true, 'L', true);
+// //.....................
+// $y_position = 243;
+// addYesNoQuestion($pdf, '<b>22.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been arrested, cited, charged, or permitted to participate in a diversion program (including<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pre-trial diversion, deferred prosecution, deferred adjudication, or any withheld adjudication), or detained<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for any reason by any law enforcement official in any country including but not limited to any U.S.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;immigration official or any official of the U.S. armed forces or U.S. Coast Guard or by a similar official of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a country other than the United States?', 13, $y_position, 'criminal_22', 'i_485_criminal_22');
+//  ******************************
+//  ******** End Page No 14 ******
+//  ******************************/
+
+//  ******************************
+//  ******** Start Page No 15 ****
 //  ******************************/
 // Start the page
 $pdf->AddPage('P', 'LETTER');
@@ -2469,101 +2582,90 @@ $pdf->SetFontSize(12);
 $html = "<div><b>Part 9. General Eligibility and Inadmissibility Grounds </b>(continued)</div>";
 $pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
 //..........
-$startX = 13;
-$startY = 33;
-$lineHeight = 6;
-$fieldHeight = 7;
-$labelFont = ['times', '', 10];
-$fieldFont = ['courier', 'B', 10];
-$stroke = ['strokeColor' => [64, 64, 64], 'lineWidth' => 1, 'borderStyle' => 'solid'];
-// City, State, Country section
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY, "<b>7</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City or Town", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 105.5, $startY, "State or Province", 0, 0, false, false, 'L', false);
-$pdf->writeHTMLCell(60, 1, $startX + 8, $startY+11, "Country", 0, 0, false, false, 'L', true);
 
-// Fields
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('org1_city', 95, $fieldHeight, $stroke, array(), $startX +9, $startY+4.7);    // City
-$pdf->TextField('org1_state', 85, $fieldHeight, $stroke, array(), $startX + 106.8, $startY+4.7); // State
-$pdf->TextField('org1_country', 95, $fieldHeight, $stroke, array(), $startX +9, $startY+16.5);  // Country
+$y_position = 33;
+addYesNoQuestion($pdf, '<b>23.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> committed a crime of any kind (even if you were not arrested, cited, charged with, or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tried for that crime, or convicted)?', 12, $y_position, 'criminal_23', 'i_485_criminal_23');
+$y_position += 9.2;
 
-// Nature of Organization
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(190, 1, $startX, $startY+24.5, "<b>8</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nature of Organization, including its purposes and activities, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('org1_nature', 183, $fieldHeight, $stroke, array(), $startX+9, $startY+29.5);
-
-// Nature of involvement in organization
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(190, 1, $startX+8, $startY+37.6, "Nature of involvement in organization, including role or positions(s) held, whether illicit or legitimate.", 0, 0, false, true, 'L', true);
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('org1_involvement', 183, $fieldHeight, $stroke, array(), $startX+9, $startY+42.5);
-
-// Dates of Membership
-$pdf->SetFont(...$labelFont);
-$pdf->writeHTMLCell(130, 1, $startX, $startY+50, "<b>9</b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dates of Membership or Dates of Involvement", 0, 0, false, true, 'L', true);
-$pdf->writeHTMLCell(60, 1, $startX + 8, $startY+57, "From (mm/dd/yyyy)", 0, 0, false, false, 'L', false);
-$pdf->writeHTMLCell(60, 1, $startX + 87, $startY+57, "To (mm/dd/yyyy)", 0, 0, false, false, 'L', true);
-
-// Date Fields
-$pdf->SetFont(...$fieldFont);
-$pdf->TextField('org1_date_from', 46, $fieldHeight, $stroke, array(), $startX + 40, $startY+57);    // From date
-$pdf->TextField('org1_date_to', 47, $fieldHeight, $stroke, array(), $startX + 116, $startY+57);     // To date
-//.............................................
-
-$y_position = 100;
-addYesNoQuestion($pdf, '<b>10.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been denied admission to the United States?', 13, $y_position, 'exclusion_10', 'i_485_exclusion_status_10');
-$y_position += 7;
-
-addYesNoQuestion($pdf, '<b>11.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been denied a visa to the United States?', 13, $y_position, 'exclusion_11', 'i_485_exclusion_status_11');
-$y_position += 7;
-
-addYesNoQuestion($pdf, '<b>12.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> worked in the United States without authorization?', 13, $y_position, 'exclusion_12', 'i_485_exclusion_status_12');
-$y_position += 7;
-
-addYesNoQuestion($pdf, '<b>13.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> violated the terms or conditions of your nonimmigrant status?', 13, $y_position, 'exclusion_13', 'i_485_exclusion_status_13');
-$y_position += 7;
-
-addYesNoQuestion($pdf, '<b>14.</b> &nbsp;&nbsp;&nbsp;&nbsp;Are you presently orhave you <b>EVER</b> been in removal, exclusion, rescission, or deportation proceedings,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;including expedited removal proceedings?', 13, $y_position, 'exclusion_14', 'i_485_exclusion_status_14');
-
-$y_position += 10;
-
-addYesNoQuestion($pdf, '<b>15.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been issued a final order of exclusion, deportation, or removal?', 13, $y_position, 'exclusion_15', 'i_485_exclusion_status_15');
-$y_position += 7;
-
-addYesNoQuestion($pdf, '<b>16.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> had a prior final order of exclusion, deportation, or removal reinstated?', 13, $y_position, 'exclusion_16', 'i_485_exclusion_status_16');
-$y_position += 7;
-
-addYesNoQuestion($pdf, '<b>17.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been granted voluntary departure by an immigration officer or an immigration judge but<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;failed to depart within the allotted time?', 13, $y_position, 'exclusion_1.5', 'i_485_exclusion_status_17');
-$y_position += 11;
-
-addYesNoQuestion($pdf, '<b>18.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> applied for any kind of relief or protection from removal, exclusion, or deportation?', 13, $y_position, 'exclusion_18', 'i_485_exclusion_status_18');
-$y_position += 7;
-
-addYesNoQuestion($pdf, '<b>19.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been a J-1 nonimmigrant exchange visitor who was subject to the two-year foreign<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;residence requirement?', 13, $y_position, 'exclusion_19', 'i_485_exclusion_status_19');
-$y_position += 10;
-
-addYesNoQuestion($pdf, '<b>20.</b> &nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 19.</b>, have you complied with the foreign residence requirement?', 13, $y_position, 'exclusion_20', 'i_485_exclusion_status_20');
-$y_position += 6.5;
-
-addYesNoQuestion($pdf, '<b>21.</b> &nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 19.</b> and "No" to <b>Item Number 20.</b>, have you been granted a<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;waiver or has Department of State issued a favorable waiver recommendation letter for you?', 13, $y_position, 'exclusion_21', 'i_485_exclusion_status_21');
-//,.......
-
-$pdf->SetFontSize(12);
-$html = "<div><b><i>Criminal Acts and Violations</i></b></div>";
-$pdf->writeHTMLCell(191.5, 6, 13, 197, $html, 0, 0, true, 'L');
+addYesNoQuestion($pdf, '<b>24.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> pled guilty to or been convicted of a crime or offense (even if the violation was<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsequently expunged or sealed by a court, or if you were granted a pardon, amnesty, a rehabilitation<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decree, or other act of clemency)?', 12, $y_position, 'criminal_24', 'i_485_criminal_24');
+$y_position += 14;
 
 $pdf->SetFont('times', '', 10);
-$html = 'For <b>Item Numbers 22. - 41.</b>, you must answer "Yes" to any question that applies to you, even if your records were sealed or otherwise cleared, or even if anyone, including a judge, law enforcement officer, or attorney, told you that you no longer have a record. You<br>must also answer "Yes" to the following questions whether the action or offense occurred here in the United States or anywhere else in<br>the world. If you answer "Yes" to <b>Item Numbers 22. - 41.</b>, use the space provided in <b>Part 14. Additional Information</b> to provide an<br>explanation for each offense, if applicable, that includes a description of the criminal offense; where the criminal offense occurred;<br>when the criminal offense occurred; whether you were arrested, cited, charged, or detained for the criminal offense you committed;<br>and the outcome or disposition of that criminal offense (for example, convicted, placement in a diversion program, no charges filed,<br>charges dismissed, jail, prison, detention, probation, or community service). Your explanation must include the duration of any<br>sentence to confinement (even if suspended).';
-$pdf->writeHTMLCell(195, 0, 13, 204, $html, 0, 1, false, true, 'L', true);
-//.....................
-$y_position = 243;
-addYesNoQuestion($pdf, '<b>22.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been arrested, cited, charged, or permitted to participate in a diversion program (including<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pre-trial diversion, deferred prosecution, deferred adjudication, or any withheld adjudication), or detained<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for any reason by any law enforcement official in any country including but not limited to any U.S.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;immigration official or any official of the U.S. armed forces or U.S. Coast Guard or by a similar official of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a country other than the United States?', 13, $y_position, 'criminal_22', 'i_485_criminal_22');
+$pdf->writeHTMLCell(190, 6, 20.5, $y_position, '<b>NOTE:</b> If you were the beneficiary of a pardon, amnesty, a rehabilitation decree, or other act of clemency, provide<br>documentation of that post-conviction action.', 0, 1, false, true, 'L', true);
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>25.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been ordered punished by a judge or had conditions imposed on you that restrained your<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;liberty (such as a prison sentence, suspended sentence, house arrest, parole, alternative sentencing, drug or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alcohol treatment, rehabilitative programs or classes, probation, or community service)?', 12, $y_position, 'criminal_25', 'i_485_criminal_25');
+$y_position += 14;
+
+addYesNoQuestion($pdf, '<b>26.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> violated (or attempted or conspired to violate) any controlled substance law or regulation<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of a state, the United States, or a foreign country?', 12, $y_position, 'criminal_26', 'i_485_criminal_26');
+$y_position += 9;
+
+addYesNoQuestion($pdf, '<b>27.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> trafficked in or benefited from, or knowingly aided, abetted, assisted, conspired or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colluded in the illegal trafficking of any controlled substances, such as chemicals, illegal drugs, or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;narcotics?', 12, $y_position, 'criminal_27', 'i_485_criminal_27');
+$y_position += 14;
+
+addYesNoQuestion($pdf, '<b>28.</b> &nbsp;&nbsp;&nbsp;&nbsp;Are you the spouse, son, or daughter of an alien who illicitly trafficked or aided (or otherwise abetted,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assisted, conspired, or colluded) in the illicit trafficking of a controlled substance, such as chemicals, illegal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drugs, or narcotics and you obtained, within the last 5 years, any financial or other benefit from this activity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of your spouse or parent?', 12, $y_position, 'criminal_28', 'i_485_criminal_28');
+$y_position += 18;
+
+addYesNoQuestion($pdf, '<b>29.</b> &nbsp;&nbsp;&nbsp;&nbsp;If your answer to <b>Item Number 28</b> is "Yes," did you know or should you have reasonably known that the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;financial or other benefit you obtained resulted from this activity of your spouse or parent?', 12, $y_position, 'criminal_29', 'i_485_criminal_29');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>30.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> engaged in prostitution or are you coming to the United States to engage in prostitution?', 12, $y_position, 'criminal_30', 'i_485_criminal_30');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>31.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> directly or indirectly procured or attempted to procure, or imported prostitutes or persons<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for the purpose of prostitution?', 12, $y_position, 'criminal_31', 'i_485_criminal_31');
+
+$y_position += 10;
+addYesNoQuestion($pdf, '<b>32.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b>  received any proceeds or money from prostitution?', 12, $y_position, 'criminal_30', 'i_485_criminal_30');
+
+$y_position +=8;
+addYesNoQuestion($pdf, '<b>33.</b> &nbsp;&nbsp;&nbsp;&nbsp;Do you intend to engage in illegal gambling or any other form of commercialized vice, such as prostitution,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bootlegging, or the sale of child pornography, while in the United States?', 12, $y_position, 'criminal_33', 'i_485_criminal_33');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>34.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> exercised immunity (diplomatic or otherwise) to avoid being prosecuted for a criminal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;offense in the United States?', 12, $y_position, 'criminal_34', 'i_485_criminal_34');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>35.a.</b>&nbsp;&nbsp;Have you <b>EVER</b> served as a foreign government official?', 12, $y_position, 'criminal_35a', 'i_485_criminal_35a');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>35.b.</b>&nbsp;&nbsp;If your answer to <b>Item Number 35.a.</b> is "Yes," have you <b>EVER</b> been responsible for, enforced, or directly<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carried out violations of religious freedoms?', 12, $y_position, 'criminal_35b', 'i_485_criminal_35b');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>36.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> induced by force, fraud, or coercion (or otherwise been involved in) the trafficking of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;another person for commercial sex acts (sex trafficking)?', 12, $y_position, 'criminal_36', 'i_485_criminal_36');
+$y_position += 10;
+
+$pdf->SetFont('times', '', 10);
+$html = '<b>NOTE:</b> : Sex trafficking involves inducing or causing an adult to engage in a commercial sex act (any sex act performed for<br>
+anything of value) through fraud, force, or coercion, or inducing or causing any person under 18 years of age to engage in a<br>
+commercial sex act (even without force, fraud, or coercion). Sex trafficking may include recruiting, enticing, harboring,<br>
+transporting, providing, obtaining, advertising, maintaining, patronizing, or soliciting by any means a person to engage in the<br>
+commercial sex act knowing (or, in the case of advertising, with reckless disregard of the fact) that the person is under 18 years<br>
+of age or that force, fraud, or coercion was used to induce or cause the person to engage in the commercial sex act. Sex<br>
+trafficking may also include knowingly benefiting financially or by receiving anything of value, from participation in a venture<br>
+involving sex trafficking';
+$pdf->writeHTMLCell(190, 0, 20, $y_position, $html, 0, 1, false, true, 'L', true);
+$y_position += 36;
+addYesNoQuestion($pdf, '<b>37.</b>&nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> trafficked a person into involuntary servitude, peonage, debt bondage, or slavery?', 12, $y_position, 'criminal_37', 'i_485_criminal_37');
+$y_position += 5;
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 6, 20, $y_position, 'Trafficking includes recruiting, harboring, transporting, providing, or obtaining a person for labor or<br>services through the use of force, fraud, or coercion.', 0, 1, false, true, 'L', true);
+
 //  ******************************
 //  ******** End Page No 21 ******
 //  ******************************/
