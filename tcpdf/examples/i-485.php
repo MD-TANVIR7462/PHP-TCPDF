@@ -847,13 +847,13 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 // $pdf->SetFont('courier', 'B', 10);
 // $pdf->TextField('p1_18_zip_code2', 36, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 168, 232);
 
-// //******************************
-// //******** End Page No 3 ******
-// //******************************
+// // //******************************
+// // //******** End Page No 3 ******
+// // //******************************
 
-// //******************************
-// //******** Start Page No 4****
-// //******************************
+// // //******************************
+// // //******** Start Page No 4****
+// // //******************************
 
 // $pdf->AddPage('P', 'LETTER');
 // $pdf->setFillColor(220, 220, 220);
@@ -1054,13 +1054,13 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 // $pdf->writeHTMLCell(160, 5, 20, 229.5, 'If you answered "Yes," you must also answer "Yes" to the <b>Consent for Disclosure</b> below.', 0, 0, 0, true, 'L', false);
 // addYesNoQuestion($pdf, '<b>Consent for Disclosure:</b> I authorize disclosure of information from this application to the SSA as<br>
 // required for the purpose of assigning me an SSN and issuing me a Social Security Card.', 20, 235, 'p1_19_want_to_issue_ssa', 'p1_19_consent_for_disclosure');
-// //******************************
-// //******** End Page No 4 ******
-// //******************************
-
-// //******************************
-// //******** Start Page No 5****
 // // //******************************
+// // //******** End Page No 4 ******
+// // //******************************
+
+// // //******************************
+// // //******** Start Page No 5****
+// // // //******************************
 
 // $pdf->AddPage('P', 'LETTER');
 // $pdf->setFillColor(220, 220, 220);
@@ -1225,13 +1225,13 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 // $pdf->writeHTMLCell(190, 1, 20, 232, 'Religious Worker, Form I-360 (select your specific category below):', 0, 0, false, true, 'L', true);
 // drawCheckboxWithLabel($pdf, 19, 238.5, 'p2_3c_minister', 'i_485_minister_status', 'Minister of Religion');
 // drawCheckboxWithLabel($pdf, 19, 244.5, 'p2_3c_other_religious', 'i_485_other_religious_status', 'Other Religious Worker');
-// //******************************
-// //******** End Page No 6 ******
-// //******************************
+// // //******************************
+// // //******** End Page No 6 ******
+// // //******************************
 
-// //******************************
-// //******** Start Page No 7****
-// //******************************
+// // //******************************
+// // //******** Start Page No 7****
+// // //******************************
 // $pdf->AddPage('P', 'LETTER');
 // $pdf->setFillColor(220, 220, 220);
 // $pdf->setFont('Times', '', 12);
@@ -2051,14 +2051,14 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 // $pdf->SetFont('courier', 'B', 10); // set font
 // $pdf->TextField('p13_Interpreter_signature_date', 75, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 130, 218.5);
 
-//  ******************************
-//  ******** End Page No 11 ******
-//  ******************************/
+// //  ******************************
+// //  ******** End Page No 11 ******
+// //  ******************************/
 
-//  ******************************
-//  ******** Start Page No 12 ****
-//  ******************************/
-// Start the page
+// //  ******************************
+// //  ******** Start Page No 12 ****
+// //  ******************************/
+// // Start the page
 // $pdf->AddPage('P', 'LETTER');
 // $pdf->setFillColor(220, 220, 220);
 // $pdf->setFont('Times', '', 12);
@@ -2205,13 +2205,13 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 // //.......
 
 // addYesNoQuestion($pdf, 'Is this child also applying now on a separate Form I-485?', $startX, $startY+47.5, 'p7_child2_Q', 'i_131_exclusion_status');
-//  ******************************
-//  ******** End Page No 12 ******
-//  ******************************/
+// //  ******************************
+// //  ******** End Page No 12 ******
+// //  ******************************/
 
-//  ******************************
-//  ******** Start Page No 13 ****
-//  ******************************/
+// //  ******************************
+// //  ******** Start Page No 13 ****
+// //  ******************************/
 // // Start the page
 // $pdf->AddPage('P', 'LETTER');
 // $pdf->setFillColor(220, 220, 220);
@@ -2510,7 +2510,60 @@ $pdf->writeHTMLCell(60, 1, $startX + 87, $startY+57, "To (mm/dd/yyyy)", 0, 0, fa
 $pdf->SetFont(...$fieldFont);
 $pdf->TextField('org1_date_from', 46, $fieldHeight, $stroke, array(), $startX + 40, $startY+57);    // From date
 $pdf->TextField('org1_date_to', 47, $fieldHeight, $stroke, array(), $startX + 116, $startY+57);     // To date
+//.............................................
 
+$y_position = 100;
+addYesNoQuestion($pdf, '<b>10.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been denied admission to the United States?', 13, $y_position, 'exclusion_10', 'i_485_exclusion_status_10');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>11.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been denied a visa to the United States?', 13, $y_position, 'exclusion_11', 'i_485_exclusion_status_11');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>12.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> worked in the United States without authorization?', 13, $y_position, 'exclusion_12', 'i_485_exclusion_status_12');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>13.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> violated the terms or conditions of your nonimmigrant status?', 13, $y_position, 'exclusion_13', 'i_485_exclusion_status_13');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>14.</b> &nbsp;&nbsp;&nbsp;&nbsp;Are you presently orhave you <b>EVER</b> been in removal, exclusion, rescission, or deportation proceedings,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;including expedited removal proceedings?', 13, $y_position, 'exclusion_14', 'i_485_exclusion_status_14');
+
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>15.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been issued a final order of exclusion, deportation, or removal?', 13, $y_position, 'exclusion_15', 'i_485_exclusion_status_15');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>16.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> had a prior final order of exclusion, deportation, or removal reinstated?', 13, $y_position, 'exclusion_16', 'i_485_exclusion_status_16');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>17.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been granted voluntary departure by an immigration officer or an immigration judge but<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;failed to depart within the allotted time?', 13, $y_position, 'exclusion_1.5', 'i_485_exclusion_status_17');
+$y_position += 11;
+
+addYesNoQuestion($pdf, '<b>18.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> applied for any kind of relief or protection from removal, exclusion, or deportation?', 13, $y_position, 'exclusion_18', 'i_485_exclusion_status_18');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>19.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been a J-1 nonimmigrant exchange visitor who was subject to the two-year foreign<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;residence requirement?', 13, $y_position, 'exclusion_19', 'i_485_exclusion_status_19');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>20.</b> &nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 19.</b>, have you complied with the foreign residence requirement?', 13, $y_position, 'exclusion_20', 'i_485_exclusion_status_20');
+$y_position += 6.5;
+
+addYesNoQuestion($pdf, '<b>21.</b> &nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 19.</b> and "No" to <b>Item Number 20.</b>, have you been granted a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;waiver or has Department of State issued a favorable waiver recommendation letter for you?', 13, $y_position, 'exclusion_21', 'i_485_exclusion_status_21');
+//,.......
+
+$pdf->SetFontSize(12);
+$html = "<div><b><i>Criminal Acts and Violations</i></b></div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 197, $html, 0, 0, true, 'L');
+
+$pdf->SetFont('times', '', 10);
+$html = 'For <b>Item Numbers 22. - 41.</b>, you must answer "Yes" to any question that applies to you, even if your records were sealed or otherwise cleared, or even if anyone, including a judge, law enforcement officer, or attorney, told you that you no longer have a record. You<br>must also answer "Yes" to the following questions whether the action or offense occurred here in the United States or anywhere else in<br>the world. If you answer "Yes" to <b>Item Numbers 22. - 41.</b>, use the space provided in <b>Part 14. Additional Information</b> to provide an<br>explanation for each offense, if applicable, that includes a description of the criminal offense; where the criminal offense occurred;<br>when the criminal offense occurred; whether you were arrested, cited, charged, or detained for the criminal offense you committed;<br>and the outcome or disposition of that criminal offense (for example, convicted, placement in a diversion program, no charges filed,<br>charges dismissed, jail, prison, detention, probation, or community service). Your explanation must include the duration of any<br>sentence to confinement (even if suspended).';
+$pdf->writeHTMLCell(195, 0, 13, 204, $html, 0, 1, false, true, 'L', true);
+//.....................
+$y_position = 243;
+addYesNoQuestion($pdf, '<b>22.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been arrested, cited, charged, or permitted to participate in a diversion program (including<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pre-trial diversion, deferred prosecution, deferred adjudication, or any withheld adjudication), or detained<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for any reason by any law enforcement official in any country including but not limited to any U.S.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;immigration official or any official of the U.S. armed forces or U.S. Coast Guard or by a similar official of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a country other than the United States?', 13, $y_position, 'criminal_22', 'i_485_criminal_22');
 //  ******************************
 //  ******** End Page No 21 ******
 //  ******************************/
