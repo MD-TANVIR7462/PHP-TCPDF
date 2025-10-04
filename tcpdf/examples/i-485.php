@@ -2776,6 +2776,96 @@ $html = '<b>NOTE:</b> If you answered "Yes" to any part of <b>Item Numbers 42.a.
 $pdf->writeHTMLCell(190, 6, 21, $y_position, $html, 0, 1, false, true, 'L', true);
 
 //  ******************************
+//  ******** End Page No 16 ******
+//  ******************************/
+
+//  ******************************
+//  ******** Start Page No 17****
+//  ******************************/
+$pdf->AddPage('P', 'LETTER');
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+
+$pdf->SetFontSize(12);
+$html = "<div><b>Part 9. General Eligibility and Inadmissibility Grounds </b>(continued)</div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
+
+$y_position = 33;
+addYesNoQuestion($pdf, '<b>46.</b> &nbsp;&nbsp;&nbsp;&nbsp;Are you the spouse or child of an individual who <b>EVER</b> engaged in any of the activities listed in <b>Item<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Numbers 43.b. - 43.i.</b>?', 12, $y_position, 'security_46', 'i_485_security_46');
+$y_position += 10;
+
+$pdf->SetFont('times', '', 10);
+$html = '<b>NOTE:</b> If you answered "Yes" to any part of <b>Item Number 46</b>, explain what your parent or spouse did, including the dates and<br>location of the circumstances in <b>Part 14. Additional Information.</b>';
+$pdf->writeHTMLCell(190, 6, 21, $y_position, $html, 0, 1, false, true, 'L', true);
+$y_position += 12;
+
+addYesNoQuestion($pdf, '<b>47.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> sold, provided, or transported weapons, or assisted any person in selling, providing, or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transporting weapons, which you knew or believed would be used against another person?', 12, $y_position, 'security_47', 'i_485_security_47');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>48.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> worked, volunteered, or otherwise served in any prison, jail, prison camp, detention<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;facility, labor camp, or any other place where people were detained, or have you <b>EVER</b> directed or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;participated in any other activity that involved detaining people?', 12, $y_position, 'security_48', 'i_485_security_48');
+$y_position += 14;
+
+addYesNoQuestion($pdf, '<b>49.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been a member of, assisted, or participated in any group, unit, or organization of any<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kind in which you or other persons used any type of weapon against any person or threatened to do so?', 12, $y_position, 'security_49', 'i_485_security_49');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>50.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> served in, been a member of, assisted (helped), or participated in any military or police<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit?', 12, $y_position, 'security_50', 'i_485_security_50');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>51.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> served in, been a member of, assisted (helped), or participated in any armed group (a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group that carries weapons), for example: paramilitary unit (a group of people who act like a military<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group, but are not part of the official military), self-defense unit, vigilante unit, rebel group, or guerrilla<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group?', 12, $y_position, 'security_51', 'i_485_security_51');
+$y_position += 19;
+
+$pdf->SetFont('times', '', 10);
+$html = 'If you answered "Yes" to <b>Item Number 50.</b> or <b>51.</b>, include the name of the country, the name of the military unit or armed<br>group, your rank or position, and your dates of involvement in your explanation in <b>Part 14. Additional Information.</b>';
+$pdf->writeHTMLCell(190, 6, 21, $y_position, $html, 0, 1, false, true, 'L', true);
+$y_position += 12;
+
+addYesNoQuestion($pdf, '<b>52.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> been a member of, or in any way affiliated with, the Communist Party or any totalitarian<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;party (in the United States or abroad)?', 12, $y_position, 'security_52', 'i_485_security_52');
+$y_position += 10;
+
+$pdf->SetFont('times', '', 10);
+$html = 'Have you <b>EVER</b> ordered, incited, called for, committed, assisted, helped with, or otherwise participated in any of the following:';
+$pdf->writeHTMLCell(190, 6, 12, $y_position, $html, 0, 1, false, true, 'L', true);
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>53.a.</b>&nbsp;&nbsp;Torture?', 12, $y_position, 'security_53a', 'i_485_security_53a');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>53.b.</b>&nbsp;&nbsp;Genocide?', 12, $y_position, 'security_53b', 'i_485_security_53b');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>53.c.</b>&nbsp;&nbsp;Killing, or trying to kill, any person?', 12, $y_position, 'security_53c', 'i_485_security_53c');
+$y_position += 7;
+
+addYesNoQuestion($pdf, '<b>53.d.</b>&nbsp;&nbsp;Intentionally and severely injuring or trying to injure any person?', 12, $y_position, 'security_53d', 'i_485_security_53d');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>54.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> recruited, enlisted, conscripted, or used any person under 15 years of age to take part in<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hostilities or to serve in or help an armed force or group, or attempted or worked with others to do so?', 12, $y_position, 'security_54', 'i_485_security_54');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>55.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> used any person under 15 years of age to take part in hostilities, for instance, participating<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in combat or providing services related to combat (such as sabotage or serving as a courier) or providing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;support services (such as transporting supplies), or attempted or worked with others to do so?', 12, $y_position, 'security_55', 'i_485_security_55');
+$y_position += 15;
+
+$pdf->SetFont('times', '', 10);
+$html = '<b>NOTE:</b> If you answered "Yes" to any part of <b>Item Numbers 47. - 55.</b>, explain what occurred, including the dates and location<br>of the circumstances, in the space provided in <b>Part 14. Additional Information.</b>';
+$pdf->writeHTMLCell(190, 6, 21, $y_position, $html, 0, 1, false, true, 'L', true);
+
+
+//  ******************************
 //  ******** End Page No 21 ******
 //  ******************************/
 
