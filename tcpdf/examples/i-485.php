@@ -2865,6 +2865,7 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 // $pdf->writeHTMLCell(190, 6, 21, $y_position, $html, 0, 1, false, true, 'L', true);
 
 
+
 //  ******************************
 //  ******** End Page No 17 ******
 //  ******************************/
@@ -2901,7 +2902,7 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 // $y_position += 10;
 
 // $pdf->SetFont('times', '', 10);
-// $pdf->writeHTMLCell(190, 6, 12, $y_position, '<b>56.</b> I am exempt from the public charge ground of inadmissibility because I am a/an (select only one box):', 0, 1, false, true, 'L', true);
+// $pdf->writeHTMLCell(190, 6, 12, $y_position, '<b>56.</b> &nbsp;&nbsp;&nbsp;&nbsp;I am exempt from the public charge ground of inadmissibility because I am a/an (select only one box):', 0, 1, false, true, 'L', true);
 // $y_position += 6;
 
 // drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_vawa', 'i_485_public_charge_vawa', 'VAWA Self-Petitioner (Form I-360)');
@@ -2974,6 +2975,160 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 // $y_position += 9;
 
 // drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_liberian', 'i_485_public_charge_liberian', 'Section 7611 of the National Defense Authorization Act for Fiscal Year 2020 (Liberian Refugee Immigration Fairness)');
+
+//  ******************************
+//  ******** End Page No 18 ******
+//  ******************************/
+
+//  ******************************
+//  ******** Start Page No 19 ****
+//  ******************************/
+//  ******************************
+$pdf->AddPage('P', 'LETTER');
+$pdf->setFillColor(220, 220, 220);
+$pdf->setFont('Times', '', 12);
+$pdf->setCellHeightRatio(1.2);
+$pdf->setCellPaddings(1, 0.5, 1, 1);
+
+$pdf->SetFontSize(12);
+$html = "<div><b>Part 9. General Eligibility and Inadmissibility Grounds </b>(continued)</div>";
+$pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
+
+$y_position = 33;
+
+drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_syrian', 'i_485_public_charge_syrian', 'Syrian National Adjusting Status under Public Law 106-378');
+$y_position += 7;
+
+drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_military_family', 'i_485_public_charge_military_family', 'Spouse, Child, or Parent of a U.S. Active-Duty Service Member in the Armed Forces under the National Defense<br>Authorization Act (NDAA) (Form I-130 or Form I-360)');
+$y_position += 10;
+
+drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_none', 'i_485_public_charge_none', 'I do not fall under any of the exempt categories listed above and will complete Item Numbers 57. - 66.');
+$y_position += 7;
+
+$pdf->SetFont('times', '', 10);
+$html = 'If you selected "I do not fall under any of the exempt categories listed above and will complete Item Numbers 57. - 66." in <b>Item Number 56.</b>, complete Item Numbers 57. - 66. below. If you selected an exempt category in <b>Item Number 56.</b>, go to <b>Item Number 67.</b> If you need extra space to complete this section, use the space provided in <b>Part 14. Additional Information.</b>';
+$pdf->writeHTMLCell(190, 0, 12, $y_position, $html, 0, 1, false, true, 'L', true);
+$y_position += 16.5;
+
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 6, 12, $y_position, '<b>57.</b>&nbsp;&nbsp;&nbsp;&nbsp;What is the size of your household?', 0, 1, false, true, 'L', true);
+
+$pdf->SetFont('courier', 'B', 10);
+$pdf->TextField('p9_57', 28, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 74, $y_position);
+$y_position += 7;
+
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 6, 12, $y_position, '<b>58.</b>&nbsp;&nbsp;&nbsp;&nbsp;Indicate your annual household income.', 0, 1, false, true, 'L', true);
+$y_position += 7;
+
+drawCheckboxWithLabel($pdf, 19, $y_position, 'income_0_27k', 'i_485_income_0_27k', '$0-27,000');
+drawCheckboxWithLabel($pdf, 45, $y_position, 'income_27k_52k', 'i_485_income_27k_52k', '$27,001-$52,000');
+drawCheckboxWithLabel($pdf, 80, $y_position, 'income_52k_85k', 'i_485_income_52k_85k', '$52,001-85,000');
+drawCheckboxWithLabel($pdf, 113, $y_position, 'income_85k_141k', 'i_485_income_85k_141k', '$85,001-141,000');
+drawCheckboxWithLabel($pdf, 148, $y_position, 'income_over_141k', 'i_485_income_over_141k', 'Over $141,000');
+$y_position += 10;
+
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 6, 12, $y_position, '<b>59.</b>&nbsp;&nbsp;&nbsp;&nbsp;Identify the total value of your household assets.', 0, 1, false, true, 'L', true);
+$y_position += 7;
+
+drawCheckboxWithLabel($pdf, 19, $y_position, 'assets_0_18k', 'i_485_assets_0_18k', '$0-18,400');
+drawCheckboxWithLabel($pdf, 45, $y_position, 'assets_18k_136k', 'i_485_assets_18k_136k', '$18,401-136,000');
+drawCheckboxWithLabel($pdf, 80, $y_position, 'assets_136k_321k', 'i_485_assets_136k_321k', '$136,001-321,400');
+drawCheckboxWithLabel($pdf, 113, $y_position, 'assets_321k_707k', 'i_485_assets_321k_707k', '$321,401-707,100');
+drawCheckboxWithLabel($pdf, 148, $y_position, 'assets_over_707k', 'i_485_assets_over_707k', 'Over $707,100');
+$y_position += 10;
+
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 6, 12, $y_position, '<b>60.</b>&nbsp;&nbsp;&nbsp;&nbsp;Identify the total value of your household liabilities (including both secured and unsecured liabilities).', 0, 1, false, true, 'L', true);
+$y_position += 7;
+drawCheckboxWithLabel($pdf, 19, $y_position, 'liabilities_0', 'i_485_liabilities_0', '$0');
+drawCheckboxWithLabel($pdf, 45, $y_position, 'liabilities_1_10k', 'i_485_liabilities_1_10k', '$1-10,100');
+drawCheckboxWithLabel($pdf, 80, $y_position, 'liabilities_10k_57k', 'i_485_liabilities_10k_57k', '$10,101-57,700');
+drawCheckboxWithLabel($pdf, 113, $y_position, 'liabilities_57k_186k', 'i_485_liabilities_57k_186k', '$57,701-186,800');
+drawCheckboxWithLabel($pdf, 148, $y_position, 'liabilities_over_186k', 'i_485_liabilities_over_186k', 'Over $186,800');
+
+// Continue from previous Y position
+// Continue from previous Y position
+$y_position += 7;
+
+// Question 61
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 6, 12, $y_position, '<b>61.</b>&nbsp;&nbsp;&nbsp;&nbsp;What is the highest degree or grade of school you have completed?', 0, 1, false, true, 'L', true);
+$y_position += 6;
+
+// Education checkboxes (same alignment style)
+drawCheckboxWithLabel($pdf, 19, $y_position, 'edu_less_than_hs', 'i_485_edu_less_than_hs', 'Less than a high school diploma. If you select this option, indicate the highest grade of school you have completed.');
+$pdf->TextField('i_485_highest_grade', 178, 6.5, array('strokeColor'=>array(64,64,64),'lineWidth'=>1), array(), 27, $y_position+6);
+$y_position +=12;
+
+drawCheckboxWithLabel($pdf, 19, $y_position, 'edu_hs', 'i_485_edu_hs', 'High school diploma, GED, or alternative credential');
+drawCheckboxWithLabel($pdf, 102, $y_position, 'edu_some_college', 'i_485_edu_some_college', '1 or more years of college credit, no degree');
+$y_position += 6.5;
+
+drawCheckboxWithLabel($pdf, 19, $y_position, 'edu_assoc', 'i_485_edu_assoc', "Associate's degree");
+drawCheckboxWithLabel($pdf, 56, $y_position, 'edu_bach', 'i_485_edu_bach', "Bachelor's degree");
+drawCheckboxWithLabel($pdf,93, $y_position, 'edu_master', 'i_485_edu_master', "Master's degree");
+drawCheckboxWithLabel($pdf, 130, $y_position, 'edu_prof', 'i_485_edu_prof', "Professional degree (JD, MD, DMD, etc.)");
+$y_position += 6.5;
+
+drawCheckboxWithLabel($pdf, 19, $y_position, 'edu_doc', 'i_485_edu_doc', "Doctorate degree");
+$y_position += 7;
+
+// Question 62
+$pdf->writeHTMLCell(190, 6, 12, $y_position, '<b>62.</b>&nbsp;&nbsp;&nbsp;&nbsp;List your certifications, licenses, skills obtained through work experience, and educational certificates.', 0, 1, false, true, 'L', true);
+$y_position += 7;
+
+// Certification box header
+$pdf->SetXY(21, $y_position);
+$pdf->SetFont('times', 'B', 10);
+$pdf->Cell(183.3, 7, 'List of Certifications', 1, 0, 'C', false);
+$y_position += 7.1;
+// Certification text fields (no loops)
+$pdf->SetFont('times', '', 10);
+$pdf->TextField('i_485_cert_1', 183.6, 6.7, array('strokeColor'=>array(64,64,64),'lineWidth'=>1,'borderStyle'=>'solid'), array(), 20.8, $y_position);
+$y_position += 6.6;
+$pdf->TextField('i_485_cert_2', 183.6, 6.7, array('strokeColor'=>array(64,64,64),'lineWidth'=>1,'borderStyle'=>'solid'), array(), 20.8, $y_position);
+$y_position += 6.6;
+$pdf->TextField('i_485_cert_3', 183.6, 6.7, array('strokeColor'=>array(64,64,64),'lineWidth'=>1,'borderStyle'=>'solid'), array(), 20.8, $y_position);
+$y_position += 6.6;
+$pdf->TextField('i_485_cert_4', 183.6, 6.7, array('strokeColor'=>array(64,64,64),'lineWidth'=>1,'borderStyle'=>'solid'), array(), 20.8, $y_position);
+$y_position += 6.6;
+$pdf->TextField('i_485_cert_5', 183.6, 6.7, array('strokeColor'=>array(64,64,64),'lineWidth'=>1,'borderStyle'=>'solid'), array(), 20.8, $y_position);
+$y_position += 6.6;
+$pdf->TextField('i_485_cert_5', 183.6, 6.7, array('strokeColor'=>array(64,64,64),'lineWidth'=>1,'borderStyle'=>'solid'), array(), 20.8, $y_position);
+$y_position += 6.6;
+$pdf->TextField('i_485_cert_5', 183.6, 6.7, array('strokeColor'=>array(64,64,64),'lineWidth'=>1,'borderStyle'=>'solid'), array(), 20.8, $y_position);
+$y_position += 6.6;
+$pdf->TextField('i_485_cert_5', 183.6, 6.7, array('strokeColor'=>array(64,64,64),'lineWidth'=>1,'borderStyle'=>'solid'), array(), 20.8, $y_position);
+$y_position += 7;
+
+// Question 63
+addYesNoQuestion(
+    $pdf,
+    '<b>63.</b>&nbsp;&nbsp;&nbsp;&nbsp;Have you ever received Supplemental Security Income (SSI), Temporary Assistance for Needy Families<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(TANF), or state, Tribal, territorial, or local cash benefit programs for income maintenance (often called<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“General Assistance” in the state context, but which also exist under other names)? ',
+    12,
+    $y_position,
+    'p9_63_ssi_tanf',
+    'i_485_ssi_tanf'
+);
+$y_position += 14;
+
+// Question 64
+addYesNoQuestion(
+    $pdf,
+    '<b>64.</b>&nbsp;&nbsp;&nbsp;&nbsp;Have you ever received long-term institutionalization at government expense?',
+    12,
+    $y_position,
+    'institutionalization',
+    'i_485_institutionalization'
+);
+$y_position += 12;
+
+
+
 
 //  ******************************
 //  ******** End Page No 20 ******
@@ -3082,6 +3237,9 @@ $html = 'If you answered "Yes" to <b>Item Number 85.</b>, what was your national
 example, U.S. citizen or national, lawful permanent resident, nonimmigrant, parolee, present without admission or parole, or any<br>
 other status)?';
 $pdf->writeHTMLCell(190, 0, 20, $y_position, $html, 0, 1, false, true, 'L', true);
+//.............
+$pdf->SetFont('courier', 'B', 10); // set font
+$pdf->TextField('p9_86', 182, 6.6, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 21, 249);
 //  ******** End Page No 21 ******
 //  ******************************/
 
@@ -3615,6 +3773,19 @@ var fields = {
     'preparers_contact_mobile_telephone':' " . showData('i_485_preparer_mobile') . "',
     'preparers_contact_email':' " . showData('i_485_preparer_email') . "',
 	
+//page 19
+    'p9_57':' " . showData('i_485_preparer_sign_name') . "',
+    'i_485_highest_grade':' " . showData('i_485_preparer_sign_name') . "',
+    'i_485_cert_1':' " . showData('i_485_preparer_sign_name') . "',
+    'i_485_cert_2':' " . showData('i_485_preparer_sign_name') . "',
+    'i_485_cert_3':' " . showData('i_485_preparer_sign_name') . "',
+    'i_485_cert_4':' " . showData('i_485_preparer_sign_name') . "',
+    'i_485_cert_5':' " . showData('i_485_preparer_sign_name') . "',
+    'i_485_cert_6':' " . showData('i_485_preparer_sign_name') . "',
+    'i_485_cert_7':' " . showData('i_485_preparer_sign_name') . "',
+    'i_485_cert_8':' " . showData('i_485_preparer_sign_name') . "',
+//page 21
+    'p9_86':' " . showData('i_485_preparer_sign_date') . "',
 //page 
 	
     'Preparer_signature_date':' " . showData('i_485_preparer_sign_date') . "',
