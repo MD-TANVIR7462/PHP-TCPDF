@@ -82,9 +82,21 @@
     'p4_7_streen_number':' " . showData('example') . "',
 
 
-    'p8_3feet':' " . showData('example') . "',
-    'p8_3inches':' " . showData('example') . "',
-    'p8_4Pounds1':' " . showData('example') . "',
-    'p8_4Pounds2':' " . showData('example') . "',
-    'p8_4Pounds3':' " . showData('example') . "',
+    'institution_66_1':' " . showData('example') . "',
+    'institution_66_2':' " . showData('example') . "',
+    'institution_66_3':' " . showData('example') . "',
+    'institution_66_4':' " . showData('example') . "',
+    'date_from_66_1':' " . showData('example') . "',
+    'date_from_66_2':' " . showData('example') . "',
+    'date_from_66_3':' " . showData('example') . "',
+    'date_from_66_4':' " . showData('example') . "',
+    'date_to_66_1':' " . showData('example') . "',
+    'date_to_66_2':' " . showData('example') . "',
+    'date_to_66_3':' " . showData('example') . "',
+    'date_to_66_4':' " . showData('example') . "',
+    'reason_66_1':' " . showData('example') . "',
+    'reason_66_2':' " . showData('example') . "',
+    'reason_66_3':' " . showData('example') . "',
+    'reason_66_4':' " . showData('example') . "',
+    
 
