@@ -2873,6 +2873,116 @@ $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 
 //  ******** Start Page No 18 ****
 //  ******************************/
 
+// $pdf->AddPage('P', 'LETTER');
+// $pdf->setFillColor(220, 220, 220);
+// $pdf->setFont('Times', '', 12);
+// $pdf->setCellHeightRatio(1.2);
+// $pdf->setCellPaddings(1, 0.5, 1, 1);
+
+// $pdf->SetFontSize(12);
+// $html = "<div><b>Part 9. General Eligibility and Inadmissibility Grounds </b>(continued)</div>";
+// $pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
+
+// $y_position = 34;
+
+// $pdf->SetFont('times', 'B', 11);
+// $pdf->SetFontSize(12);
+// $html = "<div><b><i>Public Charge</i></b>(continued)</div>";
+// $pdf->writeHTMLCell(191.5, 6, 13, $y_position, $html, 0, 1, true, 'L');
+// $y_position += 7;
+
+// $pdf->SetFont('times', '', 10);
+// $html = 'Each alien who is subject to the public charge ground of inadmissibility in <b>INA section 212(a)(4)</b> must complete <b>Item Numbers 57. - 66.</b> An alien is subject to the public charge ground of inadmissibility if the alien does not fall under one of the categories exempt from the public charge ground of inadmissibility listed below. If you fall under one of the exempt categories listed below, please select the exempt category, and skip <b>Item Numbers 57. -66.</b> If you do not fall under one of the exempt categories listed below, select "I do not fall under any of the exempt categories listed above and will complete <b>Item Numbers 57. -66.</b>"';
+// $pdf->writeHTMLCell(195, 0, 12, $y_position, $html, 0, 1, false, true, 'L', true);
+// $y_position += 22;
+
+// $html = '<b>NOTE:</b> For more information, see <b>Part 9. General Eligibility and Inadmissibility Grounds, <i>Public Charge</i></b> section of these Instructions.';
+// $pdf->writeHTMLCell(190, 6, 12, $y_position, $html, 0, 1, false, true, 'L', true);
+// $y_position += 10;
+
+// $pdf->SetFont('times', '', 10);
+// $pdf->writeHTMLCell(190, 6, 12, $y_position, '<b>56.</b> I am exempt from the public charge ground of inadmissibility because I am a/an (select only one box):', 0, 1, false, true, 'L', true);
+// $y_position += 6;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_vawa', 'i_485_public_charge_vawa', 'VAWA Self-Petitioner (Form I-360)');
+// $y_position += 7;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_sij', 'i_485_public_charge_sij', 'Special Immigrant Juvenile (Form I-360)');
+// $y_position += 7;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_afghan_iraqi', 'i_485_public_charge_afghan_iraqi', 'Certain Afghan or Iraqi National (Form I-360 or Form DS-157)');
+// $y_position += 7;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_asylee', 'i_485_public_charge_asylee', 'Asylee (Form I-589 or Form I-730)');
+// $y_position += 7;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_refugee', 'i_485_public_charge_refugee', 'Refugee (Form I-590 or Form I-730)');
+// $y_position += 7;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_u_visa', 'i_485_public_charge_u_visa', 'Victim of Qualifying Criminal Activity (U Nonimmigrant) under INA section 245(m) (Form I-918, Form I-918A, or Form<br>I-929)');
+// $y_position +=10;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_u_status', 'i_485_public_charge_u_status', 'Any category other than INA section 245(m), but you are in valid U nonimmigrant status at the time you file your<br>
+// application for adjustment of status. (This exemption only applies if, at the time of the adjudication of Form I-485, you are<br>
+// still in valid U nonimmigrant status. If, at the time of adjudication of Form I-485, you are no longer in valid U<br>
+// nonimmigrant status, you will be subject to the public charge ground of inadmissibility.)');
+// $y_position += 18.5;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_t_visa', 'i_485_public_charge_t_visa', 'Human Trafficking Victim (T nonimmigrant) under INA section 245(l) (Form I-914 or Form I-914A)');
+// $y_position += 7;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_t_status', 'i_485_public_charge_t_status', 'Any category other than INA section 245(l), but you either have a pending application for T nonimmigrant status (Form<br>
+// I-914) that sets forth a prima facie case for eligibility or are in valid T nonimmigrant status at the time you file your<br>
+// application for adjustment of status. (This exemption only applies if your Form I-914 is still pending and deemed to be<br>
+// prima facie eligible or you are in valid T nonimmigrant status when we adjudicate your adjustment of status application.)');
+// $y_position += 18.5;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_cuban', 'i_485_public_charge_cuban', 'Cuban Adjustment Act');
+// $y_position += 7;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_cuban_battered', 'i_485_public_charge_cuban_battered', 'Cuban Adjustment Act for Battered Spouses and Children');
+// $y_position += 7;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_hrifa', 'i_485_public_charge_hrifa', 'Dependent Status under the Haitian Refugee Immigrant Fairness Act');
+// $y_position += 7;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_hrifa_battered', 'i_485_public_charge_hrifa_battered', 'Dependent Status under the Haitian Refugee Immigrant Fairness Act for Battered Spouses and Children');
+// $y_position += 7;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_cuban_haitian', 'i_485_public_charge_cuban_haitian', 'Cuban and Haitian Entrants Applying for Adjustment of Status under <b>section 202</b> of the Immigration Reform and Control<br>Act of 1986');
+// $y_position +=9;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_lautenberg', 'i_485_public_charge_lautenberg', 'A Lautenberg Parolee');
+// $y_position += 6.5;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_vietnam', 'i_485_public_charge_vietnam', 'National of Vietnam, Cambodia, or Laos Applying under the Foreign Operations, Export Financing, and Related Programs');
+// $y_position += 6.5;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_registry', 'i_485_public_charge_registry', 'Continuous Residence in the United States Since Before January 1, 1972 ("Registry")');
+// $y_position += 6.5;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_amerasian', 'i_485_public_charge_amerasian', 'Amerasian Homecoming Act');
+// $y_position += 6.5;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_polish', 'i_485_public_charge_polish', 'Polish or Hungarian Parolee');
+// $y_position += 6.3;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_nacara', 'i_485_public_charge_nacara', 'Nicaraguan and Other Central Americans under section 203of the Nicaraguan Adjustment and Central American Relief Act (NACARA)');
+// $y_position += 9;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_american_indian', 'i_485_public_charge_american_indian', 'American Indian Born in Canada (INA section 289) or the Texas Band of Kickapoo Indians of the Kickapoo Tribe of<br>Oklahoma, Public Law 97-429 (Jan. 8, 1983)');
+// $y_position += 9;
+
+// drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_liberian', 'i_485_public_charge_liberian', 'Section 7611 of the National Defense Authorization Act for Fiscal Year 2020 (Liberian Refugee Immigration Fairness)');
+
+//  ******************************
+//  ******** End Page No 20 ******
+//  ******************************/
+
+//  ******************************
+//  ******** Start Page No 21 ****
+//  ******************************/
+//  ******************************
 $pdf->AddPage('P', 'LETTER');
 $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);
@@ -2883,99 +2993,95 @@ $pdf->SetFontSize(12);
 $html = "<div><b>Part 9. General Eligibility and Inadmissibility Grounds </b>(continued)</div>";
 $pdf->writeHTMLCell(191.5, 6, 13, 26, $html, 1, 1, true, 'L');
 
-$y_position = 34;
+$y_position = 33;
 
-$pdf->SetFont('times', 'B', 11);
-$pdf->SetFontSize(12);
-$html = "<div><b><i>Public Charge</i></b>(continued)</div>";
-$pdf->writeHTMLCell(191.5, 6, 13, $y_position, $html, 0, 1, true, 'L');
-$y_position += 7;
+addYesNoQuestion($pdf, '<b>76.</b> &nbsp;&nbsp;&nbsp;&nbsp;Since April 1, 1997, have you been unlawfully present in the United States? You were unlawfully present<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in the United States if you were present in the United States after the expiration of the period of stay<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authorized by the Department of Homeland Security (DHS) Secretary or were present in the United States<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;without being admitted or paroled.', 12, $y_position, 'misc_76', 'i_485_misc_76');
+$y_position += 19;
 
 $pdf->SetFont('times', '', 10);
-$html = 'Each alien who is subject to the public charge ground of inadmissibility in <b>INA section 212(a)(4)</b> must complete <b>Item Numbers 57. - 66.</b> An alien is subject to the public charge ground of inadmissibility if the alien does not fall under one of the categories exempt from the public charge ground of inadmissibility listed below. If you fall under one of the exempt categories listed below, please select the exempt category, and skip <b>Item Numbers 57. -66.</b> If you do not fall under one of the exempt categories listed below, select "I do not fall under any of the exempt categories listed above and will complete <b>Item Numbers 57. -66.</b>"';
-$pdf->writeHTMLCell(195, 0, 12, $y_position, $html, 0, 1, false, true, 'L', true);
-$y_position += 22;
+$html = '<b>NOTE:</b> If you answered "Yes" to <b>Item Number 76.</b>, give the dates of unlawful presence in the space provided in <b>Part 14.<br>Additional Information.</b>';
+$pdf->writeHTMLCell(190, 6, 20, $y_position, $html, 0, 1, false, true, 'L', true);
+$y_position += 12;
 
-$html = '<b>NOTE:</b> For more information, see <b>Part 9. General Eligibility and Inadmissibility Grounds, <i>Public Charge</i></b> section of these Instructions.';
-$pdf->writeHTMLCell(190, 6, 12, $y_position, $html, 0, 1, false, true, 'L', true);
+addYesNoQuestion($pdf, '<b>77.</b> &nbsp;&nbsp;&nbsp;&nbsp;If you answered "Yes" to <b>Item Number 76.</b>, was a severe form of trafficking in persons at least one<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;central reason for your unlawful presence in the United States?', 12, $y_position, 'misc_77', 'i_485_misc_77');
 $y_position += 10;
 
 $pdf->SetFont('times', '', 10);
-$pdf->writeHTMLCell(190, 6, 12, $y_position, '<b>56.</b> I am exempt from the public charge ground of inadmissibility because I am a/an (select only one box):', 0, 1, false, true, 'L', true);
+$html = '<b>NOTE:</b> Severe trafficking in persons involves sex trafficking (the recruitment, harboring, transportation, provision, or obtaining<br>
+of a person to commit a commercial sex act) induced by force, fraud, coercion, or in which the person is induced to perform<br>
+such act has not reached 18 years of age, or the recruitment, harboring, transportation, provision, or obtaining of a person for<br>
+labor or services, through the use of force, fraud, or coercion for the purpose of subjection to involuntary servitude, peonage,<br>
+debt bondage, or slavery.';
+$pdf->writeHTMLCell(190, 0, 21, $y_position, $html, 0, 1, false, true, 'L', true);
+$y_position += 23;
+
+$pdf->SetFont('times', '', 10);
+$html = 'Since April 1, 1997, have you <b>EVER</b> reentered or attempted to reenter the United States without being inspected and admitted<br>or paroled after:';
+$pdf->writeHTMLCell(190, 6, 12, $y_position, $html, 0, 1, false, true, 'L', true);
+$y_position += 11;
+
+addYesNoQuestion($pdf, '<b>78.a.</b>&nbsp;&nbsp;Having been unlawfully present in the United States for more than one year in the aggregate on or after <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;April 1, 1997? You were unlawfully present in the United States for more than one year in the aggregate <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if you count all of the days during all of your stays that you were present in the United States after the <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expiration of the period of stay authorized by the DHS Secretary or were present in the United States<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;without being admitted or paroled.', 12, $y_position, 'misc_78a', 'i_485_misc_78a');
+$y_position += 23;
+
+addYesNoQuestion($pdf, '<b>78.b.</b>&nbsp;&nbsp;Having been deported, excluded, or removed from the United States?', 12, $y_position, 'misc_78b', 'i_485_misc_78b');
+$y_position += 8;
+$pdf->SetFontSize(12);
+$html = "<div><b><i>Miscellaneous Conduct</i></b></div>";
+$pdf->writeHTMLCell(191.5, 6, 13, $y_position, $html, 0, 1, true, 'L');
+$y_position += 8;
+
+addYesNoQuestion($pdf, '<b>79.</b> &nbsp;&nbsp;&nbsp;&nbsp;Do you plan to practice polygamy in the United States?', 12, $y_position, 'misc_79', 'i_485_misc_79');
 $y_position += 6;
 
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_vawa', 'i_485_public_charge_vawa', 'VAWA Self-Petitioner (Form I-360)');
+addYesNoQuestion($pdf, '<b>80.</b> &nbsp;&nbsp;&nbsp;&nbsp;Are you accompanying an alien who is inadmissible and who has been certified by a medical officer as <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helpless from sickness, mental or physical disability, or infancy, and who requires your protection or <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;guardianship, as described in INA section 232(c)?', 12, $y_position, 'misc_80', 'i_485_misc_80');
+$y_position += 13;
+
+addYesNoQuestion($pdf, '<b>81.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> assisted in detaining, retaining, or withholding custody of a U.S. citizen child outside <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the United States from a person who has been granted custody of the child?', 12, $y_position, 'misc_81', 'i_485_misc_81');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>82.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> voted in violation of any Federal, state, or local constitutional provision, statute,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ordinance, or regulation in the United States?', 12, $y_position, 'misc_82', 'i_485_misc_82');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>83.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> renounced U.S. citizenship to avoid being taxed by the United States?', 12, $y_position, 'misc_83', 'i_485_misc_83');
+$y_position += 8;
+
+$pdf->SetFont('times', '', 10);
+$html = 'Have you <b>EVER</b>:';
+$pdf->writeHTMLCell(190, 6, 12, $y_position, $html, 0, 1, false, true, 'L', true);
 $y_position += 7;
 
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_sij', 'i_485_public_charge_sij', 'Special Immigrant Juvenile (Form I-360)');
+addYesNoQuestion($pdf, '<b>84.a.</b>&nbsp;&nbsp;Applied for exemption or discharge from training or service in the U.S. armed forces or in the U.S. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;National Security Training Corps on the ground that you are an alien?', 12, $y_position, 'misc_84a', 'i_485_misc_84a');
+$y_position += 10;
+
+addYesNoQuestion($pdf, '<b>84.b.</b>&nbsp;&nbsp;Been relieved or discharged from such training or service on the ground that you are an alien?', 12, $y_position, 'misc_84b', 'i_485_misc_84b');
 $y_position += 7;
 
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_afghan_iraqi', 'i_485_public_charge_afghan_iraqi', 'Certain Afghan or Iraqi National (Form I-360 or Form DS-157)');
+addYesNoQuestion($pdf, '<b>84.c.</b>&nbsp;&nbsp;Been convicted of desertion from the U.S. armed forces?', 12, $y_position, 'misc_84c', 'i_485_misc_84c');
 $y_position += 7;
 
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_asylee', 'i_485_public_charge_asylee', 'Asylee (Form I-589 or Form I-730)');
-$y_position += 7;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_refugee', 'i_485_public_charge_refugee', 'Refugee (Form I-590 or Form I-730)');
-$y_position += 7;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_u_visa', 'i_485_public_charge_u_visa', 'Victim of Qualifying Criminal Activity (U Nonimmigrant) under INA section 245(m) (Form I-918, Form I-918A, or Form<br>I-929)');
-$y_position +=10;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_u_status', 'i_485_public_charge_u_status', 'Any category other than INA section 245(m), but you are in valid U nonimmigrant status at the time you file your<br>
-application for adjustment of status. (This exemption only applies if, at the time of the adjudication of Form I-485, you are<br>
-still in valid U nonimmigrant status. If, at the time of adjudication of Form I-485, you are no longer in valid U<br>
-nonimmigrant status, you will be subject to the public charge ground of inadmissibility.)');
-$y_position += 18.5;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_t_visa', 'i_485_public_charge_t_visa', 'Human Trafficking Victim (T nonimmigrant) under INA section 245(l) (Form I-914 or Form I-914A)');
-$y_position += 7;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_t_status', 'i_485_public_charge_t_status', 'Any category other than INA section 245(l), but you either have a pending application for T nonimmigrant status (Form<br>
-I-914) that sets forth a prima facie case for eligibility or are in valid T nonimmigrant status at the time you file your<br>
-application for adjustment of status. (This exemption only applies if your Form I-914 is still pending and deemed to be<br>
-prima facie eligible or you are in valid T nonimmigrant status when we adjudicate your adjustment of status application.)');
-$y_position += 18.5;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_cuban', 'i_485_public_charge_cuban', 'Cuban Adjustment Act');
-$y_position += 7;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_cuban_battered', 'i_485_public_charge_cuban_battered', 'Cuban Adjustment Act for Battered Spouses and Children');
-$y_position += 7;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_hrifa', 'i_485_public_charge_hrifa', 'Dependent Status under the Haitian Refugee Immigrant Fairness Act');
-$y_position += 7;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_hrifa_battered', 'i_485_public_charge_hrifa_battered', 'Dependent Status under the Haitian Refugee Immigrant Fairness Act for Battered Spouses and Children');
-$y_position += 7;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_cuban_haitian', 'i_485_public_charge_cuban_haitian', 'Cuban and Haitian Entrants Applying for Adjustment of Status under <b>section 202</b> of the Immigration Reform and Control<br>Act of 1986');
-$y_position +=9;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_lautenberg', 'i_485_public_charge_lautenberg', 'A Lautenberg Parolee');
-$y_position += 6.5;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_vietnam', 'i_485_public_charge_vietnam', 'National of Vietnam, Cambodia, or Laos Applying under the Foreign Operations, Export Financing, and Related Programs');
-$y_position += 6.5;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_registry', 'i_485_public_charge_registry', 'Continuous Residence in the United States Since Before January 1, 1972 ("Registry")');
-$y_position += 6.5;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_amerasian', 'i_485_public_charge_amerasian', 'Amerasian Homecoming Act');
-$y_position += 6.5;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_polish', 'i_485_public_charge_polish', 'Polish or Hungarian Parolee');
-$y_position += 6.3;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_nacara', 'i_485_public_charge_nacara', 'Nicaraguan and Other Central Americans under section 203of the Nicaraguan Adjustment and Central American Relief Act (NACARA)');
-$y_position += 9;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_american_indian', 'i_485_public_charge_american_indian', 'American Indian Born in Canada (INA section 289) or the Texas Band of Kickapoo Indians of the Kickapoo Tribe of<br>Oklahoma, Public Law 97-429 (Jan. 8, 1983)');
-$y_position += 9;
-
-drawCheckboxWithLabel($pdf, 19, $y_position, 'public_charge_liberian', 'i_485_public_charge_liberian', 'Section 7611 of the National Defense Authorization Act for Fiscal Year 2020 (Liberian Refugee Immigration Fairness)');
-
-//  ******************************
+addYesNoQuestion($pdf, '<b>85.</b> &nbsp;&nbsp;&nbsp;&nbsp;Have you <b>EVER</b> left or remained outside the United States to avoid or evade training or service in the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U.S.armed forces in time of war or a period declared by the President to be a national emergency?', 12, $y_position, 'misc_85', 'i_485_misc_85');
+//....
+$y_position += 10.5;
+$pdf->SetFont('times', '', 10);
+$pdf->writeHTMLCell(190, 0, 12, $y_position,'<b>86.</b>', 0, 1, false, true, 'L', true);
+$html = 'If you answered "Yes" to <b>Item Number 85.</b>, what was your nationality or immigration status immediately before you left (for<br>
+example, U.S. citizen or national, lawful permanent resident, nonimmigrant, parolee, present without admission or parole, or any<br>
+other status)?';
+$pdf->writeHTMLCell(190, 0, 20, $y_position, $html, 0, 1, false, true, 'L', true);
 //  ******** End Page No 21 ******
 //  ******************************/
 
