@@ -50,3 +50,13 @@ function drawCheckboxWithLabel($pdf, float $x, float $y, string $checkboxName, s
 //     'i_131_correction_terms_conditions_status',  // Data key for showData()
 //     'Terms and Conditions'    // Label text
 // );
+
+// if (showData('ever_in_united_states_status') == "Y") $checked_yes = "checked";
+// else $checked_yes = "";
+// checked="' . $checked_yes . '"
+// if (showData('beneficiary_lived_together_address_apt_ste_flr') == "apt") $apt_checked = "checked";
+// else $apt_checked = "";
+// if (showData('beneficiary_lived_together_address_apt_ste_flr') == "ste") $ste_checked = "checked";
+// else $ste_checked = "";
+// if (showData('beneficiary_lived_together_address_apt_ste_flr') == "flr") $flr_checked = "checked";
+// else $flr_checked = "";

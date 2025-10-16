@@ -387,13 +387,13 @@ $pdf->writeHTMLCell(190, 7, 20, 238, 'other dates of birth (mm/dd/yyyy).', '', 0
 $pdf->SetFont('courier', 'B', 10);
 $pdf->TextField('p1_3_other1', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 243);
 $pdf->TextField('p1_3_other2', 52, 7, array('strokeColor' => array(64, 64, 64), 'lineWidth' => 1, 'borderStyle' => 'solid'), array(), 20.8, 249.5);
-//******************************
-//******** End Page No 1 ******
-//******************************
+//****************************
+//******** End Page No 1 *****
+//****************************
 
-//******************************
+//****************************
 //******** Start Page No 2****
-// ******************************
+// ***************************
 $pdf->AddPage('P', 'LETTER');
 $pdf->setFillColor(220, 220, 220);
 $pdf->setFont('Times', '', 12);

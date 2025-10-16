@@ -1,236 +1,237 @@
 <fieldset class="setpage">
-    <div class="row ">
-         
-    <div style="margin:0px 2% 0px 2%;">
-        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
-                <div style="width: 100%;">
-                    <input type="text" maxlength="34" class="form-control" name="information_about_you_us_mailing_street_number" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
-                <div style="flex: 1; margin-left: 5%;">
-                    <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="apt"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="ste"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="information_about_you_us_mailing_apt_ste_flr" value="flr"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
-                    </label>
-                </div>
-            </div>
-            <div style="flex: 1;">
-                <label class="control-label">Number</label>
-                <input type="text" class="form-control" name="information_about_you_us_mailing_apt_ste_flr_value"
-                    maxlength="5" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value') ?>"
-                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-            </div>
-        </div>
-        <div class="row"
-            style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
-                <div style="width: 100%;">
-                    <input type="text" class="form-control" name="information_about_you_us_mailing_city_town" maxlength="28" value="<?php echo showData('information_about_you_us_mailing_city_town') ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
-                <div style="width: 100%;">
-                    <select class="form-control" name="information_about_you_us_mailing_state"
-                        style="width: 100%; padding: 5px; margin-top: 3%;">
-                        <option value=''>Select</option>
-                        <?php
-foreach ($allDataCountry as $record)
-{
-    if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
-    else $selected = "";
-    echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-}
-?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
-                <div class='d-flexible'>
-                    <div style="width: 100%;">
-                        <input type="text" class="form-control" name="information_about_you_us_mailing_zip_code" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code') ?>"
-                            style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                    </div>
-                </div>
-            </div>
-        </div>     
+  <div class="page_number">
+    <p style="text-align: right;"><b>Page 1 of 24</b></p>
+  </div>
 
-<div class="row">
-<div class="col-md-4" >
-                <label class="control-label ">Province</label>
-           
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_us_mailing_province" value="<?php echo showData('information_about_you_us_mailing_province') ?>" />
-         
-            </div>
-            <div class="col-md-3">
-                <label class="control-label ">Postal Code</label>
-           
-                    <input type="text" maxlength="29" class="form-control" name="information_about_you_us_mailing_postal_code" value="<?php echo showData('information_about_you_us_mailing_postal_code') ?>" />
-          
-            </div>
-            <div class="col-md-5">
-                <label class="control-label ">Country</label>
-  <input type="text" maxlength="29" class="form-control" name="information_about_you_us_mailing_country" value="<?php echo showData('information_about_you_us_mailing_country') ?>" />
+  <!-- Attorney Section -->
+  <div class="form-group border ">
+    <div class="bg-info text-center">
+      <h4><b>To be completed by an attorney or accredited representative (if any).</b></h4>
     </div>
- </div>
-    <div >
-        <label class=" col-md-6 my-4">3. Is your current mailing address the same as your physical address?</label>
-        <div class="col-md-2 my-4">
-             <input type="radio" class="form-check-input " id="mailing_address_yes" name="is_your_current_mailing_address_same_as_physical"  value="Y" <?php echo showData('is_your_current_mailing_address_same_as_physical') == "Y" ? "checked" : ""; ?> />
-                <label for="mailing_address_yes" class="mx-4"> Yes</label>
-             <input type="radio" class="form-check-input" id="mailing_address_no" name="is_your_current_mailing_address_same_as_physical"  value="N" <?php echo showData('is_your_current_mailing_address_same_as_physical') == "N" ? "checked" : ""; ?> />
-        <label for="mailing_address_no"> No</label>
+
+    <div style="padding: 2%;">
+      <div class="row">
+        <!-- G-28 Checkbox -->
+        <div class="col-lg-3">
+          <div class="d-flexible">
+            <?php echo createCheckbox("i_485_g28_checkbox"); ?>
+            <p><b>Select this box if Form G-28 or Form G-28I is attached.</b></p>
+          </div>
+        </div>
+
+        <!-- Volag Number -->
+        <div class="col-lg-3">
+          <label><span class="font-weight-bold">Volag Number</span> (if any)</label>
+          <br><br><br>
+          <input 
+            type="text" 
+            maxlength="10" 
+            class="form-control" 
+            value="<?php echo $attorneyData->volag_number; ?>" 
+            disabled 
+          />
+        </div>
+
+        <!-- State Bar Number -->
+        <div class="col-lg-3">
+          <label><span class="font-weight-bold">Attorney State Bar Number</span> (if applicable)</label>
+          <br><br>
+          <input 
+            type="text" 
+            maxlength="15" 
+            class="form-control" 
+            value="<?php echo $attorneyData->bar_number; ?>" 
+            disabled 
+          />
+        </div>
+
+        <!-- USCIS Account Number -->
+        <div class="col-lg-3">
+          <label>Attorney or Accredited Representative USCIS Online Account Number (if any)</label>
+          <input 
+            type="text" 
+            maxlength="12" 
+            class="form-control" 
+            value="<?php echo $attorneyData->uscis_online_account_number; ?>" 
+            disabled 
+          />
+        </div>
+      </div>
     </div>
   </div>
-    <div class="form-group" style="margin-bottom: 10px;">
-        <label class="control-label" style="width: 100%; margin-bottom: 5px;">If you answered "No" to Item Number 3., provide your physical address.</label>
+
+  <!-- Note Section -->
+  <div class="row">
+    <div class="ml-6">
+      <p><b>NOTE TO ALL APPLICANTS:</b> If you do not completely fill out this application or fail to submit required documents listed in the instructions, U.S. Citizenship and Immigration Services (USCIS) may reject or deny your application.</p>
+      <p>For all sections of this application, if you need to provide any additional information or are instructed to provide an explanation, use the space provided in Part 14. Additional Information.</p>
     </div>
-    <div class="form-group" style="margin-bottom: 10px;">
+  </div>
+
+  <!-- Applicant Information Section -->
+  <div class="col-md-12">
     <div class="bg-info">
-                <h4><b><i>Physical Address 
-                </i></b></h4>
-            </div>
-    </div>
-    
-<!-- Dynamic Mail address and Physical Address From start -->
-
-<!-- Mailing Address Form -->
-<div style="margin:0px 2% 0px 2%;" id="mailingAddressForm">
-        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
-                <div style="width: 100%;">
-                    <input type="text" maxlength="34" class="form-control" name="" value="<?php echo showData('information_about_you_us_mailing_street_number') ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
-                <div style="flex: 1; margin-left: 5%;">
-                    <label>
-                        <input type="radio" name="" value="apt"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="" value="ste"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="" value="flr"
-                            <?php echo (showData('information_about_you_us_mailing_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
-                    </label>
-                </div>
-            </div>
-            <div style="flex: 1;">
-                <label class="control-label">Number</label>
-                <input type="text" class="form-control" name=""
-                    maxlength="5" value="<?php echo showData('information_about_you_us_mailing_apt_ste_flr_value'); ?>"
-                    style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-            </div>
-        </div>
-        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px; justify-items:center; align-items: center;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">City or Town</label>
-                <div style="width: 100%;">
-                    <input type="text" class="form-control" name="" maxlength="28" value="<?php echo showData('information_about_you_us_mailing_city_town'); ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">State</label>
-                <div style="width: 100%;">
-                    <select class="form-control" name=""
-                        style="width: 100%; padding: 5px; margin-top: 3%;">
-                        <option value=''>Select</option>
-                        <?php
-                        foreach ($allDataCountry as $record) {
-                            if ($record->state_code == showData('information_about_you_us_mailing_state')) $selected = "selected";
-                            else $selected = "";
-                            echo "<option value='$record->state_code' $selected>$record->state_code</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; margin-bottom: 10px;">
-                <label class="control-label" style="width: 100%; margin-bottom: 5px;">ZIP Code </label>
-                <div class='d-flexible'>
-                    <div style="width: 100%;">
-                        <input type="text" class="form-control" name="" maxlength="5" value="<?php echo showData('information_about_you_us_mailing_zip_code'); ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label class="control-label">Province</label>
-                <input type="text" maxlength="29" class="form-control" name="" value="<?php echo showData('information_about_you_us_mailing_province'); ?>" />
-            </div>
-            <div class="col-md-3">
-                <label class="control-label">Postal Code</label>
-                <input type="text" maxlength="29" class="form-control" name="" value="<?php echo showData('information_about_you_us_mailing_postal_code'); ?>" />
-            </div>
-            <div class="col-md-5">
-                <label class="control-label">Country</label>
-                <input type="text" maxlength="29" class="form-control" name="" value="<?php echo showData('information_about_you_us_mailing_country'); ?>" />
-            </div>
-        </div>
+      <h4><b>Part 1. Information About You (Person applying for lawful permanent residence)</b></h4>
     </div>
 
-<!-- Physical Address Form -->
-<div id="physicalAddressForm"  style="margin:0px 2% 0px 2%;">
-        <div class="row" style="display: flex; flex-wrap: wrap; margin-bottom: 10px;">
-            <div class="form-group" style="flex: 3; margin-bottom: 10px;">
-                <label class="control-label" style=" margin-bottom: 5px;">Street Number and Name</label>
-                <div style="width: 100%;">
-                    <input type="text" maxlength="34" class="form-control" name="information_about_you_home_street_number" value="<?php echo showData('information_about_you_home_street_number'); ?>"
-                        style="width: 100%; padding: 5px; margin-bottom: 5px;" />
-                </div>
-            </div>
-            <div class="form-group" style="flex: 1; display: flex; align-items: center; margin-top: 40px; ">
-                <div style="flex: 1; margin-left: 5%;">
-                    <label>
-                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="apt"
-                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'apt') ? 'checked' : ''; ?>>
-                        Apt. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="ste"
-                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'ste') ? 'checked' : ''; ?>>
-                        Ste. &nbsp;
-                    </label>
-                    <label>
-                        <input type="radio" name="information_about_you_home_apt_ste_flr" value="flr"
-                            <?php echo (showData('information_about_you_home_apt_ste_flr') === 'flr') ? 'checked' : ''; ?>>
-                        Flr.
-                    </label>
-                </div>
-            </div>
-    </div>
-<!-- Dynamic Mail address and Physical Address From End -->
+    <!-- Current Legal Name -->
+    <p><b>1. Your Current Legal Name (Do not provide a nickname)</b></p>
+    <div class="row">
+      <div class="col-md-4">
+        <label>Family Name (Last Name)</label>
+        <input 
+          type="text" 
+          maxlength="29" 
+          class="form-control" 
+          name="information_about_you_family_last_name" 
+          value="<?php echo showData('information_about_you_family_last_name'); ?>" 
+        />
+      </div>
 
-</div>
-</div>
+      <div class="col-md-4">
+        <label>Given Name (First Name)</label>
+        <input 
+          type="text" 
+          maxlength="29" 
+          class="form-control" 
+          name="information_about_you_given_first_name" 
+          value="<?php echo showData('information_about_you_given_first_name'); ?>" 
+        />
+      </div>
+
+      <div class="col-md-4">
+        <label>Middle Name</label>
+        <input 
+          type="text" 
+          maxlength="29" 
+          class="form-control" 
+          name="information_about_you_middle_name" 
+          value="<?php echo showData('information_about_you_middle_name'); ?>" 
+        />
+      </div>
     </div>
+
+    <!-- Other Names Used -->
+    <div class="mt-5">
+      <p><b>2. Other Names You Have Used Since Birth (if applicable)</b></p>
+      <p>Provide all other names you have ever used, including your family name at birth, other legal names, nicknames, aliases, and assumed names.</p>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Family Name (Last Name)</label>
+          <input 
+            type="text" 
+            maxlength="29" 
+            class="form-control" 
+            name="information_about_you_other_family_last_name" 
+            value="<?php echo showData('information_about_you_other_family_last_name'); ?>" 
+          />
+          <input 
+            type="text" 
+            maxlength="29" 
+            class="form-control mt-2" 
+            name="information_about_you_other_family_last_name" 
+            value="<?php echo showData('information_about_you_other_family_last_name'); ?>" 
+          />
+        </div>
+
+        <div class="col-md-4">
+          <label>Given Name (First Name)</label>
+          <input 
+            type="text" 
+            maxlength="29" 
+            class="form-control" 
+            name="information_about_you_other_given_first_name" 
+            value="<?php echo showData('information_about_you_other_given_first_name'); ?>" 
+          />
+          <input 
+            type="text" 
+            maxlength="29" 
+            class="form-control mt-2" 
+            name="information_about_you_other_given_first_name" 
+            value="<?php echo showData('information_about_you_other_given_first_name'); ?>" 
+          />
+        </div>
+
+        <div class="col-md-4">
+          <label>Middle Name</label>
+          <input 
+            type="text" 
+            maxlength="29" 
+            class="form-control" 
+            name="information_about_you_other_middle_name" 
+            value="<?php echo showData('information_about_you_other_middle_name'); ?>" 
+          />
+          <input 
+            type="text" 
+            maxlength="29" 
+            class="form-control mt-2" 
+            name="information_about_you_other_middle_name" 
+            value="<?php echo showData('information_about_you_other_middle_name'); ?>" 
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="row mt-4">
+      <label class="control-label col-md-3">3. Date of Birth (mm/dd/yyyy)</label>
+      <div class="col-md-4">
+        <input 
+          type="text" 
+          maxlength="29" 
+          class="form-control" 
+          name="information_about_you_dob" 
+          value="<?php echo showData('information_about_you_dob'); ?>" 
+        />
+      </div>
+    </div>
+
+    <!-- Other Date of Birth -->
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <label class="col-md-5">Have you ever used any other date of birth?</label>
+        <div class="col-md-5">
+          <?php echo createRadio("i_485_social_authorize_disclousure_status"); ?>
+        </div>
+      </div>
+
+      <p class="mt-2 ml-5">If you answered "Yes," provide all other dates of birth (mm/dd/yyyy).</p>
+
+      <div class="col-md-4">
+        <input 
+          type="text" 
+          maxlength="29" 
+          class="form-control" 
+          name="information_about_you_other_dob" 
+          value="<?php echo showData('information_about_you_other_dob'); ?>" 
+        />
+        <input 
+          type="text" 
+          maxlength="29" 
+          class="form-control mt-2" 
+          name="information_about_you_other_dob" 
+          value="<?php echo showData('information_about_you_other_dob'); ?>" 
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <input 
+      type="button" 
+      name="next" 
+      class="next btn btn-info" 
+      value="Next" 
+      style="float: right;margin: 10px;" />
+
+  <input 
+       style="float: right;" 
+       type="button" 
+       name="button" 
+       class="submit btn btn-success" 
+       value="Save" />
 
 </fieldset>
+
+<!-- page 1 end  -->
