@@ -4311,9 +4311,166 @@ include "intake_header.php";
 </fieldset>
 
 <!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
+-------------------------------- page 17-------------------------------
 ------------------------------------------------------------------------>
+<fieldset class="setpage">
+  <div class="page_number">
+    <p style="text-align: right;"><b>Page 17 of 24</b></p>
+  </div>
+  <div class="row">
+    <div class="bg-info">
+      <h4><b>Part 9. General Eligibility and Inadmissibility Grounds (continued)</b></h4>
+    </div>
 
+    <!-- Questions 46-55 -->
+    <div class="col-md-12">
+      <div class="col-md-8 mt-5">
+        <label class="control-label" style="font-size: smaller;">46. Are you the spouse or child of an individual who EVER engaged in any of the activities listed in Item Number 43.b. - 43.i?</label>
+        <p style="font-size: smaller; font-style: italic;">NOTE: If you answered "Yes" to any part of Item Number 46., explain what your parent or spouse did, including the dates and location of the circumstances in Part 14. Additional Information.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_family_violent_activities" id="yes_46" value="Y" <?php echo (showData('i_589_family_violent_activities') == 'Y') ? 'checked' : '' ?>> <label for="yes_46" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_family_violent_activities" id="no_46" value="N" <?php echo (showData('i_589_family_violent_activities') == 'N') ? 'checked' : '' ?>> <label for="no_46" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-5">
+        <label class="control-label" style="font-size: smaller;">47. Have you EVER sold, provided, or transported weapons, or assisted any person in selling, providing, or transporting weapons, which you have or believed would be used against another person?</label>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_weapons_trafficking" id="yes_47" value="Y" <?php echo (showData('i_589_weapons_trafficking') == 'Y') ? 'checked' : '' ?>> <label for="yes_47" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_weapons_trafficking" id="no_47" value="N" <?php echo (showData('i_589_weapons_trafficking') == 'N') ? 'checked' : '' ?>> <label for="no_47" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-5">
+        <label class="control-label" style="font-size: smaller;">48. Have you EVER worked, volunteered, or otherwise served in any prison, jail, prison camp, detention facility, labor camp, or any other place where people were detained, or have you EVER directed or participated in any other activity that involved detaining people?</label>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_detention_facility" id="yes_48" value="Y" <?php echo (showData('i_589_detention_facility') == 'Y') ? 'checked' : '' ?>> <label for="yes_48" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_detention_facility" id="no_48" value="N" <?php echo (showData('i_589_detention_facility') == 'N') ? 'checked' : '' ?>> <label for="no_48" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-5">
+        <label class="control-label" style="font-size: smaller;">49. Have you EVER been a member of, assisted, or participated in any group, unit, or organization of any kind in which you or other persons used any type of weapon against any person or threatened to do so?</label>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_weapon_using_group" id="yes_49" value="Y" <?php echo (showData('i_589_weapon_using_group') == 'Y') ? 'checked' : '' ?>> <label for="yes_49" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_weapon_using_group" id="no_49" value="N" <?php echo (showData('i_589_weapon_using_group') == 'N') ? 'checked' : '' ?>> <label for="no_49" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-5">
+        <label class="control-label" style="font-size: smaller;">50. Have you EVER served in, been a member of, assisted (helped), or participated in any military or police unit?</label>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_military_police" id="yes_50" value="Y" <?php echo (showData('i_589_military_police') == 'Y') ? 'checked' : '' ?>> <label for="yes_50" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_military_police" id="no_50" value="N" <?php echo (showData('i_589_military_police') == 'N') ? 'checked' : '' ?>> <label for="no_50" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-5">
+        <label class="control-label" style="font-size: smaller;">51. Have you EVER served in, been a member of, assisted (helped), or participated in any armed group (a group that carries weapons), for example: paramilitary unit (a group of people who act like a military group, but are not part of the official military), self-defense unit, vigilante unit, rebel group, or guerrilla group?</label>
+        <p style="font-size: smaller; font-style: italic;">If you answered "Yes" to Item Number 50. or 51., include the name of the country, the name of the military unit or armed group, your rank or position, and your dates of involvement in your explanation in Part 14. Additional Information.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_armed_group" id="yes_51" value="Y" <?php echo (showData('i_589_armed_group') == 'Y') ? 'checked' : '' ?>> <label for="yes_51" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_armed_group" id="no_51" value="N" <?php echo (showData('i_589_armed_group') == 'N') ? 'checked' : '' ?>> <label for="no_51" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-5">
+        <label class="control-label" style="font-size: smaller;">52. Have you EVER been a member of, or in any way affiliated with, the Communist Party or any totalitarian party (in the United States or abroad)?</label>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_communist_party" id="yes_52" value="Y" <?php echo (showData('i_589_communist_party') == 'Y') ? 'checked' : '' ?>> <label for="yes_52" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_communist_party" id="no_52" value="N" <?php echo (showData('i_589_communist_party') == 'N') ? 'checked' : '' ?>> <label for="no_52" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-5">
+        <label class="control-label" style="font-size: smaller;">Have you EVER ordered, incited, called for, committed, assisted, helped with, or otherwise participated in any of the following:</label>
+      </div>
+      <div class="col-md-4">
+        <!-- Empty column for alignment -->
+      </div>
+
+      <div class="col-md-8 mt-4">
+        <label class="control-label" style="font-size: smaller;">53.a. Torture?</label>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_participated_torture" id="yes_53a" value="Y" <?php echo (showData('i_589_participated_torture') == 'Y') ? 'checked' : '' ?>> <label for="yes_53a" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_participated_torture" id="no_53a" value="N" <?php echo (showData('i_589_participated_torture') == 'N') ? 'checked' : '' ?>> <label for="no_53a" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-4">
+        <label class="control-label" style="font-size: smaller;">53.b. Genocide?</label>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_participated_genocide" id="yes_53b" value="Y" <?php echo (showData('i_589_participated_genocide') == 'Y') ? 'checked' : '' ?>> <label for="yes_53b" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_participated_genocide" id="no_53b" value="N" <?php echo (showData('i_589_participated_genocide') == 'N') ? 'checked' : '' ?>> <label for="no_53b" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-4">
+        <label class="control-label" style="font-size: smaller;">53.c. Killing, or trying to kill, any person?</label>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_participated_killing" id="yes_53c" value="Y" <?php echo (showData('i_589_participated_killing') == 'Y') ? 'checked' : '' ?>> <label for="yes_53c" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_participated_killing" id="no_53c" value="N" <?php echo (showData('i_589_participated_killing') == 'N') ? 'checked' : '' ?>> <label for="no_53c" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-4">
+        <label class="control-label" style="font-size: smaller;">53.d. Intentionally and severely injuring or trying to injure any person?</label>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_participated_injuring" id="yes_53d" value="Y" <?php echo (showData('i_589_participated_injuring') == 'Y') ? 'checked' : '' ?>> <label for="yes_53d" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_participated_injuring" id="no_53d" value="N" <?php echo (showData('i_589_participated_injuring') == 'N') ? 'checked' : '' ?>> <label for="no_53d" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-5">
+        <label class="control-label" style="font-size: smaller;">54. Have you EVER recruited, enlisted, conscripted, or used any person under 15 years of age to take part in hostilities or to serve in or help an armed force or group, or attempted or worked with others to do so?</label>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_child_soldier_recruitment" id="yes_54" value="Y" <?php echo (showData('i_589_child_soldier_recruitment') == 'Y') ? 'checked' : '' ?>> <label for="yes_54" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_child_soldier_recruitment" id="no_54" value="N" <?php echo (showData('i_589_child_soldier_recruitment') == 'N') ? 'checked' : '' ?>> <label for="no_54" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-5">
+        <label class="control-label" style="font-size: smaller;">55. Have you EVER used any person under 15 years of age to take part in hostilities, for instance, participating in combat or providing services related to combat (such as sabotage or serving as a courier) or providing support services (such as transporting supplies), or attempts or worked with others to do so?</label>
+        <p style="font-size: smaller; font-style: italic;">NOTE: If you answered "Yes" to any part of Item Numbers 47. - 55., explain what occurred, including the dates and location of the circumstances, in the space provided in Part 14. Additional Information.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flexible col-md-offset-8">
+          <input type="radio" name="i_589_child_combat_use" id="yes_55" value="Y" <?php echo (showData('i_589_child_combat_use') == 'Y') ? 'checked' : '' ?>> <label for="yes_55" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_child_combat_use" id="no_55" value="N" <?php echo (showData('i_589_child_combat_use') == 'N') ? 'checked' : '' ?>> <label for="no_55" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+  <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
+  <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
 
 
 <!----------------------------------------------------------------------
