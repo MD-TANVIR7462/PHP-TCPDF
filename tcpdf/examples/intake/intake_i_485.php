@@ -873,6 +873,7 @@ include "intake_header.php";
   }
 </style>
 <!-- Custom Styles End  -->
+
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
@@ -3895,7 +3896,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 15-------------------------------
 ------------------------------------------------------------------------>
-
+<!-- 
 <fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 15 of 24</b></p>
@@ -3905,7 +3906,7 @@ include "intake_header.php";
       <h4><b>Part 9. General Eligibility and Inadmissibility Grounds (continued)</b></h4>
     </div>
 
-    <!-- Questions 23-37 -->
+
     <div class="col-md-12">
       <div class="col-md-8 mt-5">
         <label class="control-label" style="font-size: smaller;">23. Have you EVER committed a crime of any kind (even if you were not arrested, cited, charged with, or tried for that crime, or convicted)?</label>
@@ -4075,13 +4076,13 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset>
+</fieldset> -->
 
 <!----------------------------------------------------------------------
 -------------------------------- page 16-------------------------------
 ------------------------------------------------------------------------>
 
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 16 of 24</b></p>
   </div>
@@ -4090,7 +4091,6 @@ include "intake_header.php";
       <h4><b>Part 9. General Eligibility and Inadmissibility Grounds (continued)</b></h4>
     </div>
 
-    <!-- Questions 38-41 -->
     <div class="col-md-12">
       <div class="col-md-8 mt-5">
         <label class="control-label" style="font-size: smaller;">38. Have you EVER knowingly aided, abetted, assisted, conspired, or colluded with others in trafficking in persons for commercial sex acts or involuntary servitude, peonage, debt bondage, or slavery?</label>
@@ -4133,7 +4133,7 @@ include "intake_header.php";
       </div>
     </div>
 
-    <!-- Security and Related Section -->
+
     <div class="col-md-12">
       <div class="bg-info" style="padding: 10px; margin-top: 20px;">
         <h5><b>Security and Related</b></h5>
@@ -4143,7 +4143,7 @@ include "intake_header.php";
         <label class="control-label" style="font-size: smaller;">Do you intend to:</label>
       </div>
       <div class="col-md-4">
-        <!-- Empty column for alignment -->
+     
       </div>
 
       <div class="col-md-8 mt-3">
@@ -4308,12 +4308,12 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset>
+</fieldset> -->
 
 <!----------------------------------------------------------------------
 -------------------------------- page 17-------------------------------
 ------------------------------------------------------------------------>
-<fieldset class="setpage">
+<!-- <fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 17 of 24</b></p>
   </div>
@@ -4322,7 +4322,6 @@ include "intake_header.php";
       <h4><b>Part 9. General Eligibility and Inadmissibility Grounds (continued)</b></h4>
     </div>
 
-    <!-- Questions 46-55 -->
     <div class="col-md-12">
       <div class="col-md-8 mt-5">
         <label class="control-label" style="font-size: smaller;">46. Are you the spouse or child of an individual who EVER engaged in any of the activities listed in Item Number 43.b. - 43.i?</label>
@@ -4400,7 +4399,7 @@ include "intake_header.php";
         <label class="control-label" style="font-size: smaller;">Have you EVER ordered, incited, called for, committed, assisted, helped with, or otherwise participated in any of the following:</label>
       </div>
       <div class="col-md-4">
-        <!-- Empty column for alignment -->
+       
       </div>
 
       <div class="col-md-8 mt-4">
@@ -4470,78 +4469,676 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 18-------------------------------
+------------------------------------------------------------------------>
+<!-- <fieldset class="setpage">
+  <div class="page_number">
+    <p style="text-align: right;"><b>Page 18 of 24</b></p>
+  </div>
+  <div class="row">
+    <div class="bg-info">
+      <h4><b>Part 9. General Eligibility and Inadmissibility Grounds (continued)</b></h4>
+    </div>
+
+    <div class="bg-info mt-3">
+      <h4><b>Public Charge</b></h4>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-12 mt-4">
+        <p style="font-size: smaller;">
+          Each alien who is subject to the public charge ground of inadmissibility in INA section 212(a)(4) must complete <b>Item Numbers 57. - 66.</b> An alien is subject to the public charge ground of inadmissibility if the alien does not fall under one of the categories exempt from the public charge ground of inadmissibility listed below. If you fall under one of the exempt categories listed below, please select the exempt category, and skip <b>Item Numbers 57. - 66.</b> If you do not fall under one of the exempt categories listed below, select "I do not fall under any of the exempt categories listed above and will complete <b>Item Numbers 57. - 66.</b>"
+        </p>
+        <p style="font-size: smaller; font-style: italic;">
+          <b>NOTE:</b> For more information, see <b>Part 9. General Eligibility and Inadmissibility Grounds</b>, <i>Public Charge</i> section of these Instructions.
+        </p>
+      </div>
+
+      <div class="col-md-12 my-4">
+        <label class="control-label">
+          <b>56. I am exempt from the public charge ground of inadmissibility because I am a/an (select <u>only one</u> box):</b>
+        </label>
+        <br><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_vawa_self_petitioner") ?> VAWA Self-Petitioner (Form I-360)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_special_immigrant_juvenile") ?> Special Immigrant Juvenile (Form I-360)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_afghan_iraqi_national") ?> Certain Afghan or Iraqi National (Form I-360 or Form DS-157)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_asylee") ?> Asylee (Form I-589 or Form I-730)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_refugee") ?> Refugee (Form I-590 or Form I-730)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_u_nonimmigrant") ?> Victim of Qualifying Criminal Activity (U Nonimmigrant) under INA section 245(m) (Form I-918, Form I-918A, or Form I-929)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_u_nonimmigrant_other") ?> Any category other than INA section 245(m), but you are in valid U nonimmigrant status at the time you file your application for adjustment of status. (This exemption only applies if, at the time of the adjudication of Form I-485, you are still in valid U nonimmigrant status. If, at the time of adjudication of Form I-485, you are no longer in valid U nonimmigrant status, you will be subject to the public charge ground of inadmissibility.)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_t_nonimmigrant") ?> Human Trafficking Victim (T nonimmigrant) under INA section 245(l) (Form I-914 or Form I-914A)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_t_nonimmigrant_other") ?> Any category other than INA section 245(l), but you either have a pending application for T nonimmigrant status (Form I-914) that sets forth a prima facie case for eligibility or are in valid T nonimmigrant status at the time you file your application for adjustment of status. (This exemption only applies if your Form I-914 is still pending and deemed to be prima facie eligible or you are in valid T nonimmigrant status when we adjudicate your adjustment of status application.)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_cuban_adjustment") ?> Cuban Adjustment Act
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_cuban_adjustment_battered") ?> Cuban Adjustment Act for Battered Spouses and Children
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_haitian_dependent") ?> Dependent Status under the Haitian Refugee Immigrant Fairness Act
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_haitian_dependent_battered") ?> Dependent Status under the Haitian Refugee Immigrant Fairness Act for Battered Spouses and Children
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_cuban_haitian_entrants") ?> Cuban and Haitian Entrants Applying for Adjustment of Status under section 202 of the Immigration Reform and Control Act of 1986
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_lautenberg_parolee") ?> A Lautenberg Parolee
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_vietnam_cambodia_laos") ?> National of Vietnam, Cambodia, or Laos Applying under the Foreign Operations, Export Financing, and Related Programs
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_continuous_residence") ?> Continuous Residence in the United States Since Before January 1, 1972 ("Registry")
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_amerasian_homecoming") ?> Amerasian Homecoming Act
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_polish_hungarian_parolee") ?> Polish or Hungarian Parolee
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_nacara") ?> Nicaraguan and Other Central Americans under section 203 of the Nicaraguan Adjustment and Central American Relief Act (NACARA)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_american_indian") ?> American Indian Born in Canada (INA section 289) or the Texas Band of Kickapoo Indians of the Kickapoo Tribe of Oklahoma, Public Law 97-429 (Jan. 8, 1983)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_liberian_fairness") ?> Section 7611 of the National Defense Authorization Act for Fiscal Year 2020 (Liberian Refugee Immigration Fairness)
+        </label><br>
+        <br>
+
+      </div>
+    </div>
+
+  </div>
+
+  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+  <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
+  <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 19-------------------------------
+------------------------------------------------------------------------>
+<!-- <fieldset class="setpage">
+  <div class="page_number">
+    <p style="text-align: right;"><b>Page 19 of 24</b></p>
+  </div>
+  <div class="row">
+    <div class="bg-info">
+      <h4><b>Part 9. General Eligibility and Inadmissibility Grounds (continued)</b></h4>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-12 my-4">
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_syrian_national") ?> Syrian National Adjusting Status under Public Law 106-378
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_military_family") ?> Spouse, Child, or Parent of a U.S. Active-Duty Service Member in the Armed Forces under the National Defense Authorization Act (NDAA) (Form I-130 or Form I-360)
+        </label><br>
+        <label class="control-label">
+          <?php echo createCheckbox("exempt_none_complete") ?> I do not fall under any of the exempt categories listed above and will complete Item Numbers 57. - 66.
+        </label>
+      </div>
+      <div class="col-md-12 mt-4">
+        <p style="font-size: smaller;">
+          If you selected "I do not fall under any of the exempt categories listed above and will complete Item Numbers 57. - 66." in Item Number 56., complete Item Numbers 57. - 66. below. If you selected an exempt category in Item Number 56., go to Item Number 67. If you need extra space to complete this section, use the space provided in Part 14. Additional Information.
+        </p>
+      </div>
+      <div class="col-md-12 mt-5">
+        <label class="control-label" style="font-size: smaller;">57. What is the size of your household?</label>
+        <div style="flex: 1; width: 200px;">
+          <input type="text" class="form-control" name="public_charge_household_size" value="<?php echo showData('public_charge_household_size') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+        </div>
+      </div>
+      <div class="col-md-12 mt-5">
+        <label class="control-label" style="font-size: smaller;">58. Indicate your annual household income.</label>
+        <div class="col-md-12 my-4">
+          <label class="control-label">
+            <?php echo createCheckbox("income_0_27000") ?> $0-27,000
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("income_27001_52000") ?> $27,001-52,000
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("income_52001_85000") ?> $52,001-85,000
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("income_85001_141000") ?> $85,001-141,000
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("income_over_141000") ?> Over $141,000
+          </label>
+        </div>
+      </div>
+      <div class="col-md-12 mt-5">
+        <label class="control-label" style="font-size: smaller;">59. Identify the total value of your household assets.</label>
+        <div class="col-md-12 my-4">
+          <label class="control-label">
+            <?php echo createCheckbox("assets_0_18400") ?> $0-18,400
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("assets_18401_136000") ?> $18,401-136,000
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("assets_136001_321400") ?> $136,001-321,400
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("assets_321401_707100") ?> $321,401-707,100
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("assets_over_707100") ?> Over $707,100
+          </label>
+        </div>
+      </div>
+      <div class="col-md-12 mt-5">
+        <label class="control-label" style="font-size: smaller;">60. Identify the total value of your household liabilities (including both secured and unsecured liabilities).</label>
+        <div class="col-md-12 my-4">
+          <label class="control-label">
+            <?php echo createCheckbox("liabilities_0") ?> $0
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("liabilities_1_10100") ?> $1-10,100
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("liabilities_10101_57700") ?> $10,101-57,700
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("liabilities_57701_186800") ?> $57,701-186,800
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("liabilities_over_186800") ?> Over $186,800
+          </label>
+        </div>
+      </div>
+      <div class="col-md-12 mt-5">
+        <label class="control-label" style="font-size: smaller;">61. What is the highest degree or grade of school you have completed?</label>
+        <div class="col-md-12 my-4">
+          <label class="control-label">
+            <?php echo createCheckbox("education_less_than_high_school") ?> Less than a high school diploma. If you select this option, indicate the highest grade of school you have completed.
+          </label><br>
+          <div class="col-md-12">
+            <input type="text" class="form-control" name="education_highest_grade" value="<?php echo showData('education_highest_grade') ?>" style="width: 100%; padding: 5px; margin-bottom: 5px;" />
+          </div>
+          <label class="control-label">
+            <?php echo createCheckbox("education_high_school") ?> High school diploma, GED, or alternative credential
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("education_college_no_degree") ?> 1 or more years of college credit, no degree
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("education_associates") ?> Associate's degree
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("education_bachelors") ?> Bachelor's degree
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("education_masters") ?> Master's degree
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("education_professional") ?> Professional degree (JD, MD, DMD, etc.)
+          </label><br>
+          <label class="control-label">
+            <?php echo createCheckbox("education_doctorate") ?> Doctorate degree
+          </label>
+        </div>
+      </div>
+      <div class="col-md-12 mt-5">
+        <label class="control-label" style="font-size: smaller;">62. List your certifications, licenses, skills obtained through work experience, and educational certificates.</label>
+        <p style="font-size: smaller; font-style: italic;">List of Certifications</p>
+        <div class="col-md-12 ">
+          <table border="1" style="width: 100%;">
+            <thead>
+              <tr class="bg-info">
+                <th>List of Certifications</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" class="form-control" maxlength="23" style="width: 100%; margin: 0;" name="general_eligibility_list_of_certifications[]" value="<?php echo showData('general_eligibility_list_of_certifications', '0') ?>"></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" maxlength="23" style="width: 100%; margin: 0;" name="general_eligibility_list_of_certifications[]" value="<?php echo showData('general_eligibility_list_of_certifications', '1') ?>"></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" maxlength="23" style="width: 100%; margin: 0;" name="general_eligibility_list_of_certifications[]" value="<?php echo showData('general_eligibility_list_of_certifications', '2') ?>"></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" maxlength="23" style="width: 100%; margin: 0;" name="general_eligibility_list_of_certifications[]" value="<?php echo showData('general_eligibility_list_of_certifications', '3') ?>"></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" maxlength="23" style="width: 100%; margin: 0;" name="general_eligibility_list_of_certifications[]" value="<?php echo showData('general_eligibility_list_of_certifications', '4') ?>"></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" maxlength="23" style="width: 100%; margin: 0;" name="general_eligibility_list_of_certifications[]" value="<?php echo showData('general_eligibility_list_of_certifications', '5') ?>"></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" maxlength="23" style="width: 100%; margin: 0;" name="general_eligibility_list_of_certifications[]" value="<?php echo showData('general_eligibility_list_of_certifications', '6') ?>"></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" maxlength="23" style="width: 100%; margin: 0;" name="general_eligibility_list_of_certifications[]" value="<?php echo showData('general_eligibility_list_of_certifications', '7') ?>"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-12 mt-5">
+        <label class="control-label" style="font-size: smaller;">63. Have you ever received Supplemental Security Income (SSI), Temporary Assistance for Needy Families (TANF), or state, Tribal, territorial, or local cash benefit programs for income maintenance (often called "General Assistance" in the state context, but which also exist under other names)?</label>
+        <div class="d-flexible">
+          <input type="radio" name="i_589_received_public_benefits" id="yes_63" value="Y" <?php echo (showData('i_589_received_public_benefits') == 'Y') ? 'checked' : '' ?>> <label for="yes_63" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_received_public_benefits" id="no_63" value="N" <?php echo (showData('i_589_received_public_benefits') == 'N') ? 'checked' : '' ?>> <label for="no_63" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+      <div class="col-md-12 mt-5">
+        <label class="control-label" style="font-size: smaller;">64. Have you ever received long-term institutionalization at government expense?</label>
+        <div class="d-flexible">
+          <input type="radio" name="i_589_long_term_institutionalization" id="yes_64" value="Y" <?php echo (showData('i_589_long_term_institutionalization') == 'Y') ? 'checked' : '' ?>> <label for="yes_64" style="font-size: smaller;">Yes</label><br>
+          <input type="radio" name="i_589_long_term_institutionalization" id="no_64" value="N" <?php echo (showData('i_589_long_term_institutionalization') == 'N') ? 'checked' : '' ?>> <label for="no_64" style="font-size: smaller;">No</label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+  <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
+  <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 20-------------------------------
+------------------------------------------------------------------------>
+<!-- <fieldset>
+    <div class="page_number">
+    <p style="text-align: right;"><b>Page 20 of 24</b></p>
+  </div>
+  <div class="col-md-12 mt-4 bg-info">
+    <h5><b>Part 9. General Eligibility and Inadmissibility Grounds (continued)</b></h5>
+  </div>
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">65. If your answer to Item Number 63. is "Yes," list the specific benefit(s) you received, the start and end dates of each period of receipt, the dollar amount of benefits received, and whether you received the benefits while you were in an immigration category exempt from the public charge ground of inadmissibility.</label>
+    <table border="1" style="width: 100%;">
+      <thead>
+        <tr class="bg-info">
+          <th>Benefit Received</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Dollar Amount</th>
+          <th>In a Category Exempt from Public Charge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_received_1" value="<?php echo showData('benefit_received_1') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_start_date_1" value="<?php echo showData('benefit_start_date_1') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_end_date_1" value="<?php echo showData('benefit_end_date_1') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_dollar_amount_1" value="<?php echo showData('benefit_dollar_amount_1') ?>"></td>
+          <td>
+            <input type="radio" name="benefit_exempt_1" value="Y" <?php echo (showData('benefit_exempt_1') == 'Y') ? 'checked' : '' ?>> <b>Yes</b>
+            <input type="radio" name="benefit_exempt_1" value="N" <?php echo (showData('benefit_exempt_1') == 'N') ? 'checked' : '' ?>> <b>No</b>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_received_2" value="<?php echo showData('benefit_received_2') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_start_date_2" value="<?php echo showData('benefit_start_date_2') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_end_date_2" value="<?php echo showData('benefit_end_date_2') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_dollar_amount_2" value="<?php echo showData('benefit_dollar_amount_2') ?>"></td>
+          <td>
+            <input type="radio" name="benefit_exempt_2" value="Y" <?php echo (showData('benefit_exempt_2') == 'Y') ? 'checked' : '' ?>> <b>Yes</b>
+            <input type="radio" name="benefit_exempt_2" value="N" <?php echo (showData('benefit_exempt_2') == 'N') ? 'checked' : '' ?>> <b>No</b>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_received_3" value="<?php echo showData('benefit_received_3') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_start_date_3" value="<?php echo showData('benefit_start_date_3') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_end_date_3" value="<?php echo showData('benefit_end_date_3') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_dollar_amount_3" value="<?php echo showData('benefit_dollar_amount_3') ?>"></td>
+          <td>
+            <input type="radio" name="benefit_exempt_3" value="Y" <?php echo (showData('benefit_exempt_3') == 'Y') ? 'checked' : '' ?>> <b>Yes</b>
+            <input type="radio" name="benefit_exempt_3" value="N" <?php echo (showData('benefit_exempt_3') == 'N') ? 'checked' : '' ?>> <b>No</b>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_received_4" value="<?php echo showData('benefit_received_4') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_start_date_4" value="<?php echo showData('benefit_start_date_4') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_end_date_4" value="<?php echo showData('benefit_end_date_4') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="benefit_dollar_amount_4" value="<?php echo showData('benefit_dollar_amount_4') ?>"></td>
+          <td>
+            <input type="radio" name="benefit_exempt_4" value="Y" <?php echo (showData('benefit_exempt_4') == 'Y') ? 'checked' : '' ?>> <b>Yes</b>
+            <input type="radio" name="benefit_exempt_4" value="N" <?php echo (showData('benefit_exempt_4') == 'N') ? 'checked' : '' ?>> <b>No</b>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">66. If your answer to Item Number 64. is "Yes," list the name, city, and state for each institution, the start and end dates of each period of institutionalization, the reason you were institutionalized, and whether you were institutionalized while you were in an immigration category exempt from the public charge ground of inadmissibility.</label>
+    <table border="1" style="width: 100%;">
+      <thead>
+        <tr class="bg-info">
+          <th>Institution Name/City/State</th>
+          <th>Date From</th>
+          <th>Date To</th>
+          <th>Reason</th>
+          <th>In a Category Exempt from Public Charge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_details_1" value="<?php echo showData('institution_details_1') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_from_1" value="<?php echo showData('institution_from_1') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_to_1" value="<?php echo showData('institution_to_1') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_reason_1" value="<?php echo showData('institution_reason_1') ?>"></td>
+          <td>
+            <input type="radio" name="institution_exempt_1" value="Y" <?php echo (showData('institution_exempt_1') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_1">Yes</label> 
+            <input type="radio" name="institution_exempt_1" value="N" <?php echo (showData('institution_exempt_1') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label> 
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_details_2" value="<?php echo showData('institution_details_2') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_from_2" value="<?php echo showData('institution_from_2') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_to_2" value="<?php echo showData('institution_to_2') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_reason_2" value="<?php echo showData('institution_reason_2') ?>"></td>
+          <td>
+            <input type="radio" name="institution_exempt_2" value="Y" <?php echo (showData('institution_exempt_2') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_2">Yes</label> 
+            <input type="radio" name="institution_exempt_2" value="N" <?php echo (showData('institution_exempt_2') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label> 
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_details_3" value="<?php echo showData('institution_details_3') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_from_3" value="<?php echo showData('institution_from_3') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_to_3" value="<?php echo showData('institution_to_3') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_reason_3" value="<?php echo showData('institution_reason_3') ?>"></td>
+          <td>
+            <input type="radio" name="institution_exempt_3" value="Y" <?php echo (showData('institution_exempt_3') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_3">Yes</label> 
+            <input type="radio" name="institution_exempt_3" value="N" <?php echo (showData('institution_exempt_3') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label> 
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_details_4" value="<?php echo showData('institution_details_4') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_from_4" value="<?php echo showData('institution_from_4') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_to_4" value="<?php echo showData('institution_to_4') ?>"></td>
+          <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_reason_4" value="<?php echo showData('institution_reason_4') ?>"></td>
+          <td>
+            <input type="radio" name="institution_exempt_4" value="Y" <?php echo (showData('institution_exempt_4') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_4">Yes</label> 
+            <input type="radio" name="institution_exempt_4" value="N" <?php echo (showData('institution_exempt_4') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label> 
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-12 mt-4 bg-info">
+    <h5><b><i>Illegal Entries and Other Immigration Violations</i></b></h5>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">67. Have you EVER failed or refused to attend or to remain in attendance at any removal proceeding filed against you on or after April 1, 1997?</label>
+    <div class="d-flexible">
+      <input type="radio" name="i_589_failed_removal_proceeding" id="yes_67" value="Y" <?php echo (showData('i_589_failed_removal_proceeding') == 'Y') ? 'checked' : '' ?>> <label for="yes_67" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="i_589_failed_removal_proceeding" id="no_67" value="N" <?php echo (showData('i_589_failed_removal_proceeding') == 'N') ? 'checked' : '' ?>> <label for="no_67" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">68. Have you EVER submitted altered, fraudulent, or counterfeit documentation to any U.S. Government official to obtain or attempt to obtain any immigration benefit, including a visa or entry into the United States?</label>
+    <div class="d-flexible">
+      <input type="radio" name="i_589_submitted_fraudulent_docs" id="yes_68" value="Y" <?php echo (showData('i_589_submitted_fraudulent_docs') == 'Y') ? 'checked' : '' ?>> <label for="yes_68" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="i_589_submitted_fraudulent_docs" id="no_68" value="N" <?php echo (showData('i_589_submitted_fraudulent_docs') == 'N') ? 'checked' : '' ?>> <label for="no_68" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">69. Have you EVER lied about, concealed, or misrepresented any information on an application or petition to obtain a visa, other documentation required for entry into the United States, admission to the United States, or any other kind of immigration benefit?</label>
+    <div class="d-flexible">
+      <input type="radio" name="i_589_misrepresented_info" id="yes_69" value="Y" <?php echo (showData('i_589_misrepresented_info') == 'Y') ? 'checked' : '' ?>> <label for="yes_69" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="i_589_misrepresented_info" id="no_69" value="N" <?php echo (showData('i_589_misrepresented_info') == 'N') ? 'checked' : '' ?>> <label for="no_69" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">70. Have you EVER falsely claimed to be a U.S. citizen (in writing or any other way)?</label>
+    <div class="d-flexible">
+      <input type="radio" name="i_589_false_us_citizen_claim" id="yes_70" value="Y" <?php echo (showData('i_589_false_us_citizen_claim') == 'Y') ? 'checked' : '' ?>> <label for="yes_70" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="i_589_false_us_citizen_claim" id="no_70" value="N" <?php echo (showData('i_589_false_us_citizen_claim') == 'N') ? 'checked' : '' ?>> <label for="no_70" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">71. Have you EVER been a stowaway on a vessel or aircraft arriving in the United States?</label>
+    <div class="d-flexible">
+      <input type="radio" name="i_589_stowaway" id="yes_71" value="Y" <?php echo (showData('i_589_stowaway') == 'Y') ? 'checked' : '' ?>> <label for="yes_71" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="i_589_stowaway" id="no_71" value="N" <?php echo (showData('i_589_stowaway') == 'N') ? 'checked' : '' ?>> <label for="no_71" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">72. Have you EVER knowingly encouraged, induced, assisted, abetted, or aided any alien to enter or to try to enter the United States illegally (alien smuggling)?</label>
+    <div class="d-flexible">
+      <input type="radio" name="i_589_alien_smuggling" id="yes_72" value="Y" <?php echo (showData('i_589_alien_smuggling') == 'Y') ? 'checked' : '' ?>> <label for="yes_72" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="i_589_alien_smuggling" id="no_72" value="N" <?php echo (showData('i_589_alien_smuggling') == 'N') ? 'checked' : '' ?>> <label for="no_72" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">73. Are you under a final order of civil penalty for violating INA section 274C for use of fraudulent documents?</label>
+    <div class="d-flexible">
+      <input type="radio" name="i_589_final_order_fraudulent_docs" id="yes_73" value="Y" <?php echo (showData('i_589_final_order_fraudulent_docs') == 'Y') ? 'checked' : '' ?>> <label for="yes_73" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="i_589_final_order_fraudulent_docs" id="no_73" value="N" <?php echo (showData('i_589_final_order_fraudulent_docs') == 'N') ? 'checked' : '' ?>> <label for="no_73" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <h5><b>Removal, Unlawful Presence, or Illegal Reentry After Previous Immigration Violations</b></h5>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">74. Have you EVER been excluded, deported, or removed from the United States or have you ever departed the United States on your own after having been ordered excluded, deported, or removed from the United States?</label>
+    <div class="d-flexible">
+      <input type="radio" name="i_589_excluded_deported_removed" id="yes_74" value="Y" <?php echo (showData('i_589_excluded_deported_removed') == 'Y') ? 'checked' : '' ?>> <label for="yes_74" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="i_589_excluded_deported_removed" id="no_74" value="N" <?php echo (showData('i_589_excluded_deported_removed') == 'N') ? 'checked' : '' ?>> <label for="no_74" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">75. Have you EVER entered the United States without being inspected and admitted or paroled?</label>
+    <div class="d-flexible">
+      <input type="radio" name="i_589_entered_without_inspection" id="yes_75" value="Y" <?php echo (showData('i_589_entered_without_inspection') == 'Y') ? 'checked' : '' ?>> <label for="yes_75" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="i_589_entered_without_inspection" id="no_75" value="N" <?php echo (showData('i_589_entered_without_inspection') == 'N') ? 'checked' : '' ?>> <label for="no_75" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+  <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
+  <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset> -->
+<!----------------------------------------------------------------------
+-------------------------------- page 21-------------------------------
+------------------------------------------------------------------------>
+<fieldset>
+    <div class="page_number">
+    <p style="text-align: right;"><b>Page 21 of 24</b></p>
+  </div>
+  <div class="col-md-12 mt-4 bg-info">
+    <h5><b>Part 9. General Eligibility and Inadmissibility Grounds (continued)</b></h5>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">76. Since April 1, 1997, have you been unlawfully present in the United States? You were unlawfully present in the United States if you were present in the United States after the expiration of the period of stay authorized by the Department of Homeland Security (DHS) Secretary or were present in the United States without being admitted or paroled.</label>
+    <div class="d-flexible">
+      <input type="radio" name="unlawfully_present" id="yes_76" value="Y"> <label for="yes_76" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="unlawfully_present" id="no_76" value="N"> <label for="no_76" style="font-size: smaller;">No</label>
+    </div>
+    <div class="note" style="background-color: #e8f4fc; padding: 10px; margin-top: 10px; font-size: smaller;">
+      <b>NOTE:</b> If you answered "Yes" to Item Number 76., give the dates of unlawful presence in the space provided in Part 14. Additional Information.
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">77. If you answered "Yes" to Item Number 76., was a severe form of trafficking in persons at least one central reason for your unlawful presence in the United States?</label>
+    <div class="d-flexible">
+      <input type="radio" name="trafficking_reason" id="yes_77" value="Y"> <label for="yes_77" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="trafficking_reason" id="no_77" value="N"> <label for="no_77" style="font-size: smaller;">No</label>
+    </div>
+    <div class="note" style="background-color: #e8f4fc; padding: 10px; margin-top: 10px; font-size: smaller;">
+      <b>NOTE:</b> Severe trafficking in persons involves sex trafficking (the recruitment, harboring, transportation, provision, or obtaining of a person to commit a commercial sex act) induced by force, fraud, coercion, or in which the person is induced to perform such act has not reached 18 years of age, or the recruitment, harboring, transportation, provision, or obtaining of a person for labor or services, through the use of force, fraud, or coercion for the purpose of subjection to involuntary servitude, peonage, debt bondage, or slavery.
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">Since April 1, 1997, have you EVER reentered or attempted to reenter the United States without being inspected and admitted or paroled after:</label>
+    
+    <div class="mt-3">
+      <label class="control-label" style="font-size: smaller;">78.a. Having been unlawfully present in the United States for more than one year in the aggregate on or after April 1, 1997? You were unlawfully present in the United States for more than one year in the aggregate if you count all of the days during all of your stays that you were present in the United States after the expiration of the period of stay authorized by the DHS Secretary or were present in the United States without being admitted or paroled.</label>
+      <div class="d-flexible">
+        <input type="radio" name="reentry_after_one_year" id="yes_78a" value="Y"> <label for="yes_78a" style="font-size: smaller;">Yes</label><br>
+        <input type="radio" name="reentry_after_one_year" id="no_78a" value="N"> <label for="no_78a" style="font-size: smaller;">No</label>
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <label class="control-label" style="font-size: smaller;">78.b. Having been deported, excluded, or removed from the United States?</label>
+      <div class="d-flexible">
+        <input type="radio" name="reentry_after_removal" id="yes_78b" value="Y"> <label for="yes_78b" style="font-size: smaller;">Yes</label><br>
+        <input type="radio" name="reentry_after_removal" id="no_78b" value="N"> <label for="no_78b" style="font-size: smaller;">No</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4 bg-info">
+    <h5><b><i>Miscellaneous Conduct</i></b></h5>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">79. Do you plan to practice polygamy in the United States?</label>
+    <div class="d-flexible">
+      <input type="radio" name="practice_polygamy" id="yes_79" value="Y"> <label for="yes_79" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="practice_polygamy" id="no_79" value="N"> <label for="no_79" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">80. Are you accompanying an alien who is inadmissible and who has been certified by a medical officer as helpless from sickness, mental or physical disability, or infancy, and who requires your protection or guardianship, as described in INA section 232(c)?</label>
+    <div class="d-flexible">
+      <input type="radio" name="accompanying_inadmissible" id="yes_80" value="Y"> <label for="yes_80" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="accompanying_inadmissible" id="no_80" value="N"> <label for="no_80" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">81. Have you EVER assisted in detaining, retaining, or withholding custody of a U.S. citizen child outside the United States from a person who has been granted custody of the child?</label>
+    <div class="d-flexible">
+      <input type="radio" name="withholding_child_custody" id="yes_81" value="Y"> <label for="yes_81" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="withholding_child_custody" id="no_81" value="N"> <label for="no_81" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">82. Have you EVER voted in violation of any Federal, state, or local constitutional provision, statute, ordinance, or regulation in the United States?</label>
+    <div class="d-flexible">
+      <input type="radio" name="voted_in_violation" id="yes_82" value="Y"> <label for="yes_82" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="voted_in_violation" id="no_82" value="N"> <label for="no_82" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">83. Have you EVER renounced U.S. citizenship to avoid being taxed by the United States?</label>
+    <div class="d-flexible">
+      <input type="radio" name="renounced_citizenship" id="yes_83" value="Y"> <label for="yes_83" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="renounced_citizenship" id="no_83" value="N"> <label for="no_83" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">Have you EVER:</label>
+    
+    <div class="mt-3">
+      <label class="control-label" style="font-size: smaller;">84.a. Applied for exemption or discharge from training or service in the U.S. armed forces or in the U.S. National Security Training Corps on the ground that you are an alien?</label>
+      <div class="d-flexible">
+        <input type="radio" name="applied_exemption_military" id="yes_84a" value="Y"> <label for="yes_84a" style="font-size: smaller;">Yes</label><br>
+        <input type="radio" name="applied_exemption_military" id="no_84a" value="N"> <label for="no_84a" style="font-size: smaller;">No</label>
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <label class="control-label" style="font-size: smaller;">84.b. Been relieved or discharged from such training or service on the ground that you are an alien?</label>
+      <div class="d-flexible">
+        <input type="radio" name="discharged_military_alien" id="yes_84b" value="Y"> <label for="yes_84b" style="font-size: smaller;">Yes</label><br>
+        <input type="radio" name="discharged_military_alien" id="no_84b" value="N"> <label for="no_84b" style="font-size: smaller;">No</label>
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <label class="control-label" style="font-size: smaller;">84.c. Been convicted of desertion from the U.S. armed forces?</label>
+      <div class="d-flexible">
+        <input type="radio" name="convicted_desertion" id="yes_84c" value="Y"> <label for="yes_84c" style="font-size: smaller;">Yes</label><br>
+        <input type="radio" name="convicted_desertion" id="no_84c" value="N"> <label for="no_84c" style="font-size: smaller;">No</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">85. Have you EVER left or remained outside the United States to avoid or evade training or service in the U.S. armed forces in time of war or a period declared by the President to be a national emergency?</label>
+    <div class="d-flexible">
+      <input type="radio" name="left_to_avoid_service" id="yes_85" value="Y"> <label for="yes_85" style="font-size: smaller;">Yes</label><br>
+      <input type="radio" name="left_to_avoid_service" id="no_85" value="N"> <label for="no_85" style="font-size: smaller;">No</label>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <label class="control-label" style="font-size: smaller;">86. If you answered "Yes" to Item Number 85., what was your nationality or immigration status immediately before you left (for example, U.S. citizen or national, lawful permanent resident, nonimmigrant, parolee, present without admission or parole, or any other status)?</label>
+      
+        <input
+          type="text"
+          maxlength="29"
+          class="form-control"
+          name="information_about_you_given_first_name"
+          value="<?php echo showData('information_about_you_given_first_name'); ?>" />
+  
+  </div>
+
+  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+  <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
+  <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
-
-
 <!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
+-------------------------------- page 22-------------------------------
 ------------------------------------------------------------------------>
 
 
 
 <!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
+-------------------------------- page 23-------------------------------
 ------------------------------------------------------------------------>
 
 
 
 <!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
+-------------------------------- page 24-------------------------------
 ------------------------------------------------------------------------>
 
 
 
-<!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
------------------------------------------------------------------------->
-
-
-
-<!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
------------------------------------------------------------------------->
-
-
-
-<!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
------------------------------------------------------------------------->
-
-
-
-<!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
------------------------------------------------------------------------->
-
-
-
-<!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
------------------------------------------------------------------------->
-
-
-
-<!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
------------------------------------------------------------------------->
-
-
-
-<!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
------------------------------------------------------------------------->
-
-
-
-<!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
------------------------------------------------------------------------->
-
-
-
-<!----------------------------------------------------------------------
--------------------------------- page 9-------------------------------
------------------------------------------------------------------------->
 
 <!-- end -->
 <?php include "intake_footer.php" ?>
