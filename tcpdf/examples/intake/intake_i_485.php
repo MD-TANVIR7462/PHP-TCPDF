@@ -877,7 +877,7 @@ include "intake_header.php";
 <!----------------------------------------------------------------------
 -------------------------------- page 1 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 1 of 24</b></p>
   </div>
@@ -1079,11 +1079,11 @@ include "intake_header.php";
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
 
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 2 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 2 of 24</b></p>
   </div>
@@ -1364,11 +1364,11 @@ include "intake_header.php";
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
 
 
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 3 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 3 of 24</b></p>
   </div>
@@ -1643,11 +1643,11 @@ include "intake_header.php";
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
 
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 4 --------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 4 of 24</b></p>
   </div>
@@ -1910,11 +1910,11 @@ include "intake_header.php";
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
 
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 5-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <p style="text-align: right"><b>Page 5 of 24</b></p>
 
 
@@ -2049,11 +2049,11 @@ include "intake_header.php";
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
 
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 6-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <p style="text-align: right"><b>Page 6 of 24</b></p>
 
   <div class="bg-info" style="margin-top:10px;">
@@ -2196,11 +2196,11 @@ include "intake_header.php";
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
 
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 7-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <p style="text-align: right"><b>Page 7 of 24</b></p>
 
   <div class="bg-info" style="margin-top:10px;">
@@ -2332,11 +2332,11 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 8-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <p style="text-align: right"><b>Page 8 of 24</b></p>
 
   <div class="bg-info" style="margin-top:10px;">
@@ -2450,11 +2450,11 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 9-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 9 of 24</b></p>
   </div>
@@ -2796,11 +2796,11 @@ include "intake_header.php";
 
 
 
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 10-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 10 of 24</b></p>
   </div>
@@ -3145,11 +3145,11 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 11-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 11 of 24</b></p>
   </div>
@@ -3201,22 +3201,22 @@ include "intake_header.php";
             value="<?php echo showData('current_marriage_date'); ?>" />
         </div>
       </div>
-    </div>
 
-    <div class="col-md-12 my-4">
-      <label class="control-label">
-        <b>10.</b> Is your current spouse applying with you?
-      </label><br>
-      <input type="radio" name="spouse_applying_yes" id="cspa_yes" value="yes" <?php echo (showData('spouse_applying_yes') == 'yes') ? 'checked' : '' ?>>
-      <label for="cspa_yes">Yes</label><br>
-      <input type="radio" name="spouse_applying_yes" id="cspa_no" value="no" <?php echo (showData('spouse_applying_yes') == 'no') ? 'checked' : '' ?>>
-      <label for="cspa_no">No</label><br>
-    </div>
-
-    <div class="mt-5">
-      <div class="bg-info">
-        <h5 class="font-bold">Information About Prior Marriages (if any)</h5>
+      <div class="col-md-12 my-4">
+        <label class="control-label">
+          <b>10.</b> Is your current spouse applying with you?
+        </label><br>
+        <input type="radio" name="spouse_applying_yes" id="cspa_yes" value="yes" <?php echo (showData('spouse_applying_yes') == 'yes') ? 'checked' : '' ?>>
+        <label for="cspa_yes">Yes</label><br>
+        <input type="radio" name="spouse_applying_yes" id="cspa_no" value="no" <?php echo (showData('spouse_applying_yes') == 'no') ? 'checked' : '' ?>>
+        <label for="cspa_no">No</label><br>
       </div>
+
+      <div>
+        <h4 class="font-bold">Information About Prior Marriages (if any)</h4>
+      </div>
+    </div>
+    <div class="mt-5">
 
 
       <div class="mt-4">
@@ -3415,12 +3415,12 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 12-------------------------------
 ------------------------------------------------------------------------>
 
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 12 of 24</b></p>
   </div>
@@ -3572,179 +3572,179 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right;margin: 10px;" />
   <input style="float: right;" type="button" name="button" class="submit btn btn-success" value="Save" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 13-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
-    <div class="page_number">
-      <p style="text-align: right;"><b>Page 13 of 24</b></p>
+<fieldset class="setpage">
+  <div class="page_number">
+    <p style="text-align: right;"><b>Page 13 of 24</b></p>
+  </div>
+  <div class="bg-info">
+    <h4><b>Part 8. Biographic Information</b></h4>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-12">1. Ethnicity (Select only one box)</label>
+    <div class="col-md-6">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="hispanic" name="i_485_biographic_info_ethnicity" value="hispanic" <?php echo (showData('i_485_biographic_info_ethnicity') == 'hispanic') ? 'checked' : '' ?>>
+        <label for="hispanic" class="form-check-label">Hispanic or Latino</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="not_hispanic" name="i_485_biographic_info_ethnicity" value="nothispanic" <?php echo (showData('i_485_biographic_info_ethnicity') == 'nothispanic') ? 'checked' : '' ?>>
+        <label for="not_hispanic" class="form-check-label">Not Hispanic or Latino</label>
+      </div>
     </div>
-    <div class="bg-info">
-      <h4><b>Part 8. Biographic Information</b></h4>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-12">2. Race (Select all applicable boxes)</label>
+    <div class="col-md-12">
+      <label class="control-label"><?php echo createCheckbox("i_485_biographic_info_race_american_native") ?>American Indian or Alaska Native</label><br>
+      <label class="control-label"><?php echo createCheckbox("i_485_biographic_info_race_asian") ?>Asian</label><br>
+      <label class="control-label"><?php echo createCheckbox("i_485_biographic_info_race_black_african") ?>Black or African American</label><br>
+      <label class="control-label"><?php echo createCheckbox("i_485_biographic_info_race_native_islander") ?>Native Hawaiian or Other Pacific Islander</label><br>
+      <label class="control-label"><?php echo createCheckbox("i_485_biographic_info_race_white") ?>White</label><br>
     </div>
+  </div>
+
+  <div style="padding-left: 1.5%;">
+    <div>
+      <label>3. Height</label>
+      <label style="padding-left:10%">Feet:</label>
+      <select id="feet" name="i_485_biographic_info_height_feet" style="padding: 8px; margin-right: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        <?php echo "<option value=" . showData('i_485_biographic_info_height_feet') . " selected>" . showData('i_485_biographic_info_height_feet') . "</option>"; ?>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+      <label>Inches:</label>
+      <select id="inches" name="i_485_biographic_info_height_inches" style="padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+        <?php echo "<option value=" . showData('i_485_biographic_info_height_inches') . " selected>" . showData('i_485_biographic_info_height_inches') . "</option>"; ?>
+        <?php for ($i = 0; $i <= 11; $i++) echo "<option value=\"$i\">$i</option>"; ?>
+      </select>
+    </div>
+
+    <div>
+      <label><b>4. Weight</b></label>
+      <label style="padding-left:10%"><b>Pounds:</b></label>
+      <input type="text" maxlength="1" name="i_485_biographic_info_weight_in_pound1" value="<?php echo showData('i_485_biographic_info_weight_in_pound1') ?>" style="width: 40px; margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+      <input type="text" maxlength="1" name="i_485_biographic_info_weight_in_pound2" value="<?php echo showData('i_485_biographic_info_weight_in_pound2') ?>" style="width: 40px; margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+      <input type="text" maxlength="1" name="i_485_biographic_info_weight_in_pound3" value="<?php echo showData('i_485_biographic_info_weight_in_pound3') ?>" style="width: 40px; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+
+    <br>
     <div class="form-group">
-      <label class="control-label col-md-12">1. Ethnicity (Select only one box)</label>
-      <div class="col-md-6">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" id="hispanic" name="i_485_biographic_info_ethnicity" value="hispanic" <?php echo (showData('i_485_biographic_info_ethnicity') == 'hispanic') ? 'checked' : '' ?>>
-          <label for="hispanic" class="form-check-label">Hispanic or Latino</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" id="not_hispanic" name="i_485_biographic_info_ethnicity" value="nothispanic" <?php echo (showData('i_485_biographic_info_ethnicity') == 'nothispanic') ? 'checked' : '' ?>>
-          <label for="not_hispanic" class="form-check-label">Not Hispanic or Latino</label>
-        </div>
-      </div>
+      <label>5. Eye Color (Select only one box)</label><br>
+      <?php
+      $eye_colors = ['black', 'blue', 'brown', 'gray', 'green', 'hazel', 'maroon', 'pink', 'unknown'];
+      foreach ($eye_colors as $color) {
+        echo "<input type='radio' id='eye_$color' name='i_485_biographic_info_eye_color' value='$color' " . (showData('i_485_biographic_info_eye_color') == $color ? 'checked' : '') . ">";
+        echo "<label for='eye_$color'>" . ucfirst($color) . "</label><br>";
+      }
+      ?>
     </div>
 
+    <br>
     <div class="form-group">
-      <label class="control-label col-md-12">2. Race (Select all applicable boxes)</label>
-      <div class="col-md-12">
-        <label class="control-label"><?php echo createCheckbox("i_485_biographic_info_race_american_native") ?>American Indian or Alaska Native</label><br>
-        <label class="control-label"><?php echo createCheckbox("i_485_biographic_info_race_asian") ?>Asian</label><br>
-        <label class="control-label"><?php echo createCheckbox("i_485_biographic_info_race_black_african") ?>Black or African American</label><br>
-        <label class="control-label"><?php echo createCheckbox("i_485_biographic_info_race_native_islander") ?>Native Hawaiian or Other Pacific Islander</label><br>
-        <label class="control-label"><?php echo createCheckbox("i_485_biographic_info_race_white") ?>White</label><br>
-      </div>
+      <label>6. Hair Color (Select only one box)</label><br>
+      <?php
+      $hair_colors = ['bald', 'black', 'blond', 'brown', 'gray', 'red', 'sandy', 'white', 'unknown'];
+      foreach ($hair_colors as $color) {
+        echo "<input type='radio' id='hair_$color' name='i_485_biographic_info_hair_color' value='$color' " . (showData('i_485_biographic_info_hair_color') == $color ? 'checked' : '') . ">";
+        echo "<label for='hair_$color'>" . ucfirst($color) . "</label><br>";
+      }
+      ?>
     </div>
 
-    <div style="padding-left: 1.5%;">
-      <div>
-        <label>3. Height</label>
-        <label style="padding-left:10%">Feet:</label>
-        <select id="feet" name="i_485_biographic_info_height_feet" style="padding: 8px; margin-right: 10px; border: 1px solid #ccc; border-radius: 5px;">
-          <?php echo "<option value=" . showData('i_485_biographic_info_height_feet') . " selected>" . showData('i_485_biographic_info_height_feet') . "</option>"; ?>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-        </select>
-        <label>Inches:</label>
-        <select id="inches" name="i_485_biographic_info_height_inches" style="padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
-          <?php echo "<option value=" . showData('i_485_biographic_info_height_inches') . " selected>" . showData('i_485_biographic_info_height_inches') . "</option>"; ?>
-          <?php for ($i = 0; $i <= 11; $i++) echo "<option value=\"$i\">$i</option>"; ?>
-        </select>
+
+    <div class=" my-4">
+      <div class="bg-info">
+        <h4 class="font-bold ">Part 9. General Eligibility and Inadmissibility Grounds</h4>
       </div>
+      <p>
+        Choose the answer that you think is correct in Part 9. If you answer “Yes” to any questions (or if you answer “No,” but are unsure of your answer),
+        provide an explanation of the events and circumstances in the space provided in <b>Part 14. Additional Information.</b>
+      </p>
 
-      <div>
-        <label><b>4. Weight</b></label>
-        <label style="padding-left:10%"><b>Pounds:</b></label>
-        <input type="text" maxlength="1" name="i_485_biographic_info_weight_in_pound1" value="<?php echo showData('i_485_biographic_info_weight_in_pound1') ?>" style="width: 40px; margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
-        <input type="text" maxlength="1" name="i_485_biographic_info_weight_in_pound2" value="<?php echo showData('i_485_biographic_info_weight_in_pound2') ?>" style="width: 40px; margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
-        <input type="text" maxlength="1" name="i_485_biographic_info_weight_in_pound3" value="<?php echo showData('i_485_biographic_info_weight_in_pound3') ?>" style="width: 40px; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
-      </div>
-
-      <br>
-      <div class="form-group">
-        <label>5. Eye Color (Select only one box)</label><br>
-        <?php
-        $eye_colors = ['black', 'blue', 'brown', 'gray', 'green', 'hazel', 'maroon', 'pink', 'unknown'];
-        foreach ($eye_colors as $color) {
-          echo "<input type='radio' id='eye_$color' name='i_485_biographic_info_eye_color' value='$color' " . (showData('i_485_biographic_info_eye_color') == $color ? 'checked' : '') . ">";
-          echo "<label for='eye_$color'>" . ucfirst($color) . "</label><br>";
-        }
-        ?>
-      </div>
-
-      <br>
-      <div class="form-group">
-        <label>6. Hair Color (Select only one box)</label><br>
-        <?php
-        $hair_colors = ['bald', 'black', 'blond', 'brown', 'gray', 'red', 'sandy', 'white', 'unknown'];
-        foreach ($hair_colors as $color) {
-          echo "<input type='radio' id='hair_$color' name='i_485_biographic_info_hair_color' value='$color' " . (showData('i_485_biographic_info_hair_color') == $color ? 'checked' : '') . ">";
-          echo "<label for='hair_$color'>" . ucfirst($color) . "</label><br>";
-        }
-        ?>
-      </div>
-
-
-      <div class=" my-4">
-        <div class="bg-info">
-          <h4 class="font-bold ">Part 9. General Eligibility and Inadmissibility Grounds</h4>
-        </div>
-        <p>
-          Choose the answer that you think is correct in Part 9. If you answer “Yes” to any questions (or if you answer “No,” but are unsure of your answer),
-          provide an explanation of the events and circumstances in the space provided in <b>Part 14. Additional Information.</b>
-        </p>
-
-        <div class="col-md-12 my-3">
-          <label class="control-label">
-            <b>1.</b> Have you EVER been a member of, involved in, or in any way associated with any organization, association, fund, foundation, party, club, society, or similar group in the United States or in any other location in the world?
-          </label>
-          <div class="d-flex gap-3 mt-2">
-            <div>
-              <input type="radio" name="part9_member_in_organization" id="yes_1" value="Y"
-                <?php echo (showData('part9_member_in_organization') == 'Y') ? 'checked' : ''; ?>>
-              <label for="yes_1">Yes</label>
-            </div>
-            <div>
-              <input type="radio" name="part9_member_in_organization" id="no_1" value="N"
-                <?php echo (showData('part9_member_in_organization') == 'N') ? 'checked' : ''; ?>>
-              <label for="no_1">No</label>
-            </div>
+      <div class="col-md-12 my-3">
+        <label class="control-label">
+          <b>1.</b> Have you EVER been a member of, involved in, or in any way associated with any organization, association, fund, foundation, party, club, society, or similar group in the United States or in any other location in the world?
+        </label>
+        <div class="d-flex gap-3 mt-2">
+          <div>
+            <input type="radio" name="part9_member_in_organization" id="yes_1" value="Y"
+              <?php echo (showData('part9_member_in_organization') == 'Y') ? 'checked' : ''; ?>>
+            <label for="yes_1">Yes</label>
+          </div>
+          <div>
+            <input type="radio" name="part9_member_in_organization" id="no_1" value="N"
+              <?php echo (showData('part9_member_in_organization') == 'N') ? 'checked' : ''; ?>>
+            <label for="no_1">No</label>
           </div>
         </div>
+      </div>
 
-        <div class="row  my-3">
-          <div class="col-md-6">
-            <label class="control-label" style="font-size: small;">2. Name of Organization</label>
-            <input type="text" name="org1_name" class="form-control" value="<?php echo showData('org1_name'); ?>">
-          </div>
-          <div class="col-md-6">
-            <label class="control-label" style="font-size: small;">3. City or Town</label>
-            <input type="text" name="org1_city" class="form-control" value="<?php echo showData('org1_city'); ?>">
-          </div>
-          <div class="col-md-6">
-            <label class="control-label" style="font-size: small;">State or Province</label>
-            <input type="text" name="org1_state" class="form-control" value="<?php echo showData('org1_state'); ?>">
-          </div>
-          <div class="col-md-6">
-            <label class="control-label" style="font-size: small;">Country</label>
-            <input type="text" name="org1_country" class="form-control" value="<?php echo showData('org1_country'); ?>">
-          </div>
-          <div class="col-md-12">
-            <label class="control-label" style="font-size: small;">4. Nature of Organization (including purposes and activities, whether illicit or legitimate)</label>
-            <input name="org1_nature" class="form-control" rows="2"><?php echo showData('org1_nature'); ?></input>
-          </div>
-          <div class="col-md-12">
-            <label class="control-label" style="font-size: small;">Nature of involvement (role or positions held, whether illicit or legitimate)</label>
-            <input name="org1_involvement" class="form-control" rows="2"><?php echo showData('org1_involvement'); ?></input>
-          </div>
-          <div class="col-md-6">
-            <label class="control-label" style="font-size: small;">5. Dates of Membership or Dates of Involvement (From)</label>
-            <input type="date" name="org1_from" class="form-control" value="<?php echo showData('org1_from'); ?>">
-          </div>
-          <div class="col-md-6">
-            <label class="control-label" style="font-size: small;">To</label>
-            <input type="date" name="org1_to" class="form-control" value="<?php echo showData('org1_to'); ?>">
-          </div>
+      <div class="row  my-3">
+        <div class="col-md-6">
+          <label class="control-label" style="font-size: small;">2. Name of Organization</label>
+          <input type="text" name="org1_name" class="form-control" value="<?php echo showData('org1_name'); ?>">
+        </div>
+        <div class="col-md-6">
+          <label class="control-label" style="font-size: small;">3. City or Town</label>
+          <input type="text" name="org1_city" class="form-control" value="<?php echo showData('org1_city'); ?>">
+        </div>
+        <div class="col-md-6">
+          <label class="control-label" style="font-size: small;">State or Province</label>
+          <input type="text" name="org1_state" class="form-control" value="<?php echo showData('org1_state'); ?>">
+        </div>
+        <div class="col-md-6">
+          <label class="control-label" style="font-size: small;">Country</label>
+          <input type="text" name="org1_country" class="form-control" value="<?php echo showData('org1_country'); ?>">
+        </div>
+        <div class="col-md-12">
+          <label class="control-label" style="font-size: small;">4. Nature of Organization (including purposes and activities, whether illicit or legitimate)</label>
+          <input name="org1_nature" class="form-control" rows="2"><?php echo showData('org1_nature'); ?></input>
+        </div>
+        <div class="col-md-12">
+          <label class="control-label" style="font-size: small;">Nature of involvement (role or positions held, whether illicit or legitimate)</label>
+          <input name="org1_involvement" class="form-control" rows="2"><?php echo showData('org1_involvement'); ?></input>
+        </div>
+        <div class="col-md-6">
+          <label class="control-label" style="font-size: small;">5. Dates of Membership or Dates of Involvement (From)</label>
+          <input type="date" name="org1_from" class="form-control" value="<?php echo showData('org1_from'); ?>">
+        </div>
+        <div class="col-md-6">
+          <label class="control-label" style="font-size: small;">To</label>
+          <input type="date" name="org1_to" class="form-control" value="<?php echo showData('org1_to'); ?>">
+        </div>
+      </div>
+
+      <div class="row g-3 my-3 border-top pt-3">
+        <div class="col-md-12">
+          <label class="fw-bold" style="font-size: small;">Organization 2</label>
+        </div>
+        <div class="col-md-6">
+          <label class="control-label" style="font-size: small;">6. Name of Organization</label>
+          <input type="text" name="org2_name" class="form-control" value="<?php echo showData('org2_name'); ?>">
         </div>
 
-        <div class="row g-3 my-3 border-top pt-3">
-          <div class="col-md-12">
-            <label class="fw-bold" style="font-size: small;">Organization 2</label>
-          </div>
-          <div class="col-md-6">
-            <label class="control-label" style="font-size: small;">6. Name of Organization</label>
-            <input type="text" name="org2_name" class="form-control" value="<?php echo showData('org2_name'); ?>">
-          </div>
-
-        </div>
       </div>
     </div>
+  </div>
 
-    <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-    <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
-    <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset> -->
+  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+  <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
+  <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 14-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 14 of 24</b></p>
   </div>
@@ -3867,17 +3867,17 @@ include "intake_header.php";
           <input type="radio" name="i_589_granted_waiver" id="no_21" value="N" <?php echo (showData('i_589_granted_waiver') == 'N') ? 'checked' : '' ?>> <label for="no_21" style="font-size: smaller;">No</label>
         </div>
       </div>
-      
-      
+
+
       <div class="col-md-12" style="padding: 10px; margin-top: 10px;">
-      <div class="bg-info">
-          <h4 ><b>Criminal Acts and Violations</b></h4>
-      </div>
-        <p >
+        <div class="bg-info">
+          <h4><b>Criminal Acts and Violations</b></h4>
+        </div>
+        <p>
           For Item Numbers 22 - 41., you must answer "Yes" to any question that applies to you, even if your records were sealed or otherwise cleared, or even if anyone, including a judge, law enforcement officer, or attorney, told you that you no longer have a record. You must also answer "Yes" to the following questions whether the action or offense occurred here in the United States or anywhere else in the world: If you answer "Yes" to Item Numbers 22 - 41, use the space provided in Part 14. Additional Information to provide an explanation for each offense; if applicable, that includes a description of the criminal offense; where the criminal offense occurred; when the criminal offense occurred; whether you were arrested, cited, charged, or detained for the criminal offense you committed; and the outcome or disposition of that criminal offense (for example, convicted, placement in a diversion program, no charges filed, charges dismissed, jail, prison, detention, probation, or community service). Your explanation must include the duration of any sentence to confinement (even if suspended).
         </p>
       </div>
-      
+
       <div class="col-md-12">
         <label class="control-label" style="font-size: smaller;">22. Have you EVER been arrested, cited, charged, or permitted to participate in a diversion program, or detained for any reason by any law enforcement official in any country?</label><br>
         <div class="d-flexible">
@@ -3892,11 +3892,11 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 15-------------------------------
 ------------------------------------------------------------------------>
-<!-- 
+
 <fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 15 of 24</b></p>
@@ -4076,13 +4076,13 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset> -->
+</fieldset>
 
 <!----------------------------------------------------------------------
 -------------------------------- page 16-------------------------------
 ------------------------------------------------------------------------>
 
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 16 of 24</b></p>
   </div>
@@ -4143,7 +4143,7 @@ include "intake_header.php";
         <label class="control-label" style="font-size: smaller;">Do you intend to:</label>
       </div>
       <div class="col-md-4">
-     
+
       </div>
 
       <div class="col-md-8 mt-3">
@@ -4308,12 +4308,12 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset> -->
+</fieldset>
 
 <!----------------------------------------------------------------------
 -------------------------------- page 17-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 17 of 24</b></p>
   </div>
@@ -4399,7 +4399,7 @@ include "intake_header.php";
         <label class="control-label" style="font-size: smaller;">Have you EVER ordered, incited, called for, committed, assisted, helped with, or otherwise participated in any of the following:</label>
       </div>
       <div class="col-md-4">
-       
+
       </div>
 
       <div class="col-md-8 mt-4">
@@ -4469,11 +4469,11 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 18-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 18 of 24</b></p>
   </div>
@@ -4576,11 +4576,11 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 19-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset class="setpage">
+<fieldset class="setpage">
   <div class="page_number">
     <p style="text-align: right;"><b>Page 19 of 24</b></p>
   </div>
@@ -4763,12 +4763,12 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 20-------------------------------
 ------------------------------------------------------------------------>
-<!-- <fieldset>
-    <div class="page_number">
+<fieldset>
+  <div class="page_number">
     <p style="text-align: right;"><b>Page 20 of 24</b></p>
   </div>
   <div class="col-md-12 mt-4 bg-info">
@@ -4850,8 +4850,8 @@ include "intake_header.php";
           <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_to_1" value="<?php echo showData('institution_to_1') ?>"></td>
           <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_reason_1" value="<?php echo showData('institution_reason_1') ?>"></td>
           <td>
-            <input type="radio" name="institution_exempt_1" value="Y" <?php echo (showData('institution_exempt_1') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_1">Yes</label> 
-            <input type="radio" name="institution_exempt_1" value="N" <?php echo (showData('institution_exempt_1') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label> 
+            <input type="radio" name="institution_exempt_1" value="Y" <?php echo (showData('institution_exempt_1') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_1">Yes</label>
+            <input type="radio" name="institution_exempt_1" value="N" <?php echo (showData('institution_exempt_1') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label>
           </td>
         </tr>
         <tr>
@@ -4860,8 +4860,8 @@ include "intake_header.php";
           <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_to_2" value="<?php echo showData('institution_to_2') ?>"></td>
           <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_reason_2" value="<?php echo showData('institution_reason_2') ?>"></td>
           <td>
-            <input type="radio" name="institution_exempt_2" value="Y" <?php echo (showData('institution_exempt_2') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_2">Yes</label> 
-            <input type="radio" name="institution_exempt_2" value="N" <?php echo (showData('institution_exempt_2') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label> 
+            <input type="radio" name="institution_exempt_2" value="Y" <?php echo (showData('institution_exempt_2') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_2">Yes</label>
+            <input type="radio" name="institution_exempt_2" value="N" <?php echo (showData('institution_exempt_2') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label>
           </td>
         </tr>
         <tr>
@@ -4870,8 +4870,8 @@ include "intake_header.php";
           <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_to_3" value="<?php echo showData('institution_to_3') ?>"></td>
           <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_reason_3" value="<?php echo showData('institution_reason_3') ?>"></td>
           <td>
-            <input type="radio" name="institution_exempt_3" value="Y" <?php echo (showData('institution_exempt_3') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_3">Yes</label> 
-            <input type="radio" name="institution_exempt_3" value="N" <?php echo (showData('institution_exempt_3') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label> 
+            <input type="radio" name="institution_exempt_3" value="Y" <?php echo (showData('institution_exempt_3') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_3">Yes</label>
+            <input type="radio" name="institution_exempt_3" value="N" <?php echo (showData('institution_exempt_3') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label>
           </td>
         </tr>
         <tr>
@@ -4880,8 +4880,8 @@ include "intake_header.php";
           <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_to_4" value="<?php echo showData('institution_to_4') ?>"></td>
           <td><input type="text" class="form-control" style="width: 100%; margin: 0;" name="institution_reason_4" value="<?php echo showData('institution_reason_4') ?>"></td>
           <td>
-            <input type="radio" name="institution_exempt_4" value="Y" <?php echo (showData('institution_exempt_4') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_4">Yes</label> 
-            <input type="radio" name="institution_exempt_4" value="N" <?php echo (showData('institution_exempt_4') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label> 
+            <input type="radio" name="institution_exempt_4" value="Y" <?php echo (showData('institution_exempt_4') == 'Y') ? 'checked' : '' ?>> <label for="institution_exempt_4">Yes</label>
+            <input type="radio" name="institution_exempt_4" value="N" <?php echo (showData('institution_exempt_4') == 'N') ? 'checked' : '' ?>> <label for="institution_exempt_1">No</label>
           </td>
         </tr>
       </tbody>
@@ -4971,12 +4971,12 @@ include "intake_header.php";
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
-</fieldset> -->
+</fieldset>
 <!----------------------------------------------------------------------
 -------------------------------- page 21-------------------------------
 ------------------------------------------------------------------------>
 <fieldset>
-    <div class="page_number">
+  <div class="page_number">
     <p style="text-align: right;"><b>Page 21 of 24</b></p>
   </div>
   <div class="col-md-12 mt-4 bg-info">
@@ -5007,7 +5007,7 @@ include "intake_header.php";
 
   <div class="col-md-12 mt-4">
     <label class="control-label" style="font-size: smaller;">Since April 1, 1997, have you EVER reentered or attempted to reenter the United States without being inspected and admitted or paroled after:</label>
-    
+
     <div class="mt-3">
       <label class="control-label" style="font-size: smaller;">78.a. Having been unlawfully present in the United States for more than one year in the aggregate on or after April 1, 1997? You were unlawfully present in the United States for more than one year in the aggregate if you count all of the days during all of your stays that you were present in the United States after the expiration of the period of stay authorized by the DHS Secretary or were present in the United States without being admitted or paroled.</label>
       <div class="d-flexible">
@@ -5071,7 +5071,7 @@ include "intake_header.php";
 
   <div class="col-md-12 mt-4">
     <label class="control-label" style="font-size: smaller;">Have you EVER:</label>
-    
+
     <div class="mt-3">
       <label class="control-label" style="font-size: smaller;">84.a. Applied for exemption or discharge from training or service in the U.S. armed forces or in the U.S. National Security Training Corps on the ground that you are an alien?</label>
       <div class="d-flexible">
@@ -5107,35 +5107,446 @@ include "intake_header.php";
 
   <div class="col-md-12 mt-4">
     <label class="control-label" style="font-size: smaller;">86. If you answered "Yes" to Item Number 85., what was your nationality or immigration status immediately before you left (for example, U.S. citizen or national, lawful permanent resident, nonimmigrant, parolee, present without admission or parole, or any other status)?</label>
-      
-        <input
-          type="text"
-          maxlength="29"
-          class="form-control"
-          name="information_about_you_given_first_name"
-          value="<?php echo showData('information_about_you_given_first_name'); ?>" />
-  
+
+    <input
+      type="text"
+      maxlength="29"
+      class="form-control"
+      name="information_about_you_given_first_name"
+      value="<?php echo showData('information_about_you_given_first_name'); ?>" />
+
   </div>
 
   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
   <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px;" />
   <input type="button" name="button" class="submit btn btn-success" value="Save" style="float: right;" />
 </fieldset>
+
+
 <!----------------------------------------------------------------------
 -------------------------------- page 22-------------------------------
 ------------------------------------------------------------------------>
+<fieldset class="setpage">
+  <p style="text-align: right; margin-right: 15px;"><b>Page 22 of 24</b></p>
+  <div class="bg-info">
+    <h4><b>Part 10. Applicant's Contact Information, Certification, and Signature</b></h4>
+  </div>
+  <div class="bg-info">
+    <h4><b><i>Applicant's Contact Information</i></b></h4>
+  </div>
+  <p>Provide your daytime telephone number, mobile telephone number (if any), and email address (if any). </p>
+  <div class="row form-group" style="margin-bottom: 20px;">
+    <div class=" col-md-6">
+      <label class="control-label ">1. Applicant's Daytime Telephone Number</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_interpreter_family_last_name" maxlength="43" value="<?php echo showData('i_485_interpreter_family_last_name') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label " style="margin-left: 15px;">2. Applicant's Mobile Telephone Number (if any)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_interpreter_given_first_name" maxlength="42" value="<?php echo showData('i_485_interpreter_given_first_name') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label ">3. Applicant's Email Address (if any)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_interpreter_business_name" maxlength="43" value="<?php echo showData('i_485_interpreter_business_name') ?>">
+      </div>
+    </div>
+  </div>
+  <div class="bg-info">
+    <h4><b><i>Applicant's Certification and Signature</i></b></h4>
+  </div>
 
-
+  <div class="form-group row">
+    <label class="control-label col-md-12">I certify, under penalty of perjury, that I provided or authorized all of the responses and information contained in and submitted with
+      my application, I read and understand or, if interpreted to me in a language in which I am fluent by the interpreter listed in Part 11.,
+      understood, all of the responses and information contained in, and submitted with, my application, and that all of the responses and the
+      information are complete, true, and correct. Furthermore, I authorize the release of any information from any and all of my records
+      that USCIS may need to determine my eligibility for an immigration request and to other entities and persons where necessary for the
+      administration and enforcement of U.S. immigration law. </label>
+  </div>
+  <div class="row form-group" style="margin-bottom: 20px;">
+    <div class=" col-md-8">
+      <label class="control-label ">4. Applicant's Signature</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
+      </div>
+    </div>
+    <div class=" col-md-4">
+      <label class="control-label " style="margin-left: 15px;">Date of Signature (mm/dd/yyyy)</label>
+      <div class="col-md-12">
+        <input type="date" class="form-control" name="i_485_interpreter_sign_date" maxlength="" value="<?php echo showData('i_485_interpreter_sign_date') ?>">
+      </div>
+    </div>
+  </div>
+  <div class="bg-info">
+    <h4><b>Part 11. Interpreter's Contact Information, Certification, and Signature </b></h4>
+  </div>
+  <div class="bg-info">
+    <h4><b><i>Interpreter's Full Name</i></b></h4>
+  </div>
+  <div class="row form-group" style="margin-bottom: 20px;">
+    <div class=" col-md-6">
+      <label class="control-label ">1. Interpreter's Family Name (Last Name)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Interpreter_family_last_name" maxlength="43" value="<?php echo showData('i_485_Interpreter_family_last_name') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label " style="margin-left: 15px;">Interpreter's Given Name (First Name)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Interpreter_family_given_first_name" maxlength="42" value="<?php echo showData('i_485_Interpreter_family_given_first_name') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label ">2. Interpreter's Business or Organization Name</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Interpreter_business_name" maxlength="43" value="<?php echo showData('i_485_Interpreter_business_name') ?>">
+      </div>
+    </div>
+  </div>
+  <div class="bg-info">
+    <h4><b><i>Interpreter's Contact Information</i></b></h4>
+  </div>
+  <div class="row form-group" style="margin-bottom: 20px;">
+    <div class=" col-md-6">
+      <label class="control-label ">3. Interpreter's Daytime Telephone Number</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Interpreter_daytime_tel" maxlength="10" value="<?php echo showData('i_485_Interpreter_daytime_tel') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label " style="margin-left: 15px;">4. Interpreter's Mobile Telephone Number (if any) </label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Interpreter_mobile" maxlength="10" value="<?php echo showData('i_485_Interpreter_mobile') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label ">5. Interpreter's Email Address (if any)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Interpreter_email" maxlength="38" value="<?php echo showData('i_485_Interpreter_email') ?>">
+      </div>
+    </div>
+  </div>
+  <div class="bg-info">
+    <h4><b> <i>Interpreter's Certification and Signature</i> </b></h4>
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-7">I certify, under penalty of perjury, that I am fluent in English and </label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" name="i_485_interpreter_certification_language_skill" maxlength="18" value="<?php echo showData('i_485_interpreter_certification_language_skill') ?>">
+    </div>
+    <label class="control-label col-md-12">and I have interpreted every question on the application and Instructions and interpreted the applicant's answers to the questions in that
+      language, and the applicant informed me that they understood every instruction, question, and answer on the application.</label>
+  </div>
+  <div class="row form-group" style="margin-bottom: 20px;">
+    <div class=" col-md-8">
+      <label class="control-label ">6. Interpreter's Signature</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
+      </div>
+    </div>
+    <div class=" col-md-4">
+      <label class="control-label " style="margin-left: 15px;">Date of Signature (mm/dd/yyyy)</label>
+      <div class="col-md-12">
+        <input type="date" class="form-control" name="i_485_Interpreter_sign_date" maxlength="" value="<?php echo showData('i_485_Interpreter_sign_date') ?>">
+      </div>
+    </div>
+  </div>
+  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+  <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+  <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
 
 <!----------------------------------------------------------------------
--------------------------------- page 23-------------------------------
+------------------- page 23 --------------------------------------------
 ------------------------------------------------------------------------>
+<fieldset class="setpage">
+  <p style="text-align: right; margin-right: 15px;"><b>Page 23 of 24</b></p>
+  <div class="bg-info">
+    <h4><b>Part 12. Contact Information, Certification, and Signature of the Person Preparing this Application, if
+        Other Than the Applicant</b></h4>
+  </div>
+  <div class="bg-info">
+    <h4><b><i>Preparer's Full Name</i></b></h4>
+  </div>
+  <div class="row form-group" style="margin-bottom: 20px;">
+    <div class=" col-md-6">
+      <label class="control-label ">1. Preparer's Family Name (Last Name)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Preparer_family_last_name" maxlength="43" value="<?php echo showData('i_485_Preparer_family_last_name') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label " style="margin-left: 15px;">Preparer's Given Name (First Name)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Preparer_given_first_name" maxlength="42" value="<?php echo showData('i_485_Preparer_given_first_name') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label ">2. Preparer's Business or Organization Name</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Preparer_business_name" maxlength="43" value="<?php echo showData('i_485_Preparer_business_name') ?>">
+      </div>
+    </div>
+  </div>
+  <div class="bg-info">
+    <h4><b><i>Preparer's Contact Information</i></b></h4>
+  </div>
+  <div class="row form-group" style="margin-bottom: 20px;">
+    <div class=" col-md-6">
+      <label class="control-label ">3. Preparer's Daytime Telephone Number</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_485_Preparer_daytime_tel') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label " style="margin-left: 15px;">4. Preparer's Mobile Telephone Number (if any) </label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Preparer_mobile" maxlength="10" value="<?php echo showData('i_485_Preparer_mobile') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label ">5. Preparer's Email Address (if any)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Preparer_email" maxlength="38" value="<?php echo showData('i_485_Preparer_email') ?>">
+      </div>
+    </div>
+  </div>
+  <div class="bg-info">
+    <h4><b> <i>Preparer's Certification and Signature</i> </b></h4>
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12">I certify, under penalty of perjury, that I prepared this application for the applicant at his or her request and with express consent and
+      that all of the responses and information contained in and submitted with the application are complete, true, and correct and reflects
+      only information provided by the applicant. The applicant reviewed the responses and information and informed me that he or she
+      understands the responses and information in or submitted with the application.
+    </label>
+  </div>
+  <div class="row form-group" style="margin-bottom: 20px;">
+    <div class=" col-md-8">
+      <label class="control-label ">6. Preparer's Signature</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="" maxlength="" disabled value="<?php echo showData('') ?>">
+      </div>
+    </div>
+    <div class=" col-md-4">
+      <label class="control-label " style="margin-left: 15px;">Date of Signature (mm/dd/yyyy)</label>
+      <div class="col-md-12">
+        <input type="date" class="form-control" name="i_485_Preparer_sign_date" maxlength="" value="<?php echo showData('i_485_interpreter_sign_date') ?>">
+      </div>
+    </div>
+  </div>
+  <div class="bg-info p-3 text-center">
+    <b> NOTE: Do not complete Part 13. until the USCIS Officer instructs you to do so at the interview.</b>
+  </div>
+  <div class="bg-info mt-3 p-3">
+    <b> Part 13. Signature at Interview</b>
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12">I swear (affirm) and certify under penalty of perjury under the laws of the United States of America that I know that the contents of this Form I-485, Application to Register Permanent Residence or Adjust Status, subscribed by me, including the</label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" name="i_485_interpreter_certification_language_skill" maxlength="18" value="<?php echo showData('i_485_interpreter_certification_language_skill') ?>">
+    </div>
+    <label class="control-label col-md-5">changes made to this application, numbered</label>
+    <div class="col-md-2">
+      <input type="text" class="form-control" name="i_485_interpreter_certification_language_skill" maxlength="18" value="<?php echo showData('i_485_interpreter_certification_language_skill') ?>">
+    </div>
+
+    <label class="control-label col-md-12">through</label>
+    <div class="col-md-2">
+      <input type="text" class="form-control" name="i_485_interpreter_certification_language_skill" maxlength="18" value="<?php echo showData('i_485_interpreter_certification_language_skill') ?>">
+    </div>
+
+    <label class="control-label col-md-12">, are complete, true, and correct. All information on additional pages submitted by me with this Form I-485, on numbered pages</label>
+    <div class="col-md-2">
+      <input type="text" class="form-control" name="i_485_interpreter_certification_language_skill" maxlength="18" value="<?php echo showData('i_485_interpreter_certification_language_skill') ?>">
+    </div>
+    <label class="control-label col-md-12">through</label>
+    <div class="col-md-2">
+      <input type="text" class="form-control" name="i_485_interpreter_certification_language_skill" maxlength="18" value="<?php echo showData('i_485_interpreter_certification_language_skill') ?>">
+    </div>
+    <label class="control-label col-md-12">are complete, true, and correct. All documents submitted at this interview were provided by me and are complete, true, and correct. Subscribed to and sworn to (affirmed) before me</label>
+  </div>
+  <div>
+    <div class=" col-md-6">
+      <label class="control-label ml-5">USCIS Officer's Printed Name or Stamp</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Preparer_daytime_tel" maxlength="10" value="<?php echo showData('i_485_Preparer_daytime_tel') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label ml-5">Date of Signature (mm/dd/yyyy)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Preparer_mobile" maxlength="10" value="<?php echo showData('i_485_Preparer_mobile') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label ml-5">Applicant's Signature (sign in ink)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Preparer_email" maxlength="38" value="<?php echo showData('i_485_Preparer_email') ?>">
+      </div>
+    </div>
+    <div class=" col-md-6">
+      <label class="control-label ml-5">USCIS Officer's Signature (sign in ink)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_Preparer_email" maxlength="38" value="<?php echo showData('i_485_Preparer_email') ?>">
+      </div>
+    </div>
+  </div>
+
+
+  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+  <input type="button" name="next" class="next btn btn-info" value="Next" style="float: right; margin: 10px" />
+  <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
+
+<!-----------------------------------------------------------------------
+------------------------ page 24 ----------------------------------------
+------------------------------------------------------------------------->
+<fieldset class="setpage">
+  <p style="text-align: right; margin-right: 15px;"><b>Page 24 of 24</b></p>
+  <div class="bg-info">
+    <h4><b>Part 14. Additional Information </b></h4>
+  </div>
+  <div class=" col-md-12">
+    <label class="control-label ">If you need extra space to provide any additional information within this application, use the space below. If you need more space than
+      what is provided, you may make copies of this page to complete and file with this application or attach a separate sheet of paper.
+      Type or print your name and A-Number (if any) at the top of each sheet; indicate the Page Number, Part Number, and Item
+      Number to which your answer refers; and sign and date each sheet.</label>
+  </div>
+  <div class="row form-group" style="margin-bottom: 20px;">
+    <div class=" col-md-4">
+      <label class="control-label ">1. Family Name (Last Name)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_additional_info_last_name" maxlength="35" value="<?php echo showData('i_485_additional_info_last_name') ?>">
+      </div>
+    </div>
+    <div class=" col-md-4">
+      <label class="control-label " style="margin-left: 15px;">Given Name (First Name) </label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_additional_info_first_name" maxlength="27" value="<?php echo showData('i_485_additional_info_first_name') ?>">
+      </div>
+    </div>
+    <div class=" col-md-4">
+      <label class="control-label ">Middle (if applicable)</label>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="i_485_additional_info_middle_name" maxlength="22" value="<?php echo showData('i_485_additional_info_middle_name') ?>">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="d-flexible">
+      <div class="form-group">
+        <label class="control-label col-md-12">2. Page Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_2a_page_no" maxlength="2" value="<?php echo showData('i_485_additional_info_2a_page_no') ?>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-12">Part Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_2b_part_no" maxlength="6" value="<?php echo showData('i_485_additional_info_2b_part_no') ?>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-12">Item Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_2c_item_no" maxlength="6" value="<?php echo showData('i_485_additional_info_2c_item_no') ?>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <textarea name="i_485_additional_info_2d" class="form-control" maxlength="255" cols="30" rows="10"><?php echo showData('i_485_additional_info_2d') ?></textarea>
+      </div>
+    </div>
+    <div class="d-flexible">
+      <div class="form-group">
+        <label class="control-label col-md-12">3. Page Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_3a_page_no" maxlength="2" value="<?php echo showData('i_485_additional_info_3a_page_no') ?>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-12">Part Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_3b_part_no" maxlength="6" value="<?php echo showData('i_485_additional_info_3b_part_no') ?>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-12">Item Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_3c_item_no" maxlength="6" value="<?php echo showData('i_485_additional_info_3c_item_no') ?>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <textarea name="i_485_additional_info_3d" class="form-control" maxlength="256" cols="30" rows="10"><?php echo showData('i_485_additional_info_3d') ?></textarea>
+      </div>
+    </div>
+    <div class="d-flexible">
+      <div class="form-group">
+        <label class="control-label col-md-12">4. Page Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_4a_page_no" maxlength="2" value="<?php echo showData('i_485_additional_info_4a_page_no') ?>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-12">Part Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_4b_part_no" maxlength="6" value="<?php echo showData('i_485_additional_info_4b_part_no') ?>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-12">Item Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_4c_item_no" maxlength="6" value="<?php echo showData('i_485_additional_info_4c_item_no') ?>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <textarea class="form-control" name="i_485_additional_info_4d" maxlength="341" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_4d') ?></textarea>
+      </div>
+    </div>
+    <div class="d-flexible">
+      <div class="form-group">
+        <label class="control-label col-md-12">5. Page Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_5a_page_no" maxlength="2" value="<?php echo showData('i_485_additional_info_5a_page_no') ?>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-12">Part Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_5b_part_no" maxlength="6" value="<?php echo showData('i_485_additional_info_5b_part_no') ?>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-12">Item Number</label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" name="i_485_additional_info_5c_item_no" maxlength="6" value="<?php echo showData('i_485_additional_info_5c_item_no') ?>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <textarea class="form-control" name="i_485_additional_info_5d" maxlength="341" class="form-control" cols="30" rows="10"><?php echo showData('i_485_additional_info_5d') ?></textarea>
+      </div>
+    </div>
+  </div>
+
+
+  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+  <input type="button" name="submit" class="submit btn btn-success" value="Save" style="float: right;" />
+</fieldset>
 
 
 
-<!----------------------------------------------------------------------
--------------------------------- page 24-------------------------------
------------------------------------------------------------------------->
 
 
 
